@@ -15,7 +15,7 @@
         <nhs-checkbox id="test2">Test2</nhs-checkbox>
       </nhs-row>
     </nhs-main>
-    <nhs-footer></nhs-footer>
+    <nhs-footer :links="navLinks"></nhs-footer>
   </div>
 </template>
 
@@ -54,7 +54,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  //@import 'node_modules/nhsuk-frontend/packages/nhsuk.scss';
-</style>

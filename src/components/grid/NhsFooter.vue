@@ -3,14 +3,7 @@
     <div class="nhsuk-footer" id="nhsuk-footer">
       <div class="nhsuk-width-container">
         <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-        <ul class="nhsuk-footer__list">
-          <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhs.uk/Pages/nhs-sites.aspx">NHS sites</a></li>
-          <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhs.uk/about-us">About us</a></li>
-          <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhs.uk/contact-us/">Contact us</a></li>
-          <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhs.uk/about-us/sitemap/">Sitemap</a></li>
-          <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhs.uk/our-policies/">Our policies</a></li>
-        </ul>
-
+        <footer-nav-link :links="links"></footer-nav-link>
         <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
       </div>
     </div>
@@ -18,7 +11,13 @@
 </template>
 
 <script>
+  import FooterNavLink from '@/components/grid/footer/FooterNavLink.vue'
+
   export default {
-    name: "NhsFooter"
+    name: "NhsFooter",
+    props: ["links"],
+    components: {
+      FooterNavLink
+    }
   }
 </script>
