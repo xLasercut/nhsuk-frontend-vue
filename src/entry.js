@@ -1,5 +1,7 @@
 // Import vue components
-import * as components from './lib-components/index';
+import 'nhsuk-frontend/packages/nhsuk.scss'
+import 'nhsuk-frontend/dist/nhsuk.min.js'
+import * as components from './components/index';
 
 // install function executed by Vue.use()
 function install(Vue) {
@@ -32,4 +34,4 @@ export default plugin;
 
 // To allow individual component use, export components
 // each can be registered via Vue.component()
-export * from './lib-components/index';
+export * from './components/index';
