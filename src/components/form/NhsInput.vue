@@ -10,22 +10,12 @@
 </template>
 
 <script>
+  import AddModel from '@/components/mixins/add-model.js'
+
   export default {
     name: "NhsInput",
-    props: ["disabled", "value", "width"],
-    data() {
-      return {
-        model: this.value
-      }
-    },
-    watch: {
-      value(val) {
-        this.model = val
-      },
-      model(val) {
-        this.$emit("input", val)
-      }
-    },
+    props: ["disabled", "width"],
+    mixins: [AddModel],
     computed: {
       inputClass() {
         return `nhsuk-input nhsuk-input--width-${this.width}`

@@ -17,7 +17,7 @@
           </svg>
         </a>
       </li>
-      <header-nav-link v-for="(item, index) in links" :item="item" :key="index"></header-nav-link>
+      <header-nav-link v-for="(item, index) in links" :item="item" :key="headerNavLinkKey(index)"></header-nav-link>
     </ul>
   </nav>
 </template>
@@ -29,6 +29,11 @@
     props: ["links"],
     components: {
       HeaderNavLink
+    },
+    methods: {
+      headerNavLinkKey(index) {
+        return `header_nav_key_${index}`
+      }
     }
   }
 </script>

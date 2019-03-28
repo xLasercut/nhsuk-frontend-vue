@@ -1,21 +1,11 @@
 <template>
   <div>
-    <nhs-header :links="navLinks"></nhs-header>
+    <nhs-header :links="navLinks" :nav="true"></nhs-header>
+    <nhs-breadcrum :links="navLinks"></nhs-breadcrum>
     <nhs-main>
-      <nhs-row>
-        <nhs-col>
-          <nhs-button>Primary</nhs-button>
-        </nhs-col>
-      </nhs-row>
-      <nhs-row>
-        <nhs-input width="2"></nhs-input>
-      </nhs-row>
-      <nhs-row>
-        <nhs-checkbox id="test">Test</nhs-checkbox>
-        <nhs-checkbox id="test2">Test2</nhs-checkbox>
-      </nhs-row>
+      <router-view></router-view>
     </nhs-main>
-    <nhs-footer :links="navLinks"></nhs-footer>
+    <nhs-footer :links="footerLinks"></nhs-footer>
   </div>
 </template>
 
@@ -26,28 +16,14 @@
       return {
         navLinks: [
           {
-            label: "Home",
-            url: "/"
-          },
+            label: "Grid",
+            url: "/#/grid"
+          }
+        ],
+        footerLinks: [
           {
-            label: "Health A-Z",
-            url: "https://www.nhs.uk/conditions"
-          },
-          {
-            label: "Live Well",
-            url: "https://www.nhs.uk/live-well/"
-          },
-          {
-            label: "Care and support",
-            url: "https://www.nhs.uk/conditions/social-care-and-support/"
-          },
-          {
-            label: "Health news",
-            url: "https://www.nhs.uk/news/"
-          },
-          {
-            label: "Services near you",
-            url: "https://www.nhs.uk/service-search"
+            label: "github",
+            url: "https://github.com/xLasercut/nhsuk-frontend-vue"
           }
         ]
       }
