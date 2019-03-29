@@ -1,11 +1,12 @@
 <template>
   <div>
-    <nhs-header :links="navLinks" :nav="true"></nhs-header>
-    <nhs-breadcrum :links="navLinks"></nhs-breadcrum>
-    <nhs-main>
-      <router-view></router-view>
-    </nhs-main>
-    <nhs-footer :links="footerLinks"></nhs-footer>
+    <nhs-header :nav="true">
+      <nhs-header-link v-for="(link, index) in headerLinks" :to="link.url" :key="index">{{link.label}}</nhs-header-link>
+    </nhs-header>
+    <router-view></router-view>
+    <nhs-footer>
+      <nhs-footer-link to="https://github.com/xLasercut/nhsuk-frontend-vue">Github</nhs-footer-link>
+    </nhs-footer>
   </div>
 </template>
 
@@ -14,10 +15,14 @@
     name:  'App',
     data() {
       return {
-        navLinks: [
+        headerLinks: [
           {
-            label: "Grid",
-            url: "/#/grid"
+            label: "Layout",
+            url: "/layout/home"
+          },
+          {
+            label: "Information",
+            url: "/information/home"
           }
         ],
         footerLinks: [

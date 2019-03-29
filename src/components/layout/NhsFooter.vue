@@ -3,7 +3,9 @@
     <div class="nhsuk-footer" id="nhsuk-footer">
       <div class="nhsuk-width-container">
         <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-        <footer-nav-link :links="links"></footer-nav-link>
+        <ul class="nhsuk-footer__list">
+          <slot></slot>
+        </ul>
         <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
       </div>
     </div>
@@ -11,13 +13,7 @@
 </template>
 
 <script>
-  import FooterNavLink from '@/components/grid/footer/FooterNavLink.vue'
-
   export default {
-    name: "NhsFooter",
-    props: ["links"],
-    components: {
-      FooterNavLink
-    }
+    name: "NhsFooter"
   }
 </script>

@@ -27,8 +27,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  @import 'node_modules/nhsuk-frontend/packages/core/all';
-  @import 'node_modules/nhsuk-frontend/packages/components/button/button';
-</style>
