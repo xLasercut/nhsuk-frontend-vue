@@ -27,6 +27,10 @@
           {
             label: "Navigation",
             url: "/navigation"
+          },
+          {
+            label: "Form",
+            url: "/form"
           }
         ],
         footerLinks: [

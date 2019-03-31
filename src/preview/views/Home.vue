@@ -9,6 +9,9 @@
     <nhs-row>
       <nhs-button @click="changeRoute('/navigation')">Navigation</nhs-button>
     </nhs-row>
+    <nhs-row>
+      <nhs-button @click="changeRoute('/form')">Form</nhs-button>
+    </nhs-row>
   </nhs-main>
 </template>
 
