@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <code-block :code="htmlcode">
     <h4 class="nhsuk-u-margin-bottom-0">Full width (100%)</h4>
     <nhs-row>
       <nhs-col>
@@ -53,13 +53,10 @@
         <p>.nhsuk-grid-column-one-quarter</p>
       </nhs-col>
     </nhs-row>
-    <code-block type="html">{{htmlcode}}</code-block>
-  </div>
+  </code-block>
 </template>
 
 <script>
-  import CodeBlock from '@/preview/components/CodeBlock.vue'
-
   export default {
     data() {
       return {
@@ -117,9 +114,6 @@
     </nhs-col>
   </nhs-row>`
       }
-    },
-    components: {
-      CodeBlock
     }
   }
 </script>
