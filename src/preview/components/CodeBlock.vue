@@ -91,8 +91,7 @@
     background: #f0f4f5;
     cursor: pointer;
     outline: none;
-    height: 40px;
-    width: 100px;
+    padding: 10px;
   }
 
   .expand_button:hover {
