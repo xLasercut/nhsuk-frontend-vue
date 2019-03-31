@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router.js'
+import router from './router/router.js'
 import NhsukFrontendVue from '@/entry.js'
 import VueHighlightJS from 'vue-highlightjs'
 import CodeBlock from '@/preview/components/CodeBlock.vue'

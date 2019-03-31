@@ -1,6 +1,6 @@
-import Grid from './views/layout/Grid.vue'
-import Header from './views/layout/Header.vue'
-import LayoutHome from './views/layout/Home.vue'
+import Grid from '../views/layout/Grid.vue'
+import Header from '../views/layout/Header.vue'
+import LayoutHome from '../views/layout/Home.vue'
 
 const layout = [
   {

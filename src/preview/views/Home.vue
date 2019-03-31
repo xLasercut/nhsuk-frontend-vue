@@ -6,6 +6,9 @@
     <nhs-row>
       <nhs-button @click="changeRoute('/information')">Information</nhs-button>
     </nhs-row>
+    <nhs-row>
+      <nhs-button @click="changeRoute('/navigation')">Navigation</nhs-button>
+    </nhs-row>
   </nhs-main>
 </template>
 

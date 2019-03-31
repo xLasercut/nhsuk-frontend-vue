@@ -18,11 +18,15 @@
         headerLinks: [
           {
             label: "Layout",
-            url: "/layout/home"
+            url: "/layout"
           },
           {
             label: "Information",
-            url: "/information/home"
+            url: "/information"
+          },
+          {
+            label: "Navigation",
+            url: "/navigation"
           }
         ],
         footerLinks: [

@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  import LayoutRoutes from '@/preview/router/route-layout.js'
+  import NavRoutes from '@/preview/router/route-navigation.js'
 
   export default {
     computed: {
       routes() {
         var routes = []
-        for (var route of LayoutRoutes) {
-          if (route.path !== "/layout/*" && route.path !== "/layout") {
+        for (var route of NavRoutes) {
+          if (route.path !== "/navigation/*" && route.path !== "/navigation") {
             routes.push(route)
           }
         }

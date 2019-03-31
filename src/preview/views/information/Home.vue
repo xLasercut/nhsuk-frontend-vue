@@ -1,15 +1,15 @@
 <template>
   <div>
-    <nhs-action-link v-for="(route, index) in infoRoutes" :to="route.path" :key="index">{{route.name}}</nhs-action-link>
+    <nhs-action-link v-for="(route, index) in routes" :to="route.path" :key="index">{{route.name}}</nhs-action-link>
   </div>
 </template>
 
 <script>
-  import InfoRoutes from '@/preview/route-information.js'
+  import InfoRoutes from '@/preview/router/route-information.js'
 
   export default {
     computed: {
-      infoRoutes() {
+      routes() {
         var routes = []
         for (var route of InfoRoutes) {
           if (route.path !== "/information/*" && route.path !== "/information") {
