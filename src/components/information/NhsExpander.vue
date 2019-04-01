@@ -14,6 +14,11 @@
 <script>
   export default {
     name: "NhsExpander",
-    props: ["label"]
+    props: {
+      label: {
+        type: String,
+        default: ""
+      }
+    }
   }
 </script>

@@ -12,7 +12,16 @@
 <script>
   export default {
     name: 'NhsButton',
-    props: ["type", "disabled"],
+    props: {
+      type: {
+        type: String,
+        default: "primary"
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    },
     computed: {
       buttonClass() {
         switch (this.type) {

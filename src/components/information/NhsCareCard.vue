@@ -18,7 +18,16 @@
 <script>
   export default {
     name: "NhsCareCard",
-    props: ["label", "type"],
+    props: {
+      label: {
+        type: String,
+        default: ""
+      },
+      type: {
+        type: String,
+        default: "non-urgent"
+      }
+    },
     computed: {
       cardType() {
         switch (this.type) {

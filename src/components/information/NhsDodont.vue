@@ -12,7 +12,16 @@
 
   export default {
     name: "NhsDodont",
-    props: ["label", "type"],
+    props: {
+      label: {
+        type: String,
+        default: ""
+      },
+      type: {
+        type: String,
+        default: "tick"
+      }
+    },
     computed: {
       doDontClass() {
         switch (this.type) {

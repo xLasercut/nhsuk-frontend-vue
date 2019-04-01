@@ -14,6 +14,11 @@
 <script>
   export default {
     name: "NhsDetails",
-    props: ["label"]
+    props: {
+      label: {
+        type: String,
+        default: ""
+      }
+    }
   }
 </script>

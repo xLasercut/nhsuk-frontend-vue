@@ -13,7 +13,12 @@
     components: {
       NhsIcon
     },
-    props: ["type"],
+    props: {
+      type: {
+        type: String,
+        default: "tick"
+      }
+    },
     computed: {
       dodontIcon() {
         switch (this.type) {

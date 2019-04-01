@@ -7,7 +7,12 @@
 <script>
   export default {
     name: "NhsCol",
-    props: ["span"],
+    props: {
+      span: {
+        type: Number,
+        default: 100
+      }
+    },
     computed: {
       columnClass() {
         switch (this.span) {

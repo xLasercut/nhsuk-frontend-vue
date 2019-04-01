@@ -10,7 +10,16 @@
 <script>
   export default {
     name: "NhsImage",
-    props: ["src", "alt"],
+    props: {
+      src: {
+        type: String,
+        default: ""
+      },
+      alt: {
+        type: String,
+        default: ""
+      }
+    },
     computed: {
       isCaption() {
         if (!this.$slots.default) {

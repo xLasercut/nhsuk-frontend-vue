@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nhs-header :nav="true">
+    <nhs-header :search="false">
       <nhs-header-link v-for="(link, index) in headerLinks" :to="link.url" :key="index">{{link.label}}</nhs-header-link>
     </nhs-header>
     <router-view></router-view>

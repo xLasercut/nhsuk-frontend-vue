@@ -23,7 +23,16 @@
 
   export default {
     name: "NhsHeader",
-    props: ["links", "search", "nav"],
+    props: {
+      search: {
+        type: Boolean,
+        default: true
+      },
+      nav: {
+        type: Boolean,
+        default: true
+      }
+    },
     components: {
       HeaderNav,
       HeaderSearch,

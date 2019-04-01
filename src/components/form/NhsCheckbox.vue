@@ -1,27 +1,31 @@
 <template>
   <div class="nhsuk-checkboxes__item">
-    <input class="nhsuk-checkboxes__input" :id="id" :name="name" type="checkbox" :value="label" v-model="model">
-    <label class="nhsuk-label nhsuk-checkboxes__label" :for="id">
+    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="label" v-model="model" :disabled="disabled">
+    <label class="nhsuk-label nhsuk-checkboxes__label" :for="itemId">
       <slot></slot>
     </label>
   </div>
 </template>
 
 <script>
+  import AddModel from '../mixins/add-model.js'
+  import RandomID from '../mixins/random-id.js'
+
   export default {
-    props: ["value", "label", "name", "id"],
-    data() {
-      return {
-        model: this.value
+    name: "NhsCheckbox",
+    props: {
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
+      label: {
+        default: null
+      },
+      name: {
+        type: String,
+        default: ""
       }
     },
-    watch: {
-      value(val) {
-        this.checked = val
-      },
-      model(val) {
-        this.$emit("input", val)
-      }
-    }
+    mixins: [AddModel, RandomID]
   }
 </script>

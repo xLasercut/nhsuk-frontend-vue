@@ -1,7 +1,7 @@
 <template>
   <input
     :class="inputClass"
-    id="input-width-10"
+    :id="id"
     name="test-width-10"
     type="text"
     :disabled="disabled"
@@ -14,7 +14,20 @@
 
   export default {
     name: "NhsInput",
-    props: ["disabled", "width"],
+    props: {
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      width: {
+        type: String,
+        default: ""
+      },
+      id: {
+        type: String,
+        default: ""
+      }
+    },
     mixins: [AddModel],
     computed: {
       inputClass() {
