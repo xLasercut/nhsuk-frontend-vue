@@ -1,16 +1,16 @@
 <template>
   <div class="nhsuk-action-link">
-    <nhs-link class="nhsuk-action-link__link" :to="to">
+    <link-switcher class="nhsuk-action-link__link" :to="to">
       <nhs-icon icon="arrow-right-circle"></nhs-icon>
       <span class="nhsuk-action-link__text">
         <slot></slot>
       </span>
-    </nhs-link>
+    </link-switcher>
   </div>
 </template>
 
 <script>
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
   import NhsIcon from '@/components/icon/NhsIcon.vue'
 
   export default {
@@ -22,7 +22,7 @@
       }
     },
     components: {
-      NhsLink,
+      LinkSwitcher,
       NhsIcon
     }
   }

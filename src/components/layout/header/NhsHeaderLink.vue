@@ -1,15 +1,15 @@
 <template>
   <li class="nhsuk-header__navigation-item">
-    <nhs-link class="nhsuk-header__navigation-link" :to="to">
+    <link-switcher class="nhsuk-header__navigation-link" :to="to">
       <slot></slot>
       <nhs-icon icon="chevron-right"></nhs-icon>
-    </nhs-link>
+    </link-switcher>
   </li>
 </template>
 
 <script>
   import NhsIcon from '@/components/icon/NhsIcon.vue'
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsHeaderLink",
@@ -21,7 +21,7 @@
     },
     components: {
       NhsIcon,
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>

@@ -8,10 +8,10 @@
     </p>
     <ul class="nhsuk-header__navigation-list">
       <li class="nhsuk-header__navigation-item nhsuk-header__navigation-item--for-mobile">
-        <nhs-link class="nhsuk-header__navigation-link" to="/">
+        <link-switcher class="nhsuk-header__navigation-link" to="/">
           Home
           <nhs-icon icon="chevron-right"></nhs-icon>
-        </nhs-link>
+        </link-switcher>
       </li>
       <slot></slot>
     </ul>
@@ -20,12 +20,12 @@
 
 <script>
   import NhsIcon from '@/components/icon/NhsIcon.vue'
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     components: {
       NhsIcon,
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>

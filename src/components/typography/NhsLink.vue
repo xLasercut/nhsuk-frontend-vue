@@ -1,24 +1,24 @@
 <template>
-  <li class="nhsuk-contents-list__item">
-    <link-switcher class="nhsuk-contents-list__link" :to="to">
+  <p>
+    <link-switcher :to="to">
       <slot></slot>
     </link-switcher>
-  </li>
+  </p>
 </template>
 
 <script>
   import LinkSwitcher from '../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsContentsItem",
+    name: "NhsLink",
+    components: {
+      LinkSwitcher
+    },
     props: {
       to: {
         type: String,
         required: true
       }
-    },
-    components: {
-      LinkSwitcher
     }
   }
 </script>

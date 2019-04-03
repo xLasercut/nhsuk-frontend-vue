@@ -12,8 +12,6 @@
 </template>
 
 <script>
-  import NhsLink from '@/components/shared/NhsLink.vue'
-
   export default {
     name: "NhsBreadcrumb",
     props: {
@@ -21,9 +19,6 @@
         type: String,
         default: ""
       }
-    },
-    components: {
-      NhsLink
     }
   }
 </script>

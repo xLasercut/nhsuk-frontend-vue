@@ -1,8 +1,8 @@
 <template>
   <li class="nhsuk-breadcrumb__item">
-    <nhs-link class="nhsuk-breadcrumb__link" :to="to" v-if="to">
+    <link-switcher class="nhsuk-breadcrumb__link" :to="to" v-if="to">
       <slot></slot>
-    </nhs-link>
+    </link-switcher>
     <div class="nhsuk-breadcrumb__link" v-if="!to">
       <slot></slot>
     </div>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsBreadcrumbItem",
     props: ["to"],
     components: {
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>

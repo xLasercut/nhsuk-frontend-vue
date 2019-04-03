@@ -1,11 +1,11 @@
 <template>
-  <nhs-link class="nhsuk-breadcrumb__backlink" :to="to">
+  <link-switcher class="nhsuk-breadcrumb__backlink" :to="to">
     <slot></slot>
-  </nhs-link>
+  </link-switcher>
 </template>
 
 <script>
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsBreadcrumbBack",
@@ -16,7 +16,7 @@
       }
     },
     components: {
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>

@@ -1,13 +1,13 @@
 <template>
   <li class="nhsuk-footer__list-item">
-    <nhs-link class="nhsuk-footer__list-item-link" :to="to">
+    <link-switcher class="nhsuk-footer__list-item-link" :to="to">
       <slot></slot>
-    </nhs-link>
+    </link-switcher>
   </li>
 </template>
 
 <script>
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsFooterLink",
@@ -18,7 +18,7 @@
       }
     },
     components: {
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>

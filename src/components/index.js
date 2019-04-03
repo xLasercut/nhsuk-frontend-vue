@@ -27,10 +27,13 @@ export { default as NhsDetails } from './information/NhsDetails.vue'
 export { default as NhsDodont } from './information/NhsDodont.vue'
 export { default as NhsDodontItem } from './information/NhsDodontItem.vue'
 export { default as NhsImage } from './information/NhsImage.vue'
+export { default as NhsWarningCallout } from './information/NhsWarningCallout.vue'
 
 export { default as NhsHintText } from './typography/NhsHintText.vue'
 export { default as NhsErrorText } from './typography/NhsErrorText.vue'
 export { default as NhsInsetText } from './typography/NhsInsetText.vue'
+export { default as NhsHeading } from './typography/NhsHeading.vue'
+export { default as NhsLink } from './typography/NhsLink.vue'
 
 export { default as NhsForm } from './form/NhsForm.vue'
 export { default as NhsInput  } from './form/NhsInput.vue'

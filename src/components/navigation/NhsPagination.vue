@@ -2,20 +2,20 @@
   <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
     <ul class="nhsuk-list nhsuk-pagination__list">
       <li class="nhsuk-pagination-item--previous">
-        <nhs-link class="nhsuk-pagination__link nhsuk-pagination__link--prev" :to="previous.url">
+        <link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--prev" :to="previous.url">
           <span class="nhsuk-pagination__title">Previous</span>
           <span class="nhsuk-u-visually-hidden">:</span>
           <span class="nhsuk-pagination__page">{{previous.label}}</span>
           <nhs-icon icon="arrow-left"></nhs-icon>
-        </nhs-link>
+        </link-switcher>
       </li>
       <li class="nhsuk-pagination-item--next">
-        <nhs-link class="nhsuk-pagination__link nhsuk-pagination__link--next" :to="next.url">
+        <link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--next" :to="next.url">
           <span class="nhsuk-pagination__title">Next</span>
           <span class="nhsuk-u-visually-hidden">:</span>
           <span class="nhsuk-pagination__page">{{next.label}}</span>
           <nhs-icon icon="arrow-right"></nhs-icon>
-        </nhs-link>
+        </link-switcher>
       </li>
     </ul>
   </nav>
@@ -23,14 +23,14 @@
 
 <script>
   import NhsIcon from '@/components/icon/NhsIcon.vue'
-  import NhsLink from '@/components/shared/NhsLink.vue'
+  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsPagination",
     props: ["previous", "next"],
     components: {
       NhsIcon,
-      NhsLink
+      LinkSwitcher
     }
   }
 </script>
