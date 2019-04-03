@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "nhsuk-frontend-vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NHS UK frontend library ported to vue.js",
   "main": "dist/nhsuk-frontend-vue.umd.js",
   "module": "dist/nhsuk-frontend-vue.esm.js",
@@ -31,6 +31,7 @@
     "rollup-plugin-buble": "^0.19.6",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-vue": "^4.7.2",
     "sass-loader": "^7.1.0",
