@@ -1,7 +1,7 @@
 import NavHome from '../views/navigation/Home.vue'
 import ActionLink from '../views/navigation/ActionLink.vue'
 import BackLink from '../views/navigation/BackLink.vue'
-import BreadCrum from '../views/navigation/Breadcrum.vue'
+import BreadCrum from '../views/navigation/Breadcrumb.vue'
 
 const navigation = [
   {
@@ -20,8 +20,8 @@ const navigation = [
     component: BackLink
   },
   {
-    path: '/navigation/breadcrum',
-    name: 'Breadcrum',
+    path: '/navigation/breadcrumb',
+    name: 'Breadcrumb',
     component: BreadCrum
   },
   {

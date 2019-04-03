@@ -13,7 +13,7 @@
   import NhsLink from '@/components/shared/NhsLink.vue'
 
   export default {
-    name: "NhsBreadcrumItem",
+    name: "NhsBreadcrumbItem",
     props: ["to"],
     components: {
       NhsLink

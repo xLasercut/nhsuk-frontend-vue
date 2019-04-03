@@ -1,5 +1,5 @@
 <template>
-  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <nav class="nhsuk-breadcrumb" :aria-label="ariaLabel">
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <slot name="item"></slot>
@@ -15,7 +15,13 @@
   import NhsLink from '@/components/shared/NhsLink.vue'
 
   export default {
-    name: "NhsBreadcrum",
+    name: "NhsBreadcrumb",
+    props: {
+      ariaLabel: {
+        type: String,
+        default: ""
+      }
+    },
     components: {
       NhsLink
     }

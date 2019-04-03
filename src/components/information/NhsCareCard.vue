@@ -3,7 +3,7 @@
     <div class="nhsuk-care-card__heading-container">
       <h3 class="nhsuk-care-card__heading">
         <span role="text">
-          <span class="nhsuk-u-visually-hidden">Urgent advice: </span>
+          <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
           {{label}}
         </span>
       </h3>
@@ -26,6 +26,10 @@
       type: {
         type: String,
         default: "non-urgent"
+      },
+      hiddenText: {
+        type: String,
+        default: ""
       }
     },
     computed: {

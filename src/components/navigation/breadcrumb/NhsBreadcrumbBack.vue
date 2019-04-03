@@ -8,7 +8,7 @@
   import NhsLink from '@/components/shared/NhsLink.vue'
 
   export default {
-    name: "NhsBreadcrumBack",
+    name: "NhsBreadcrumbBack",
     props: {
       to: {
         type: String,

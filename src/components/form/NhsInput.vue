@@ -2,7 +2,7 @@
   <input
     :class="inputClass"
     :id="id"
-    name="test-width-10"
+    :name="name"
     type="text"
     :disabled="disabled"
     v-model="model"
@@ -24,6 +24,10 @@
         default: ""
       },
       id: {
+        type: String,
+        default: ""
+      },
+      name: {
         type: String,
         default: ""
       }

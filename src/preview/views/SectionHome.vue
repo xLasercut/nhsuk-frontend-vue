@@ -1,13 +1,13 @@
 <template>
   <div>
-    <nhs-breadcrum>
-      <nhs-breadcrum-item slot="item" v-for="(item, index) in breadcrums" :to="item.url" :key="index">
+    <nhs-breadcrumb>
+      <nhs-breadcrumb-item slot="item" v-for="(item, index) in breadcrumbs" :to="item.url" :key="index">
         {{item.label}}
-      </nhs-breadcrum-item>
-      <nhs-breadcrum-back slot="back" :to="breadcrumback.url">
-        {{breadcrumback.label}}
-      </nhs-breadcrum-back>
-    </nhs-breadcrum>
+      </nhs-breadcrumb-item>
+      <nhs-breadcrumb-back slot="back" :to="breadcrumbback.url">
+        {{breadcrumbback.label}}
+      </nhs-breadcrumb-back>
+    </nhs-breadcrumb>
     <nhs-main>
       <router-view></router-view>
     </nhs-main>
@@ -38,7 +38,7 @@
       }
     },
     computed: {
-      breadcrums() {
+      breadcrumbs() {
         var breadcrums = []
         var allRoutes = this.getAllRoutes()
         var routes = this.$route.fullPath.split("/")
@@ -54,7 +54,7 @@
         
         return breadcrums
       },
-      breadcrumback() {
+      breadcrumbback() {
         var allRoutes = this.getAllRoutes()
         var routes = this.$route.fullPath.split("/")
         var backPath = `/${routes[routes.length - 2]}`
