@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
+  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsBreadcrumbItem",

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import AddModel from '@/components/mixins/add-model.js'
+  import AddModel from '../mixins/add-model.js'
 
   export default {
     name: "NhsInput",

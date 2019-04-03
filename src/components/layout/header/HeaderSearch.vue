@@ -23,9 +23,10 @@
 </template>
 
 <script>
-  import NhsIcon from '@/components/icon/NhsIcon.vue'
+  import NhsIcon from '../../icon/NhsIcon.vue'
 
   export default {
+    name: "HeaderSearch",
     components: {
       NhsIcon
     }

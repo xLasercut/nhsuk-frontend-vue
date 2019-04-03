@@ -9,6 +9,7 @@
   import Normal from './link/normal.vue'
 
   export default {
+    name: "LinkSwitcher",
     props: {
       to: {
         type: String,

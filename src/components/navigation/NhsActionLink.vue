@@ -10,8 +10,8 @@
 </template>
 
 <script>
-  import LinkSwitcher from '@/components/shared/LinkSwitcher.vue'
-  import NhsIcon from '@/components/icon/NhsIcon.vue'
+  import LinkSwitcher from '../shared/LinkSwitcher.vue'
+  import NhsIcon from '../icon/NhsIcon.vue'
 
   export default {
     name: "NhsActionLink",

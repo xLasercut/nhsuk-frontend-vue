@@ -17,9 +17,9 @@
 </template>
 
 <script>
-  import HeaderNav from '@/components/layout/header/HeaderNav.vue'
-  import HeaderSearch from '@/components/layout/header/HeaderSearch.vue'
-  import HeaderLogo from '@/components/layout/header/HeaderLogo.vue'
+  import HeaderNav from './header/HeaderNav.vue'
+  import HeaderSearch from './header/HeaderSearch.vue'
+  import HeaderLogo from './header/HeaderLogo.vue'
 
   export default {
     name: "NhsHeader",
