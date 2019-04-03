@@ -57,7 +57,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   @import '../atom-one-light.css';
 
   .example_container {

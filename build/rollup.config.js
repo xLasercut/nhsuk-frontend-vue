@@ -3,7 +3,6 @@ import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
-import scss from 'rollup-plugin-scss';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
 
@@ -23,7 +22,6 @@ const baseConfig = {
         isProduction: true,
       },
     }),
-    scss(),
     buble()
   ],
 };

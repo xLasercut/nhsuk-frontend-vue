@@ -1,6 +1,6 @@
 // Import vue components
-import '../node_modules/nhsuk-frontend/packages/nhsuk.scss'
-import '../node_modules/nhsuk-frontend/dist/nhsuk.min.js'
+import 'nhsuk-frontend/dist/nhsuk.css'
+import 'nhsuk-frontend/dist/nhsuk.min.js'
 import * as components from './components/index';
 
 // install function executed by Vue.use()

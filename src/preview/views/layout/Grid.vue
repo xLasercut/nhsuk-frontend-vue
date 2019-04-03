@@ -118,12 +118,10 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import 'node_modules/nhsuk-frontend/packages/nhsuk';
-  
+<style scoped> 
   p {
-    background: $color_nhsuk-blue;
+    background: #005eb8;
     padding: 10px;
-    color: $color_nhsuk-white;
+    color: #ffffff;
   }
 </style>
