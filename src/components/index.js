@@ -34,6 +34,8 @@ export { default as NhsErrorText } from './typography/NhsErrorText.vue'
 export { default as NhsInsetText } from './typography/NhsInsetText.vue'
 export { default as NhsHeading } from './typography/NhsHeading.vue'
 export { default as NhsLink } from './typography/NhsLink.vue'
+export { default as NhsBody } from './typography/NhsBody.vue'
+export { default as NhsList } from './typography/NhsList.vue'
 
 export { default as NhsForm } from './form/NhsForm.vue'
 export { default as NhsInput  } from './form/NhsInput.vue'
