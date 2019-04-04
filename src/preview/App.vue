@@ -31,6 +31,10 @@
           {
             label: "Form",
             url: "/form"
+          },
+          {
+            label: "Typography",
+            url: "/typography"
           }
         ],
         footerLinks: [

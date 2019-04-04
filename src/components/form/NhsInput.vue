@@ -2,7 +2,7 @@
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" :for="itemId" v-if="label">{{label}}</label>
     <slot></slot>
-    <input :class="inputClass" :id="itemId" :name="name" type="text" :disabled="disabled" v-model="model">
+    <input :class="inputClass" :id="itemId" :name="name" :type="type" :disabled="disabled" v-model="model">
   </div>
 </template>
 
@@ -32,6 +32,10 @@
       error: {
         type: Boolean,
         default: false
+      },
+      type: {
+        type: String,
+        default: "text"
       }
     },
     mixins: [AddModel, RandomID],
