@@ -1,7 +1,7 @@
 <template>
   <header class="nhsuk-header" role="banner">
     <div class="nhsuk-width-container nhsuk-header__container">
-      <header-logo :label="label"></header-logo>
+      <slot name="header-logo"></slot>
       <div class="nhsuk-header__content" id="content-header">
         <div class="nhsuk-header__menu" v-if="nav">
           <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <header-nav v-if="nav">
-      <slot></slot>
+      <slot name="header-link"></slot>
     </header-nav>
     
   </header>
@@ -19,7 +19,6 @@
 <script>
   import HeaderNav from './header/HeaderNav.vue'
   import HeaderSearch from './header/HeaderSearch.vue'
-  import HeaderLogo from './header/HeaderLogo.vue'
 
   export default {
     name: "NhsHeader",
@@ -39,8 +38,7 @@
     },
     components: {
       HeaderNav,
-      HeaderSearch,
-      HeaderLogo
+      HeaderSearch
     }
   }
 </script>

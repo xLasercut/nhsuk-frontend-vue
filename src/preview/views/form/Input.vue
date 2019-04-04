@@ -22,17 +22,26 @@
         </nhs-col>
       </nhs-row>
 
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-input label="Input with Error" :error="true"></nhs-input>
-        </nhs-col>
-      </nhs-row>
+      
 
       <nhs-row>
         <nhs-col :span="50">
           <nhs-input label="Input with Label and hint">
             <nhs-hint-text>This is a hint text</nhs-hint-text>
           </nhs-input>
+        </nhs-col>
+      </nhs-row>
+    </code-block>
+
+    <code-block>
+      <nhs-row>
+        <nhs-col :span="50">
+          <nhs-input label="Input with Error" :error="error">
+            <nhs-error-text>some error text</nhs-error-text>
+          </nhs-input>
+        </nhs-col>
+        <nhs-col :span="50">
+          <nhs-button @click="toggleError()">Toggle Error</nhs-button>
         </nhs-col>
       </nhs-row>
     </code-block>
@@ -76,7 +85,13 @@
   export default {
     data() {
       return {
-        normalInput: ""
+        normalInput: "",
+        error: true
+      }
+    },
+    methods: {
+      toggleError() {
+        this.error = !this.error
       }
     }
   }

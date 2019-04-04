@@ -5,6 +5,7 @@ import Radio from '../views/form/Radio.vue'
 import Select from '../views/form/Select.vue'
 import Input from '../views/form/Input.vue'
 import DateInput from '../views/form/DateInput.vue'
+import Textarea from '../views/form/Textarea.vue'
 
 const form = [
   {
@@ -41,6 +42,11 @@ const form = [
     path: '/form/dateinput',
     name: 'Date Input',
     component: DateInput
+  },
+  {
+    path: '/form/textarea',
+    name: 'Textarea',
+    component: Textarea
   }
 ]
 
