@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  import InfoRoutes from '../../router/route-form.js'
+  import InfoRoutes from '@/preview/router/route-typography.js'
 
   export default {
     computed: {
       routes() {
         var routes = []
         for (var route of InfoRoutes) {
-          if (route.path !== "/form/*" && route.path !== "/form") {
+          if (route.path !== "/typography/*" && route.path !== "/typography") {
             routes.push(route)
           }
         }

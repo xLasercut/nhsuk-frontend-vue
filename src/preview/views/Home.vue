@@ -12,6 +12,9 @@
     <nhs-row>
       <nhs-button @click="changeRoute('/form')">Form</nhs-button>
     </nhs-row>
+    <nhs-row>
+      <nhs-button @click="changeRoute('/typography')">Typography</nhs-button>
+    </nhs-row>
   </nhs-main>
 </template>
 

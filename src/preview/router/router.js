@@ -7,6 +7,7 @@ import LayoutRoutes from './route-layout.js'
 import InfoRoutes from './route-information.js'
 import NavRoutes from './route-navigation.js'
 import FormRoutes from './route-form.js'
+import TypographyRoutes from './route-typography.js'
 
 
 Vue.use(Router)
@@ -16,6 +17,7 @@ allchild = allchild.concat(LayoutRoutes)
 allchild = allchild.concat(InfoRoutes)
 allchild = allchild.concat(NavRoutes)
 allchild = allchild.concat(FormRoutes)
+allchild = allchild.concat(TypographyRoutes)
 
 export default new Router({
   routes: [

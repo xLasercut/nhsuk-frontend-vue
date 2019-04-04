@@ -1,6 +1,6 @@
 <template>
   <div>
-    <code-block>
+    <code-block :code="singleCode">
       <nhs-row>
         <nhs-col :span="50">
             <nhs-checkbox v-model="checked">
@@ -17,7 +17,7 @@
       
     </code-block>
 
-    <code-block>
+    <code-block :code="customLabelCode">
       <nhs-row>
         <nhs-col :span="50">
             <nhs-checkbox label="London" v-model="checkedval">
@@ -41,7 +41,21 @@
     data() {
       return {
         checked: true,
-        checkedval: []
+        checkedval: [],
+        singleCode: `<nhs-checkbox v-model="checked">
+    Single Checkbox
+  </nhs-checkbox>
+  
+  <nhs-checkbox :disabled="true">
+    Single Checkbox Disabled
+  </nhs-checkbox>`,
+        customLabelCode: `<nhs-checkbox label="London" v-model="checkedval">
+    London
+  </nhs-checkbox>
+
+  <nhs-checkbox label="Paris" v-model="checkedval">
+    Paris
+  </nhs-checkbox>`
       }
     }
   }

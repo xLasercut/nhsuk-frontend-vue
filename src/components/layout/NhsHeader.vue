@@ -1,7 +1,7 @@
 <template>
   <header class="nhsuk-header" role="banner">
     <div class="nhsuk-width-container nhsuk-header__container">
-      <header-logo></header-logo>
+      <header-logo :label="label"></header-logo>
       <div class="nhsuk-header__content" id="content-header">
         <div class="nhsuk-header__menu" v-if="nav">
           <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
@@ -31,6 +31,10 @@
       nav: {
         type: Boolean,
         default: true
+      },
+      label: {
+        type: String,
+        default: ""
       }
     },
     components: {
