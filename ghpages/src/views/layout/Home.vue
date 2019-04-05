@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import LayoutRoutes from '@/preview/router/route-layout.js'
+  import LayoutRoutes from '../../router/route-layout.js'
 
   export default {
     computed: {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import InfoRoutes from '@/preview/router/route-typography.js'
+  import InfoRoutes from '../../router/route-typography.js'
 
   export default {
     computed: {

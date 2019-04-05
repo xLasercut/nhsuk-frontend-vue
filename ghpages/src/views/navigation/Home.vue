@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import NavRoutes from '@/preview/router/route-navigation.js'
+  import NavRoutes from '../../router/route-navigation.js'
 
   export default {
     computed: {
