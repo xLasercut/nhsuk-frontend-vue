@@ -1,24 +1,17 @@
 <template>
-  <component :is="heading">
+  <heading-switcher :heading-level="heading.level" :class="heading.class">
     <slot></slot>
-  </component>
+  </heading-switcher>
 </template>
 
 <script>
-  import HeadingXl from './heading/HeadingXl.vue'
-  import HeadingL from './heading/HeadingL.vue'
-  import HeadingM from './heading/HeadingM.vue'
-  import HeadingS from './heading/HeadingS.vue'
-  import HeadingXs from './heading/HeadingXs.vue'
+  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsHeading",
     components: {
-      HeadingXl,
-      HeadingL,
-      HeadingM,
-      HeadingS,
-      HeadingXs
+      HeadingSwitcher
     },
     props: {
       size: {
@@ -26,21 +19,40 @@
         default: "l"
       }
     },
+    mixins: [SharedProps],
     computed: {
       heading() {
+        var hClass = "l"
+        var hLevel = 2
         switch (this.size.toLowerCase()) {
           case "xl":
-            return "heading-xl"
+            hClass = "nhsuk-heading-xl"
+            hLevel = 1
+            break
           case "l":
-            return "heading-l"
+            hClass = "nhsuk-heading-l"
+            hLevel = 2
+            break
           case "m":
-            return "heading-m"
+            hClass = "nhsuk-heading-m"
+            hLevel = 3
+            break
           case "s":
-            return "heading-s"
+            hClass = "nhsuk-heading-s"
+            hLevel = 4
+            break
           case "xs":
-            return "heading-xs"
+            hClass = "nhsuk-heading-xs"
+            hLevel = 5
+            break
           default:
-            return "heading-l"
+            hClass = "nhsuk-heading-l"
+            hLevel = 2
+            break
+        }
+        return {
+          level: hLevel,
+          class: hClass
         }
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="nhsuk-checkboxes__item">
-    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="label" v-model="model" :disabled="disabled">
+    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="overrideValue" v-model="model" :disabled="disabled">
     <label class="nhsuk-label nhsuk-checkboxes__label" :for="itemId">
       <slot></slot>
     </label>
@@ -18,12 +18,12 @@
         type: Boolean,
         default: false,
       },
-      label: {
+      overrideValue: {
         default: null
       },
       name: {
         type: String,
-        default: ""
+        required: true
       }
     },
     mixins: [AddModel, RandomID]

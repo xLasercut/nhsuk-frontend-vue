@@ -1,12 +1,12 @@
 <template>
-  <div :class="cardType">
+  <div :class="cardType" v-bind="attributes">
     <div class="nhsuk-care-card__heading-container">
-      <h3 class="nhsuk-care-card__heading">
+      <heading-switcher :heading-level="headingLevel" class="nhsuk-care-card__heading">
         <span role="text">
           <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
           {{label}}
         </span>
-      </h3>
+      </heading-switcher>
       <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
     </div>
     <div class="nhsuk-care-card__content">
@@ -16,6 +16,9 @@
 </template>
 
 <script>
+  import SharedProps from '../mixins/shared-props.js'
+  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+
   export default {
     name: "NhsCareCard",
     props: {
@@ -27,21 +30,44 @@
         type: String,
         default: "non-urgent"
       },
+      headingLevel: {
+        type: Number,
+        default: 3
+      },
       hiddenText: {
         type: String,
-        default: ""
+        default() {
+          switch (this.type.toLowerCase()) {
+            case "urgent":
+              return "Urgent advice: "
+            case "immediate":
+              return "Immediate action required: "
+            default:
+              return "Non-urgent advice: "
+          }
+        }
       }
     },
+    components: {
+      HeadingSwitcher
+    },
+    mixins: [SharedProps],
     computed: {
       cardType() {
-        switch (this.type) {
+        var secondaryType = ""
+        switch (this.type.toLowerCase()) {
           case "urgent":
-            return "nhsuk-care-card nhsuk-care-card--urgent"
+            secondaryType = "urgent"
+            break
           case "immediate":
-            return "nhsuk-care-card nhsuk-care-card--immediate"
+            secondaryType = "immediate"
+            break
           default:
-            return "nhsuk-care-card nhsuk-care-card--non-urgent"
+            secondaryType = "non-urgent"
+            break
+            
         }
+        return `nhsuk-care-card nhsuk-care-card--${secondaryType}${this.extraClasses}`
       }
     }
   }

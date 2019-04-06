@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-do-dont-list">
+  <div :class="`nhsuk-do-dont-list${extraClasses}`" v-bind="attributes">
     <h3 class="nhsuk-do-dont-list__label">{{label}}</h3>
     <ul :class="doDontClass">
       <slot></slot>
@@ -8,10 +8,11 @@
 </template>
 
 <script>
-  
+  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsDodont",
+    mixins: [SharedProps],
     props: {
       label: {
         type: String,

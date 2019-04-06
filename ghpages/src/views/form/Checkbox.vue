@@ -3,10 +3,10 @@
     <code-block :code="singleCode">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox v-model="checked">
+            <nhs-checkbox name="single-checkbox" v-model="checked">
               Single Checkbox
             </nhs-checkbox>
-            <nhs-checkbox :disabled="true">
+            <nhs-checkbox name="disabled-checkbox" :disabled="true">
               Single Checkbox Disabled
             </nhs-checkbox>
         </nhs-col>
@@ -20,11 +20,11 @@
     <code-block :code="customLabelCode">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox label="London" v-model="checkedval">
+            <nhs-checkbox name="single-checkbox" override-value="London" v-model="checkedval">
               London
             </nhs-checkbox>
 
-            <nhs-checkbox label="Paris" v-model="checkedval">
+            <nhs-checkbox name="single-checkbox" override-value="Paris" v-model="checkedval">
               Paris
             </nhs-checkbox>
         </nhs-col>

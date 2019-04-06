@@ -1,12 +1,12 @@
 <template>
   <div>
     <nhs-breadcrumb>
-      <nhs-breadcrumb-item slot="item" v-for="(item, index) in breadcrumbs" :to="item.url" :key="index">
+      <nhs-breadcrumb-item v-for="(item, index) in breadcrumbs" :to="item.url" :key="index">
         {{item.label}}
       </nhs-breadcrumb-item>
-      <nhs-breadcrumb-back slot="back" :to="breadcrumbback.url">
+      <nhs-breadcrumb-item type="back" slot="back" :to="breadcrumbback.url">
         {{breadcrumbback.label}}
-      </nhs-breadcrumb-back>
+      </nhs-breadcrumb-item>
     </nhs-breadcrumb>
     <nhs-main>
       <router-view></router-view>

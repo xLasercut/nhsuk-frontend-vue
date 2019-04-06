@@ -4,15 +4,23 @@
     type="submit"
     @click="$emit('click')"
     :disabled="disabled"
+    :name="name"
+    v-bind="attributes"
   >
     <slot></slot>
   </button>
 </template>
 
 <script>
+  import SharedProps from '../mixins/shared-props.js'
+
   export default {
     name: 'NhsButton',
     props: {
+      name: {
+        type: String,
+        required: true
+      },
       type: {
         type: String,
         default: "primary"
@@ -22,16 +30,19 @@
         default: false
       }
     },
+    mixins: [SharedProps],
     computed: {
       buttonClass() {
-        switch (this.type) {
+        var secondaryClass = ""
+        switch (this.type.toLowerCase()) {
           case "secondary":
-            return "nhsuk-button nhsuk-button--secondary"
+            secondaryClass = " nhsuk-button--secondary"
+            break
           case "reverse":
-            return "nhsuk-button nhsuk-button--reverse"
-          default:
-            return "nhsuk-button"
+            secondaryClass = " nhsuk-button--reverse"
+            break
         }
+        return `nhsuk-button${secondaryClass}${this.extraClasses}`
       }
     }
   }

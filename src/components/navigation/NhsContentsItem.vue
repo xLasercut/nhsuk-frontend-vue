@@ -1,6 +1,9 @@
 <template>
-  <li class="nhsuk-contents-list__item">
-    <link-switcher class="nhsuk-contents-list__link" :to="to">
+  <li class="nhsuk-contents-list__item" v-bind="ariaCurrent">
+    <span class="nhsuk-contents-list__current" v-if="current">
+      <slot></slot>
+    </span>
+    <link-switcher class="nhsuk-contents-list__link" v-if="!current" :to="to">
       <slot></slot>
     </link-switcher>
   </li>
@@ -15,10 +18,24 @@
       to: {
         type: String,
         required: true
+      },
+      current: {
+        type: Boolean,
+        default: false
       }
     },
     components: {
       LinkSwitcher
+    },
+    computed: {
+      ariaCurrent() {
+        if (this.current) {
+          return {
+            "aria-current": "page"
+          }
+        }
+        return {}
+      }
     }
   }
 </script>
