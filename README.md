@@ -13,7 +13,7 @@ npm install nhsuk-frontend-vue
 ## Use
 
 ```
-import NhsukFrontendVue from 'nhsuk-frontend-vue
+import NhsukFrontendVue from 'nhsuk-frontend-vue'
 
 Vue.use(NhsukFrontendVue)
 ```
