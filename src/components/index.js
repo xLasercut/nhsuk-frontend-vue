@@ -29,6 +29,7 @@ export { default as NhsDodontItem } from './information/NhsDodontItem.vue'
 export { default as NhsImage } from './information/NhsImage.vue'
 export { default as NhsWarningCallout } from './information/NhsWarningCallout.vue'
 export { default as NhsErrorSummary } from './information/NhsErrorSummary.vue'
+export { default as NhsEmergencyAlert } from './information/NhsEmergencyAlert.vue'
 
 export { default as NhsHintText } from './typography/NhsHintText.vue'
 export { default as NhsErrorText } from './typography/NhsErrorText.vue'

@@ -1,5 +1,6 @@
 <template>
   <span :class="`nhsuk-error-message${extraClasses}`" v-bind="attributes">
+    <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span> 
     <slot></slot>
   </span>
 </template>
@@ -9,6 +10,12 @@
 
   export default {
     name: "NhsErrorText",
-    mixins: [SharedProps]
+    mixins: [SharedProps],
+    props: {
+      hiddenText: {
+        type: String,
+        default: "Error: "
+      }
+    }
   }
 </script>

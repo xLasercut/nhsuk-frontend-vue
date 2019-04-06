@@ -2,13 +2,14 @@
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" :for="itemId" v-if="label">{{label}}</label>
     <slot></slot>
-    <input :class="inputClass" :id="itemId" :name="name" :type="type" :disabled="disabled" v-model="model" @blur="$emit('blur')">
+    <input :class="inputClass" :id="itemId" :name="name" :type="type" :disabled="disabled" v-model="model" @blur="$emit('blur')" :maxlength="maxlength" v-bind="attributes">
   </div>
 </template>
 
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
+  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsInput",
@@ -36,9 +37,12 @@
       type: {
         type: String,
         default: "text"
+      },
+      maxlength: {
+        type: Number
       }
     },
-    mixins: [AddModel, RandomID],
+    mixins: [AddModel, RandomID, SharedProps],
     computed: {
       inputClass() {
         var width = ""
@@ -68,7 +72,7 @@
           error = " nhsuk-input--error"
         }
 
-        return `nhsuk-input${width}${error}`
+        return `nhsuk-input${width}${error}${this.extraClasses}`
       }
     }
   }

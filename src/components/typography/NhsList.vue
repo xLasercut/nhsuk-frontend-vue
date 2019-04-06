@@ -1,37 +1,42 @@
-<template>
-  <component :is="listType">
-    <slot></slot>
-  </component>
-</template>
-
 <script>
-  import OrderedList from './list/OrderedList.vue'
-  import UnorderedList from './list/UnorderedList.vue'
-  import ErrorList from './list/ErrorList.vue'
+  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsList",
-    components: {
-      OrderedList,
-      UnorderedList,
-      ErrorList
-    },
     props: {
       type: {
         type: String,
         default: "bullet"
       }
     },
+    mixins: [SharedProps],
     computed: {
       listType() {
+        var baseType = "nhsuk-list"
+        var secondaryType = " nhsuk-list--bullet"
         switch (this.type) {
           case "number":
-            return "ordered-list"
+            secondaryType = " nhsuk-list--number"
+            break
           case "error":
-            return "error-list"
+            secondaryType = " nhsuk-error-summary__list"
+            break
           default:
-            return "unordered-list"
-        } 
+            secondaryType = " nhsuk-list--bullet"
+            break
+        }
+        return `${baseType}${secondaryType}${this.extraClasses}`
+      }
+    },
+    render(createElement) {
+      var attrs = this.attributes
+      attrs["class"] = this.listType
+      
+      if (this.type === "number") {
+        return createElement('ol', { attrs: attrs }, this.$slots.default)
+      }
+      else {
+        return createElement('ul', { attrs: attrs }, this.$slots.default)
       }
     }
   }

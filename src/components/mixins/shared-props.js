@@ -15,11 +15,10 @@ export default {
   },
   computed: {
     extraClasses() {
-      var extraClass = ""
-      for (var cl of this.classes) {
-        extraClass += ` ${cl}`
+      if (this.classes.length > 0) {
+        return ` ${this.classes.join(" ")}`
       }
-      return extraClass
+      return ""
     }
   }
 }

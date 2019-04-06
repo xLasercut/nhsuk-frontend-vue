@@ -29,10 +29,6 @@
             hClass = "nhsuk-heading-xl"
             hLevel = 1
             break
-          case "l":
-            hClass = "nhsuk-heading-l"
-            hLevel = 2
-            break
           case "m":
             hClass = "nhsuk-heading-m"
             hLevel = 3
