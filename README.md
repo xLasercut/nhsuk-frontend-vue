@@ -1,39 +1,19 @@
 # nhsuk-frontend-vue
 
-## Project setup
+This is an unofficial port of [nhsuk-frontend library](https://github.com/nhsuk/nhsuk-frontend/) in to a vue.js component.
+
+For previews: [Previe Page](https://xlasercut.github.io/nhsuk-frontend-vue/)
+
+
+## Install
 ```
-npm install
+npm install nhsuk-frontend-vue
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Use
 
-### Compiles and minifies for production
 ```
-npm run build
-```
+import NhsukFrontendVue from 'nhsuk-frontend-vue
 
-### Run your tests
+Vue.use(NhsukFrontendVue)
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
