@@ -2,7 +2,7 @@ import TypographyHome from '../views/typography/Home.vue'
 import Heading from '../views/typography/Heading.vue'
 import Body from '../views/typography/Body.vue'
 import List from '../views/typography/List.vue'
-import Text from '../views/typography/Text.vue'
+import ErrorText from '../views/typography/ErrorText.vue'
 
 const typography = [
   {
@@ -26,9 +26,9 @@ const typography = [
     component: List
   },
   {
-    path: '/typography/text',
-    name: 'Text',
-    component: Text
+    path: '/typography/errortext',
+    name: 'Error Text',
+    component: ErrorText
   }
 ]
 

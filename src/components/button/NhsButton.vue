@@ -76,7 +76,7 @@
       buttonType() {
         var types = ["submit", "button", "reset"]
 
-        if (typs.includes(this.type.toLowerCase())) {
+        if (types.includes(this.type.toLowerCase())) {
           return this.type.toLowerCase()
         }
         return "submit"
