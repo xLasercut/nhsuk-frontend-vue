@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <nhs-main>
     <nhs-action-link v-for="(route, index) in routes" :href="route.path" :key="index">{{route.name}}</nhs-action-link>
-  </div>
+  </nhs-main>
 </template>
 
 <script>
