@@ -1,5 +1,5 @@
 <template>
-  <figure :class="`nhsuk-image${extraClasses}`" v-bind="attributes">
+  <figure class="nhsuk-image" v-bind="attributes">
     <img class="nhsuk-image__img" :src="src" :alt="alt">
     <figcaption class="nhsuk-image__caption" v-if="isCaption">
       <slot></slot>
@@ -8,11 +8,9 @@
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsImage",
-    mixins: [SharedProps],
     props: {
       src: {
         type: String,
@@ -21,6 +19,12 @@
       alt: {
         type: String,
         required: true
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     computed: {
