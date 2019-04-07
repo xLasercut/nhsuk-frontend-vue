@@ -1,7 +1,7 @@
 <template>
-  <div :class="`nhsuk-error-summary${extraClasses}`" v-bind="attributes" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <div class="nhsuk-error-summary" v-bind="attributes" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
     <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-      {{label}}
+      <slot name="title" :props="title">{{title}}</slot>
     </h2>
     <div class="nhsuk-error-summary__body">
       <slot></slot>
@@ -10,15 +10,18 @@
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
-
   export default {
     name: "NhsErrorSummary",
-    mixins: [SharedProps],
     props: {
-      label: {
+      title: {
         type: String,
-        default: ""
+        required: true
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     }
   }

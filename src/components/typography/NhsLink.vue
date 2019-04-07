@@ -1,6 +1,6 @@
 <template>
   <p>
-    <link-switcher :to="to">
+    <link-switcher :href="href">
       <slot></slot>
     </link-switcher>
   </p>
@@ -15,7 +15,7 @@
       LinkSwitcher
     },
     props: {
-      to: {
+      href: {
         type: String,
         required: true
       }
