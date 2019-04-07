@@ -44,8 +44,6 @@
 </template>
 
 <script>
-  import ArgumentTable from '../../components/ArgumentTable.vue'
-
   var sourceNormal = `<nhs-button>
     Primary Button
   </nhs-button>
@@ -72,9 +70,6 @@
   </nhs-button>`
 
   export default {
-    components: {
-      ArgumentTable
-    },
     data() {
       return {
         sourceNormal: sourceNormal,

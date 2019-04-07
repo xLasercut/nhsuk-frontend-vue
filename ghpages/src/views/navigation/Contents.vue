@@ -10,8 +10,6 @@
 </template>
 
 <script>
-  import ArgumentTable from '../../components/ArgumentTable.vue'
-
   var source = `<nhs-contents :items="contents">
   </nhs-contents>
   
@@ -42,9 +40,6 @@
   }`
 
   export default {
-    components: {
-      ArgumentTable
-    },
     data() {
       return {
         source: source,

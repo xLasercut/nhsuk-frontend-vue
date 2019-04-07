@@ -12,16 +12,11 @@
 </template>
 
 <script>
-  import ArgumentTable from '../../components/ArgumentTable.vue'
-
   var source = `<nhs-action-link href="/navigation/actionlink">
     This is an action link
   </nhs-action-link>`
 
   export default {
-    components: {
-      ArgumentTable
-    },
     data() {
       return {
         sourceCode: source,

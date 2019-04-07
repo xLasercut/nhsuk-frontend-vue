@@ -1,8 +1,8 @@
 <template>
-  <details :class="`nhsuk-details${extraClasses}`" v-bind="attributes">
+  <details class="nhsuk-details" v-bind="attributes">
     <summary class="nhsuk-details__summary">
       <span class="nhsuk-details__summary-text">
-        {{label}}
+        {{text}}
       </span>
     </summary>
     <div class="nhsuk-details__text">
@@ -12,15 +12,18 @@
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
-
   export default {
     name: "NhsDetails",
-    mixins: [SharedProps],
     props: {
-      label: {
+      text: {
         type: String,
-        default: ""
+        required: true
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     }
   }

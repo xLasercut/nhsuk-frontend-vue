@@ -11,8 +11,6 @@
 </template>
 
 <script>
-  import ArgumentTable from '../../components/ArgumentTable.vue'
-
   var source = `<nhs-breadcrumb :items="breadcrums" href="/navigation/breadcrumb" text="Back to Level Five">
   </nhs-breadcrumb>
   
@@ -41,9 +39,6 @@
   }`
 
   export default {
-    components: {
-          ArgumentTable
-    },
     data() {
       return {
         sourceCode: source,

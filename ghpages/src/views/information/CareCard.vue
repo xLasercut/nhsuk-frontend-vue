@@ -19,8 +19,6 @@
 </template>
 
 <script>
-  import ArgumentTable from '../../components/ArgumentTable.vue'
-
   var source = `<nhs-care-card heading="Non Urgent">
     This is a Non Urgent Care Card.
   </nhs-care-card>
@@ -34,9 +32,6 @@
   </nhs-care-card>`
 
   export default {
-    components: {
-      ArgumentTable
-    },
     data() {
       return {
         source: source,
