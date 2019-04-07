@@ -9,7 +9,7 @@
     },
     render(createElement){
       if (this.href === "") {
-        return createElement('div', this.$slots.default)
+        return createElement('span', this.$slots.default)
       }
       else if (this.isRouter) {
         return createElement('router-link', { attrs: { to: this.href } }, this.$slots.default)
