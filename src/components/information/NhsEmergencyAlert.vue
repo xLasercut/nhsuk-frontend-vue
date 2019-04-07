@@ -1,18 +1,18 @@
 <template>
-  <div :class="`nhsuk-global-alert${extraClasses}`" v-bind="attributes" id="nhsuk-global-alert">
+  <div class="nhsuk-global-alert" v-bind="attributes" id="nhsuk-global-alert">
     <div class="nhsuk-width-container">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
           <div class="nhsuk-global-alert__content">
             <h2 class="nhsuk-global-alert__heading">
               <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
-              {{label}}
+              {{title}}
             </h2>
             <p class="nhsuk-global-alert__message">
               <slot></slot>
             </p>
             <p class="nhsuk-global-alert__updated">
-              {{updated}}
+              {{lastUpdated}}
             </p>
           </div>
         </div>
@@ -22,8 +22,6 @@
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
-
   export default {
     name: "NhsEmergencyAlert",
     props: {
@@ -31,15 +29,20 @@
         type: String,
         default: "Alert: "
       },
-      label: {
+      title: {
+        type: String,
+        required: true
+      },
+      lastUpdated: {
         type: String,
         default: ""
       },
-      updated: {
-        type: String,
-        default: ""
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
-    },
-    mixins: [SharedProps]
+    }
   }
 </script>
