@@ -6,6 +6,7 @@ import Dodont from '../views/information/DoDont.vue'
 import Image from '../views/information/Image.vue'
 import EmergencyAlert from '../views/information/EmergencyAlert.vue'
 import ErrorSummary from '../views/information/ErrorSummary.vue'
+import Feedback from '../views/information/Feedback.vue'
 
 const information = [
   {
@@ -47,6 +48,11 @@ const information = [
     path: '/information/errorsummary',
     name: 'Error Summary',
     component: ErrorSummary
+  },
+  {
+    path: '/information/feedback',
+    name: 'Feeback Banner',
+    component: Feedback
   },
   {
     path: '/information/*',
