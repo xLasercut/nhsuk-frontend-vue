@@ -4,7 +4,7 @@
       <heading-switcher :heading-level="headingLevel" class="nhsuk-care-card__heading">
         <span role="text">
           <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
-          {{label}}
+          {{heading}}
         </span>
       </heading-switcher>
       <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
@@ -16,15 +16,14 @@
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
   import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
 
   export default {
     name: "NhsCareCard",
     props: {
-      label: {
+      heading: {
         type: String,
-        default: ""
+        required: true
       },
       type: {
         type: String,
@@ -46,12 +45,17 @@
               return "Non-urgent advice: "
           }
         }
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     components: {
       HeadingSwitcher
     },
-    mixins: [SharedProps],
     computed: {
       cardType() {
         var secondaryType = ""
@@ -67,7 +71,7 @@
             break
             
         }
-        return `nhsuk-care-card nhsuk-care-card--${secondaryType}${this.extraClasses}`
+        return `nhsuk-care-card nhsuk-care-card--${secondaryType}`
       }
     }
   }

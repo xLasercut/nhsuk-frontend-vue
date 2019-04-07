@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <nhs-main>
     <code-block :code="sourceNormal">
       <nhs-row>
         <nhs-col :span="33">
@@ -40,7 +40,7 @@
     </code-block>
 
     <argument-table heading="Button Arguments" :rows="rows"></argument-table>
-  </div>
+  </nhs-main>
 </template>
 
 <script>
@@ -103,6 +103,24 @@
             type: "string",
             required: "yes",
             description: "Value for the <button> tag. This has no effect on <a> or <input> elements."
+          },
+          {
+            name: "disabled",
+            type: "boolean",
+            required: "no",
+            description: "Whether the button should be disabled. For button and input elements, disabled and aria-disabled attributes will be set automatically."
+          },
+          {
+            name: "href",
+            type: "string",
+            required: "no",
+            description: "The URL that the button should link to. If this is set, element will be automatically set to a if it has not already been defined."
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the textarea tag."
           }
         ]
       }
