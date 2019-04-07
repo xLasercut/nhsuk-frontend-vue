@@ -1,26 +1,52 @@
 <template>
-  <nav :class="`nhsuk-breadcrumb${extraClasses}`" v-bind="attributes" :aria-label="ariaLabel">
+  <nav class="nhsuk-breadcrumb" v-bind="attributes" :aria-label="ariaLabel">
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
-        <slot class="item"></slot>
+        <li class="nhsuk-breadcrumb__item" v-for="(link, index) in items" :key="index">
+          <link-switcher class="nhsuk-breadcrumb__link" :href="link.href" v-bind="link.attributes">
+            <slot name="link" :props="link">{{link.text}}</slot>
+          </link-switcher>
+        </li>
       </ol>
       <p class="nhsuk-breadcrumb__back">
-        <slot name="back" class="back"></slot>
+        <link-switcher class="nhsuk-breadcrumb__backlink" :href="href">
+          <slot name="backlink" :props="text">{{text}}</slot>
+        </link-switcher>
       </p>
     </div>
   </nav>
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
+  import LinkSwitcher from '../shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsBreadcrumb",
-    mixins: [SharedProps],
+    components: {
+      LinkSwitcher
+    },
     props: {
       ariaLabel: {
         type: String,
         default: "Breadcrumb"
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      items: {
+        type: Array,
+        required: true
+      },
+      href: {
+        type: String,
+        required: true
+      },
+      text: {
+        type: String,
+        required: true
       }
     }
   }

@@ -1,18 +1,44 @@
 <template>
-  <code-block :code="backLinkCode">
-    <nhs-back-link to="/navigation/backlink">
-      This is a back link
-    </nhs-back-link>
-  </code-block>
+  <nhs-main>
+    <code-block :code="sourceCode">
+      <nhs-back-link href="/navigation/backlink">
+        This is a back link
+      </nhs-back-link>
+    </code-block>
+
+    <argument-table heading="Back Link Arguments" :rows="rows">
+    </argument-table>
+  </nhs-main>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        backLinkCode: `<nhs-back-link to="/navigation/backlink">
+  import ArgumentTable from '../../components/ArgumentTable.vue'
+
+  var source = `<nhs-back-link href="/navigation/backlink">
     This is a back link
   </nhs-back-link>`
+
+  export default {
+    components: {
+      ArgumentTable
+    },
+    data() {
+      return {
+        sourceCode: source,
+        rows: [
+          {
+            name: "href",
+            type: "string",
+            required: "yes",
+            description: "The value of the link href attribute."
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the textarea tag."
+          }
+        ]
       }
     }
   }

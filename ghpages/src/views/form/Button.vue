@@ -1,6 +1,6 @@
 <template>
   <div>
-    <code-block :code="normalCode">
+    <code-block :code="sourceNormal">
       <nhs-row>
         <nhs-col :span="33">
           <nhs-button name="primary-button">
@@ -8,18 +8,18 @@
           </nhs-button>         
         </nhs-col>
         <nhs-col :span="33">
-          <nhs-button type="secondary" name="secondary-button">
+          <nhs-button color="secondary" name="secondary-button">
             Secondary Button
           </nhs-button>
         </nhs-col>
         <nhs-col :span="33">
-          <nhs-button type="reverse" name="reverse-button">
+          <nhs-button color="reverse" name="reverse-button">
             Reverse Button
           </nhs-button>
         </nhs-col>
       </nhs-row>
     </code-block>
-    <code-block :code="disabledCode">
+    <code-block :code="sourceDisabled">
       <nhs-row>
         <nhs-col :span="33">
           <nhs-button name="disabled-primary-button" :disabled="true">
@@ -27,46 +27,84 @@
           </nhs-button>
         </nhs-col>
         <nhs-col :span="33">
-          <nhs-button type="secondary" name="disabled-secondary-button" :disabled="true">
+          <nhs-button color="secondary" name="disabled-secondary-button" :disabled="true">
             Secondary Button Disabled
           </nhs-button>
         </nhs-col>
         <nhs-col :span="33">
-          <nhs-button type="reverse" name="disabled-reverse-button" :disabled="true">
+          <nhs-button color="reverse" name="disabled-reverse-button" :disabled="true">
             Reverse Button Disabled
           </nhs-button>
         </nhs-col>
       </nhs-row>
     </code-block>
+
+    <argument-table heading="Button Arguments" :rows="rows"></argument-table>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        normalCode: `<nhs-button>
+  import ArgumentTable from '../../components/ArgumentTable.vue'
+
+  var sourceNormal = `<nhs-button>
     Primary Button
   </nhs-button>
 
-  <nhs-button type="secondary">
+  <nhs-button color="secondary">
     Secondary Button
   </nhs-button>
 
-  <nhs-button type="reverse">
+  <nhs-button color="reverse">
     Reverse Button
-  </nhs-button>`,
-        disabledCode: `<nhs-button :disabled="true">
+  </nhs-button>`
+
+
+  var sourceDisabled = `<nhs-button name="disabled-primary-button" :disabled="true">
     Primary Button Disabled
   </nhs-button>
   
-  <nhs-button type="secondary" :disabled="true">
+  <nhs-button color="secondary" :disabled="true">
     Secondary Button Disabled
   </nhs-button>
   
-  <nhs-button type="reverse" @click="showAlert('reverse button')" :disabled="true">
+  <nhs-button color="reverse" :disabled="true">
     Reverse Button Disabled
-  </nhs-button>`,
+  </nhs-button>`
+
+  export default {
+    components: {
+      ArgumentTable
+    },
+    data() {
+      return {
+        sourceNormal: sourceNormal,
+        sourceDisabled: sourceDisabled,
+        rows: [
+          {
+            name: "element",
+            type: "string",
+            required: "no",
+            description: "Whether to use an <input>, <button> or <a> element to create the button. In most cases you will not need to set this as it will be configured automatically if you use href"
+          },
+          {
+            name: "name",
+            type: "string",
+            required: "yes",
+            description: "Name for the <input> or <button>. This has no effect on <a> elements."
+          },
+          {
+            name: "type",
+            type: "string",
+            required: "yes",
+            description: "Type of <input> or <button> – button, submit or reset. Defaults to submit. This has no effect on <a> elements."
+          },
+          {
+            name: "value",
+            type: "string",
+            required: "yes",
+            description: "Value for the <button> tag. This has no effect on <a> or <input> elements."
+          }
+        ]
       }
     }
   }

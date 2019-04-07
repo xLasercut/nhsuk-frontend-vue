@@ -1,18 +1,13 @@
 <template>
-  <button
-    :class="buttonClass"
-    type="submit"
-    @click="$emit('click')"
-    :disabled="disabled"
-    :name="name"
-    v-bind="attributes"
-  >
+  <component :is="buttonElement" :class="buttonClass" :attributes="attributes" :href="href" :disabled="disabled" :type="buttonType" :value="value" :name="name" @click="$emit('click')">
     <slot></slot>
-  </button>
+  </component>
 </template>
 
 <script>
-  import SharedProps from '../mixins/shared-props.js'
+  import LinkButton from './LinkButton.vue'
+  import InputButton from './InputButton.vue'
+  import NormalButton from './NormalButton.vue'
 
   export default {
     name: 'NhsButton',
@@ -21,28 +16,70 @@
         type: String,
         required: true
       },
-      type: {
+      color: {
         type: String,
         default: "primary"
       },
       disabled: {
         type: Boolean,
         default: false
+      },
+      href: {
+        type: String,
+        default: ""
+      },
+      type: {
+        type: String,
+        default: "submit"
+      },
+      element: {
+        type: String,
+        default: "button"
+      },
+      value: {
+        type: String
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
-    mixins: [SharedProps],
     computed: {
       buttonClass() {
-        var secondaryClass = ""
-        switch (this.type.toLowerCase()) {
-          case "secondary":
-            secondaryClass = " nhsuk-button--secondary"
-            break
-          case "reverse":
-            secondaryClass = " nhsuk-button--reverse"
-            break
+        var classMap = {
+          secondary: "nhsuk-button nhsuk-button--secondary",
+          reverse: "nhsuk-button nhsuk-button--reverse"
         }
-        return `nhsuk-button${secondaryClass}${this.extraClasses}`
+
+        if (this.color.toLowerCase() in classMap) {
+          return classMap[this.color.toLowerCase()]
+        }
+        return "nhsuk-button"
+      },
+      buttonElement() {
+        var elementMap = {
+          button: NormalButton,
+          input: InputButton,
+          a: LinkButton
+        }
+        
+        if (this.href !== "") {
+          return LinkButton
+        }
+        else if (this.element.toLowerCase() in elementMap) {
+          return elementMap[this.element.toLowerCase()]
+        }
+        return NormalButton
+      },
+      buttonType() {
+        var types = ["submit", "button", "reset"]
+
+        if (this.type.toLowerCase() in types) {
+          return this.type.toLowerCase()
+        }
+        return "submit"
       }
     }
   }

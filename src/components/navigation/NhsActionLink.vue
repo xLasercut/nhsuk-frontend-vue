@@ -1,6 +1,6 @@
 <template>
-  <div :class="`nhsuk-action-link${extraClasses}`" v-bind="attributes">
-    <link-switcher class="nhsuk-action-link__link" :to="to">
+  <div class="nhsuk-action-link" v-bind="attributes">
+    <link-switcher class="nhsuk-action-link__link" :href="href">
       <nhs-icon icon="arrow-right-circle"></nhs-icon>
       <span class="nhsuk-action-link__text">
         <slot></slot>
@@ -12,20 +12,24 @@
 <script>
   import LinkSwitcher from '../shared/LinkSwitcher.vue'
   import NhsIcon from '../icon/NhsIcon.vue'
-  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsActionLink",
     props: {
-      to: {
+      href: {
         type: String,
         required: true
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     components: {
       LinkSwitcher,
       NhsIcon
-    },
-    mixins: [SharedProps]
+    }
   }
 </script>

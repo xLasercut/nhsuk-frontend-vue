@@ -12,7 +12,7 @@ npm install nhsuk-frontend-vue
 
 ## Use
 
-```
+```jsx
 import NhsukFrontendVue from 'nhsuk-frontend-vue'
 
 Vue.use(NhsukFrontendVue)

@@ -1,28 +1,44 @@
 <template>
   <nhs-main>
-    <nhs-row>
-      <nhs-button @click="changeRoute('/layout')">Layout</nhs-button>
-    </nhs-row>
-    <nhs-row>
-      <nhs-button @click="changeRoute('/information')">Information</nhs-button>
-    </nhs-row>
-    <nhs-row>
-      <nhs-button @click="changeRoute('/navigation')">Navigation</nhs-button>
-    </nhs-row>
-    <nhs-row>
-      <nhs-button @click="changeRoute('/form')">Form</nhs-button>
-    </nhs-row>
-    <nhs-row>
-      <nhs-button @click="changeRoute('/typography')">Typography</nhs-button>
+    <nhs-row v-for="(link, index) in sectionLinks" :key="index">
+      <nhs-col>
+        <nhs-button :name="`to_${link.text}`" :href="link.href">{{link.text}}</nhs-button>
+      </nhs-col>
     </nhs-row>
   </nhs-main>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        sectionLinks: [
+          {
+            href: "/layout",
+            text: "Layout"
+          },
+          {
+            href: "/information",
+            text: "Information"
+          },
+          {
+            href: "/navigation",
+            text: "Navigation"
+          },
+          {
+            href: "/form",
+            text: "Form"
+          },
+          {
+            href: "/typography",
+            text: "Typography"
+          }
+        ]
+      }
+    },
     methods: {
       changeRoute(route) {
-        this.$router.push(route)
+        console.log(route)
       }
     }
   }

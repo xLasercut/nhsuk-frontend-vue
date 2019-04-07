@@ -1,16 +1,8 @@
 <template>
   <div>
-    <nhs-breadcrumb>
-      <nhs-breadcrumb-item v-for="(item, index) in breadcrumbs" :to="item.url" :key="index">
-        {{item.label}}
-      </nhs-breadcrumb-item>
-      <nhs-breadcrumb-item type="back" slot="back" :to="breadcrumbback.url">
-        {{breadcrumbback.label}}
-      </nhs-breadcrumb-item>
+    <nhs-breadcrumb :items="breadcrumbs" :href="breadcrumbback.href" :text="breadcrumbback.text">
     </nhs-breadcrumb>
-    <nhs-main>
-      <router-view></router-view>
-    </nhs-main>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -30,8 +22,8 @@
         for (var route of routes) {
           if (route.path === path) {
             return {
-              url: route.path,
-              label: route.name
+              href: route.path,
+              text: route.name
             }
           }
         }
@@ -48,8 +40,8 @@
         }
 
         breadcrums.push({
-          url: "",
-          label: this.$route.name
+          href: "",
+          text: this.$route.name
         })
         
         return breadcrums
@@ -60,8 +52,8 @@
         var backPath = `/${routes[routes.length - 2]}`
         var backRouteObj = this.getRouteObject(allRoutes, backPath)
         return {
-          url: backRouteObj.url,
-          label: `Back to ${backRouteObj.label}`
+          href: backRouteObj.href,
+          text: `Back to ${backRouteObj.text}`
         }
       }
     }
