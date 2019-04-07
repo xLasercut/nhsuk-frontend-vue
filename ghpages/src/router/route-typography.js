@@ -4,6 +4,7 @@ import Body from '../views/typography/Body.vue'
 import List from '../views/typography/List.vue'
 import ErrorText from '../views/typography/ErrorText.vue'
 import HintText from '../views/typography/HintText.vue'
+import InsetText from '../views/typography/InsetText.vue'
 
 const typography = [
   {
@@ -35,6 +36,11 @@ const typography = [
     path: '/typography/hinttext',
     name: 'Hint Text',
     component: HintText
+  },
+  {
+    path: '/typography/insettext',
+    name: 'Inset Text',
+    component: InsetText
   }
 ]
 
