@@ -1,7 +1,7 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "0.1.3",
-  "description": "NHS UK frontend library ported to vue.js",
+  "version": "0.1.4",
+  "description": "Unofficail port of NHS UK frontend library to vue.js",
   "private": false,
   "main": "dist/nhsuk-frontend-vue.umd.js",
   "module": "dist/nhsuk-frontend-vue.esm.js",
