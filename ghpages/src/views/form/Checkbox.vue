@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <nhs-main>
     <code-block :code="singleCode">
       <nhs-row>
         <nhs-col :span="50">
@@ -7,7 +7,7 @@
               Single Checkbox
             </nhs-checkbox>
             <nhs-checkbox name="disabled-checkbox" :disabled="true">
-              Single Checkbox Disabled
+              Disabled
             </nhs-checkbox>
         </nhs-col>
         <nhs-col :span="50">
@@ -33,7 +33,7 @@
         </nhs-col>
       </nhs-row>
     </code-block>
-  </div>
+  </nhs-main>
 </template>
 
 <script>

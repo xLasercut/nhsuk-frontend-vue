@@ -42,7 +42,7 @@
           }
         ],
         service: {
-          name: "NHS UK frontend vue component library",
+          name: "Draft/In progress/Unofficial NHS UK frontend vue component library",
           longName: true
         }
       }

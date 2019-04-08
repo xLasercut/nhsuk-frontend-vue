@@ -1,6 +1,6 @@
 # nhsuk-frontend-vue
 
-This is an unofficial port of [nhsuk-frontend library](https://github.com/nhsuk/nhsuk-frontend/) in to a vue.js component.
+This is an *unofficial* port of [nhsuk-frontend library](https://github.com/nhsuk/nhsuk-frontend/) in to a vue.js component.
 
 For previews: [Preview Page](https://xlasercut.github.io/nhsuk-frontend-vue/)
 

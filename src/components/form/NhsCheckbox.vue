@@ -1,15 +1,20 @@
 <template>
   <div class="nhsuk-checkboxes__item">
-    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="overrideValue" v-model="model" :disabled="disabled">
-    <label class="nhsuk-label nhsuk-checkboxes__label" :for="itemId">
+    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="overrideValue" v-model="model" :disabled="disabled" :aria-describedby="describedBy">
+    <nhs-label class="nhsuk-checkboxes__label" :attributes="label.attributes" :page-heading="label.pageHeading" :for="itemId">
       <slot></slot>
-    </label>
+    </nhs-label>
+    <nhs-hint-text class="nhsuk-checkboxes__hint" :attributes="hint.attributes" :id="`${itemId}-hint`" v-if="hint.text">
+      <slot name="hint" :props="hint">{{hint.text}}</slot>
+    </nhs-hint-text>
   </div>
 </template>
 
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
+  import NhsLabel from '../typography/NhsLabel.vue'
+  import NhsHintText from '../typography/NhsHintText.vue'
 
   export default {
     name: "NhsCheckbox",
@@ -24,8 +29,32 @@
       name: {
         type: String,
         required: true
+      },
+      label: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      hint: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
-    mixins: [AddModel, RandomID]
+    mixins: [AddModel, RandomID],
+    components: {
+      NhsLabel,
+      NhsHintText
+    },
+    computed: {
+      describedBy() {
+        if (this.hint.text) {
+          return `${this.itemId}-hint`
+        }
+        return ""
+      }
+    }
   }
 </script>
