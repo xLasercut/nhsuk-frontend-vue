@@ -3,8 +3,7 @@
     <nhs-header :show-search="false" :show-nav="true" :primary-links="headerLinks" :service="service" :transactional="false">
     </nhs-header>
     <router-view></router-view>
-    <nhs-footer>
-      <nhs-footer-link to="https://github.com/xLasercut/nhsuk-frontend-vue">Github</nhs-footer-link>
+    <nhs-footer :links="footerLinks">
     </nhs-footer>
   </div>
 </template>
@@ -38,8 +37,8 @@
         ],
         footerLinks: [
           {
-            label: "github",
-            url: "https://github.com/xLasercut/nhsuk-frontend-vue"
+            text: "Github",
+            href: "https://github.com/xLasercut/nhsuk-frontend-vue"
           }
         ],
         service: {

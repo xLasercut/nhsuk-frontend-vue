@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  var source = `<nhs-header :showNav="true" :showSearch="true" :primaryLinks="primaryLinks">
+  var source = `<nhs-header :show-nav="true" :show-search="true" :primary-links="primaryLinks">
   </nhs-header>
   
   export default {
