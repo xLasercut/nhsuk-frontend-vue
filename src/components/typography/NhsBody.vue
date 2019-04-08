@@ -1,26 +1,34 @@
 <template>
-  <p :class="bodyClass">
+  <p :class="bodyClass" v-bind="attributes">
     <slot></slot>
   </p>
 </template>
 
 <script>
+  const sizes = ["s"]
+
   export default {
     name: "NhsBody",
     props: {
       size: {
         type: String,
-        default: ""
+        validator(val) {
+          return sizes.includes(val)
+        }
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     computed: {
       bodyClass() {
-        switch (this.size) {
-          case "s":
-            return "nhsuk-body-s"
-          default:
-            return "nhsuk-body"
+        if (this.size) {
+          return `nhsuk-body-${this.size}`
         }
+        return "nhsuk-body"
       }
     }
   }
