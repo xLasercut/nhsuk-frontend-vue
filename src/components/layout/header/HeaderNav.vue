@@ -8,12 +8,19 @@
     </p>
     <ul class="nhsuk-header__navigation-list">
       <li class="nhsuk-header__navigation-item nhsuk-header__navigation-item--for-mobile">
-        <link-switcher class="nhsuk-header__navigation-link" to="/">
+        <link-switcher class="nhsuk-header__navigation-link" :href="homeHref">
           Home
           <nhs-icon icon="chevron-right"></nhs-icon>
         </link-switcher>
       </li>
-      <slot></slot>
+      <li class="nhsuk-header__navigation-item" v-for="(item, index) in primaryLinks" :key="index">
+        <link-switcher class="nhsuk-header__navigation-link" :href="item.href">
+          <slot name="primary-link" :props="item">
+            {{item.text}}
+            <nhs-icon icon="chevron-right"></nhs-icon>
+          </slot>
+        </link-switcher>
+      </li>
     </ul>
   </nav>
 </template>
@@ -27,6 +34,18 @@
     components: {
       NhsIcon,
       LinkSwitcher
+    },
+    props: {
+      homeHref: {
+        type: String,
+        default: "/"
+      },
+      primaryLinks: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
     }
   }
 </script>

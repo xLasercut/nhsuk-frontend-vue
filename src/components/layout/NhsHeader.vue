@@ -1,44 +1,88 @@
 <template>
-  <header class="nhsuk-header" role="banner">
+  <header :class="headerClass" role="banner">
     <div class="nhsuk-width-container nhsuk-header__container">
-      <slot name="header-logo"></slot>
+      <header-logo :homeHref="homeHref" :service="service" :aria-label="ariaLabel"></header-logo>
+      <header-transactional v-if="transactionalService && !showNav && !showSearch" :transactional-service="transactionalService"></header-transactional>
+    
       <div class="nhsuk-header__content" id="content-header">
-        <div class="nhsuk-header__menu" v-if="nav">
+
+        <div class="nhsuk-header__menu" v-if="showNav">
           <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
         </div>
-        <header-search v-if="search"></header-search>
+
+        <header-search v-if="showSearch"></header-search>
       </div>
     </div>
-    <header-nav v-if="nav">
-      <slot name="header-link"></slot>
-    </header-nav>
-    
+
+    <header-nav v-if="showNav" :primaryLinks="primaryLinks"></header-nav>
   </header>
 </template>
 
 <script>
+  import HeaderLogo from './header/HeaderLogo.vue'
   import HeaderNav from './header/HeaderNav.vue'
   import HeaderSearch from './header/HeaderSearch.vue'
+  import HeaderTransactional from './header/HeaderTransactional.vue'
 
   export default {
     name: "NhsHeader",
     props: {
-      search: {
+      showSearch: {
         type: Boolean,
-        default: true
+        required: true
       },
-      nav: {
+      showNav: {
         type: Boolean,
-        default: true
+        required: true
       },
       label: {
         type: String,
         default: ""
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      transactional: {
+        type: Boolean,
+        default: false
+      },
+      transactionalService: {
+        type: Object
+      },
+      service: {
+        type: Object
+      },
+      ariaLabel: {
+        type: String,
+        default: "NHS homepage"
+      },
+      homeHref: {
+        type: String,
+        default: "/"
+      },
+      primaryLinks: {
+        type: Array,
+        default() {
+          return []
+        }
       }
     },
     components: {
       HeaderNav,
-      HeaderSearch
+      HeaderSearch,
+      HeaderLogo,
+      HeaderTransactional
+    },
+    computed: {
+      headerClass() {
+        if (this.transactional || this.transactionalService) {
+          return "nhsuk-header nhsuk-header--transactional"
+        }
+        return "nhsuk-header"
+      }
     }
   }
 </script>

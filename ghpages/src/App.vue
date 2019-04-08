@@ -1,10 +1,6 @@
 <template>
   <div>
-    <nhs-header :search="false">
-      <nhs-header-logo slot="header-logo" label="NHS UK frontend vue component library"></nhs-header-logo>
-      <template slot="header-link">
-        <nhs-header-link v-for="(link, index) in headerLinks" :to="link.url" :key="index">{{link.label}}</nhs-header-link>
-      </template>
+    <nhs-header :show-search="false" :show-nav="true" :primary-links="headerLinks" :service="service" :transactional="false">
     </nhs-header>
     <router-view></router-view>
     <nhs-footer>
@@ -20,24 +16,24 @@
       return {
         headerLinks: [
           {
-            label: "Layout",
-            url: "/layout"
+            text: "Layout",
+            href: "/layout"
           },
           {
-            label: "Information",
-            url: "/information"
+            text: "Information",
+            href: "/information"
           },
           {
-            label: "Navigation",
-            url: "/navigation"
+            text: "Navigation",
+            href: "/navigation"
           },
           {
-            label: "Form",
-            url: "/form"
+            text: "Form",
+            href: "/form"
           },
           {
-            label: "Typography",
-            url: "/typography"
+            text: "Typography",
+            href: "/typography"
           }
         ],
         footerLinks: [
@@ -45,7 +41,11 @@
             label: "github",
             url: "https://github.com/xLasercut/nhsuk-frontend-vue"
           }
-        ]
+        ],
+        service: {
+          name: "NHS UK frontend vue component library",
+          longName: true
+        }
       }
     }
   }
