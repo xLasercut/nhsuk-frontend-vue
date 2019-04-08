@@ -1,6 +1,6 @@
 <template>
   <h1 class="nhsuk-label-wrapper">
-    <label-normal size="xl" :attributes="attributes">
+    <label-normal class="nhsuk-label--xl" :attributes="attributes">
       <slot></slot>
     </label-normal>
   </h1>

@@ -1,9 +1,9 @@
 <template>
   <div class="nhsuk-do-dont-list" v-bind="attributes">
     <heading-switcher :heading-level="headingLevel" class="nhsuk-do-dont-list__label">{{title}}</heading-switcher>
-    <ul :class="doDontType">
+    <ul :class="`nhsuk-list nhsuk-list--${type}`">
       <li v-for="(item, index) in items" :key="index">
-        <nhs-icon :icon="doDontIcon"></nhs-icon>
+        <nhs-icon :icon="type"></nhs-icon>
         <slot name="item" :props="item">{{item}}</slot>
       </li>
     </ul>
@@ -13,6 +13,8 @@
 <script>
   import NhsIcon from '../icon/NhsIcon.vue'
   import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+
+  const types = ["tick", "cross"]
 
   export default {
     name: "NhsDodont",
@@ -27,7 +29,10 @@
       },
       type: {
         type: String,
-        default: "tick"
+        default: "tick",
+        validator(val) {
+          return types.includes(val)
+        }
       },
       items: {
         type: Array,
@@ -42,27 +47,6 @@
         default() {
           return {}
         }
-      }
-    },
-    computed: {
-      doDontType() {
-        var classMap = {
-          cross: "nhsuk-list nhsuk-list--cross",
-          tick: "nhsuk-list nhsuk-list--tick"
-        }
-
-        if (this.type.toLowerCase() in classMap) {
-          return classMap[this.type.toLowerCase()]
-        }
-        return classMap.tick
-      },
-      doDontIcon() {
-        var icons = ["tick", "cross"]
-        
-        if (icons.includes(this.type.toLowerCase())) {
-          return this.type.toLowerCase()
-        }
-        return "tick"
       }
     }
   }

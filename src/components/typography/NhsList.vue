@@ -1,10 +1,28 @@
+<template>
+  <component :is="element" :class="listClass" :attributes="attributes">
+    <slot></slot>
+  </component>
+</template>
+
 <script>
+  import ListOrdered from './list/ListOrdered.vue'
+  import ListUnordered from './list/ListUnordered.vue'
+
+  const types = {
+    bullet: "nhsuk-list--bullet",
+    number: "nhsuk-list--number",
+    error: "nhsuk-error-summary__list"
+  }
+
   export default {
     name: "NhsList",
     props: {
       type: {
         type: String,
-        default: "bullet"
+        default: "bullet",
+        validator(val) {
+          return val in types
+        }
       },
       attributes: {
         type: Object,
@@ -14,32 +32,14 @@
       }
     },
     computed: {
-      listType() {
-        var baseType = "nhsuk-list"
-        var secondaryType = " nhsuk-list--bullet"
-        switch (this.type) {
-          case "number":
-            secondaryType = " nhsuk-list--number"
-            break
-          case "error":
-            secondaryType = " nhsuk-error-summary__list"
-            break
-          default:
-            secondaryType = " nhsuk-list--bullet"
-            break
+      element() {
+        if (this.type === "number") {
+          return ListOrdered
         }
-        return `${baseType}${secondaryType}${this.extraClasses}`
-      }
-    },
-    render(createElement) {
-      var attrs = this.attributes
-      attrs["class"] = this.listType
-      
-      if (this.type === "number") {
-        return createElement('ol', { attrs: attrs }, this.$slots.default)
-      }
-      else {
-        return createElement('ul', { attrs: attrs }, this.$slots.default)
+        return ListUnordered
+      },
+      listClass() {
+        return `nhsuk-list ${types[this.type]}`
       }
     }
   }

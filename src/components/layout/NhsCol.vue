@@ -5,30 +5,29 @@
 </template>
 
 <script>
+  const spans = {
+    100: "full",
+    75: "three-quarters",
+    66: "two-thirds",
+    50: "one-half",
+    33: "one-third",
+    25: "one-quarter"
+  }
+
   export default {
     name: "NhsCol",
     props: {
       span: {
         type: Number,
-        default: 100
+        default: 100,
+        validator(val) {
+          return val in spans
+        }
       }
     },
     computed: {
       columnClass() {
-        switch (this.span) {
-          case 75:
-            return "nhsuk-grid-column-three-quarters"
-          case 66:
-            return "nhsuk-grid-column-two-thirds"
-          case 50:
-            return "nhsuk-grid-column-one-half"
-          case 33:
-            return "nhsuk-grid-column-one-third"
-          case 25:
-            return "nhsuk-grid-column-one-quarter"
-          default:
-            return "nhsuk-grid-column-full"
-        }
+        return `nhsuk-grid-column-${spans[this.span]}`
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
-  <label class="nhsuk-label" v-bind="attributes">
+  <ol v-bind="attributes">
     <slot></slot>
-  </label>
+  </ol>
 </template>
 
 <script>

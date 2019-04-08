@@ -1,5 +1,5 @@
 <template>
-  <div :class="cardType" v-bind="attributes">
+  <div :class="`nhsuk-care-card nhsuk-care-card--${type}`" v-bind="attributes">
     <div class="nhsuk-care-card__heading-container">
       <heading-switcher :heading-level="headingLevel" class="nhsuk-care-card__heading">
         <span role="text">
@@ -18,6 +18,8 @@
 <script>
   import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
 
+  const types = ["non-urgent", "urgent", "immediate"]
+
   export default {
     name: "NhsCareCard",
     props: {
@@ -27,7 +29,10 @@
       },
       type: {
         type: String,
-        default: "non-urgent"
+        default: "non-urgent",
+        validator(val) {
+          return types.includes(val)
+        }
       },
       headingLevel: {
         type: Number,
@@ -36,7 +41,7 @@
       hiddenText: {
         type: String,
         default() {
-          switch (this.type.toLowerCase()) {
+          switch (this.type) {
             case "urgent":
               return "Urgent advice: "
             case "immediate":
@@ -55,24 +60,6 @@
     },
     components: {
       HeadingSwitcher
-    },
-    computed: {
-      cardType() {
-        var secondaryType = ""
-        switch (this.type.toLowerCase()) {
-          case "urgent":
-            secondaryType = "urgent"
-            break
-          case "immediate":
-            secondaryType = "immediate"
-            break
-          default:
-            secondaryType = "non-urgent"
-            break
-            
-        }
-        return `nhsuk-care-card nhsuk-care-card--${secondaryType}`
-      }
     }
   }
 </script>

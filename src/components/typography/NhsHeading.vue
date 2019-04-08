@@ -1,11 +1,13 @@
 <template>
-  <heading-switcher :heading-level="heading.level" :class="heading.class" v-bind="attributes">
+  <heading-switcher :heading-level="headingLevel" :class="`nhsuk-heading-${size}`" v-bind="attributes">
     <slot></slot>
   </heading-switcher>
 </template>
 
 <script>
   import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+
+  const sizes = ["xs", "s", "m", "l", "xl"]
 
   export default {
     name: "NhsHeading",
@@ -15,7 +17,10 @@
     props: {
       size: {
         type: String,
-        default: "l"
+        default: "l",
+        validators(val) {
+          return sizes.includes(val)
+        }
       },
       attributes: {
         type: Object,
@@ -25,35 +30,15 @@
       }
     },
     computed: {
-      heading() {
-        var hClass = "l"
-        var hLevel = 2
-        switch (this.size.toLowerCase()) {
-          case "xl":
-            hClass = "nhsuk-heading-xl"
-            hLevel = 1
-            break
-          case "m":
-            hClass = "nhsuk-heading-m"
-            hLevel = 3
-            break
-          case "s":
-            hClass = "nhsuk-heading-s"
-            hLevel = 4
-            break
-          case "xs":
-            hClass = "nhsuk-heading-xs"
-            hLevel = 5
-            break
-          default:
-            hClass = "nhsuk-heading-l"
-            hLevel = 2
-            break
+      headingLevel() {
+        var levels = {
+          xl: 1,
+          l: 2,
+          m: 3,
+          s: 4,
+          xs: 5
         }
-        return {
-          level: hLevel,
-          class: hClass
-        }
+        return levels[this.size]
       }
     }
   }

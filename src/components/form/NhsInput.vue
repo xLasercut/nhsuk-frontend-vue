@@ -20,6 +20,8 @@
   import NhsHintText from '../typography/NhsHintText.vue'
   import NhsErrorText from '../typography/NhsErrorText.vue'
 
+  const widths = [2, 3, 4, 5, 10, 20]
+
   export default {
     name: "NhsInput",
     props: {
@@ -28,7 +30,10 @@
         default: false
       },
       width: {
-        type: Number
+        type: Number,
+        validator(val) {
+          return widths.includes(val)
+        }
       },
       name: {
         type: String,
@@ -79,10 +84,8 @@
     computed: {
       inputClass() {
         var baseClass = "nhsuk-input"
-        
-        var supportedWidths = [2, 3, 4, 5, 10, 20]
-        
-        if (supportedWidths.includes(this.width)) {
+
+        if (this.width) {
           baseClass += ` nhsuk-input--width-${this.width}`
         }
 
@@ -93,7 +96,7 @@
         return baseClass
       },
       formGroupClass() {
-        if (this.errorMessage) {
+        if (this.error.text) {
           return "nhsuk-form-group nhsuk-form-group--error"
         }
         return "nhsuk-form-group"
