@@ -1,5 +1,5 @@
 <template>
-  <div :class="formGroupClass">
+  <nhs-form-group :error="formgroupError">
     <nhs-label :attributes="label.attributes" :page-heading="label.pageHeading" :for="itemId" v-if="label.text">
       <slot name="label" :props="label">{{label.text}}</slot>
     </nhs-label>
@@ -10,7 +10,7 @@
       <slot name="error" :props="error">{{error.text}}</slot>
     </nhs-error-text>
     <input :class="inputClass" :id="itemId" :name="name" :type="type" :aria-describedby="describedBy" :autocomplete="autocomplete" v-bind="attributes" v-model="model" @blur="$emit('blur')" :disabled="disabled" :maxlength="maxlength">
-  </div>
+  </nhs-form-group>
 </template>
 
 <script>
@@ -19,6 +19,7 @@
   import NhsLabel from '../typography/NhsLabel.vue'
   import NhsHintText from '../typography/NhsHintText.vue'
   import NhsErrorText from '../typography/NhsErrorText.vue'
+  import NhsFormGroup from './NhsFormGroup.vue'
 
   const widths = [2, 3, 4, 5, 10, 20]
 
@@ -79,7 +80,8 @@
     components: {
       NhsLabel,
       NhsHintText,
-      NhsErrorText
+      NhsErrorText,
+      NhsFormGroup
     },
     computed: {
       inputClass() {
@@ -95,11 +97,11 @@
 
         return baseClass
       },
-      formGroupClass() {
+      formgroupError() {
         if (this.error.text) {
-          return "nhsuk-form-group nhsuk-form-group--error"
+          return true
         }
-        return "nhsuk-form-group"
+        return false
       },
       describedBy() {
         var describedBy = ""

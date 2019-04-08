@@ -7,6 +7,9 @@
     <nhs-hint-text class="nhsuk-checkboxes__hint" :attributes="hint.attributes" :id="`${itemId}-hint`" v-if="hint.text">
       <slot name="hint" :props="hint">{{hint.text}}</slot>
     </nhs-hint-text>
+    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${itemId}`" v-if="model && conditional">
+      <slot name="conditional">Use slot: conditional for override</slot>
+    </div>
   </div>
 </template>
 
@@ -41,6 +44,10 @@
         default() {
           return {}
         }
+      },
+      conditional: {
+        type: Boolean,
+        default: false
       }
     },
     mixins: [AddModel, RandomID],
