@@ -7,6 +7,7 @@ import Image from '../views/information/Image.vue'
 import EmergencyAlert from '../views/information/EmergencyAlert.vue'
 import ErrorSummary from '../views/information/ErrorSummary.vue'
 import Feedback from '../views/information/Feedback.vue'
+import Table from '../views/information/Table.vue'
 
 const information = [
   {
@@ -53,6 +54,11 @@ const information = [
     path: '/information/feedback',
     name: 'Feeback Banner',
     component: Feedback
+  },
+  {
+    path: '/information/table',
+    name: 'Table',
+    component: Table
   },
   {
     path: '/information/*',
