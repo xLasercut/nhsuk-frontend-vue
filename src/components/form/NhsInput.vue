@@ -1,15 +1,24 @@
 <template>
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" :for="itemId" v-if="label">{{label}}</label>
-    <slot></slot>
-    <input :class="inputClass" :id="itemId" :name="name" :type="type" :disabled="disabled" v-model="model" @blur="$emit('blur')" :maxlength="maxlength" v-bind="attributes">
+  <div :class="formGroupClass">
+    <nhs-label :attributes="label.attributes" :page-heading="label.pageHeading" :for="itemId" v-if="label.text">
+      <slot name="label" :props="label">{{label.text}}</slot>
+    </nhs-label>
+    <nhs-hint-text :attributes="hint.attributes" :id="`${itemId}-hint`" v-if="hint.text">
+      <slot name="hint" :props="hint">{{hint.text}}</slot>
+    </nhs-hint-text>
+    <nhs-error-text :attributes="error.attributes" :id="`${itemId}-error`" v-if="error.text">
+      <slot name="error" :props="error">{{error.text}}</slot>
+    </nhs-error-text>
+    <input :class="inputClass" :id="itemId" :name="name" :type="type" :aria-describedby="describedBy" :autocomplete="autocomplete" v-bind="attributes" v-model="model" @blur="$emit('blur')" :disabled="disabled" :maxlength="maxlength">
   </div>
 </template>
 
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
-  import SharedProps from '../mixins/shared-props.js'
+  import NhsLabel from '../typography/NhsLabel.vue'
+  import NhsHintText from '../typography/NhsHintText.vue'
+  import NhsErrorText from '../typography/NhsErrorText.vue'
 
   export default {
     name: "NhsInput",
@@ -19,20 +28,29 @@
         default: false
       },
       width: {
-        type: String,
-        default: ""
+        type: Number
       },
       name: {
         type: String,
-        default: ""
+        required: true
       },
       label: {
-        type: String,
-        default: ""
+        type: Object,
+        default() {
+          return {}
+        }
       },
       error: {
-        type: Boolean,
-        default: false
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      hint: {
+        type: Object,
+        default() {
+          return {}
+        }
       },
       type: {
         type: String,
@@ -40,39 +58,57 @@
       },
       maxlength: {
         type: Number
+      },
+      autocomplete: {
+        type: String,
+        default: ""
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
-    mixins: [AddModel, RandomID, SharedProps],
+    mixins: [AddModel, RandomID],
+    components: {
+      NhsLabel,
+      NhsHintText,
+      NhsErrorText
+    },
     computed: {
       inputClass() {
-        var width = ""
-        var error = ""
-        switch (this.width) {
-          case "2":
-            width = " nhsuk-input--width-2"
-            break
-          case "3":
-            width = " nhsuk-input--width-3"
-            break
-          case "4":
-            width = " nhsuk-input--width-4"
-            break
-          case "5":
-            width = " nhsuk-input--width-5"
-            break
-          case "10":
-            width = " nhsuk-input--width-10"
-            break
-          case "20":
-            width = " nhsuk-input--width-20"
-            break
+        var baseClass = "nhsuk-input"
+        
+        var supportedWidths = [2, 3, 4, 5, 10, 20]
+        
+        if (supportedWidths.includes(this.width)) {
+          baseClass += ` nhsuk-input--width-${this.width}`
         }
 
-        if (this.error) {
-          error = " nhsuk-input--error"
+        if (this.error.text) {
+          baseClass += " nhsuk-input--error"
         }
 
-        return `nhsuk-input${width}${error}${this.extraClasses}`
+        return baseClass
+      },
+      formGroupClass() {
+        if (this.errorMessage) {
+          return "nhsuk-form-group nhsuk-form-group--error"
+        }
+        return "nhsuk-form-group"
+      },
+      describedBy() {
+        var describedBy = ""
+        if (this.hint.text) {
+          describedBy += ` ${this.itemId}-hint` 
+        }
+
+        if (this.error.text) {
+          describedBy += ` ${this.itemId}-error`
+        }
+
+        return describedBy
       }
     }
   }

@@ -1,12 +1,11 @@
 <template>
-  <heading-switcher :heading-level="heading.level" :class="heading.class">
+  <heading-switcher :heading-level="heading.level" :class="heading.class" v-bind="attributes">
     <slot></slot>
   </heading-switcher>
 </template>
 
 <script>
   import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
-  import SharedProps from '../mixins/shared-props.js'
 
   export default {
     name: "NhsHeading",
@@ -17,9 +16,14 @@
       size: {
         type: String,
         default: "l"
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
-    mixins: [SharedProps],
     computed: {
       heading() {
         var hClass = "l"

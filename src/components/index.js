@@ -8,7 +8,7 @@ export { default as NhsCol } from './layout/NhsCol.vue'
 export { default as NhsMain } from './layout/NhsMain.vue'
 export { default as NhsHeader } from './layout/NhsHeader.vue'
 export { default as NhsFooter } from './layout/NhsFooter.vue'
-export { default as NhsFooterLink } from './layout/footer/NhsFooterLink.vue'
+export { default as NhsFieldset } from './layout/NhsFieldset.vue'
 
 export { default as NhsBreadcrumb } from './navigation/NhsBreadcrumb.vue'
 export { default as NhsActionLink } from './navigation/NhsActionLink.vue'

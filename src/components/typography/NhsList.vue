@@ -1,15 +1,18 @@
 <script>
-  import SharedProps from '../mixins/shared-props.js'
-
   export default {
     name: "NhsList",
     props: {
       type: {
         type: String,
         default: "bullet"
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
-    mixins: [SharedProps],
     computed: {
       listType() {
         var baseType = "nhsuk-list"
