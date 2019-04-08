@@ -5,6 +5,7 @@ import List from '../views/typography/List.vue'
 import ErrorText from '../views/typography/ErrorText.vue'
 import HintText from '../views/typography/HintText.vue'
 import InsetText from '../views/typography/InsetText.vue'
+import Label from '../views/typography/Lable.vue'
 
 const typography = [
   {
@@ -41,6 +42,15 @@ const typography = [
     path: '/typography/insettext',
     name: 'Inset Text',
     component: InsetText
+  },
+  {
+    path: '/typography/label',
+    name: 'Label',
+    component: Label
+  },
+  {
+    path: '/typography/*',
+    redirect: '/typography'
   }
 ]
 

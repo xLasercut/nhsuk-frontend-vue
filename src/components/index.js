@@ -35,6 +35,7 @@ export { default as NhsHeading } from './typography/NhsHeading.vue'
 export { default as NhsLink } from './typography/NhsLink.vue'
 export { default as NhsBody } from './typography/NhsBody.vue'
 export { default as NhsList } from './typography/NhsList.vue'
+export { default as NhsLabel } from './typography/NhsLabel.vue'
 
 export { default as NhsFormGroup } from './form/NhsFormGroup.vue'
 export { default as NhsInput  } from './form/NhsInput.vue'
