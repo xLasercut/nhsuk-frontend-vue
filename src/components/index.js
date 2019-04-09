@@ -30,6 +30,7 @@ export { default as NhsErrorSummary } from './information/NhsErrorSummary.vue'
 export { default as NhsEmergencyAlert } from './information/NhsEmergencyAlert.vue'
 export { default as NhsTable } from './information/NhsTable.vue'
 export { default as NhsFeedback } from './information/NhsFeedback.vue'
+export { default as NhsPromo } from './information/NhsPromo.vue'
 
 export { default as NhsHintText } from './typography/NhsHintText.vue'
 export { default as NhsErrorText } from './typography/NhsErrorText.vue'
