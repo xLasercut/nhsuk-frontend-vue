@@ -3,6 +3,7 @@ import ActionLink from '../views/navigation/ActionLink.vue'
 import BackLink from '../views/navigation/BackLink.vue'
 import BreadCrum from '../views/navigation/Breadcrumb.vue'
 import Contents from '../views/navigation/Contents.vue'
+import Pagination from '../views/navigation/Pagination.vue'
 
 const navigation = [
   {
@@ -29,6 +30,11 @@ const navigation = [
     path: '/navigation/contents',
     name: 'Contents',
     component: Contents
+  },
+  {
+    path: '/navigation/pagination',
+    name: 'Pagination',
+    component: Pagination
   },
   {
     path: '/navigation/*',
