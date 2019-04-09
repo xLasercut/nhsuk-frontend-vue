@@ -1,5 +1,5 @@
 <template>
-  <nhs-form-group :error="formgroupError">
+  <nhs-form-group :error="formGroupError">
     <nhs-label :attributes="label.attributes" :page-heading="label.pageHeading" :for="itemId" v-if="label.text">
       <slot name="label" :props="label">{{label.text}}</slot>
     </nhs-label>
@@ -16,10 +16,8 @@
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
-  import NhsLabel from '../typography/NhsLabel.vue'
-  import NhsHintText from '../typography/NhsHintText.vue'
-  import NhsErrorText from '../typography/NhsErrorText.vue'
   import NhsFormGroup from './NhsFormGroup.vue'
+  import FormShared from '../mixins/form-shared.js'
 
   const widths = [2, 3, 4, 5, 10, 20]
 
@@ -40,24 +38,6 @@
         type: String,
         required: true
       },
-      label: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      error: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      hint: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       type: {
         type: String,
         default: "text"
@@ -76,11 +56,8 @@
         }
       }
     },
-    mixins: [AddModel, RandomID],
+    mixins: [AddModel, RandomID, FormShared],
     components: {
-      NhsLabel,
-      NhsHintText,
-      NhsErrorText,
       NhsFormGroup
     },
     computed: {
@@ -96,24 +73,6 @@
         }
 
         return baseClass
-      },
-      formgroupError() {
-        if (this.error.text) {
-          return true
-        }
-        return false
-      },
-      describedBy() {
-        var describedBy = ""
-        if (this.hint.text) {
-          describedBy += ` ${this.itemId}-hint` 
-        }
-
-        if (this.error.text) {
-          describedBy += ` ${this.itemId}-error`
-        }
-
-        return describedBy
       }
     }
   }
