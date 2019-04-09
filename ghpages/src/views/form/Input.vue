@@ -186,12 +186,6 @@
             description: "Arguments for the error text component (e.g. text). See error-text component."
           },
           {
-            name: "autocomplete",
-            type: "string",
-            required: "no",
-            description: "Attribute to identify input purpose, for instance 'postal-code' or 'username'. See Autofilling form controls: the autocomplete attribute for the full list of attributes that can be used."
-          },
-          {
             name: "attributes",
             type: "object",
             required: "no",
