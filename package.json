@@ -10,8 +10,7 @@
   "license": "MIT",
   "files": [
     "dist/*",
-    "src/*",
-    "!src/preview/*"
+    "src/*"
   ],
   "scripts": {
     "serve": "vue-cli-service serve ./ghpages/src/main.js",
