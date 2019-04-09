@@ -3,6 +3,7 @@ import Header from '../views/layout/Header.vue'
 import LayoutHome from '../views/layout/Home.vue'
 import Footer from '../views/layout/Footer.vue'
 import Fieldset from '../views/layout/Fieldset.vue'
+import Hero from '../views/layout/Hero.vue'
 
 const layout = [
   {
@@ -29,6 +30,11 @@ const layout = [
     path: '/layout/fieldset',
     name: 'Fieldset',
     component: Fieldset
+  },
+  {
+    path: '/layout/hero',
+    name: 'Hero',
+    component: Hero
   },
   {
     path: '/layout/*',
