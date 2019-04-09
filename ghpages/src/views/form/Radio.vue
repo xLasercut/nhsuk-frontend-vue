@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <nhs-main>
     <code-block :code="radionormalCode">
       <nhs-row>
         <nhs-col :span="50">
@@ -41,7 +41,7 @@
         </nhs-col>
       </nhs-row>
     </code-block>
-  </div>
+  </nhs-main>
 </template>
 
 <script>

@@ -10,6 +10,7 @@ import Feedback from '../views/information/Feedback.vue'
 import Table from '../views/information/Table.vue'
 import WarningCallout from '../views/information/WarningCallout.vue'
 import Promo from '../views/information/Promo.vue'
+import SummaryList from '../views/information/SummaryList.vue'
 
 const information = [
   {
@@ -73,9 +74,20 @@ const information = [
     component: Promo
   },
   {
+    path: '/information/summarylist',
+    name: 'Summary List',
+    component: SummaryList
+  },
+  {
     path: '/information/*',
     redirect: '/information'
   }
 ]
 
-export default information
+export default information.sort(function (a,b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+})
