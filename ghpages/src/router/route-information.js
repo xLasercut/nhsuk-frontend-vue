@@ -8,6 +8,7 @@ import EmergencyAlert from '../views/information/EmergencyAlert.vue'
 import ErrorSummary from '../views/information/ErrorSummary.vue'
 import Feedback from '../views/information/Feedback.vue'
 import Table from '../views/information/Table.vue'
+import WarningCallout from '../views/information/WarningCallout.vue'
 
 const information = [
   {
@@ -59,6 +60,11 @@ const information = [
     path: '/information/table',
     name: 'Table',
     component: Table
+  },
+  {
+    path: '/information/warningcallout',
+    name: 'Warning Callout',
+    component: WarningCallout
   },
   {
     path: '/information/*',
