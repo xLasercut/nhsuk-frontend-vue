@@ -15,6 +15,7 @@ export { default as NhsActionLink } from './navigation/NhsActionLink.vue'
 export { default as NhsBackLink } from './navigation/NhsBackLink.vue'
 export { default as NhsPagination } from './navigation/NhsPagination.vue'
 export { default as NhsContents } from './navigation/NhsContents.vue'
+export { default as NhsNavAz } from './navigation/NhsNavAz.vue'
 
 export { default as NhsCareCard } from './information/NhsCareCard.vue'
 export { default as NhsExpander } from './information/NhsExpander.vue'
