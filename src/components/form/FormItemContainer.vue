@@ -1,5 +1,5 @@
 <template>
-  <nhs-form-group :error="formGroupError">
+  <form-group :error="formGroupError">
     <nhs-label :attributes="label.attributes" :page-heading="label.pageHeading" :for="id" v-if="label.text">
       <slot name="label" :props="label">{{label.text}}</slot>
     </nhs-label>
@@ -10,11 +10,11 @@
       <slot name="error" :props="error">{{error.text}}</slot>
     </nhs-error-text>
     <slot name="form-item" :described="describedBy"></slot>
-  </nhs-form-group>
+  </form-group>
 </template>
 
 <script>
-  import NhsFormGroup from './NhsFormGroup.vue'
+  import FormGroup from './FormGroup.vue'
   import NhsLabel from '../typography/NhsLabel.vue'
   import NhsHintText from '../typography/NhsHintText.vue'
   import NhsErrorText from '../typography/NhsErrorText.vue'
@@ -24,7 +24,7 @@
       NhsErrorText,
       NhsLabel,
       NhsHintText,
-      NhsFormGroup
+      FormGroup
     },
     props: {
       error: {

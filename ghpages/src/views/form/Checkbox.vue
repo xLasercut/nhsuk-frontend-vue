@@ -79,11 +79,11 @@
     }
   }`
 
-  var sourceOverride = `<nhs-checkbox name="single-checkbox" override-value="London" v-model="checkedval">
+  var sourceOverride = `<nhs-checkbox name="single-checkbox" form-value="London" v-model="checkedval">
     London
   </nhs-checkbox>
 
-  <nhs-checkbox name="single-checkbox" override-value="Paris" v-model="checkedval">
+  <nhs-checkbox name="single-checkbox" form-value="Paris" v-model="checkedval">
     Paris
   </nhs-checkbox>
   
@@ -173,7 +173,7 @@
             description: "If true, checkbox will be disabled."
           },
           {
-            name: "override-value",
+            name: "form-value",
             type: "all",
             required: "no",
             description: "Value for the checkbox input."
@@ -208,7 +208,7 @@
             name: "error",
             type: "object",
             required: "no",
-            description: "Arguments for the error message component (e.g. text). See error message component."
+            description: "Arguments for the error component (e.g. text). See error-text component."
           },
           {
             name: "attributes",

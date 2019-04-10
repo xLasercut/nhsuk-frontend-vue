@@ -6,13 +6,10 @@
 
 <script>
   export default {
-    name: "NhsFormGroup",
     props: {
       attributes: {
         type: Object,
-        default() {
-          return {}
-        }
+        required: true
       },
       error: {
         type: Boolean,

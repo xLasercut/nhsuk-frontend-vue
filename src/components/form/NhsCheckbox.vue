@@ -1,6 +1,6 @@
 <template>
   <div class="nhsuk-checkboxes__item">
-    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="overrideValue" v-model="model" :disabled="disabled" :aria-describedby="describedBy">
+    <input class="nhsuk-checkboxes__input" :id="itemId" :name="name" type="checkbox" :value="formValue" v-model="model" :disabled="disabled" :aria-describedby="describedBy">
     <nhs-label class="nhsuk-checkboxes__label" :attributes="label.attributes" :page-heading="label.pageHeading" :for="itemId">
       <slot></slot>
     </nhs-label>
@@ -26,7 +26,7 @@
         type: Boolean,
         default: false,
       },
-      overrideValue: {
+      formValue: {
         default: null
       },
       name: {

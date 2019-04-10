@@ -1,25 +1,47 @@
 <template>
-  <div :class="groupType">
+  <form-item-group :error="error" :hint="hint" :fieldset="fieldset" :id="id" type="radio" :attributes="attributes">
+    <template #hint="hint">
+      <slot name="hint" :props="hint.props"></slot>
+    </template>
+    <template #error="error">
+      <slot name="error" :props="error.props"></slot>
+    </template>
     <slot></slot>
-  </div>
+  </form-item-group>
 </template>
 
 <script>
+  import FormItemGroup from './FormItemGroup.vue'
+
   export default {
     name: "NhsRadioGroup",
-    props: {
-      type: {
-        type: String,
-        default: "normal"
-      }
+    components: {
+     FormItemGroup
     },
-    computed: {
-      groupType() {
-        switch (this.type) {
-          case "inline":
-            return "nhsuk-radios nhsuk-radios--inline"
-          default:
-            return "nhsuk-radios"
+    props: {
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      fieldset: {
+        type: Object
+      },
+      hint: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      id: {
+        type: String,
+        default: "NhsRadioGroup"
+      },
+      error: {
+        type: Object,
+        default() {
+          return {}
         }
       }
     }

@@ -1,39 +1,22 @@
 <template>
-  <nhs-form-group :error="formgroupError" :attributes="attributes">
-    <nhs-fieldset :attributes="fieldset.attributes" :legend="fieldset.legend" :described-by="fieldset.describedBy" v-if="fieldset">
-      <nhs-hint-text class="nhsuk-checkboxes__hint" :attributes="hint.attributes" :id="`${id}-hint`" v-if="hint.text">
-        <slot name="hint" :props="hint">{{hint.text}}</slot>
-      </nhs-hint-text>
-      <nhs-error-text :attributes="error.attributes" :id="`${id}-error`" v-if="error.text">
-        <slot name="error" :props="error">{{error.text}}</slot>
-      </nhs-error-text>
-      <slot></slot>
-    </nhs-fieldset>
-
-    <nhs-hint-text class="nhsuk-checkboxes__hint" :attributes="hint.attributes" :id="`${id}-hint`" v-if="hint && !fieldset">
-      <slot name="hint" :props="hint">{{hint.text}}</slot>
-    </nhs-hint-text>
-    <nhs-error-text :attributes="error.attributes" :id="`${id}-error`" v-if="error && !fieldset">
-      <slot name="error" :props="error">{{error.text}}</slot>
-    </nhs-error-text>
-    <slot v-if="!fieldset"></slot>
-
-  </nhs-form-group>
+  <form-item-group :error="error" :hint="hint" :fieldset="fieldset" :id="id" type="checkbox" :attributes="attributes">
+    <template #hint="hint">
+      <slot name="hint" :props="hint.props"></slot>
+    </template>
+    <template #error="error">
+      <slot name="error" :props="error.props"></slot>
+    </template>
+    <slot></slot>
+  </form-item-group>
 </template>
 
 <script>
-  import NhsFieldset from '../layout/NhsFieldset.vue'
-  import NhsHintText from '../typography/NhsHintText.vue'
-  import NhsErrorText from '../typography/NhsErrorText.vue'
-  import NhsFormGroup from './NhsFormGroup.vue'
+  import FormItemGroup from './FormItemGroup.vue'
 
   export default {
     name: "NhsCheckboxGroup",
     components: {
-      NhsFieldset,
-      NhsHintText,
-      NhsErrorText,
-      NhsFormGroup
+     FormItemGroup
     },
     props: {
       attributes: {
@@ -60,14 +43,6 @@
         default() {
           return {}
         }
-      }
-    },
-    computed: {
-      formgroupError() {
-        if (this.error && this.error.text) {
-          return true
-        }
-        return false
       }
     }
   }

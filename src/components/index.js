@@ -42,7 +42,6 @@ export { default as NhsBody } from './typography/NhsBody.vue'
 export { default as NhsList } from './typography/NhsList.vue'
 export { default as NhsLabel } from './typography/NhsLabel.vue'
 
-export { default as NhsFormGroup } from './form/NhsFormGroup.vue'
 export { default as NhsInput  } from './form/NhsInput.vue'
 export { default as NhsCheckbox } from './form/NhsCheckbox.vue'
 export { default as NhsCheckboxGroup } from './form/NhsCheckboxGroup.vue'
