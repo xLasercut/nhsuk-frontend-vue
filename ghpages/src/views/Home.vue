@@ -1,45 +1,83 @@
 <template>
   <nhs-main>
-    <nhs-row v-for="(link, index) in sectionLinks" :key="index">
-      <nhs-col>
-        <nhs-button :name="`to_${link.text}`" :href="link.href">{{link.text}}</nhs-button>
-      </nhs-col>
-    </nhs-row>
+    <nhs-nav-az :items="navItems" @click="scrollTo($event)"></nhs-nav-az>
+    <nhs-list-panel v-for="(items, key) in panels" :key="key" :label="key" :id="`panel-${key}`" :items="items"></nhs-list-panel>
   </nhs-main>
 </template>
 
 <script>
+  const blacklist = ["Typography", "Navigation", "Form", "Layout", "Information"]
+  const alphabet = [
+    "A", "B", "C", "D", "E", "F",
+    "G", "H", "I", "J", "K", "L",
+    "M", "N", "O", "P", "Q", "R",
+    "S", "T", "U", "V", "W", "X",
+    "Y", "Z"
+  ]
+
   export default {
     data() {
       return {
-        sectionLinks: [
-          {
-            href: "/layout",
-            text: "Layout"
-          },
-          {
-            href: "/information",
-            text: "Information"
-          },
-          {
-            href: "/navigation",
-            text: "Navigation"
-          },
-          {
-            href: "/form",
-            text: "Form"
-          },
-          {
-            href: "/typography",
-            text: "Typography"
-          }
-        ]
+        navItems: [],
+        routes: this.getAllRoutes(),
+        panels: {}
       }
     },
     methods: {
-      changeRoute(route) {
-        console.log(route)
+      getAllRoutes() {
+        var routesToDisplay = []
+        var mainRoutes = this.$router.options.routes
+        for (var mainRoute of mainRoutes) {
+          if (mainRoute.path === '/section') {
+            var childRoutes = mainRoute.children
+          }
+        }
+
+        for (var childRoute of childRoutes) {
+          if (childRoute.name && !blacklist.includes(childRoute.name)) {
+            routesToDisplay.push(childRoute)
+          }
+        }
+
+        return routesToDisplay.sort(function (a,b) {
+          if (a.name < b.name)
+            return -1;
+          if (a.name > b.name)
+            return 1;
+          return 0;
+        })
+      },
+      getListPanelItems() {
+        for (var letter of alphabet) {
+          if (!(letter in this.panels)) {
+            this.panels[letter] = []
+          }
+
+          for (var route of this.routes) {
+            var regex = new RegExp(`^${letter}`)
+            if (regex.test(route.name)) {
+              this.panels[letter].push({
+                text: route.name,
+                href: route.path
+              })
+            }
+          }
+
+          if (this.panels[letter].length > 0) {
+            this.navItems.push({text: letter})
+          }
+          else{ 
+            this.navItems.push({text: letter, disabled: true})
+            delete this.panels[letter]
+          }
+        }
+      },
+      scrollTo(event) {
+        document.getElementById('panel-' + event).scrollIntoView()
       }
+    },
+    mounted() {
+      this.getListPanelItems()
     }
   }
 </script>

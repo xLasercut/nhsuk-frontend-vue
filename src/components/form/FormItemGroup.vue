@@ -29,7 +29,8 @@
 
   const types = {
     checkbox: "nhsuk-checkboxes__hint",
-    radio: "nhsuk-radios__hint"
+    radio: "nhsuk-radios__hint",
+    input: ""
   }
 
   export default {

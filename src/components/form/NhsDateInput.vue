@@ -1,29 +1,93 @@
 <template>
-  <div class="nhsuk-form-group">
-    <div class="nhsuk-date-input__item">
-      <nhs-input label="Day" width="2" type="number" v-model="date['day']"></nhs-input>
+  <form-item-group :error="error" :fieldset="fieldset" :hint="hint" type="input" id="NhsDateInput" :attributes="{}">
+    <div class="nhsuk-date-input" v-bind="attributes" :id="id">
+      <div class="nhsuk-date-input__item" v-for="(item, index) in items" :key="index">
+        <nhs-label
+          :attributes="item.label.attributes"
+          :page-heading="item.label.pageHeading"
+          :for="inputId(item)" v-if="item.label && item.label.text"
+        >
+          <slot name="label" :props="item.label">{{item.label.text}}</slot>
+        </nhs-label>
+        <input 
+          :class="inputClass(item)" :id="inputId(item)" :name="item.name" type="number"
+          v-bind="item.attributes" v-model.number="date[item.name]" 
+          :disabled="item.disabled" :maxlength="item.width"
+          @blur="$emit('blur', item.name)" @focus="$emit('focus', item.name)"
+        >
+      </div>
     </div>
-    <div class="nhsuk-date-input__item">
-      <nhs-input label="Month" width="2" type="number" v-model="date['month']"></nhs-input>
-    </div>
-    <div class="nhsuk-date-input__item">
-      <nhs-input label="Year" width="4" type="number" v-model="date['year']"></nhs-input>
-    </div>
-  </div>
+  </form-item-group>
 </template>
 
 <script>
-  import NhsInput from './NhsInput.vue'
+  import FormItemGroup from './FormItemGroup.vue'
+  import NhsLabel from '../typography/NhsLabel.vue'
 
   export default { 
     name: "NhsDateInput",
     components: {
-      NhsInput
+      FormItemGroup,
+      NhsLabel
     },
     props: {
-      value: {
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      id: {
+        type: String,
+        default: ""
+      },
+      error: {
+        typs: Object,
+        default() {
+          return {}
+        }
+      },
+      fieldset: {
         type: Object
-      }
+      },
+      hint: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      items: {
+        type: Array,
+        default() {
+          return [
+            {
+              name: "day",
+              width: 2,
+              label: {
+                text: "Day"
+              },
+              attributes: {}
+            },
+            {
+              name: "month",
+              width: 2,
+              label: {
+                text: "Month"
+              },
+              attributes: {}
+            },
+            {
+              name: "year",
+              width: 4,
+              label: {
+                text: "Year"
+              },
+              attributes: {}
+            }
+          ]
+        }
+      },
+      value: {}
     },
     data() {
       return {
@@ -36,6 +100,27 @@
       },
       value(val) {
         this.date = val
+      }
+    },
+    methods: {
+      inputId(item) {
+        if (!item.id) {
+          return `${this.id}-${item.name}`
+        }
+        return item.id
+      },
+      inputClass(item) {
+        var baseClass = "nhsuk-input"
+
+        if (item.width) {
+          baseClass += ` nhsuk-input--width-${item.width}`
+        }
+
+        if (item.error) {
+          baseClass += " nhsuk-input--error"
+        }
+
+        return baseClass
       }
     }
   }

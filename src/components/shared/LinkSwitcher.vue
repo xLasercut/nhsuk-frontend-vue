@@ -12,10 +12,10 @@
         return createElement('span', this.$slots.default)
       }
       else if (this.isRouter) {
-        return createElement('router-link', { attrs: { to: this.href } }, this.$slots.default)
+        return createElement('router-link', { attrs: { to: this.href }, nativeOn: { click: this.clickHandler } }, this.$slots.default)
       }
       else {
-        return createElement('a', { attrs: { href: this.href } }, this.$slots.default)
+        return createElement('a', { attrs: { href: this.href }, nativeOn: { click: this.clickHandler } }, this.$slots.default)
       }
     },
     computed: {
@@ -25,6 +25,11 @@
           return true
         }
         return false
+      }
+    },
+    methods: {
+      clickHandler() {
+        this.$emit('click')
       }
     }
   }
