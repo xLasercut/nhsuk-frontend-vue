@@ -1,5 +1,5 @@
 <template>
-  <nav :class="nhsuk-contents-list$" v-bind="attributes" role="navigation" :aria-label="ariaLabel">
+  <nav class="nhsuk-contents-list" v-bind="attributes" role="navigation" :aria-label="ariaLabel">
     <h2 class="nhsuk-u-visually-hidden">{{hiddenText}}</h2>
     <ol class="nhsuk-contents-list__list">
       <li class="nhsuk-contents-list__item" v-bind="addAriaCurrent(item.current)" v-for="(item, index) in items" :key="index">

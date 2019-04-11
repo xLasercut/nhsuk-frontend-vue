@@ -23,7 +23,7 @@
         required: true
       },
       attributes: {
-        type: Array,
+        type: Object,
         default() {
           return {}
         }
