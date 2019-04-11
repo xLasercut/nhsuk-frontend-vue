@@ -139,6 +139,12 @@
             description: "Optional item-specific label text"
           },
           {
+            name: "items.{}.error",
+            type: "boolean",
+            required: "no",
+            description: "If true, item will be set to error state"
+          },
+          {
             name: "fieldset",
             type: "object",
             required: "no",
