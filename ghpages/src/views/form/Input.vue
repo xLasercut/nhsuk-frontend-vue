@@ -3,25 +3,17 @@
     <code-block :code="sourceTypes">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint"></nhs-input>
+          <nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint" :error="error"></nhs-input>
         </nhs-col>
         <nhs-col :span="50">
-          Input: {{inputValue}}
+          <p>Input: {{inputValue}}</p>
+          <nhs-button @click="toggleError()" name="toggle-button">Toggle Error</nhs-button>
         </nhs-col>
       </nhs-row>
 
       <nhs-row>
         <nhs-col :span="50">
           <nhs-input :disabled="true" name="disabled"></nhs-input>
-        </nhs-col>
-      </nhs-row>
-
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-input :error="error" name="error"></nhs-input>
-        </nhs-col>
-        <nhs-col :span="50">
-          <nhs-button @click="toggleError()" name="toggle-button">Toggle Error</nhs-button>
         </nhs-col>
       </nhs-row>
     </code-block>
@@ -64,26 +56,10 @@
 </template>
 
 <script>
-  var sourceTypes = `<nhs-row>
-    <nhs-col :span="50">
-      <nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint"></nhs-input>
-    </nhs-col>
-    <nhs-col :span="50">
-      Input: {{inputValue}}
-    </nhs-col>
-  </nhs-row>
-
-  <nhs-row>
-    <nhs-col :span="50">
-      <nhs-input :disabled="true" name="disabled"></nhs-input>
-    </nhs-col>
-  </nhs-row>
-
-  <nhs-row>
-    <nhs-col :span="50">
-      <nhs-input :error="error"></nhs-input>
-    </nhs-col>
-  </nhs-row>
+  var sourceTypes = `<nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint" :error="error">
+  </nhs-input>
+  
+  <nhs-input :disabled="true" name="disabled"></nhs-input>
   
   export default {
     data() {
@@ -166,6 +142,12 @@
             type: "string",
             required: "no",
             description: "Type of input control to render. Default: text."
+          },
+          {
+            name: "disabled",
+            type: "boolean",
+            required: "no",
+            description: "If true, input is disabled"
           },
           {
             name: "label",

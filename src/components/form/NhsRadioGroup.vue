@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import FormItemGroup from './FormItemGroup.vue'
+  import FormItemGroup from './shared/FormItemGroup.vue'
 
   export default {
     name: "NhsRadioGroup",

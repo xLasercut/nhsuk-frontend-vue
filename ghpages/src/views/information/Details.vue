@@ -24,7 +24,7 @@
             name: "text",
             type: "string",
             required: "yes",
-            description: "Text to be displayed on the expander component."
+            description: "Text to be displayed on the details component."
           },
           {
             name: "attributes",

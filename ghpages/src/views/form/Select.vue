@@ -87,6 +87,12 @@
             description: "The id for each select box. Default: NhsSelect_<random string>"
           },
           {
+            name: "disabled",
+            type: "boolean",
+            required: "no",
+            description: "If true, select is disabled"
+          },
+          {
             name: "label",
             type: "object",
             required: "no",

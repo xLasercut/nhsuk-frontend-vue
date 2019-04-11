@@ -2,7 +2,7 @@
   <details class="nhsuk-details nhsuk-expander">
     <summary class="nhsuk-details__summary">
       <span class="nhsuk-details__summary-text">
-        {{label}}
+        {{text}}
       </span>
     </summary>
     <div class="nhsuk-details__text">
@@ -15,9 +15,15 @@
   export default {
     name: "NhsExpander",
     props: {
-      label: {
+      text: {
         type: String,
-        default: ""
+        required: true
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     }
   }

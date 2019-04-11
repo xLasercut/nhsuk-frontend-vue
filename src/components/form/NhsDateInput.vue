@@ -12,7 +12,7 @@
         <input 
           :class="inputClass(item)" :id="inputId(item)" :name="item.name" type="number"
           v-bind="item.attributes" v-model.number="date[item.name]" 
-          :disabled="item.disabled" :maxlength="item.width"
+          :disabled="item.disabled" 
           @blur="$emit('blur', item.name)" @focus="$emit('focus', item.name)"
         >
       </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import FormItemGroup from './FormItemGroup.vue'
+  import FormItemGroup from './shared/FormItemGroup.vue'
   import NhsLabel from '../typography/NhsLabel.vue'
 
   export default { 

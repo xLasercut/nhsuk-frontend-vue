@@ -10,6 +10,12 @@
           <nhs-button name="toggle" @click="toggleError()">Toggle Error</nhs-button>
         </nhs-col>
       </nhs-row>
+
+      <nhs-row>
+        <nhs-col :span="50">
+          <nhs-textarea name="textarea" :rows="2" :disabled="true"></nhs-textarea>
+        </nhs-col>
+      </nhs-row>
     </code-block>
 
     <argument-table heading="Textarea Arguments" :rows="rows"></argument-table>
@@ -19,6 +25,8 @@
 <script>
   var source = `<nhs-textarea :hint="hint" :error="error" :label="label" :rows="2" v-model="text">
   </nhs-textarea>
+
+  <nhs-textarea name="textarea" :disabled="true"></nhs-textarea>
   
   export default {
     data() {
@@ -69,6 +77,12 @@
             type: "number",
             required: "no",
             description: "Optional number of textarea rows. Default: 5"
+          },
+          {
+            name: "disabled",
+            type: "boolean",
+            required: "no",
+            description: "If true, textarea is disabled"
           },
           {
             name: "label",

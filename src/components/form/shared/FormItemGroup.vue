@@ -23,9 +23,9 @@
 
 <script>
   import FormGroup from './FormGroup.vue'
-  import NhsFieldset from '../layout/NhsFieldset.vue'
-  import NhsHintText from '../typography/NhsHintText.vue'
-  import NhsErrorText from '../typography/NhsErrorText.vue'
+  import NhsFieldset from '../../layout/NhsFieldset.vue'
+  import NhsHintText from '../../typography/NhsHintText.vue'
+  import NhsErrorText from '../../typography/NhsErrorText.vue'
 
   const types = {
     checkbox: "nhsuk-checkboxes__hint",

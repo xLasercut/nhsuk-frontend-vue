@@ -1,5 +1,5 @@
 <template>
-  <form-item-container :error="error" :hint="hint" :label="label" :id="itemId">
+  <form-item :error="error" :hint="hint" :label="label" :id="itemId">
     <template #hint="hint">
       <slot name="hint" :props="hint.props"></slot>
     </template>
@@ -10,58 +10,26 @@
       <slot name="label" :props="label.props"></slot>
     </template>
     <template #form-item="formitem">
-      <select :class="selectClass" :id="itemId" :name="name" :aria-describedby="formitem.described" v-bind="attributes" :disabled="disabled" v-model="model">
+      <select
+        :class="selectClass" :id="itemId" :name="name"
+        :aria-describedby="formitem.described" v-bind="attributes"
+        :disabled="disabled" v-model="model"
+        @blur="$emit('blur')" @change="$emit('change')"
+      >
         <slot></slot>
       </select>
     </template>
-  </form-item-container>
+  </form-item>
 </template>
 
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
-  import FormItemContainer from './FormItemContainer.vue'
+  import FormItem from '../mixins/form-item.js'
 
   export default {
     name: "NhsSelect",
-    components: {
-      FormItemContainer
-    },
-    mixins: [AddModel, RandomID],
-    props: {
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      name: {
-        type: String,
-        required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      error: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      label: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      hint: {
-        type: Object,
-        default() {
-          return {}
-        }
-      }
-    },
+    mixins: [AddModel, RandomID, FormItem],
     computed: {
       selectClass() {
         if (this.error.text) {

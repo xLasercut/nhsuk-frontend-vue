@@ -1,5 +1,5 @@
 <template>
-  <form-item-container :error="error" :hint="hint" :label="label" :id="itemId">
+  <form-item :error="error" :hint="hint" :label="label" :id="itemId">
     <template #hint="hint">
       <slot name="hint" :props="hint.props"></slot>
     </template>
@@ -14,16 +14,16 @@
         :class="inputClass" :id="itemId" :name="name" :type="type"
         :aria-describedby="formitem.described" v-bind="attributes" v-model="model" 
         :disabled="disabled" :maxlength="maxlength"
-        @blur="$emit('blur')" @focus="$emit('focus')"
+        @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
       >
     </template>
-  </form-item-container>
+  </form-item>
 </template>
 
 <script>
   import AddModel from '../mixins/add-model.js'
   import RandomID from '../mixins/random-id.js'
-  import FormItemContainer from './FormItemContainer.vue'
+  import FormItem from '../mixins/form-item.js'
   
 
   const widths = [2, 3, 4, 5, 10, 20]
@@ -31,19 +31,11 @@
   export default {
     name: "NhsInput",
     props: {
-      disabled: {
-        type: Boolean,
-        default: false
-      },
       width: {
         type: Number,
         validator(val) {
           return widths.includes(val)
         }
-      },
-      name: {
-        type: String,
-        required: true
       },
       type: {
         type: String,
@@ -51,36 +43,9 @@
       },
       maxlength: {
         type: Number
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      error: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      hint: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      label: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
-    mixins: [AddModel, RandomID],
-    components: {
-      FormItemContainer
-    },
+    mixins: [AddModel, RandomID, FormItem],
     computed: {
       inputClass() {
         var baseClass = "nhsuk-input"

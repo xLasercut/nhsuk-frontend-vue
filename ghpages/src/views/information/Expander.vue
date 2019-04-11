@@ -1,40 +1,38 @@
 <template>
-  <div>
-    <code-block :code="expander">
-      <nhs-expander label="Expander">
+  <nhs-main>
+    <code-block :code="source">
+      <nhs-expander text="Expander">
         This is an expander
       </nhs-expander>
     </code-block>
 
-    <code-block :code="expanderGroup">
-      <nhs-expander-group>
-        <nhs-expander label="Expander1">
-          This is expander1
-        </nhs-expander>
-        <nhs-expander label="Expander2">
-          This is expander2
-        </nhs-expander>
-      </nhs-expander-group>
-    </code-block>
-  </div>
+    <argument-table heading="Expander Arguments" :rows="rows"></argument-table>
+  </nhs-main>
 </template>
 
 <script>
+  var source = `<nhs-expander text="Expander">
+    This is an expander
+  </nhs-expander>`
 
   export default {
     data() {
       return {
-        expander: `<nhs-expander label="Expander">
-      This is an expander
-    </nhs-expander>`,
-        expanderGroup: `<nhs-expander-group>
-    <nhs-expander label="Expander1">
-      This is expander1
-    </nhs-expander>
-    <nhs-expander label="Expander2">
-      This is expander2
-    </nhs-expander>
-  </nhs-expander-group>`
+        source: source,
+        rows: [
+          {
+            name: "text",
+            type: "string",
+            required: "yes",
+            description: "Text to be displayed on the expander component."
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the anchor tag."
+          }
+        ]
       }
     }
   }
