@@ -3,7 +3,7 @@
     <ol class="nhsuk-nav-a-z__list" role="list">
       <li class="nhsuk-nav-a-z__item" v-for="(item, index) in items" :key="index">
         <span class="nhsuk-nav-a-z__link--disabled" v-if="item.disabled">{{item.text}}</span>
-        <link-switcher class="nhsuk-nav-a-z__link" :href="`#${item.text}`" v-if="!item.disabled" @click="$emit('click',item.text)">{{item.text}}</link-switcher>
+        <link-switcher class="nhsuk-nav-a-z__link" href="" v-if="!item.disabled" @click="$emit('click', item.text)">{{item.text}}</link-switcher>
       </li>
     </ol>
   </nav>

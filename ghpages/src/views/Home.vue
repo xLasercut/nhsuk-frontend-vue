@@ -1,11 +1,20 @@
 <template>
   <nhs-main>
-    <nhs-nav-az :items="navItems" @click="scrollTo($event)"></nhs-nav-az>
-    <nhs-list-panel
-      v-for="(items, key) in panels" :key="key"
-      :label="key" :id="`panel-${key}`" :items="items"
-      :back-to-top="true" @back-to-top="backToTop()"
-    ></nhs-list-panel>
+    <nhs-row>
+      <nhs-col>
+        <nhs-nav-az :items="navItems" @click="scrollTo($event)"></nhs-nav-az>
+      </nhs-col>
+    </nhs-row>
+    <nhs-row>
+      <nhs-col>
+        <nhs-list-panel
+          v-for="(items, key) in panels" :key="key"
+          :label="key" :id="`panel-${key}`" :items="items"
+          :back-to-top="true" @back-to-top="backToTop()"
+        >
+        </nhs-list-panel>
+      </nhs-col>
+    </nhs-row>
   </nhs-main>
 </template>
 
@@ -24,7 +33,7 @@
       return {
         navItems: [],
         routes: this.getAllRoutes(),
-        panels: {}
+        panels: {},
       }
     },
     methods: {

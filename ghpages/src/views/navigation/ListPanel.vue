@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  var source = `<nhs-list-panel :items="items" label="List Panel" back-to-top="/navigation/listpanel">
+  var source = `<nhs-list-panel :items="items" label="List Panel" :back-to-top="true">
   </nhs-list-panel>
       
   <nhs-list-panel :disabled="true" label="Disabled List Panel" message="Disabled Message">
@@ -77,9 +77,9 @@
           },
           {
             name: "back-to-top",
-            type: "string",
+            type: "boolean",
             required: "no",
-            description: "The href value of the back to top link."
+            description: "If set to true, back-to-top link will be displayed"
           },
           {
             name: "disabled",
