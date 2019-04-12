@@ -1,19 +1,16 @@
 <template>
-  <component :is="buttonElement" :class="buttonClass" :attributes="attributes" :href="href" :disabled="disabled" :type="type" :value="value" :name="name" @click="$emit('click')">
+  <component :is="buttonElement" :class="buttonClass" :attributes="attributes" :href="href" :disabled="disabled" :name="name" @click="$emit('click')">
     <slot></slot>
   </component>
 </template>
 
 <script>
   import LinkButton from './LinkButton.vue'
-  import InputButton from './InputButton.vue'
   import NormalButton from './NormalButton.vue'
 
   const colors = ["secondary", "reverse"]
-  const types = ["submit", "button", "reset"]
   const elements = {
     button: NormalButton,
-    input: InputButton,
     a: LinkButton
   }
 
@@ -38,22 +35,12 @@
         type: String,
         default: ""
       },
-      type: {
-        type: String,
-        default: "submit",
-        validator(val) {
-          return types.includes(val)
-        }
-      },
       element: {
         type: String,
         default: "button",
         validator(val) {
           return val in elements
         }
-      },
-      value: {
-        type: String
       },
       attributes: {
         type: Object,

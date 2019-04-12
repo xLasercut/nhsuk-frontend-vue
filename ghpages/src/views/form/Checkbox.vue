@@ -17,17 +17,16 @@
           <p class="status">Status: {{checked}}</p>
         </nhs-col>
       </nhs-row>
-      
     </code-block>
 
     <code-block :code="sourceOverride">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox name="single-checkbox" override-value="London" v-model="checkedval">
+            <nhs-checkbox name="single-checkbox" checkbox-value="London" v-model="checkedval">
               London
             </nhs-checkbox>
 
-            <nhs-checkbox name="single-checkbox" override-value="Paris" v-model="checkedval">
+            <nhs-checkbox name="single-checkbox" checkbox-value="Paris" v-model="checkedval">
               Paris
             </nhs-checkbox>
         </nhs-col>
@@ -79,11 +78,11 @@
     }
   }`
 
-  var sourceOverride = `<nhs-checkbox name="single-checkbox" form-value="London" v-model="checkedval">
+  var sourceOverride = `<nhs-checkbox name="single-checkbox" checkbox-value="London" v-model="checkedval">
     London
   </nhs-checkbox>
 
-  <nhs-checkbox name="single-checkbox" form-value="Paris" v-model="checkedval">
+  <nhs-checkbox name="single-checkbox" checkbox-value="Paris" v-model="checkedval">
     Paris
   </nhs-checkbox>
   
@@ -173,8 +172,8 @@
             description: "If true, checkbox will be disabled."
           },
           {
-            name: "form-value",
-            type: "all",
+            name: "checkbox-value",
+            type: "string",
             required: "no",
             description: "Value for the checkbox input."
           },

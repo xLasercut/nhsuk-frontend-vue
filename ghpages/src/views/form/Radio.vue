@@ -4,10 +4,10 @@
       <nhs-row>
         <nhs-col :span="50">
           <nhs-radio-group :hint="groupHint" :error="error" :fieldset="fieldset">
-            <nhs-radio name="radio1" v-model="radioVal" form-value="option 1">option 1</nhs-radio>
-            <nhs-radio name="radio2" v-model="radioVal" form-value="option 2">option 2</nhs-radio>
-            <nhs-radio name="radio3" v-model="radioVal" form-value="option 3" :disabled="true">option 3</nhs-radio>
-            <nhs-radio name="radio2" v-model="radioVal" form-value="option 4" :hint="hint">option 4</nhs-radio>
+            <nhs-radio name="radio1" v-model="radioVal" radio-value="option 1">option 1</nhs-radio>
+            <nhs-radio name="radio2" v-model="radioVal" radio-value="option 2">option 2</nhs-radio>
+            <nhs-radio name="radio3" v-model="radioVal" radio-value="option 3" :disabled="true">option 3</nhs-radio>
+            <nhs-radio name="radio2" v-model="radioVal" radio-value="option 4" :hint="hint">option 4</nhs-radio>
           </nhs-radio-group>
         </nhs-col>
         <nhs-col :span="50">
@@ -23,10 +23,10 @@
 
 <script>
   var source = `<nhs-radio-group :hint="groupHint" :error="error" :fieldset="fieldset">
-    <nhs-radio name="radio1" v-model="radioVal" form-value="option 1">option 1</nhs-radio>
-    <nhs-radio name="radio2" v-model="radioVal" form-value="option 2">option 2</nhs-radio>
-    <nhs-radio name="radio3" v-model="radioVal" form-value="option 3" :disabled="true">option 3</nhs-radio>
-    <nhs-radio name="radio2" v-model="radioVal" form-value="option 4" :hint="hint">option 4</nhs-radio>
+    <nhs-radio name="radio1" v-model="radioVal" radio-value="option 1">option 1</nhs-radio>
+    <nhs-radio name="radio2" v-model="radioVal" radio-value="option 2">option 2</nhs-radio>
+    <nhs-radio name="radio3" v-model="radioVal" radio-value="option 3" :disabled="true">option 3</nhs-radio>
+    <nhs-radio name="radio2" v-model="radioVal" radio-value="option 4" :hint="hint">option 4</nhs-radio>
   </nhs-radio-group>
   
   export default {
@@ -96,9 +96,9 @@
             description: "If true, radio will be disabled."
           },
           {
-            name: "form-value",
-            type: "all",
-            required: "no",
+            name: "radio-value",
+            type: "string",
+            required: "yes",
             description: "Value for the radio input."
           },
           {

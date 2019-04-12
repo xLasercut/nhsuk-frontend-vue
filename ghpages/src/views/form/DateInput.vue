@@ -30,30 +30,30 @@
         date: {},
         items: [
           {
-              name: "day",
-              width: 2,
-              label: {
-                text: "Day"
-              },
-              attributes: {},
-              error: true
+            name: "day",
+            width: 2,
+            label: {
+              text: "Day"
             },
-            {
-              name: "month",
-              width: 2,
-              label: {
-                text: "Month"
-              },
-              attributes: {}
+            attributes: {},
+            error: true
+          },
+          {
+            name: "month",
+            width: 2,
+            label: {
+              text: "Month"
             },
-            {
-              name: "year",
-              width: 4,
-              label: {
-                text: "Year"
-              },
-              attributes: {}
-            }
+            attributes: {}
+          },
+          {
+            name: "year",
+            width: 4,
+            label: {
+              text: "Year"
+            },
+            attributes: {}
+          }
         ],
         error: {
           text: "Error Text"
@@ -76,30 +76,30 @@
         date: {},
         items: [
           {
-              name: "day",
-              width: 2,
-              label: {
-                text: "Day"
-              },
-              attributes: {},
-              error: true
+            name: "day",
+            width: 2,
+            label: {
+              text: "Day"
             },
-            {
-              name: "month",
-              width: 2,
-              label: {
-                text: "Month"
-              },
-              attributes: {}
+            attributes: {},
+            error: true
+          },
+          {
+            name: "month",
+            width: 2,
+            label: {
+              text: "Month"
             },
-            {
-              name: "year",
-              width: 4,
-              label: {
-                text: "Year"
-              },
-              attributes: {}
-            }
+            attributes: {}
+          },
+          {
+            name: "year",
+            width: 4,
+            label: {
+              text: "Year"
+            },
+            attributes: {}
+          }
         ],
         error: {
           text: "Error Text"

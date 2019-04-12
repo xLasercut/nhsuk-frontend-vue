@@ -2,7 +2,7 @@
   <div class="nhsuk-radios__item">
     <input class="nhsuk-radios__input"
       :id="itemId" :name="name" type="radio"
-      :value="formValue" :aria-describedby="describedBy"
+      :value="radioValue" :aria-describedby="describedBy"
       v-bind="attributes" :disabled="disabled"
       v-model="model"
     >
@@ -54,8 +54,9 @@
           return {}
         }
       },
-      formValue: {
-        default: null
+      radioValue: {
+        type: String,
+        required: true
       }
     },
     mixins: [RandomID, AddModel],

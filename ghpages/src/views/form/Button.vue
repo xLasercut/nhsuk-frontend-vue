@@ -3,7 +3,7 @@
     <code-block :code="sourceNormal">
       <nhs-row>
         <nhs-col :span="33">
-          <nhs-button name="primary-button">
+          <nhs-button name="primary-button" href="/form/button">
             Primary Button
           </nhs-button>         
         </nhs-col>
@@ -79,31 +79,19 @@
             name: "element",
             type: "string",
             required: "no",
-            description: "Whether to use an <input>, <button> or <a> element to create the button. In most cases you will not need to set this as it will be configured automatically if you use href"
+            description: "Whether to use an <button> or <a> element to create the button. In most cases you will not need to set this as it will be configured automatically if you use href"
           },
           {
             name: "name",
             type: "string",
             required: "yes",
-            description: "Name for the <input> or <button>. This has no effect on <a> elements."
+            description: "Name for the button"
           },
           {
             name: "color",
             type: "string",
             required: "no",
             description: "Alternative colours of the button. secondary or reverse"
-          },
-          {
-            name: "type",
-            type: "string",
-            required: "yes",
-            description: "Type of <input> or <button> – button, submit or reset. Defaults to submit. This has no effect on <a> elements."
-          },
-          {
-            name: "value",
-            type: "string",
-            required: "yes",
-            description: "Value for the <button> tag. This has no effect on <a> or <input> elements."
           },
           {
             name: "disabled",
