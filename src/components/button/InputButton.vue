@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" :name="name" :aria-disabled="disabled" :disabled="disabled" @click="$emit('click')" v-bind="attributes">
+  <input :type="type" :name="name" :aria-disabled="disabled" :disabled="disabled" @click="$emit('click')" v-bind="attributes" :class="itemClass">
 </template>
 
 <script>

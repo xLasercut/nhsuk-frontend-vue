@@ -88,6 +88,12 @@
             description: "Name for the <input> or <button>. This has no effect on <a> elements."
           },
           {
+            name: "color",
+            type: "string",
+            required: "no",
+            description: "Alternative colours of the button. secondary or reverse"
+          },
+          {
             name: "type",
             type: "string",
             required: "yes",

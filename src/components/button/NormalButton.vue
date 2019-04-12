@@ -1,5 +1,5 @@
 <template>
-  <button :name="name" :value="value" :disabled="disabled" :type="type" :aria-disabled="disabled" @click="$emit('click')" v-bind="attributes">
+  <button :name="name" :value="value" :disabled="disabled" :type="type" :aria-disabled="disabled" @click="$emit('click')" v-bind="attributes" :class="itemClass">
     <slot></slot>
   </button>
 </template>

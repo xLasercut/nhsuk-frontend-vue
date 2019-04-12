@@ -1,21 +1,26 @@
+<template>
+  <component :is="linkType" :attributes="attributes" :href="href" @click="$emit('click')">
+    <slot></slot>
+  </component>
+</template>
+
 <script>
+  import Router from './linkswitcher/Router.vue'
+  import Normal from './linkswitcher/Normal.vue'
+  import NoLink from './linkswitcher/NoLink.vue'
+
   export default {
     name: "LinkSwitcher",
     props: {
       href: {
         type: String,
         default: ""
-      }
-    },
-    render(createElement){
-      if (this.href === "") {
-        return createElement('span', this.$slots.default)
-      }
-      else if (this.isRouter) {
-        return createElement('router-link', { attrs: { to: this.href }, nativeOn: { click: this.clickHandler } }, this.$slots.default)
-      }
-      else {
-        return createElement('a', { attrs: { href: this.href }, nativeOn: { click: this.clickHandler } }, this.$slots.default)
+      },
+      attributes: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     computed: {
@@ -25,6 +30,15 @@
           return true
         }
         return false
+      },
+      linkType() {
+        if (this.href === "") {
+          return NoLink
+        }
+        else if (this.isRouter) {
+          return Router
+        }
+        return Normal
       }
     },
     methods: {

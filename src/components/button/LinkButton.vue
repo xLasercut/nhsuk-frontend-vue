@@ -1,5 +1,5 @@
 <template>
-  <link-switcher :href="href" role="button" draggable="false" v-bind="attributes">
+  <link-switcher :href="href" :item-class="itemClass" role="button" draggable="false" :attributes="attributes">
     <slot></slot>
   </link-switcher>
 </template>
