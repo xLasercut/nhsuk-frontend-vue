@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-width-container">
+  <div :class="containerClass">
     <main class="nhsuk-main-wrapper" id="maincontent">
       <slot></slot>
     </main>
@@ -7,7 +7,26 @@
 </template>
 
 <script>
+  const types = {
+    fluid: "nhsuk-width-container-fluid",
+    normal: "nhsuk-width-container"
+  }
+
   export default {
-    name: "NhsMain"
+    name: "NhsMain",
+    props: {
+      type: {
+        type: String,
+        default: "normal",
+        validator(val) {
+          return val in types
+        }
+      }
+    },
+    computed: {
+      containerClass() {
+        return types[this.type]
+      }
+    }
   }
 </script>

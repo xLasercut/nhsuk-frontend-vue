@@ -7,14 +7,13 @@
 <script>
   import Router from './linkswitcher/Router.vue'
   import Normal from './linkswitcher/Normal.vue'
-  import NoLink from './linkswitcher/NoLink.vue'
 
   export default {
     name: "LinkSwitcher",
     props: {
       href: {
         type: String,
-        default: ""
+        required:  true
       },
       attributes: {
         type: Object,
@@ -32,10 +31,7 @@
         return false
       },
       linkType() {
-        if (this.href === "") {
-          return NoLink
-        }
-        else if (this.isRouter) {
+        if (this.isRouter) {
           return Router
         }
         return Normal

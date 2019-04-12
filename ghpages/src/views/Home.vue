@@ -1,7 +1,11 @@
 <template>
   <nhs-main>
     <nhs-nav-az :items="navItems" @click="scrollTo($event)"></nhs-nav-az>
-    <nhs-list-panel v-for="(items, key) in panels" :key="key" :label="key" :id="`panel-${key}`" :items="items"></nhs-list-panel>
+    <nhs-list-panel
+      v-for="(items, key) in panels" :key="key"
+      :label="key" :id="`panel-${key}`" :items="items"
+      :back-to-top="true" @back-to-top="backToTop()"
+    ></nhs-list-panel>
   </nhs-main>
 </template>
 
@@ -74,6 +78,10 @@
       },
       scrollTo(event) {
         document.getElementById('panel-' + event).scrollIntoView()
+      },
+      backToTop() {
+        document.body.scrollTop = 0
+        document.documentElement.scrollTop = 0
       }
     },
     mounted() {

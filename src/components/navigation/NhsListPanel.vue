@@ -12,7 +12,7 @@
       </li>
     </ul>
     <div class="nhsuk-back-to-top" v-if="backToTop">
-      <link-switcher class="nhsuk-back-to-top__link" :href="backToTop">
+      <link-switcher class="nhsuk-back-to-top__link" @click="$emit('back-to-top')" href="">
         <nhs-icon icon="arrow-right"></nhs-icon>
         Back to top
       </link-switcher>
@@ -66,8 +66,8 @@
         }
       },
       backToTop: {
-        type: String,
-        default: ""
+        type: Boolean,
+        default: false
       }
     },
     computed: {

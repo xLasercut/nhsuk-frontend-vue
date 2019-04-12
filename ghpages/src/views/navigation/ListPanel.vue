@@ -1,7 +1,7 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-list-panel :items="items" label="List Panel" back-to-top="/navigation/listpanel"></nhs-list-panel>
+      <nhs-list-panel :items="items" label="List Panel" :back-to-top="true"></nhs-list-panel>
       
       <nhs-list-panel :disabled="true" label="Disabled List Panel" message="Disabled Message"></nhs-list-panel>
     </code-block>
