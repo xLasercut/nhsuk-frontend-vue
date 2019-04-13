@@ -56,7 +56,7 @@
             description: "The href of a primary navigation item in the footer."
           },
           {
-            name: "links.{}.href",
+            name: "links.{}.text",
             type: "string",
             required: "no",
             description: "The label of a primary navigation item in the footer."

@@ -9,7 +9,7 @@
     <nhs-error-text :id="`${id}-error`" v-if="error.text" :attributes="error.attributes">
       <slot name="error" :props="error">{{error.text}}</slot>
     </nhs-error-text>
-    <slot name="form-item" :described="describedBy" :class="itemClass"></slot>
+    <slot name="form-item" :described="describedBy"></slot>
   </form-group>
 </template>
 
