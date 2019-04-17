@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import AddModel from '../../mixins/add-model.js'
+  import AddModel from '../../../mixins/add-model'
 
   export default {
     name: "NhsRadio",

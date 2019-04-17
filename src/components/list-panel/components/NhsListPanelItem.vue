@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import LinkSwitcher from '../../shared/LinkSwitcher'
+  import LinkSwitcher from '../../../shared/LinkSwitcher'
 
   export default {
     name: "NhsListPanelItem",

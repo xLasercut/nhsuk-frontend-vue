@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import FormItem from '../mixins/form-item.js'
+  import FormItem from '../mixins/form-item'
 
   export default {
     name: "NhsSelect",

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
-  import LinkSwitcher from '../shared/LinkSwitcher.vue'
+  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
+  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
 
   export default {
     name: "NhsPromo",

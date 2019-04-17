@@ -13,21 +13,14 @@
           <nhs-icon icon="chevron-right"></nhs-icon>
         </link-switcher>
       </li>
-      <li class="nhsuk-header__navigation-item" v-for="(item, index) in primaryLinks" :key="index">
-        <link-switcher class="nhsuk-header__navigation-link" :href="item.href">
-          <slot name="primary-link" :props="item">
-            {{item.text}}
-            <nhs-icon icon="chevron-right"></nhs-icon>
-          </slot>
-        </link-switcher>
-      </li>
+      
     </ul>
   </nav>
 </template>
 
 <script>
   import NhsIcon from '../../icon/NhsIcon.vue'
-  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
+  import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
     name: "HeaderNav",

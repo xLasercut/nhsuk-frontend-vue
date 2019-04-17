@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import LinkSwitcher from '../shared/LinkSwitcher.vue'
+  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
   import NhsIcon from '../icon/NhsIcon.vue'
 
   export default {

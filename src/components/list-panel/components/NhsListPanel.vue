@@ -19,8 +19,8 @@
 </template>
 
 <script>
-  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
-  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
+  import HeadingSwitcher from '../../../shared/HeadingSwitcher.vue'
+  import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
   import NhsIcon from '../../icon/NhsIcon.vue'
 
   export default {

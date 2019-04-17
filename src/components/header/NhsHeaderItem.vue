@@ -1,19 +1,15 @@
 <template>
-  <li class="nhsuk-footer__list-item">
-    <link-switcher class="nhsuk-footer__list-item-link" :href="href" v-bind="attributes">
+  <li class="nhsuk-header__navigation-item">
+    <link-switcher class="nhsuk-header__navigation-link" :href="href" :attributes="attributes">
       <slot></slot>
+      <nhs-icon icon="chevron-right"></nhs-icon>
     </link-switcher>
   </li>
 </template>
 
 <script>
-  import LinkSwitcher from '../../../shared/LinkSwitcher'
-
   export default {
-    name: "NhsFooterItem",
-    components: {
-      LinkSwitcher
-    },
+    name: "NhsHeaderItem",
     props: {
       href: {
         type: String,

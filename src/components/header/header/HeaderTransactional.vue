@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
+  import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
     components: {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
   export default {
     name: "NhsWarningCallout",

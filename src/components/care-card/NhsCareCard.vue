@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
   const types = {
     "non-urgent": "Non-urgent advice: ",

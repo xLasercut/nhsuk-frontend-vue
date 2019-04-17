@@ -26,6 +26,12 @@
         source: source,
         narows: [
           {
+            name: "aria-label",
+            type: "string",
+            required: "no",
+            description: "aria-label for nav-az component. Default: A to Z Navigation"
+          },
+          {
             name: "attributes",
             type: "boolean",
             required: "no",

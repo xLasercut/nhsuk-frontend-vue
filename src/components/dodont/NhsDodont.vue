@@ -12,7 +12,7 @@
 
 <script>
   import NhsIcon from '../icon/NhsIcon.vue'
-  import HeadingSwitcher from '../shared/HeadingSwitcher.vue'
+  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
   const types = ["tick", "cross"]
 

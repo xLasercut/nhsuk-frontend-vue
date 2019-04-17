@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
+  import HeadingSwitcher from '../../../shared/HeadingSwitcher.vue'
 
   const sizes = ["xs", "s", "m", "l", "xl"]
 

@@ -7,13 +7,8 @@
 </template>
 
 <script>
-  import LinkSwitcher from '../../shared/LinkSwitcher.vue'
-
   export default {
     name: "NhsNavAz",
-    components: {
-      LinkSwitcher
-    },
     props: {
       ariaLabel: {
         type: String,
