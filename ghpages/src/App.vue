@@ -1,6 +1,9 @@
 <template>
   <div>
-    <nhs-header :show-search="false" :show-nav="true" :primary-links="headerLinks" :service="service" :transactional="false">
+    <nhs-header :show-search="false" :show-nav="true" :service="service" :transactional="false">
+      <nhs-header-item v-for="(item, index) in headerLinks" :key="index" :href="item.href">
+        {{item.text}}
+      </nhs-header-item>
     </nhs-header>
     <router-view></router-view>
     <nhs-footer>

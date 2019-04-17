@@ -14,7 +14,9 @@
       </div>
     </div>
 
-    <header-nav v-if="showNav" :primaryLinks="primaryLinks"></header-nav>
+    <header-nav v-if="showNav">
+      <slot></slot>
+    </header-nav>
   </header>
 </template>
 
@@ -62,12 +64,6 @@
       homeHref: {
         type: String,
         default: "/"
-      },
-      primaryLinks: {
-        type: Array,
-        default() {
-          return []
-        }
       }
     },
     components: {

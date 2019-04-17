@@ -1,3 +1,7 @@
 import NhsHeader from './NhsHeader'
+import NhsHeaderItem from './NhsHeaderItem'
 
-export default NhsHeader
+export {
+  NhsHeader,
+  NhsHeaderItem
+}

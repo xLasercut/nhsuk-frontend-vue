@@ -1,58 +1,30 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-header :show-nav="true" :show-search="true" :primary-links="primaryLinks">
+      <nhs-header :show-nav="true" :show-search="true">
+        <nhs-header-item href="/layout/header">Link One</nhs-header-item>
+        <nhs-header-item href="/layout/header">Link Two</nhs-header-item>
+        <nhs-header-item href="/layout/header">Link Three</nhs-header-item>
       </nhs-header>
     </code-block>
 
-    <argument-table heading="header" :rows="rows"></argument-table>
+    <argument-table heading="header" :rows="hrows"></argument-table>
+    <argument-table heading="header-item" :rows="hirows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-header :show-nav="true" :show-search="true" :primary-links="primaryLinks">
-  </nhs-header>
-  
-  export default {
-    data() {
-      return {
-        primaryLinks: [
-          {
-            href: '/layout/header',
-            text: 'Link one'
-          },
-          {
-            href: '/layout/header',
-            text: 'Link two'
-          },
-          {
-            href: '/layout/header',
-            text: 'Link three'
-          }
-        ]
-      }
-    }
-  }`
+  var source = ` <nhs-header :show-nav="true" :show-search="true">
+    <nhs-header-item href="/layout/header">Link One</nhs-header-item>
+    <nhs-header-item href="/layout/header">Link Two</nhs-header-item>
+    <nhs-header-item href="/layout/header">Link Three</nhs-header-item>
+  </nhs-header>`
 
   export default {
     data() {
       return {
         source: source,
-        primaryLinks: [
-          {
-            href: '/layout/header',
-            text: 'Link one'
-          },
-          {
-            href: '/layout/header',
-            text: 'Link two'
-          },
-          {
-            href: '/layout/header',
-            text: 'Link three'
-          }
-        ],
-        rows: [
+        hrows: [
           {
             name: "show-nav",
             type: "boolean",
@@ -78,24 +50,6 @@
             description: "Aria label for the logo href. Default: NHS homepage"
           },
           {
-            name: "primary-links",
-            type: "array",
-            required: "no",
-            description: "Array of navigation links for use in the header"
-          },
-          {
-            name: "primary-links.{}.href",
-            type: "string",
-            required: "no",
-            description: "The href of a navigation item in the header."
-          },
-          {
-            name: "primary-links.{}.text",
-            type: "string",
-            required: "no",
-            description: "The label of a navigation item in the header."
-          },
-          {
             name: "transactional",
             type: "boolean",
             required: "no",
@@ -118,6 +72,20 @@
             type: "object",
             required: "no",
             description: "Any extra HTML attributes (for example class) to add to the header container."
+          }
+        ],
+        hirows: [
+          {
+            name: "href",
+            type: "string",
+            required: "yes",
+            description: "Link of the header navigation link"
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the header item."
           }
         ]
       }

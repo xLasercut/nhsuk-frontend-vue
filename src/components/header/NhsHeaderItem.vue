@@ -8,8 +8,13 @@
 </template>
 
 <script>
+  import LinkSwitcher from '../../shared/LinkSwitcher'
+
   export default {
     name: "NhsHeaderItem",
+    components: {
+      LinkSwitcher
+    },
     props: {
       href: {
         type: String,

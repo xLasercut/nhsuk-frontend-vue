@@ -13,7 +13,7 @@
           <nhs-icon icon="chevron-right"></nhs-icon>
         </link-switcher>
       </li>
-      
+      <slot></slot>
     </ul>
   </nav>
 </template>
