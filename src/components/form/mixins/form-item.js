@@ -1,4 +1,4 @@
-import FormItem from '../shared/FormItem'
+import FormItem from '../shared/FormItem.vue'
 
 export default {
   components: {
@@ -67,7 +67,8 @@ export default {
       }
       
       if (this.$slots.label) {
-        for (var label of this.$slots.label) {
+        for (var i = 0; i < this.$slots.label.length; i++) {
+          var label = this.$slots.label[i]
           label.data.attrs["for"] = this.idCache
         }
       }
