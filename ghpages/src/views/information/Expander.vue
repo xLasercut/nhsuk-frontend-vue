@@ -6,7 +6,7 @@
       </nhs-expander>
     </code-block>
 
-    <argument-table heading="Expander Arguments" :rows="rows"></argument-table>
+    <argument-table heading="expander" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

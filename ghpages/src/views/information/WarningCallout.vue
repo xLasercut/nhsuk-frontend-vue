@@ -6,7 +6,7 @@
       </nhs-warning-callout>
     </code-block>
 
-    <argument-table heading="Warning Callout Arguments" :rows="rows"></argument-table>
+    <argument-table heading="warning-callout" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

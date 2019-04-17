@@ -7,7 +7,7 @@
       
     </code-block>
     
-    <argument-table heading="Feedback Banner Arguments" :rows="rows"></argument-table>
+    <argument-table heading="feedback" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

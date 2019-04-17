@@ -1,106 +1,74 @@
 <template>
   <nhs-main>
     <code-block :code="sourceCode">
-      <nhs-breadcrumb :items="breadcrums" href="/navigation/breadcrumb" text="Back to Level Five">
+      <nhs-breadcrumb>
+        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
+        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
+        <nhs-breadcrumb-item>Level Three</nhs-breadcrumb-item>
+        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Four</nhs-breadcrumb-item>
+        <nhs-breadcrumb-backlink slot="backlink" href="/navigation/breadcrumb">Back Link</nhs-breadcrumb-backlink>
       </nhs-breadcrumb>
     </code-block>
 
-    <argument-table heading="Breadcrumb Arguments" :rows="rows">
-    </argument-table>
+    <argument-table heading="breadcrumb" :rows="rows"></argument-table>
+    <argument-table heading="breadcrumb-item" :rows="rowsi"></argument-table>
+    <argument-table heading="breadcrumb-backlink" :rows="rowsbl"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-breadcrumb :items="breadcrums" href="/navigation/breadcrumb" text="Back to Level Five">
-  </nhs-breadcrumb>
-  
-  export default {
-    data() {
-      return {
-        breadcrums: [
-          {
-            text: "Level One",
-            href: "/navigation/breadcrumb"
-          },
-          {
-            text: "Level Two",
-            href: "/navigation/breadcrumb"
-          },
-          {
-            text: "Level Three"
-          },
-          {
-            text: "Level Four",
-            href: "/navigation/breadcrumb"
-          }
-        ]
-      }
-    }
-  }`
+  var source = `<nhs-breadcrumb>
+    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
+    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
+    <nhs-breadcrumb-item>Level Three</nhs-breadcrumb-item>
+    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Four</nhs-breadcrumb-item>
+    <nhs-breadcrumb-backlink slot="backlink" href="/navigation/breadcrumb">Back Link</nhs-breadcrumb-backlink>
+  </nhs-breadcrumb>`
 
   export default {
     data() {
       return {
         sourceCode: source,
-        breadcrums: [
-          {
-            text: "Level One",
-            href: "/navigation/breadcrumb"
-          },
-          {
-            text: "Level Two",
-            href: "/navigation/breadcrumb"
-          },
-          {
-            text: "Level Three"
-          },
-          {
-            text: "Level Four",
-            href: "/navigation/breadcrumb"
-          }
-        ],
         rows: [
           {
-            name: "items",
-            type: "array",
-            required: "yes",
-            description: "Array of breadcrumbs item objects."
-          },
-          {
-            name: "items.{}.text",
-            type: "string",
-            required: "yes",
-            description: "Text to use within the breadcrumbs item."
-          },
-          {
-            name: "items.{}.href",
+            name: "aria-label",
             type: "string",
             required: "no",
-            description: "Link for the breadcrumbs item."
-          },
-          {
-            name: "items.{}.attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the breadcrumb anchor item."
-          },
-          {
-            name: "href",
-            type: "string",
-            required: "yes",
-            description: "Link of the back link when in mobile mode"
-          },
-          {
-            name: "text",
-            type: "string",
-            required: "yes",
-            description: "Text for the back link when in mobile mode"
+            description: "aria-label attribute for breadcrumb container. Default: Breadcrumb"
           },
           {
             name: "attributes",
             type: "object",
             required: "no",
             description: "Any extra HTML attributes (for example class) to add to the breadcrumbs container."
+          }
+        ],
+        rowsi: [
+          {
+            name: "href",
+            type: "string",
+            required: "no",
+            description: "Link for the breadcrumb item. If not provided, breadcrumb item will show as normal text"
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the breadcrumb item"
+          }
+        ],
+        rowsbl: [
+          {
+            name: "href",
+            type: "string",
+            required: "yes",
+            description: "Link for the breadcrumb backlink"
+          },
+          {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the breadcrumb backlink"
           }
         ]
       }

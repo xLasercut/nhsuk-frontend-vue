@@ -11,7 +11,7 @@
       </nhs-summary-list>
     </code-block>
 
-    <argument-table heading="Summary List Arguments" :rows="argRows"></argument-table>
+    <argument-table heading="summary-list" :rows="argRows"></argument-table>
   </nhs-main>
 </template>
 

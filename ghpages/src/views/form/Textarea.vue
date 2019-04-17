@@ -3,7 +3,11 @@
     <code-block :code="source">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-textarea :hint="hint" :error="error" :label="label" v-model="text" :rows="2" name="textarea"></nhs-textarea>
+          <nhs-textarea v-model="text" :rows="2" name="textarea">
+            <nhs-label slot="label">Input label</nhs-label>
+            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
+          </nhs-textarea>
         </nhs-col>
         <nhs-col :span="50">
           <p>Text: {{text}}</p>
@@ -13,17 +17,20 @@
 
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-textarea name="textarea" :rows="2" :disabled="true"></nhs-textarea>
+          <nhs-textarea name="textarea" :rows="1" :disabled="true"></nhs-textarea>
         </nhs-col>
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Textarea Arguments" :rows="rows"></argument-table>
+    <argument-table heading="textarea" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-textarea :hint="hint" :error="error" :label="label" :rows="2" v-model="text">
+  var source = `<nhs-textarea v-model="text" :rows="2" name="textarea">
+    <nhs-label slot="label">Input label</nhs-label>
+    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+    <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
   </nhs-textarea>
 
   <nhs-textarea name="textarea" :disabled="true"></nhs-textarea>
@@ -31,16 +38,7 @@
   export default {
     data() {
       return {
-        hint: {
-          text: "Hint text"
-        },
-        error: {
-          text: "Error text"
-        },
-        label: {
-          text: "Label text"
-        },
-        text: ""
+        error: "Error text"
       }
     }
   }`
@@ -48,15 +46,7 @@
   export default {
     data() { 
       return {
-        hint: {
-          text: "Hint text"
-        },
-        error: {
-          text: "Error text"
-        },
-        label: {
-          text: "Label text"
-        },
+        error: "Error text",
         text: "",
         source: source,
         rows: [
@@ -85,24 +75,6 @@
             description: "If true, textarea is disabled"
           },
           {
-            name: "label",
-            type: "object",
-            required: "no",
-            description: "Arguments for the label component (e.g. text). See label component."
-          },
-          {
-            name: "hint",
-            type: "object",
-            required: "no",
-            description: "Arguments for the hint component (e.g. text). See hint-text component."
-          },
-          {
-            name: "error",
-            type: "object",
-            required: "no",
-            description: "Arguments for the error component (e.g. text). See error-text component."
-          },
-          {
             name: "attributes",
             type: "object",
             required: "no",
@@ -113,11 +85,11 @@
     },
     methods: {
       toggleError() {
-        if (this.error.text) {
-          this.error.text = ""
+        if (this.error) {
+          this.error = ""
         }
         else {
-          this.error.text = "Error text"
+          this.error = "Error text"
         }
       }
     }

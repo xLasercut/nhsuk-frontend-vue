@@ -6,7 +6,7 @@
       </nhs-back-link>
     </code-block>
 
-    <argument-table heading="Back Link Arguments" :rows="rows">
+    <argument-table heading="back-link" :rows="rows">
     </argument-table>
   </nhs-main>
 </template>

@@ -7,7 +7,7 @@
       ></nhs-pagination>
     </code-block>
 
-    <argument-table heading="Pagination Arguments" :rows="rows"></argument-table>
+    <argument-table heading="pagination" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

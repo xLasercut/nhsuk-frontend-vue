@@ -6,7 +6,7 @@
       </nhs-action-link>
     </code-block>
 
-    <argument-table heading="Action Link Arguments" :rows="rows">
+    <argument-table heading="action-link" :rows="rows">
     </argument-table>
   </nhs-main>  
 </template>

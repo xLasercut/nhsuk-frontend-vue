@@ -6,7 +6,7 @@
       <nhs-label>This is a label</nhs-label>
     </code-block>
 
-    <argument-table heading="Label Arguments" :rows="rows"></argument-table>
+    <argument-table heading="label" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

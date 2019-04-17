@@ -26,7 +26,7 @@
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Heading Arguments" :rows="rows"></argument-table>
+    <argument-table heading="heading" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

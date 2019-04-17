@@ -1,66 +1,40 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-nav-az :items="items"></nhs-nav-az>
+      <nhs-nav-az>
+        <nhs-nav-az-item>A</nhs-nav-az-item>
+        <nhs-nav-az-item :disabled="true">B</nhs-nav-az-item>
+        <nhs-nav-az-item>C</nhs-nav-az-item>
+      </nhs-nav-az>
     </code-block>
 
-    <argument-table heading="Nav A-Z Arguments" :rows="rows"></argument-table>
+    <argument-table heading="nav-az" :rows="narows"></argument-table>
+    <argument-table heading="nav-az-item" :rows="nairows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-nav-az :items="items"></nhs-nav-az>
-  
-  export default {
-    data() {
-      return {
-        items: [
-          {
-            text: "A"
-          },
-          {
-            text: "B",
-            disabled: true
-          },
-          {
-            text: "C"
-          }
-        ]
-      }
-    }
-  }`
+  var source = `<nhs-nav-az>
+    <nhs-nav-az-item>A</nhs-nav-az-item>
+    <nhs-nav-az-item :disabled="true">B</nhs-nav-az-item>
+    <nhs-nav-az-item>C</nhs-nav-az-item>
+  </nhs-nav-az>`
 
   export default {
     data() {
       return {
         source: source,
-        items: [
+        narows: [
           {
-            text: "A"
-          },
-          {
-            text: "B",
-            disabled: true
-          },
-          {
-            text: "C"
+            name: "attributes",
+            type: "boolean",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the nav a-z."
           }
         ],
-        rows: [
+        nairows: [
           {
-            name: "items",
-            type: "array",
-            required: "yes",
-            description: "Array of navigation items."
-          },
-          {
-            name: "items.{}.text",
-            type: "string",
-            required: "yes",
-            description: "The label of the item in the navigation."
-          },
-          {
-            name: "items.{}.disabled",
+            name: "disabled",
             type: "boolean",
             required: "no",
             description: "If set to true, then the navigation item will not be within an anchor element."
@@ -69,7 +43,7 @@
             name: "attributes",
             type: "boolean",
             required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the nav a-z."
+            description: "Any extra HTML attributes (for example class) to add to the nav a-z item."
           }
         ]
       }

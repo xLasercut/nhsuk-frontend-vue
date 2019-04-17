@@ -1,6 +1,12 @@
 <template>
   <div>
-    <nhs-breadcrumb :items="breadcrumbs" :href="breadcrumbback.href" :text="breadcrumbback.text">
+    <nhs-breadcrumb>
+      <nhs-breadcrumb-item v-for="(item, index) in breadcrumbs" :key="index" :href="item.href">
+        {{item.text}}
+      </nhs-breadcrumb-item>
+      <nhs-breadcrumb-backlink slot="backlink" :href="breadcrumbback.href">
+        {{breadcrumbback.text}}
+      </nhs-breadcrumb-backlink>
     </nhs-breadcrumb>
     <router-view></router-view>
   </div>

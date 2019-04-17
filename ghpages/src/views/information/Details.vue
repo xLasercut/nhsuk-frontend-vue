@@ -6,7 +6,7 @@
       </nhs-details>
     </code-block>
 
-    <argument-table heading="Details Arguments" :rows="rows"></argument-table>
+    <argument-table heading="details" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

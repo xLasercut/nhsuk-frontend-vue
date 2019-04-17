@@ -1,14 +1,18 @@
 <template>
-  <component :is="buttonElement" :class="buttonClass" :attributes="attributes" :href="href" :disabled="disabled" :name="name" @click="$emit('click')">
+  <component :is="buttonElement" :class="classes" :attributes="attributes" :href="href" :disabled="disabled" :name="name" @click="$emit('click')">
     <slot></slot>
   </component>
 </template>
 
 <script>
-  import LinkButton from './LinkButton.vue'
-  import NormalButton from './NormalButton.vue'
+  import LinkButton from './types/LinkButton.vue'
+  import NormalButton from './types/NormalButton.vue'
 
-  const colors = ["secondary", "reverse"]
+  const colors = {
+    primary: "nhsuk-button",
+    secondary: "nhsuk-button nhsuk-button--secondary",
+    reverse: "nhsuk-button nhsuk-button--reverse"
+  }
   const elements = {
     button: NormalButton,
     a: LinkButton
@@ -23,8 +27,9 @@
       },
       color: {
         type: String,
+        default: "primary",
         validator(val) {
-          return colors.includes(val)
+          return val in colors
         }
       },
       disabled: {
@@ -50,13 +55,8 @@
       }
     },
     computed: {
-      buttonClass() {
-        var baseClass = "nhsuk-button"
-
-        if (this.color) {
-          baseClass += ` nhsuk-button--${this.color}`
-        }
-        return baseClass
+      classes() {
+        return colors[this.color]
       },
       buttonElement() {
         if (this.href) {

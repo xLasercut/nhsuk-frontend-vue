@@ -1,66 +1,28 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-footer :links="footerLinks"></nhs-footer>
+      <nhs-footer>
+        <nhs-footer-item href="/layout/footer">link one</nhs-footer-item>
+        <nhs-footer-item href="/layout/footer">link two</nhs-footer-item>
+      </nhs-footer>
     </code-block>
 
-    <argument-table heading="Footer Arguments" :rows="rows"></argument-table>
+    <argument-table heading="footer" :rows="rows"></argument-table>
+    <argument-table heading="footer-item" :rows="rowsfi"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-footer :links="footerLinks"></nhs-footer>
-  
-  export default {
-    data() {
-      return {
-        footerLinks: [
-          {
-            text: "link one",
-            href: "/layout/footer"
-          },
-          {
-            text: "link two",
-            href: "/layout/footer"
-          }
-        ]
-      }
-    }
-  }`
+  var source = `<nhs-footer>
+    <nhs-footer-item href="/layout/footer">link one</nhs-footer-item>
+    <nhs-footer-item href="/layout/footer">link two</nhs-footer-item>
+  </nhs-footer>`
 
   export default {
     data() {
       return {
         source: source,
-        footerLinks: [
-          {
-            text: "link one",
-            href: "/layout/footer"
-          },
-          {
-            text: "link two",
-            href: "/layout/footer"
-          }
-        ],
         rows: [
-          {
-            name: "links",
-            type: "array",
-            required: "no",
-            description: "Array of primary navigation items for use in the footer."
-          },
-          {
-            name: "links.{}.href",
-            type: "string",
-            required: "no",
-            description: "The href of a primary navigation item in the footer."
-          },
-          {
-            name: "links.{}.text",
-            type: "string",
-            required: "no",
-            description: "The label of a primary navigation item in the footer."
-          },
           {
             name: "copyright",
             type: "string",
@@ -78,6 +40,20 @@
             type: "string",
             required: "no",
             description: "Hidden text used for text-to-speech. Default: Support links"
+          }
+        ],
+        rowsfi: [
+          {
+            name: "href",
+            type: "string",
+            required: "yes",
+            description: "The href of a primary navigation item in the footer."
+          },
+           {
+            name: "attributes",
+            type: "object",
+            required: "no",
+            description: "Any extra HTML attributes (for example class) to add to the footer item."
           }
         ]
       }

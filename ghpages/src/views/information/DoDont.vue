@@ -10,7 +10,7 @@
       </nhs-dodont>
     </code-block>
 
-    <argument-table heading="Do Don't List Arguments" :rows="rows"></argument-table>
+    <argument-table heading="dodont" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

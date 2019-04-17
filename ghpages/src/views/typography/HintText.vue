@@ -4,7 +4,7 @@
       <nhs-hint-text>Hint text</nhs-hint-text>
     </code-block>
 
-    <argument-table heading="Hint Text Arguments" :rows="rows"></argument-table>
+    <argument-table heading="hint-text" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <nhs-table :panel="true" :head="header" :rows="rows" :heading="heading">
+  <nhs-table :panel="true" :head="header" :rows="rows" :heading="tableHeading">
   </nhs-table>
 </template>
 
@@ -26,6 +26,11 @@
             key: "description"
           }
         ]
+      }
+    },
+    computed: {
+      tableHeading() {
+        return `nhs-${this.heading} arguments`
       }
     }
   }

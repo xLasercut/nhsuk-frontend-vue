@@ -11,7 +11,7 @@
       </nhs-error-summary>
     </code-block>
 
-    <argument-table heading="Error Summary Arguments" :rows="rows"></argument-table>
+    <argument-table heading="error-summary" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

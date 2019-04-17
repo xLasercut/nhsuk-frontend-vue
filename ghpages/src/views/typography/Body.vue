@@ -14,7 +14,7 @@
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Body Arguments" :rows="rows"></argument-table>
+    <argument-table heading="body" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

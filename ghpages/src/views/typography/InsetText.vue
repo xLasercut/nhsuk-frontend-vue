@@ -4,7 +4,7 @@
       <nhs-inset-text>Inset Text</nhs-inset-text>
     </code-block>
 
-    <argument-table heading="Inset Text Arguments" :rows="rows"></argument-table>
+    <argument-table heading="inset-text" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

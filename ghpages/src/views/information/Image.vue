@@ -6,7 +6,7 @@
       </nhs-image>
     </code-block>
     
-    <argument-table heading="Image Arguments" :rows="rows"></argument-table>
+    <argument-table heading="image" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

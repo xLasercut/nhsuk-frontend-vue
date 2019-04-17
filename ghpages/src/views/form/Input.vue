@@ -3,7 +3,11 @@
     <code-block :code="sourceTypes">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint" :error="error"></nhs-input>
+          <nhs-input v-model="inputValue">
+            <nhs-label slot="label">Input label</nhs-label>
+            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
+          </nhs-input>
         </nhs-col>
         <nhs-col :span="50">
           <p>Input: {{inputValue}}</p>
@@ -51,12 +55,15 @@
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Input Arguments" :rows="rows"></argument-table>
+    <argument-table heading="input" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var sourceTypes = `<nhs-input v-model="inputValue" name="normal" :label="label" :hint="hint" :error="error">
+  var sourceTypes = `<<nhs-input v-model="inputValue">
+    <nhs-label slot="label">Input label</nhs-label>
+    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+    <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
   </nhs-input>
   
   <nhs-input :disabled="true" name="disabled"></nhs-input>
@@ -65,15 +72,7 @@
     data() {
       return {
         inputValue: "",
-        label: {
-          text: "Input Label"
-        },
-        hint: {
-          text: "Input hint"
-        },
-        error: {
-          text: "Input error"
-        }
+        error: "Error Text"
       }
     }
   }`
@@ -115,15 +114,7 @@
         sourceTypes: sourceTypes,
         sourceSize: sourceSize,
         inputValue: "",
-        label: {
-          text: "Input Label"
-        },
-        hint: {
-          text: "Input hint"
-        },
-        error: {
-          text: "Input error"
-        },
+        error: "Error Text",
         rows: [
           {
             name: "id",
@@ -134,7 +125,7 @@
           {
             name: "name",
             type: "string",
-            required: "yes",
+            required: "no",
             description: "The name of the input, which is submitted with the form data."
           },
           {
@@ -150,24 +141,6 @@
             description: "If true, input is disabled"
           },
           {
-            name: "label",
-            type: "object",
-            required: "no",
-            description: "Arguments for the label component (e.g. text). See label component."
-          },
-          {
-            name: "hint",
-            type: "object",
-            required: "no",
-            description: "Arguments for the hint text component (e.g. text). See hint-text component."
-          },
-          {
-            name: "error",
-            type: "object",
-            required: "no",
-            description: "Arguments for the error text component (e.g. text). See error-text component."
-          },
-          {
             name: "attributes",
             type: "object",
             required: "no",
@@ -178,11 +151,11 @@
     },
     methods: {
       toggleError() {
-        if (this.error.text) {
-          this.error.text = ""
+        if (this.error) {
+          this.error = ""
         }
         else {
-          this.error.text = "Input error"
+          this.error = "Error Text"
         }
       }
     }

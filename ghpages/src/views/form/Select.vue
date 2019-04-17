@@ -3,7 +3,10 @@
     <code-block :code="source">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-select name="normal" :label="label" :hint="hint" :error="error" v-model="selectnormal">
+          <nhs-select v-model="selectnormal">
+            <nhs-label slot="label">Input label</nhs-label>
+            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
             <option>Select 1</option>
             <option disabled>Select 2</option>
             <option value="OPT3">Select 3</option>
@@ -26,12 +29,15 @@
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Select Arguments" :rows="rows"></argument-table>
+    <argument-table heading="select" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-select :label="label" :hint="hint" :error="error" v-model="selected">
+  var source = `<nhs-select v-model="selectnormal">
+    <nhs-label slot="label">Input label</nhs-label>
+    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+    <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
     <option>Select 1</option>
     <option disabled>Select 2</option>
     <option value="OPT3">Select 3</option>
@@ -44,15 +50,7 @@
   export default {
     data() {
       return {
-        hint: {
-          text: "Hint text"
-        },
-        label: {
-          text: "Label text"
-        },
-        error: {
-          text: "Error text"
-        }
+        error: "Error text"
       }
     }
   }`
@@ -70,14 +68,12 @@
         label: {
           text: "Label text"
         },
-        error: {
-          text: "Error text"
-        },
+        error: "Error text",
         rows: [
           {
             name: "name",
             type: "string",
-            required: "yes",
+            required: "no",
             description: "The name of the select, which is submitted with the form data."
           },
           {
@@ -93,24 +89,6 @@
             description: "If true, select is disabled"
           },
           {
-            name: "label",
-            type: "object",
-            required: "no",
-            description: "Arguments for the label component (e.g. text). See label component."
-          },
-          {
-            name: "hint",
-            type: "object",
-            required: "no",
-            description: "Arguments for the hint component (e.g. text). See hint-text component."
-          },
-          {
-            name: "error",
-            type: "object",
-            required: "no",
-            description: "Arguments for the error component (e.g. text). See error-text component."
-          },
-          {
             name: "attributes",
             type: "object",
             required: "no",
@@ -121,11 +99,11 @@
     },
     methods: {
       toggleError() {
-        if (this.error.text) {
-          this.error.text = ""
+        if (this.error) {
+          this.error = ""
         }
         else {
-          this.error.text = "Error text"
+          this.error = "Error text"
         }
       }
     }

@@ -1,30 +1,19 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-fieldset :legend="legend">
+      <nhs-fieldset legend="Fieldset Legend" :page-heading="true">
         this is some content
       </nhs-fieldset>
     </code-block>
 
-    <argument-table heading="Fieldset Arguments" :rows="rows"></argument-table>
+    <argument-table heading="fieldset" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-fieldset :legend="legend">
+  var source = `<nhs-fieldset legend="Fieldset Legend" :page-heading="true">
     this is some content
-  </nhs-fieldset>
-  
-  export default {
-    data() {
-      return {
-        legend: {
-          text: "Fieldset Legend",
-          pageHeading: true
-        }
-      }
-    }
-  }`
+  </nhs-fieldset>`
 
   export default {
     data() {
@@ -43,24 +32,18 @@
           },
           {
             name: "legend",
-            type: "object",
-            required: "no",
-            description: "Arguments for the legend."
-          },
-          {
-            name: "legend.text",
             type: "string",
             required: "no",
             description: "Legend text."
           },
           {
-            name: "legend.pageHeading",
+            name: "page-heading",
             type: "boolean",
             required: "no",
             description: "Whether the legend also acts as the heading for the page"
           },
           {
-            name: "legend.attributes",
+            name: "legend-attributes",
             type: "object",
             required: "no",
             description: "Any extra HTML attributes (for example class) to add to the legend container."

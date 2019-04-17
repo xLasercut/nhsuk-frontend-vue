@@ -1,7 +1,7 @@
 <template>
   <nhs-main>
     <code-block :code="source">
-      <nhs-care-card heading="Non Urgent">
+      <nhs-care-card heading="Non Urgent" :heading-level="2">
         This is a Non Urgent Care Card.
       </nhs-care-card>
 
@@ -14,7 +14,7 @@
       </nhs-care-card>
     </code-block>
     
-    <argument-table heading="Care Card Arguments" :rows="rows"></argument-table>
+    <argument-table heading="care-card" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
@@ -64,7 +64,7 @@
             name: "hidden-text",
             type: "string",
             required: "no",
-            description: "Hidden text used for speech playback. Default: <type> advice"
+            description: "Hidden text used for speech playback. Default: Non-Urgent Advice: "
           }
         ]
       }

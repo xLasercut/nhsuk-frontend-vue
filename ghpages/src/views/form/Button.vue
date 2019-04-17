@@ -39,7 +39,7 @@
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Button Arguments" :rows="rows"></argument-table>
+    <argument-table heading="button" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
@@ -103,7 +103,7 @@
             name: "href",
             type: "string",
             required: "no",
-            description: "The URL that the button should link to. If this is set, element will be automatically set to a if it has not already been defined."
+            description: "The URL that the button should link to. If this is set, element will be automatically set to <a> if it has not already been defined."
           },
           {
             name: "attributes",

@@ -9,7 +9,7 @@
       <br><br>
     </code-block>
 
-    <argument-table heading="Hero Arguments" :rows="rows"></argument-table>
+    <argument-table heading="hero" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

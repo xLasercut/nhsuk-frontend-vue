@@ -3,7 +3,8 @@
     <nhs-header :show-search="false" :show-nav="true" :primary-links="headerLinks" :service="service" :transactional="false">
     </nhs-header>
     <router-view></router-view>
-    <nhs-footer :links="footerLinks">
+    <nhs-footer>
+      <nhs-footer-item v-for="(item, index) in footerLinks" :key="index" :href="item.href">{{item.text}}</nhs-footer-item>
     </nhs-footer>
   </div>
 </template>

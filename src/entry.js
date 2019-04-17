@@ -7,8 +7,8 @@ import * as components from './components/index';
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Object.keys(components).forEach((componentName) => {
-    Vue.component(componentName, components[componentName]);
+  Object.keys(components).forEach((key) => {
+    Vue.component(components[key].name, components[key]);
   });
 }
 

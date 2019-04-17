@@ -4,7 +4,7 @@
       <nhs-table :panel="true" heading="Table with heading" :rows="tableData" :head="tableHeading"></nhs-table>
     </code-block>
 
-    <argument-table heading="Table Arguments" :rows="rows"></argument-table>
+    <argument-table heading="table" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 

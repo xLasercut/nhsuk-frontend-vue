@@ -3,14 +3,15 @@
     <code-block :code="sourceSingle">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox name="single-checkbox" v-model="checked">
-              Single Checkbox
+            <nhs-checkbox v-model="checked">
+              <nhs-label slot="label">Single Checkbox</nhs-label>
             </nhs-checkbox>
-            <nhs-checkbox name="disabled-checkbox" :disabled="true">
-              Disabled
+            <nhs-checkbox :disabled="true">
+              <nhs-label slot="label">Disabled</nhs-label>
             </nhs-checkbox>
-            <nhs-checkbox name="single-checkbox" :hint="hint">
-              With hint
+            <nhs-checkbox v-model="checked">
+              <nhs-label slot="label">With hint</nhs-label>
+              <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
             </nhs-checkbox>
         </nhs-col>
         <nhs-col :span="50">
@@ -22,12 +23,12 @@
     <code-block :code="sourceOverride">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox name="single-checkbox" checkbox-value="London" v-model="checkedval">
-              London
+            <nhs-checkbox checkbox-value="London" v-model="checkedval">
+              <nhs-label slot="label">London</nhs-label>
             </nhs-checkbox>
 
-            <nhs-checkbox name="single-checkbox" checkbox-value="Paris" v-model="checkedval">
-              Paris
+            <nhs-checkbox checkbox-value="Paris" v-model="checkedval">
+              <nhs-label slot="label">Paris</nhs-label>
             </nhs-checkbox>
         </nhs-col>
         <nhs-col :span="50">
@@ -39,51 +40,42 @@
     <code-block :code="sourceGroup">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-checkbox-group :error="error" :hint="hint" :fieldset="fieldset">
-            <nhs-checkbox name="single-checkbox" :conditional="true">
-              London
-              <template slot="conditional">
-                Some conditionals
-              </template>
+          <nhs-form-itemgroup>
+            <nhs-fieldset slot="fieldset" legend="Fieldset text"></nhs-fieldset>
+            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+            <nhs-error-text slot="error">Error text</nhs-error-text>
+            <nhs-checkbox conditional="Conditional text">
+              <nhs-label slot="label">London</nhs-label>
             </nhs-checkbox>
-          </nhs-checkbox-group>
+          </nhs-form-itemgroup>
         </nhs-col>
       </nhs-row>
     </code-block>
 
-    <argument-table heading="Checkbox Arguments" :rows="cbrows"></argument-table>
-
-    <argument-table heading="Checkbox Group Arguments" :rows="cbgrows"></argument-table>
+    <argument-table heading="checkbox" :rows="cbrows"></argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var sourceSingle = `<nhs-checkbox>
-    Single Checkbox
-  </nhs-checkbox>
-  <nhs-checkbox :disabled="true">
-    Disabled
-  </nhs-checkbox>
-  <nhs-checkbox :hint="hint">
-    With hint
+  var sourceSingle = `<nhs-checkbox v-model="checked">
+    <nhs-label slot="label">Single Checkbox</nhs-label>
   </nhs-checkbox>
   
-  export default {
-    data() {
-      return {
-        hint: {
-          text: "Hint text"
-        }
-      }
-    }
-  }`
-
-  var sourceOverride = `<nhs-checkbox name="single-checkbox" checkbox-value="London" v-model="checkedval">
-    London
+  <nhs-checkbox :disabled="true">
+    <nhs-label slot="label">Disabled</nhs-label>
   </nhs-checkbox>
 
-  <nhs-checkbox name="single-checkbox" checkbox-value="Paris" v-model="checkedval">
-    Paris
+  <nhs-checkbox v-model="checked">
+    <nhs-label slot="label">With hint</nhs-label>
+    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+  </nhs-checkbox>`
+
+  var sourceOverride = `<nhs-checkbox checkbox-value="London" v-model="checkedval">
+    <nhs-label slot="label">London</nhs-label>
+  </nhs-checkbox>
+
+  <nhs-checkbox checkbox-value="Paris" v-model="checkedval">
+    <nhs-label slot="label">Paris</nhs-label>
   </nhs-checkbox>
   
   export default {
@@ -94,32 +86,14 @@
     }
   }`
 
-  var sourceGroup = `<nhs-checkbox-group :error="error" :hint="hint" :fieldset="fieldset">
-    <nhs-checkbox name="single-checkbox" :conditional="true">
-      London
-      <template slot="conditional">
-        Some conditionals
-      </template>
+  var sourceGroup = `<nhs-form-itemgroup>
+    <nhs-fieldset slot="fieldset" legend="Fieldset text"></nhs-fieldset>
+    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
+    <nhs-error-text slot="error">Error text</nhs-error-text>
+    <nhs-checkbox conditional="Conditional text">
+      <nhs-label slot="label">London</nhs-label>
     </nhs-checkbox>
-  </nhs-checkbox-group>
-  
-  export default {
-    data() {
-      return {
-        error: {
-          text: "Error Text"
-        },
-        hint: {
-          text: "Hint text"
-        },
-        fieldset: {
-          legend: {
-            text: "Fieldset legend"
-          }
-        }
-      }
-    }
-  }`
+  </nhs-form-itemgroup>`
 
   export default {
     data() {
@@ -129,22 +103,11 @@
         sourceSingle: sourceSingle,
         sourceOverride: sourceOverride,
         sourceGroup: sourceGroup,
-        error: {
-          text: "Error Text"
-        },
-        hint: {
-          text: "Hint text"
-        },
-        fieldset: {
-          legend: {
-            text: "Fieldset legend"
-          }
-        },
         cbrows: [
           {
             name: "name",
             type: "string",
-            required: "yes",
+            required: "no",
             description: "Name attribute for each checkbox."
           },
           {
@@ -154,16 +117,10 @@
             description: "Specific id attribute for the checkbox. Default: NhsCheckbox_<random number>"
           },
           {
-            name: "hint",
-            type: "object",
-            required: "no",
-            description: "Provide optional hint to each checkbox. See hint-text component."
-          },
-          {
             name: "conditional",
-            type: "boolean",
+            type: "string",
             required: "no",
-            description: "If true, content provided will be revealed when the item is checked."
+            description: "Conditional text which displays when checkbox is checked."
           },
           {
             name: "disabled",
@@ -182,38 +139,6 @@
             type: "object",
             required: "no",
             description: "Any extra HTML attributes (for example class) to add to the checkbox input tag."
-          }
-        ],
-        cbgrows: [
-          {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "id of the checkbox group"
-          },
-          {
-            name: "fieldset",
-            type: "object",
-            required: "no",
-            description: "Arguments for the fieldset component (e.g. legend). See fieldset component."
-          },
-          {
-            name: "hint",
-            type: "object",
-            required: "no",
-            description: "Arguments for the hint component (e.g. text). See hint component."
-          },
-          {
-            name: "error",
-            type: "object",
-            required: "no",
-            description: "Arguments for the error component (e.g. text). See error-text component."
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the checkboxes group."
           }
         ]
       }

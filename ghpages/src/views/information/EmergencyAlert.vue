@@ -6,7 +6,7 @@
       </nhs-emergency-alert>
     </code-block>
 
-    <argument-table heading="Emergency Alert Arugments" :rows="rows"></argument-table>
+    <argument-table heading="emergency-alert" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
@@ -29,7 +29,7 @@
           {
             name: "last-updated",
             type: "string",
-            required: "yes",
+            required: "no",
             description: "Optional text displayed below the main content to show last updated message"
           },
           {

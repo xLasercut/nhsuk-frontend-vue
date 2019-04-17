@@ -4,7 +4,7 @@
       <nhs-error-text>Error Text</nhs-error-text>
     </code-block>
 
-    <argument-table heading="Error Text Arguments" :rows="rows"></argument-table>
+    <argument-table heading="error-text" :rows="rows"></argument-table>
   </nhs-main>
 </template>
 
