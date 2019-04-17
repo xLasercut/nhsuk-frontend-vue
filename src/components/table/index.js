@@ -1,3 +1,3 @@
-import NhsTable from './NhsTable'
+import NhsTable from './NhsTable.vue'
 
 export default NhsTable

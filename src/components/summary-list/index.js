@@ -1,3 +1,3 @@
-import NhsSummaryList from './NhsSummaryList'
+import NhsSummaryList from './NhsSummaryList.vue'
 
 export default NhsSummaryList

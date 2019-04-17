@@ -1,6 +1,6 @@
-import NhsBreadcrumb from './components/NhsBreadcrumb'
-import NhsBreadcrumbItem from './components/NhsBreadcrumbItem'
-import NhsBreadcrumbBacklink from './components/NhsBreadcrumbBacklink'
+import NhsBreadcrumb from './components/NhsBreadcrumb.vue'
+import NhsBreadcrumbItem from './components/NhsBreadcrumbItem.vue'
+import NhsBreadcrumbBacklink from './components/NhsBreadcrumbBacklink.vue'
 
 export {
 	NhsBreadcrumb,

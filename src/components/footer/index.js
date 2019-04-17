@@ -1,5 +1,5 @@
-import NhsFooter from './components/NhsFooter'
-import NhsFooterItem from './components/NhsFooterItem'
+import NhsFooter from './components/NhsFooter.vue'
+import NhsFooterItem from './components/NhsFooterItem.vue'
 
 export {
   NhsFooter,

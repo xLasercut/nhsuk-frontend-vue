@@ -1,3 +1,3 @@
-import NhsActionLink from './NhsActionLink'
+import NhsActionLink from './NhsActionLink.vue'
 
 export default NhsActionLink

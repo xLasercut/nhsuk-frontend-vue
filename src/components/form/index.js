@@ -1,9 +1,9 @@
-import NhsInput from './components/NhsInput'
-import NhsSelect from './components/NhsSelect'
-import NhsTextarea from './components/NhsTextarea'
-import NhsFormItemgroup from './components/NhsFormItemgroup'
-import NhsCheckbox from './components/NhsCheckbox'
-import NhsRadio from './components/NhsRadio'
+import NhsInput from './components/NhsInput.vue'
+import NhsSelect from './components/NhsSelect.vue'
+import NhsTextarea from './components/NhsTextarea.vue'
+import NhsFormItemgroup from './components/NhsFormItemgroup.vue'
+import NhsCheckbox from './components/NhsCheckbox.vue'
+import NhsRadio from './components/NhsRadio.vue'
 
 export {
   NhsInput,

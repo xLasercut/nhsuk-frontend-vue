@@ -1,3 +1,3 @@
-import NhsDodont from './NhsDodont'
+import NhsDodont from './NhsDodont.vue'
 
 export default NhsDodont

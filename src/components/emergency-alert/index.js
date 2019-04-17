@@ -1,3 +1,3 @@
-import NhsEmergencyAlert from './NhsEmergencyAlert'
+import NhsEmergencyAlert from './NhsEmergencyAlert.vue'
 
 export default NhsEmergencyAlert

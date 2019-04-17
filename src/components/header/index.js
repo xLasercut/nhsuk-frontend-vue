@@ -1,5 +1,5 @@
-import NhsHeader from './NhsHeader'
-import NhsHeaderItem from './NhsHeaderItem'
+import NhsHeader from './NhsHeader.vue'
+import NhsHeaderItem from './NhsHeaderItem.vue'
 
 export {
   NhsHeader,

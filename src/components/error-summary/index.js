@@ -1,3 +1,3 @@
-import NhsErrorSummary from './NhsErrorSummary'
+import NhsErrorSummary from './NhsErrorSummary.vue'
 
 export default NhsErrorSummary

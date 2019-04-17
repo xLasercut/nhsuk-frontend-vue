@@ -1,3 +1,3 @@
-import NhsImage from './NhsImage'
+import NhsImage from './NhsImage.vue'
 
 export default NhsImage

@@ -1,5 +1,5 @@
-import NhsListPanel from './components/NhsListPanel'
-import NhsListPanelItem from './components/NhsListPanelItem'
+import NhsListPanel from './components/NhsListPanel.vue'
+import NhsListPanelItem from './components/NhsListPanelItem.vue'
 
 export {
   NhsListPanel,

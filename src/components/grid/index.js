@@ -1,6 +1,6 @@
-import NhsMain from './components/NhsMain'
-import NhsCol from './components/NhsCol'
-import NhsRow from './components/NhsRow'
+import NhsMain from './components/NhsMain.vue'
+import NhsCol from './components/NhsCol.vue'
+import NhsRow from './components/NhsRow.vue'
 
 export {
   NhsMain,

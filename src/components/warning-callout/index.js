@@ -1,3 +1,3 @@
-import NhsWarningCallout from './NhsWarningCallout'
+import NhsWarningCallout from './NhsWarningCallout.vue'
 
 export default NhsWarningCallout

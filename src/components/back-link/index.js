@@ -1,3 +1,3 @@
-import NhsBackLink from './NhsBackLink'
+import NhsBackLink from './NhsBackLink.vue'
 
 export default NhsBackLink

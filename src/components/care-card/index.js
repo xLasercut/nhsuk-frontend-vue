@@ -1,3 +1,3 @@
-import NhsCareCard from './NhsCareCard'
+import NhsCareCard from './NhsCareCard.vue'
 
 export default NhsCareCard

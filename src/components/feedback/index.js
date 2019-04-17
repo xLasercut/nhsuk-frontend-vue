@@ -1,3 +1,3 @@
-import NhsFeedback from './NhsFeedback'
+import NhsFeedback from './NhsFeedback.vue'
 
 export default NhsFeedback

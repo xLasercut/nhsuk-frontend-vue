@@ -1,3 +1,3 @@
-import NhsHero from './NhsHero'
+import NhsHero from './NhsHero.vue'
 
 export default NhsHero

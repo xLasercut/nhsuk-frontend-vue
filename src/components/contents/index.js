@@ -1,5 +1,5 @@
-import NhsContents from './components/NhsContents'
-import NhsContentsItem from './components/NhsContentsItem'
+import NhsContents from './components/NhsContents.vue'
+import NhsContentsItem from './components/NhsContentsItem.vue'
 
 export {
   NhsContents,
