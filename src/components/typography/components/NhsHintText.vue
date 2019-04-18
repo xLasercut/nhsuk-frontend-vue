@@ -1,10 +1,12 @@
 <template>
-  <span :class="classes" v-bind="attributes" :id="id">
+  <span class="nhsuk-hint" v-bind="attrs()" :id="id">
     <slot></slot>
   </span>
 </template>
 
 <script>
+  import ClassSetter from '../../../mixins/class-setter.js'
+
   export default {
     name: "NhsHintText",
     props: {
@@ -19,17 +21,6 @@
         }
       }
     },
-    computed: {
-      classes() {
-        var classes = ["nhsuk-hint"]
-
-        if (this.$attrs.class) {
-          classes.push(this.$attrs.class)
-        }
-
-        
-        return classes.join(" ")
-      }
-    }
+    mixins: [ClassSetter]
   }
 </script>

@@ -70,14 +70,14 @@
           for (var i = 0; i < this.$slots.label.length; i++) {
             var label = this.$slots.label[i]
             label.data.attrs["for"] = this.idCache
-            label.data.attrs["class"] = "nhsuk-radios__label"
+            label.data.attrs["addclass"] = "nhsuk-radios__label"
           }
         }
 
         if (this.$slots.hint) {
           for (var i = 0; i < this.$slots.hint.length; i++) {
             var hint = this.$slots.hint[i]
-            hint.data.attrs["class"] = "nhsuk-radios__hint"
+            hint.data.attrs["addclass"] = "nhsuk-radios__hint"
           }
         }
 

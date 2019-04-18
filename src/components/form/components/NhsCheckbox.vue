@@ -67,14 +67,14 @@
           for (var i = 0; i < this.$slots.label.length; i++) {
             var label = this.$slots.label[i]
             label.data.attrs["for"] = this.idCache
-            label.data.attrs["class"] = "nhsuk-checkboxes__label"
+            label.data.attrs["addclass"] = "nhsuk-checkboxes__label"
           }
         }
 
         if (this.$slots.hint) {
           for (var i = 0; i < this.$slots.hint.length; i++) {
             var hint = this.$slots.hint[i]
-            hint.data.attrs["class"] = "nhsuk-checkboxes__hint"
+            hint.data.attrs["addclass"] = "nhsuk-checkboxes__hint"
           }
         }
 

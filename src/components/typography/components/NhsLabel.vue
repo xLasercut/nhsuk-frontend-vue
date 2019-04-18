@@ -1,5 +1,5 @@
 <template>
-  <component :is="labelType" :attributes="attributes">
+  <component :is="labelType" :attributes="attrs()">
     <slot></slot>
   </component>
 </template>
@@ -7,6 +7,7 @@
 <script>
   import LabelHeading from '../label-types/LabelHeading.vue'
   import LabelNormal from '../label-types/LabelNormal.vue'
+  import ClassSetter from '../../../mixins/class-setter.js'
 
   export default {
     name: "NhsLabel",
@@ -22,6 +23,7 @@
         default: false
       }
     },
+    mixins: [ClassSetter],
     computed: {
       labelType() {
         if (this.pageHeading) {
