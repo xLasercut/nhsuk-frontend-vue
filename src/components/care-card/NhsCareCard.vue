@@ -19,13 +19,13 @@
   import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
   const types = {
-    "non-urgent": "Non-urgent advice: ",
-    "urgent": "Urgent advice: ",
-    "immediate": "Immediate action required: "
+    'non-urgent': 'Non-urgent advice: ',
+    'urgent': 'Urgent advice: ',
+    'immediate': 'Immediate action required: '
   }
 
   export default {
-    name: "NhsCareCard",
+    name: 'NhsCareCard',
     props: {
       heading: {
         type: String,
@@ -33,7 +33,7 @@
       },
       type: {
         type: String,
-        default: "non-urgent",
+        default: 'non-urgent',
         validator(val) {
           return val in types
         }
