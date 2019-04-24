@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: "NhsFieldset",
+    name: 'NhsFieldset',
     props: {
       attributes: {
         type: Object,
@@ -24,11 +24,11 @@
       },
       describedBy: {
         type: String,
-        default: ""
+        default: ''
       },
       legend: {
         type: String,
-        default: ""
+        default: ''
       },
       pageHeading: {
         type: Boolean,
