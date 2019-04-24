@@ -23,11 +23,11 @@
 
 <script>
   export default {
-    name: "NhsEmergencyAlert",
+    name: 'NhsEmergencyAlert',
     props: {
       hiddenText: {
         type: String,
-        default: "Alert: "
+        default: 'Alert: '
       },
       title: {
         type: String,
@@ -35,7 +35,7 @@
       },
       lastUpdated: {
         type: String,
-        default: ""
+        default: ''
       },
       attributes: {
         type: Object,
