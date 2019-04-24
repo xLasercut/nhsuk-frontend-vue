@@ -13,17 +13,17 @@
 </template>
 
 <script>
- 
+
   export default {
-    name: "NhsFooter",
+    name: 'NhsFooter',
     props: {
       hiddenText: {
         type: String,
-        default: "Support links"
+        default: 'Support links'
       },
       copyright: {
         type: String,
-        default: "Crown copyright"
+        default: 'Crown copyright'
       },
       attributes: {
         type: Object,

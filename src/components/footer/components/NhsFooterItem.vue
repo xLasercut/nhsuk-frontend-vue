@@ -1,6 +1,6 @@
 <template>
   <li class="nhsuk-footer__list-item">
-    <link-switcher class="nhsuk-footer__list-item-link" :href="href" v-bind="attributes">
+    <link-switcher class="nhsuk-footer__list-item-link" :href="href" :attributes="attributes">
       <slot></slot>
     </link-switcher>
   </li>
@@ -10,7 +10,7 @@
   import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsFooterItem",
+    name: 'NhsFooterItem',
     components: {
       LinkSwitcher
     },
