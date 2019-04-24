@@ -21,7 +21,7 @@
   import LinkSwitcher from '../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsFeedback",
+    name: 'NhsFeedback',
     components: {
       LinkSwitcher
     },
@@ -38,15 +38,15 @@
       },
       label: {
         type: String,
-        default: ""
+        default: ''
       },
       href: {
         type: String,
-        default: ""
+        default: ''
       },
       hiddenText: {
         type: String,
-        default: " feedback invite"
+        default: ' feedback invite'
       }
     }
   }
