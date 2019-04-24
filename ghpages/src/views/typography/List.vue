@@ -17,9 +17,9 @@
 
       Error List
       <nhs-list type="error">
-        <li><nhs-link href="/typograpy/list">one</nhs-link></li>
-        <li><nhs-link href="/typograpy/list">two</nhs-link></li>
-        <li><nhs-link href="/typograpy/list">three</nhs-link></li>
+        <li><router-link to="/typograpy/list">one</router-link></li>
+        <li><router-link to="/typograpy/list">two</router-link></li>
+        <li><router-link to="/typograpy/list">three</router-link></li>
       </nhs-list>
     </code-block>
 
@@ -44,9 +44,9 @@
 
   Error List
   <nhs-list type="error">
-    <li><nhs-link href="/typograpy/list">one</nhs-link></li>
-    <li><nhs-link href="/typograpy/list">two</nhs-link></li>
-    <li><nhs-link href="/typograpy/list">three</nhs-link></li>
+    <li><router-link to="/typograpy/list">one</router-link></li>
+    <li><router-link to="/typograpy/list">two</router-link></li>
+    <li><router-link to="/typograpy/list">three</router-link></li>
   </nhs-list>`
 
   export default {
