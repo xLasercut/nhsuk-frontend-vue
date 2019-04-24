@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import NhsButton from '../../src/components/button'
 
-describe('Button tests', () => {
+describe('button tests', () => {
   it('test button color', () => {
     const colors = {
       primary: 'nhsuk-button',

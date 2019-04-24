@@ -12,7 +12,7 @@
   import NhsIcon from '../icon/NhsIcon.vue'
 
   export default {
-    name: "NhsBackLink",
+    name: 'NhsBackLink',
     components: {
       LinkSwitcher,
       NhsIcon
