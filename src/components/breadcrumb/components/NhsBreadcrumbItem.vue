@@ -13,14 +13,14 @@
   import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsBreadcrumbItem",
+    name: 'NhsBreadcrumbItem',
     components: {
       LinkSwitcher
     },
     props: {
       href: {
         type: String,
-        default: ""
+        default: ''
       },
       attributes: {
         type: Object,

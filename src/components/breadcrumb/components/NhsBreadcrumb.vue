@@ -11,11 +11,11 @@
 
 <script>
   export default {
-    name: "NhsBreadcrumb",
+    name: 'NhsBreadcrumb',
     props: {
       ariaLabel: {
         type: String,
-        default: "Breadcrumb"
+        default: 'Breadcrumb'
       },
       attributes: {
         type: Object,

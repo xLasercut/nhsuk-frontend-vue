@@ -10,7 +10,7 @@
   import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsBreadcrumbBacklink",
+    name: 'NhsBreadcrumbBacklink',
     components: {
       LinkSwitcher
     },
