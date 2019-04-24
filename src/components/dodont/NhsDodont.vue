@@ -14,10 +14,10 @@
   import NhsIcon from '../icon/NhsIcon.vue'
   import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
-  const types = ["tick", "cross"]
+  const types = ['tick', 'cross']
 
   export default {
-    name: "NhsDodont",
+    name: 'NhsDodont',
     components: {
       NhsIcon,
       HeadingSwitcher
@@ -29,7 +29,7 @@
       },
       type: {
         type: String,
-        default: "tick",
+        default: 'tick',
         validator(val) {
           return types.includes(val)
         }
