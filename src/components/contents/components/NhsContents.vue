@@ -9,15 +9,15 @@
 
 <script>
    export default {
-    name: "NhsContents",
+    name: 'NhsContents',
     props: {
       ariaLabel: {
         type: String,
-        default: "Pages in this guide"
+        default: 'Pages in this guide'
       },
       hiddenText: {
         type: String,
-        default: "Contents"
+        default: 'Contents'
       },
       attributes: {
         type: Object,

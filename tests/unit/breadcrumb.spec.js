@@ -6,6 +6,12 @@ import {
 } from '../../src/components/breadcrumb'
 
 describe('breadcrumb tests', () => {
+  it('test breadcrumb default props', () => {
+    const wrapper = mount(NhsBreadcrumb)
+
+    expect(wrapper.attributes()['aria-label']).toBe('Breadcrumb')
+  })
+
   it('test breadcrumb props', () => {
     const wrapper = mount(NhsBreadcrumb, {
       propsData: {

@@ -13,18 +13,18 @@
   import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsContentsItem",
+    name: 'NhsContentsItem',
     components: {
       LinkSwitcher
     },
     props: {
       href: {
         type: String,
-        default: ""
+        default: ''
       },
       ariaCurrent: {
         type: String,
-        default: "page"
+        default: 'page'
       },
       attributes: {
         type: Object,
@@ -37,7 +37,7 @@
       addAriaCurrent() {
         if (!this.href) {
           return {
-            "aria-current": this.ariaCurrent
+            'aria-current': this.ariaCurrent
           }
         }
         return {}
