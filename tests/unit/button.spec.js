@@ -25,25 +25,17 @@ describe('Button tests', () => {
       propsData: {
         name: 'test-button',
         disabled: true,
-        element: 'a'
+        element: 'a',
+        attributes: {
+          test: 'test'
+        }
       }
     })
 
     expect(wrapper.attributes().name).toBe('test-button')
     expect(wrapper.attributes().disabled).toBe('disabled')
     expect(wrapper.contains('a')).toBe(true)
-  })
-
-  it('test button attributes', () => {
-    const wrapper = mount(NhsButton, {
-      propsData: {
-        attributes: {
-          cheese: 'test'
-        }
-      }
-    })
-
-    expect(wrapper.attributes().cheese).toBe('test')
+    expect(wrapper.attributes().test).toBe('test')
   })
 
   it('test button link', () => {

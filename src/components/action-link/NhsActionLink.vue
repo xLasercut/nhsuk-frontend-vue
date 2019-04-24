@@ -14,7 +14,7 @@
   import NhsIcon from '../icon/NhsIcon.vue'
 
   export default {
-    name: "NhsActionLink",
+    name: 'NhsActionLink',
     props: {
       href: {
         type: String,
