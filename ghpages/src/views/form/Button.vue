@@ -5,7 +5,7 @@
         <nhs-col :span="33">
           <nhs-button name="primary-button" href="/form/button">
             Primary Button
-          </nhs-button>         
+          </nhs-button>
         </nhs-col>
         <nhs-col :span="33">
           <nhs-button color="secondary" name="secondary-button">
@@ -60,11 +60,11 @@
   var sourceDisabled = `<nhs-button name="disabled-primary-button" :disabled="true">
     Primary Button Disabled
   </nhs-button>
-  
+
   <nhs-button color="secondary" :disabled="true">
     Secondary Button Disabled
   </nhs-button>
-  
+
   <nhs-button color="reverse" :disabled="true">
     Reverse Button Disabled
   </nhs-button>`
@@ -84,7 +84,7 @@
           {
             name: "name",
             type: "string",
-            required: "yes",
+            required: "no",
             description: "Name for the button"
           },
           {

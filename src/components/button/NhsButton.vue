@@ -9,9 +9,9 @@
   import NormalButton from './types/NormalButton.vue'
 
   const colors = {
-    primary: "nhsuk-button",
-    secondary: "nhsuk-button nhsuk-button--secondary",
-    reverse: "nhsuk-button nhsuk-button--reverse"
+    primary: 'nhsuk-button',
+    secondary: 'nhsuk-button nhsuk-button--secondary',
+    reverse: 'nhsuk-button nhsuk-button--reverse'
   }
   const elements = {
     button: NormalButton,
@@ -23,11 +23,11 @@
     props: {
       name: {
         type: String,
-        required: true
+        default: ''
       },
       color: {
         type: String,
-        default: "primary",
+        default: 'primary',
         validator(val) {
           return val in colors
         }
@@ -38,11 +38,11 @@
       },
       href: {
         type: String,
-        default: ""
+        default: ''
       },
       element: {
         type: String,
-        default: "button",
+        default: 'button',
         validator(val) {
           return val in elements
         }
