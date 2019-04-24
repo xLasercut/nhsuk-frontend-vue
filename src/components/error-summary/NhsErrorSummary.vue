@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "NhsErrorSummary",
+    name: 'NhsErrorSummary',
     props: {
       title: {
         type: String,
