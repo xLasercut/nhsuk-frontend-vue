@@ -8,16 +8,16 @@
 
 <script>
   const types = {
-    fluid: "nhsuk-width-container-fluid",
-    normal: "nhsuk-width-container"
+    fluid: 'nhsuk-width-container-fluid',
+    normal: 'nhsuk-width-container'
   }
 
   export default {
-    name: "NhsMain",
+    name: 'NhsMain',
     props: {
       type: {
         type: String,
-        default: "normal",
+        default: 'normal',
         validator(val) {
           return val in types
         }

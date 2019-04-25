@@ -6,16 +6,16 @@
 
 <script>
   const spans = {
-    100: "full",
-    75: "three-quarters",
-    66: "two-thirds",
-    50: "one-half",
-    33: "one-third",
-    25: "one-quarter"
+    100: 'full',
+    75: 'three-quarters',
+    66: 'two-thirds',
+    50: 'one-half',
+    33: 'one-third',
+    25: 'one-quarter'
   }
 
   export default {
-    name: "NhsCol",
+    name: 'NhsCol',
     props: {
       span: {
         type: Number,

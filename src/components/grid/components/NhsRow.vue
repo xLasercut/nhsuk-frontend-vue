@@ -6,6 +6,6 @@
 
 <script>
   export default {
-    name: "NhsRow"
+    name: 'NhsRow'
   }
 </script>
