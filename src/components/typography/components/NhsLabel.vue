@@ -10,7 +10,7 @@
   import ClassSetter from '../../../mixins/class-setter.js'
 
   export default {
-    name: "NhsLabel",
+    name: 'NhsLabel',
     props: {
       attributes: {
         type: Object,

@@ -7,11 +7,11 @@
 
 <script>
   export default {
-    name: "NhsInsetText",
+    name: 'NhsInsetText',
     props: {
       hiddenText: {
         type: String,
-        default: "Information: "
+        default: 'Information: '
       },
       attributes: {
         type: Object,

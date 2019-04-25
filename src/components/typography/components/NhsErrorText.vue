@@ -1,17 +1,17 @@
 <template>
   <span class="nhsuk-error-message" :id="id" v-bind="attributes">
-    <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span> 
+    <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
     <slot></slot>
   </span>
 </template>
 
 <script>
   export default {
-    name: "NhsErrorText",
+    name: 'NhsErrorText',
     props: {
       hiddenText: {
         type: String,
-        default: "Error: "
+        default: 'Error: '
       },
       attributes: {
         type: Object,
@@ -21,7 +21,7 @@
       },
       id: {
         type: String,
-        default: ""
+        default: ''
       }
     }
   }

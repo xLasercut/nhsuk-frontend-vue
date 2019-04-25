@@ -9,17 +9,17 @@
   import ListUnordered from '../list-types/ListUnordered.vue'
 
   const types = {
-    bullet: "nhsuk-list--bullet",
-    number: "nhsuk-list--number",
-    error: "nhsuk-error-summary__list"
+    bullet: 'nhsuk-list--bullet',
+    number: 'nhsuk-list--number',
+    error: 'nhsuk-error-summary__list'
   }
 
   export default {
-    name: "NhsList",
+    name: 'NhsList',
     props: {
       type: {
         type: String,
-        default: "bullet",
+        default: 'bullet',
         validator(val) {
           return val in types
         }
@@ -33,7 +33,7 @@
     },
     computed: {
       element() {
-        if (this.type === "number") {
+        if (this.type === 'number') {
           return ListOrdered
         }
         return ListUnordered

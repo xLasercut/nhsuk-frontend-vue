@@ -8,11 +8,11 @@
   import ClassSetter from '../../../mixins/class-setter.js'
 
   export default {
-    name: "NhsHintText",
+    name: 'NhsHintText',
     props: {
       id: {
         type: String,
-        default: ""
+        default: ''
       },
       attributes: {
         type: Object,

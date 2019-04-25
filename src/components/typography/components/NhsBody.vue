@@ -5,10 +5,10 @@
 </template>
 
 <script>
-  const sizes = ["s"]
+  const sizes = ['s']
 
   export default {
-    name: "NhsBody",
+    name: 'NhsBody',
     props: {
       size: {
         type: String,
@@ -28,7 +28,7 @@
         if (this.size) {
           return `nhsuk-body-${this.size}`
         }
-        return "nhsuk-body"
+        return 'nhsuk-body'
       }
     }
   }
