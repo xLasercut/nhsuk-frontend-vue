@@ -24,7 +24,7 @@
   import NhsIcon from '../../icon/NhsIcon.vue'
 
   export default {
-    name: "NhsListPanel",
+    name: 'NhsListPanel',
     components: {
       HeadingSwitcher,
       LinkSwitcher,
@@ -39,11 +39,11 @@
       },
       label: {
         type: String,
-        default: ""
+        default: ''
       },
       id: {
         type: String,
-        default: ""
+        default: ''
       },
       headingLevel: {
         type: Number,
@@ -55,7 +55,7 @@
       },
       message: {
         type: String,
-        default: ""
+        default: ''
       },
       backToTop: {
         type: Boolean,
@@ -65,7 +65,7 @@
     computed: {
       panelboxClass() {
         if (this.label) {
-          return "nhsuk-list-panel__box nhsuk-list-panel__box--with-labe"
+          return 'nhsuk-list-panel__box nhsuk-list-panel__box--with-label'
         }
         return "nhsuk-list-panel__box"
       }
