@@ -26,7 +26,7 @@
   import LinkSwitcher from '../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsPagination",
+    name: 'NhsPagination',
     props: {
       attributes: {
         type: Object,
@@ -36,23 +36,23 @@
       },
       ariaLabel: {
         type: String,
-        default: "Pagination"
+        default: 'Pagination'
       },
       previousHref: {
         type: String,
-        default: ""
+        default: ''
       },
       previousPage: {
         type: String,
-        default: ""
+        default: ''
       },
       nextHref: {
         type: String,
-        default: ""
+        default: ''
       },
       nextPage: {
         type: String,
-        default: ""
+        default: ''
       }
     },
     components: {
