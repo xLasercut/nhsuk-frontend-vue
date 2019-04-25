@@ -10,7 +10,7 @@
 <script>
 
   export default {
-    name: "NhsImage",
+    name: 'NhsImage',
     props: {
       src: {
         type: String,
