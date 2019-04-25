@@ -11,7 +11,7 @@
   import HeadingSwitcher from '../../shared/HeadingSwitcher.vue'
 
   export default {
-    name: "NhsWarningCallout",
+    name: 'NhsWarningCallout',
     components: {
       HeadingSwitcher
     },
