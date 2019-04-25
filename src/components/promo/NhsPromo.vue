@@ -19,7 +19,7 @@
   import LinkSwitcher from '../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "NhsPromo",
+    name: 'NhsPromo',
     components: {
       HeadingSwitcher,
       LinkSwitcher
@@ -41,11 +41,11 @@
       },
       src: {
         type: String,
-        default: ""
+        default: ''
       },
       alt: {
         type: String,
-        default: ""
+        default: ''
       },
       heading: {
         type: String,
