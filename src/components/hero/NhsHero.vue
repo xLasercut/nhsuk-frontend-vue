@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    
+
     <div :class="widthContainerClass" v-if="heading && !imageUrl">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -30,15 +30,15 @@
 
 <script>
   export default {
-    name: "NhsHero",
+    name: 'NhsHero',
     props: {
       heading: {
         type: String,
-        default: ""
+        default: ''
       },
       imageUrl: {
         type: String,
-        default: ""
+        default: ''
       },
       attributes: {
         type: Object,
@@ -48,50 +48,50 @@
       },
       text: {
         type: String,
-        default: ""
+        default: ''
       }
     },
     computed: {
       sectionClass() {
-        var baseClass = "nhsuk-hero"
+        var baseClass = 'nhsuk-hero'
 
         if (this.heading && this.imageUrl) {
-          baseClass += " nhsuk-hero--image nhsuk-hero--image-description"
+          baseClass += ' nhsuk-hero--image nhsuk-hero--image-description'
         }
         else if (this.imageUrl) {
-          baseClass += " nhsuk-hero--image" 
+          baseClass += ' nhsuk-hero--image'
         }
 
         return baseClass
       },
-      sectionStyle() { 
+      sectionStyle() {
         var style = {}
 
         if (this.imageUrl) {
-          style["background-image"] = `url('${this.imageUrl}')`
+          style['background-image'] = `url('${this.imageUrl}')`
         }
 
         return style
       },
       widthContainerClass() {
-        var baseClass = "nhsuk-width-container"
+        var baseClass = 'nhsuk-width-container'
 
         if (this.imageUrl) {
-          baseClass += " nhsuk-hero--border"
+          baseClass += ' nhsuk-hero--border'
         }
         return baseClass
       },
       heroContentClass() {
         if (this.imageUrl) {
-          return "nhsuk-hero-content"
+          return 'nhsuk-hero-content'
         }
-        return "nhsuk-hero__wrapper"
+        return 'nhsuk-hero__wrapper'
       },
       headingClass() {
         if (this.text) {
-          return "nhsuk-u-margin-bottom-3"
+          return 'nhsuk-u-margin-bottom-3'
         }
-        return ""
+        return ''
       }
     }
   }
