@@ -8,11 +8,11 @@
 
 <script>
   export default {
-    name: "NhsNavAz",
+    name: 'NhsNavAz',
     props: {
       ariaLabel: {
         type: String,
-        default: "A to Z Navigation"
+        default: 'A to Z Navigation'
       },
       attributes: {
         type: Object,

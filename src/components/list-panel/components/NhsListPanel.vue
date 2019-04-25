@@ -10,7 +10,7 @@
       <slot></slot>
     </ul>
     <div class="nhsuk-back-to-top" v-if="backToTop">
-      <link-switcher class="nhsuk-back-to-top__link" @click="$emit('back-to-top')" href="">
+      <link-switcher class="nhsuk-back-to-top__link" @click.native="$emit('back-to-top')" href="">
         <nhs-icon icon="arrow-right"></nhs-icon>
         Back to top
       </link-switcher>

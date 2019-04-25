@@ -46,6 +46,17 @@ describe('list panel tests', () => {
     expect(wrapper.find('.nhsuk-list-panel--results-items__no-results').text()).toBe('test')
   })
 
+  it('test list panel back to top click', () => {
+    const wrapper = mount(NhsListPanel, {
+      propsData: {
+        backToTop: true
+      }
+    })
+
+    wrapper.find('a').trigger('click')
+    expect(wrapper.emitted()['back-to-top'].length).toBe(1)
+  })
+
   it('test list panel item props', () => {
     const wrapper = mount(NhsListPanelItem, {
       propsData: {
