@@ -60,7 +60,7 @@
   var sourceSingle = `<nhs-checkbox v-model="checked">
     <nhs-label slot="label">Single Checkbox</nhs-label>
   </nhs-checkbox>
-  
+
   <nhs-checkbox :disabled="true">
     <nhs-label slot="label">Disabled</nhs-label>
   </nhs-checkbox>
@@ -77,7 +77,7 @@
   <nhs-checkbox checkbox-value="Paris" v-model="checkedval">
     <nhs-label slot="label">Paris</nhs-label>
   </nhs-checkbox>
-  
+
   export default {
     data() {
       return {

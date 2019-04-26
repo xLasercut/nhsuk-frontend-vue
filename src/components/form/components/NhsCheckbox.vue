@@ -1,85 +1,28 @@
 <template>
   <div class="nhsuk-checkboxes__item">
-    <input class="nhsuk-checkboxes__input" :id="itemId()" :name="name" type="checkbox" :value="checkboxValue" v-model="model" :disabled="disabled" :aria-describedby="described()" v-bind="attributes">
+    <input class="nhsuk-checkboxes__input" :id="id" :name="name" type="checkbox" :value="checkboxValue" v-model="model" :disabled="disabled" :aria-describedby="described('nhsuk-checkboxes')" v-bind="attributes">
     <slot name="label"></slot>
     <slot name="hint"></slot>
-    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${itemId()}`" v-if="model && conditional">
+    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="model && conditional">
       {{conditional}}
     </div>
   </div>
 </template>
 
 <script>
-  import AddModel from '../../../mixins/add-model'
+  import CheckboxRadioShared from '../mixins/checkbox-radio-shared.js'
 
   export default {
-    name: "NhsCheckbox",
+    name: 'NhsCheckbox',
     props: {
-      disabled: {
-        type: Boolean,
-        default: false,
-      },
       checkboxValue: {
         type: String
       },
-      name: {
-        type: String,
-        default: ""
-      },
-      id: {
-        type: String,
-        default: ""
-      },
       conditional: {
         type: String,
-        default: ""
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
+        default: ''
       }
     },
-    mixins: [AddModel],
-    data() {
-      return {
-        idCache: this.id
-      }
-    },
-    methods: {
-      described() {
-        var described = []
-
-        if (this.$slots.hint) {
-          described.push(`${this.itemId()}-hint`)
-        }
-
-        return described.join(" ")
-      },
-      itemId() {
-        if (!this.idCache) {
-          var random = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5))
-          this.idCache = `${this.$options.name}_${random}`
-        }
-        
-        if (this.$slots.label) {
-          for (var i = 0; i < this.$slots.label.length; i++) {
-            var label = this.$slots.label[i]
-            label.data.attrs["for"] = this.idCache
-            label.data.attrs["addclass"] = "nhsuk-checkboxes__label"
-          }
-        }
-
-        if (this.$slots.hint) {
-          for (var i = 0; i < this.$slots.hint.length; i++) {
-            var hint = this.$slots.hint[i]
-            hint.data.attrs["addclass"] = "nhsuk-checkboxes__hint"
-          }
-        }
-
-        return this.idCache
-      }
-    }
+    mixins: [CheckboxRadioShared]
   }
 </script>

@@ -11,7 +11,7 @@
   import FormItem from '../shared/FormItem.vue'
 
   export default {
-    name: "NhsFormItemgroup",
+    name: 'NhsFormItemgroup',
     components: {
       FormItem
     },
