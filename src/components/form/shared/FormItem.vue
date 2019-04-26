@@ -14,11 +14,11 @@
     },
     computed: {
       classes() {
-        var classes = [ "nhsuk-form-group" ]
+        var classes = [ 'nhsuk-form-group' ]
         if (this.error) {
-          classes.push("nhsuk-form-group--error")
+          classes.push('nhsuk-form-group--error')
         }
-        return classes.join(" ")
+        return classes.join(' ')
       }
     }
   }

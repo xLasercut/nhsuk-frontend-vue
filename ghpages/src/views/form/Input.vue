@@ -65,9 +65,9 @@
     <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
     <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
   </nhs-input>
-  
+
   <nhs-input :disabled="true" name="disabled"></nhs-input>
-  
+
   export default {
     data() {
       return {

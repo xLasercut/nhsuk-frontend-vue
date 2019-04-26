@@ -4,7 +4,7 @@
     <slot name="hint"></slot>
     <slot name="error"></slot>
     <textarea
-      :class="classes()" :id="itemId()" :rows="rows" :disabled="disabled" :name="name"
+      :class="classes()" :id="id" :rows="rows" :disabled="disabled" :name="name"
       :aria-describedby="described()" v-model="model" v-bind="attributes"
       @blur="$emit('blur')" @change="$emit('change')"
     ></textarea>
@@ -15,7 +15,7 @@
   import FormItem from '../mixins/form-item'
 
   export default {
-    name: "NhsTextarea",
+    name: 'NhsTextarea',
     mixins: [FormItem],
     props: {
       rows: {
@@ -25,13 +25,13 @@
     },
     methods: {
       classes() {
-        var classes = [ "nhsuk-textarea" ]
+        var classes = [ 'nhsuk-textarea' ]
 
         if (this.error()) {
-          classes.push("nhsuk-textarea--error")
+          classes.push('nhsuk-textarea--error')
         }
 
-        return classes.join(" ")
+        return classes.join(' ')
       }
     }
   }

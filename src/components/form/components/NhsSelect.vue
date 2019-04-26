@@ -4,7 +4,7 @@
     <slot name="hint"></slot>
     <slot name="error"></slot>
     <select
-      :class="classes()" :id="itemId()" :name="name"
+      :class="classes()" :id="id" :name="name"
       :aria-describedby="described()" v-bind="attributes"
       :disabled="disabled" v-model="model"
       @blur="$emit('blur')" @change="$emit('change')"
@@ -18,14 +18,14 @@
   import FormItem from '../mixins/form-item'
 
   export default {
-    name: "NhsSelect",
+    name: 'NhsSelect',
     mixins: [FormItem],
     methods: {
       classes() {
-        var classes = [ "nhsuk-select" ]
+        var classes = [ 'nhsuk-select' ]
 
         if (this.error()) {
-          classes.push("nhsuk-select--error")
+          classes.push('nhsuk-select--error')
         }
         return classes.join(" ")
       }
