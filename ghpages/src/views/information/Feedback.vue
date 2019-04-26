@@ -1,14 +1,16 @@
 <template>
-  <nhs-main>
+  <div>
     <nhs-feedback title="Feedback" label="optional text" href="/information/feedback">
       Some feed back is required
     </nhs-feedback>
-    <code-block :code="source">
-      
-    </code-block>
-    
-    <argument-table heading="feedback" :rows="rows"></argument-table>
-  </nhs-main>
+    <nhs-main>
+
+      <code-block :code="source">
+      </code-block>
+
+      <argument-table heading="feedback" :rows="rows"></argument-table>
+    </nhs-main>
+  </div>
 </template>
 
 <script>

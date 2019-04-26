@@ -46,7 +46,7 @@
           }
         ],
         service: {
-          name: "Draft/In progress/Unofficial NHS UK frontend vue component library",
+          name: "Unofficial NHS UK frontend vue component library",
           longName: true
         }
       }
