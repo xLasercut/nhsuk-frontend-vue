@@ -43,12 +43,12 @@ export default {
     described() {
       var describedBy = []
       var errorId = `${this.itemId()}-error`
-      var hintId = `${this.itemId()}-hint`     
-     
+      var hintId = `${this.itemId()}-hint`
+
       if (this.$slots.hint) {
         describedBy.push(hintId)
       }
-      
+
       if (this.error()) {
         describedBy.push(errorId)
       }
@@ -65,7 +65,7 @@ export default {
         var random = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5))
         this.idCache = `${this.$options.name}_${random}`
       }
-      
+
       if (this.$slots.label) {
         for (var i = 0; i < this.$slots.label.length; i++) {
           var label = this.$slots.label[i]
@@ -73,8 +73,22 @@ export default {
         }
       }
 
+      if (this.$slots.error) {
+        for (var i = 0; i < this.$slots.error.length; i++) {
+          var error = this.$slots.error[i]
+          error.data.attrs["id"] = `${this.idCache}-error`
+        }
+      }
+
+      if (this.$slots.hint) {
+        for (var i = 0; i < this.$slots.hint.length; i++) {
+          var hint = this.$slots.hint[i]
+          hint.data.attrs["id"] = `${this.idCache}-hint`
+        }
+      }
+
       return this.idCache
     }
   }
-  
+
 }
