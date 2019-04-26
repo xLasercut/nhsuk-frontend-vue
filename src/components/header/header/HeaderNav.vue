@@ -23,7 +23,7 @@
   import LinkSwitcher from '../../../shared/LinkSwitcher.vue'
 
   export default {
-    name: "HeaderNav",
+    name: 'HeaderNav',
     components: {
       NhsIcon,
       LinkSwitcher
@@ -31,13 +31,7 @@
     props: {
       homeHref: {
         type: String,
-        default: "/"
-      },
-      primaryLinks: {
-        type: Array,
-        default() {
-          return []
-        }
+        default: '/'
       }
     }
   }

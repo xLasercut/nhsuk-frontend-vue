@@ -26,7 +26,6 @@
   import NhsIcon from '../../icon/NhsIcon.vue'
 
   export default {
-    name: "HeaderSearch",
     components: {
       NhsIcon
     }

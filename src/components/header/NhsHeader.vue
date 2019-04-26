@@ -1,9 +1,10 @@
 <template>
-  <header :class="headerClass" role="banner">
+  <header :class="classes" role="banner">
     <div class="nhsuk-width-container nhsuk-header__container">
       <header-logo :homeHref="homeHref" :service="service" :aria-label="ariaLabel"></header-logo>
-      <header-transactional v-if="transactionalService && !showNav && !showSearch" :transactional-service="transactionalService"></header-transactional>
-    
+      <header-transactional v-if="transactionalService && !showNav && !showSearch" :transactional-service="transactionalService">
+      </header-transactional>
+
       <div class="nhsuk-header__content" id="content-header">
 
         <div class="nhsuk-header__menu" v-if="showNav">
@@ -27,7 +28,7 @@
   import HeaderTransactional from './header/HeaderTransactional.vue'
 
   export default {
-    name: "NhsHeader",
+    name: 'NhsHeader',
     props: {
       showSearch: {
         type: Boolean,
@@ -36,10 +37,6 @@
       showNav: {
         type: Boolean,
         required: true
-      },
-      label: {
-        type: String,
-        default: ""
       },
       attributes: {
         type: Object,
@@ -59,11 +56,11 @@
       },
       ariaLabel: {
         type: String,
-        default: "NHS homepage"
+        default: 'NHS homepage'
       },
       homeHref: {
         type: String,
-        default: "/"
+        default: '/'
       }
     },
     components: {
@@ -73,11 +70,12 @@
       HeaderTransactional
     },
     computed: {
-      headerClass() {
+      classes() {
+        var classes = ['nhsuk-header']
         if (this.transactional || this.transactionalService) {
-          return "nhsuk-header nhsuk-header--transactional"
+          classes.push('nhsuk-header--transactional')
         }
-        return "nhsuk-header"
+        return classes.join(' ')
       }
     }
   }

@@ -9,11 +9,13 @@
 
 <script>
   import LinkSwitcher from '../../shared/LinkSwitcher.vue'
+  import NhsIcon from '../icon/NhsIcon.vue'
 
   export default {
-    name: "NhsHeaderItem",
+    name: 'NhsHeaderItem',
     components: {
-      LinkSwitcher
+      LinkSwitcher,
+      NhsIcon
     },
     props: {
       href: {

@@ -1,6 +1,8 @@
 <template>
-  <div :class="transactionalClass">
-    <link-switcher class="nhsuk-header__transactional-service-name--link" :href="transactionalService.href | '/'">{{transactionalService.name}}</link-switcher>
+  <div :class="classes">
+    <link-switcher class="nhsuk-header__transactional-service-name--link" :href="href">
+      {{transactionalService.name}}
+    </link-switcher>
   </div>
 </template>
 
@@ -17,11 +19,18 @@
       }
     },
     computed: {
-      transactionalClass() {
+      classes() {
+        var classes = ['nhsuk-header__transactional-service-name']
         if (this.transactionalService.longName) {
-          return "nhsuk-header__transactional-service-name nhsuk-header__transactional-service-name--long"
+          classes.push('nhsuk-header__transactional-service-name--long')
         }
-        return "nhsuk-header__transactional-service-name"
+        return classes.join(' ')
+      },
+      href() {
+        if (this.transactionalService.href) {
+          return this.transactionalService.href
+        }
+        return '/'
       }
     }
   }
