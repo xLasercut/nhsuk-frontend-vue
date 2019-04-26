@@ -13,8 +13,8 @@
     "src/*"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve ./ghpages/src/main.js",
-    "deploy": "vue-cli-service build ./ghpages/src/main.js",
+    "serve": "vue-cli-service serve",
+    "deploy": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
