@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
@@ -7,14 +8,14 @@ module.exports = {
   outputDir: "./distghpages",
   pages: {
     index: {
-      entry: 'ghpages/src/main.js',
-      template: 'ghpages/src/public/index.html',
+      entry: path.resolve(__dirname, 'ghpages/src/main.js'),
+      template: path.resolve(__dirname, 'ghpages/public/index.html'),
       filename: 'index.html'
     }
   },
   configureWebpack: {
     plugins: [
-        new CopyWebpackPlugin([{ from: 'ghpages/public/', to: '.' }])
+        new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'ghpages/public/'), to: '.' }])
     ]
-  }
+  },
 }
