@@ -18,7 +18,7 @@ import NhsukFrontendVue from 'nhsuk-frontend-vue'
 Vue.use(NhsukFrontendVue)
 ```
 
-Then in your vue components:
+Then in vue components:
 
 ```jsx
 <template>
@@ -30,6 +30,29 @@ Then in your vue components:
   </nhs-row>
 </template>
 ```
+
+OR
+
+Import each component individually
+
+```jsx
+<template>
+  <nhs-main>
+    ...
+  </nhs-main>
+</template>
+
+<script>
+  import { NhsMain } from 'nhsuk-frontend-vue'
+
+  export default {
+    components: {
+      NhsMain
+    }
+  }
+</script>
+```
+
 
 ## To build locally
 
