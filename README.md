@@ -77,3 +77,9 @@ Integration tests:
 ```
 npm run test:e2e
 ```
+
+## License
+
+MIT © [Tim Wang](https://github.com/xLasercut)
+
+NHS.UK frontend library MIT © [NHS.UK frontend](https://www.npmjs.com/package/nhsuk-frontend).
