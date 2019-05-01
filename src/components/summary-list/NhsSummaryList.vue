@@ -13,7 +13,7 @@
             <slot name="action" :props="action.props"></slot>
           </template>
         </summary-list-action>
-        
+
         <ul class="nhsuk-summary-list__actions-list" v-if="row.action.items.length !== 1">
             <li class="nhsuk-summary-list__actions-list-item" v-for="(item, index) in row.action.items" :key="index">
               <summary-list-action :item="item">
@@ -32,7 +32,7 @@
   import SummaryListAction from './child/SummaryListAction.vue'
 
   export default {
-    name: "NhsSummaryList",
+    name: 'NhsSummaryList',
     components: {
       SummaryListAction
     },

@@ -5,7 +5,7 @@
       <thead class="nhsuk-table__head">
         <tr class="nhsuk-table__row">
           <th class="nhsuk-table__header" scope="col" v-for="(item, index) in head" :key="index">
-            <slot name="header" :props="item">{{item.text}}</slot>  
+            <slot name="header" :props="item">{{item.text}}</slot>
           </th>
         </tr>
       </thead>
@@ -27,7 +27,7 @@
   import SimpleTable from './types/SimpleTable.vue'
 
   export default {
-    name: "NhsTable",
+    name: 'NhsTable',
     props: {
       panel: {
         type: Boolean,
@@ -41,7 +41,7 @@
       },
       heading: {
         type: String,
-        default: ""
+        default: ''
       },
       headingLevel: {
         type: Number,
@@ -55,7 +55,7 @@
       },
       caption: {
         type: String,
-        default: ""
+        default: ''
       },
       captionAttributes: {
         type: Object,
