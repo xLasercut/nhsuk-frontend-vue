@@ -14,7 +14,7 @@
     props: {
       heading: {
         type: String,
-        default: ""
+        default: ''
       },
       headingLevel: {
         type: Number,
