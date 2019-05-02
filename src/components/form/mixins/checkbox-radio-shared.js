@@ -43,12 +43,7 @@ export default {
 
       if (this.$slots.hint) {
         described.push(hintId)
-
-        for (var i = 0; i < this.$slots.hint.length; i++) {
-          var hint = this.$slots.hint[i]
-          hint.data.attrs['id'] = hintId
-          hint.data.attrs['add-class'] = `${type}__hint`
-        }
+        this.addAttrs(hintId, `${type}__hint`, this.$slots.hint)
       }
 
       if (this.$slots.label) {
@@ -60,6 +55,13 @@ export default {
       }
 
       return described.join(' ')
+    },
+    addAttrs(id, addClass, slots) {
+      for (var i = 0; i < slots.length; i++) {
+        var slotItem = slots[i]
+        slotItem.data.attrs['id'] = id
+        slotItem.data.attrs['add-class'] = addClass
+      }
     }
   }
 }

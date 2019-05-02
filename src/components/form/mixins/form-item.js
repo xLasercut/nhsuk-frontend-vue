@@ -56,18 +56,12 @@ export default {
 
       if (this.$slots.error) {
         describedBy.push(errorId)
-        for (var i = 0; i < this.$slots.error.length; i++) {
-          var error = this.$slots.error[i]
-          error.data.attrs['id'] = errorId
-        }
+        this.addId(errorId, this.$slots.error)
       }
 
       if (this.$slots.hint) {
         describedBy.push(hintId)
-        for (var i = 0; i < this.$slots.hint.length; i++) {
-          var hint = this.$slots.hint[i]
-          hint.data.attrs['id'] = hintId
-        }
+        this.addId(hintId, this.$slots.hint)
       }
 
       return describedBy.join(' ')
@@ -77,6 +71,12 @@ export default {
         return true
       }
       return false
+    },
+    addId(id, slot) {
+      for (var i = 0; i < slot.length; i++) {
+        var slotItem = slot[i]
+        slotItem.data.attrs['id'] = id
+      }
     }
   }
 

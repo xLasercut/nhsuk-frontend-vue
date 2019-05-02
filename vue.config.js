@@ -18,4 +18,5 @@ module.exports = {
         new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'ghpages/public/'), to: '.' }])
     ]
   },
+  lintOnSave: false
 }
