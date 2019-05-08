@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "deploy": "vue-cli-service build",
+    "deploy:local": "vue-cli-service build",
+    "deploy:gh": "cross-env NODE_ENV=ghpages vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
@@ -31,6 +32,7 @@
     "@vue/cli-service": "^3.7.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-vue": "^5.0.0",

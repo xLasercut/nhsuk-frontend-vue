@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #build
-npm run deploy
+npm run deploy:gh
 
 cd distghpages
 

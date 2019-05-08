@@ -1,10 +1,17 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
+var publicPath = '/'
+
+if (process.env.NODE_ENV === 'ghpages') {
+  publicPath = '/nhsuk-frontend-vue/'
+}
+else if (process.env.NODE_ENV === 'production') {
+  publicPath = './'
+}
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/nhsuk-frontend-vue/'
-    : '/',
+  publicPath: publicPath,
   outputDir: "./distghpages",
   pages: {
     index: {
