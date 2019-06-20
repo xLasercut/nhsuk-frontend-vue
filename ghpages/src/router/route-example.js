@@ -29,6 +29,12 @@ import HeaderLogo from '../examples/HeaderLogo.vue'
 import HintText from '../examples/HintText.vue'
 import Image from '../examples/Image.vue'
 
+import InsetText from '../examples/InsetText.vue'
+import Label from '../examples/Label.vue'
+
+import LabelHeading from '../examples/LabelHeading.vue'
+import ListPanel from '../examples/ListPanel.vue'
+
 export default [
   {
     path: '/example/action-link',
@@ -129,5 +135,21 @@ export default [
   {
     path: '/example/image',
     component: Image
+  },
+  {
+    path: '/example/inset-text',
+    component: InsetText
+  },
+  {
+    path: '/example/label',
+    component: Label
+  },
+  {
+    path: '/example/label-heading',
+    component: LabelHeading
+  },
+  {
+    path: '/example/list-panel',
+    component: ListPanel
   }
 ]
