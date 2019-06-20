@@ -8,10 +8,11 @@
         <button class="expand_button" @click="toggleCode()">Show Code</button>
       </div>
       <div class="code_container" :style="codeContainerStyle">
-        <pre v-highlightjs="code">
-          <code :class="type">
-          </code>
-        </pre>
+        <div>
+          <div>template</div><div>script</div>
+        </div>
+        <highlight-code :code="code" :lang="type">
+        </highlight-code>
       </div>
     </nhs-col>
   </nhs-row>
@@ -35,8 +36,7 @@
           "display": "none"
         },
         expandContainerStyle: {
-          "border-bottom": "1px solid #d8dde0",
-          "margin-bottom": "40px"
+          "border-bottom": "1px solid #d8dde0"
         }
       }
     },
@@ -45,12 +45,10 @@
         if (this.codeContainerStyle["display"] === "none") {
           this.codeContainerStyle["display"] = "block"
           this.expandContainerStyle["border-bottom"] = "none"
-          this.expandContainerStyle["margin-bottom"] = 0
         }
         else {
           this.codeContainerStyle["display"] = "none"
           this.expandContainerStyle["border-bottom"] = "1px solid #d8dde0"
-          this.expandContainerStyle["margin-bottom"] = "40px"
         }
       }
     }
@@ -58,8 +56,6 @@
 </script>
 
 <style scoped>
-  @import '../atom-one-light.css';
-
   .example_container {
     width: 100%;
     background: #f0f4f5;
@@ -74,9 +70,7 @@
     background: #f0f4f5;
     width: 100%;
     margin: 0;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-bottom: 40px;
+    padding: 0;
   }
 
   .expand_container {
@@ -100,5 +94,10 @@
 
   .expand_button:focus {
     outline: 3px solid #ffb81c;
+  }
+
+  pre {
+    padding: 0;
+    margin: 0;
   }
 </style>
