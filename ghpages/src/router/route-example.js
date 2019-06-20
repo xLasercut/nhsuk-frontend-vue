@@ -13,7 +13,21 @@ import CareCardImmediate from '../examples/CareCardImmediate.vue'
 import ContentsList from '../examples/ContentsList.vue'
 
 import Details from '../examples/Details.vue'
+import DoDont from '../examples/DoDont.vue'
+import EmergencyAlert from '../examples/EmergencyAlert.vue'
+import ErrorText from '../examples/ErrorText.vue'
+import ErrorSummary from '../examples/ErrorSummary.vue'
+import Expander from '../examples/Expander.vue'
 
+import Fieldset from '../examples/Fieldset.vue'
+import FieldsetHeading from '../examples/FieldsetHeading.vue'
+
+import Footer from '../examples/Footer.vue'
+import Header from '../examples/Header.vue'
+import HeaderLogo from '../examples/HeaderLogo.vue'
+
+import HintText from '../examples/HintText.vue'
+import Image from '../examples/Image.vue'
 
 export default [
   {
@@ -67,5 +81,53 @@ export default [
   {
     path: '/example/details',
     component: Details
+  },
+  {
+    path: '/example/do-dont',
+    component: DoDont
+  },
+  {
+    path: '/example/emergency-alert',
+    component: EmergencyAlert
+  },
+  {
+    path: '/example/error-text',
+    component: ErrorText
+  },
+  {
+    path: '/example/error-summary',
+    component: ErrorSummary
+  },
+  {
+    path: '/example/expander',
+    component: Expander
+  },
+  {
+    path: '/example/fieldset',
+    component: Fieldset
+  },
+  {
+    path: '/example/fieldset-heading',
+    component: FieldsetHeading
+  },
+  {
+    path: '/example/footer',
+    component: Footer
+  },
+  {
+    path: '/example/header',
+    component: Header
+  },
+  {
+    path: '/example/header-logo',
+    component: HeaderLogo
+  },
+  {
+    path: '/example/hint-text',
+    component: HintText
+  },
+  {
+    path: '/example/image',
+    component: Image
   }
 ]

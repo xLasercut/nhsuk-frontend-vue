@@ -32,11 +32,11 @@
     props: {
       showSearch: {
         type: Boolean,
-        required: true
+        default: false
       },
       showNav: {
         type: Boolean,
-        required: true
+        default: false
       },
       attributes: {
         type: Object,

@@ -1,6 +1,6 @@
 <template>
   <fieldset class="nhsuk-fieldset" :aria-describedby="describedBy" v-bind="attributes">
-    <legend class="nhsuk-fieldset__legend" v-if="legend && pageHeading" v-bind="legendAttributes">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl" v-if="legend && pageHeading" v-bind="legendAttributes">
       <h1 class="nhsuk-fieldset__heading">
         <slot name="legend" :props="legend">{{legend}}</slot>
       </h1>

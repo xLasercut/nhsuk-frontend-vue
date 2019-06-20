@@ -5,7 +5,13 @@
 <script>
   import ExampleWithContainer from './example/ExampleWithContainer.vue'
   import ExampleWithBlueBg from './example/ExampleWithBlueBg.vue'
-  const noContainers = [ '/example/breadcrumb' ]
+  const noContainers = [
+    '/example/breadcrumb',
+    '/example/emergency-alert',
+    '/example/footer',
+    '/example/header',
+    '/example/header-logo'
+  ]
   const blueContainers = [ '/example/button-reversed' ]
 
   export default {

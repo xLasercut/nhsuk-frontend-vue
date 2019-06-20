@@ -28,13 +28,13 @@
           {
             name: "show-nav",
             type: "boolean",
-            required: "yes",
+            required: "no",
             description: "Set to 'true' to show the navigation links in the header."
           },
           {
             name: "show-search",
             type: "boolean",
-            required: "yes",
+            required: "no",
             description: "Set to 'true' to show the site search input form."
           },
           {
