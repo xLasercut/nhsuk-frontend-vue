@@ -9,9 +9,12 @@
       </div>
       <div class="code_container" :style="codeContainerStyle">
         <div>
-          <div>template</div><div>script</div>
+          <button class="code_tab" @click="display='template'" v-show="code">template</button>
+          <button class="code_tab" @click="display='script'" v-show="script">script</button>
         </div>
-        <highlight-code :code="code" :lang="type">
+        <highlight-code :code="code" :lang="type" v-show="display == 'template'">
+        </highlight-code>
+        <highlight-code :code="script" lang="js" v-show="display == 'script'">
         </highlight-code>
       </div>
     </nhs-col>
@@ -28,6 +31,10 @@
       code: {
         type: String,
         default: ""
+      },
+      script: {
+        type: String,
+        default: ""
       }
     },
     data() {
@@ -36,8 +43,10 @@
           "display": "none"
         },
         expandContainerStyle: {
-          "border-bottom": "1px solid #d8dde0"
-        }
+          "border-bottom": "1px solid #d8dde0",
+          "margin-bottom": "40px"
+        },
+        display: "template"
       }
     },
     methods: {
@@ -45,10 +54,14 @@
         if (this.codeContainerStyle["display"] === "none") {
           this.codeContainerStyle["display"] = "block"
           this.expandContainerStyle["border-bottom"] = "none"
+          this.codeContainerStyle["margin-bottom"] = "40px"
+          this.expandContainerStyle["margin-bottom"] = "0px"
         }
         else {
           this.codeContainerStyle["display"] = "none"
           this.expandContainerStyle["border-bottom"] = "1px solid #d8dde0"
+          this.expandContainerStyle["margin-bottom"] = "40px"
+          this.codeContainerStyle["margin-bottom"] = "0px"
         }
       }
     }
@@ -96,8 +109,22 @@
     outline: 3px solid #ffb81c;
   }
 
+  .code_tab {
+    background: none;
+    border: none;
+    padding: 10px;
+  }
+
   pre {
     padding: 0;
     margin: 0;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked+label {
+    background: gray;
   }
 </style>

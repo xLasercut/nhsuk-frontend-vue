@@ -1,31 +1,38 @@
 <template>
-  <nhs-main>
-    <nhs-row>
-      <nhs-col>
-        <nhs-nav-az>
-          <nhs-nav-az-item v-for="(item, index) in navItems" :key="index" :disabled="item.disabled" @click="scrollTo(item.text)">
-            {{item.text}}
-          </nhs-nav-az-item>
-        </nhs-nav-az>
-      </nhs-col>
-    </nhs-row>
-    <nhs-row>
-      <nhs-col>
-        <nhs-list-panel
-          v-for="(items, key) in panels" :key="key"
-          :label="key" :id="`panel-${key}`"
-          :back-to-top="true" @back-to-top="backToTop()"
-        >
-          <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href">
-            {{item.text}}
-          </nhs-list-panel-item>
-        </nhs-list-panel>
-      </nhs-col>
-    </nhs-row>
-  </nhs-main>
+  <div>
+    <site-header />
+    <nhs-main>
+      <nhs-row>
+        <nhs-col>
+          <nhs-nav-az>
+            <nhs-nav-az-item v-for="(item, index) in navItems" :key="index" :disabled="item.disabled" @click="scrollTo(item.text)">
+              {{item.text}}
+            </nhs-nav-az-item>
+          </nhs-nav-az>
+        </nhs-col>
+      </nhs-row>
+      <nhs-row>
+        <nhs-col>
+          <nhs-list-panel
+            v-for="(items, key) in panels" :key="key"
+            :label="key" :id="`panel-${key}`"
+            :back-to-top="true" @back-to-top="backToTop()"
+          >
+            <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href">
+              {{item.text}}
+            </nhs-list-panel-item>
+          </nhs-list-panel>
+        </nhs-col>
+      </nhs-row>
+    </nhs-main>
+    <site-footer />
+  </div>
 </template>
 
 <script>
+  import SiteHeader from '../components/SiteHeader.vue'
+  import SiteFooter from '../components/SiteFooter.vue'
+
   const blacklist = ["Typography", "Navigation", "Form", "Layout", "Information"]
   const alphabet = [
     "A", "B", "C", "D", "E", "F",
@@ -36,6 +43,7 @@
   ]
 
   export default {
+    components: { SiteHeader, SiteFooter },
     data() {
       return {
         navItems: [],
@@ -86,7 +94,7 @@
           if (this.panels[letter].length > 0) {
             this.navItems.push({text: letter})
           }
-          else{ 
+          else{
             this.navItems.push({text: letter, disabled: true})
             delete this.panels[letter]
           }

@@ -1,55 +1,10 @@
 <template>
-  <div>
-    <nhs-header :show-search="false" :show-nav="true" :service="service" :transactional="false">
-      <nhs-header-item v-for="(item, index) in headerLinks" :key="index" :href="item.href">
-        {{item.text}}
-      </nhs-header-item>
-    </nhs-header>
-    <router-view></router-view>
-    <nhs-footer>
-      <nhs-footer-item v-for="(item, index) in footerLinks" :key="index" :href="item.href">{{item.text}}</nhs-footer-item>
-    </nhs-footer>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
   export default {
     name:  'App',
-    data() {
-      return {
-        headerLinks: [
-          {
-            text: "Layout",
-            href: "/layout"
-          },
-          {
-            text: "Information",
-            href: "/information"
-          },
-          {
-            text: "Navigation",
-            href: "/navigation"
-          },
-          {
-            text: "Form",
-            href: "/form"
-          },
-          {
-            text: "Typography",
-            href: "/typography"
-          }
-        ],
-        footerLinks: [
-          {
-            text: "Github",
-            href: "https://github.com/xLasercut/nhsuk-frontend-vue"
-          }
-        ],
-        service: {
-          name: "Unofficial NHS UK frontend vue component library",
-          longName: true
-        }
-      }
-    }
+
   }
 </script>

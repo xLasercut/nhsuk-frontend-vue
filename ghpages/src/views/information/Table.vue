@@ -1,6 +1,6 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
+    <code-block :code="source" :script="script">
       <nhs-table :panel="true" heading="Table with heading" :rows="tableData" :head="tableHeading"></nhs-table>
     </code-block>
 
@@ -10,8 +10,9 @@
 
 <script>
   var source = `<nhs-table :panel="true" heading="Table with heading" :rows="tableData" :head="tableHeading"></nhs-table>
-  
-  export default {
+  `
+
+  var script = `export default {
     data() {
       return {
         tableData: [
@@ -47,6 +48,7 @@
     data() {
       return {
         source: source,
+        script: script,
         tableData: [
           {
             name: "test",

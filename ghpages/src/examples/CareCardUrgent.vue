@@ -1,0 +1,11 @@
+<template>
+  <nhs-care-card heading="Ask for an urgent GP appointment if:" type="urgent">
+    <ul>
+      <li>you're an adult and have chickenpox</li>
+      <li>you're pregnant and haven't had chickenpox before and you've been near someone with it </li>
+      <li>you have a weakened immune system and you've been near someone with chickenpox</li>
+      <li>you think your newborn baby has chickenpox</li>
+    </ul>
+    <p>In these situations, your GP can prescribe medicine to prevent complications. You need to take it within 24 hours of the spots coming out.</p>
+  </nhs-care-card>
+</template>
