@@ -1,6 +1,10 @@
 // Get the --testhost=... argument from the backstop command
 const arguments = require('minimist')(process.argv.slice(2));
-const TEST_HOST = arguments.testhost || "http://host.docker.internal:8080"
+var TEST_HOST = "http://host.docker.internal:8080/#"
+
+if (arguments.testhost) {
+  TEST_HOST = `http://${arguments.testhost}/#`
+}
 
 module.exports = {
   "id": "nhsuk-frontend",
@@ -43,15 +47,15 @@ module.exports = {
     },
     {
       "label": "Breadcrumb",
-      "url": `${TEST_HOST}/components/breadcrumb/index.html`
+      "url": `${TEST_HOST}/example/breadcrumb`
     },
     {
       "label": "Button",
-      "url": `${TEST_HOST}/components/button/index.html`
+      "url": `${TEST_HOST}/example/button`
     },
     {
       "label": "Button click",
-      "url": `${TEST_HOST}/components/button/index.html`,
+      "url": `${TEST_HOST}/example/button`,
       "clickSelector": ".nhsuk-button",
       "viewports": [
         {
@@ -63,19 +67,19 @@ module.exports = {
     },
     {
       "label": "Button as a link",
-      "url": `${TEST_HOST}/components/button/link.html`
+      "url": `${TEST_HOST}/example/button-link`
     },
     {
       "label": "Button disabled",
-      "url": `${TEST_HOST}/components/button/disabled.html`
+      "url": `${TEST_HOST}/example/button-disabled`
     },
     {
       "label": "Button secondary",
-      "url": `${TEST_HOST}/components/button/secondary.html`
+      "url": `${TEST_HOST}/example/button-secondary`
     },
     {
       "label": "Button reverse",
-      "url": `${TEST_HOST}/components/button/reverse.html`
+      "url": `${TEST_HOST}/example/button-reversed`
     },
     {
       "label": "Care card - Non urgent",
