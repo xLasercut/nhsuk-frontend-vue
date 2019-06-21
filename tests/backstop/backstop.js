@@ -179,11 +179,11 @@ module.exports = {
     },
     {
       "label": "Header",
-      "url": `${TEST_HOST}/components/header/index.html`
+      "url": `${TEST_HOST}/example/header`
     },
     {
       "label": "Header with logo only",
-      "url": `${TEST_HOST}/components/header/header-logo.html`
+      "url": `${TEST_HOST}/example/header-logo`
     },
     {
       "label": "Header with service name and search",
