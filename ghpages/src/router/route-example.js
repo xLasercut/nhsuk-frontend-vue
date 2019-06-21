@@ -34,6 +34,8 @@ import Label from '../examples/Label.vue'
 
 import LabelHeading from '../examples/LabelHeading.vue'
 import ListPanel from '../examples/ListPanel.vue'
+import NavAZ from '../examples/NavAZ.vue'
+import Pagination from '../examples/Pagination.vue'
 
 export default [
   {
@@ -151,5 +153,13 @@ export default [
   {
     path: '/example/list-panel',
     component: ListPanel
+  },
+  {
+    path: '/example/nav-az',
+    component: NavAZ
+  },
+  {
+    path: '/example/pagination',
+    component: Pagination
   }
 ]

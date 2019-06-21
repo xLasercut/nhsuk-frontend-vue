@@ -1,9 +1,27 @@
 <template>
   <nhs-main>
     <nhs-row>
-      <nhs-col :span="66">
+      <nhs-col :span="width()">
         <router-view />
       </nhs-col>
     </nhs-row>
   </nhs-main>
 </template>
+
+<script>
+  const fullwidth = [
+    '/example/list-panel',
+    '/example/nav-az'
+  ]
+
+  export default {
+    methods: {
+      width() {
+        if (fullwidth.includes(this.$route.path)) {
+          return 100
+        }
+        return 66
+      }
+    }
+  }
+</script>
