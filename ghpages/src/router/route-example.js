@@ -44,6 +44,8 @@ import PromoSmall from '../examples/PromoSmall.vue'
 import PromoImage from '../examples/PromoImage.vue'
 import PromoGroup from '../examples/PromoGroup.vue'
 
+import ReviewDate from '../examples/ReviewDate.vue'
+
 export default [
   {
     path: '/example/action-link',
@@ -192,5 +194,9 @@ export default [
   {
     path: '/example/promo-group',
     component: PromoGroup
+  },
+  {
+    path: '/example/review-date',
+    component: ReviewDate
   }
 ]
