@@ -163,15 +163,15 @@ module.exports = {
     },
     {
       "label": "Footer",
-      "url": `${TEST_HOST}/components/footer/index.html`
+      "url": `${TEST_HOST}/example/footer`
     },
     {
       "label": "Fieldset",
-      "url": `${TEST_HOST}/components/fieldset/index.html`
+      "url": `${TEST_HOST}/example/fieldset`
     },
     {
       "label": "Fieldset as page heading",
-      "url": `${TEST_HOST}/components/fieldset/page-heading.html`
+      "url": `${TEST_HOST}/example/fieldset-heading`
     },
     {
       "label": "Fieldset with inputs",
