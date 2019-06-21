@@ -35,7 +35,7 @@ module.exports = {
   "scenarios": [
     {
       "label": "A-Z navigation",
-      "url": `${TEST_HOST}/components/nav-a-z/index.html`
+      "url": `${TEST_HOST}/example/nav-az`
     },
     {
       "label": "Action link",
@@ -83,15 +83,15 @@ module.exports = {
     },
     {
       "label": "Care card - Non urgent",
-      "url": `${TEST_HOST}/components/care-card/care-card-non-urgent.html`
+      "url": `${TEST_HOST}/example/care-card-non-urgent`
     },
     {
       "label": "Care card - Urgent",
-      "url": `${TEST_HOST}/components/care-card/care-card-urgent.html`
+      "url": `${TEST_HOST}/example/care-card-urgent`
     },
     {
       "label": "Care card - Immediate",
-      "url": `${TEST_HOST}/components/care-card/care-card-immediate.html`
+      "url": `${TEST_HOST}/example/care-card-immediate`
     },
     {
       "label": "Checkboxes",
@@ -115,7 +115,7 @@ module.exports = {
     },
     {
       "label": "Contents list",
-      "url": `${TEST_HOST}/components/contents-list/index.html`
+      "url": `${TEST_HOST}/example/contents-list`
     },
     {
       "label": "Date input",
@@ -127,24 +127,24 @@ module.exports = {
     },
     {
       "label": "Details",
-      "url": `${TEST_HOST}/components/details/index.html`,
+      "url": `${TEST_HOST}/example/details`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
       "label": "Do & Don't list",
-      "url": `${TEST_HOST}/components/do-dont-list/index.html`
+      "url": `${TEST_HOST}/example/do-dont`
     },
     {
       "label": "Emergency alert",
-      "url": `${TEST_HOST}/components/emergency-alert/index.html`
+      "url": `${TEST_HOST}/example/emergency-alert`
     },
     {
       "label": "Error message",
-      "url": `${TEST_HOST}/components/error-message/index.html`
+      "url": `${TEST_HOST}/example/error-text`
     },
     {
       "label": "Error summary",
-      "url": `${TEST_HOST}/components/error-summary/index.html`
+      "url": `${TEST_HOST}/example/error-summary`
     },
     {
       "label": "Expander",
