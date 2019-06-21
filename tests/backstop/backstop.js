@@ -1,6 +1,6 @@
 // Get the --testhost=... argument from the backstop command
 const arguments = require('minimist')(process.argv.slice(2));
-const TEST_HOST = arguments.testhost || "http://host.docker.internal:3000"
+const TEST_HOST = arguments.testhost || "http://host.docker.internal:8080"
 
 module.exports = {
   "id": "nhsuk-frontend",
@@ -35,11 +35,11 @@ module.exports = {
     },
     {
       "label": "Action link",
-      "url": `${TEST_HOST}/components/action-link/index.html`
+      "url": `${TEST_HOST}/example/action-link`
     },
     {
       "label": "Back link",
-      "url": `${TEST_HOST}/components/back-link/index.html`
+      "url": `${TEST_HOST}/example/back-link`
     },
     {
       "label": "Breadcrumb",
