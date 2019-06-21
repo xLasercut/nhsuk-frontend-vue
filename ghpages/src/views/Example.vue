@@ -1,5 +1,7 @@
 <template>
-  <component :is="component()" />
+  <div class="main-container">
+    <component :is="component()" />
+  </div>
 </template>
 
 <script>
@@ -29,3 +31,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .main-container {
+    background-color: #f0f4f5;
+    height: 100vh;
+  }
+</style>

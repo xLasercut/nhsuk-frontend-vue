@@ -49,7 +49,7 @@
           href: "",
           text: this.$route.name
         })
-        
+
         return breadcrums
       },
       breadcrumbback() {

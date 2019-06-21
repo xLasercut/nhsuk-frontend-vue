@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-action-link" v-bind="attributes">
+  <div class="nhsuk-action-link">
     <link-switcher class="nhsuk-action-link__link" :href="href">
       <nhs-icon icon="arrow-right-circle"></nhs-icon>
       <span class="nhsuk-action-link__text">
@@ -19,12 +19,6 @@
       href: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     components: {

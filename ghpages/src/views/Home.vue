@@ -1,32 +1,28 @@
 <template>
-  <div>
-    <site-header />
-    <nhs-main>
-      <nhs-row>
-        <nhs-col>
-          <nhs-nav-az>
-            <nhs-nav-az-item v-for="(item, index) in navItems" :key="index" :disabled="item.disabled" @click="scrollTo(item.text)">
-              {{item.text}}
-            </nhs-nav-az-item>
-          </nhs-nav-az>
-        </nhs-col>
-      </nhs-row>
-      <nhs-row>
-        <nhs-col>
-          <nhs-list-panel
-            v-for="(items, key) in panels" :key="key"
-            :label="key" :id="`panel-${key}`"
-            :back-to-top="true" @back-to-top="backToTop()"
-          >
-            <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href">
-              {{item.text}}
-            </nhs-list-panel-item>
-          </nhs-list-panel>
-        </nhs-col>
-      </nhs-row>
-    </nhs-main>
-    <site-footer />
-  </div>
+  <nhs-main>
+    <nhs-row>
+      <nhs-col>
+        <nhs-nav-az>
+          <nhs-nav-az-item v-for="(item, index) in navItems" :key="index" :disabled="item.disabled" @click="scrollTo(item.text)">
+            {{item.text}}
+          </nhs-nav-az-item>
+        </nhs-nav-az>
+      </nhs-col>
+    </nhs-row>
+    <nhs-row>
+      <nhs-col>
+        <nhs-list-panel
+          v-for="(items, key) in panels" :key="key"
+          :label="key" :id="`panel-${key}`"
+          :back-to-top="true" @back-to-top="backToTop()"
+        >
+          <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href">
+            {{item.text}}
+          </nhs-list-panel-item>
+        </nhs-list-panel>
+      </nhs-col>
+    </nhs-row>
+  </nhs-main>
 </template>
 
 <script>
