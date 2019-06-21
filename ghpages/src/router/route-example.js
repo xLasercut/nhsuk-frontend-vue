@@ -18,6 +18,7 @@ import EmergencyAlert from '../examples/EmergencyAlert.vue'
 import ErrorText from '../examples/ErrorText.vue'
 import ErrorSummary from '../examples/ErrorSummary.vue'
 import Expander from '../examples/Expander.vue'
+import ExpanderGroup from '../examples/ExpanderGroup.vue'
 
 import Fieldset from '../examples/Fieldset.vue'
 import FieldsetHeading from '../examples/FieldsetHeading.vue'
@@ -109,6 +110,10 @@ export default [
   {
     path: '/example/expander',
     component: Expander
+  },
+  {
+    path: '/example/expander-group',
+    component: ExpanderGroup
   },
   {
     path: '/example/fieldset',
