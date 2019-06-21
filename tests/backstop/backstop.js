@@ -326,23 +326,23 @@ module.exports = {
     },
     {
       "label": "Promo",
-      "url": `${TEST_HOST}/components/promo/index.html`
+      "url": `${TEST_HOST}/example/promo`
     },
     {
       "label": "Promo with image",
-      "url": `${TEST_HOST}/components/promo/promo-with-image.html`
+      "url": `${TEST_HOST}/example/promo-image`
     },
     {
       "label": "Promo small",
-      "url": `${TEST_HOST}/components/promo/promo-small.html`
+      "url": `${TEST_HOST}/example/promo-small`
     },
     {
       "label": "Promo with no description",
-      "url": `${TEST_HOST}/components/promo/promo-no-description.html`
+      "url": `${TEST_HOST}/example/promo-no-description`
     },
     {
       "label": "Promo group",
-      "url": `${TEST_HOST}/components/promo/promo-group.html`
+      "url": `${TEST_HOST}/example/promo-group`
     },
     {
       "label": "Radios",
