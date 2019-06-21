@@ -1,3 +1,4 @@
 import NhsPromo from './NhsPromo.vue'
+import NhsPromoGroup from './NhsPromoGroup.vue'
 
-export default NhsPromo
+export { NhsPromo, NhsPromoGroup }

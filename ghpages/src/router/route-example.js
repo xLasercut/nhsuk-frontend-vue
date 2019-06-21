@@ -42,6 +42,7 @@ import Promo from '../examples/Promo.vue'
 import PromoNoDescription from '../examples/PromoNoDescription.vue'
 import PromoSmall from '../examples/PromoSmall.vue'
 import PromoImage from '../examples/PromoImage.vue'
+import PromoGroup from '../examples/PromoGroup.vue'
 
 export default [
   {
@@ -187,5 +188,9 @@ export default [
   {
     path: '/example/promo-image',
     component: PromoImage
+  },
+  {
+    path: '/example/promo-group',
+    component: PromoGroup
   }
 ]

@@ -6,7 +6,7 @@
         <heading-switcher :heading-level="headingLevel" class="nhsuk-promo__heading">
           {{heading}}
         </heading-switcher>
-        <p class="nhsuk-promo__description">
+        <p class="nhsuk-promo__description" v-if="$slots.default">
           <slot></slot>
         </p>
       </div>
