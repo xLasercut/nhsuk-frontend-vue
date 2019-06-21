@@ -148,12 +148,12 @@ module.exports = {
     },
     {
       "label": "Expander",
-      "url": `${TEST_HOST}/components/details/expander.html`,
+      "url": `${TEST_HOST}/example/expander`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
       "label": "Expander group",
-      "url": `${TEST_HOST}/components/details/expander-group.html`,
+      "url": `${TEST_HOST}/example/expander-group`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
