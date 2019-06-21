@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-promo" v-bind="attributes">
+  <div :class="classes()">
     <link-switcher class="nhsuk-promo__link-wrapper" :href="href">
       <img class="nhsuk-promo__img" :src="src" :alt="alt" v-if="src">
       <div class="nhsuk-promo__content">
@@ -25,12 +25,6 @@
       LinkSwitcher
     },
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       headingLevel: {
         type: Number,
         default: 3
@@ -50,6 +44,21 @@
       heading: {
         type: String,
         required: true
+      },
+      small: {
+        type: Boolean,
+        default: false
+      }
+    },
+    methods: {
+      classes() {
+        var classes = [ 'nhsuk-promo' ]
+
+        if (this.small) {
+          classes.push('nhsuk-promo--small')
+        }
+
+        return classes.join(' ')
       }
     }
   }

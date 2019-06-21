@@ -11,7 +11,11 @@
 <script>
   const fullwidth = [
     '/example/list-panel',
-    '/example/nav-az'
+    '/example/nav-az',
+    '/example/promo',
+    '/example/promo-no-description',
+    '/example/promo-small',
+    '/example/promo-image'
   ]
 
   export default {

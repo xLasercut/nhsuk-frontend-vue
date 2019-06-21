@@ -38,6 +38,11 @@ import ListPanel from '../examples/ListPanel.vue'
 import NavAZ from '../examples/NavAZ.vue'
 import Pagination from '../examples/Pagination.vue'
 
+import Promo from '../examples/Promo.vue'
+import PromoNoDescription from '../examples/PromoNoDescription.vue'
+import PromoSmall from '../examples/PromoSmall.vue'
+import PromoImage from '../examples/PromoImage.vue'
+
 export default [
   {
     path: '/example/action-link',
@@ -166,5 +171,21 @@ export default [
   {
     path: '/example/pagination',
     component: Pagination
+  },
+  {
+    path: '/example/promo',
+    component: Promo
+  },
+  {
+    path: '/example/promo-no-description',
+    component: PromoNoDescription
+  },
+  {
+    path: '/example/promo-small',
+    component: PromoSmall
+  },
+  {
+    path: '/example/promo-image',
+    component: PromoImage
   }
 ]
