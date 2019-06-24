@@ -3,7 +3,7 @@
     <div class="nhsuk-footer" id="nhsuk-footer" v-bind="attributes">
       <div class="nhsuk-width-container">
         <h2 class="nhsuk-u-visually-hidden" v-if="$slots.default">{{hiddenText}}</h2>
-        <ul class="nhsuk-footer__list" v-if="$slots.default">
+        <ul :class="classes" v-if="$slots.default">
           <slot></slot>
         </ul>
         <p class="nhsuk-footer__copyright">&copy; {{copyright}}</p>
@@ -30,6 +30,21 @@
         default() {
           return {}
         }
+      },
+      column: {
+        type: Boolean,
+        default: false
+      }
+    },
+    computed: {
+      classes() {
+        var classes = [ 'nhsuk-footer__list' ]
+
+        if (this.column) {
+          classes.push('nhsuk-footer__list--three-columns')
+        }
+
+        return classes.join(' ')
       }
     }
   }

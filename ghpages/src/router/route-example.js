@@ -31,6 +31,7 @@ import Fieldset from '../examples/Fieldset.vue'
 import FieldsetHeading from '../examples/FieldsetHeading.vue'
 
 import Footer from '../examples/Footer.vue'
+import FooterColumn from '../examples/FooterColumn.vue'
 import Header from '../examples/Header.vue'
 import HeaderLogo from '../examples/HeaderLogo.vue'
 
@@ -195,6 +196,10 @@ export default [
   {
     path: '/example/footer',
     component: Footer
+  },
+  {
+    path: '/example/footer-column',
+    component: FooterColumn
   },
   {
     path: '/example/header',

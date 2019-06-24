@@ -11,6 +11,7 @@
     '/example/breadcrumb',
     '/example/emergency-alert',
     '/example/footer',
+    '/example/footer-column',
     '/example/header',
     '/example/header-logo'
   ]
