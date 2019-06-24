@@ -254,15 +254,15 @@ module.exports = {
     },
     {
       "label": "Hero",
-      "url": `${TEST_HOST}/components/hero/index.html`
+      "url": `${TEST_HOST}/example/hero`
     },
     {
       "label": "Hero with image",
-      "url": `${TEST_HOST}/components/hero/hero-image.html`
+      "url": `${TEST_HOST}/example/hero-image`
     },
     {
       "label": "Hero with image and content",
-      "url": `${TEST_HOST}/components/hero/hero-image-content.html`
+      "url": `${TEST_HOST}/example/hero-image-text`
     },
     {
       "label": "Hint",
