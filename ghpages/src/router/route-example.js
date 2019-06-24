@@ -62,6 +62,10 @@ import ReviewDate from '../examples/ReviewDate.vue'
 import Select from '../examples/Select.vue'
 import SelectError from '../examples/SelectError.vue'
 
+import Textarea from '../examples/Textarea.vue'
+import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
+import TextareaError from '../examples/TextareaError.vue'
+
 export default [
   {
     path: '/example/action-link',
@@ -290,5 +294,17 @@ export default [
   {
     path: '/example/select-error',
     component: SelectError
+  },
+  {
+    path: '/example/textarea',
+    component: Textarea
+  },
+  {
+    path: '/example/textarea-autocomplete',
+    component: TextareaAutocomplete
+  },
+  {
+    path: '/example/textarea-error',
+    component: TextareaError
   }
 ]

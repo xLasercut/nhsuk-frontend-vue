@@ -10,9 +10,9 @@
       <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
     </nhs-error-text>
     <textarea
-      :class="classes()" :id="id" :rows="rows" :disabled="disabled" :name="name"
+      :class="classes" :id="id" :rows="rows" :disabled="disabled" :name="name"
       v-model="model" v-bind="attributes"
-      @blur="$emit('blur')" @change="$emit('change')"
+      @blur="$emit('blur')" @change="$emit('change')" :autocomplete="autocomplete"
     ></textarea>
   </form-item>
 </template>
@@ -27,9 +27,13 @@
       rows: {
         type: Number,
         default: 5
+      },
+      autocomplete: {
+        type: String,
+        default: ''
       }
     },
-    methods: {
+    computed: {
       classes() {
         var classes = [ 'nhsuk-textarea' ]
 
