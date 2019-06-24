@@ -346,31 +346,31 @@ module.exports = {
     },
     {
       "label": "Radios",
-      "url": `${TEST_HOST}/components/radios/index.html`
+      "url": `${TEST_HOST}/example/radio`
     },
     {
       "label": "Radios inline",
-      "url": `${TEST_HOST}/components/radios/inline.html`
+      "url": `${TEST_HOST}/example/radio-inline`
     },
     {
       "label": "Radios disabled",
-      "url": `${TEST_HOST}/components/radios/disabled.html`
+      "url": `${TEST_HOST}/example/radio-disabled`
     },
     {
       "label": "Radios with a divider",
-      "url": `${TEST_HOST}/components/radios/divider.html`
+      "url": `${TEST_HOST}/example/radio-divider`
     },
     {
       "label": "Radios with hint text",
-      "url": `${TEST_HOST}/components/radios/hint.html`
+      "url": `${TEST_HOST}/example/radio-hint`
     },
     {
       "label": "Radios without fieldset",
-      "url": `${TEST_HOST}/components/radios/without-fieldset.html`
+      "url": `${TEST_HOST}/example/radio-no-heading`
     },
     {
       "label": "Radios with hint text and error message",
-      "url": `${TEST_HOST}/components/radios/hint-error.html`
+      "url": `${TEST_HOST}/example/radio-error`
     },
     {
       "label": "Review date",
