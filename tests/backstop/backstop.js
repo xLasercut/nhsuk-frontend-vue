@@ -270,19 +270,19 @@ module.exports = {
     },
     {
       "label": "Input",
-      "url": `${TEST_HOST}/components/input/index.html`
+      "url": `${TEST_HOST}/example/input`
     },
     {
       "label": "Input with hint text",
-      "url": `${TEST_HOST}/components/input/hint.html`
+      "url": `${TEST_HOST}/example/input-hint`
     },
     {
       "label": "Input with error message",
-      "url": `${TEST_HOST}/components/input/error.html`
+      "url": `${TEST_HOST}/example/input-error`
     },
     {
       "label": "Input with width modifier",
-      "url": `${TEST_HOST}/components/input/custom-width.html`
+      "url": `${TEST_HOST}/example/input-width`
     },
     {
       "label": "Inset text",
