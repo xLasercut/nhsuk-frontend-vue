@@ -3,16 +3,13 @@
     <code-block :code="sourceSingle">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox v-model="checked">
-              <nhs-label slot="label">Single Checkbox</nhs-label>
-            </nhs-checkbox>
-            <nhs-checkbox :disabled="true">
-              <nhs-label slot="label">Disabled</nhs-label>
-            </nhs-checkbox>
-            <nhs-checkbox v-model="checked">
-              <nhs-label slot="label">With hint</nhs-label>
-              <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-            </nhs-checkbox>
+          <nhs-checkboxes
+            :items="items"
+            v-model="checked"
+            label="checkbox label"
+            hint="hint text"
+            :rules="rules"
+          ></nhs-checkboxes>
         </nhs-col>
         <nhs-col :span="50">
           <p class="status">Status: {{checked}}</p>
@@ -23,13 +20,10 @@
     <code-block :code="sourceOverride">
       <nhs-row>
         <nhs-col :span="50">
-            <nhs-checkbox checkbox-value="London" v-model="checkedval">
-              <nhs-label slot="label">London</nhs-label>
-            </nhs-checkbox>
-
-            <nhs-checkbox checkbox-value="Paris" v-model="checkedval">
-              <nhs-label slot="label">Paris</nhs-label>
-            </nhs-checkbox>
+            <nhs-checkboxes
+              :items="itemsMulti"
+              v-model="checkedval"
+            ></nhs-checkboxes>
         </nhs-col>
         <nhs-col :span="50">
           <p class="status">Status: {{checkedval}}</p>
@@ -40,14 +34,13 @@
     <code-block :code="sourceGroup">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-form-itemgroup>
-            <nhs-fieldset slot="fieldset" legend="Fieldset text"></nhs-fieldset>
-            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-            <nhs-error-text slot="error">Error text</nhs-error-text>
-            <nhs-checkbox conditional="Conditional text">
-              <nhs-label slot="label">London</nhs-label>
-            </nhs-checkbox>
-          </nhs-form-itemgroup>
+          <nhs-checkboxes
+            :items="items"
+            label="Label as heading" page-heading
+            hint="hint text"
+          >
+
+          </nhs-checkboxes>
         </nhs-col>
       </nhs-row>
     </code-block>
@@ -103,6 +96,32 @@
         sourceSingle: sourceSingle,
         sourceOverride: sourceOverride,
         sourceGroup: sourceGroup,
+        items: [
+          {
+            label: 'Checkbox'
+          },
+          {
+            label: 'Disabled',
+            disabled: true
+          },
+          {
+            label: 'With hint',
+            hint: 'Hint text'
+          }
+        ],
+        itemsMulti: [
+          {
+            label: 'London',
+            value: 'london'
+          },
+          {
+            label: 'Paris',
+            value: 'paris'
+          }
+        ],
+        rules: [
+          (v) => !!v || 'must be checked'
+        ],
         cbrows: [
           {
             name: "name",
@@ -142,6 +161,11 @@
           }
         ]
       }
+    },
+    mounted() {
+      this.$on('test', () => {
+        console.log('test')
+      })
     }
   }
 </script>

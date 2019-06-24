@@ -3,15 +3,17 @@
     <code-block :code="sourceTypes">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-input v-model="inputValue">
-            <nhs-label slot="label">Input label</nhs-label>
-            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
+          <nhs-input
+            v-model="inputValue"
+            :rules="rules"
+            hint="Hint text"
+            label="Input Label"
+          >
           </nhs-input>
         </nhs-col>
         <nhs-col :span="50">
           <p>Input: {{inputValue}}</p>
-          <nhs-button @click="toggleError()" name="toggle-button">Toggle Error</nhs-button>
+          <nhs-button name="toggle-button">Toggle Error</nhs-button>
         </nhs-col>
       </nhs-row>
 
@@ -114,7 +116,9 @@
         sourceTypes: sourceTypes,
         sourceSize: sourceSize,
         inputValue: "",
-        error: "Error Text",
+        rules: [
+          (v) => !!v || 'input is required'
+        ],
         rows: [
           {
             name: "id",
@@ -150,14 +154,7 @@
       }
     },
     methods: {
-      toggleError() {
-        if (this.error) {
-          this.error = ""
-        }
-        else {
-          this.error = "Error Text"
-        }
-      }
+
     }
   }
 </script>

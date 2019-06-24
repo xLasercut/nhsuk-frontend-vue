@@ -1,11 +1,17 @@
 <template>
-  <form-item :error="error()">
-    <slot name="label"></slot>
-    <slot name="hint"></slot>
-    <slot name="error"></slot>
+  <form-item :error="error">
+    <nhs-label v-if="label" :for="id">
+      <slot name="label" :props="label">{{label}}</slot>
+    </nhs-label>
+    <nhs-hint-text v-if="hint" :id="hintId">
+      <slot name="hint" :props="hint">{{hint}}</slot>
+    </nhs-hint-text>
+    <nhs-error-text v-if="error" :id="errorId">
+      <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
+    </nhs-error-text>
     <select
       :class="classes()" :id="id" :name="name"
-      :aria-describedby="described()" v-bind="attributes"
+      v-bind="attributes"
       :disabled="disabled" v-model="model"
       @blur="$emit('blur')" @change="$emit('change')"
     >
@@ -24,7 +30,7 @@
       classes() {
         var classes = [ 'nhsuk-select' ]
 
-        if (this.error()) {
+        if (this.error) {
           classes.push('nhsuk-select--error')
         }
         return classes.join(" ")

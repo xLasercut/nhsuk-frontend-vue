@@ -1,21 +1,15 @@
+import { NhsHintText, NhsErrorText } from '../../typography'
+import NhsFieldset from '../../fieldset'
 import FormItem from '../shared/FormItem.vue'
-import { NhsLabel, NhsErrorText, NhsHintText } from '../../typography'
-import FormAria from './form-aria.js'
-import VModel from './v-model.js'
-import FormValidation from './form-validation.js'
+
+import FormValidation from '../mixins/form-validation.js'
+import VModel from '../mixins/v-model.js'
+import FormAria from '../mixins/form-aria.js'
 
 export default {
-  components: { FormItem, NhsLabel, NhsErrorText, NhsHintText },
-  mixins: [ FormAria, VModel, FormValidation ],
+  components: { NhsHintText, NhsErrorText, NhsFieldset, FormItem },
+  mixins: [ FormValidation, FormAria, VModel ],
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    name: {
-      type: String,
-      default: ''
-    },
     hint: {
       type: String,
       default: ''
@@ -23,6 +17,20 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    pageHeading: {
+      type: Boolean,
+      default: false
+    },
+    items: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   watch: {

@@ -1,11 +1,17 @@
 <template>
-  <form-item :error="error()">
-    <slot name="label"></slot>
-    <slot name="hint"></slot>
-    <slot name="error"></slot>
+  <form-item :error="error">
+    <nhs-label v-if="label" :for="id">
+      <slot name="label" :props="label">{{label}}</slot>
+    </nhs-label>
+    <nhs-hint-text v-if="hint" :id="hintId">
+      <slot name="hint" :props="hint">{{hint}}</slot>
+    </nhs-hint-text>
+    <nhs-error-text v-if="error" :id="errorId">
+      <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
+    </nhs-error-text>
     <input
       :class="classes()" :id="id" :name="name" :type="type"
-      :aria-describedby="described()"  v-bind="attributes" v-model="model"
+      v-bind="attributes" v-model="model"
       :disabled="disabled" :maxlength="maxlength"
       @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
     >
@@ -18,7 +24,7 @@
 
   export default {
     name: 'NhsInput',
-    mixins: [FormItem],
+    mixins: [ FormItem ],
     props: {
       width: {
         type: Number,
@@ -42,7 +48,7 @@
           classes.push(`nhsuk-input--width-${this.width}`)
         }
 
-        if (this.error()) {
+        if (this.error) {
           classes.push('nhsuk-input--error')
         }
 

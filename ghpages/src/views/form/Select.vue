@@ -3,10 +3,12 @@
     <code-block :code="source">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-select v-model="selectnormal">
-            <nhs-label slot="label">Input label</nhs-label>
-            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
+          <nhs-select
+            v-model="selectnormal"
+            label="Select label"
+            hint="Hint text"
+            :rules="rules"
+          >
             <option>Select 1</option>
             <option disabled>Select 2</option>
             <option value="OPT3">Select 3</option>
@@ -42,11 +44,11 @@
     <option disabled>Select 2</option>
     <option value="OPT3">Select 3</option>
   </nhs-select>
-  
+
   <nhs-select :disabled="true">
     <option>Select 1</option>
   </nhs-select>
-  
+
   export default {
     data() {
       return {
@@ -62,13 +64,9 @@
         selectdisabled: "Select 1",
         selectoverride: "",
         source: source,
-        hint: {
-          text: "Hint text"
-        },
-        label: {
-          text: "Label text"
-        },
-        error: "Error text",
+        rules: [
+          (v) => v === 'Select 1' || 'error text'
+        ],
         rows: [
           {
             name: "name",
@@ -95,16 +93,6 @@
             description: "Any extra HTML attributes (for example class) to add to the select component."
           }
         ]
-      }
-    },
-    methods: {
-      toggleError() {
-        if (this.error) {
-          this.error = ""
-        }
-        else {
-          this.error = "Error text"
-        }
       }
     }
   }

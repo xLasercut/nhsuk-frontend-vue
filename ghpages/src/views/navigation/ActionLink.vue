@@ -8,7 +8,7 @@
 
     <argument-table heading="action-link" :rows="rows">
     </argument-table>
-  </nhs-main>  
+  </nhs-main>
 </template>
 
 <script>

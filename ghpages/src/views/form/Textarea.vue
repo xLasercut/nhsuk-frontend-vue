@@ -3,10 +3,13 @@
     <code-block :code="source">
       <nhs-row>
         <nhs-col :span="50">
-          <nhs-textarea v-model="text" :rows="2" name="textarea">
-            <nhs-label slot="label">Input label</nhs-label>
-            <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-            <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
+          <nhs-textarea
+            v-model="text" :rows="2"
+            name="textarea"
+            label="Input label"
+            hint="Hint text"
+            :rules="rules"
+          >
           </nhs-textarea>
         </nhs-col>
         <nhs-col :span="50">
@@ -34,7 +37,7 @@
   </nhs-textarea>
 
   <nhs-textarea name="textarea" :disabled="true"></nhs-textarea>
-  
+
   export default {
     data() {
       return {
@@ -44,10 +47,12 @@
   }`
 
   export default {
-    data() { 
+    data() {
       return {
-        error: "Error text",
         text: "",
+        rules: [
+          (v) => !!v || 'input cannot be blank'
+        ],
         source: source,
         rows: [
           {
@@ -81,16 +86,6 @@
             description: "Any extra HTML attributes (for example class) to add to the textarea tag."
           }
         ]
-      }
-    },
-    methods: {
-      toggleError() {
-        if (this.error) {
-          this.error = ""
-        }
-        else {
-          this.error = "Error text"
-        }
       }
     }
   }
