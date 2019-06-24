@@ -47,7 +47,7 @@ import InputError from '../examples/InputError.vue'
 import InputWidth from '../examples/InputWidth.vue'
 import InsetText from '../examples/InsetText.vue'
 import Label from '../examples/Label.vue'
-
+import LabelBold from '../examples/LabelBold.vue'
 import LabelHeading from '../examples/LabelHeading.vue'
 import ListPanel from '../examples/ListPanel.vue'
 import NavAZ from '../examples/NavAZ.vue'
@@ -259,6 +259,10 @@ export default [
   {
     path: '/example/label',
     component: Label
+  },
+  {
+    path: '/example/label-bold',
+    component: LabelBold
   },
   {
     path: '/example/label-heading',

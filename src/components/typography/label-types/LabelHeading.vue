@@ -1,6 +1,6 @@
 <template>
   <h1 class="nhsuk-label-wrapper">
-    <label-normal class="nhsuk-label--xl" :attributes="attributes">
+    <label-normal :size="size">
       <slot></slot>
     </label-normal>
   </h1>
@@ -14,11 +14,8 @@
       LabelNormal
     },
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
+      size: {
+        type: String
       }
     }
   }

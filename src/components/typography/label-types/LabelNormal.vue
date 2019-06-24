@@ -1,5 +1,5 @@
 <template>
-  <label class="nhsuk-label" v-bind="attributes">
+  <label :class="classes">
     <slot></slot>
   </label>
 </template>
@@ -7,11 +7,19 @@
 <script>
   export default {
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
+      size: {
+        type: String
+      }
+    },
+    computed: {
+      classes() {
+        var classes = [ 'nhsuk-label' ]
+
+        if (this.size) {
+          classes.push(`nhsuk-label--${this.size}`)
         }
+
+        return classes.join(' ')
       }
     }
   }

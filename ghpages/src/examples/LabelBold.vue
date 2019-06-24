@@ -1,5 +1,5 @@
 <template>
-  <nhs-label page-heading size="xl">
+  <nhs-label size="s">
     National Insurance number
   </nhs-label>
 </template>
