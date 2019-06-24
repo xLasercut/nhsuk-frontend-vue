@@ -40,7 +40,13 @@
     },
     computed: {
       classes() {
-        return `nhsuk-fieldset__legend nhsuk-fieldset__legend--${this.size}`
+        var classes = [ 'nhsuk-fieldset__legend' ]
+
+        if (this.pageHeading) {
+          classes.push(`nhsuk-fieldset__legend--${this.size}`)
+        }
+
+        return classes.join(' ')
       }
     }
   }
