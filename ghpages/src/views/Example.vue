@@ -13,7 +13,10 @@
     '/example/footer',
     '/example/footer-column',
     '/example/header',
-    '/example/header-logo'
+    '/example/header-logo',
+    '/example/hero',
+    '/example/hero-image',
+    '/example/hero-image-text'
   ]
   const blueContainers = [ '/example/button-reversed' ]
 

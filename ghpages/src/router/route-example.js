@@ -35,6 +35,9 @@ import FooterColumn from '../examples/FooterColumn.vue'
 import Header from '../examples/Header.vue'
 import HeaderLogo from '../examples/HeaderLogo.vue'
 
+import Hero from '../examples/Hero.vue'
+import HeroImage from '../examples/HeroImage.vue'
+import HeroImageText from '../examples/HeroImageText.vue'
 import HintText from '../examples/HintText.vue'
 import Image from '../examples/Image.vue'
 import Input from '../examples/Input.vue'
@@ -208,6 +211,18 @@ export default [
   {
     path: '/example/header-logo',
     component: HeaderLogo
+  },
+  {
+    path: '/example/hero',
+    component: Hero
+  },
+  {
+    path: '/example/hero-image',
+    component: HeroImage
+  },
+  {
+    path: '/example/hero-image-text',
+    component: HeroImageText
   },
   {
     path: '/example/hint-text',
