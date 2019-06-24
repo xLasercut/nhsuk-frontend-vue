@@ -266,11 +266,11 @@ module.exports = {
     },
     {
       "label": "Hint",
-      "url": `${TEST_HOST}/components/hint/index.html`
+      "url": `${TEST_HOST}/example/hint-text`
     },
     {
       "label": "Images",
-      "url": `${TEST_HOST}/components/images/index.html`
+      "url": `${TEST_HOST}/example/image`
     },
     {
       "label": "Input",
@@ -290,19 +290,19 @@ module.exports = {
     },
     {
       "label": "Inset text",
-      "url": `${TEST_HOST}/components/inset-text/index.html`
+      "url": `${TEST_HOST}/example/inset-text`
     },
     {
       "label": "Label",
-      "url": `${TEST_HOST}/components/label/index.html`
+      "url": `${TEST_HOST}/example/label`
     },
     {
       "label": "Label with bold text",
-      "url": `${TEST_HOST}/components/label/index.html`
+      "url": `${TEST_HOST}/example/label-bold`
     },
     {
       "label": "Label as page heading",
-      "url": `${TEST_HOST}/components/label/page-heading.html`
+      "url": `${TEST_HOST}/example/label-heading`
     },
     {
       "label": "List panel",
