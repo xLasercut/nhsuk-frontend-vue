@@ -51,7 +51,13 @@ import PromoNoDescription from '../examples/PromoNoDescription.vue'
 import PromoSmall from '../examples/PromoSmall.vue'
 import PromoImage from '../examples/PromoImage.vue'
 import PromoGroup from '../examples/PromoGroup.vue'
-
+import Radio from '../examples/Radio.vue'
+import RadioInline from '../examples/RadioInline.vue'
+import RadioDisabled from '../examples/RadioDisabled.vue'
+import RadioDivider from '../examples/RadioDivider.vue'
+import RadioHint from '../examples/RadioHint.vue'
+import RadioNoHeading from '../examples/RadioNoHeading.vue'
+import RadioError from '../examples/RadioError.vue'
 import ReviewDate from '../examples/ReviewDate.vue'
 
 export default [
@@ -242,6 +248,34 @@ export default [
   {
     path: '/example/promo-group',
     component: PromoGroup
+  },
+  {
+    path: '/example/radio',
+    component: Radio
+  },
+  {
+    path: '/example/radio-inline',
+    component: RadioInline
+  },
+  {
+    path: '/example/radio-disabled',
+    component: RadioDisabled
+  },
+  {
+    path: '/example/radio-divider',
+    component: RadioDivider
+  },
+  {
+    path: '/example/radio-hint',
+    component: RadioHint
+  },
+  {
+    path: '/example/radio-no-heading',
+    component: RadioNoHeading
+  },
+  {
+    path: '/example/radio-error',
+    component: RadioError
   },
   {
     path: '/example/review-date',

@@ -43,7 +43,8 @@
       radioValue: {
         type: String,
         required: true
-      }
+      },
+      divider: {}
     },
     components: { NhsHintText, NhsLabel },
     mixins: [ VModel ],

@@ -7,25 +7,27 @@
       <nhs-error-text v-if="error" :id="errorId">
         <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
       </nhs-error-text>
-      <checkbox
-        v-for="(item, index) in items"
-        :label="item.label"
-        :hint="item.hint"
-        :conditional="item.conditional"
-        :disabled="item.disabled || disabled"
-        :id="`${id}-${index}`" :name="item.name" :checkbox-value="item.value"
-        v-model="model" :key="`${id}-${index}`"
-      >
-        <template slot="label">
-          <slot name="label" :props="item"></slot>
-        </template>
-        <template slot="hint">
-          <slot name="hint" :props="item"></slot>
-        </template>
-        <template slot="conditional">
-          <slot name="conditional" :props="item"></slot>
-        </template>
-      </checkbox>
+      <div class="nhsuk-checkboxes">
+        <checkbox
+          v-for="(item, index) in items"
+          :label="item.label"
+          :hint="item.hint"
+          :conditional="item.conditional"
+          :disabled="item.disabled || disabled"
+          :id="`${id}-${index}`" :name="item.name" :checkbox-value="item.value"
+          v-model="model" :key="`${id}-${index}`"
+        >
+          <template slot="label">
+            <slot name="label" :props="item"></slot>
+          </template>
+          <template slot="hint">
+            <slot name="hint" :props="item"></slot>
+          </template>
+          <template slot="conditional">
+            <slot name="conditional" :props="item"></slot>
+          </template>
+        </checkbox>
+      </div>
     </nhs-fieldset>
   </form-item>
 </template>
