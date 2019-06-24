@@ -17,6 +17,7 @@
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "lint": "vue-cli-service lint src/**/*",
     "backstop:test": "backstop --config=tests/backstop/backstop.js test --docker",
+    "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",
     "build:es": "rollup --config config/rollup/rollup.config.js --format es --file dist/nhsuk-frontend-vue.esm.js",
     "build:umd": "rollup --config config/rollup/rollup.config.js --format umd --file dist/nhsuk-frontend-vue.umd.js",
     "build:unpkg": "rollup --config config/rollup/rollup.config.js --format iife --file dist/nhsuk-frontend-vue.min.js",
