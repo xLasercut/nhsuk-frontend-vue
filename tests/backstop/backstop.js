@@ -167,7 +167,7 @@ module.exports = {
     },
     {
       "label": "Footer with list columns",
-      "url": `${TEST_HOST}/components/footer/columns.html`
+      "url": `${TEST_HOST}/example/footer-column`
     },
     {
       "label": "Fieldset",
