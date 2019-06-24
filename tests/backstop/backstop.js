@@ -119,11 +119,11 @@ module.exports = {
     },
     {
       "label": "Date input",
-      "url": `${TEST_HOST}/components/date-input/index.html`
+      "url": `${TEST_HOST}/example/date-input`
     },
     {
       "label": "Date input with multiple errors",
-      "url": `${TEST_HOST}/components/date-input/multiple-errors.html`
+      "url": `${TEST_HOST}/example/date-input-error-multi`
     },
     {
       "label": "Details",
@@ -164,6 +164,10 @@ module.exports = {
     {
       "label": "Footer",
       "url": `${TEST_HOST}/example/footer`
+    },
+    {
+      "label": "Footer with list columns",
+      "url": `${TEST_HOST}/components/footer/columns.html`
     },
     {
       "label": "Fieldset",
