@@ -59,6 +59,8 @@ import RadioHint from '../examples/RadioHint.vue'
 import RadioNoHeading from '../examples/RadioNoHeading.vue'
 import RadioError from '../examples/RadioError.vue'
 import ReviewDate from '../examples/ReviewDate.vue'
+import Select from '../examples/Select.vue'
+import SelectError from '../examples/SelectError.vue'
 
 export default [
   {
@@ -280,5 +282,13 @@ export default [
   {
     path: '/example/review-date',
     component: ReviewDate
+  },
+  {
+    path: '/example/select',
+    component: Select
+  },
+  {
+    path: '/example/select-error',
+    component: SelectError
   }
 ]
