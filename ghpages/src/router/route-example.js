@@ -9,7 +9,11 @@ import ButtonReversed from '../examples/ButtonReversed.vue'
 import CareCardNonUrgent from '../examples/CareCardNonUrgent.vue'
 import CareCardUrgent from '../examples/CareCardUrgent.vue'
 import CareCardImmediate from '../examples/CareCardImmediate.vue'
-
+import Checkbox from '../examples/Checkbox.vue'
+import CheckboxHint from '../examples/CheckboxHint.vue'
+import CheckboxDisabled from '../examples/CheckboxDisabled.vue'
+import CheckboxHeading from '../examples/CheckboxHeading.vue'
+import CheckboxError from '../examples/CheckboxError.vue'
 import ContentsList from '../examples/ContentsList.vue'
 
 import Details from '../examples/Details.vue'
@@ -90,6 +94,26 @@ export default [
   {
     path: '/example/care-card-immediate',
     component: CareCardImmediate
+  },
+  {
+    path: '/example/checkbox',
+    component: Checkbox
+  },
+  {
+    path: '/example/checkbox-hint',
+    component: CheckboxHint
+  },
+  {
+    path: '/example/checkbox-disabled',
+    component: CheckboxDisabled
+  },
+  {
+    path: '/example/checkbox-heading',
+    component: CheckboxHeading
+  },
+  {
+    path: '/example/checkbox-error',
+    component: CheckboxError
   },
   {
     path: '/example/contents-list',

@@ -1,6 +1,6 @@
 <template>
   <fieldset class="nhsuk-fieldset" :aria-describedby="describedBy">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl" v-if="legend && pageHeading">
+    <legend :class="classes" v-if="legend && pageHeading">
       <h1 class="nhsuk-fieldset__heading">
         <slot name="legend" :props="legend">{{legend}}</slot>
       </h1>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+  const sizes = [ 'xl', 'l' ]
+
   export default {
     name: 'NhsFieldset',
     props: {
@@ -27,6 +29,18 @@
       pageHeading: {
         type: Boolean,
         default: false
+      },
+      size: {
+        type: String,
+        default: 'xl',
+        validator(val) {
+          return sizes.includes(val)
+        }
+      }
+    },
+    computed: {
+      classes() {
+        return `nhsuk-fieldset__legend nhsuk-fieldset__legend--${this.size}`
       }
     }
   }

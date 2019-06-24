@@ -1,6 +1,6 @@
 <template>
   <form-item :error="error">
-    <nhs-fieldset :legend="label" :page-heading="pageHeading" v-bind="attributes">
+    <nhs-fieldset :legend="label" :page-heading="pageHeading" v-bind="attributes" size="l">
       <nhs-hint-text v-if="hint" :id="hintId">
         <slot name="hint" :props="hint">{{hint}}</slot>
       </nhs-hint-text>
