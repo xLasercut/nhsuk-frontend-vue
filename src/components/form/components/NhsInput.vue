@@ -14,6 +14,7 @@
       v-bind="attributes" v-model="model"
       :disabled="disabled" :maxlength="maxlength"
       @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
+      :autocomplete="autocomplete"
     >
   </form-item>
 </template>
@@ -38,6 +39,10 @@
       },
       maxlength: {
         type: Number
+      },
+      autocomplete: {
+        type: String,
+        default: ''
       }
     },
     methods: {

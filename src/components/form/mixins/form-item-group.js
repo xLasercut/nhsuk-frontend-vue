@@ -31,6 +31,10 @@ export default {
       default() {
         return []
       }
+    },
+    headingSize: {
+      type: String,
+      default: ''
     }
   },
   watch: {

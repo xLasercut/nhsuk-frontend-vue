@@ -32,9 +32,12 @@
       },
       size: {
         type: String,
-        default: 'xl',
+        default: '',
         validator(val) {
-          return sizes.includes(val)
+          if (val) {
+            return sizes.includes(val)
+          }
+          return true
         }
       }
     },
@@ -42,7 +45,7 @@
       classes() {
         var classes = [ 'nhsuk-fieldset__legend' ]
 
-        if (this.pageHeading) {
+        if (this.size) {
           classes.push(`nhsuk-fieldset__legend--${this.size}`)
         }
 

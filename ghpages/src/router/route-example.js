@@ -33,7 +33,11 @@ import HeaderLogo from '../examples/HeaderLogo.vue'
 
 import HintText from '../examples/HintText.vue'
 import Image from '../examples/Image.vue'
-
+import Input from '../examples/Input.vue'
+import InputAutocomplete from '../examples/InputAutocomplete.vue'
+import InputHint from '../examples/InputHint.vue'
+import InputError from '../examples/InputError.vue'
+import InputWidth from '../examples/InputWidth.vue'
 import InsetText from '../examples/InsetText.vue'
 import Label from '../examples/Label.vue'
 
@@ -174,6 +178,26 @@ export default [
   {
     path: '/example/image',
     component: Image
+  },
+  {
+    path: '/example/input',
+    component: Input
+  },
+  {
+    path: '/example/input-autocomplete',
+    component: InputAutocomplete
+  },
+  {
+    path: '/example/input-hint',
+    component: InputHint
+  },
+  {
+    path: '/example/input-error',
+    component: InputError
+  },
+  {
+    path: '/example/input-width',
+    component: InputWidth
   },
   {
     path: '/example/inset-text',
