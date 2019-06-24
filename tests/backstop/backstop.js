@@ -378,11 +378,11 @@ module.exports = {
     },
     {
       "label": "Select",
-      "url": `${TEST_HOST}/components/select/index.html`
+      "url": `${TEST_HOST}/example/select`
     },
     {
       "label": "Select with hint text and error message",
-      "url": `${TEST_HOST}/components/select/hint-error.html`
+      "url": `${TEST_HOST}/example/select-error`
     },
     {
       "label": "Summary list",
