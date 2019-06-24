@@ -17,11 +17,11 @@
           v-model="model" :key="`${id}-${index}`"
           :is="component(item)" :divider="item.divider"
         >
-          <template slot="label">
-            <slot name="label" :props="item"></slot>
+          <template slot="item-label">
+            <slot name="item-label" :props="item"></slot>
           </template>
-          <template slot="hint">
-            <slot name="hint" :props="item"></slot>
+          <template slot="item-hint">
+            <slot name="item-hint" :props="item"></slot>
           </template>
         </component>
       </div>

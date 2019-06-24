@@ -6,10 +6,10 @@
       v-model="model"
     >
     <nhs-label :for="id" v-if="label" class="nhsuk-radios__label">
-      <slot name="label">{{label}}</slot>
+      <slot name="item-label">{{label}}</slot>
     </nhs-label>
     <nhs-hint-text :id="hintId" v-if="hint" class="nhsuk-radios__hint">
-      <slot name="hint">{{hint}}</slot>
+      <slot name="item-hint">{{hint}}</slot>
     </nhs-hint-text>
   </div>
 </template>

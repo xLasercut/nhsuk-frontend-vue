@@ -21,14 +21,14 @@
 
 <script>
   import FormItem from '../mixins/form-item'
-  const widths = [2, 3, 4, 5, 10, 20]
+  const widths = ['2', '3', '4', '5', '10', '20']
 
   export default {
     name: 'NhsInput',
     mixins: [ FormItem ],
     props: {
       width: {
-        type: Number,
+        type: String,
         validator(val) {
           return widths.includes(val)
         }

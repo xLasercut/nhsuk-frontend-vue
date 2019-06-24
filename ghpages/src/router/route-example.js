@@ -15,7 +15,10 @@ import CheckboxDisabled from '../examples/CheckboxDisabled.vue'
 import CheckboxHeading from '../examples/CheckboxHeading.vue'
 import CheckboxError from '../examples/CheckboxError.vue'
 import ContentsList from '../examples/ContentsList.vue'
-
+import DateInput from '../examples/DateInput.vue'
+import DateInputAutocomplete from '../examples/DateInputAutocomplete.vue'
+import DateInputError from '../examples/DateInputError.vue'
+import DateInputErrorMulti from '../examples/DateInputErrorMulti.vue'
 import Details from '../examples/Details.vue'
 import DoDont from '../examples/DoDont.vue'
 import EmergencyAlert from '../examples/EmergencyAlert.vue'
@@ -65,6 +68,8 @@ import SelectError from '../examples/SelectError.vue'
 import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
+
+import WarningCallout from '../examples/WarningCallout.vue'
 
 export default [
   {
@@ -134,6 +139,22 @@ export default [
   {
     path: '/example/contents-list',
     component: ContentsList
+  },
+  {
+    path: '/example/date-input',
+    component: DateInput
+  },
+  {
+    path: '/example/date-input-autocomplete',
+    component: DateInputAutocomplete
+  },
+  {
+    path: '/example/date-input-error',
+    component: DateInputError
+  },
+  {
+    path: '/example/date-input-error-multi',
+    component: DateInputErrorMulti
   },
   {
     path: '/example/details',
@@ -306,5 +327,9 @@ export default [
   {
     path: '/example/textarea-error',
     component: TextareaError
+  },
+  {
+    path: '/example/warning-callout',
+    component: WarningCallout
   }
 ]

@@ -5,13 +5,13 @@
       :value="checkboxValue" v-model="model" :disabled="disabled" v-bind="attributes"
     >
     <nhs-label :for="id" class="nhsuk-checkboxes__label">
-      <slot name="label">{{label}}</slot>
+      <slot name="item-label">{{label}}</slot>
     </nhs-label>
     <nhs-hint-text v-if="hint" :id="hintId" class="nhsuk-checkboxes__hint">
-      <slot name="hint">{{hint}}</slot>
+      <slot name="item-hint">{{hint}}</slot>
     </nhs-hint-text>
     <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="model && conditional">
-      <slot name="conditional">{{conditional}}</slot>
+      <slot name="item-conditional">{{conditional}}</slot>
     </div>
   </div>
 </template>

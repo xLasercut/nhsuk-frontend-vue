@@ -15,11 +15,15 @@ export default {
   },
   methods: {
     validate() {
+      this.error = false
       for (var rule of this.rules) {
         var result = rule(this.model)
-        this.errorMsg = result
-        this.error = (result != true)
+        if (result != true) {
+          this.error = true
+          this.errorMsg = result
+        }
       }
+      return this.error
     }
   }
 }
