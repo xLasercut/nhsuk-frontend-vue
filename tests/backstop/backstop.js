@@ -406,11 +406,11 @@ module.exports = {
     },
     {
       "label": "Textarea",
-      "url": `${TEST_HOST}/components/textarea/index.html`
+      "url": `${TEST_HOST}/example/textarea`
     },
     {
       "label": "Textarea with error message",
-      "url": `${TEST_HOST}/components/textarea/error.html`
+      "url": `${TEST_HOST}/example/textarea-error`
     },
     {
       "label": "Warning callout",
