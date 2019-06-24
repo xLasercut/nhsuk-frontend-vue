@@ -95,23 +95,23 @@ module.exports = {
     },
     {
       "label": "Checkboxes",
-      "url": `${TEST_HOST}/components/checkboxes/index.html`
+      "url": `${TEST_HOST}/example/checkbox`
     },
     {
       "label": "Checkboxes with hint text",
-      "url": `${TEST_HOST}/components/checkboxes/hint.html`
+      "url": `${TEST_HOST}/example/checkbox-hint`
     },
     {
       "label": "Checkboxes with disabled item",
-      "url": `${TEST_HOST}/components/checkboxes/disabled.html`
+      "url": `${TEST_HOST}/example/checkbox-disabled`
     },
     {
       "label": "Checkboxes with legend as page heading",
-      "url": `${TEST_HOST}/components/checkboxes/page-heading.html`
+      "url": `${TEST_HOST}/example/checkbox-heading`
     },
     {
       "label": "Checkboxes with error message",
-      "url": `${TEST_HOST}/components/checkboxes/error.html`
+      "url": `${TEST_HOST}/example/checkbox-error`
     },
     {
       "label": "Contents list",
@@ -374,7 +374,7 @@ module.exports = {
     },
     {
       "label": "Review date",
-      "url": `${TEST_HOST}/components/review-date/index.html`
+      "url": `${TEST_HOST}/example/review-date`
     },
     {
       "label": "Select",
