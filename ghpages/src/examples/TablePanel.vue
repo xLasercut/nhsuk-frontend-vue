@@ -18,11 +18,11 @@
         rows: [
           {
             symptoms: 'Blisters on lips or around the mouth',
-            cause: 'eczema'
+            cause: 'cold sores'
           },
           {
             symptoms: 'Itchy, dry, cracked, sore',
-            cause: 'cold sores'
+            cause: 'eczema'
           },
           {
             symptoms: 'Itchy blisters',
@@ -31,7 +31,7 @@
         ],
         headers: [
           {
-            text: 'Skin symptoms'
+            text: 'Symptoms'
           },
           {
             text: 'Possible cause'
