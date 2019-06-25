@@ -1,5 +1,11 @@
 <template>
-  <nhs-table :panel="true" :head="header" :rows="rows" :heading="tableHeading">
+  <nhs-table :panel="true" :headers="header" :rows="rows" :heading="tableHeading">
+    <template #item="item">
+      <nhs-table-item>{{item.props.name}}</nhs-table-item>
+      <nhs-table-item>{{item.props.type}}</nhs-table-item>
+      <nhs-table-item>{{item.props.required}}</nhs-table-item>
+      <nhs-table-item>{{item.props.description}}</nhs-table-item>
+    </template>
   </nhs-table>
 </template>
 
@@ -10,20 +16,16 @@
       return {
         header: [
           {
-            text: "Name",
-            key: "name"
+            text: "Name"
           },
           {
-            text: "Type",
-            key: "type"
+            text: "Type"
           },
           {
-            text: "Required",
-            key: "required"
+            text: "Required"
           },
           {
-            text: "Description",
-            key: "description"
+            text: "Description"
           }
         ]
       }
