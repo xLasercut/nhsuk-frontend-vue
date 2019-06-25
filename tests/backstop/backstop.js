@@ -390,23 +390,23 @@ module.exports = {
     },
     {
       "label": "Summary list",
-      "url": `${TEST_HOST}/components/summary-list/index.html`
+      "url": `${TEST_HOST}/example/summary-list`
     },
     {
       "label": "Summary list without actions",
-      "url": `${TEST_HOST}/components/summary-list/without-actions.html`
+      "url": `${TEST_HOST}/example/summary-list-no-action`
     },
     {
       "label": "Summary list without border",
-      "url": `${TEST_HOST}/components/summary-list/without-border.html`
+      "url": `${TEST_HOST}/example/summary-list-no-border`
     },
     {
       "label": "Table",
-      "url": `${TEST_HOST}/components/tables/index.html`
+      "url": `${TEST_HOST}/example/table`
     },
     {
       "label": "Table as panel",
-      "url": `${TEST_HOST}/components/tables/tables-panel.html`
+      "url": `${TEST_HOST}/example/table-panel`
     },
     {
       "label": "Textarea",
@@ -418,7 +418,7 @@ module.exports = {
     },
     {
       "label": "Warning callout",
-      "url": `${TEST_HOST}/components/warning-callout/index.html`
+      "url": `${TEST_HOST}/example/warning-callout`
     }
   ],
   "paths": {
