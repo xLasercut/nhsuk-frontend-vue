@@ -4,18 +4,14 @@
       <caption class="nhsuk-table__caption" v-bind="captionAttributes">{{caption}}</caption>
       <thead class="nhsuk-table__head">
         <tr class="nhsuk-table__row">
-          <th class="nhsuk-table__header" scope="col" v-for="(item, index) in head" :key="index">
+          <th class="nhsuk-table__header" scope="col" v-for="(item, index) in headers" :key="index">
             <slot name="header" :props="item">{{item.text}}</slot>
           </th>
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-        <tr class="nhsuk-table__row" v-for="(row, index) in rows" :key="index">
-          <td class="nhsuk-table__cell" v-for="(item, index) in head" :key="index">
-            <slot :name="item.key" :props="row[item.key]">
-              {{row[item.key]}}
-            </slot>
-          </td>
+        <tr class="nhsuk-table__row" v-for="(item, index) in rows" :key="index">
+          <slot name="item" :props="item"></slot>
         </tr>
       </tbody>
     </table>
@@ -29,10 +25,6 @@
   export default {
     name: 'NhsTable',
     props: {
-      panel: {
-        type: Boolean,
-        default: false
-      },
       panelAttributes: {
         type: Object,
         default() {
@@ -63,7 +55,7 @@
           return {}
         }
       },
-      head: {
+      headers: {
         type: Array,
         required: true
       },
@@ -74,7 +66,7 @@
     },
     computed: {
       tableType() {
-        if (this.panel) {
+        if (this.heading) {
           return PanelTable
         }
         return SimpleTable

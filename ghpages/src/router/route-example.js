@@ -72,10 +72,11 @@ import ReviewDate from '../examples/ReviewDate.vue'
 import Select from '../examples/Select.vue'
 import SelectError from '../examples/SelectError.vue'
 
+import Table from '../examples/Table.vue'
+import TablePanel from '../examples/TablePanel.vue'
 import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
-
 import WarningCallout from '../examples/WarningCallout.vue'
 
 export default [
@@ -366,6 +367,14 @@ export default [
   {
     path: '/example/select-error',
     component: SelectError
+  },
+  {
+    path: '/example/table',
+    component: Table
+  },
+  {
+    path: '/example/table-panel',
+    component: TablePanel
   },
   {
     path: '/example/textarea',
