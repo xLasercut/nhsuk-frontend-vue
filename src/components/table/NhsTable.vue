@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-        <tr class="nhsuk-table__row" v-for="(item, index) in rows" :key="index">
+        <tr class="nhsuk-table__row" v-for="(item, index) in data" :key="index">
           <slot name="item" :props="item"></slot>
         </tr>
       </tbody>
@@ -59,7 +59,7 @@
         type: Array,
         required: true
       },
-      rows: {
+      data: {
         type: Array,
         required: true
       }

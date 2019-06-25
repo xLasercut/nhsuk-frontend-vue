@@ -1,7 +1,7 @@
 <template>
   <nhs-table
     :headers="headers"
-    :rows="rows"
+    :data="data"
   >
     <template #item="item">
       <nhs-table-item>{{item.props.symptoms}}</nhs-table-item>
@@ -14,7 +14,7 @@
   export default {
     data() {
       return {
-        rows: [
+        data: [
           {
             symptoms: 'Blisters on lips or around the mouth',
             cause: 'cold sores'

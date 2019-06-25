@@ -71,7 +71,9 @@ import RadioError from '../examples/RadioError.vue'
 import ReviewDate from '../examples/ReviewDate.vue'
 import Select from '../examples/Select.vue'
 import SelectError from '../examples/SelectError.vue'
-
+import SummaryList from '../examples/SummaryList.vue'
+import SummaryListNoAction from '../examples/SummaryListNoAction.vue'
+import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
 import Table from '../examples/Table.vue'
 import TablePanel from '../examples/TablePanel.vue'
 import Textarea from '../examples/Textarea.vue'
@@ -367,6 +369,18 @@ export default [
   {
     path: '/example/select-error',
     component: SelectError
+  },
+  {
+    path: '/example/summary-list',
+    component: SummaryList
+  },
+  {
+    path: '/example/summary-list-no-action',
+    component: SummaryListNoAction
+  },
+  {
+    path: '/example/summary-list-no-border',
+    component: SummaryListNoBorder
   },
   {
     path: '/example/table',

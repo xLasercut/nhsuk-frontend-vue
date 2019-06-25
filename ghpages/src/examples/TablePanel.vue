@@ -1,7 +1,7 @@
 <template>
   <nhs-table
     :headers="headers"
-    :rows="rows"
+    :data="data"
     heading="Conditions similar to impetigo"
   >
     <template #item="item">
@@ -15,7 +15,7 @@
   export default {
     data() {
       return {
-        rows: [
+        data: [
           {
             symptoms: 'Blisters on lips or around the mouth',
             cause: 'cold sores'

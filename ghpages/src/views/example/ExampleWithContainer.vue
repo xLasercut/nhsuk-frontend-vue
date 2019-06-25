@@ -16,7 +16,10 @@
     '/example/promo-no-description',
     '/example/promo-small',
     '/example/promo-image',
-    '/example/promo-group'
+    '/example/promo-group',
+    '/example/summary-list',
+    '/example/summary-list-no-action',
+    '/example/summary-list-no-border'
   ]
 
   export default {
