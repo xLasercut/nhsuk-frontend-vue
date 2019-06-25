@@ -1,6 +1,10 @@
 <template>
   <div class="nhsuk-grid-row nhsuk-promo-group">
-    <div :class="classes" v-for="promo in $slots.default">
+    <div
+      :class="classes"
+      v-for="(promo, index) in $slots.default"
+      :key="`${id}-${index}`"
+    >
       <v-node :node="promo"></v-node>
     </div>
   </div>
@@ -27,6 +31,13 @@
             }
           }
           return false
+        }
+      },
+      id: {
+        type: String,
+        default() {
+          var random = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5))
+          return `${this.$options.name}-${random}`
         }
       }
     },

@@ -29,7 +29,7 @@ import ExpanderGroup from '../examples/ExpanderGroup.vue'
 import FeedbackBanner from '../examples/FeedbackBanner.vue'
 import Fieldset from '../examples/Fieldset.vue'
 import FieldsetHeading from '../examples/FieldsetHeading.vue'
-
+import FieldsetInput from '../examples/FieldsetInput.vue'
 import Footer from '../examples/Footer.vue'
 import FooterColumn from '../examples/FooterColumn.vue'
 import Header from '../examples/Header.vue'
@@ -202,6 +202,10 @@ export default [
   {
     path: '/example/fieldset-heading',
     component: FieldsetHeading
+  },
+  {
+    path: '/example/fieldset-input',
+    component: FieldsetInput
   },
   {
     path: '/example/footer',

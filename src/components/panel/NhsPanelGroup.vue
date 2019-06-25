@@ -1,8 +1,9 @@
 <template>
   <div class="nhsuk-grid-row nhsuk-panel-group">
     <div
-      v-for="item in $slots.default"
+      v-for="(item, index) in $slots.default"
       :class="classes"
+      :key="`${id}-${index}`"
     >
       <v-node :node="item"></v-node>
     </div>
@@ -30,6 +31,13 @@
             }
           }
           return false
+        }
+      },
+      id: {
+        type: String,
+        default() {
+          var random = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5))
+          return `${this.$options.name}-${random}`
         }
       }
     },
