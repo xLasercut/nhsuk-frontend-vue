@@ -34,7 +34,12 @@ import Footer from '../examples/Footer.vue'
 import FooterColumn from '../examples/FooterColumn.vue'
 import Header from '../examples/Header.vue'
 import HeaderLogo from '../examples/HeaderLogo.vue'
-
+import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
+import HeaderTransactional from '../examples/HeaderTransactional.vue'
+import HeaderTransactionalName from '../examples/HeaderTransactionalName.vue'
+import HeaderTransactionalLong from '../examples/HeaderTransactionalLong.vue'
+import HeaderNav from '../examples/HeaderNav.vue'
+import HeaderSearch from '../examples/HeaderSearch.vue'
 import Hero from '../examples/Hero.vue'
 import HeroImage from '../examples/HeroImage.vue'
 import HeroImageText from '../examples/HeroImageText.vue'
@@ -225,6 +230,30 @@ export default [
   {
     path: '/example/header-logo',
     component: HeaderLogo
+  },
+  {
+    path: '/example/header-service-search',
+    component: HeaderServiceSearch
+  },
+  {
+    path: '/example/header-transactional',
+    component: HeaderTransactional
+  },
+  {
+    path: '/example/header-transactional-name',
+    component: HeaderTransactionalName
+  },
+  {
+    path: '/example/header-transactional-long',
+    component: HeaderTransactionalLong
+  },
+  {
+    path: '/example/header-nav',
+    component: HeaderNav
+  },
+  {
+    path: '/example/header-search',
+    component: HeaderSearch
   },
   {
     path: '/example/hero',

@@ -1,8 +1,14 @@
 <template>
   <header :class="classes" role="banner">
     <div class="nhsuk-width-container nhsuk-header__container">
-      <header-logo :homeHref="homeHref" :service="service" :aria-label="ariaLabel"></header-logo>
-      <header-transactional v-if="transactionalService && !showNav && !showSearch" :transactional-service="transactionalService">
+      <header-logo
+        :home-href="homeHref" :service="service"
+        :aria-label="ariaLabel" :transactional="transactional"
+      ></header-logo>
+      <header-transactional
+        v-if="transactional && !showNav && !showSearch && service"
+        :service="service" :long-name="longName"
+      >
       </header-transactional>
 
       <div class="nhsuk-header__content" id="content-header">
@@ -38,18 +44,9 @@
         type: Boolean,
         default: false
       },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       transactional: {
         type: Boolean,
         default: false
-      },
-      transactionalService: {
-        type: Object
       },
       service: {
         type: Object
@@ -61,6 +58,10 @@
       homeHref: {
         type: String,
         default: '/'
+      },
+      longName: {
+        type: Boolean,
+        default: false
       }
     },
     components: {
@@ -72,7 +73,7 @@
     computed: {
       classes() {
         var classes = ['nhsuk-header']
-        if (this.transactional || this.transactionalService) {
+        if (this.transactional) {
           classes.push('nhsuk-header--transactional')
         }
         return classes.join(' ')

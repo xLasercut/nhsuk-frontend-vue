@@ -1,5 +1,5 @@
 <template>
-  <nhs-table :panel="true" :headers="header" :data="rows" :heading="tableHeading">
+  <nhs-table :headers="header" :data="rows" :heading="tableHeading">
     <template #item="item">
       <nhs-table-item>{{item.props.name}}</nhs-table-item>
       <nhs-table-item>{{item.props.type}}</nhs-table-item>
