@@ -1,12 +1,12 @@
 <template>
-  <div class="main-container">
-    <component :is="component()" />
+  <div :style="containerStyle">
+    <component :is="component()" :color="bgColor" />
   </div>
 </template>
 
 <script>
   import ExampleWithContainer from './example/ExampleWithContainer.vue'
-  import ExampleWithBlueBg from './example/ExampleWithBlueBg.vue'
+  import ExampleWithColorBg from './example/ExampleWithColorBg.vue'
   const noContainers = [
     '/example/breadcrumb',
     '/example/emergency-alert',
@@ -19,7 +19,10 @@
     '/example/hero-image-text',
     '/example/feedback'
   ]
+
   const blueContainers = [ '/example/button-reversed' ]
+
+  const grayContainers = ['/example/panel-grey']
 
   export default {
     methods: {
@@ -29,17 +32,38 @@
         }
 
         if (blueContainers.includes(this.$route.path)) {
-          return ExampleWithBlueBg
+          return ExampleWithColorBg
         }
+
+        if (grayContainers.includes(this.$route.path)) {
+          return ExampleWithColorBg
+        }
+
         return ExampleWithContainer
+      }
+    },
+    computed: {
+      containerStyle() {
+        var bg = '#f0f4f5'
+
+        if (grayContainers.includes(this.$route.path)) {
+          bg = 'white'
+        }
+
+        return {
+          'background-color': bg,
+          height: '100vh'
+        }
+      },
+      bgColor() {
+        if (blueContainers.includes(this.$route.path)) {
+          return '#005eb8'
+        }
+
+        if (grayContainers.includes(this.$route.path)) {
+          return '#f0f4f5'
+        }
       }
     }
   }
 </script>
-
-<style scoped>
-  .main-container {
-    background-color: #f0f4f5;
-    height: 100vh;
-  }
-</style>

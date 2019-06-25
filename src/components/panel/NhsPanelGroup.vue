@@ -1,7 +1,10 @@
 <template>
-  <div class="nhsuk-grid-row nhsuk-promo-group">
-    <div :class="classes" v-for="promo in $slots.default">
-      <v-node :node="promo"></v-node>
+  <div class="nhsuk-grid-row nhsuk-panel-group">
+    <div
+      v-for="item in $slots.default"
+      :class="classes"
+    >
+      <v-node :node="item"></v-node>
     </div>
   </div>
 </template>
@@ -15,7 +18,7 @@
   }
 
   export default {
-    name: 'NhsPromoGroup',
+    name: 'NhsPanelGroup',
     components: { VNode },
     props: {
       column: {
@@ -32,7 +35,7 @@
     },
     computed: {
       classes() {
-        var classes = [ 'nhsuk-promo-group__item' ]
+        var classes = [ 'nhsuk-panel-group__item' ]
 
         if (this.column) {
           classes.push(columnMap[this.column])

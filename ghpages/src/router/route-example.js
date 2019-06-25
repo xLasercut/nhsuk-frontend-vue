@@ -52,7 +52,10 @@ import LabelHeading from '../examples/LabelHeading.vue'
 import ListPanel from '../examples/ListPanel.vue'
 import NavAZ from '../examples/NavAZ.vue'
 import Pagination from '../examples/Pagination.vue'
-
+import Panel from '../examples/Panel.vue'
+import PanelGrey from '../examples/PanelGrey.vue'
+import PanelLabel from '../examples/PanelLabel.vue'
+import PanelGroup from '../examples/PanelGroup.vue'
 import Promo from '../examples/Promo.vue'
 import PromoNoDescription from '../examples/PromoNoDescription.vue'
 import PromoSmall from '../examples/PromoSmall.vue'
@@ -283,6 +286,22 @@ export default [
   {
     path: '/example/pagination',
     component: Pagination
+  },
+  {
+    path: '/example/panel',
+    component: Panel
+  },
+  {
+    path: '/example/panel-grey',
+    component: PanelGrey
+  },
+  {
+    path: '/example/panel-label',
+    component: PanelLabel
+  },
+  {
+    path: '/example/panel-group',
+    component: PanelGroup
   },
   {
     path: '/example/promo',
