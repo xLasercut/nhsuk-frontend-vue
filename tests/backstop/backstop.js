@@ -158,7 +158,7 @@ module.exports = {
     },
     {
       "label": "Feedback banner",
-      "url": `${TEST_HOST}/components/feedback-banner/index.html`,
+      "url": `${TEST_HOST}/example/feedback`,
       "delay": 5000
     },
     {
