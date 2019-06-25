@@ -306,27 +306,27 @@ module.exports = {
     },
     {
       "label": "List panel",
-      "url": `${TEST_HOST}/components/list-panel/index.html`
+      "url": `${TEST_HOST}/example/list-panel`
     },
     {
       "label": "Pagination",
-      "url": `${TEST_HOST}/components/pagination/index.html`
+      "url": `${TEST_HOST}/example/pagination`
     },
     {
       "label": "Panel",
-      "url": `${TEST_HOST}/components/panel/index.html`
+      "url": `${TEST_HOST}/example/panel`
     },
     {
       "label": "Panel with label",
-      "url": `${TEST_HOST}/components/panel/panel-with-label.html`
+      "url": `${TEST_HOST}/example/panel-label`
     },
     {
       "label": "Panel grey",
-      "url": `${TEST_HOST}/components/panel/panel-grey.html`
+      "url": `${TEST_HOST}/example/panel-grey`
     },
     {
       "label": "Panel group",
-      "url": `${TEST_HOST}/components/panel/panel-group.html`
+      "url": `${TEST_HOST}/example/panel-group`
     },
     {
       "label": "Promo",
