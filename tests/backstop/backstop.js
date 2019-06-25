@@ -191,27 +191,27 @@ module.exports = {
     },
     {
       "label": "Header with service name and search",
-      "url": `${TEST_HOST}/components/header/header-service-name.html`
+      "url": `${TEST_HOST}/example/header-service-search`
     },
     {
       "label": "Header transactional",
-      "url": `${TEST_HOST}/components/header/header-transactional.html`
+      "url": `${TEST_HOST}/example/header-transactional`
     },
     {
       "label": "Header transactional with service name",
-      "url": `${TEST_HOST}/components/header/header-transactional-service-name.html`
+      "url": `${TEST_HOST}/example/header-transactional-name`
     },
     {
       "label": "Header transactional with a long service name",
-      "url": `${TEST_HOST}/components/header/header-transactional-long-service-name.html`
+      "url": `${TEST_HOST}/example/header-transactional-long`
     },
     {
       "label": "Header with navigation",
-      "url": `${TEST_HOST}/components/header/header-navigation.html`
+      "url": `${TEST_HOST}/example/header-nav`
     },
     {
       "label": "Header with navigation open",
-      "url": `${TEST_HOST}/components/header/header-navigation.html`,
+      "url": `${TEST_HOST}/example/header-nav`,
       "clickSelector": "#toggle-menu",
       "viewports": [
         {
@@ -233,11 +233,11 @@ module.exports = {
     },
     {
       "label": "Header with search",
-      "url": `${TEST_HOST}/components/header/header-search.html`
+      "url": `${TEST_HOST}/example/header-search`
     },
     {
       "label": "Header with search open",
-      "url": `${TEST_HOST}/components/header/header-search.html`,
+      "url": `${TEST_HOST}/example/header-search`,
       "clickSelector": "#toggle-search",
       "viewports": [
         {
