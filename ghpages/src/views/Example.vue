@@ -16,7 +16,8 @@
     '/example/header-logo',
     '/example/hero',
     '/example/hero-image',
-    '/example/hero-image-text'
+    '/example/hero-image-text',
+    '/example/feedback'
   ]
   const blueContainers = [ '/example/button-reversed' ]
 
