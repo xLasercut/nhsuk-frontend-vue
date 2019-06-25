@@ -179,7 +179,7 @@ module.exports = {
     },
     {
       "label": "Fieldset with inputs",
-      "url": `${TEST_HOST}/components/fieldset/with-inputs.html`
+      "url": `${TEST_HOST}/example/fieldset-input`
     },
     {
       "label": "Header",
