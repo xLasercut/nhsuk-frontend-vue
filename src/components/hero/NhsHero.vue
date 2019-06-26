@@ -53,16 +53,16 @@
     },
     computed: {
       sectionClass() {
-        var baseClass = 'nhsuk-hero'
+        var classes = [ 'nhsuk-hero' ]
 
         if (this.heading && this.imageUrl) {
-          baseClass += ' nhsuk-hero--image nhsuk-hero--image-description'
+          classes.push('nhsuk-hero--image nhsuk-hero--image-description')
         }
         else if (this.imageUrl) {
-          baseClass += ' nhsuk-hero--image'
+          classes.push('nhsuk-hero--image')
         }
 
-        return baseClass
+        return classes.join(' ')
       },
       sectionStyle() {
         var style = {}
@@ -74,12 +74,13 @@
         return style
       },
       widthContainerClass() {
-        var baseClass = 'nhsuk-width-container'
+        var classes = [ 'nhsuk-width-container' ]
 
-        if (this.imageUrl) {
-          baseClass += ' nhsuk-hero--border'
+        if (!this.imageUrl) {
+          classes.push('nhsuk-hero--border')
         }
-        return baseClass
+
+        return classes.join(' ')
       },
       heroContentClass() {
         if (this.imageUrl) {
