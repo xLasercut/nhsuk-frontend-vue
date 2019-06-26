@@ -3,7 +3,7 @@
 #build
 npm run deploy:gh
 
-cd distghpages
+cd dist_docs
 
 git init
 git add -A

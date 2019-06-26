@@ -12,17 +12,17 @@ else if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   publicPath: publicPath,
-  outputDir: "./distghpages",
+  outputDir: "./dist_docs",
   pages: {
     index: {
-      entry: path.resolve(__dirname, 'ghpages/src/main.js'),
-      template: path.resolve(__dirname, 'ghpages/public/index.html'),
+      entry: path.resolve(__dirname, 'docs/src/main.js'),
+      template: path.resolve(__dirname, 'docs/public/index.html'),
       filename: 'index.html'
     }
   },
   configureWebpack: {
     plugins: [
-        new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'ghpages/public/'), to: '.' }])
+        new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'docs/public/'), to: '.' }])
     ]
   },
   lintOnSave: false

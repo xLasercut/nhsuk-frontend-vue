@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-/distghpages
+/dist_docs
 
 # local env files
 .env.local
