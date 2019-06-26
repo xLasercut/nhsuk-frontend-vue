@@ -23,7 +23,8 @@
     '/example/hero',
     '/example/hero-image',
     '/example/hero-image-text',
-    '/example/feedback'
+    '/example/feedback',
+    '/example/skip-link'
   ]
 
   const blueContainers = [ '/example/button-reversed' ]

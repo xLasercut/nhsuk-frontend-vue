@@ -76,6 +76,7 @@ import RadioError from '../examples/RadioError.vue'
 import ReviewDate from '../examples/ReviewDate.vue'
 import Select from '../examples/Select.vue'
 import SelectError from '../examples/SelectError.vue'
+import SkipLink from '../examples/SkipLink.vue'
 import SummaryList from '../examples/SummaryList.vue'
 import SummaryListNoAction from '../examples/SummaryListNoAction.vue'
 import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
@@ -398,6 +399,10 @@ export default [
   {
     path: '/example/select-error',
     component: SelectError
+  },
+  {
+    path: '/example/skip-link',
+    component: SkipLink
   },
   {
     path: '/example/summary-list',
