@@ -1,6 +1,6 @@
 <template>
   <nhs-checkboxes
-    :items="items" v-model="model"
+    :items="items" v-model="model" page-heading
     label="How do you want to sign in?"
   ></nhs-checkboxes>
 </template>
