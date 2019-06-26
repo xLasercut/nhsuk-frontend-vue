@@ -40,9 +40,11 @@
     computed: {
       classes() {
         var classes = ['nhsuk-header__link']
-        if (this.service) {
+
+        if (!this.transactional && this.service) {
           classes.push('nhsuk-header__link--service')
         }
+
         return classes.join(' ')
       }
     }

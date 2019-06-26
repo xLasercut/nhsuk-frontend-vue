@@ -11,12 +11,8 @@
       >
       </header-transactional>
 
-      <div class="nhsuk-header__content" id="content-header">
-
-        <div class="nhsuk-header__menu" v-if="showNav">
-          <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
-        </div>
-
+      <div class="nhsuk-header__content" id="content-header" v-if="showNav || showSearch">
+        <header-menu :show-search="showSearch" :show-nav="showNav"></header-menu>
         <header-search v-if="showSearch"></header-search>
       </div>
     </div>
@@ -32,6 +28,7 @@
   import HeaderNav from './header/HeaderNav.vue'
   import HeaderSearch from './header/HeaderSearch.vue'
   import HeaderTransactional from './header/HeaderTransactional.vue'
+  import HeaderMenu from './header/HeaderMenu.vue'
 
   export default {
     name: 'NhsHeader',
@@ -68,7 +65,8 @@
       HeaderNav,
       HeaderSearch,
       HeaderLogo,
-      HeaderTransactional
+      HeaderTransactional,
+      HeaderMenu
     },
     computed: {
       classes() {
