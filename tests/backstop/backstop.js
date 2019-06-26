@@ -1,10 +1,6 @@
 // Get the --testhost=... argument from the backstop command
 const arguments = require('minimist')(process.argv.slice(2));
-var TEST_HOST = "http://host.docker.internal:8080/#"
-
-if (arguments.testhost) {
-  TEST_HOST = `http://${arguments.testhost}/#`
-}
+const TEST_HOST = arguments.testhost || "http://host.docker.internal:3000"
 
 module.exports = {
   "id": "nhsuk-frontend",
@@ -35,27 +31,27 @@ module.exports = {
   "scenarios": [
     {
       "label": "A-Z navigation",
-      "url": `${TEST_HOST}/example/nav-az`
+      "url": `${TEST_HOST}/components/nav-a-z/index.html`
     },
     {
       "label": "Action link",
-      "url": `${TEST_HOST}/example/action-link`
+      "url": `${TEST_HOST}/components/action-link/index.html`
     },
     {
       "label": "Back link",
-      "url": `${TEST_HOST}/example/back-link`
+      "url": `${TEST_HOST}/components/back-link/index.html`
     },
     {
       "label": "Breadcrumb",
-      "url": `${TEST_HOST}/example/breadcrumb`
+      "url": `${TEST_HOST}/components/breadcrumb/index.html`
     },
     {
       "label": "Button",
-      "url": `${TEST_HOST}/example/button`
+      "url": `${TEST_HOST}/components/button/index.html`
     },
     {
       "label": "Button click",
-      "url": `${TEST_HOST}/example/button`,
+      "url": `${TEST_HOST}/components/button/index.html`,
       "clickSelector": ".nhsuk-button",
       "viewports": [
         {
@@ -67,151 +63,151 @@ module.exports = {
     },
     {
       "label": "Button as a link",
-      "url": `${TEST_HOST}/example/button-link`
+      "url": `${TEST_HOST}/components/button/link.html`
     },
     {
       "label": "Button disabled",
-      "url": `${TEST_HOST}/example/button-disabled`
+      "url": `${TEST_HOST}/components/button/disabled.html`
     },
     {
       "label": "Button secondary",
-      "url": `${TEST_HOST}/example/button-secondary`
+      "url": `${TEST_HOST}/components/button/secondary.html`
     },
     {
       "label": "Button reverse",
-      "url": `${TEST_HOST}/example/button-reversed`
+      "url": `${TEST_HOST}/components/button/reverse.html`
     },
     {
       "label": "Care card - Non urgent",
-      "url": `${TEST_HOST}/example/care-card-non-urgent`
+      "url": `${TEST_HOST}/components/care-card/care-card-non-urgent.html`
     },
     {
       "label": "Care card - Urgent",
-      "url": `${TEST_HOST}/example/care-card-urgent`
+      "url": `${TEST_HOST}/components/care-card/care-card-urgent.html`
     },
     {
       "label": "Care card - Immediate",
-      "url": `${TEST_HOST}/example/care-card-immediate`
+      "url": `${TEST_HOST}/components/care-card/care-card-immediate.html`
     },
     {
       "label": "Checkboxes",
-      "url": `${TEST_HOST}/example/checkbox`
+      "url": `${TEST_HOST}/components/checkboxes/index.html`
     },
     {
       "label": "Checkboxes with hint text",
-      "url": `${TEST_HOST}/example/checkbox-hint`
+      "url": `${TEST_HOST}/components/checkboxes/hint.html`
     },
     {
       "label": "Checkboxes with disabled item",
-      "url": `${TEST_HOST}/example/checkbox-disabled`
+      "url": `${TEST_HOST}/components/checkboxes/disabled.html`
     },
     {
       "label": "Checkboxes with legend as page heading",
-      "url": `${TEST_HOST}/example/checkbox-heading`
+      "url": `${TEST_HOST}/components/checkboxes/page-heading.html`
     },
     {
       "label": "Checkboxes with error message",
-      "url": `${TEST_HOST}/example/checkbox-error`
+      "url": `${TEST_HOST}/components/checkboxes/error.html`
     },
     {
       "label": "Contents list",
-      "url": `${TEST_HOST}/example/contents-list`
+      "url": `${TEST_HOST}/components/contents-list/index.html`
     },
     {
       "label": "Date input",
-      "url": `${TEST_HOST}/example/date-input`
+      "url": `${TEST_HOST}/components/date-input/index.html`
     },
     {
       "label": "Date input with multiple errors",
-      "url": `${TEST_HOST}/example/date-input-error-multi`
+      "url": `${TEST_HOST}/components/date-input/multiple-errors.html`
     },
     {
       "label": "Details",
-      "url": `${TEST_HOST}/example/details`,
+      "url": `${TEST_HOST}/components/details/index.html`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
       "label": "Do & Don't list",
-      "url": `${TEST_HOST}/example/do-dont`
+      "url": `${TEST_HOST}/components/do-dont-list/index.html`
     },
     {
       "label": "Emergency alert",
-      "url": `${TEST_HOST}/example/emergency-alert`
+      "url": `${TEST_HOST}/components/emergency-alert/index.html`
     },
     {
       "label": "Error message",
-      "url": `${TEST_HOST}/example/error-text`
+      "url": `${TEST_HOST}/components/error-message/index.html`
     },
     {
       "label": "Error summary",
-      "url": `${TEST_HOST}/example/error-summary`
+      "url": `${TEST_HOST}/components/error-summary/index.html`
     },
     {
       "label": "Expander",
-      "url": `${TEST_HOST}/example/expander`,
+      "url": `${TEST_HOST}/components/details/expander.html`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
       "label": "Expander group",
-      "url": `${TEST_HOST}/example/expander-group`,
+      "url": `${TEST_HOST}/components/details/expander-group.html`,
       "clickSelector": ".nhsuk-details__summary"
     },
     {
       "label": "Feedback banner",
-      "url": `${TEST_HOST}/example/feedback`,
+      "url": `${TEST_HOST}/components/feedback-banner/index.html`,
       "delay": 5000
     },
     {
       "label": "Footer",
-      "url": `${TEST_HOST}/example/footer`
+      "url": `${TEST_HOST}/components/footer/index.html`
     },
     {
       "label": "Footer with list columns",
-      "url": `${TEST_HOST}/example/footer-column`
+      "url": `${TEST_HOST}/components/footer/columns.html`
     },
     {
       "label": "Fieldset",
-      "url": `${TEST_HOST}/example/fieldset`
+      "url": `${TEST_HOST}/components/fieldset/index.html`
     },
     {
       "label": "Fieldset as page heading",
-      "url": `${TEST_HOST}/example/fieldset-heading`
+      "url": `${TEST_HOST}/components/fieldset/page-heading.html`
     },
     {
       "label": "Fieldset with inputs",
-      "url": `${TEST_HOST}/example/fieldset-input`
+      "url": `${TEST_HOST}/components/fieldset/with-inputs.html`
     },
     {
       "label": "Header",
-      "url": `${TEST_HOST}/example/header`
+      "url": `${TEST_HOST}/components/header/index.html`
     },
     {
       "label": "Header with logo only",
-      "url": `${TEST_HOST}/example/header-logo`
+      "url": `${TEST_HOST}/components/header/header-logo.html`
     },
     {
       "label": "Header with service name and search",
-      "url": `${TEST_HOST}/example/header-service-search`
+      "url": `${TEST_HOST}/components/header/header-service-name.html`
     },
     {
       "label": "Header transactional",
-      "url": `${TEST_HOST}/example/header-transactional`
+      "url": `${TEST_HOST}/components/header/header-transactional.html`
     },
     {
       "label": "Header transactional with service name",
-      "url": `${TEST_HOST}/example/header-transactional-name`
+      "url": `${TEST_HOST}/components/header/header-transactional-service-name.html`
     },
     {
       "label": "Header transactional with a long service name",
-      "url": `${TEST_HOST}/example/header-transactional-long`
+      "url": `${TEST_HOST}/components/header/header-transactional-long-service-name.html`
     },
     {
       "label": "Header with navigation",
-      "url": `${TEST_HOST}/example/header-nav`
+      "url": `${TEST_HOST}/components/header/header-navigation.html`
     },
     {
       "label": "Header with navigation open",
-      "url": `${TEST_HOST}/example/header-nav`,
+      "url": `${TEST_HOST}/components/header/header-navigation.html`,
       "clickSelector": "#toggle-menu",
       "viewports": [
         {
@@ -233,11 +229,11 @@ module.exports = {
     },
     {
       "label": "Header with search",
-      "url": `${TEST_HOST}/example/header-search`
+      "url": `${TEST_HOST}/components/header/header-search.html`
     },
     {
       "label": "Header with search open",
-      "url": `${TEST_HOST}/example/header-search`,
+      "url": `${TEST_HOST}/components/header/header-search.html`,
       "clickSelector": "#toggle-search",
       "viewports": [
         {
@@ -254,171 +250,171 @@ module.exports = {
     },
     {
       "label": "Hero",
-      "url": `${TEST_HOST}/example/hero`
+      "url": `${TEST_HOST}/components/hero/index.html`
     },
     {
       "label": "Hero with image",
-      "url": `${TEST_HOST}/example/hero-image`
+      "url": `${TEST_HOST}/components/hero/hero-image.html`
     },
     {
       "label": "Hero with image and content",
-      "url": `${TEST_HOST}/example/hero-image-text`
+      "url": `${TEST_HOST}/components/hero/hero-image-content.html`
     },
     {
       "label": "Hint",
-      "url": `${TEST_HOST}/example/hint-text`
+      "url": `${TEST_HOST}/components/hint/index.html`
     },
     {
       "label": "Images",
-      "url": `${TEST_HOST}/example/image`
+      "url": `${TEST_HOST}/components/images/index.html`
     },
     {
       "label": "Input",
-      "url": `${TEST_HOST}/example/input`
+      "url": `${TEST_HOST}/components/input/index.html`
     },
     {
       "label": "Input with hint text",
-      "url": `${TEST_HOST}/example/input-hint`
+      "url": `${TEST_HOST}/components/input/hint.html`
     },
     {
       "label": "Input with error message",
-      "url": `${TEST_HOST}/example/input-error`
+      "url": `${TEST_HOST}/components/input/error.html`
     },
     {
       "label": "Input with width modifier",
-      "url": `${TEST_HOST}/example/input-width`
+      "url": `${TEST_HOST}/components/input/custom-width.html`
     },
     {
       "label": "Inset text",
-      "url": `${TEST_HOST}/example/inset-text`
+      "url": `${TEST_HOST}/components/inset-text/index.html`
     },
     {
       "label": "Label",
-      "url": `${TEST_HOST}/example/label`
+      "url": `${TEST_HOST}/components/label/index.html`
     },
     {
       "label": "Label with bold text",
-      "url": `${TEST_HOST}/example/label-bold`
+      "url": `${TEST_HOST}/components/label/index.html`
     },
     {
       "label": "Label as page heading",
-      "url": `${TEST_HOST}/example/label-heading`
+      "url": `${TEST_HOST}/components/label/page-heading.html`
     },
     {
       "label": "List panel",
-      "url": `${TEST_HOST}/example/list-panel`
+      "url": `${TEST_HOST}/components/list-panel/index.html`
     },
     {
       "label": "Pagination",
-      "url": `${TEST_HOST}/example/pagination`
+      "url": `${TEST_HOST}/components/pagination/index.html`
     },
     {
       "label": "Panel",
-      "url": `${TEST_HOST}/example/panel`
+      "url": `${TEST_HOST}/components/panel/index.html`
     },
     {
       "label": "Panel with label",
-      "url": `${TEST_HOST}/example/panel-label`
+      "url": `${TEST_HOST}/components/panel/panel-with-label.html`
     },
     {
       "label": "Panel grey",
-      "url": `${TEST_HOST}/example/panel-grey`
+      "url": `${TEST_HOST}/components/panel/panel-grey.html`
     },
     {
       "label": "Panel group",
-      "url": `${TEST_HOST}/example/panel-group`
+      "url": `${TEST_HOST}/components/panel/panel-group.html`
     },
     {
       "label": "Promo",
-      "url": `${TEST_HOST}/example/promo`
+      "url": `${TEST_HOST}/components/promo/index.html`
     },
     {
       "label": "Promo with image",
-      "url": `${TEST_HOST}/example/promo-image`
+      "url": `${TEST_HOST}/components/promo/promo-with-image.html`
     },
     {
       "label": "Promo small",
-      "url": `${TEST_HOST}/example/promo-small`
+      "url": `${TEST_HOST}/components/promo/promo-small.html`
     },
     {
       "label": "Promo with no description",
-      "url": `${TEST_HOST}/example/promo-no-description`
+      "url": `${TEST_HOST}/components/promo/promo-no-description.html`
     },
     {
       "label": "Promo group",
-      "url": `${TEST_HOST}/example/promo-group`
+      "url": `${TEST_HOST}/components/promo/promo-group.html`
     },
     {
       "label": "Radios",
-      "url": `${TEST_HOST}/example/radio`
+      "url": `${TEST_HOST}/components/radios/index.html`
     },
     {
       "label": "Radios inline",
-      "url": `${TEST_HOST}/example/radio-inline`
+      "url": `${TEST_HOST}/components/radios/inline.html`
     },
     {
       "label": "Radios disabled",
-      "url": `${TEST_HOST}/example/radio-disabled`
+      "url": `${TEST_HOST}/components/radios/disabled.html`
     },
     {
       "label": "Radios with a divider",
-      "url": `${TEST_HOST}/example/radio-divider`
+      "url": `${TEST_HOST}/components/radios/divider.html`
     },
     {
       "label": "Radios with hint text",
-      "url": `${TEST_HOST}/example/radio-hint`
+      "url": `${TEST_HOST}/components/radios/hint.html`
     },
     {
       "label": "Radios without fieldset",
-      "url": `${TEST_HOST}/example/radio-no-heading`
+      "url": `${TEST_HOST}/components/radios/without-fieldset.html`
     },
     {
       "label": "Radios with hint text and error message",
-      "url": `${TEST_HOST}/example/radio-error`
+      "url": `${TEST_HOST}/components/radios/hint-error.html`
     },
     {
       "label": "Review date",
-      "url": `${TEST_HOST}/example/review-date`
+      "url": `${TEST_HOST}/components/review-date/index.html`
     },
     {
       "label": "Select",
-      "url": `${TEST_HOST}/example/select`
+      "url": `${TEST_HOST}/components/select/index.html`
     },
     {
       "label": "Select with hint text and error message",
-      "url": `${TEST_HOST}/example/select-error`
+      "url": `${TEST_HOST}/components/select/hint-error.html`
     },
     {
       "label": "Summary list",
-      "url": `${TEST_HOST}/example/summary-list`
+      "url": `${TEST_HOST}/components/summary-list/index.html`
     },
     {
       "label": "Summary list without actions",
-      "url": `${TEST_HOST}/example/summary-list-no-action`
+      "url": `${TEST_HOST}/components/summary-list/without-actions.html`
     },
     {
       "label": "Summary list without border",
-      "url": `${TEST_HOST}/example/summary-list-no-border`
+      "url": `${TEST_HOST}/components/summary-list/without-border.html`
     },
     {
       "label": "Table",
-      "url": `${TEST_HOST}/example/table`
+      "url": `${TEST_HOST}/components/tables/index.html`
     },
     {
       "label": "Table as panel",
-      "url": `${TEST_HOST}/example/table-panel`
+      "url": `${TEST_HOST}/components/tables/tables-panel.html`
     },
     {
       "label": "Textarea",
-      "url": `${TEST_HOST}/example/textarea`
+      "url": `${TEST_HOST}/components/textarea/index.html`
     },
     {
       "label": "Textarea with error message",
-      "url": `${TEST_HOST}/example/textarea-error`
+      "url": `${TEST_HOST}/components/textarea/error.html`
     },
     {
       "label": "Warning callout",
-      "url": `${TEST_HOST}/example/warning-callout`
+      "url": `${TEST_HOST}/components/warning-callout/index.html`
     }
   ],
   "paths": {
