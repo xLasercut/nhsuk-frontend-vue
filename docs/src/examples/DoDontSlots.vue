@@ -1,9 +1,15 @@
 <template>
   <div>
     <nhs-dodont title="Do" type="tick" :items="doItems">
+      <template #item="item">
+        <a>{{item.props}}</a>
+      </template>
     </nhs-dodont>
 
     <nhs-dodont title="Don't" type="cross" :items="dontItems">
+      <template #item="item">
+        <a>{{item.props}}</a>
+      </template>
     </nhs-dodont>
   </div>
 </template>

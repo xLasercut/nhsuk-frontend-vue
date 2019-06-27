@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-do-dont-list" v-bind="attributes">
+  <div class="nhsuk-do-dont-list" v-bind="$attrs">
     <heading-switcher :heading-level="headingLevel" class="nhsuk-do-dont-list__label">{{title}}</heading-switcher>
     <ul :class="`nhsuk-list nhsuk-list--${type}`">
       <li v-for="(item, index) in items" :key="index">
@@ -41,12 +41,6 @@
       headingLevel: {
         type: Number,
         default: 3
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

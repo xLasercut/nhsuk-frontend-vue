@@ -33,9 +33,7 @@ describe('dodont tests', () => {
     const wrapper = mount(NhsDodont, {
       propsData: {
         title: 'test-title',
-        attributes: {
-          test: 'test'
-        },
+        test: 'test',
         headingLevel: 1,
         items: []
       }
@@ -44,5 +42,19 @@ describe('dodont tests', () => {
     expect(wrapper.contains('h1')).toBe(true)
     expect(wrapper.find('.nhsuk-do-dont-list__label').text()).toBe('test-title')
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test dodont slots', () => {
+    const wrapper = mount(NhsDodont, {
+      propsData: {
+        title: 'test-title',
+        items: [ 'test item' ]
+      },
+      slots: {
+        item: 'cheese'
+      }
+    })
+
+    expect(wrapper.find('li').text()).toBe('cheese')
   })
 })
