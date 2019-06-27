@@ -1,9 +1,9 @@
 <template>
-  <li class="nhsuk-contents-list__item" v-bind="addAriaCurrent">
-    <span class="nhsuk-contents-list__current" v-if="!href" v-bind="attributes">
+  <li class="nhsuk-contents-list__item" v-bind="attributes">
+    <span class="nhsuk-contents-list__current" v-if="!href" v-bind="$attrs">
       <slot></slot>
     </span>
-    <link-switcher class="nhsuk-contents-list__link" v-if="href" :href="href" :attributes="attributes">
+    <link-switcher class="nhsuk-contents-list__link" v-if="href" :href="href" v-bind="$attrs">
       <slot></slot>
     </link-switcher>
   </li>
@@ -14,9 +14,7 @@
 
   export default {
     name: 'NhsContentsItem',
-    components: {
-      LinkSwitcher
-    },
+    components: { LinkSwitcher },
     props: {
       href: {
         type: String,
@@ -25,23 +23,15 @@
       ariaCurrent: {
         type: String,
         default: 'page'
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     computed: {
-      addAriaCurrent() {
+      attributes() {
+        var attributes = {}
         if (!this.href) {
-          return {
-            'aria-current': this.ariaCurrent
-          }
+          attributes['aria-current'] = this.ariaCurrent
         }
-        return {}
-
+        return attributes
       }
     }
   }

@@ -5,13 +5,17 @@
         <example-loader :file="file"/>
       </div>
       <div class="expand_container" :style="expandContainerStyle">
-        <button class="expand_button" @click="toggleCode('template')" v-show="template">Template</button>
-        <button class="expand_button" @click="toggleCode('script')" v-show="script">Script</button>
+        <code-block-tab :id="`${file}-template`" v-model="showTemplate" v-show="template">
+          Template
+        </code-block-tab>
+        <code-block-tab :id="`${file}-script`" v-model="showScript" v-show="script">
+          Script
+        </code-block-tab>
       </div>
       <div class="code_container" :style="codeContainerStyle">
-        <highlight-code :code="template" lang="html" v-show="display == 'template'">
+        <highlight-code :code="template" lang="html" v-show="showTemplate">
         </highlight-code>
-        <highlight-code :code="script" lang="js" v-show="display == 'script'">
+        <highlight-code :code="script" lang="js" v-show="showScript">
         </highlight-code>
       </div>
     </nhs-col>
@@ -21,12 +25,13 @@
 <script>
   import axios from 'axios'
   import ExampleLoader from './ExampleLoader.vue'
+  import CodeBlockTab from './CodeBlockTab.vue'
 
   const template = new RegExp('(?:\\<template\\>)([^]+)(?:\\<\\/template\\>)', 'i')
   const script = new RegExp('(?:\\<script\\>)([^]+)(?:\\<\\/script\\>)', 'i')
 
   export default {
-    components: { ExampleLoader },
+    components: { ExampleLoader, CodeBlockTab },
     props: {
       file: {
         type: String,
@@ -35,24 +40,27 @@
     },
     data() {
       return {
-        display: '',
         template: '',
-        script: ''
+        script: '',
+        showTemplate: false,
+        showScript: false
       }
     },
-    methods: {
-      toggleCode(type) {
-        if (this.display === type) {
-          this.display = ''
+    watch: {
+      showTemplate(val) {
+        if (val && this.showScript) {
+          this.showScript = false
         }
-        else {
-          this.display = type
+      },
+      showScript(val) {
+        if (val && this.showTemplate) {
+          this.showTemplate = false
         }
       }
     },
     computed: {
       codeContainerStyle() {
-        if (!this.display) {
+        if (!this.showTemplate && !this.showScript) {
           return {
             'display': 'none',
             'margin-bottom': '0px'
@@ -60,7 +68,7 @@
         }
       },
       expandContainerStyle() {
-        if (!this.display) {
+        if (!this.showTemplate && !this.showScript) {
           return {
             'border-bottom': '1px solid #d8dde0',
             'margin-bottom': '40px'
@@ -109,42 +117,13 @@
     border-left: 1px solid #d8dde0;
     border-right: 1px solid #d8dde0;
     border-top: 1px solid #d8dde0;
-  }
-
-  .expand_button {
-    border: none;
-    border-bottom: 5px solid #005eb8;
-    background: #f0f4f5;
-    cursor: pointer;
-    outline: none;
-    padding: 10px;
-    margin-right: 3px;
-  }
-
-  .expand_button:hover {
-    outline: 3px solid #ffb81c;
-  }
-
-  .expand_button:focus {
-    outline: 3px solid #ffb81c;
-  }
-
-  .code_tab {
-    background: none;
-    border: none;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   pre {
     padding: 0;
     margin: 0;
-  }
-
-  input {
-    display: none;
-  }
-
-  input:checked+label {
-    background: gray;
   }
 </style>

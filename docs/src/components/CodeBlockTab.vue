@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="radio" :value="tabValue" v-model="model" :id="id">
+    <input type="checkbox" v-model="model" :id="id">
     <label class="tab" :for="id"><slot></slot></label>
   </div>
 </template>
@@ -10,9 +10,6 @@
     props: {
       id: {
         type: String,
-        required: true
-      },
-      tabValue: {
         required: true
       },
       value: {}

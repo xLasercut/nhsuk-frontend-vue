@@ -18,9 +18,7 @@ describe('contents tests', () => {
       propsData: {
         ariaLabel: 'test-label',
         hiddenText: 'test-text',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -29,13 +27,21 @@ describe('contents tests', () => {
     expect(wrapper.attributes().test).toBe('test')
   })
 
+  it('test contents slots', () => {
+    const wrapper = mount(NhsContents, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-contents-list__list').text()).toBe('test')
+  })
+
   it('test contents item props', () => {
     const wrapper = mount(NhsContentsItem, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -53,5 +59,15 @@ describe('contents tests', () => {
     expect(wrapper.contains('a')).toBe(false)
     expect(wrapper.contains('span')).toBe(true)
     expect(wrapper.attributes()['aria-current']).toBe('test-current')
+  })
+
+  it('test contents item slots', () => {
+    const wrapper = mount(NhsContentsItem, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-contents-list__item').text()).toBe('test')
   })
 })
