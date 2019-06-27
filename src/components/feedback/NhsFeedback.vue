@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-feedback-banner" id="nhsuk-feedback-banner" v-bind="attributes">
+  <div class="nhsuk-feedback-banner" id="nhsuk-feedback-banner" v-bind="$attrs">
     <div class="nhsuk-width-container">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
@@ -9,7 +9,10 @@
               <slot></slot>
               <link-switcher class="nhsuk-u-nowrap" :href="href" v-if="label && href">{{label}}</link-switcher>
             </p>
-            <button class="nhsuk-feedback-banner__close" id="nhsuk-feedback-banner-close" type="button">Close<span class="nhsuk-u-visually-hidden">{{hiddenText}}</span></button>
+            <button class="nhsuk-feedback-banner__close" id="nhsuk-feedback-banner-close" type="button">
+              Close
+              <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -22,16 +25,8 @@
 
   export default {
     name: 'NhsFeedback',
-    components: {
-      LinkSwitcher
-    },
+    components: { LinkSwitcher },
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       title: {
         type: String,
         required: true

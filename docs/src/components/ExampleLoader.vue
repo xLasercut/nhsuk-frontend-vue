@@ -25,6 +25,7 @@
   import ErrorText from '../examples/ErrorText.vue'
   import Expander from '../examples/Expander.vue'
   import ExpanderGroup from '../examples/ExpanderGroup.vue'
+  import FeedbackBannerDocs from '../examples/FeedbackBannerDocs.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -48,7 +49,8 @@
     'ErrorSummary': ErrorSummary,
     'ErrorText': ErrorText,
     'Expander': Expander,
-    'ExpanderGroup': ExpanderGroup
+    'ExpanderGroup': ExpanderGroup,
+    'FeedbackBanner': FeedbackBannerDocs
   }
 
   export default {

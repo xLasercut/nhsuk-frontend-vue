@@ -1,57 +1,50 @@
 <template>
-  <div>
-    <nhs-feedback title="Feedback" label="optional text" href="/information/feedback">
-      Some feed back is required
-    </nhs-feedback>
-    <nhs-main>
-
-      <code-block :code="source">
-      </code-block>
-
-      <argument-table heading="feedback" :rows="rows"></argument-table>
-    </nhs-main>
-  </div>
+<div>
+  <nhs-main>
+    <code-block file="FeedbackBanner" />
+    <argument-table heading="feedback" :data-props="props" :data-slots="slots" />
+  </nhs-main>
+  <nhs-feedback
+    title="Help us make the NHS website better"
+    label="Take our short survey"
+    href="https://www.nhs.uk"
+  >
+    Your feedback helps us improve the NHS website.
+  </nhs-feedback>
+</div>
 </template>
 
 <script>
-  var source = `<nhs-feedback title="Feedback" label="optional text" href="/information/feedback">
-    Some feed back is required
-  </nhs-feedback>`
-
-  export default {
+   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "title",
-            required: "yes",
-            type: "string",
-            description: "Title to be displayed in the feedback banner component."
+            name: 'title',
+            required: 'yes',
+            type: 'string',
+            description: 'Title to be displayed in the feedback banner component.'
           },
           {
-            name: "label",
-            type: "string",
-            required: "no",
-            description: "Optional text to be displayed within the link at the end of the content"
+            name: 'label',
+            type: 'string',
+            description: 'Optional text to be displayed within the link at the end of the content'
           },
           {
-            name: "href",
-            type: "string",
-            required: "no",
-            description: "Optional value of the link href attribute at the end of the content"
+            name: 'href',
+            type: 'string',
+            description: 'Optional value of the link href attribute at the end of the content'
           },
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the feedback banner container."
-          },
+            name: 'hidden-text',
+            type: 'string',
+            description: 'Hidden text used for text-to-speech: Default: feedback invite'
+          }
+        ],
+        slots: [
           {
-            name: "hidden-text",
-            type: "string",
-            required: "no",
-            description: "Hidden text used for text-to-speech: Default: feedback invite"
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

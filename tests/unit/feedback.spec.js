@@ -19,9 +19,7 @@ describe('feedback banner tests', () => {
         label: 'test-label',
         href: '/test',
         hiddenText: 'hidden-text',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -30,5 +28,18 @@ describe('feedback banner tests', () => {
     expect(wrapper.find('a').attributes().href).toBe('/test')
     expect(wrapper.find('a').text()).toBe('test-label')
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test feedback slots', () => {
+    const wrapper = mount(NhsFeedback, {
+      propsData: {
+        title: 'title'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-feedback-banner__message').text()).toBe('test')
   })
 })
