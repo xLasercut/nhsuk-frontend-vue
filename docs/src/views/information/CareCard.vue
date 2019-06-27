@@ -1,6 +1,6 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
+    <code-block :template="template">
       <nhs-care-card heading="Non Urgent" :heading-level="2">
         This is a Non Urgent Care Card.
       </nhs-care-card>
@@ -13,33 +13,34 @@
         This is an Immediate Care Card.
       </nhs-care-card>
     </code-block>
-    
-    <argument-table heading="care-card" :rows="rows"></argument-table>
+
+    <argument-table heading="care-card" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-care-card heading="Non Urgent">
+  var template = `
+  <nhs-care-card heading="Non Urgent">
     This is a Non Urgent Care Card.
   </nhs-care-card>
-  
+
   <nhs-care-card heading="Urgent" type="urgent">
     This is an Urgent Care Card.
   </nhs-care-card>
-  
+
   <nhs-care-card heading="Immediate" type="immediate">
     This is an Immediate Care Card.
-  </nhs-care-card>`
+  </nhs-care-card>
+  `
 
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        template: template,
+        props: [
           {
             name: "type",
             type: "string",
-            required: "no",
             description: "Care card component variant type - non-urgent, urgent or immediate. Default: non-urgent"
           },
           {
@@ -51,20 +52,18 @@
           {
             name: "heading-level",
             type: "number",
-            required: "no",
             description: "Optional heading level for the heading. Default: 3"
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the care card."
           },
           {
             name: "hidden-text",
             type: "string",
-            required: "no",
             description: "Hidden text used for speech playback. Default: Non-Urgent Advice: "
+          }
+        ],
+        slots: [
+          {
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

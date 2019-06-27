@@ -39,14 +39,25 @@ describe('care card tests', () => {
     const wrapper = mount(NhsCareCard, {
       propsData: {
         headingLevel: 1,
-        attributes: {
-          test: 'test'
-        },
+        test: 'test',
         heading: 'heading'
       }
     })
 
     expect(wrapper.contains('h1')).toBe(true)
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test care card slots', () => {
+    const wrapper = mount(NhsCareCard, {
+      propsData: {
+        heading: 'heading'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-care-card__content').text()).toBe('test')
   })
 })

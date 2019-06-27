@@ -49,9 +49,7 @@
         }
       }
     },
-    components: {
-      HeadingSwitcher
-    }
+    components: { HeadingSwitcher }
   }
 </script>
 
