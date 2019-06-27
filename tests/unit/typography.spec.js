@@ -3,7 +3,6 @@ import {
   NhsErrorText,
   NhsHintText,
   NhsInsetText,
-  NhsBody,
   NhsHeading,
   NhsLabel,
   NhsList
@@ -12,27 +11,7 @@ import {
 describe('typography tests', () => {
 
 
-  it('test error text default props', () => {
-    const wrapper = mount(NhsErrorText)
 
-    expect(wrapper.find('.nhsuk-u-visually-hidden').text()).toBe('Error:')
-  })
-
-  it('test error text props', () => {
-    const wrapper = mount(NhsErrorText, {
-      propsData: {
-        hiddenText: 'test-error',
-        id: 'test-id',
-        attributes: {
-          test: 'test'
-        }
-      }
-    })
-
-    expect(wrapper.attributes().test).toBe('test')
-    expect(wrapper.find('.nhsuk-u-visually-hidden').text()).toBe('test-error')
-    expect(wrapper.attributes().id).toBe('test-id')
-  })
 
   it('test heading default props', () => {
     const wrapper = mount(NhsHeading)

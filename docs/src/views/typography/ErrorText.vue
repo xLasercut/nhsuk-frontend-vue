@@ -1,38 +1,30 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-error-text>Error Text</nhs-error-text>
-    </code-block>
-
-    <argument-table heading="error-text" :rows="rows"></argument-table>
+    <code-block file="ErrorText" />
+    <argument-table heading="error-text" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-error-text>Error Text</nhs-error-text>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "Optional id attribute to add to the error message span tag."
+            name: 'id',
+            type: 'string',
+            description: 'Optional id attribute to add to the error message span tag.'
           },
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the error message span tag."
-          },
+            name: 'hidden-text',
+            type: 'string',
+            description: 'Hidden text used to text to speech. Default: Error:'
+          }
+        ],
+        slots: [
           {
-            name: "hidden-text",
-            type: "string",
-            required: "no",
-            description: "Hidden text used to text to speech. Default: Error:"
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

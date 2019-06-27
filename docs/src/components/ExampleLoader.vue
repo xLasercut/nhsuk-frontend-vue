@@ -22,6 +22,7 @@
   import DoDontSlots from '../examples/DoDontSlots.vue'
   import EmergencyAlert from '../examples/EmergencyAlert.vue'
   import ErrorSummary from '../examples/ErrorSummary.vue'
+  import ErrorText from '../examples/ErrorText.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -42,7 +43,8 @@
     'DoDont': DoDont,
     'DoDontSlots': DoDontSlots,
     'EmergencyAlert': EmergencyAlert,
-    'ErrorSummary': ErrorSummary
+    'ErrorSummary': ErrorSummary,
+    'ErrorText': ErrorText
   }
 
   export default {
