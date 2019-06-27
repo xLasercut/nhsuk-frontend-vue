@@ -20,7 +20,7 @@
         <template #item="item">
           <nhs-table-item>{{item.props.name}}</nhs-table-item>
           <nhs-table-item>{{item.props.type}}</nhs-table-item>
-          <nhs-table-item>{{item.props.required}}</nhs-table-item>
+          <nhs-table-item>{{item.props.required||'no'}}</nhs-table-item>
           <nhs-table-item>{{item.props.description}}</nhs-table-item>
         </template>
       </nhs-table>
@@ -35,7 +35,8 @@
       <nhs-table :headers="headerEvents" :data="dataEvents" v-if="tab == 'events'">
         <template #item="item">
           <nhs-table-item>{{item.props.name}}</nhs-table-item>
-          <nhs-table-item>{{item.props.description}}</nhs-table-item>
+          <nhs-table-item>{{item.props.trigger}}</nhs-table-item>
+          <nhs-table-item>{{item.props.value||'none'}}</nhs-table-item>
         </template>
       </nhs-table>
     </div>
@@ -79,7 +80,7 @@
         tab: 'props',
         headerProps: [ 'Name', 'Type', 'Required', 'Description' ],
         headerSlots: [ 'Name', 'Description' ],
-        headerEvents: [ 'Name', 'Description' ]
+        headerEvents: [ 'Name', 'Trigger', 'Event Value' ]
       }
     },
     computed: {

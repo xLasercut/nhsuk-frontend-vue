@@ -26,9 +26,7 @@ describe('button tests', () => {
         name: 'test-button',
         disabled: true,
         element: 'a',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -46,6 +44,16 @@ describe('button tests', () => {
     })
 
     expect(wrapper.contains('a')).toBe(true)
+  })
+
+  it('test button slots', () => {
+    const wrapper = mount(NhsButton, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('button').text()).toBe('test')
   })
 
   it('test button click', () => {
