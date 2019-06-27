@@ -1,6 +1,6 @@
 <template>
   <footer role="contentinfo">
-    <div class="nhsuk-footer" id="nhsuk-footer" v-bind="attributes">
+    <div class="nhsuk-footer" id="nhsuk-footer" v-bind="$attrs">
       <div class="nhsuk-width-container">
         <h2 class="nhsuk-u-visually-hidden" v-if="$slots.default">{{hiddenText}}</h2>
         <ul :class="classes" v-if="$slots.default">
@@ -24,12 +24,6 @@
       copyright: {
         type: String,
         default: 'Crown copyright'
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       },
       column: {
         type: Boolean,

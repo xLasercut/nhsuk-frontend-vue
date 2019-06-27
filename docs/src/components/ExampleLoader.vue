@@ -29,6 +29,8 @@
   import Fieldset from '../examples/Fieldset.vue'
   import FieldsetHeading from '../examples/FieldsetHeading.vue'
   import FieldsetSlots from '../examples/FieldsetSlots.vue'
+  import Footer from '../examples/Footer.vue'
+  import FooterColumn from '../examples/FooterColumn.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -56,7 +58,9 @@
     'FeedbackBanner': FeedbackBannerDocs,
     'Fieldset': Fieldset,
     'FieldsetHeading': FieldsetHeading,
-    'FieldsetSlots': FieldsetSlots
+    'FieldsetSlots': FieldsetSlots,
+    'Footer': Footer,
+    'FooterColumn': FooterColumn
   }
 
   export default {

@@ -1,6 +1,6 @@
 <template>
   <li class="nhsuk-footer__list-item">
-    <link-switcher class="nhsuk-footer__list-item-link" :href="href" :attributes="attributes">
+    <link-switcher class="nhsuk-footer__list-item-link" :href="href" v-bind="$attrs">
       <slot></slot>
     </link-switcher>
   </li>
@@ -11,19 +11,11 @@
 
   export default {
     name: 'NhsFooterItem',
-    components: {
-      LinkSwitcher
-    },
+    components: { LinkSwitcher },
     props: {
       href: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

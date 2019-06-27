@@ -24,9 +24,7 @@ describe('footer tests', () => {
       propsData: {
         hiddenText: 'hidden-text',
         copyright: 'copyright',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -35,17 +33,38 @@ describe('footer tests', () => {
     expect(wrapper.find('.nhsuk-footer').attributes().test).toBe('test')
   })
 
+  it('test footer slots', () => {
+    const wrapper = mount(NhsFooter, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-footer__list').text()).toBe('test')
+  })
+
   it('test footer item props', () => {
     const wrapper = mount(NhsFooterItem, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.find('a').attributes().href).toBe('/test')
     expect(wrapper.find('a').attributes().test).toBe('test')
+  })
+
+  it('test footer item slots', () => {
+    const wrapper = mount(NhsFooterItem, {
+      slots: {
+        default: 'test'
+      },
+      propsData: {
+        href: '/test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-footer__list-item-link').text()).toBe('test')
   })
 })

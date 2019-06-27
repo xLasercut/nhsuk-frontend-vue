@@ -1,59 +1,52 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-footer>
-        <nhs-footer-item href="/layout/footer">link one</nhs-footer-item>
-        <nhs-footer-item href="/layout/footer">link two</nhs-footer-item>
-      </nhs-footer>
-    </code-block>
+    <code-block file="Footer" />
+    <code-block file="FooterColumn" />
 
-    <argument-table heading="footer" :rows="rows"></argument-table>
-    <argument-table heading="footer-item" :rows="rowsfi"></argument-table>
+    <argument-table heading="footer" :data-props="props" :data-slots="slots" />
+    <argument-table heading="footer-item" :data-props="propsItem" :data-slots="slotsItem" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-footer>
-    <nhs-footer-item href="/layout/footer">link one</nhs-footer-item>
-    <nhs-footer-item href="/layout/footer">link two</nhs-footer-item>
-  </nhs-footer>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
             name: "copyright",
             type: "string",
-            required: "no",
             description: "Name of copyright holder. Default: Crown copyright"
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the footer container."
           },
           {
             name: "hidden-text",
             type: "string",
-            required: "no",
             description: "Hidden text used for text-to-speech. Default: Support links"
+          },
+          {
+            name: 'column',
+            type: 'boolean',
+            description: 'Change footer links to column'
           }
         ],
-        rowsfi: [
+        slots: [
+          {
+            name: 'default',
+            description: 'default vue slots'
+          }
+        ],
+        propsItem: [
           {
             name: "href",
             type: "string",
             required: "yes",
             description: "The href of a primary navigation item in the footer."
-          },
-           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the footer item."
+          }
+        ],
+        slotsItem: [
+          {
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }
