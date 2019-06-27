@@ -22,7 +22,10 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
-        new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'docs/public/'), to: '.' }])
+        new CopyWebpackPlugin([
+          { from: path.resolve(__dirname, 'docs/public/'), to: '.' },
+          { from: path.resolve(__dirname, 'docs/src/examples/'), to: './examples/.'}
+        ])
     ]
   },
   lintOnSave: false

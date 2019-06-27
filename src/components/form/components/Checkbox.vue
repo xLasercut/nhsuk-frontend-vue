@@ -36,7 +36,7 @@
       },
       label: {
         type: String,
-        default: ''
+        required: true
       },
       name: {
         type: String,

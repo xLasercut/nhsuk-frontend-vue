@@ -1,27 +1,14 @@
 <template>
   <nhs-main>
-    <code-block :template="template">
-      <nhs-back-link href="/navigation/backlink">
-        This is a back link
-      </nhs-back-link>
-    </code-block>
-
-    <argument-table heading="back-link" :data-props="props" :data-slots="slots">
-    </argument-table>
+    <code-block file="BackLink" />
+    <argument-table heading="back-link" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var template = `
-  <nhs-back-link href="/navigation/backlink">
-    This is a back link
-  </nhs-back-link>
-  `
-
   export default {
     data() {
       return {
-        template: template,
         props: [
           {
             name: "href",

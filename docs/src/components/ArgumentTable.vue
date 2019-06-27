@@ -14,13 +14,16 @@
       <doc-tab :id="`${heading}-events`" tab-value="events" v-model="tab" v-if="dataEvents.length > 0">
         Events
       </doc-tab>
+      <doc-tab :id="`${heading}-methods`" tab-value="methods" v-model="tab" v-if="dataMethods.length > 0">
+        Methods
+      </doc-tab>
     </div>
     <div class="table-container">
       <nhs-table :headers="headerProps" :data="dataProps" v-if="tab == 'props'">
         <template #item="item">
           <nhs-table-item>{{item.props.name}}</nhs-table-item>
           <nhs-table-item>{{item.props.type}}</nhs-table-item>
-          <nhs-table-item>{{item.props.required||'no'}}</nhs-table-item>
+          <nhs-table-item>{{item.props.required||'-'}}</nhs-table-item>
           <nhs-table-item>{{item.props.description}}</nhs-table-item>
         </template>
       </nhs-table>
@@ -28,6 +31,7 @@
       <nhs-table :headers="headerSlots" :data="dataSlots" v-if="tab == 'slots'">
         <template #item="item">
           <nhs-table-item>{{item.props.name}}</nhs-table-item>
+          <nhs-table-item>{{item.props.props||'-'}}</nhs-table-item>
           <nhs-table-item>{{item.props.description}}</nhs-table-item>
         </template>
       </nhs-table>
@@ -36,7 +40,15 @@
         <template #item="item">
           <nhs-table-item>{{item.props.name}}</nhs-table-item>
           <nhs-table-item>{{item.props.trigger}}</nhs-table-item>
-          <nhs-table-item>{{item.props.value||'none'}}</nhs-table-item>
+          <nhs-table-item>{{item.props.value||'-'}}</nhs-table-item>
+        </template>
+      </nhs-table>
+
+      <nhs-table :headers="headerMethods" :data="dataMethods" v-if="tab == 'methods'">
+        <template #item="item">
+          <nhs-table-item>{{item.props.name}}</nhs-table-item>
+          <nhs-table-item>{{item.props.input||'-'}}</nhs-table-item>
+          <nhs-table-item>{{item.props.description}}</nhs-table-item>
         </template>
       </nhs-table>
     </div>
@@ -70,6 +82,12 @@
           return []
         }
       },
+      dataMethods: {
+        type: Array,
+        default() {
+          return []
+        }
+      },
       heading: {
         type: String,
         required: true
@@ -79,13 +97,9 @@
       return {
         tab: 'props',
         headerProps: [ 'Name', 'Type', 'Required', 'Description' ],
-        headerSlots: [ 'Name', 'Description' ],
-        headerEvents: [ 'Name', 'Trigger', 'Event Value' ]
-      }
-    },
-    computed: {
-      tableHeading() {
-        return `nhs-${this.heading} arguments`
+        headerSlots: [ 'Name', 'Props', 'Description' ],
+        headerEvents: [ 'Name', 'Trigger', 'Event Value' ],
+        headerMethods: [ 'Name', 'Input', 'Description' ]
       }
     }
   }

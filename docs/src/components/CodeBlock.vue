@@ -2,7 +2,7 @@
   <nhs-row>
     <nhs-col>
       <div class="example_container">
-        <slot></slot>
+        <example-loader :file="file"/>
       </div>
       <div class="expand_container" :style="expandContainerStyle">
         <button class="expand_button" @click="toggleCode('template')" v-show="template">Template</button>
@@ -19,20 +19,25 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import ExampleLoader from './ExampleLoader.vue'
+
+  const template = new RegExp('(?:\\<template\\>)([^]+)(?:\\<\\/template\\>)', 'i')
+  const script = new RegExp('(?:\\<script\\>)([^]+)(?:\\<\\/script\\>)', 'i')
+
   export default {
+    components: { ExampleLoader },
     props: {
-      template: {
+      file: {
         type: String,
-        default: ""
-      },
-      script: {
-        type: String,
-        default: ""
+        required: true
       }
     },
     data() {
       return {
-        display: ''
+        display: '',
+        template: '',
+        script: ''
       }
     },
     methods: {
@@ -62,6 +67,20 @@
           }
         }
       }
+    },
+    mounted() {
+      axios.get(`./examples/${this.file}.vue`)
+      .then((response) => {
+        var match = template.exec(response.data)
+        if (match) {
+          this.template = match[1].replace('<div>', '').replace('</div>', '')
+        }
+
+        match = script.exec(response.data)
+        if (match) {
+          this.script = match[1]
+        }
+      })
     }
   }
 </script>

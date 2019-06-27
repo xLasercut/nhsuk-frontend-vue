@@ -1,15 +1,6 @@
 <template>
   <nhs-main>
-    <code-block :template="template">
-      <nhs-breadcrumb>
-        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
-        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
-        <nhs-breadcrumb-item>Level Three</nhs-breadcrumb-item>
-        <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Four</nhs-breadcrumb-item>
-        <nhs-breadcrumb-backlink slot="backlink" href="/navigation/breadcrumb">Back Link</nhs-breadcrumb-backlink>
-      </nhs-breadcrumb>
-    </code-block>
-
+    <code-block file="Breadcrumb" />
     <argument-table heading="breadcrumb" :data-props="propsBreadcrumb" :data-slots="slotsBreadcrumb" />
     <argument-table heading="breadcrumb-item" :data-props="propsItem" :data-slots="slotsItem" />
     <argument-table heading="breadcrumb-backlink" :data-props="propsBackItem" :data-slots="slotsBackItem" />
@@ -17,19 +8,9 @@
 </template>
 
 <script>
-  var template = `
-  <nhs-breadcrumb>
-    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
-    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
-    <nhs-breadcrumb-item>Level Three</nhs-breadcrumb-item>
-    <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Four</nhs-breadcrumb-item>
-    <nhs-breadcrumb-backlink slot="backlink" href="/navigation/breadcrumb">Back Link</nhs-breadcrumb-backlink>
-  </nhs-breadcrumb>`
-
   export default {
     data() {
       return {
-        template: template,
         propsBreadcrumb: [
           {
             name: 'aria-label',

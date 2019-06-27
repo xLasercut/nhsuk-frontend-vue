@@ -1,177 +1,120 @@
 <template>
   <nhs-main>
-    <code-block :code="sourceSingle">
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-checkboxes
-            :items="items"
-            v-model="checked"
-            label="checkbox label"
-            hint="hint text"
-            :rules="rules"
-          ></nhs-checkboxes>
-        </nhs-col>
-        <nhs-col :span="50">
-          <p class="status">Status: {{checked}}</p>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-
-    <code-block :code="sourceOverride">
-      <nhs-row>
-        <nhs-col :span="50">
-            <nhs-checkboxes
-              :items="itemsMulti"
-              v-model="checkedval"
-            ></nhs-checkboxes>
-        </nhs-col>
-        <nhs-col :span="50">
-          <p class="status">Status: {{checkedval}}</p>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-
-    <code-block :code="sourceGroup">
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-checkboxes
-            :items="items"
-            label="Label as heading" page-heading
-            hint="hint text"
-          >
-
-          </nhs-checkboxes>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-
-    <argument-table heading="checkbox" :rows="cbrows"></argument-table>
+    <code-block file="Checkbox" />
+    <code-block file="CheckboxDisabled" />
+    <code-block file="CheckboxError" />
+    <code-block file="CheckboxSlots" />
+    <argument-table heading="checkboxes" :data-props="props" :data-slots="slots" :data-methods="methods" />
   </nhs-main>
 </template>
 
 <script>
-  var sourceSingle = `<nhs-checkbox v-model="checked">
-    <nhs-label slot="label">Single Checkbox</nhs-label>
-  </nhs-checkbox>
-
-  <nhs-checkbox :disabled="true">
-    <nhs-label slot="label">Disabled</nhs-label>
-  </nhs-checkbox>
-
-  <nhs-checkbox v-model="checked">
-    <nhs-label slot="label">With hint</nhs-label>
-    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-  </nhs-checkbox>`
-
-  var sourceOverride = `<nhs-checkbox checkbox-value="London" v-model="checkedval">
-    <nhs-label slot="label">London</nhs-label>
-  </nhs-checkbox>
-
-  <nhs-checkbox checkbox-value="Paris" v-model="checkedval">
-    <nhs-label slot="label">Paris</nhs-label>
-  </nhs-checkbox>
-
-  export default {
+    export default {
     data() {
       return {
-        checkedval: []
-      }
-    }
-  }`
-
-  var sourceGroup = `<nhs-form-itemgroup>
-    <nhs-fieldset slot="fieldset" legend="Fieldset text"></nhs-fieldset>
-    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-    <nhs-error-text slot="error">Error text</nhs-error-text>
-    <nhs-checkbox conditional="Conditional text">
-      <nhs-label slot="label">London</nhs-label>
-    </nhs-checkbox>
-  </nhs-form-itemgroup>`
-
-  export default {
-    data() {
-      return {
-        checked: true,
-        checkedval: [],
-        sourceSingle: sourceSingle,
-        sourceOverride: sourceOverride,
-        sourceGroup: sourceGroup,
-        items: [
+        props: [
           {
-            label: 'Checkbox'
+            name: 'items',
+            type: 'array',
+            required: 'yes',
+            description: 'Array of checkbox data objects'
           },
           {
-            label: 'Disabled',
-            disabled: true
+            name: 'items.{}.label',
+            type: 'string',
+            required: 'yes',
+            description: 'Label of individual checkbox'
           },
           {
-            label: 'With hint',
-            hint: 'Hint text'
+            name: 'items.{}.hint',
+            type: 'string',
+            description: 'Hint text of individual checkbox'
+          },
+          {
+            name: 'items.{}.disabled',
+            type: 'boolean',
+            description: 'Disable individual checkbox'
+          },
+          {
+            name: 'items.{}.conditional',
+            type: 'string',
+            description: 'conditional text of individual checkbox when checked'
+          },
+          {
+            name: 'items.{}.value',
+            type: 'string',
+            description: 'Value of individual checkbox'
+          },
+          {
+            name: 'label',
+            type: 'string',
+            description: 'Label of checkbox group'
+          },
+          {
+            name: 'hint',
+            type: 'string',
+            description: 'Hint of checkbox group'
+          },
+          {
+            name: 'id',
+            type: 'string',
+            description: 'Specific id attribute for the checkbox group. Default: NhsCheckboxes_<random number>'
+          },
+          {
+            name: 'disabled',
+            type: 'boolean',
+            description: 'Disable all checkboxes'
+          },
+          {
+            name: 'page-heading',
+            type: 'boolean',
+            description: 'Wraps label of checkbox group inside a heading tag'
+          },
+          {
+            name: 'heading-size',
+            type: 'string',
+            description: 'Changes size of checkbox group label'
+          },
+          {
+            name: 'rules',
+            type: 'array',
+            description: 'Accepts an array of functions that return either True or a String with an error message'
           }
         ],
-        itemsMulti: [
+        slots: [
           {
-            label: 'London',
-            value: 'london'
+            name: 'hint',
+            description: 'slot for checkbox group hint',
+            props: '\'hint\' prop of component'
           },
           {
-            label: 'Paris',
-            value: 'paris'
+            name: 'error',
+            description: 'slot for checkbox group error',
+            props: 'error message'
+          },
+          {
+            name: 'item-label',
+            description: 'slot for label of individual checkbox',
+            props: 'individual checkbox data object'
+          },
+          {
+            name: 'item-hint',
+            description: 'slot for hint of individual checkbox',
+            props: 'individual checkbox data object'
+          },
+          {
+            name: 'item-conditional',
+            description: 'slot for conditional text of individual checkbox',
+            props: 'individual checkbox data object'
           }
         ],
-        rules: [
-          (v) => !!v || 'must be checked'
-        ],
-        cbrows: [
+        methods: [
           {
-            name: "name",
-            type: "string",
-            required: "no",
-            description: "Name attribute for each checkbox."
-          },
-          {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "Specific id attribute for the checkbox. Default: NhsCheckbox_<random number>"
-          },
-          {
-            name: "conditional",
-            type: "string",
-            required: "no",
-            description: "Conditional text which displays when checkbox is checked."
-          },
-          {
-            name: "disabled",
-            type: "boolean",
-            required: "no",
-            description: "If true, checkbox will be disabled."
-          },
-          {
-            name: "checkbox-value",
-            type: "string",
-            required: "no",
-            description: "Value for the checkbox input."
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the checkbox input tag."
+            name: 'validate',
+            description: 'Validates v-model value based on rules. Returns true if valid'
           }
         ]
       }
-    },
-    mounted() {
-      this.$on('test', () => {
-        console.log('test')
-      })
     }
   }
 </script>
-
-<style scoped>
-  .status {
-    line-height: 40px;
-  }
-</style>

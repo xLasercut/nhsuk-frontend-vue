@@ -1,47 +1,115 @@
 import { mount } from '@vue/test-utils'
-import { NhsCheckbox } from '../../src/components/form'
+import { NhsCheckboxes } from '../../src/components/form'
 
 describe('form checkbox tests', () => {
-  it('test checkbox default props', () => {
-    const wrapper = mount(NhsCheckbox)
-
-    expect(wrapper.find('input').attributes().id).toContain('NhsCheckbox')
-  })
-
-  it('test checkbox props', () => {
-    const wrapper = mount(NhsCheckbox, {
+  it('test individual checkbox props', () => {
+    const wrapper = mount(NhsCheckboxes, {
       propsData: {
-        checkboxValue: 'value',
-        name: 'name',
         id: 'checkbox',
-        attributes: {
-          test: 'test'
-        },
-        disabled: true
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled',
+            disabled: true
+          },
+          {
+            label: 'not disabled',
+            value: 'test',
+            conditional: 'conditional'
+          }
+        ],
+        value: true
       }
     })
 
-    expect(wrapper.find('input').attributes().id).toBe('checkbox')
-    expect(wrapper.find('input').attributes().name).toBe('name')
-    expect(wrapper.find('input').attributes().test).toBe('test')
-    expect(wrapper.find('input').attributes().value).toBe('value')
-    expect(wrapper.find('input').attributes().disabled).toBe('disabled')
+    const labels = wrapper.findAll('.nhsuk-checkboxes__label')
+    const inputs = wrapper.findAll('.nhsuk-checkboxes__input')
+    const hints = wrapper.findAll('.nhsuk-checkboxes__hint')
+    const conditionals = wrapper.findAll('.nhsuk-checkboxes__conditional')
+
+    expect(labels.at(0).text()).toBe('disabled')
+    expect(labels.at(1).text()).toBe('not disabled')
+
+    expect(inputs.at(0).attributes().id).toBe('checkbox-0')
+    expect(inputs.at(1).attributes().id).toBe('checkbox-1')
+
+    expect(inputs.at(0).attributes().disabled).toBe('disabled')
+    expect(inputs.at(1).attributes().disabled).toBe(undefined)
+
+    expect(inputs.at(0).attributes()['aria-describedby']).toBe('checkbox-0-hint')
+    expect(inputs.at(1).attributes()['aria-describedby']).toBe(undefined)
+
+    expect(inputs.at(0).attributes().value).toBe('disabled')
+    expect(inputs.at(1).attributes().value).toBe('test')
+
+    expect(hints.at(0).text()).toBe('disabled')
+    expect(hints.length).toBe(1)
+
+    expect(conditionals.at(0).text()).toBe('conditional')
+    expect(conditionals.length).toBe(1)
+
+    expect(wrapper.find('h1').exists()).toBe(false)
+    expect(wrapper.find('.nhsuk-fieldset__legend--l').exists()).toBe(false)
+  })
+
+  it('test checkbox group props', () => {
+    const wrapper = mount(NhsCheckboxes, {
+      propsData: {
+        id: 'checkbox',
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled',
+            disabled: true
+          },
+          {
+            label: 'not disabled',
+            value: 'test',
+            conditional: 'conditional'
+          }
+        ],
+        disabled: true,
+        hint: 'hint',
+        label: 'label',
+        pageHeading: true,
+        headingSize: 'l'
+      }
+    })
+
+    expect(wrapper.find('h1').exists()).toBe(true)
+    expect(wrapper.find('h1').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
+    expect(wrapper.find('.nhsuk-fieldset__legend--l').exists()).toBe(true)
   })
 
   it('test checkbox slots', () => {
-    const wrapper = mount(NhsCheckbox, {
+    const wrapper = mount(NhsCheckboxes, {
       propsData: {
-        id: 'checkbox'
+        id: 'checkbox',
+        hint: 'blah',
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled',
+            conditional: 'test'
+          }
+        ],
+        value: true
       },
       slots: {
-        label: '<label for="test">label</label>',
-        hint: '<span id="test" add-class="test">hint</span>'
+        hint: 'hint',
+        'item-label': 'label',
+        'item-hint': 'item-hint',
+        'item-conditional': 'conditional'
       }
     })
 
-    expect(wrapper.find('label').attributes().for).toBe('checkbox')
-    expect(wrapper.find('#checkbox-hint').text()).toBe('hint')
-    expect(wrapper.find('span').attributes()['add-class']).toBe('nhsuk-checkboxes__hint')
-    expect(wrapper.find('input').attributes()['aria-describedby']).toBe('checkbox-hint')
+    expect(wrapper.find('.nhsuk-checkboxes__label').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-checkboxes__hint').text()).toBe('item-hint')
+    expect(wrapper.find('.nhsuk-checkboxes__conditional').text()).toBe('conditional')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
   })
 })

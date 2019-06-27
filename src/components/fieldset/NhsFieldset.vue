@@ -5,7 +5,7 @@
         <slot name="legend" :props="legend">{{legend}}</slot>
       </h1>
     </legend>
-    <legend class="nhsuk-fieldset__legend" v-if="legend && !pageHeading">
+    <legend :class="classes" v-if="legend && !pageHeading">
       <slot name="legend" :props="legend">{{legend}}</slot>
     </legend>
     <slot></slot>

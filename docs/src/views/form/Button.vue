@@ -1,44 +1,7 @@
 <template>
   <nhs-main>
-    <code-block :template="template">
-      <nhs-row>
-        <nhs-col :span="33">
-          <nhs-button name="primary-button" href="/form/button">
-            Primary Button
-          </nhs-button>
-        </nhs-col>
-        <nhs-col :span="33">
-          <nhs-button color="secondary" name="secondary-button">
-            Secondary Button
-          </nhs-button>
-        </nhs-col>
-        <nhs-col :span="33">
-          <nhs-button color="reverse" name="reverse-button">
-            Reverse Button
-          </nhs-button>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-    <code-block :template="templateDisabled">
-      <nhs-row>
-        <nhs-col :span="33">
-          <nhs-button name="disabled-primary-button" disabled>
-            Primary Button Disabled
-          </nhs-button>
-        </nhs-col>
-        <nhs-col :span="33">
-          <nhs-button color="secondary" name="disabled-secondary-button" disabled>
-            Secondary Button Disabled
-          </nhs-button>
-        </nhs-col>
-        <nhs-col :span="33">
-          <nhs-button color="reverse" name="disabled-reverse-button" disabled>
-            Reverse Button Disabled
-          </nhs-button>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-
+    <code-block file="ButtonDocs" />
+    <code-block file="ButtonDocsDisabled" />
     <argument-table heading="button" :data-props="props" :data-slots="slots" :data-events="events" />
   </nhs-main>
 </template>

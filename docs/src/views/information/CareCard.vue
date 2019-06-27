@@ -1,19 +1,8 @@
 <template>
   <nhs-main>
-    <code-block :template="template">
-      <nhs-care-card heading="Non Urgent" :heading-level="2">
-        This is a Non Urgent Care Card.
-      </nhs-care-card>
-
-      <nhs-care-card heading="Urgent" type="urgent">
-        This is an Urgent Care Card.
-      </nhs-care-card>
-
-      <nhs-care-card heading="Immediate" type="immediate">
-        This is an Immediate Care Card.
-      </nhs-care-card>
-    </code-block>
-
+    <code-block file="CareCardNonUrgent" />
+    <code-block file="CareCardUrgent" />
+    <code-block file="CareCardImmediate" />
     <argument-table heading="care-card" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
