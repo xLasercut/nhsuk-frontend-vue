@@ -17,6 +17,7 @@
   import CheckboxError from '../examples/CheckboxError.vue'
   import CheckboxSlots from '../examples/CheckboxSlots.vue'
   import ContentsList from '../examples/ContentsList.vue'
+  import Details from '../examples/Details.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -32,7 +33,8 @@
     'CheckboxDisabled': CheckboxDisabled,
     'CheckboxError': CheckboxError,
     'CheckboxSlots': CheckboxSlots,
-    'ContentsList': ContentsList
+    'ContentsList': ContentsList,
+    'Details': Details
   }
 
   export default {

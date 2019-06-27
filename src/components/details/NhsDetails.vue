@@ -1,5 +1,5 @@
 <template>
-  <details class="nhsuk-details" v-bind="attributes">
+  <details class="nhsuk-details" v-bind="$attrs">
     <summary class="nhsuk-details__summary">
       <span class="nhsuk-details__summary-text">
         {{text}}
@@ -18,12 +18,6 @@
       text: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

@@ -6,13 +6,24 @@ describe('details tests', () => {
     const wrapper = mount(NhsDetails, {
       propsData: {
         text: 'test-text',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.attributes().test).toBe('test')
     expect(wrapper.find('.nhsuk-details__summary-text').text()).toBe('test-text')
+  })
+
+  it('test details slots', () => {
+    const wrapper = mount(NhsDetails, {
+      propsData: {
+        text: 'test-text'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-details__text').text()).toBe('test')
   })
 })

@@ -1,36 +1,26 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-details text="Click for more details">
-        This is more detailed information.
-      </nhs-details>
-    </code-block>
-
-    <argument-table heading="details" :rows="rows"></argument-table>
+    <code-block file="Details" />
+    <argument-table heading="details" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-details label="Click for more details">
-    This is more detailed information.
-  </nhs-details>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "text",
-            type: "string",
-            required: "yes",
-            description: "Text to be displayed on the details component."
-          },
+            name: 'text',
+            type: 'string',
+            required: 'yes',
+            description: 'Text to be displayed on the details component.'
+          }
+        ],
+        slots: [
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the anchor tag."
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }
