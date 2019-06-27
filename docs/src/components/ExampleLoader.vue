@@ -31,6 +31,7 @@
   import FieldsetSlots from '../examples/FieldsetSlots.vue'
   import Footer from '../examples/Footer.vue'
   import FooterColumn from '../examples/FooterColumn.vue'
+  import Grid from '../examples/Grid.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -60,7 +61,8 @@
     'FieldsetHeading': FieldsetHeading,
     'FieldsetSlots': FieldsetSlots,
     'Footer': Footer,
-    'FooterColumn': FooterColumn
+    'FooterColumn': FooterColumn,
+    'Grid': Grid
   }
 
   export default {

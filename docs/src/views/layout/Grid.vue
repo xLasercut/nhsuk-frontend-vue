@@ -1,131 +1,38 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <h4 class="nhsuk-u-margin-bottom-0">Full width (100%)</h4>
-      <nhs-row>
-        <nhs-col>
-          <p>:span="100"</p>
-        </nhs-col>
-      </nhs-row>
-      <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Halves (50%)</h4>
-      <nhs-row>
-        <nhs-col :span="50">
-          <p>:span="50"</p>
-        </nhs-col>
-        <nhs-col :span="50">
-          <p>:span="50"</p>
-        </nhs-col>
-      </nhs-row>
-      <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Thirds (33%)</h4>
-      <nhs-row>
-        <nhs-col :span="66">
-          <p>:span="66"</p>
-        </nhs-col>
-        <nhs-col :span="33">
-          <p>:span="33"</p>
-        </nhs-col>
-      </nhs-row>
-      <nhs-row>
-        <nhs-col :span="33">
-          <p>:span="33"</p>
-        </nhs-col>
-        <nhs-col :span="66">
-          <p>:span="66"</p>
-        </nhs-col>
-      </nhs-row>
-      <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Quarters (25%)</h4>
-      <nhs-row>
-        <nhs-col :span="75">
-          <p>:span="75"</p>
-        </nhs-col>
-        <nhs-col :span="25">
-          <p>:span="25"</p>
-        </nhs-col>
-        <nhs-col :span="25">
-          <p>:span="25"</p>
-        </nhs-col>
-        <nhs-col :span="25">
-          <p>:span="25"</p>
-        </nhs-col>
-        <nhs-col :span="25">
-          <p>:span="25"</p>
-        </nhs-col>
-        <nhs-col :span="25">
-          <p>:span="25"</p>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
+    <code-block file="Grid" />
+    <argument-table heading="main" :data-props="props" :data-slots="slots" />
+    <argument-table heading="row" :data-slots="slots" />
+    <argument-table heading="col" :data-props="colProps" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<h4 class="nhsuk-u-margin-bottom-0">Full width (100%)</h4>
-  <nhs-row>
-    <nhs-col>
-      <p>:span="100"</p>
-    </nhs-col>
-  </nhs-row>
-  <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Halves (50%)</h4>
-  <nhs-row>
-    <nhs-col :span="50">
-      <p>:span="50"</p>
-    </nhs-col>
-    <nhs-col :span="50">
-      <p>:span="50"</p>
-    </nhs-col>
-  </nhs-row>
-  <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Thirds (33%)</h4>
-  <nhs-row>
-    <nhs-col :span="66">
-      <p>:span="66"</p>
-    </nhs-col>
-    <nhs-col :span="33">
-      <p>:span="33"</p>
-    </nhs-col>
-  </nhs-row>
-  <nhs-row>
-    <nhs-col :span="33">
-      <p>:span="33"</p>
-    </nhs-col>
-    <nhs-col :span="66">
-      <p>:span="66"</p>
-    </nhs-col>
-  </nhs-row>
-  <h4 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4 ">Quarters (25%)</h4>
-  <nhs-row>
-    <nhs-col :span="75">
-      <p>:span="75"</p>
-    </nhs-col>
-    <nhs-col :span="25">
-      <p>:span="25"</p>
-    </nhs-col>
-    <nhs-col :span="25">
-      <p>:span="25"</p>
-    </nhs-col>
-    <nhs-col :span="25">
-      <p>:span="25"</p>
-    </nhs-col>
-    <nhs-col :span="25">
-      <p>:span="25"</p>
-    </nhs-col>
-    <nhs-col :span="25">
-      <p>:span="25"</p>
-    </nhs-col>
-  </nhs-row>`
-
   export default {
     data() {
       return {
-        source: source
+        props: [
+          {
+            name: 'type',
+            type: 'string',
+            description: 'type of main container (normal or fluid). Fluid container fill entire screen width. default: normal'
+          }
+        ],
+        slots: [
+          {
+            name: 'default',
+            description: 'default vue slots'
+          }
+        ],
+        colProps: [
+          {
+            name: 'span',
+            type: 'number',
+            description: 'Width of container (100, 75, 66, 33 or 25). default: 100'
+          }
+        ]
       }
     }
   }
 </script>
 
-<style scoped> 
-  p {
-    background: #005eb8;
-    padding: 10px;
-    color: #ffffff;
-  }
-</style>
