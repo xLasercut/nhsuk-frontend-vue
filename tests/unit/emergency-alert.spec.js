@@ -18,14 +18,25 @@ describe('emergency alert tests', () => {
         title: 'title',
         hiddenText: 'hidden-text',
         lastUpdated: 'last-updated',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.find('.nhsuk-u-visually-hidden').text()).toBe('hidden-text')
     expect(wrapper.find('.nhsuk-global-alert__updated').text()).toBe('last-updated')
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test emergency alert slots', () => {
+    const wrapper = mount(NhsEmergencyAlert, {
+      propsData: {
+        title: 'title'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-global-alert__message').text()).toBe('test')
   })
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-global-alert" v-bind="attributes" id="nhsuk-global-alert">
+  <div class="nhsuk-global-alert" v-bind="$attrs" id="nhsuk-global-alert">
     <div class="nhsuk-width-container">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
@@ -36,12 +36,6 @@
       lastUpdated: {
         type: String,
         default: ''
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

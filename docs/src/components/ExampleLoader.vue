@@ -20,6 +20,7 @@
   import Details from '../examples/Details.vue'
   import DoDont from '../examples/DoDont.vue'
   import DoDontSlots from '../examples/DoDontSlots.vue'
+  import EmergencyAlert from '../examples/EmergencyAlert.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -38,7 +39,8 @@
     'ContentsList': ContentsList,
     'Details': Details,
     'DoDont': DoDont,
-    'DoDontSlots': DoDontSlots
+    'DoDontSlots': DoDontSlots,
+    'EmergencyAlert': EmergencyAlert
   }
 
   export default {

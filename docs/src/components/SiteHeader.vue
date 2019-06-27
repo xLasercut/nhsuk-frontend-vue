@@ -1,5 +1,5 @@
 <template>
-  <nhs-header :show-search="false" :show-nav="true" :service="service" :transactional="false">
+  <nhs-header show-nav :service="service">
     <nhs-header-item v-for="(item, index) in headerLinks" :key="index" :href="item.href">
       {{item.text}}
     </nhs-header-item>

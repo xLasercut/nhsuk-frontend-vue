@@ -1,48 +1,37 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-emergency-alert title="Emergency alert" last-updated="01/01/2000">
-        Emergency
-      </nhs-emergency-alert>
-    </code-block>
+    <code-block file="EmergencyAlert" />
 
-    <argument-table heading="emergency-alert" :rows="rows"></argument-table>
+    <argument-table heading="emergency-alert" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-emergency-alert title="Emergency alert" last-updated="01/01/2000">
-    Emergency
-  </nhs-emergency-alert>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "title",
-            type: "string",
-            required: "yes",
-            description: "Title to be displayed in the emergency alert component."
+            name: 'title',
+            type: 'string',
+            required: 'yes',
+            description: 'Title to be displayed in the emergency alert component.'
           },
           {
-            name: "last-updated",
-            type: "string",
-            required: "no",
-            description: "Optional text displayed below the main content to show last updated message"
+            name: 'last-updated',
+            type: 'string',
+            description: 'Optional text displayed below the main content to show last updated message'
           },
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the emergency alert container."
-          },
+            name: 'hidden-text',
+            type: 'string',
+            description: 'Hidden text used for text-to-speech. Default: Alert:'
+          }
+        ],
+        slots: [
           {
-            name: "hidden-text",
-            type: "string",
-            required: "no",
-            description: "Hidden text used for text-to-speech. Default: Alert:"
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }
