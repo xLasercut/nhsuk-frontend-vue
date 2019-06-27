@@ -6,14 +6,25 @@ describe('back link tests', () => {
     const wrapper = mount(NhsBackLink, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.find('a').attributes().href).toBe('/test')
     expect(wrapper.find('a').attributes().class).toBe('nhsuk-back-link__link')
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test back link slots', () => {
+    const wrapper = mount(NhsBackLink, {
+      propsData: {
+        href: '/test'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('a').text()).toBe('test')
   })
 })

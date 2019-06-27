@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import NhsTable from '../../src/components/table'
+import { NhsTable, NhsTableItem } from '../../src/components/table'
 
 describe('table tests', () => {
   it('test table default props', () => {
@@ -7,8 +7,8 @@ describe('table tests', () => {
       propsData: {
         heading: 'heading',
         panel: true,
-        head: [],
-        rows: []
+        headers: [],
+        data: []
       }
     })
 
@@ -18,13 +18,8 @@ describe('table tests', () => {
   it('test table props', () => {
     const wrapper = mount(NhsTable, {
       propsData: {
-        head: [
-          {
-            text: 'Test',
-            key: 'test'
-          }
-        ],
-        rows: [
+        headers: [ 'Test' ],
+        data: [
           {
             test: 'cheese',
             test2: 'cheese2'
@@ -43,6 +38,11 @@ describe('table tests', () => {
         captionAttributes: {
           captiontest: 'test'
         }
+      },
+      slots: {
+        default: `<template #item="item">
+        <nhs-table-item>{{item.props.test}}</nhs-table-item>
+      </template>`
       }
     })
 

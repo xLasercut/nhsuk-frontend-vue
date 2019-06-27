@@ -5,7 +5,7 @@
       <thead class="nhsuk-table__head">
         <tr class="nhsuk-table__row">
           <th class="nhsuk-table__header" scope="col" v-for="(item, index) in headers" :key="index">
-            <slot name="header" :props="item">{{item.text}}</slot>
+            <slot name="header" :props="item">{{item}}</slot>
           </th>
         </tr>
       </thead>

@@ -1,11 +1,11 @@
 <template>
-  <p :class="bodyClass" v-bind="attributes">
+  <p :class="classes" v-bind="$attrs">
     <slot></slot>
   </p>
 </template>
 
 <script>
-  const sizes = ['s']
+  const sizes = [ 's' ]
 
   export default {
     name: 'NhsBody',
@@ -15,16 +15,10 @@
         validator(val) {
           return sizes.includes(val)
         }
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     computed: {
-      bodyClass() {
+      classes() {
         if (this.size) {
           return `nhsuk-body-${this.size}`
         }

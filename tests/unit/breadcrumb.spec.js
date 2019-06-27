@@ -16,9 +16,7 @@ describe('breadcrumb tests', () => {
     const wrapper = mount(NhsBreadcrumb, {
       propsData: {
         ariaLabel: 'test-label',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -26,13 +24,23 @@ describe('breadcrumb tests', () => {
     expect(wrapper.attributes().test).toBe('test')
   })
 
+  it('test breadcrumb slots', () => {
+    const wrapper = mount(NhsBreadcrumb, {
+      slots: {
+        default: 'test',
+        backlink: '<span id="backlink">test</span>'
+      }
+    })
+
+    expect(wrapper.find('ol').text()).toBe('test')
+    expect(wrapper.find('#backlink').text()).toBe('test')
+  })
+
   it('test breadcrumb item props', () => {
     const wrapper = mount(NhsBreadcrumbItem, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -49,18 +57,39 @@ describe('breadcrumb tests', () => {
     expect(wrapper.find('span').attributes().class).toBe('nhsuk-breadcrumb__link')
   })
 
+  it('test breadcumb item slots', () => {
+    const wrapper = mount(NhsBreadcrumbItem, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('span').text()).toBe('test')
+  })
+
   it('test breadcrumb back link props', () => {
     const wrapper = mount(NhsBreadcrumbBacklink, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.find('a').attributes().href).toBe('/test')
     expect(wrapper.find('a').attributes().class).toBe('nhsuk-breadcrumb__backlink')
     expect(wrapper.find('a').attributes().test).toBe('test')
+  })
+
+  it('test breadcrumb back link slots', () => {
+    const wrapper = mount(NhsBreadcrumbBacklink, {
+      propsData: {
+        href: '/test'
+      },
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('a').text()).toBe('test')
   })
 })

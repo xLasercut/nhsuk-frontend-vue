@@ -1,5 +1,5 @@
 <template>
-  <div :class="`nhsuk-care-card nhsuk-care-card--${type}`" v-bind="attributes">
+  <div :class="`nhsuk-care-card nhsuk-care-card--${type}`" v-bind="$attrs">
     <div class="nhsuk-care-card__heading-container">
       <heading-switcher :heading-level="headingLevel" class="nhsuk-care-card__heading">
         <span role="text">
@@ -46,12 +46,6 @@
         type: String,
         default() {
           return types[this.type]
-        }
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
         }
       }
     },

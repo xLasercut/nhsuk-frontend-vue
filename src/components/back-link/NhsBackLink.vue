@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-back-link" v-bind="attributes">
+  <div class="nhsuk-back-link" v-bind="$attrs">
     <link-switcher class="nhsuk-back-link__link" :href="href">
       <nhs-icon icon="chevron-left"></nhs-icon>
       <slot></slot>
@@ -13,20 +13,11 @@
 
   export default {
     name: 'NhsBackLink',
-    components: {
-      LinkSwitcher,
-      NhsIcon
-    },
+    components: { LinkSwitcher, NhsIcon },
     props: {
       href: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <link-switcher :href="href" role="button" draggable="false" :attributes="attributes">
+  <link-switcher :href="href" role="button" draggable="false">
     <slot></slot>
   </link-switcher>
 </template>
@@ -15,12 +15,6 @@
       href: {
         type: String,
         default: ""
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

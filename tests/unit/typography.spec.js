@@ -10,19 +10,7 @@ import {
 } from '../../src/components/typography'
 
 describe('typography tests', () => {
-  it('test body props', () => {
-    const wrapper = mount(NhsBody, {
-      propsData: {
-        attributes: {
-          test: 'test'
-        },
-        size: 's'
-      }
-    })
 
-    expect(wrapper.attributes().test).toBe('test')
-    expect(wrapper.attributes().class).toBe('nhsuk-body-s')
-  })
 
   it('test error text default props', () => {
     const wrapper = mount(NhsErrorText)

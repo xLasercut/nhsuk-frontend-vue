@@ -1,6 +1,6 @@
 <template>
   <nhs-main>
-    <code-block :code="sourceCode">
+    <code-block :template="template">
       <nhs-breadcrumb>
         <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
         <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
@@ -10,14 +10,15 @@
       </nhs-breadcrumb>
     </code-block>
 
-    <argument-table heading="breadcrumb" :rows="rows"></argument-table>
-    <argument-table heading="breadcrumb-item" :rows="rowsi"></argument-table>
-    <argument-table heading="breadcrumb-backlink" :rows="rowsbl"></argument-table>
+    <argument-table heading="breadcrumb" :data-props="propsBreadcrumb" :data-slots="slotsBreadcrumb" />
+    <argument-table heading="breadcrumb-item" :data-props="propsItem" :data-slots="slotsItem" />
+    <argument-table heading="breadcrumb-backlink" :data-props="propsBackItem" :data-slots="slotsBackItem" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-breadcrumb>
+  var template = `
+  <nhs-breadcrumb>
     <nhs-breadcrumb-item href="/navigation/breadcrumb">Level One</nhs-breadcrumb-item>
     <nhs-breadcrumb-item href="/navigation/breadcrumb">Level Two</nhs-breadcrumb-item>
     <nhs-breadcrumb-item>Level Three</nhs-breadcrumb-item>
@@ -28,47 +29,51 @@
   export default {
     data() {
       return {
-        sourceCode: source,
-        rows: [
+        template: template,
+        propsBreadcrumb: [
           {
-            name: "aria-label",
-            type: "string",
-            required: "no",
-            description: "aria-label attribute for breadcrumb container. Default: Breadcrumb"
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the breadcrumbs container."
+            name: 'aria-label',
+            type: 'string',
+            required: 'no',
+            description: 'aria-label attribute for breadcrumb container. Default: Breadcrumb'
           }
         ],
-        rowsi: [
+        slotsBreadcrumb: [
           {
-            name: "href",
-            type: "string",
-            required: "no",
-            description: "Link for the breadcrumb item. If not provided, breadcrumb item will show as normal text"
+            name: 'default',
+            description: 'default vue slots (used for breadcrumb item)'
           },
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the breadcrumb item"
+            name: 'backlink',
+            description: 'slots for breadcrumb back link'
           }
         ],
-        rowsbl: [
+        propsItem: [
           {
-            name: "href",
-            type: "string",
-            required: "yes",
-            description: "Link for the breadcrumb backlink"
-          },
+            name: 'href',
+            type: 'string',
+            required: 'no',
+            description: 'Link for the breadcrumb item. If not provided, breadcrumb item will show as normal text'
+          }
+        ],
+        slotsItem: [
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the breadcrumb backlink"
+            name: 'default',
+            description: 'default vue slots'
+          }
+        ],
+        propsBackItem: [
+          {
+            name: 'href',
+            type: 'string',
+            required: 'yes',
+            description: 'Link for the breadcrumb backlink'
+          }
+        ],
+        slotsBackItem: [
+          {
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

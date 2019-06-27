@@ -1,5 +1,5 @@
 <template>
-  <nav class="nhsuk-breadcrumb" v-bind="attributes" :aria-label="ariaLabel">
+  <nav class="nhsuk-breadcrumb" v-bind="$attrs" :aria-label="ariaLabel">
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <slot></slot>
@@ -16,12 +16,6 @@
       ariaLabel: {
         type: String,
         default: 'Breadcrumb'
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

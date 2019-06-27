@@ -1,5 +1,10 @@
 <template>
-  <component :is="buttonElement" :class="classes" :attributes="attributes" :href="href" :disabled="disabled" :name="name" @click="$emit('click')">
+  <component
+    :is="buttonElement" :class="classes"
+    :href="href" :disabled="disabled"
+    v-bind="$attrs"
+    @click="$emit('click')"
+  >
     <slot></slot>
   </component>
 </template>
@@ -21,10 +26,6 @@
   export default {
     name: 'NhsButton',
     props: {
-      name: {
-        type: String,
-        default: ''
-      },
       color: {
         type: String,
         default: 'primary',
@@ -45,12 +46,6 @@
         default: 'button',
         validator(val) {
           return val in elements
-        }
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
         }
       }
     },

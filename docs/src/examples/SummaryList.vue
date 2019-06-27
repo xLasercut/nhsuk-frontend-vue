@@ -7,7 +7,6 @@
         <router-link :to="item.props.action">Change</router-link>
       </nhs-summary-list-item>
     </template>
-
   </nhs-summary-list>
 </template>
 

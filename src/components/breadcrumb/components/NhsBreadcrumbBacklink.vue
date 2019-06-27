@@ -1,6 +1,6 @@
 <template>
   <p class="nhsuk-breadcrumb__back">
-    <link-switcher class="nhsuk-breadcrumb__backlink" :href="href" :attributes="attributes">
+    <link-switcher class="nhsuk-breadcrumb__backlink" :href="href" v-bind="$attrs">
       <slot></slot>
     </link-switcher>
   </p>
@@ -18,12 +18,6 @@
       href: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return
-        }
       }
     }
   }

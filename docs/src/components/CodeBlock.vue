@@ -5,14 +5,11 @@
         <slot></slot>
       </div>
       <div class="expand_container" :style="expandContainerStyle">
-        <button class="expand_button" @click="toggleCode()">Show Code</button>
+        <button class="expand_button" @click="toggleCode('template')" v-show="template">Template</button>
+        <button class="expand_button" @click="toggleCode('script')" v-show="script">Script</button>
       </div>
       <div class="code_container" :style="codeContainerStyle">
-        <div>
-          <button class="code_tab" @click="display='template'" v-show="code">template</button>
-          <button class="code_tab" @click="display='script'" v-show="script">script</button>
-        </div>
-        <highlight-code :code="code" :lang="type" v-show="display == 'template'">
+        <highlight-code :code="template" lang="html" v-show="display == 'template'">
         </highlight-code>
         <highlight-code :code="script" lang="js" v-show="display == 'script'">
         </highlight-code>
@@ -24,11 +21,7 @@
 <script>
   export default {
     props: {
-      type: {
-        type: String,
-        default: "html"
-      },
-      code: {
+      template: {
         type: String,
         default: ""
       },
@@ -39,29 +32,34 @@
     },
     data() {
       return {
-        codeContainerStyle: {
-          "display": "none"
-        },
-        expandContainerStyle: {
-          "border-bottom": "1px solid #d8dde0",
-          "margin-bottom": "40px"
-        },
-        display: "template"
+        display: ''
       }
     },
     methods: {
-      toggleCode() {
-        if (this.codeContainerStyle["display"] === "none") {
-          this.codeContainerStyle["display"] = "block"
-          this.expandContainerStyle["border-bottom"] = "none"
-          this.codeContainerStyle["margin-bottom"] = "40px"
-          this.expandContainerStyle["margin-bottom"] = "0px"
+      toggleCode(type) {
+        if (this.display === type) {
+          this.display = ''
         }
         else {
-          this.codeContainerStyle["display"] = "none"
-          this.expandContainerStyle["border-bottom"] = "1px solid #d8dde0"
-          this.expandContainerStyle["margin-bottom"] = "40px"
-          this.codeContainerStyle["margin-bottom"] = "0px"
+          this.display = type
+        }
+      }
+    },
+    computed: {
+      codeContainerStyle() {
+        if (!this.display) {
+          return {
+            'display': 'none',
+            'margin-bottom': '0px'
+          }
+        }
+      },
+      expandContainerStyle() {
+        if (!this.display) {
+          return {
+            'border-bottom': '1px solid #d8dde0',
+            'margin-bottom': '40px'
+          }
         }
       }
     }
@@ -84,12 +82,14 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    margin-bottom: 40px;
   }
 
   .expand_container {
     width: 100%;
     border-left: 1px solid #d8dde0;
     border-right: 1px solid #d8dde0;
+    border-top: 1px solid #d8dde0;
   }
 
   .expand_button {
@@ -99,6 +99,7 @@
     cursor: pointer;
     outline: none;
     padding: 10px;
+    margin-right: 3px;
   }
 
   .expand_button:hover {

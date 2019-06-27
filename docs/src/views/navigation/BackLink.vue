@@ -1,37 +1,39 @@
 <template>
   <nhs-main>
-    <code-block :code="sourceCode">
+    <code-block :template="template">
       <nhs-back-link href="/navigation/backlink">
         This is a back link
       </nhs-back-link>
     </code-block>
 
-    <argument-table heading="back-link" :rows="rows">
+    <argument-table heading="back-link" :data-props="props" :data-slots="slots">
     </argument-table>
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-back-link href="/navigation/backlink">
+  var template = `
+  <nhs-back-link href="/navigation/backlink">
     This is a back link
-  </nhs-back-link>`
+  </nhs-back-link>
+  `
 
   export default {
     data() {
       return {
-        sourceCode: source,
-        rows: [
+        template: template,
+        props: [
           {
             name: "href",
             type: "string",
             required: "yes",
             description: "The value of the link href attribute."
-          },
+          }
+        ],
+        slots: [
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the textarea tag."
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

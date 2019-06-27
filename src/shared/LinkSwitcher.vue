@@ -1,5 +1,5 @@
 <template>
-  <component :is="linkType" :attributes="attributes" :href="href" @click="$emit('click')">
+  <component :is="linkType" :href="href" @click="$emit('click')">
     <slot></slot>
   </component>
 </template>
@@ -14,12 +14,6 @@
       href: {
         type: String,
         required:  true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     computed: {
@@ -35,11 +29,6 @@
           return Router
         }
         return Normal
-      }
-    },
-    methods: {
-      clickHandler() {
-        this.$emit('click')
       }
     }
   }

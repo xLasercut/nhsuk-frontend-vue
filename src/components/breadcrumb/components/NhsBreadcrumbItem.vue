@@ -1,9 +1,15 @@
 <template>
   <li class="nhsuk-breadcrumb__item">
-    <link-switcher class="nhsuk-breadcrumb__link" :href="href" :attributes="attributes" v-if="href">
+    <link-switcher
+      class="nhsuk-breadcrumb__link" :href="href"
+      v-if="href" v-bind="$attrs"
+    >
       <slot></slot>
     </link-switcher>
-    <span class="nhsuk-breadcrumb__link" v-if="!href" v-bind="attributes">
+    <span
+      class="nhsuk-breadcrumb__link"
+      v-if="!href" v-bind="$attrs"
+    >
       <slot></slot>
     </span>
   </li>
@@ -21,12 +27,6 @@
       href: {
         type: String,
         default: ''
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }
