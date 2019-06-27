@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-expander-group">
+  <div class="nhsuk-expander-group" v-bind="$attrs">
     <slot></slot>
   </div>
 </template>

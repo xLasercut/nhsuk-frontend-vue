@@ -23,6 +23,8 @@
   import EmergencyAlert from '../examples/EmergencyAlert.vue'
   import ErrorSummary from '../examples/ErrorSummary.vue'
   import ErrorText from '../examples/ErrorText.vue'
+  import Expander from '../examples/Expander.vue'
+  import ExpanderGroup from '../examples/ExpanderGroup.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -44,7 +46,9 @@
     'DoDontSlots': DoDontSlots,
     'EmergencyAlert': EmergencyAlert,
     'ErrorSummary': ErrorSummary,
-    'ErrorText': ErrorText
+    'ErrorText': ErrorText,
+    'Expander': Expander,
+    'ExpanderGroup': ExpanderGroup
   }
 
   export default {

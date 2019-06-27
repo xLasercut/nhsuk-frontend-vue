@@ -1,36 +1,35 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-expander text="Expander">
-        This is an expander
-      </nhs-expander>
-    </code-block>
+    <code-block file="Expander" />
+    <code-block file="ExpanderGroup" />
 
-    <argument-table heading="expander" :rows="rows"></argument-table>
+    <argument-table heading="expander" :data-props="props" :data-slots="slots" />
+    <argument-table heading="expander-group" :data-slots="slotsGroup" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-expander text="Expander">
-    This is an expander
-  </nhs-expander>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "text",
-            type: "string",
-            required: "yes",
-            description: "Text to be displayed on the expander component."
-          },
+            name: 'text',
+            type: 'string',
+            required: 'yes',
+            description: 'Text to be displayed on the expander component.'
+          }
+        ],
+        slots: [
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the anchor tag."
+            name: 'default',
+            description: 'default vue slots'
+          }
+        ],
+        slotsGroup: [
+          {
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

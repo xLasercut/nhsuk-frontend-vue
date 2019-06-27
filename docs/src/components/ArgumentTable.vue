@@ -95,11 +95,27 @@
     },
     data() {
       return {
-        tab: 'props',
+        tab: this.defaultTab(),
         headerProps: [ 'Name', 'Type', 'Required', 'Description' ],
         headerSlots: [ 'Name', 'Props', 'Description' ],
         headerEvents: [ 'Name', 'Trigger', 'Event Value' ],
         headerMethods: [ 'Name', 'Input', 'Description' ]
+      }
+    },
+    methods: {
+      defaultTab() {
+        if (this.dataProps.length > 0) {
+          return 'props'
+        }
+        else if (this.dataSlots.length > 0) {
+          return 'slots'
+        }
+        else if (this.dataEvents.length > 0) {
+          return 'events'
+        }
+        else {
+          return 'methods'
+        }
       }
     }
   }
