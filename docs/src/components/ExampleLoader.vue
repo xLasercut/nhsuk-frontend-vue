@@ -26,6 +26,9 @@
   import Expander from '../examples/Expander.vue'
   import ExpanderGroup from '../examples/ExpanderGroup.vue'
   import FeedbackBannerDocs from '../examples/FeedbackBannerDocs.vue'
+  import Fieldset from '../examples/Fieldset.vue'
+  import FieldsetHeading from '../examples/FieldsetHeading.vue'
+  import FieldsetSlots from '../examples/FieldsetSlots.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -50,7 +53,10 @@
     'ErrorText': ErrorText,
     'Expander': Expander,
     'ExpanderGroup': ExpanderGroup,
-    'FeedbackBanner': FeedbackBannerDocs
+    'FeedbackBanner': FeedbackBannerDocs,
+    'Fieldset': Fieldset,
+    'FieldsetHeading': FieldsetHeading,
+    'FieldsetSlots': FieldsetSlots
   }
 
   export default {

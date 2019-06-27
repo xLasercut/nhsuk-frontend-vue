@@ -1,58 +1,42 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-fieldset legend="Fieldset Legend" :page-heading="true">
-        this is some content
-      </nhs-fieldset>
-    </code-block>
-
-    <argument-table heading="fieldset" :rows="rows"></argument-table>
+    <code-block file="Fieldset" />
+    <code-block file="FieldsetHeading" />
+    <code-block file="FieldsetSlots" />
+    <argument-table heading="fieldset" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-fieldset legend="Fieldset Legend" :page-heading="true">
-    this is some content
-  </nhs-fieldset>`
-
-  export default {
+   export default {
     data() {
       return {
-        source: source,
-        legend: {
-          text: "Fieldset Legend",
-          pageHeading: true
-        },
-        rows: [
-          {
-            name: "described-by",
-            type: "string",
-            required: "no",
-            description: "Text or element id to add to the aria-describedby attribute to provide description of the group of fields for screenreader users."
-          },
+        props: [
           {
             name: "legend",
             type: "string",
-            required: "no",
             description: "Legend text."
           },
           {
             name: "page-heading",
             type: "boolean",
-            required: "no",
             description: "Whether the legend also acts as the heading for the page"
           },
           {
-            name: "legend-attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the legend container."
+            name: 'size',
+            type: 'string',
+            description: 'size of heading. (l or xl)'
+          }
+        ],
+        slots: [
+          {
+            name: 'legend',
+            props: '\'legend\' prop of component',
+            description: 'fieldset heading slots'
           },
           {
-            name: "attributes",
-            type: "object",
-            description: "Any extra HTML attributes (for example class) to add to the fieldset container.",
-            required: "no"
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

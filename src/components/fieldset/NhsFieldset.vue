@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="nhsuk-fieldset" :aria-describedby="describedBy">
+  <fieldset class="nhsuk-fieldset" v-bind="$attrs">
     <legend :class="classes" v-if="legend && pageHeading">
       <h1 class="nhsuk-fieldset__heading">
         <slot name="legend" :props="legend">{{legend}}</slot>
@@ -18,10 +18,6 @@
   export default {
     name: 'NhsFieldset',
     props: {
-      describedBy: {
-        type: String,
-        default: ''
-      },
       legend: {
         type: String,
         default: ''
