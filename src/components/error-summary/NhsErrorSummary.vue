@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-error-summary" v-bind="attributes" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <div class="nhsuk-error-summary" v-bind="$attrs" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
     <h2 class="nhsuk-error-summary__title" id="error-summary-title">
       <slot name="title" :props="title">{{title}}</slot>
     </h2>
@@ -16,12 +16,6 @@
       title: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }
