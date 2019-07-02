@@ -1,32 +1,25 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-hint-text>Hint text</nhs-hint-text>
-    </code-block>
-
-    <argument-table heading="hint-text" :rows="rows"></argument-table>
+    <code-block file="HintText" />
+    <argument-table heading="hint-text" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-hint-text>Hint text</nhs-hint-text>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
+        props: [
           {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "Optional id attribute to add to the hint span tag."
-          },
+            name: 'id',
+            type: 'string',
+            description: 'Optional id attribute to add to the hint span tag.'
+          }
+        ],
+        slots: [
           {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the input component."
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

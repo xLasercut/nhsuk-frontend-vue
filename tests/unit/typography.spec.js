@@ -15,19 +15,7 @@ describe('typography tests', () => {
 
 
 
-  it('test hint text props', () => {
-    const wrapper = mount(NhsHintText, {
-      propsData: {
-        id: 'test-id',
-        attributes: {
-          test: 'test'
-        }
-      }
-    })
 
-    expect(wrapper.attributes().id).toBe('test-id')
-    expect(wrapper.attributes().test).toBe('test')
-  })
 
   it('test inset text default props', () => {
     const wrapper = mount(NhsInsetText)
