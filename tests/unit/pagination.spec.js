@@ -13,9 +13,7 @@ describe('pagination tests', () => {
   it('test pagination props', () => {
     const wrapper = mount(NhsPagination, {
       propsData: {
-        attributes: {
-          test: 'test'
-        },
+        test: 'test',
         ariaLabel: 'test-label',
         previousHref: '/test/previous',
         previousPage: 'previous-page',

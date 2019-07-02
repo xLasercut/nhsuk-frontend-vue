@@ -1,5 +1,5 @@
 <template>
-  <nav class="nhsuk-pagination" role="navigation" :aria-label="ariaLabel" v-bind="attributes">
+  <nav class="nhsuk-pagination" role="navigation" :aria-label="ariaLabel" v-bind="$attrs">
   <ul class="nhsuk-list nhsuk-pagination__list">
     <li class="nhsuk-pagination-item--previous" v-if="previousHref && previousPage">
       <link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--prev" :href="previousHref">
@@ -28,12 +28,6 @@
   export default {
     name: 'NhsPagination',
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       ariaLabel: {
         type: String,
         default: 'Pagination'
@@ -55,9 +49,6 @@
         default: ''
       }
     },
-    components: {
-      NhsIcon,
-      LinkSwitcher
-    }
+    components: { NhsIcon, LinkSwitcher }
   }
 </script>

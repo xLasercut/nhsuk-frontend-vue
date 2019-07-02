@@ -51,6 +51,7 @@
   import List from '../examples/List.vue'
   import ListPanel from '../examples/ListPanel.vue'
   import NavAZ from '../examples/NavAZ.vue'
+  import Pagination from '../examples/Pagination.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -100,7 +101,8 @@
     'LabelHeading': LabelHeading,
     'List': List,
     'ListPanel': ListPanel,
-    'NavAZ': NavAZ
+    'NavAZ': NavAZ,
+    'Pagination': Pagination
   }
 
   export default {
