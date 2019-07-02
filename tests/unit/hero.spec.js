@@ -23,6 +23,7 @@ describe('hero tests', () => {
     expect(wrapper.find('.nhsuk-u-margin-bottom-3').text()).toBe('heading')
     expect(wrapper.contains('p')).toBe(true)
     expect(wrapper.find('.nhsuk-body-l').text()).toBe('text')
+    expect(wrapper.contains('.nhsuk-hero--border')).toBe(true)
   })
 
   it('test hero image', () => {
@@ -30,9 +31,7 @@ describe('hero tests', () => {
       propsData: {
         heading: 'heading',
         imageUrl: 'test-image',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -41,7 +40,7 @@ describe('hero tests', () => {
     expect(wrapper.contains('.nhsuk-hero-content')).toBe(true)
     expect(wrapper.contains('p')).toBe(false)
     expect(wrapper.find('h1').attributes().class).toBe('')
-    expect(wrapper.contains('.nhsuk-hero--border')).toBe(true)
+    expect(wrapper.contains('.nhsuk-hero--border')).toBe(false)
     expect(wrapper.attributes().class).toBe('nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description')
     expect(wrapper.attributes().test).toBe('test')
     expect(wrapper.attributes().style).toBe('background-image: url(test-image);')

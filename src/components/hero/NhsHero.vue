@@ -1,5 +1,5 @@
 <template>
-  <section :class="sectionClass" :style="sectionStyle" v-bind="attributes">
+  <section :class="sectionClass" :style="sectionStyle" v-bind="$attrs">
     <div class="nhsuk-hero__overlay" v-if="imageUrl">
       <div :class="widthContainerClass" v-if="heading">
         <div class="nhsuk-grid-row">
@@ -39,12 +39,6 @@
       imageUrl: {
         type: String,
         default: ''
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       },
       text: {
         type: String,

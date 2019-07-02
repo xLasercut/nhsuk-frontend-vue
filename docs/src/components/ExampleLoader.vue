@@ -36,6 +36,8 @@
   import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
   import HeaderTransactionalName from '../examples/HeaderTransactionalName.vue'
   import Heading from '../examples/Heading.vue'
+  import Hero from '../examples/Hero.vue'
+  import HeroImageText from '../examples/HeroImageText.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -70,7 +72,9 @@
     'Header': Header,
     'HeaderServiceSearch': HeaderServiceSearch,
     'HeaderTransactionalName': HeaderTransactionalName,
-    'Heading': Heading
+    'Heading': Heading,
+    'Hero': Hero,
+    'HeroImageText': HeroImageText
   }
 
   export default {
