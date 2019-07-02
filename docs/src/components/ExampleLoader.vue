@@ -52,6 +52,8 @@
   import ListPanel from '../examples/ListPanel.vue'
   import NavAZ from '../examples/NavAZ.vue'
   import Pagination from '../examples/Pagination.vue'
+  import Promo from '../examples/Promo.vue'
+  import PromoGroup from '../examples/PromoGroup.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -102,7 +104,9 @@
     'List': List,
     'ListPanel': ListPanel,
     'NavAZ': NavAZ,
-    'Pagination': Pagination
+    'Pagination': Pagination,
+    'Promo': Promo,
+    'PromoGroup': PromoGroup
   }
 
   export default {

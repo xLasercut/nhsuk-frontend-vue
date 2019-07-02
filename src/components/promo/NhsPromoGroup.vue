@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-grid-row nhsuk-promo-group">
+  <div class="nhsuk-grid-row nhsuk-promo-group" v-bind="$attrs">
     <div
       :class="classes"
       v-for="(promo, index) in $slots.default"
@@ -23,7 +23,8 @@
     components: { VNode },
     props: {
       column: {
-        default: 3,
+        type: String,
+        default: '3',
         validator(val) {
           for (var key in columnMap) {
             if (key == val) {

@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes()">
+  <div :class="classes" v-bind="$attrs">
     <link-switcher class="nhsuk-promo__link-wrapper" :href="href">
       <img class="nhsuk-promo__img" :src="src" :alt="alt" v-if="src">
       <div class="nhsuk-promo__content">
@@ -50,7 +50,7 @@
         default: false
       }
     },
-    methods: {
+    computed: {
       classes() {
         var classes = [ 'nhsuk-promo' ]
 

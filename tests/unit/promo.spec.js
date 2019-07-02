@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import NhsPromo from '../../src/components/promo'
+import { NhsPromo, NhsPromoGroup } from '../../src/components/promo'
 
 describe('promo tests', () => {
   it('test promo default props', () => {
@@ -22,9 +22,7 @@ describe('promo tests', () => {
         headingLevel: 1,
         src: 'test-image',
         alt: 'test-alt',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -47,5 +45,19 @@ describe('promo tests', () => {
     })
 
     expect(wrapper.find('.nhsuk-promo__description').text()).toBe('test')
+  })
+
+  it('test promo group', () => {
+    const wrapper = mount(NhsPromoGroup, {
+      propsData: {
+        column: '2'
+      },
+      slots: {
+        default: '<a>test</a>'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-grid-column-one-half').exists()).toBe(true)
+    expect(wrapper.find('.nhsuk-promo-group__item').text()).toBe('test')
   })
 })
