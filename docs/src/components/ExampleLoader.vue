@@ -44,6 +44,7 @@
   import InputError from '../examples/InputError.vue'
   import InputWidth from '../examples/InputWidth.vue'
   import InputSlots from '../examples/InputSlots.vue'
+  import InsetText from '../examples/InsetText.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -86,7 +87,8 @@
     'Input': Input,
     'InputError': InputError,
     'InputWidth': InputWidth,
-    'InputSlots': InputSlots
+    'InputSlots': InputSlots,
+    'InsetText': InsetText
   }
 
   export default {

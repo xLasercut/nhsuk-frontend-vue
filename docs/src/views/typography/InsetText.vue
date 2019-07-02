@@ -1,32 +1,26 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-inset-text>Inset Text</nhs-inset-text>
-    </code-block>
+    <code-block file="InsetText" />
 
-    <argument-table heading="inset-text" :rows="rows"></argument-table>
+    <argument-table heading="inset-text" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-inset-text>Inset Text</nhs-inset-text>`
-
   export default {
     data() {
       return {
-        source: source,
-        rows: [
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the inset text container."
-          },
+        props: [
           {
             name: "hidden-text",
             type: "string",
-            required: "no",
             description: "Hidden text used for text-to-speech. Default: Information:"
+          }
+        ],
+        slots: [
+          {
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

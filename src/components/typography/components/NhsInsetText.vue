@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-inset-text" v-bind="attributes">
+  <div class="nhsuk-inset-text" v-bind="$attrs">
     <span class="nhsuk-u-visually-hidden">{{hiddenText}}</span>
     <slot></slot>
   </div>
@@ -12,12 +12,6 @@
       hiddenText: {
         type: String,
         default: 'Information: '
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

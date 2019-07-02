@@ -17,25 +17,7 @@ describe('typography tests', () => {
 
 
 
-  it('test inset text default props', () => {
-    const wrapper = mount(NhsInsetText)
 
-    expect(wrapper.find('.nhsuk-u-visually-hidden').text()).toBe('Information:')
-  })
-
-  it('test inset text props', () => {
-    const wrapper = mount(NhsInsetText, {
-      propsData: {
-        hiddenText: 'test-hidden',
-        attributes: {
-          test: 'test'
-        }
-      }
-    })
-
-    expect(wrapper.find('.nhsuk-u-visually-hidden').text()).toBe('test-hidden')
-    expect(wrapper.attributes().test).toBe('test')
-  })
 
   it('test label default props', () => {
     const wrapper = mount(NhsLabel)
