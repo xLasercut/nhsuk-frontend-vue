@@ -19,25 +19,7 @@ describe('typography tests', () => {
 
 
 
-  it('test label default props', () => {
-    const wrapper = mount(NhsLabel)
 
-    expect(wrapper.contains('.nhsuk-label--xl')).toBe(false)
-  })
-
-  it('test label props', () => {
-    const wrapper = mount(NhsLabel, {
-      propsData: {
-        pageHeading: true,
-        attributes: {
-          test: 'test'
-        }
-      }
-    })
-
-    expect(wrapper.contains('.nhsuk-label-wrapper')).toBe(true)
-    expect(wrapper.find('.nhsuk-label--xl').attributes().test).toBe('test')
-  })
 
   it('test list props', () => {
     const types = {

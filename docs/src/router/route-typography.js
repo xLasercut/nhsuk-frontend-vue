@@ -5,7 +5,7 @@ import List from '../views/typography/List.vue'
 import ErrorText from '../views/typography/ErrorText.vue'
 import HintText from '../views/typography/HintText.vue'
 import InsetText from '../views/typography/InsetText.vue'
-import Label from '../views/typography/Lable.vue'
+import Label from '../views/typography/Label.vue'
 
 const typography = [
   {

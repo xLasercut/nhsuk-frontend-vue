@@ -45,6 +45,9 @@
   import InputWidth from '../examples/InputWidth.vue'
   import InputSlots from '../examples/InputSlots.vue'
   import InsetText from '../examples/InsetText.vue'
+  import Label from '../examples/Label.vue'
+  import LabelBold from '../examples/LabelBold.vue'
+  import LabelHeading from '../examples/LabelHeading.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -88,7 +91,10 @@
     'InputError': InputError,
     'InputWidth': InputWidth,
     'InputSlots': InputSlots,
-    'InsetText': InsetText
+    'InsetText': InsetText,
+    'Label': Label,
+    'LabelBold': LabelBold,
+    'LabelHeading': LabelHeading
   }
 
   export default {
