@@ -55,10 +55,6 @@
       homeHref: {
         type: String,
         default: '/'
-      },
-      longName: {
-        type: Boolean,
-        default: false
       }
     },
     components: {
@@ -75,6 +71,12 @@
           classes.push('nhsuk-header--transactional')
         }
         return classes.join(' ')
+      },
+      longName() {
+        if (this.service.name && this.service.name.length > 22) {
+          return true
+        }
+        return false
       }
     }
   }

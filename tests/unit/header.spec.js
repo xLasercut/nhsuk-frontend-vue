@@ -9,9 +9,7 @@ describe('header tests', () => {
     const wrapper = mount(NhsHeaderItem, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -33,39 +31,32 @@ describe('header tests', () => {
   })
 
   it('test header default props', () => {
-    const wrapper = mount(NhsHeader, {
-      propsData: {
-        transactionalService: {
-          name: 'test'
-        },
-        showNav: true,
-        showSearch: true
-      }
-    })
+    const wrapper = mount(NhsHeader)
 
-    expect(wrapper.contains('.nhsuk-header__menu')).toBe(true)
-    expect(wrapper.contains('.nhsuk-header__search')).toBe(true)
+    expect(wrapper.contains('.nhsuk-header__menu')).toBe(false)
+    expect(wrapper.contains('.nhsuk-header__search')).toBe(false)
     expect(wrapper.contains('.nhsuk-header__transactional-service-name')).toBe(false)
     expect(wrapper.find('.nhsuk-header__link').attributes().href).toBe('/')
     expect(wrapper.find('.nhsuk-header__link').attributes()['aria-label']).toBe('NHS homepage')
-    expect(wrapper.attributes().class).toBe('nhsuk-header nhsuk-header--transactional')
+    expect(wrapper.attributes().class).toBe('nhsuk-header')
   })
 
   it('test header props', () => {
     const wrapper = mount(NhsHeader, {
       propsData: {
-        transactionalService: {
+        service: {
           name: 'test'
         },
-        showNav: false,
-        showSearch: false,
+        showNav: true,
+        showSearch: true,
         homeHref: '/test',
-        ariaLabel: 'test-label'
+        ariaLabel: 'test-label',
+        transactional: true
       }
     })
 
-    expect(wrapper.contains('.nhsuk-header__menu')).toBe(false)
-    expect(wrapper.contains('.nhsuk-header__search')).toBe(false)
+    expect(wrapper.contains('.nhsuk-header__menu')).toBe(true)
+    expect(wrapper.contains('.nhsuk-header__search')).toBe(true)
     expect(wrapper.contains('.nhsuk-header__transactional-service-name')).toBe(true)
     expect(wrapper.find('.nhsuk-header__link').attributes().href).toBe('/test')
     expect(wrapper.find('.nhsuk-header__link').attributes()['aria-label']).toBe('test-label')
@@ -74,22 +65,20 @@ describe('header tests', () => {
     expect(wrapper.contains('.nhsuk-header__service-name')).toBe(false)
   })
 
-  it('test header transactional', () => {
+  it('test header transactional long', () => {
     const wrapper = mount(NhsHeader, {
       propsData: {
-        transactionalService: {
-          name: 'test',
-          href: '/test',
-          longName: true
+        service: {
+          name: 'aaaaaaaaaaaaaaaaaaaaaaaa',
+          href: '/test'
         },
-        showNav: false,
-        showSearch: false
+        transactional: true
       }
     })
 
     expect(wrapper.contains('.nhsuk-header__transactional-service-name')).toBe(true)
     expect(wrapper.find('.nhsuk-header__transactional-service-name--link').attributes().href).toBe('/test')
-    expect(wrapper.find('.nhsuk-header__transactional-service-name--link').text()).toBe('test')
+    expect(wrapper.find('.nhsuk-header__transactional-service-name--link').text()).toBe('aaaaaaaaaaaaaaaaaaaaaaaa')
     expect(wrapper.contains('.nhsuk-header__transactional-service-name--long')).toBe(true)
   })
 
@@ -98,9 +87,7 @@ describe('header tests', () => {
       propsData: {
         service: {
           name: 'test'
-        },
-        showNav: false,
-        showSearch: false
+        }
       }
     })
 

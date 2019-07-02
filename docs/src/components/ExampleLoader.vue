@@ -32,6 +32,9 @@
   import Footer from '../examples/Footer.vue'
   import FooterColumn from '../examples/FooterColumn.vue'
   import Grid from '../examples/Grid.vue'
+  import Header from '../examples/Header.vue'
+  import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
+  import HeaderTransactionalName from '../examples/HeaderTransactionalName.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -62,7 +65,10 @@
     'FieldsetSlots': FieldsetSlots,
     'Footer': Footer,
     'FooterColumn': FooterColumn,
-    'Grid': Grid
+    'Grid': Grid,
+    'Header': Header,
+    'HeaderServiceSearch': HeaderServiceSearch,
+    'HeaderTransactionalName': HeaderTransactionalName
   }
 
   export default {

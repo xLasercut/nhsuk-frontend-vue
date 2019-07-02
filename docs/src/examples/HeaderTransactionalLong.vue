@@ -1,6 +1,6 @@
 <template>
   <nhs-header
-    :service="service" transactional long-name
+    :service="service" transactional
   ></nhs-header>
 </template>
 

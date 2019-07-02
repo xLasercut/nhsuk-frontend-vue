@@ -1,6 +1,6 @@
 <template>
   <li class="nhsuk-header__navigation-item">
-    <link-switcher class="nhsuk-header__navigation-link" :href="href">
+    <link-switcher class="nhsuk-header__navigation-link" :href="href" v-bind="$attrs">
       <slot></slot>
       <nhs-icon icon="chevron-right"></nhs-icon>
     </link-switcher>
@@ -13,10 +13,7 @@
 
   export default {
     name: 'NhsHeaderItem',
-    components: {
-      LinkSwitcher,
-      NhsIcon
-    },
+    components: { LinkSwitcher, NhsIcon },
     props: {
       href: {
         type: String,
