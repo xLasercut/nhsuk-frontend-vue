@@ -7,9 +7,7 @@ describe('image tests', () => {
       propsData: {
         src: 'test-image',
         alt: 'test-alt',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 

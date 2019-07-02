@@ -1,5 +1,5 @@
 <template>
-  <figure class="nhsuk-image" v-bind="attributes">
+  <figure class="nhsuk-image" v-bind="$attrs">
     <img class="nhsuk-image__img" :src="src" :alt="alt">
     <figcaption class="nhsuk-image__caption" v-if="isCaption">
       <slot></slot>
@@ -19,12 +19,6 @@
       alt: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     computed: {

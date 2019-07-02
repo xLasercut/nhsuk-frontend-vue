@@ -39,6 +39,7 @@
   import Hero from '../examples/Hero.vue'
   import HeroImageText from '../examples/HeroImageText.vue'
   import HintText from '../examples/HintText.vue'
+  import Image from '../examples/Image.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -76,7 +77,8 @@
     'Heading': Heading,
     'Hero': Hero,
     'HeroImageText': HeroImageText,
-    'HintText': HintText
+    'HintText': HintText,
+    'Image': Image
   }
 
   export default {
