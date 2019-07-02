@@ -35,6 +35,7 @@
   import Header from '../examples/Header.vue'
   import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
   import HeaderTransactionalName from '../examples/HeaderTransactionalName.vue'
+  import Heading from '../examples/Heading.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -68,7 +69,8 @@
     'Grid': Grid,
     'Header': Header,
     'HeaderServiceSearch': HeaderServiceSearch,
-    'HeaderTransactionalName': HeaderTransactionalName
+    'HeaderTransactionalName': HeaderTransactionalName,
+    'Heading': Heading
   }
 
   export default {
