@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     attributes() {
-      var attributes = {}
+      var attributes = this.$attrs
       if (this.hint || this.error) {
         var describedby = []
 

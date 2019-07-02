@@ -10,7 +10,7 @@
       <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
     </nhs-error-text>
     <input
-      :class="classes()" :id="id" :name="name" :type="type"
+      :class="classes" :id="id" :name="name" :type="type"
       v-bind="attributes" v-model="model"
       :disabled="disabled" :maxlength="maxlength"
       @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
@@ -45,7 +45,7 @@
         default: ''
       }
     },
-    methods: {
+    computed: {
       classes() {
         var classes = [ 'nhsuk-input' ]
 

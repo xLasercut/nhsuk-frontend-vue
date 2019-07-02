@@ -40,6 +40,10 @@
   import HeroImageText from '../examples/HeroImageText.vue'
   import HintText from '../examples/HintText.vue'
   import Image from '../examples/Image.vue'
+  import Input from '../examples/Input.vue'
+  import InputError from '../examples/InputError.vue'
+  import InputWidth from '../examples/InputWidth.vue'
+  import InputSlots from '../examples/InputSlots.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -78,7 +82,11 @@
     'Hero': Hero,
     'HeroImageText': HeroImageText,
     'HintText': HintText,
-    'Image': Image
+    'Image': Image,
+    'Input': Input,
+    'InputError': InputError,
+    'InputWidth': InputWidth,
+    'InputSlots': InputSlots
   }
 
   export default {

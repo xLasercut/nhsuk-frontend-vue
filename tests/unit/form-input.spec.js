@@ -12,7 +12,7 @@ describe('form input tests', () => {
   })
 
   it('test form input width', () => {
-    const widths = [2, 3, 4, 5, 10, 20]
+    const widths = ['2', '3', '4', '5', '10', '20']
 
     for (var width of widths) {
       const wrapper = mount(NhsInput, {
@@ -32,9 +32,9 @@ describe('form input tests', () => {
         name: 'name',
         disabled: true,
         maxlength: 10,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test',
+        label: 'label',
+        hint: 'hint'
       }
     })
 
@@ -43,26 +43,25 @@ describe('form input tests', () => {
     expect(wrapper.find('input').attributes().disabled).toBe('disabled')
     expect(wrapper.find('input').attributes().test).toBe('test')
     expect(wrapper.find('input').attributes().maxlength).toBe('10')
-    expect(wrapper.find('input').attributes()['aria-describedby']).toBe('')
+    expect(wrapper.find('input').attributes()['aria-describedby']).toBe('input-hint')
+    expect(wrapper.find('.nhsuk-label').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
   })
 
   it('test form input slots', () => {
     const wrapper = mount(NhsInput, {
       slots: {
-        label: '<label class="label" for="test">label</label>',
-        error: '<span id="error">error</span>',
-        hint: '<span id="hint">hint</span>'
+        label: 'cheese',
+        hint: 'cake'
       },
       propsData: {
-        id: 'input'
+        id: 'input',
+        label: 'label',
+        hint: 'hint'
       }
     })
 
-    expect(wrapper.find('label').attributes().for).toBe('input')
-    expect(wrapper.find('#input-error').text()).toBe('error')
-    expect(wrapper.find('#input-hint').text()).toBe('hint')
-    expect(wrapper.find('input').attributes()['aria-describedby']).toBe('input-error input-hint')
-    expect(wrapper.find('input').attributes().class).toBe('nhsuk-input nhsuk-input--error')
-    expect(wrapper.attributes().class).toBe('nhsuk-form-group nhsuk-form-group--error')
+    expect(wrapper.find('.nhsuk-label').text()).toBe('cheese')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('cake')
   })
 })
