@@ -50,6 +50,7 @@
   import LabelHeading from '../examples/LabelHeading.vue'
   import List from '../examples/List.vue'
   import ListPanel from '../examples/ListPanel.vue'
+  import NavAZ from '../examples/NavAZ.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -98,7 +99,8 @@
     'LabelBold': LabelBold,
     'LabelHeading': LabelHeading,
     'List': List,
-    'ListPanel': ListPanel
+    'ListPanel': ListPanel,
+    'NavAZ': NavAZ
   }
 
   export default {

@@ -1,9 +1,12 @@
 <template>
   <li class="nhsuk-nav-a-z__item">
-    <span class="nhsuk-nav-a-z__link--disabled" v-if="disabled" v-bind="attributes">
+    <span class="nhsuk-nav-a-z__link--disabled" v-if="disabled" v-bind="$attrs">
       <slot></slot>
     </span>
-    <link-switcher class="nhsuk-nav-a-z__link" href="" v-if="!disabled" @click.native="$emit('click')" :attributes="attributes">
+    <link-switcher
+      class="nhsuk-nav-a-z__link" href=""
+      v-if="!disabled" @click.native="$emit('click')" v-bind="$attrs"
+    >
       <slot></slot>
     </link-switcher>
   </li>
@@ -14,19 +17,11 @@
 
   export default {
     name: 'NhsNavAzItem',
-    components: {
-      LinkSwitcher
-    },
+    components: { LinkSwitcher },
     props: {
       disabled: {
         type: Boolean,
         deafault: false
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

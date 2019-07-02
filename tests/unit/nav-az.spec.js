@@ -15,14 +15,22 @@ describe('a to z navigation tests', () => {
     const wrapper = mount(NhsNavAz, {
       propsData: {
         ariaLabel: 'test-label',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
     expect(wrapper.attributes()['aria-label']).toBe('test-label')
     expect(wrapper.attributes().test).toBe('test')
+  })
+
+  it('test nav az slots', () => {
+    const wrapper = mount(NhsNavAz, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-nav-a-z__list').text()).toBe('test')
   })
 
   it('test nav az item default props', () => {
@@ -35,9 +43,7 @@ describe('a to z navigation tests', () => {
     const wrapper = mount(NhsNavAzItem, {
       propsData: {
         disabled: true,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -50,5 +56,15 @@ describe('a to z navigation tests', () => {
 
     wrapper.find('a').trigger('click')
     expect(wrapper.emitted().click.length).toBe(1)
+  })
+
+  it('test nav az item slots', () => {
+    const wrapper = mount(NhsNavAzItem, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-nav-a-z__link').text()).toBe('test')
   })
 })
