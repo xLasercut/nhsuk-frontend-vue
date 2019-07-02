@@ -1,18 +1,5 @@
 <template>
-  <ol v-bind="attributes">
+  <ol>
     <slot></slot>
   </ol>
 </template>
-
-<script>
-  export default {
-    props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      }
-    }
-  }
-</script>

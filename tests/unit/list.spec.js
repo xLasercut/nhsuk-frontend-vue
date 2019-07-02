@@ -1,26 +1,7 @@
 import { mount } from '@vue/test-utils'
-import {
-  NhsErrorText,
-  NhsHintText,
-  NhsInsetText,
-  NhsHeading,
-  NhsLabel,
-  NhsList
-} from '../../src/components/typography'
+import { NhsList } from '../../src/components/typography'
 
-describe('typography tests', () => {
-
-
-
-
-
-
-
-
-
-
-
-
+describe('list tests', () => {
   it('test list props', () => {
     const types = {
       bullet: 'nhsuk-list--bullet',
@@ -32,9 +13,7 @@ describe('typography tests', () => {
       const wrapper = mount(NhsList, {
         propsData: {
           type: type,
-          attributes: {
-            test: 'test'
-          }
+          test: 'test'
         }
       })
 
@@ -47,5 +26,15 @@ describe('typography tests', () => {
         expect(wrapper.contains('ul')).toBe(true)
       }
     }
+  })
+
+  it('test list slots', () => {
+    const wrapper = mount(NhsList, {
+      slots: {
+        default: 'test'
+      }
+    })
+
+    expect(wrapper.find('.nhsuk-list').text()).toBe('test')
   })
 })

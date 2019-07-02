@@ -22,9 +22,7 @@ describe('list panel tests', () => {
         id: 'heading-id',
         headingLevel: 1,
         backToTop: true,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
@@ -61,9 +59,7 @@ describe('list panel tests', () => {
     const wrapper = mount(NhsListPanelItem, {
       propsData: {
         href: '/test',
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 

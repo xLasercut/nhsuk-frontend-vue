@@ -1,12 +1,12 @@
 <template>
-  <div class="nhsuk-list-panel" v-bind="attributes">
+  <div class="nhsuk-list-panel" v-bind="$attrs">
     <heading-switcher :heading-level="headingLevel" class="nhsuk-list-panel__label" :id="id" v-if="label">
       {{label}}
     </heading-switcher>
-    <div :class="panelboxClass" v-if="disabled">
+    <div :class="classes" v-if="disabled">
       <p class="nhsuk-list-panel--results-items__no-results">{{message}}</p>
     </div>
-    <ul :class="panelboxClass" v-if="!disabled">
+    <ul :class="classes" v-if="!disabled">
       <slot></slot>
     </ul>
     <div class="nhsuk-back-to-top" v-if="backToTop">
@@ -25,18 +25,8 @@
 
   export default {
     name: 'NhsListPanel',
-    components: {
-      HeadingSwitcher,
-      LinkSwitcher,
-      NhsIcon
-    },
+    components: { HeadingSwitcher, LinkSwitcher, NhsIcon },
     props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       label: {
         type: String,
         default: ''
@@ -63,11 +53,14 @@
       }
     },
     computed: {
-      panelboxClass() {
+      classes() {
+        var classes = [ 'nhsuk-list-panel__box' ]
+
         if (this.label) {
-          return 'nhsuk-list-panel__box nhsuk-list-panel__box--with-label'
+          classes.push('nhsuk-list-panel__box--with-label')
         }
-        return "nhsuk-list-panel__box"
+
+        return classes.join(' ')
       }
     }
   }

@@ -1,18 +1,5 @@
 <template>
-  <ul v-bind="attributes">
+  <ul>
     <slot></slot>
   </ul>
 </template>
-
-<script>
-  export default {
-    props: {
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      }
-    }
-  }
-</script>

@@ -1,5 +1,5 @@
 <template>
-  <component :is="element" :class="listClass" :attributes="attributes">
+  <component :is="element" :class="classes" v-bind="$attrs">
     <slot></slot>
   </component>
 </template>
@@ -23,12 +23,6 @@
         validator(val) {
           return val in types
         }
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     computed: {
@@ -38,7 +32,7 @@
         }
         return ListUnordered
       },
-      listClass() {
+      classes() {
         return `nhsuk-list ${types[this.type]}`
       }
     }

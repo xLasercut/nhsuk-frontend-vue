@@ -1,6 +1,6 @@
 <template>
   <li class="nhsuk-list-panel__item">
-    <link-switcher class="nhsuk-list-panel__link" :href="href" :attributes="attributes">
+    <link-switcher class="nhsuk-list-panel__link" :href="href" v-bind="$attrs">
       <slot></slot>
     </link-switcher>
   </li>
@@ -11,19 +11,11 @@
 
   export default {
     name: 'NhsListPanelItem',
-    components: {
-      LinkSwitcher
-    },
+    components: { LinkSwitcher },
     props: {
       href: {
         type: String,
         required: true
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     }
   }

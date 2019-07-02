@@ -48,6 +48,8 @@
   import Label from '../examples/Label.vue'
   import LabelBold from '../examples/LabelBold.vue'
   import LabelHeading from '../examples/LabelHeading.vue'
+  import List from '../examples/List.vue'
+  import ListPanel from '../examples/ListPanel.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -94,7 +96,9 @@
     'InsetText': InsetText,
     'Label': Label,
     'LabelBold': LabelBold,
-    'LabelHeading': LabelHeading
+    'LabelHeading': LabelHeading,
+    'List': List,
+    'ListPanel': ListPanel
   }
 
   export default {
