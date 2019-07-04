@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-review-date">
+  <div class="nhsuk-review-date" v-bind="$attrs">
     <p class="nhsuk-body-s">
       Page last reviewed: {{ lastReview }}<br>
       Next review due: {{ nextReview }}

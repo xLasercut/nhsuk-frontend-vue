@@ -11,6 +11,7 @@ import Table from '../views/information/Table.vue'
 import WarningCallout from '../views/information/WarningCallout.vue'
 import Promo from '../views/information/Promo.vue'
 import SummaryList from '../views/information/SummaryList.vue'
+import ReviewDate from '../views/information/ReviewDate.vue'
 
 const information = [
   {
@@ -77,6 +78,11 @@ const information = [
     path: '/information/summarylist',
     name: 'Summary List',
     component: SummaryList
+  },
+  {
+    path: '/information/reviewdate',
+    name: 'Review Date',
+    component: ReviewDate
   },
   {
     path: '/information/*',

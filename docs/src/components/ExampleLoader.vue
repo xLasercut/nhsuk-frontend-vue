@@ -58,6 +58,7 @@
   import RadioDisabled from '../examples/RadioDisabled.vue'
   import RadioDivider from '../examples/RadioDivider.vue'
   import RadioSlots from '../examples/RadioSlots.vue'
+  import ReviewDate from '../examples/ReviewDate.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -114,7 +115,8 @@
     'RadioError': RadioError,
     'RadioDisabled': RadioDisabled,
     'RadioDivider': RadioDivider,
-    'RadioSlots': RadioSlots
+    'RadioSlots': RadioSlots,
+    'ReviewDate': ReviewDate
   }
 
   export default {
