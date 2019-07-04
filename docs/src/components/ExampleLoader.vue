@@ -59,6 +59,9 @@
   import RadioDivider from '../examples/RadioDivider.vue'
   import RadioSlots from '../examples/RadioSlots.vue'
   import ReviewDate from '../examples/ReviewDate.vue'
+  import Select from '../examples/Select.vue'
+  import SelectError from '../examples/SelectError.vue'
+  import SelectSlots from '../examples/SelectSlots.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -116,7 +119,10 @@
     'RadioDisabled': RadioDisabled,
     'RadioDivider': RadioDivider,
     'RadioSlots': RadioSlots,
-    'ReviewDate': ReviewDate
+    'ReviewDate': ReviewDate,
+    'Select': Select,
+    'SelectError': SelectError,
+    'SelectSlots': SelectSlots
   }
 
   export default {

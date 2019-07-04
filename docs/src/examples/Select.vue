@@ -2,7 +2,6 @@
   <nhs-select
     label="Label text goes here"
     v-model="model"
-    :rules="rules"
   >
     <option>NHS.UK frontend option 1</option>
     <option>NHS.UK frontend option 2</option>

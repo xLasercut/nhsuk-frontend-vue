@@ -16,9 +16,9 @@ describe('form select tests', () => {
         id: 'select',
         name: 'name',
         disabled: true,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test',
+        label: 'label',
+        hint: 'hint'
       }
     })
 
@@ -26,26 +26,26 @@ describe('form select tests', () => {
     expect(wrapper.find('select').attributes().name).toBe('name')
     expect(wrapper.find('select').attributes().disabled).toBe('disabled')
     expect(wrapper.find('select').attributes().test).toBe('test')
-    expect(wrapper.find('select').attributes()['aria-describedby']).toBe('')
+    expect(wrapper.find('select').attributes()['aria-describedby']).toBe('select-hint')
+    expect(wrapper.find('.nhsuk-label').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
+    expect(wrapper.find('label').attributes().for).toBe('select')
   })
 
   it('test form select slots', () => {
     const wrapper = mount(NhsSelect, {
       slots: {
-        label: '<label for="test">label</label>',
-        error: '<span id="error">error</span>',
-        hint: '<span id="hint">hint</span>'
+        label: 'test',
+        hint: 'test2'
       },
       propsData: {
-        id: 'select'
+        id: 'select',
+        label: 'label',
+        hint: 'hint'
       }
     })
 
-    expect(wrapper.find('label').attributes().for).toBe('select')
-    expect(wrapper.find('#select-error').text()).toBe('error')
-    expect(wrapper.find('#select-hint').text()).toBe('hint')
-    expect(wrapper.find('select').attributes()['aria-describedby']).toBe('select-error select-hint')
-    expect(wrapper.find('select').attributes().class).toBe('nhsuk-select nhsuk-select--error')
-    expect(wrapper.attributes().class).toBe('nhsuk-form-group nhsuk-form-group--error')
+    expect(wrapper.find('.nhsuk-label').text()).toBe('test')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('test2')
   })
 })
