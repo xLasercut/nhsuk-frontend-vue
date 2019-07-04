@@ -54,6 +54,10 @@
   import Pagination from '../examples/Pagination.vue'
   import Promo from '../examples/Promo.vue'
   import PromoGroup from '../examples/PromoGroup.vue'
+  import RadioError from '../examples/RadioError.vue'
+  import RadioDisabled from '../examples/RadioDisabled.vue'
+  import RadioDivider from '../examples/RadioDivider.vue'
+  import RadioSlots from '../examples/RadioSlots.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -106,7 +110,11 @@
     'NavAZ': NavAZ,
     'Pagination': Pagination,
     'Promo': Promo,
-    'PromoGroup': PromoGroup
+    'PromoGroup': PromoGroup,
+    'RadioError': RadioError,
+    'RadioDisabled': RadioDisabled,
+    'RadioDivider': RadioDivider,
+    'RadioSlots': RadioSlots
   }
 
   export default {

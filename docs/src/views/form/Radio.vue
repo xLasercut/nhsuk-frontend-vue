@@ -1,106 +1,109 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-radios
-            :items="items" v-model="radioVal"
-            label="Label as page heading" page-heading
-            hint="hint text" :rules="rules"
-          ></nhs-radios>
-        </nhs-col>
-        <nhs-col :span="50">
-          <p class="status">Selected: {{radioVal}}</p>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
+    <code-block file="RadioError" />
+    <code-block file="RadioDisabled" />
+    <code-block file="RadioDivider" />
+    <code-block file="RadioSlots" />
 
-    <argument-table heading="radio" :rows="rrows"></argument-table>
+    <argument-table heading="radio" :data-props="props" :data-slots="slots" :data-methods="methods" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-form-itemgroup>
-      <nhs-fieldset slot="fieldset" legend="Radio Group"></nhs-fieldset>
-      <nhs-hint-text slot="hint" >Hint text</nhs-hint-text>
-      <nhs-error-text slot="error">Error text</nhs-error-text>
-      <nhs-radio name="radio1" v-model="radioVal" radio-value="option 1">
-        <nhs-label slot="label">Option 1</nhs-label>
-      </nhs-radio>
-      <nhs-radio name="radio2" v-model="radioVal" radio-value="option 2" :disabled="true">
-        <nhs-label slot="label">Option 2</nhs-label>
-      </nhs-radio>
-      <nhs-radio name="radio3" v-model="radioVal" radio-value="option 3">
-        <nhs-label slot="label">Option 3</nhs-label>
-      </nhs-radio>
-      <nhs-radio name="radio2" v-model="radioVal" radio-value="option 4">
-        <nhs-label slot="label">Option 1</nhs-label>
-        <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-      </nhs-radio>
-    </nhs-form-itemgroup>
-
   export default {
     data() {
       return {
-        radioVal: "option 1"
-      }
-    }
-  }`
-
-  export default {
-    data() {
-      return {
-        radioVal: "option 1",
-        items: [
+        props: [
           {
-            label: 'Option 1',
-            value: 'option 1'
+            name: 'items',
+            type: 'array',
+            required: 'yes',
+            description: 'Array of radio data objects'
           },
           {
-            label: 'Option 2',
-            value: 'option 2',
-            disabled: true
+            name: 'items.{}.label',
+            type: 'string',
+            required: 'yes',
+            description: 'Label of individual radio'
           },
           {
-            label: 'Option 3',
-            value: 'option 3',
-            hint: 'hint'
+            name: 'items.{}.hint',
+            type: 'string',
+            description: 'Hint text of individual radio'
+          },
+          {
+            name: 'items.{}.disabled',
+            type: 'boolean',
+            description: 'Disable individual radio'
+          },
+          {
+            name: 'items.{}.value',
+            type: 'string',
+            required: 'yes',
+            description: 'Value of individual radio'
+          },
+          {
+            name: 'label',
+            type: 'string',
+            description: 'Label of radio group'
+          },
+          {
+            name: 'hint',
+            type: 'string',
+            description: 'Hint of radio group'
+          },
+          {
+            name: 'id',
+            type: 'string',
+            description: 'Specific id attribute for the radio group. Default: NhsRadios_<random number>'
+          },
+          {
+            name: 'disabled',
+            type: 'boolean',
+            description: 'Disable all radios'
+          },
+          {
+            name: 'page-heading',
+            type: 'boolean',
+            description: 'Wraps label of radio group inside a heading tag'
+          },
+          {
+            name: 'heading-size',
+            type: 'string',
+            description: 'Changes size of radio group label'
+          },
+          {
+            name: 'rules',
+            type: 'array',
+            description: 'Accepts an array of functions that return either True or a String with an error message'
           }
         ],
-        rules: [
-          (v) => v == 'option 1' || 'invalid option'
+        slots: [
+          {
+            name: 'hint',
+            description: 'slot for radio group hint',
+            props: '\'hint\' prop of component'
+          },
+          {
+            name: 'error',
+            description: 'slot for radio group error',
+            props: 'error message'
+          },
+          {
+            name: 'item-label',
+            description: 'slot for label of individual radio',
+            props: 'individual radio data object'
+          },
+          {
+            name: 'item-hint',
+            description: 'slot for hint of individual radio',
+            props: 'individual radio data object'
+          }
         ],
-        source: source,
-        rrows: [
+        methods: [
           {
-            name: "name",
-            type: "string",
-            required: "no",
-            description: "Name attribute for the radio."
-          },
-          {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "Specific id attribute for the radio. Default: NhsRadio_<random number>"
-          },
-          {
-            name: "disabled",
-            type: "boolean",
-            required: "no",
-            description: "If true, radio will be disabled."
-          },
-          {
-            name: "radio-value",
-            type: "string",
-            required: "yes",
-            description: "Value for the radio input."
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the radio input tag."
+            name: 'validate',
+            description: 'Validates v-model value based on rules. Returns true if valid'
           }
         ]
       }

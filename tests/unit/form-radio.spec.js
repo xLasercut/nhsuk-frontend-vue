@@ -1,52 +1,105 @@
 import { mount } from '@vue/test-utils'
-import { NhsRadio } from '../../src/components/form'
+import { NhsRadios } from '../../src/components/form'
 
 describe('form radio tests', () => {
-  it('test radio default props', () => {
-    const wrapper = mount(NhsRadio, {
+  it('test individual radio props', () => {
+    const wrapper = mount(NhsRadios, {
       propsData: {
-        radioValue: 'value'
+        id: 'radio',
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled',
+            disabled: true
+          },
+          {
+            label: 'not disabled',
+            value: 'test'
+          }
+        ]
       }
     })
 
-    expect(wrapper.find('input').attributes().id).toContain('NhsRadio')
+    const labels = wrapper.findAll('.nhsuk-radios__label')
+    const inputs = wrapper.findAll('.nhsuk-radios__input')
+    const hints = wrapper.findAll('.nhsuk-radios__hint')
+
+    expect(labels.at(0).text()).toBe('disabled')
+    expect(labels.at(1).text()).toBe('not disabled')
+
+    expect(inputs.at(0).attributes().id).toBe('radio-0')
+    expect(inputs.at(1).attributes().id).toBe('radio-1')
+
+    expect(inputs.at(0).attributes().disabled).toBe('disabled')
+    expect(inputs.at(1).attributes().disabled).toBe(undefined)
+
+    expect(inputs.at(0).attributes()['aria-describedby']).toBe('radio-0-hint')
+    expect(inputs.at(1).attributes()['aria-describedby']).toBe(undefined)
+
+    expect(inputs.at(0).attributes().value).toBe('disabled')
+    expect(inputs.at(1).attributes().value).toBe('test')
+
+    expect(hints.at(0).text()).toBe('disabled')
+    expect(hints.length).toBe(1)
+
+    expect(wrapper.find('h1').exists()).toBe(false)
+    expect(wrapper.find('.nhsuk-fieldset__legend--l').exists()).toBe(false)
   })
 
-  it('test radio props', () => {
-    const wrapper = mount(NhsRadio, {
+  it('test radio group props', () => {
+    const wrapper = mount(NhsRadios, {
       propsData: {
-        radioValue: 'value',
-        name: 'name',
         id: 'radio',
-        attributes: {
-          test: 'test'
-        },
-        disabled: true
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled',
+            disabled: true
+          },
+          {
+            label: 'not disabled',
+            value: 'test',
+          }
+        ],
+        disabled: true,
+        hint: 'hint',
+        label: 'label',
+        pageHeading: true,
+        headingSize: 'l'
       }
     })
 
-    expect(wrapper.find('input').attributes().id).toBe('radio')
-    expect(wrapper.find('input').attributes().name).toBe('name')
-    expect(wrapper.find('input').attributes().test).toBe('test')
-    expect(wrapper.find('input').attributes().value).toBe('value')
-    expect(wrapper.find('input').attributes().disabled).toBe('disabled')
+    expect(wrapper.find('h1').exists()).toBe(true)
+    expect(wrapper.find('h1').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
+    expect(wrapper.find('.nhsuk-fieldset__legend--l').exists()).toBe(true)
   })
 
   it('test radio slots', () => {
-    const wrapper = mount(NhsRadio, {
+    const wrapper = mount(NhsRadios, {
       propsData: {
         id: 'radio',
-        radioValue: 'value'
+        hint: 'blah',
+        items: [
+          {
+            label: 'disabled',
+            value: 'disabled',
+            hint: 'disabled'
+          }
+        ],
+        value: true
       },
       slots: {
-        label: '<label for="test">label</label>',
-        hint: '<span id="test" add-class="test">hint</span>'
+        hint: 'hint',
+        'item-label': 'label',
+        'item-hint': 'item-hint',
       }
     })
 
-    expect(wrapper.find('label').attributes().for).toBe('radio')
-    expect(wrapper.find('#radio-hint').text()).toBe('hint')
-    expect(wrapper.find('span').attributes()['add-class']).toBe('nhsuk-radios__hint')
-    expect(wrapper.find('input').attributes()['aria-describedby']).toBe('radio-hint')
+    expect(wrapper.find('.nhsuk-radios__label').text()).toBe('label')
+    expect(wrapper.find('.nhsuk-radios__hint').text()).toBe('item-hint')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('hint')
   })
 })
