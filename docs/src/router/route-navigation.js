@@ -6,6 +6,7 @@ import Contents from '../views/navigation/Contents.vue'
 import Pagination from '../views/navigation/Pagination.vue'
 import NavAz from '../views/navigation/NavAz.vue'
 import ListPanel from '../views/navigation/ListPanel.vue'
+import SkipLink from '../views/navigation/SkipLink.vue'
 
 const navigation = [
   {
@@ -47,6 +48,11 @@ const navigation = [
     path: '/navigation/listpanel',
     name: 'List Panel',
     component: ListPanel
+  },
+  {
+    path: '/navigation/skiplink',
+    name: 'Skip Link',
+    component: SkipLink
   },
   {
     path: '/navigation/*',

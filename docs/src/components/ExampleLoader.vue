@@ -62,6 +62,7 @@
   import Select from '../examples/Select.vue'
   import SelectError from '../examples/SelectError.vue'
   import SelectSlots from '../examples/SelectSlots.vue'
+  import SkipLink from '../examples/SkipLink.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -122,7 +123,8 @@
     'ReviewDate': ReviewDate,
     'Select': Select,
     'SelectError': SelectError,
-    'SelectSlots': SelectSlots
+    'SelectSlots': SelectSlots,
+    'SkipLink': SkipLink
   }
 
   export default {
