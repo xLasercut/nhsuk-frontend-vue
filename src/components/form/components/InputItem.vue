@@ -81,7 +81,7 @@
       }
     },
     watch: {
-      model(_val) {
+      model() {
         this.$emit('change')
       }
     },

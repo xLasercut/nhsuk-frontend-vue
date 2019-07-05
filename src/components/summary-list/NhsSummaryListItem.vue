@@ -27,12 +27,11 @@
         if (this.type === 'key') {
           return Key
         }
-        else if (this.type === 'value') {
-          return Value
-        }
         else if (this.type === 'actions') {
           return Action
         }
+
+        return Value
       }
     }
   }
