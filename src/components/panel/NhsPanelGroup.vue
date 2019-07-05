@@ -23,14 +23,10 @@
     components: { VNode },
     props: {
       column: {
-        default: 3,
+        default: '3',
+        type: String,
         validator(val) {
-          for (var key in columnMap) {
-            if (key == val) {
-              return true
-            }
-          }
-          return false
+          return val in columnMap
         }
       },
       id: {

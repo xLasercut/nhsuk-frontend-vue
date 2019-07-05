@@ -26,12 +26,7 @@
         type: String,
         default: '3',
         validator(val) {
-          for (var key in columnMap) {
-            if (key == val) {
-              return true
-            }
-          }
-          return false
+          return val in columnMap
         }
       },
       id: {

@@ -73,6 +73,9 @@
   import TextareaSlots from '../examples/TextareaSlots'
   import DateInputError from '../examples/DateInputError.vue'
   import DateInputSlots from '../examples/DateInputSlots.vue'
+  import Panel from '../examples/Panel.vue'
+  import PanelGroup from '../examples/PanelGroup.vue'
+  import PanelLabel from '../examples/PanelLabel.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -144,7 +147,10 @@
     'TextareaError': TextareaError,
     'TextareaSlots': TextareaSlots,
     'DateInputError': DateInputError,
-    'DateInputSlots': DateInputSlots
+    'DateInputSlots': DateInputSlots,
+    'Panel': Panel,
+    'PanelGroup': PanelGroup,
+    'PanelLabel': PanelLabel
   }
 
   export default {

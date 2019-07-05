@@ -12,6 +12,7 @@ import WarningCallout from '../views/information/WarningCallout.vue'
 import Promo from '../views/information/Promo.vue'
 import SummaryList from '../views/information/SummaryList.vue'
 import ReviewDate from '../views/information/ReviewDate.vue'
+import Panel from '../views/information/Panel.vue'
 
 const information = [
   {
@@ -83,6 +84,11 @@ const information = [
     path: '/information/reviewdate',
     name: 'Review Date',
     component: ReviewDate
+  },
+  {
+    path: '/information/panel',
+    name: 'Panel',
+    component: Panel
   },
   {
     path: '/information/*',
