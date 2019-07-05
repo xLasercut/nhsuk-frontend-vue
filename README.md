@@ -66,20 +66,18 @@ The output files will be located in the `dist` folder
 
 ## Running tests
 
-This project uses [jest](https://jestjs.io/) for unit tests and [cypress](https://www.cypress.io/) for integration tests.
+This project uses [jest](https://jestjs.io/) for unit tests and [backstop](https://garris.github.io/BackstopJS/) for screenshot tests
 
 Unit tests:
 ```
 npm run test:unit
 ```
 
-Integration tests:
+Backstop tests:
 ```
-npm run test:e2e
+npm run backstop:test
 ```
 
 ## License
-
-MIT © [Tim Wang](https://github.com/xLasercut)
 
 NHS.UK frontend library MIT © [NHS.UK frontend](https://www.npmjs.com/package/nhsuk-frontend).
