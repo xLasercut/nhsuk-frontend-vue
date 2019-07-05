@@ -1,151 +1,56 @@
 <template>
   <nhs-main>
-    <code-block :code="source" :script="script">
-      <nhs-table :panel="true" heading="Table with heading" :rows="tableData" :head="tableHeading"></nhs-table>
-    </code-block>
-
-    <argument-table heading="table" :rows="rows"></argument-table>
+    <code-block file="Table" />
+    <code-block file="TablePanel" />
+    <argument-table heading="table" :data-props="props" :data-slots="slots" />
+    <argument-table heading="table-item" :data-slots="itemSlots" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-table :panel="true" heading="Table with heading" :rows="tableData" :head="tableHeading"></nhs-table>
-  `
-
-  var script = `export default {
-    data() {
-      return {
-        tableData: [
-          {
-            name: "test",
-            type: "type",
-            default: "default"
-          },
-          {
-            name: "roll",
-            default: "cake"
-          }
-        ],
-        tableHeading: [
-          {
-            text: "Name",
-            key: "name"
-          },
-          {
-            text: "Type",
-            key: "type"
-          },
-          {
-            text: "Default",
-            key: "default"
-          }
-        ]
-      }
-    }
-  }`
-
   export default {
     data() {
       return {
-        source: source,
-        script: script,
-        tableData: [
+        props: [
           {
-            name: "test",
-            type: "type",
-            default: "default"
+            name: 'headers',
+            type: 'array',
+            required: 'yes',
+            description: 'Array of table head cells.'
           },
           {
-            name: "roll",
-            default: "cake"
+            name: 'data',
+            type: 'array',
+            required: 'yes',
+            description: 'Array of table rows'
+          },
+          {
+            name: 'heading',
+            type: 'string',
+            description: 'Heading/label of the table'
+          },
+          {
+            name: 'heading-level',
+            type: 'number',
+            description: 'Optional heading level for the heading. Default: 3.'
+          },
+          {
+            name: 'caption',
+            type: 'string',
+            description: 'Optional caption for the table.'
           }
         ],
-        tableHeading: [
+        slots: [
           {
-            text: "Name",
-            key: "name"
-          },
-          {
-            text: "Type",
-            key: "type"
-          },
-          {
-            text: "Default",
-            key: "default"
+            name: 'item',
+            props: 'each item in \'data\' prop',
+            description: 'slot for table-items'
           }
         ],
-        rows: [
+        itemSlots: [
           {
-            name: "head",
-            type: "array",
-            required: "yes",
-            description: "Array of table head cells."
-          },
-          {
-            name: "head.{}.text",
-            type: "string",
-            required: "yes",
-            description: "Label of each head cell"
-          },
-          {
-            name: "head.{}.key",
-            type: "string",
-            required: "yes",
-            description: "Key of each head cell. Used determine the position of each item in the row"
-          },
-          {
-            name: "rows",
-            type: "array",
-            required: "yes",
-            description: "Array of table rows and cells."
-          },
-          {
-            name: "rows.{}.<head_key>",
-            type: "string",
-            required: "no",
-            description: "Content of each cell. This is mapped to column with the corresponding head key"
-          },
-          {
-            name: "panel",
-            type: "boolean",
-            required: "no",
-            description:  "If set to true, the table is rendered inside a panel with a label."
-          },
-          {
-            name: "panel-attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the panel containing the table."
-          },
-          {
-            name: "heading",
-            type: "string",
-            required: "no",
-            description: "Heading/label of the panel if the panel argument is set to true."
-          },
-          {
-            name: "heading-level",
-            type: "number",
-            required: "no",
-            description: "Optional heading level for the heading. Default: 3."
-          },
-          {
-            name: "table-attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the table."
-          },
-          {
-            name: "caption",
-            type: "string",
-            required: "no",
-            description: "Optional caption for the table."
-          },
-          {
-            name: "caption-attributes",
-            type: "string",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the table caption."
+            name: 'default',
+            description: 'default vue slots'
           }
         ]
       }

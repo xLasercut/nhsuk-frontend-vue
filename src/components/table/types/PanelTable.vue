@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-table__panel-with-heading-tab" v-bind="attributes">
+  <div class="nhsuk-table__panel-with-heading-tab">
     <heading-switcher :heading-level="headingLevel" class="nhsuk-table__heading-tab">{{heading}}</heading-switcher>
     <div class="nhsuk-table-responsive">
       <slot></slot>
@@ -19,12 +19,6 @@
       headingLevel: {
         type: Number,
         default: 3
-      },
-      attributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       }
     },
     components: {

@@ -1,7 +1,7 @@
 <template>
-  <component :is="tableType" :attributes="panelAttributes" :heading="heading" :heading-level="headingLevel">
-    <table class="nhsuk-table" v-bind="tableAttributes">
-      <caption class="nhsuk-table__caption" v-bind="captionAttributes">{{caption}}</caption>
+  <component :is="tableType" :heading="heading" :heading-level="headingLevel">
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption">{{caption}}</caption>
       <thead class="nhsuk-table__head">
         <tr class="nhsuk-table__row">
           <th class="nhsuk-table__header" scope="col" v-for="(item, index) in headers" :key="index">
@@ -25,12 +25,6 @@
   export default {
     name: 'NhsTable',
     props: {
-      panelAttributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       heading: {
         type: String,
         default: ''
@@ -39,21 +33,9 @@
         type: Number,
         default: 3
       },
-      tableAttributes: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
       caption: {
         type: String,
         default: ''
-      },
-      captionAttributes: {
-        type: Object,
-        default() {
-          return {}
-        }
       },
       headers: {
         type: Array,

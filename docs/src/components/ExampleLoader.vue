@@ -65,6 +65,8 @@
   import SkipLink from '../examples/SkipLink.vue'
   import SummaryList from '../examples/SummaryList.vue'
   import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
+  import Table from '../examples/Table.vue'
+  import TablePanel from '../examples/TablePanel.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -128,7 +130,9 @@
     'SelectSlots': SelectSlots,
     'SkipLink': SkipLink,
     'SummaryList': SummaryList,
-    'SummaryListNoBorder': SummaryListNoBorder
+    'SummaryListNoBorder': SummaryListNoBorder,
+    'Table': Table,
+    'TablePanel': TablePanel
   }
 
   export default {

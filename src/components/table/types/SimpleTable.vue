@@ -12,9 +12,6 @@
       },
       headingLevel: {
         type: Number
-      },
-      attributes: {
-        type: Object
       }
     }
   }

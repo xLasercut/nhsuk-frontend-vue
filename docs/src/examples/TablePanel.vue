@@ -3,6 +3,7 @@
     :headers="headers"
     :data="data"
     heading="Conditions similar to impetigo"
+    caption="Other possible causes of your symptoms"
   >
     <template #item="item">
       <nhs-table-item>{{item.props.symptoms}}</nhs-table-item>
@@ -29,14 +30,7 @@
             cause: 'shingles, chickenpox'
           }
         ],
-        headers: [
-          {
-            text: 'Symptoms'
-          },
-          {
-            text: 'Possible cause'
-          }
-        ]
+        headers: [ 'Symptoms', 'Possible cause' ]
       }
     }
   }
