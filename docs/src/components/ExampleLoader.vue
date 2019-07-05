@@ -71,6 +71,8 @@
   import Textarea from '../examples/Textarea'
   import TextareaError from '../examples/TextareaError'
   import TextareaSlots from '../examples/TextareaSlots'
+  import DateInputError from '../examples/DateInputError.vue'
+  import DateInputSlots from '../examples/DateInputSlots.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -140,7 +142,9 @@
     'WarningCallout': WarningCallout,
     'Textarea': Textarea,
     'TextareaError': TextareaError,
-    'TextareaSlots': TextareaSlots
+    'TextareaSlots': TextareaSlots,
+    'DateInputError': DateInputError,
+    'DateInputSlots': DateInputSlots
   }
 
   export default {

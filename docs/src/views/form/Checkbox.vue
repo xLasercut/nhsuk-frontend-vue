@@ -58,7 +58,7 @@
           {
             name: 'id',
             type: 'string',
-            description: 'Specific id attribute for the checkbox group. Default: NhsCheckboxes_<random number>'
+            description: 'Specific id attribute for the checkbox group. Default: NhsCheckboxes-<random string>'
           },
           {
             name: 'disabled',

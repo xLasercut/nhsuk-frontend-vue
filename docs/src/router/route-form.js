@@ -5,6 +5,7 @@ import Radio from '../views/form/Radio.vue'
 import Select from '../views/form/Select.vue'
 import Input from '../views/form/Input.vue'
 import Textarea from '../views/form/Textarea.vue'
+import InputGroup from '../views/form/InputGroup.vue'
 
 const form = [
   {
@@ -41,6 +42,15 @@ const form = [
     path: '/form/textarea',
     name: 'Textarea',
     component: Textarea
+  },
+  {
+    path: '/form/inputgroup',
+    name: 'Input Group',
+    component: InputGroup
+  },
+  {
+    path: '/form/*',
+    redirect: '/form'
   }
 ]
 

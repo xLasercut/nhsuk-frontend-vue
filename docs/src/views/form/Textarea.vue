@@ -20,7 +20,7 @@
           {
             name: 'id',
             type: 'string',
-            description: 'The id of the textarea. Default: NhsTextarea_<random id>'
+            description: 'The id of the textarea. Default: NhsTextarea-<random string>'
           },
           {
             name: 'rows',

@@ -21,7 +21,7 @@
           {
             name: 'id',
             type: 'string',
-            description: 'The id of the input. Default: NhsInput_<random string>'
+            description: 'The id of the input. Default: NhsInput-<random string>'
           },
           {
             name: 'name',

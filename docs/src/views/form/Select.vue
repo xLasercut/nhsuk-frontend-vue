@@ -20,7 +20,7 @@
           {
             name: 'id',
             type: 'string',
-            description: 'The id for each select box. Default: NhsSelect_<random string>'
+            description: 'The id for each select box. Default: NhsSelect-<random string>'
           },
           {
             name: 'disabled',

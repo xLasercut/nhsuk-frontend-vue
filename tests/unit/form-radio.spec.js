@@ -28,6 +28,9 @@ describe('form radio tests', () => {
     expect(labels.at(0).text()).toBe('disabled')
     expect(labels.at(1).text()).toBe('not disabled')
 
+    expect(labels.at(0).attributes().for).toBe('radio-0')
+    expect(labels.at(1).attributes().for).toBe('radio-1')
+
     expect(inputs.at(0).attributes().id).toBe('radio-0')
     expect(inputs.at(1).attributes().id).toBe('radio-1')
 
@@ -70,6 +73,10 @@ describe('form radio tests', () => {
         headingSize: 'l'
       }
     })
+
+    const inputs = wrapper.findAll('.nhsuk-radios__input')
+    expect(inputs.at(0).attributes().disabled).toBe('disabled')
+    expect(inputs.at(1).attributes().disabled).toBe('disabled')
 
     expect(wrapper.find('h1').exists()).toBe(true)
     expect(wrapper.find('h1').text()).toBe('label')

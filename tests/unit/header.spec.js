@@ -57,11 +57,9 @@ describe('header tests', () => {
 
     expect(wrapper.contains('.nhsuk-header__menu')).toBe(true)
     expect(wrapper.contains('.nhsuk-header__search')).toBe(true)
-    expect(wrapper.contains('.nhsuk-header__transactional-service-name')).toBe(true)
+    expect(wrapper.contains('.nhsuk-header__transactional-service-name')).toBe(false)
     expect(wrapper.find('.nhsuk-header__link').attributes().href).toBe('/test')
     expect(wrapper.find('.nhsuk-header__link').attributes()['aria-label']).toBe('test-label')
-    expect(wrapper.find('.nhsuk-header__transactional-service-name--link').attributes().href).toBe('/')
-    expect(wrapper.contains('.nhsuk-header__transactional-service-name--long')).toBe(false)
     expect(wrapper.contains('.nhsuk-header__service-name')).toBe(false)
   })
 

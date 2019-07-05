@@ -31,6 +31,9 @@ describe('form checkbox tests', () => {
     expect(labels.at(0).text()).toBe('disabled')
     expect(labels.at(1).text()).toBe('not disabled')
 
+    expect(labels.at(0).attributes().for).toBe('checkbox-0')
+    expect(labels.at(1).attributes().for).toBe('checkbox-1')
+
     expect(inputs.at(0).attributes().id).toBe('checkbox-0')
     expect(inputs.at(1).attributes().id).toBe('checkbox-1')
 
@@ -77,6 +80,11 @@ describe('form checkbox tests', () => {
         headingSize: 'l'
       }
     })
+
+    const inputs = wrapper.findAll('.nhsuk-checkboxes__input')
+
+    expect(inputs.at(0).attributes().disabled).toBe('disabled')
+    expect(inputs.at(1).attributes().disabled).toBe('disabled')
 
     expect(wrapper.find('h1').exists()).toBe(true)
     expect(wrapper.find('h1').text()).toBe('label')

@@ -55,7 +55,7 @@
           {
             name: 'id',
             type: 'string',
-            description: 'Specific id attribute for the radio group. Default: NhsRadios_<random number>'
+            description: 'Specific id attribute for the radio group. Default: NhsRadios-<random string>'
           },
           {
             name: 'disabled',
