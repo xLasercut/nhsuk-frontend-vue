@@ -67,6 +67,7 @@
   import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
   import Table from '../examples/Table.vue'
   import TablePanel from '../examples/TablePanel.vue'
+  import WarningCallout from '../examples/WarningCallout.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -132,7 +133,8 @@
     'SummaryList': SummaryList,
     'SummaryListNoBorder': SummaryListNoBorder,
     'Table': Table,
-    'TablePanel': TablePanel
+    'TablePanel': TablePanel,
+    'WarningCallout': WarningCallout
   }
 
   export default {

@@ -17,9 +17,7 @@ describe('warning callout tests', () => {
       propsData: {
         heading: 'heading',
         headingLevel: 1,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test'
       }
     })
 
