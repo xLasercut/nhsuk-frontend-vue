@@ -9,8 +9,6 @@ cache:
     - docker
   stages:
     - tests
-    - name: master
-      if: branch = master
     - name: tag
       if: tag IS present
 
