@@ -9,7 +9,7 @@ cache:
     - docker
   stages:
     - tests
-    - tag
+    - deploy
 
 jobs:
   include:
@@ -28,7 +28,7 @@ jobs:
       script:
         - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
-    - stage: tag
+    - stage: deploy
       if: tag IS present
       name: Deploy docs
       script:
