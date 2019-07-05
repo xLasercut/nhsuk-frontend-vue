@@ -93,8 +93,8 @@
     methods: {
       validate() {
         this.error = false
-        for (var rule of this.rules) {
-          var result = rule(this.model)
+        for (var i = 0; i < this.rules.length; i++) {
+          var result = this.rules[i](this.model)
           if (result != true) {
             this.error = true
             this.$emit('update:error', result)

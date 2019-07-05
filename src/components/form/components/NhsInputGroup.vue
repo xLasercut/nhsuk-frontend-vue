@@ -29,7 +29,7 @@
   import { NhsHintText, NhsErrorText } from '../../typography'
   import NhsFieldset from '../../fieldset'
   import FormItem from '../shared/FormItem.vue'
-  import InputItem from './InputItem'
+  import InputItem from './InputItem.vue'
 
   import VModel from '../mixins/v-model.js'
   import FormAria from '../mixins/form-aria.js'
