@@ -18,9 +18,9 @@ describe('form textarea tests', () => {
         name: 'name',
         disabled: true,
         rows: 10,
-        attributes: {
-          test: 'test'
-        }
+        test: 'test',
+        label: 'label',
+        hint: 'hint'
       }
     })
 
@@ -28,27 +28,26 @@ describe('form textarea tests', () => {
     expect(wrapper.find('textarea').attributes().name).toBe('name')
     expect(wrapper.find('textarea').attributes().disabled).toBe('disabled')
     expect(wrapper.find('textarea').attributes().test).toBe('test')
-    expect(wrapper.find('textarea').attributes()['aria-describedby']).toBe('')
+    expect(wrapper.find('textarea').attributes()['aria-describedby']).toBe('textarea-hint')
     expect(wrapper.find('textarea').attributes().rows).toBe('10')
   })
 
   it('test form textarea slots', () => {
     const wrapper = mount(NhsTextarea, {
       slots: {
-        label: '<label for="test">label</label>',
-        error: '<span id="error">error</span>',
-        hint: '<span id="hint">hint</span>'
+        label: 'test',
+        hint: 'test2'
       },
       propsData: {
-        id: 'textarea'
+        id: 'textarea',
+        label: 'cheese',
+        hint: 'cake'
       }
     })
 
-    expect(wrapper.find('label').attributes().for).toBe('textarea')
-    expect(wrapper.find('#textarea-error').text()).toBe('error')
-    expect(wrapper.find('#textarea-hint').text()).toBe('hint')
-    expect(wrapper.find('textarea').attributes()['aria-describedby']).toBe('textarea-error textarea-hint')
-    expect(wrapper.find('textarea').attributes().class).toBe('nhsuk-textarea nhsuk-textarea--error')
-    expect(wrapper.attributes().class).toBe('nhsuk-form-group nhsuk-form-group--error')
+    expect(wrapper.find('.nhsuk-label').attributes().for).toBe('textarea')
+    expect(wrapper.find('.nhsuk-label').text()).toBe('test')
+    expect(wrapper.find('.nhsuk-hint').text()).toBe('test2')
+    expect(wrapper.find('textarea').attributes()['aria-describedby']).toBe('textarea-hint')
   })
 })

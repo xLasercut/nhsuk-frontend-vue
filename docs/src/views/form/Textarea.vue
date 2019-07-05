@@ -1,89 +1,79 @@
 <template>
   <nhs-main>
-    <code-block :code="source">
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-textarea
-            v-model="text" :rows="2"
-            name="textarea"
-            label="Input label"
-            hint="Hint text"
-            :rules="rules"
-          >
-          </nhs-textarea>
-        </nhs-col>
-        <nhs-col :span="50">
-          <p>Text: {{text}}</p>
-          <nhs-button name="toggle" @click="toggleError()">Toggle Error</nhs-button>
-        </nhs-col>
-      </nhs-row>
-
-      <nhs-row>
-        <nhs-col :span="50">
-          <nhs-textarea name="textarea" :rows="1" :disabled="true"></nhs-textarea>
-        </nhs-col>
-      </nhs-row>
-    </code-block>
-
-    <argument-table heading="textarea" :rows="rows"></argument-table>
+    <code-block file="Textarea" />
+    <code-block file="TextareaError" />
+    <code-block file="TextareaSlots" />
+    <argument-table heading="textarea" :data-props="props" :data-slots="slots" :data-methods="methods" />
   </nhs-main>
 </template>
 
 <script>
-  var source = `<nhs-textarea v-model="text" :rows="2" name="textarea">
-    <nhs-label slot="label">Input label</nhs-label>
-    <nhs-hint-text slot="hint">Hint text</nhs-hint-text>
-    <nhs-error-text slot="error" v-if="error">{{error}}</nhs-error-text>
-  </nhs-textarea>
-
-  <nhs-textarea name="textarea" :disabled="true"></nhs-textarea>
-
   export default {
     data() {
       return {
-        error: "Error text"
-      }
-    }
-  }`
-
-  export default {
-    data() {
-      return {
-        text: "",
-        rules: [
-          (v) => !!v || 'input cannot be blank'
+        props: [
+          {
+            name: 'name',
+            type: 'string',
+            description: 'The name of the textarea, which is submitted with the form data.'
+          },
+          {
+            name: 'id',
+            type: 'string',
+            description: 'The id of the textarea. Default: NhsTextarea_<random id>'
+          },
+          {
+            name: 'rows',
+            type: 'number',
+            description: 'Optional number of textarea rows. Default: 5'
+          },
+          {
+            name: 'disabled',
+            type: 'boolean',
+            description: 'If true, textarea is disabled'
+          },
+          {
+            name: 'label',
+            type: 'string',
+            description: 'Label of input component'
+          },
+          {
+            name: 'hint',
+            type: 'string',
+            description: 'Hint of input component'
+          },
+          {
+            name: 'rules',
+            type: 'array',
+            description: 'Accepts an array of functions that return either True or a String with an error message'
+          },
+          {
+            name: 'autocomplete',
+            type: 'string',
+            description: 'Attribute to identify input purpose, for instance "postal-code" or "username".'
+          }
         ],
-        source: source,
-        rows: [
+        methods: [
           {
-            name: "name",
-            type: "string",
-            required: "yes",
-            description: "The name of the textarea, which is submitted with the form data."
+            name: 'validate',
+            description: 'validates v-model value. returns true if valid'
+          }
+        ],
+        slots: [
+          {
+            name: 'label',
+            description: 'slot for textarea label',
+            props: '\'label\' prop of component'
           },
           {
-            name: "id",
-            type: "string",
-            required: "no",
-            description: "The id of the textarea. Default: NhsTextarea_<random id>"
+            name: 'hint',
+            description: 'slot for textarea hint',
+            props: '\'hint\' prop of component'
           },
           {
-            name: "rows",
-            type: "number",
-            required: "no",
-            description: "Optional number of textarea rows. Default: 5"
-          },
-          {
-            name: "disabled",
-            type: "boolean",
-            required: "no",
-            description: "If true, textarea is disabled"
-          },
-          {
-            name: "attributes",
-            type: "object",
-            required: "no",
-            description: "Any extra HTML attributes (for example class) to add to the textarea tag."
+            name: 'error',
+            description: 'slot for textarea error',
+            props: 'error message'
           }
         ]
       }

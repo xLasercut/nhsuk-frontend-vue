@@ -68,6 +68,9 @@
   import Table from '../examples/Table.vue'
   import TablePanel from '../examples/TablePanel.vue'
   import WarningCallout from '../examples/WarningCallout.vue'
+  import Textarea from '../examples/Textarea'
+  import TextareaError from '../examples/TextareaError'
+  import TextareaSlots from '../examples/TextareaSlots'
 
   const map = {
     'ActionLink': ActionLink,
@@ -134,7 +137,10 @@
     'SummaryListNoBorder': SummaryListNoBorder,
     'Table': Table,
     'TablePanel': TablePanel,
-    'WarningCallout': WarningCallout
+    'WarningCallout': WarningCallout,
+    'Textarea': Textarea,
+    'TextareaError': TextareaError,
+    'TextareaSlots': TextareaSlots
   }
 
   export default {
