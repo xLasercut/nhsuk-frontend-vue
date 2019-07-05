@@ -30,3 +30,16 @@ jobs:
         - npm run serve &
       script:
         - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+
+    - stage: tag
+      name: Deploy docs
+      script:
+        - npm run deploy:gh
+      deploy:
+        skip_cleanup: true
+        provider: pages
+        local-dir: ./dist_docs
+        keep-history: true
+        github-token: $GITHUB_TOKEN
+        on:
+          branch: master
