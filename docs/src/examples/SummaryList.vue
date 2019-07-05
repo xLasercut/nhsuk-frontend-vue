@@ -3,7 +3,7 @@
     <template #item="item">
       <nhs-summary-list-item type="key">{{item.props.key}}</nhs-summary-list-item>
       <nhs-summary-list-item type="value" v-html="item.props.value"></nhs-summary-list-item>
-      <nhs-summary-list-item type="action">
+      <nhs-summary-list-item type="actions">
         <router-link :to="item.props.action">Change</router-link>
       </nhs-summary-list-item>
     </template>

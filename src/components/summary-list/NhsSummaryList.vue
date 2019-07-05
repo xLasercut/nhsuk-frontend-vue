@@ -1,5 +1,5 @@
 <template>
-  <dl :class="classes">
+  <dl :class="classes" v-bind="$attrs">
     <div class="nhsuk-summary-list__row" v-for="(item, index) in data" :key="index">
       <slot name="item" :props="item"></slot>
     </div>

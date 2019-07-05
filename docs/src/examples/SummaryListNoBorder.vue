@@ -4,7 +4,6 @@
       <nhs-summary-list-item type="key">{{item.props.key}}</nhs-summary-list-item>
       <nhs-summary-list-item type="value" v-html="item.props.value"></nhs-summary-list-item>
     </template>
-
   </nhs-summary-list>
 </template>
 

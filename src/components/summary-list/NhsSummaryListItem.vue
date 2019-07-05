@@ -1,5 +1,5 @@
 <template>
-  <component :is="componentType">
+  <component :is="componentType" v-bind="$attrs">
     <slot></slot>
   </component>
 </template>
@@ -9,7 +9,7 @@
   import Value from './item-types/Value.vue'
   import Action from './item-types/Action.vue'
 
-  const types = [ 'key', 'value', 'action' ]
+  const types = [ 'key', 'value', 'actions' ]
 
   export default {
     name: 'NhsSummaryListItem',
@@ -30,7 +30,7 @@
         else if (this.type === 'value') {
           return Value
         }
-        else if (this.type === 'action') {
+        else if (this.type === 'actions') {
           return Action
         }
       }

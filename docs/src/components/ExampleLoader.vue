@@ -63,6 +63,8 @@
   import SelectError from '../examples/SelectError.vue'
   import SelectSlots from '../examples/SelectSlots.vue'
   import SkipLink from '../examples/SkipLink.vue'
+  import SummaryList from '../examples/SummaryList.vue'
+  import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -124,7 +126,9 @@
     'Select': Select,
     'SelectError': SelectError,
     'SelectSlots': SelectSlots,
-    'SkipLink': SkipLink
+    'SkipLink': SkipLink,
+    'SummaryList': SummaryList,
+    'SummaryListNoBorder': SummaryListNoBorder
   }
 
   export default {
