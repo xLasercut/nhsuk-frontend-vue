@@ -4,6 +4,8 @@ This is an **unofficial** port of [nhsuk-frontend library](https://github.com/nh
 
 For previews and docs: [Preview Page](https://xlasercut.github.io/nhsuk-frontend-vue/)
 
+NPM page: [nhsuk-frontend-vue](https://www.npmjs.com/package/nhsuk-frontend-vue)
+
 
 ## Install
 ```
