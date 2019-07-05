@@ -1,5 +1,7 @@
 # nhsuk-frontend-vue
 
+[![Build Status](https://travis-ci.com/xLasercut/nhsuk-frontend-vue.svg?branch=master)](https://travis-ci.com/xLasercut/nhsuk-frontend-vue)
+
 This is an **unofficial** port of [nhsuk-frontend library](https://github.com/nhsuk/nhsuk-frontend/) in to a vue.js component library.
 
 For previews and docs: [Preview Page](https://xlasercut.github.io/nhsuk-frontend-vue/)
