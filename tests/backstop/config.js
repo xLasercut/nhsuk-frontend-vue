@@ -7,6 +7,10 @@ for (var item of config.scenarios) {
       item.url = item.url.replace(key, `#/${urlMap[key]}`)
     }
   }
+
+  if (item.clickSelector) {
+    item['postInteractionWait'] = 2000
+  }
 }
 
 module.exports = config
