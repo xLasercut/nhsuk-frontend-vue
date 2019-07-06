@@ -1,5 +1,5 @@
 <template>
-  <div :class="columnClass">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -26,7 +26,7 @@
       }
     },
     computed: {
-      columnClass() {
+      classes() {
         return `nhsuk-grid-column-${spans[this.span]}`
       }
     }

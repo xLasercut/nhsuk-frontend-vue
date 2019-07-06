@@ -3,7 +3,7 @@
     <code-block file="Textarea" />
     <code-block file="TextareaError" />
     <code-block file="TextareaSlots" />
-    <argument-table heading="textarea" :data-props="props" :data-slots="slots" :data-methods="methods" />
+    <argument-table heading="textarea" :data-props="props" :data-slots="slots" :data-methods="methods" :data-events="events" />
   </nhs-main>
 </template>
 
@@ -74,6 +74,16 @@
             name: 'error',
             description: 'slot for textarea error',
             props: 'error message'
+          }
+        ],
+        events: [
+          {
+            name: 'blur',
+            trigger: 'on blur from textarea'
+          },
+          {
+            name: 'change',
+            trigger: 'on value change'
           }
         ]
       }

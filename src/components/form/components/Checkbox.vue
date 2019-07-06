@@ -27,20 +27,17 @@
         type: String
       },
       conditional: {
-        type: String,
-        default: ''
+        type: String
       },
       hint: {
-        type: String,
-        default: ''
+        type: String
       },
       label: {
         type: String,
         required: true
       },
       name: {
-        type: String,
-        default: ''
+        type: String
       },
       disabled: {
         type: Boolean,

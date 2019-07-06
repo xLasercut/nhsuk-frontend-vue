@@ -14,6 +14,23 @@ export default {
     },
     errorId() {
       return `${this.id}-error`
+    },
+    ariaDescribedby() {
+      if (this.hint || this.error) {
+        var describedby = []
+
+        if (this.hint) {
+          describedby.push(this.hintId)
+        }
+
+        if (this.error) {
+          describedby.push(this.errorId)
+        }
+
+        return describedby.join(' ')
+      }
+
+      return null
     }
   }
 }

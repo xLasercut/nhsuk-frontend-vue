@@ -11,7 +11,8 @@
     </nhs-error-text>
     <input
       :class="classes" :id="id" :name="name" :type="type"
-      v-bind="attributes" v-model="model"
+      :aria-describedby="ariaDescribedby"
+      v-bind="$attrs" v-model="model"
       :disabled="disabled" :maxlength="maxlength"
       @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
       :autocomplete="autocomplete"
@@ -41,8 +42,7 @@
         type: Number
       },
       autocomplete: {
-        type: String,
-        default: ''
+        type: String
       }
     },
     computed: {

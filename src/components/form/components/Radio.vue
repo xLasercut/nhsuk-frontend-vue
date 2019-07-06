@@ -21,8 +21,7 @@
   export default {
     props: {
       name: {
-        type: String,
-        default: ''
+        type: String
       },
       disabled: {
         type: Boolean,
@@ -33,12 +32,10 @@
         required: true
       },
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       hint: {
-        type: String,
-        default: ''
+        type: String
       },
       radioValue: {
         type: String,

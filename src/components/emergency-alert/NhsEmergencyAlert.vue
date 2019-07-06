@@ -11,7 +11,7 @@
             <p class="nhsuk-global-alert__message">
               <slot></slot>
             </p>
-            <p class="nhsuk-global-alert__updated">
+            <p class="nhsuk-global-alert__updated" v-if="lastUpdated">
               {{lastUpdated}}
             </p>
           </div>
@@ -34,8 +34,7 @@
         required: true
       },
       lastUpdated: {
-        type: String,
-        default: ''
+        type: String
       }
     }
   }

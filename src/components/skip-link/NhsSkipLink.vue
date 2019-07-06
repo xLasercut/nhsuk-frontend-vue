@@ -1,5 +1,5 @@
 <template>
-  <a class="nhsuk-skip-link" href="#maincontent">
+  <a class="nhsuk-skip-link" href="#maincontent" v-bind="$attrs">
     <slot></slot>
   </a>
 </template>

@@ -1,6 +1,11 @@
 <template>
   <form-item :error="error">
-    <nhs-fieldset :legend="label" :page-heading="pageHeading" v-bind="attributes" :size="headingSize">
+    <nhs-fieldset
+      :legend="label"
+      :page-heading="pageHeading"
+      :aria-describedby="ariaDescribedby"
+      :size="headingSize"
+    >
       <nhs-hint-text v-if="hint" :id="hintId">
         <slot name="hint" :props="hint">{{hint}}</slot>
       </nhs-hint-text>
@@ -46,12 +51,10 @@
     },
     props: {
       hint: {
-        type: String,
-        default: ''
+        type: String
       },
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       disabled: {
         type: Boolean,
@@ -68,28 +71,7 @@
         }
       },
       headingSize: {
-        type: String,
-        default: ''
-      }
-    },
-    computed: {
-      attributes() {
-        var attributes = {}
-        if (this.hint || this.error) {
-          var describedby = []
-
-          if (this.hint) {
-            describedby.push(this.hintId)
-          }
-
-          if (this.error) {
-            describedby.push(this.errorId)
-          }
-
-          attributes['aria-describedby'] = describedby.join(' ')
-        }
-
-        return attributes
+        type: String
       }
     },
     methods: {

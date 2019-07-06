@@ -41,25 +41,5 @@ export default {
     model() {
       this.validate()
     }
-  },
-  computed: {
-    attributes() {
-      var attributes = {}
-      if (this.hint || this.error) {
-        var describedby = []
-
-        if (this.hint) {
-          describedby.push(this.hintId)
-        }
-
-        if (this.error) {
-          describedby.push(this.errorId)
-        }
-
-        attributes['aria-describedby'] = describedby.join(' ')
-      }
-
-      return attributes
-    }
   }
 }

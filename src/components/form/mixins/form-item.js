@@ -13,41 +13,18 @@ export default {
       default: false
     },
     name: {
-      type: String,
-      default: ''
+      type: String
     },
     hint: {
-      type: String,
-      default: ''
+      type: String
     },
     label: {
-      type: String,
-      default: ''
+      type: String
     }
   },
   watch: {
     model() {
       this.validate()
-    }
-  },
-  computed: {
-    attributes() {
-      var attributes = this.$attrs
-      if (this.hint || this.error) {
-        var describedby = []
-
-        if (this.hint) {
-          describedby.push(this.hintId)
-        }
-
-        if (this.error) {
-          describedby.push(this.errorId)
-        }
-
-        attributes['aria-describedby'] = describedby.join(' ')
-      }
-
-      return attributes
     }
   }
 }

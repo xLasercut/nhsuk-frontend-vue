@@ -11,7 +11,7 @@
     </nhs-error-text>
     <textarea
       :class="classes" :id="id" :rows="rows" :disabled="disabled" :name="name"
-      v-model="model" v-bind="attributes"
+      v-model="model" v-bind="$attrs" :aria-describedby="ariaDescribedby"
       @blur="$emit('blur')" @change="$emit('change')" :autocomplete="autocomplete"
     ></textarea>
   </form-item>
@@ -29,8 +29,7 @@
         default: 5
       },
       autocomplete: {
-        type: String,
-        default: ''
+        type: String
       }
     },
     computed: {

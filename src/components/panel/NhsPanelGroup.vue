@@ -1,5 +1,5 @@
 <template>
-  <div class="nhsuk-grid-row nhsuk-panel-group">
+  <div class="nhsuk-grid-row nhsuk-panel-group" v-bind="$attrs">
     <div
       v-for="(item, index) in $slots.default"
       :class="classes"

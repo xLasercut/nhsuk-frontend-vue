@@ -32,12 +32,10 @@
         required: true
       },
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       href: {
-        type: String,
-        default: ''
+        type: String
       },
       hiddenText: {
         type: String,

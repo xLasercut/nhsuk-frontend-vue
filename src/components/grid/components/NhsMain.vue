@@ -1,5 +1,5 @@
 <template>
-  <div :class="containerClass">
+  <div :class="classes">
     <main class="nhsuk-main-wrapper" id="maincontent">
       <slot></slot>
     </main>
@@ -24,7 +24,7 @@
       }
     },
     computed: {
-      containerClass() {
+      classes() {
         return types[this.type]
       }
     }

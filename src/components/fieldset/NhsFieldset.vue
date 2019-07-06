@@ -19,8 +19,7 @@
     name: 'NhsFieldset',
     props: {
       legend: {
-        type: String,
-        default: ''
+        type: String
       },
       pageHeading: {
         type: Boolean,
@@ -28,7 +27,6 @@
       },
       size: {
         type: String,
-        default: '',
         validator(val) {
           if (val) {
             return sizes.includes(val)

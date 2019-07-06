@@ -1,5 +1,5 @@
 <template>
-<div :class="classes">
+<div :class="classes" v-bind="$attrs">
   <heading-switcher
     class="nhsuk-panel-with-label__label" v-if="label"
     :heading-level="headingLevel"

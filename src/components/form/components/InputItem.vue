@@ -33,8 +33,7 @@
         required: true
       },
       name: {
-        type: String,
-        default: ''
+        type: String
       },
       type: {
         type: String,
@@ -51,12 +50,10 @@
         default: false
       },
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       autocomplete: {
-        type: String,
-        default: ''
+        type: String
       },
       rules: {
         type: Array,
