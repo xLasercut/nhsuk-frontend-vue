@@ -45,3 +45,9 @@ jobs:
         github-token: $GITHUB_TOKEN
         on:
           branch: master
+
+    - stage: deploy
+      name: Deploy to npm
+      if: tag IS present
+      script:
+        - npm run build
