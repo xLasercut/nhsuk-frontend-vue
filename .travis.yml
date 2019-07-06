@@ -9,7 +9,8 @@ cache:
     - docker
   stages:
     - tests
-    - deploy
+    - name: deploy
+      if: tag IS present
 
 jobs:
   include:
@@ -18,18 +19,21 @@ jobs:
       script: npm run lint
 
     - stage: tests
-      name: Unit
+      name: Unit test
       script: npm run test:unit
 
     - stage: tests
-      name: Backstop
+      name: Backstop test
       before_script:
         - npm run serve &
       script:
         - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
+    - stage: tests
+      name: Build test
+      script: npm run build
+
     - stage: deploy
-      if: tag IS present
       name: Deploy docs
       script:
         - npm run deploy:gh
@@ -40,4 +44,4 @@ jobs:
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
-          branch: master
+          tags: true
