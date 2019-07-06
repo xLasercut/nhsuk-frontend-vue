@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: tests
       name: Linting
-      script: npm run lint
+      script: npm run lint & echo $TEST
 
     - stage: tests
       name: Unit test
