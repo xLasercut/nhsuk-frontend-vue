@@ -11,12 +11,10 @@ export default {
   mixins: [ FormValidation, FormAria, VModel ],
   props: {
     hint: {
-      type: String,
-      default: ''
+      type: String
     },
     label: {
-      type: String,
-      default: ''
+      type: String
     },
     disabled: {
       type: Boolean,
@@ -33,8 +31,7 @@ export default {
       }
     },
     headingSize: {
-      type: String,
-      default: ''
+      type: String
     }
   },
   watch: {

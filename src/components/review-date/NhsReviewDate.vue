@@ -13,11 +13,11 @@
     props: {
       lastReview: {
         type: String,
-        default: ''
+        required: true
       },
       nextReview: {
         type: String,
-        default: ''
+        required: true
       }
     }
   }

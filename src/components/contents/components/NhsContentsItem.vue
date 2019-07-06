@@ -17,8 +17,7 @@
     components: { LinkSwitcher },
     props: {
       href: {
-        type: String,
-        default: ''
+        type: String
       },
       ariaCurrent: {
         type: String,

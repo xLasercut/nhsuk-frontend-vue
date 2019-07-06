@@ -20,8 +20,7 @@
     components: { HeadingSwitcher },
     props: {
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       color: {
         type: String,

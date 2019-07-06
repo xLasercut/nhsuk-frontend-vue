@@ -41,7 +41,7 @@ describe('input group tests', () => {
     expect(inputs.at(1).attributes().type).toBe('text')
 
     expect(inputs.at(0).attributes().autocomplete).toBe('postcode')
-    expect(inputs.at(1).attributes().autocomplete).toBe('')
+    expect(inputs.at(1).attributes().autocomplete).toBe(undefined)
 
     expect(wrapper.find('h1').exists()).toBe(false)
     expect(wrapper.find('.nhsuk-fieldset__legend--l').exists()).toBe(false)

@@ -33,16 +33,13 @@
     name: 'NhsHero',
     props: {
       heading: {
-        type: String,
-        default: ''
+        type: String
       },
       imageUrl: {
-        type: String,
-        default: ''
+        type: String
       },
       text: {
-        type: String,
-        default: ''
+        type: String
       }
     },
     computed: {

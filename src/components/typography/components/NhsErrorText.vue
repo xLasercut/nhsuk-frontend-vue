@@ -14,8 +14,7 @@
         default: 'Error: '
       },
       id: {
-        type: String,
-        default: ''
+        type: String
       }
     }
   }

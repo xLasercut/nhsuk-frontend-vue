@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Unofficial port of NHS UK frontend library to vue.js",
   "license": "MIT",

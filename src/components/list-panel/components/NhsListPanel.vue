@@ -28,12 +28,10 @@
     components: { HeadingSwitcher, LinkSwitcher, NhsIcon },
     props: {
       label: {
-        type: String,
-        default: ''
+        type: String
       },
       id: {
-        type: String,
-        default: ''
+        type: String
       },
       headingLevel: {
         type: Number,
@@ -44,8 +42,7 @@
         default: false
       },
       message: {
-        type: String,
-        default: ''
+        type: String
       },
       backToTop: {
         type: Boolean,

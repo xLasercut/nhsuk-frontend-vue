@@ -26,16 +26,14 @@
     name: 'NhsTable',
     props: {
       heading: {
-        type: String,
-        default: ''
+        type: String
       },
       headingLevel: {
         type: Number,
         default: 3
       },
       caption: {
-        type: String,
-        default: ''
+        type: String
       },
       headers: {
         type: Array,

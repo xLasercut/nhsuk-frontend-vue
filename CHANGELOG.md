@@ -1,5 +1,11 @@
 # NHS.UK frontend vue Changelog
 
+## 1.0.1 - 6th July 2019
+
+:wrench: **Fixes**
+
+- Fixed form components rendering html attributes when attributes are empty
+
 ## 1.0.0 - 5th July 2019
 
 First Beta version of the component library. All older versions are now deprecated.

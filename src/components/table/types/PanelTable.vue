@@ -13,8 +13,7 @@
   export default {
     props: {
       heading: {
-        type: String,
-        default: ''
+        type: String
       },
       headingLevel: {
         type: Number,

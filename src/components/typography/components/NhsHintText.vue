@@ -9,8 +9,7 @@
     name: 'NhsHintText',
     props: {
       id: {
-        type: String,
-        default: ''
+        type: String
       }
     }
   }

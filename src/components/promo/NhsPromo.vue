@@ -34,12 +34,10 @@
         required: true
       },
       src: {
-        type: String,
-        default: ''
+        type: String
       },
       alt: {
-        type: String,
-        default: ''
+        type: String
       },
       heading: {
         type: String,

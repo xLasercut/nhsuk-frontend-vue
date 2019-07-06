@@ -33,20 +33,16 @@
         default: 'Pagination'
       },
       previousHref: {
-        type: String,
-        default: ''
+        type: String
       },
       previousPage: {
-        type: String,
-        default: ''
+        type: String
       },
       nextHref: {
-        type: String,
-        default: ''
+        type: String
       },
       nextPage: {
-        type: String,
-        default: ''
+        type: String
       }
     },
     components: { NhsIcon, LinkSwitcher }

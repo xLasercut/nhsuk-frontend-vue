@@ -25,8 +25,7 @@
     },
     props: {
       href: {
-        type: String,
-        default: ''
+        type: String
       }
     }
   }

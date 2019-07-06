@@ -38,8 +38,7 @@
         default: false
       },
       href: {
-        type: String,
-        default: ''
+        type: String
       },
       element: {
         type: String,
