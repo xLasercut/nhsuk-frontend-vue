@@ -19,13 +19,6 @@
         type: String,
         required: true
       }
-    },
-    methods: {
-      test() {
-        for (var a of this.type) {
-          console.log(a)
-        }
-      }
     }
   }
 </script>

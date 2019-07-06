@@ -44,10 +44,17 @@ jobs:
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
-          branch: master
+          tag: true
 
     - stage: deploy
       name: Deploy to npm
       if: tag IS present
       script:
         - npm run build
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_KEY
+        skip_cleanup: true
+        on:
+          tag: true
