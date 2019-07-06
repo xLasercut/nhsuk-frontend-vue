@@ -9,8 +9,7 @@ cache:
     - docker
   stages:
     - tests
-    - name: deploy
-      if: tag IS present
+    - deploy
 
 jobs:
   include:
@@ -35,6 +34,7 @@ jobs:
 
     - stage: deploy
       name: Deploy docs
+      if: tag IS present
       script:
         - npm run deploy:gh
       deploy:
@@ -44,4 +44,4 @@ jobs:
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
-          tags: true
+          branch: master
