@@ -43,8 +43,8 @@ jobs:
         local-dir: ./dist_docs
         keep-history: true
         github-token: $GITHUB_TOKEN
-      on:
-        tags: true
+        on:
+          tags: true
 
     - stage: deploy
       name: Deploy to npm
@@ -56,5 +56,5 @@ jobs:
         email: $NPM_EMAIL
         api_key: $NPM_KEY
         skip_cleanup: true
-      on:
-        tags: true
+        on:
+          tags: true
