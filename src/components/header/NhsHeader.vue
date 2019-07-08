@@ -13,7 +13,7 @@
 
       <div class="nhsuk-header__content" id="content-header" v-if="showNav || showSearch">
         <header-menu :show-search="showSearch" :show-nav="showNav"></header-menu>
-        <header-search v-if="showSearch"></header-search>
+        <header-search v-if="showSearch" :search-config="searchConfig"></header-search>
       </div>
     </div>
 
@@ -29,6 +29,8 @@
   import HeaderSearch from './header/HeaderSearch.vue'
   import HeaderTransactional from './header/HeaderTransactional.vue'
   import HeaderMenu from './header/HeaderMenu.vue'
+
+  import nhsukHeader from '../../../node_modules/nhsuk-frontend/packages/components/header/header'
 
   export default {
     name: 'NhsHeader',
@@ -55,6 +57,12 @@
       homeHref: {
         type: String,
         default: '/'
+      },
+      searchConfig: {
+        type: Object,
+        default() {
+          return {}
+        }
       }
     },
     components: {
@@ -78,6 +86,9 @@
         }
         return false
       }
+    },
+    mounted() {
+      nhsukHeader()
     }
   }
 </script>

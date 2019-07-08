@@ -1,5 +1,5 @@
 <template>
-  <nhs-header show-nav show-search>
+  <nhs-header show-nav show-search :search-config="searchConfig">
     <nhs-header-item href="https://www.nhs.uk/conditions">
       Health A-Z
     </nhs-header-item>
@@ -17,3 +17,30 @@
     </nhs-header-item>
   </nhs-header>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        searchConfig: {
+          onConfirm: (SelectedContent) => {
+            this.$router.push({ name: SelectedContent })
+          },
+          source: this.searchResults
+        }
+      }
+    },
+    methods: {
+      searchResults(query, callback) {
+        var results = []
+        var allRoutes = [ 'a', 'b', 'c' ]
+        for (var i = 0; i < allRoutes.length; i++) {
+          if (allRoutes[i].includes(query)) {
+            results.push(allRoutes[i])
+          }
+        }
+        callback(results)
+      }
+    }
+  }
+</script>

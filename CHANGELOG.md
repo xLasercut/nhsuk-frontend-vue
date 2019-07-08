@@ -1,5 +1,11 @@
 # NHS.UK frontend vue Changelog
 
+## 1.0.2 - 8th July 2019
+
+:new: **New features**
+- Added `search-config` prop to Header (allows for custom header search)
+- Added `delay` prop to Feeback Banner
+
 ## 1.0.1 - 6th July 2019
 
 :wrench: **Fixes**

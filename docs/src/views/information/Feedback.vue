@@ -39,6 +39,11 @@
             name: 'hidden-text',
             type: 'string',
             description: 'Hidden text used for text-to-speech: Default: feedback invite'
+          },
+          {
+            name: 'delay',
+            type: 'number',
+            description: 'Amount of delay before feedback banner appears in miliseconds. default: 3000'
           }
         ],
         slots: [

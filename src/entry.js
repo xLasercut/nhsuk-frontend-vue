@@ -1,6 +1,7 @@
 // Import vue components
 import '../node_modules/nhsuk-frontend/dist/nhsuk.css'
-import '../node_modules/nhsuk-frontend/dist/nhsuk.js'
+import '../node_modules/nhsuk-frontend/packages/components/details/details.polyfill'
+
 import * as components from './components/index'
 
 // install function executed by Vue.use()

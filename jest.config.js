@@ -14,7 +14,8 @@ module.exports = {
     '/node_modules/'
   ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    'node_modules/nhsuk-frontend/packages/components/(.*)': '<rootDir>/tests/mock/stub.js'
   },
   snapshotSerializers: [
     'jest-serializer-vue'

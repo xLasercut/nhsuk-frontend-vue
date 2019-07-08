@@ -16,7 +16,7 @@
           :label="key" :id="`panel-${key}`"
           :back-to-top="true" @back-to-top="backToTop()"
         >
-          <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href">
+          <nhs-list-panel-item v-for="(item, index) in items" :key="index" :href="item.href" @click.native="backToTop()">
             {{item.text}}
           </nhs-list-panel-item>
         </nhs-list-panel>
@@ -28,8 +28,8 @@
 <script>
   import SiteHeader from '../components/SiteHeader.vue'
   import SiteFooter from '../components/SiteFooter.vue'
+  import RouteHelper from '../assets/mixins/route-helper.js'
 
-  const blacklist = ["Typography", "Navigation", "Form", "Layout", "Information"]
   const alphabet = [
     "A", "B", "C", "D", "E", "F",
     "G", "H", "I", "J", "K", "L",
@@ -40,6 +40,7 @@
 
   export default {
     components: { SiteHeader, SiteFooter },
+    mixins: [ RouteHelper ],
     data() {
       return {
         navItems: [],
@@ -48,29 +49,6 @@
       }
     },
     methods: {
-      getAllRoutes() {
-        var routesToDisplay = []
-        var mainRoutes = this.$router.options.routes
-        for (var mainRoute of mainRoutes) {
-          if (mainRoute.path === '/section') {
-            var childRoutes = mainRoute.children
-          }
-        }
-
-        for (var childRoute of childRoutes) {
-          if (childRoute.name && !blacklist.includes(childRoute.name)) {
-            routesToDisplay.push(childRoute)
-          }
-        }
-
-        return routesToDisplay.sort(function (a,b) {
-          if (a.name < b.name)
-            return -1;
-          if (a.name > b.name)
-            return 1;
-          return 0;
-        })
-      },
       getListPanelItems() {
         for (var letter of alphabet) {
           if (!(letter in this.panels)) {

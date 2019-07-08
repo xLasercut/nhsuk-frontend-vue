@@ -22,6 +22,7 @@
 
 <script>
   import LinkSwitcher from '../../shared/LinkSwitcher.vue'
+  import nhsukFeedbackBanner from '../../../node_modules/nhsuk-frontend/packages/components/feedback-banner/feedback-banner'
 
   export default {
     name: 'NhsFeedback',
@@ -40,7 +41,14 @@
       hiddenText: {
         type: String,
         default: ' feedback invite'
+      },
+      delay: {
+        type: Number,
+        default: 3000
       }
+    },
+    mounted() {
+      nhsukFeedbackBanner(this.delay)
     }
   }
 </script>

@@ -5,7 +5,12 @@
 </template>
 
 <script>
+  import nhsukSkiplink from '../../../node_modules/nhsuk-frontend/packages/components/skip-link/skip-link'
+
   export default {
-    name: 'NhsSkipLink'
+    name: 'NhsSkipLink',
+    mounted() {
+      nhsukSkiplink()
+    }
   }
 </script>

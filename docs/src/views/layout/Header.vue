@@ -43,6 +43,21 @@
             name: "service",
             type: "object",
             description: "Object containing the name and href of the service"
+          },
+          {
+            name: 'search-config',
+            type: 'object',
+            description: 'Object for search config.'
+          },
+          {
+            name: 'search-config.source',
+            type: 'method',
+            description: 'Defines what is rendered in autocomplete. Takes a method with query and callback'
+          },
+          {
+            name: 'search-config.onConfirm',
+            type: 'method',
+            description: 'Defines what happens after item is selected in autocomplete.'
           }
         ],
         slots: [
