@@ -42,8 +42,9 @@ jobs:
     - stage: deploy
       name: Deploy docs
       script:
+        - npm run build:docs:gh
+      before_deploy:
         - cd docs
-        - npm run build:gh
       deploy:
         skip_cleanup: true
         provider: pages
