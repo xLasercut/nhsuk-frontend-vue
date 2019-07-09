@@ -15,7 +15,7 @@ cache:
   services:
     - docker
   stages:
-    - tests
+    #- tests
     - deploy
 
 jobs:
@@ -50,8 +50,6 @@ jobs:
         local-dir: ./dist
         keep-history: true
         github-token: $GITHUB_TOKEN
-        on:
-          tags: true
 
     - stage: deploy
       name: Deploy to npm
