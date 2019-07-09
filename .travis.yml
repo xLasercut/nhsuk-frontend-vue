@@ -15,29 +15,29 @@ cache:
   services:
     - docker
   stages:
-    #- tests
+    - tests
     - deploy
 
 jobs:
   include:
-    - stage: tests
-      name: Linting
-      script: npm run lint
+    #- stage: tests
+    #  name: Linting
+    #  script: npm run lint
 
-    - stage: tests
-      name: Unit test
-      script: npm run test:unit
+    #- stage: tests
+    #  name: Unit test
+    #  script: npm run test:unit
 
-    - stage: tests
-      name: Backstop test
-      before_script:
-        - npm run serve &
-      script:
-        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+    #- stage: tests
+    #  name: Backstop test
+    #  before_script:
+    #    - npm run serve &
+    #  script:
+    #    - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
-    - stage: tests
-      name: Build test
-      script: npm run build
+    #- stage: tests
+    #  name: Build test
+    #  script: npm run build
 
     - stage: deploy
       name: Deploy docs
