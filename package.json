@@ -7,7 +7,7 @@
     "lint": "npm run lint:package && npm run lint:docs",
     "lint:package": "cd package && npm run lint",
     "lint:docs": "cd docs && npm run lint",
-    "test:unit": "cd nhsuk-frontend-vue/ && npm run test:unit",
+    "test:unit": "cd package && npm run test:unit",
     "build": "npm run build:package && npm run build:docs:gh",
     "build:package": "cd package && npm run build",
     "build:docs": "cd docs && npm run build",
