@@ -43,12 +43,10 @@ jobs:
       name: Deploy docs
       script:
         - npm run build:docs:gh
-      before_deploy:
-        - cd docs
       deploy:
         skip_cleanup: true
         provider: pages
-        local-dir: ./dist
+        local-dir: ./docs/dist
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
@@ -56,14 +54,18 @@ jobs:
 
     - stage: deploy
       name: Deploy to npm
-      if: tag IS present
+      #if: tag IS present
       script:
-        - cd package
+        - pushd package
         - npm run build
+        - popd
+      before_deploy:
+        - cd package
       deploy:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_KEY
         skip_cleanup: true
         on:
-          tags: true
+          #tags: true
+          branch: dev
