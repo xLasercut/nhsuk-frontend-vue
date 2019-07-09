@@ -8,6 +8,8 @@ For previews and docs: [Preview Page](https://xlasercut.github.io/nhsuk-frontend
 
 NPM page: [nhsuk-frontend-vue](https://www.npmjs.com/package/nhsuk-frontend-vue)
 
+Changelog: [Changelog](../CHANGELOG.md)
+
 
 ## Install
 ```
