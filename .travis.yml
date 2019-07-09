@@ -20,29 +20,47 @@ cache:
 
 jobs:
   include:
-    #- stage: tests
-    #  name: Linting
-    #  script: npm run lint
+    - stage: tests
+      name: Linting
+      script:
+        - pushd package
+        - npm run lint
+        - popd
+        - pushd docs
+        - npm run lint
+        - popd
 
-    #- stage: tests
-    #  name: Unit test
-    #  script: npm run test:unit
+    - stage: tests
+      name: Unit test
+      script:
+        - cd package
+        - npm run test:unit
 
-    #- stage: tests
-    #  name: Backstop test
-    #  before_script:
-    #    - npm run serve &
-    #  script:
-    #    - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+    - stage: tests
+      name: Backstop test
+      before_script:
+        - cd package
+        - npm run serve &
+      script:
+        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
-    #- stage: tests
-    #  name: Build test
-    #  script: npm run build
+    - stage: tests
+      name: Build test
+      script:
+        - pushd package
+        - npm run build
+        - popd
+        - pushd docs
+        - npm run build:gh
+        - popd
 
     - stage: deploy
       name: Deploy docs
+      if: tag IS present
       script:
-        - npm run build:docs:gh
+        - pushd docs
+        - npm run build:gh
+        - popd
       deploy:
         skip_cleanup: true
         provider: pages
@@ -50,11 +68,11 @@ jobs:
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
-          branch: dev
+          tags: true
 
     - stage: deploy
       name: Deploy to npm
-      #if: tag IS present
+      if: tag IS present
       script:
         - pushd package
         - npm run build
@@ -67,5 +85,4 @@ jobs:
         api_key: $NPM_KEY
         skip_cleanup: true
         on:
-          #tags: true
-          branch: dev
+          tags: true

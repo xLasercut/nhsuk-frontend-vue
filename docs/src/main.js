@@ -9,6 +9,9 @@ import ArgumentTable from './components/ArgumentTable.vue'
 import 'vue-highlight.js/lib/allLanguages'
 import 'highlight.js/styles/atom-one-dark.css'
 
+for (var item of items) {
+  console.log(item)
+}
 
 Vue.use(NhsukFrontendVue)
 Vue.use(VueHighlightJS)
