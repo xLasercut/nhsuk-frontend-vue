@@ -50,6 +50,8 @@ jobs:
         local-dir: ./dist
         keep-history: true
         github-token: $GITHUB_TOKEN
+        on:
+          branch: dev
 
     - stage: deploy
       name: Deploy to npm
