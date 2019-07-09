@@ -1,1 +1,1 @@
-./CHANGELOG.md
+./package/CHANGELOG.md
