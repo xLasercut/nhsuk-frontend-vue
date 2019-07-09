@@ -33,7 +33,7 @@ jobs:
       before_script:
         - npm run serve &
       script:
-        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/package backstopjs/backstopjs:4.1.9 test --config=./package/tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
     - stage: tests
       name: Build test
@@ -41,9 +41,9 @@ jobs:
 
     - stage: deploy
       name: Deploy docs
-      if: tag IS present
       script:
-        - npm run deploy:gh
+        - cd docs
+        - npm run build:gh
       deploy:
         skip_cleanup: true
         provider: pages
