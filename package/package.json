@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": false,
   "repository": "https://github.com/xLasercut/nhsuk-frontend-vue",
   "description": "Unofficial port of NHS UK frontend library to vue.js",
