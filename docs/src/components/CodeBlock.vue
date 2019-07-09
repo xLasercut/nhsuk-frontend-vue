@@ -66,6 +66,7 @@
             'margin-bottom': '0px'
           }
         }
+        return {}
       },
       expandContainerStyle() {
         if (!this.showTemplate && !this.showScript) {
@@ -74,6 +75,7 @@
             'margin-bottom': '40px'
           }
         }
+        return {}
       }
     },
     mounted() {

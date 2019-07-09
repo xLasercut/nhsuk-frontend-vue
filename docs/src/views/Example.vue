@@ -70,6 +70,8 @@
         if (grayContainers.includes(this.$route.path)) {
           return '#f0f4f5'
         }
+
+        return null
       }
     }
   }

@@ -31,7 +31,7 @@ if (GlobalVue) {
 }
 
 // Default export is library as a whole, registered via Vue.use()
-export default plugin;
+export default plugin
 
 // To allow individual component use, export components
 // each can be registered via Vue.component()

@@ -1,5 +1,5 @@
 // Get the --testhost=... argument from the backstop command
-const arguments = require('minimist')(process.argv.slice(2));
+const arguments = require('minimist')(process.argv.slice(2))
 const TEST_HOST = arguments.testhost || "http://host.docker.internal:3000"
 
 module.exports = {

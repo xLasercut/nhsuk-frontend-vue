@@ -26,8 +26,6 @@
 </template>
 
 <script>
-  import SiteHeader from '../components/SiteHeader.vue'
-  import SiteFooter from '../components/SiteFooter.vue'
   import RouteHelper from '../assets/mixins/route-helper.js'
 
   const alphabet = [
@@ -39,7 +37,6 @@
   ]
 
   export default {
-    components: { SiteHeader, SiteFooter },
     mixins: [ RouteHelper ],
     data() {
       return {

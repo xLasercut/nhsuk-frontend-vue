@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
-/dist
-/dist_docs
+package/dist
+docs/dist
 
 # local env files
 .env.local
@@ -22,5 +22,5 @@ yarn-error.log*
 *.sw?
 
 #backstop generated images
-tests/backstop/bitmaps_test/*
-tests/backstop/html_report/*
+package/tests/backstop/bitmaps_test/*
+package/tests/backstop/html_report/*

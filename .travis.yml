@@ -1,6 +1,13 @@
 language: node_js
 node_js:
   - "lts/*"
+install:
+  - pushd docs
+  - npm ci
+  - popd
+  - pushd package
+  - npm ci
+  - popd
 cache:
   directories:
     - ~/.npm
@@ -26,7 +33,7 @@ jobs:
       before_script:
         - npm run serve &
       script:
-        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+        - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue",target=/package backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
 
     - stage: tests
       name: Build test
@@ -40,7 +47,7 @@ jobs:
       deploy:
         skip_cleanup: true
         provider: pages
-        local-dir: ./dist_docs
+        local-dir: ./dist
         keep-history: true
         github-token: $GITHUB_TOKEN
         on:
@@ -50,6 +57,7 @@ jobs:
       name: Deploy to npm
       if: tag IS present
       script:
+        - cd package
         - npm run build
       deploy:
         provider: npm

@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 const path = require('path')
 
 var publicPath = '/'
@@ -12,21 +13,13 @@ else if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   publicPath: publicPath,
-  outputDir: "./dist_docs",
-  pages: {
-    index: {
-      entry: path.resolve(__dirname, 'docs/src/main.js'),
-      template: path.resolve(__dirname, 'docs/public/index.html'),
-      filename: 'index.html'
-    }
-  },
+  lintOnSave: false,
   configureWebpack: {
     plugins: [
         new CopyWebpackPlugin([
-          { from: path.resolve(__dirname, 'docs/public/'), to: '.' },
-          { from: path.resolve(__dirname, 'docs/src/examples/'), to: './examples/.'}
+          { from: path.resolve(__dirname, 'public/'), to: '.' },
+          { from: path.resolve(__dirname, 'src/examples/'), to: './examples/.'}
         ])
     ]
-  },
-  lintOnSave: false
+  }
 }
