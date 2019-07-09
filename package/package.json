@@ -1,10 +1,11 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "repository": "https://github.com/xLasercut/nhsuk-frontend-vue",
   "description": "Unofficial port of NHS UK frontend library to vue.js",
   "license": "MIT",
+  "main": "dist/nhsuk-frontend-vue.common.js",
   "scripts": {
     "build": "vue-cli-service build --target lib ./src/entry.js",
     "lint": "vue-cli-service lint",

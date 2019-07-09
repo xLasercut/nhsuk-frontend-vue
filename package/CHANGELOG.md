@@ -1,6 +1,6 @@
 # NHS.UK frontend vue Changelog
 
-## 1.0.2 - 8th July 2019
+## 1.1.0 - 9th July 2019
 
 :new: **New features**
 - Added `search-config` prop to Header (allows for custom header search)
