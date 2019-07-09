@@ -39,7 +39,7 @@ jobs:
     - stage: tests
       name: Backstop test
       before_script:
-        - cd package
+        - cd docs
         - npm run serve &
       script:
         - docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
