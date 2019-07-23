@@ -1,6 +1,6 @@
 # NHS.UK frontend vue Changelog
 
-## 1.1.1 - Unreleased
+## 1.1.1 - 23rd July 2019
 
 - Updated frontend library version to 2.3.0
 
