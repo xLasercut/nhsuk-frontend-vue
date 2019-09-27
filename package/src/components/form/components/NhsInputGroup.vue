@@ -19,7 +19,7 @@
           :disabled="item.disabled || disabled"
           :id="`${id}-${index}`" :name="item.name" :rules="item.rules"
           v-model="model[`${id}-${index}`]" :key="`${id}-${index}`" :ref="`${id}-${index}`"
-          @change="validate()" @update:error="errorMsg = $event"
+          @validate="validate()" @update:error="errorMsg = $event"
         >
           <template slot="item-label">
             <slot name="item-label" :props="item"></slot>
@@ -78,11 +78,13 @@
       validate() {
         this.error = false
         for (var key in this.$refs) {
-          var error = this.$refs[key][0].validate()
-          if (error) {
+          var valid = this.$refs[key][0].validate()
+          console.log(valid)
+          if (!valid) {
             this.error = true
           }
         }
+        return !this.error
       }
     }
   }

@@ -23,7 +23,7 @@ export default {
           this.errorMsg = result
         }
       }
-      return this.error
+      return !this.error
     }
   }
 }

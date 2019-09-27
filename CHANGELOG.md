@@ -1,5 +1,16 @@
 # NHS.UK frontend vue Changelog
 
+## 1.1.2 - 27th Sept 2019
+
+- Updated frontend library version to 2.3.1
+
+:new: **New features**
+- Added keydown and keyup events to input and textarea components
+- Added focus method to select, input and textarea components
+
+:wrench: **Fixes**
+- Fixed form validate methods returning the opposite results
+
 ## 1.1.1 - 23rd July 2019
 
 - Updated frontend library version to 2.3.0
@@ -13,7 +24,6 @@
 ## 1.0.1 - 6th July 2019
 
 :wrench: **Fixes**
-
 - Fixed form components rendering html attributes when attributes are empty
 
 ## 1.0.0 - 5th July 2019

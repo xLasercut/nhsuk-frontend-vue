@@ -47,6 +47,10 @@
           {
             name: 'validate',
             description: 'validates v-model value. returns true if valid'
+          },
+          {
+            name: 'focus',
+            description: 'focus on select'
           }
         ],
         slots: [

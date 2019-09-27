@@ -15,7 +15,10 @@
       v-bind="$attrs" v-model="model"
       :disabled="disabled" :maxlength="maxlength"
       @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
+      @keydown.enter="$emit('keydown.enter')" @keyup.enter="$emit('keyup.enter')"
+      @keydown.tab="$emit('keydown.tab')" @keyup.tab="$emit('keyup.tab')"
       :autocomplete="autocomplete"
+      ref="form-item"
     >
   </form-item>
 </template>

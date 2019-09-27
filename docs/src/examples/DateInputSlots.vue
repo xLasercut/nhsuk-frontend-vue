@@ -1,21 +1,24 @@
 <template>
-  <nhs-input-group
-    label="What is your date of birth?"
-    hint="For example, 31 3 1980"
-    :items="items" v-model="model" ref="input"
-  >
-    <template #hint="hint">
-      {{hint}}
-    </template>
+  <div>
+    <nhs-input-group
+      label="What is your date of birth?"
+      hint="For example, 31 3 1980"
+      :items="items" v-model="model" ref="input"
+    >
+      <template #hint="hint">
+        {{hint}}
+      </template>
 
-    <template #error="error">
-      {{error}}
-    </template>
+      <template #error="error">
+        {{error}}
+      </template>
 
-    <template #item-label="label">
-      {{label}}
-    </template>
-  </nhs-input-group>
+      <template #item-label="label">
+        {{label}}
+      </template>
+    </nhs-input-group>
+    <nhs-button @click="validate()">Validate</nhs-button>
+  </div>
 </template>
 
 <script>
@@ -47,6 +50,12 @@
     },
     mounted() {
       this.$refs.input.validate()
+    },
+    methods: {
+      validate() {
+        var valid = this.$refs.input.validate()
+        alert(`Valid value: ${valid}`)
+      }
     }
   }
 </script>

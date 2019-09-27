@@ -57,6 +57,10 @@
           {
             name: 'validate',
             description: 'validates v-model value. returns true if valid'
+          },
+          {
+            name: 'focus',
+            description: 'focus on textarea'
           }
         ],
         slots: [
@@ -84,6 +88,26 @@
           {
             name: 'change',
             trigger: 'on value change'
+          },
+          {
+            name: 'focus',
+            trigger: 'on focus on textarea'
+          },
+          {
+            name: 'keydown.enter',
+            trigger: 'on enter key down on textarea'
+          },
+          {
+            name: 'keyup.enter',
+            trigger: 'on enter key up on textarea'
+          },
+          {
+            name: 'keydown.tab',
+            trigger: 'on tab key down on textarea'
+          },
+          {
+            name: 'keyup.tab',
+            trigger: 'on tab key up on textarea'
           }
         ]
       }

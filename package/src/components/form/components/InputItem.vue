@@ -79,7 +79,7 @@
     },
     watch: {
       model() {
-        this.$emit('change')
+        this.$emit('validate')
       }
     },
     data() {
@@ -97,7 +97,7 @@
             this.$emit('update:error', result)
           }
         }
-        return this.error
+        return !this.error
       }
     }
   }

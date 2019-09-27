@@ -26,5 +26,10 @@ export default {
     model() {
       this.validate()
     }
+  },
+  methods: {
+    focus() {
+      this.$refs['form-item'].focus()
+    }
   }
 }

@@ -14,6 +14,7 @@
       v-bind="$attrs" :aria-describedby="ariaDescribedby"
       :disabled="disabled" v-model="model"
       @blur="$emit('blur')" @change="$emit('change')"
+      ref="form-item"
     >
       <slot></slot>
     </select>
