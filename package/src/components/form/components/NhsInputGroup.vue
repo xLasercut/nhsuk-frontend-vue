@@ -81,10 +81,9 @@
           var valid = this.$refs[key][0].validate()
           if (!valid) {
             this.error = true
-            return false
           }
         }
-        return true
+        return !this.error
       },
       resetError() {
         this.$nextTick(() => {
