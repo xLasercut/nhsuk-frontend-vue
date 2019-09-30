@@ -21,9 +21,16 @@ export default {
         if (result != true) {
           this.error = true
           this.errorMsg = result
+          return false
         }
       }
-      return !this.error
+      return true
+    },
+    resetError() {
+      this.$nextTick(() => {
+        this.error = false
+        this.errorMsg = ''
+      })
     }
   }
 }

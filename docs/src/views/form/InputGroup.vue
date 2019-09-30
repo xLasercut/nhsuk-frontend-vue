@@ -99,6 +99,10 @@
           {
             name: 'validate',
             description: 'Validates v-model value based on rules. Returns true if valid'
+          },
+          {
+            name: 'resetError',
+            description: 'reset error message'
           }
         ]
       }

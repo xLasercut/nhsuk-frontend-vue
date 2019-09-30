@@ -29,6 +29,9 @@
       <nhs-col :span="33">
         <nhs-button @click="validate()">Validate</nhs-button>
       </nhs-col>
+       <nhs-col :span="33">
+        <nhs-button @click="reset()">Reset</nhs-button>
+      </nhs-col>
     </nhs-row>
   </div>
 </template>
@@ -50,6 +53,10 @@
       validate() {
         var valid = this.$refs.select.validate()
         alert(`Valid value: ${valid}`)
+      },
+      reset() {
+        this.model = 'NHS.UK frontend option 2'
+        this.$refs.select.resetError()
       }
     }
   }

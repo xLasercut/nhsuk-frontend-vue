@@ -94,6 +94,10 @@
           {
             name: 'focus',
             description: 'focus on input'
+          },
+          {
+            name: 'resetError',
+            description: 'reset error message'
           }
         ],
         events: [
@@ -110,19 +114,19 @@
             trigger: 'on focus on input'
           },
           {
-            name: 'keydown.enter',
+            name: 'keydown:enter',
             trigger: 'on enter key down on input'
           },
           {
-            name: 'keyup.enter',
+            name: 'keyup:enter',
             trigger: 'on enter key up on input'
           },
           {
-            name: 'keydown.tab',
+            name: 'keydown:tab',
             trigger: 'on tab key down on input'
           },
           {
-            name: 'keyup.tab',
+            name: 'keyup:tab',
             trigger: 'on tab key up on input'
           }
         ]

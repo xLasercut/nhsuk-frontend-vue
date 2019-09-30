@@ -13,8 +13,8 @@
       :class="classes" :id="id" :rows="rows" :disabled="disabled" :name="name"
       v-model="model" v-bind="$attrs" :aria-describedby="ariaDescribedby"
       @blur="$emit('blur')" @change="$emit('change')" @focus="$emit('focus')"
-      @keydown.enter="$emit('keydown.enter')" @keyup.enter="$emit('keyup.enter')"
-      @keydown.tab="$emit('keydown.tab')" @keyup.tab="$emit('keyup.tab')"
+      @keydown.enter="$emit('keydown:enter')" @keyup.enter="$emit('keyup:enter')"
+      @keydown.tab="$emit('keydown:tab')" @keyup.tab="$emit('keyup:tab')"
       :autocomplete="autocomplete"
       ref="form-item"
     ></textarea>

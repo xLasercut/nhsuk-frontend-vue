@@ -24,8 +24,10 @@
       <nhs-col :span="33">
         <nhs-button @click="validate()">Validate</nhs-button>
       </nhs-col>
+      <nhs-col :span="33">
+        <nhs-button @click="reset()">Reset</nhs-button>
+      </nhs-col>
     </nhs-row>
-
   </div>
 </template>
 
@@ -46,6 +48,10 @@
       validate() {
         var valid = this.$refs.textarea.validate()
         alert(`Valid value: ${valid}`)
+      },
+      reset() {
+        this.model = ''
+        this.$refs.textarea.resetError()
       }
     }
   }

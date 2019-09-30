@@ -79,12 +79,21 @@
         this.error = false
         for (var key in this.$refs) {
           var valid = this.$refs[key][0].validate()
-          console.log(valid)
           if (!valid) {
             this.error = true
+            return false
           }
         }
-        return !this.error
+        return true
+      },
+      resetError() {
+        this.$nextTick(() => {
+          this.error = false
+          this.errorMsg = ''
+          for (var key in this.$refs) {
+            this.$refs[key][0].resetError()
+          }
+        })
       }
     }
   }

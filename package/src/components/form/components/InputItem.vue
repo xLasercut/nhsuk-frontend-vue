@@ -95,9 +95,13 @@
           if (result != true) {
             this.error = true
             this.$emit('update:error', result)
+            return false
           }
         }
-        return !this.error
+        return true
+      },
+      resetError() {
+        this.error = false
       }
     }
   }

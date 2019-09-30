@@ -61,6 +61,10 @@
           {
             name: 'focus',
             description: 'focus on textarea'
+          },
+          {
+            name: 'resetError',
+            description: 'reset error message'
           }
         ],
         slots: [
@@ -94,19 +98,19 @@
             trigger: 'on focus on textarea'
           },
           {
-            name: 'keydown.enter',
+            name: 'keydown:enter',
             trigger: 'on enter key down on textarea'
           },
           {
-            name: 'keyup.enter',
+            name: 'keyup:enter',
             trigger: 'on enter key up on textarea'
           },
           {
-            name: 'keydown.tab',
+            name: 'keydown:tab',
             trigger: 'on tab key down on textarea'
           },
           {
-            name: 'keyup.tab',
+            name: 'keyup:tab',
             trigger: 'on tab key up on textarea'
           }
         ]

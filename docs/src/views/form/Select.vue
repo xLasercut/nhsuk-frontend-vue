@@ -51,6 +51,10 @@
           {
             name: 'focus',
             description: 'focus on select'
+          },
+          {
+            name: 'resetError',
+            description: 'reset error message'
           }
         ],
         slots: [

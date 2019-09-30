@@ -23,7 +23,7 @@ export default {
     }
   },
   watch: {
-    model() {
+    model(_val) {
       this.validate()
     }
   },

@@ -1,5 +1,13 @@
 # NHS.UK frontend vue Changelog
 
+## 1.1.3 - 30th Sept 2019
+
+:new: **New features**
+- Added reset error methods to form components
+
+:wrench: **Fixes**
+- Fixed form component keydown and keyup events
+
 ## 1.1.2 - 27th Sept 2019
 
 - Updated frontend library version to 2.3.1
