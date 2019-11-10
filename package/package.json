@@ -2,28 +2,28 @@
   "name": "nhsuk-frontend-vue",
   "version": "1.1.4",
   "private": false,
-  "repository": "https://github.com/xLasercut/nhsuk-frontend-vue",
   "description": "Unofficial port of NHS UK frontend library to vue.js",
-  "license": "MIT",
-  "main": "dist/nhsuk-frontend-vue.common.js",
   "scripts": {
     "build": "vue-cli-service build --target lib ./src/entry.js",
-    "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "test:backstop": "backstop --config=tests/backstop/config.js test --docker",
+    "lint": "vue-cli-service lint",
     "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",
-    "backstop:ref": "backstop --config=tests/backstop/config.js reference --docker"
+    "backstop:ref": "backstop --config=tests/backstop/config.js reference --docker",
+    "test:backstop": "backstop --config=tests/backstop/config.js test --docker"
   },
+  "main": "dist/nhsuk-frontend-vue.common.js",
   "files": [
     "dist/*",
     "src/*"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^3.3.2"
+  },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.1",
-    "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-plugin-unit-jest": "^3.12.1",
-    "@vue/cli-service": "^3.12.1",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-plugin-unit-jest": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
@@ -37,5 +37,7 @@
     "sass-loader": "^7.3.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/xLasercut/nhsuk-frontend-vue"
 }
