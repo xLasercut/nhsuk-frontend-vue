@@ -9,10 +9,10 @@
       </p>
       <ul class="nhsuk-header__navigation-list">
         <li class="nhsuk-header__navigation-item nhsuk-header__navigation-item--for-mobile">
-          <a class="nhsuk-header__navigation-link" :href="homeHref">
+          <link-switcher class="nhsuk-header__navigation-link" :href="homeHref">
             {{ homeText }}
             <nhs-icon icon="chevron-right"></nhs-icon>
-          </a>
+          </link-switcher>
         </li>
         <slot></slot>
       </ul>
