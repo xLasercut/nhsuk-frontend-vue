@@ -16,9 +16,7 @@
     "dist/*",
     "src/*"
   ],
-  "dependencies": {
-    "core-js": "^3.3.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
@@ -29,7 +27,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^23.6.0",
     "backstopjs": "^4.1.12",
-    "core-js": "^2.6.10",
+    "core-js": "^3.3.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "nhsuk-frontend": "^3.0.2",
