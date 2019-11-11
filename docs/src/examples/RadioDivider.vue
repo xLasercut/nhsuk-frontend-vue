@@ -1,6 +1,6 @@
 <template>
   <nhs-radios
-    label="How do you want to sign in?"
+    label="How do you want to sign in?" heading-size="l"
     :items="items" v-model="model"
   ></nhs-radios>
 </template>

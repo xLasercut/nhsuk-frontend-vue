@@ -1,7 +1,7 @@
 <template>
   <nhs-radios
     :items="items" v-model="model" disabled
-    label="Have you changed your name?"
+    label="Have you changed your name?" heading-size="m"
     hint="This includes changing your last name or spelling your name differently."
   ></nhs-radios>
 </template>

@@ -2,7 +2,7 @@
   <nhs-checkboxes
     :items="items" v-model="model" page-heading
     label="Which types of waste do you transport regularly?"
-    hint="Select all that apply" heading-size="l"
+    hint="Select all that apply." heading-size="m"
   ></nhs-checkboxes>
 </template>
 

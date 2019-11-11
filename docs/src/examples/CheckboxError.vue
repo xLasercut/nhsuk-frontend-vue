@@ -1,6 +1,6 @@
 <template>
   <nhs-checkboxes ref="checkboxes"
-    :items="items" v-model="model" :rules="rules"
+    :items="items" v-model="model" :rules="rules" heading-size="m"
     label="Which types of waste do you transport regularly?"
   ></nhs-checkboxes>
 </template>

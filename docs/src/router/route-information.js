@@ -4,9 +4,7 @@ import Details from '../views/information/Details.vue'
 import Expander from '../views/information/Expander.vue'
 import Dodont from '../views/information/DoDont.vue'
 import Image from '../views/information/Image.vue'
-import EmergencyAlert from '../views/information/EmergencyAlert.vue'
 import ErrorSummary from '../views/information/ErrorSummary.vue'
-import Feedback from '../views/information/Feedback.vue'
 import Table from '../views/information/Table.vue'
 import WarningCallout from '../views/information/WarningCallout.vue'
 import Promo from '../views/information/Promo.vue'
@@ -46,19 +44,9 @@ const information = [
     component: Image
   },
   {
-    path: '/information/emergencyalert',
-    name: 'Emergency Alert',
-    component: EmergencyAlert
-  },
-  {
     path: '/information/errorsummary',
     name: 'Error Summary',
     component: ErrorSummary
-  },
-  {
-    path: '/information/feedback',
-    name: 'Feeback Banner',
-    component: Feedback
   },
   {
     path: '/information/table',

@@ -1,6 +1,6 @@
 <template>
   <nhs-header
-    :service="service" transactional
+    :transactional-service="transactionalService" transactional
   ></nhs-header>
 </template>
 
@@ -8,7 +8,7 @@
   export default {
     data() {
       return {
-        service: {
+        transactionalService: {
           name: 'Find out why your NHS data matters',
           href: '/'
         }

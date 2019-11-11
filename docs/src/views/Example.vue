@@ -9,7 +9,6 @@
   import ExampleWithColorBg from './example/ExampleWithColorBg.vue'
   const noContainers = [
     '/example/breadcrumb',
-    '/example/emergency-alert',
     '/example/footer',
     '/example/footer-column',
     '/example/header',
@@ -24,7 +23,10 @@
     '/example/hero-image',
     '/example/hero-image-text',
     '/example/feedback',
-    '/example/skip-link'
+    '/example/skip-link',
+    '/example/header-org',
+    '/example/header-org-white',
+    '/example/header-org-white-nav'
   ]
 
   const blueContainers = [ '/example/button-reversed' ]

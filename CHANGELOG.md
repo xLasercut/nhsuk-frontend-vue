@@ -1,5 +1,17 @@
 # NHS.UK frontend vue Changelog
 
+## 2.0.0 - 11th Nov 2019
+
+- Updated frontend library version to [3.0.2](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#302---11-november-2019)
+
+:boom: **Breaking changes**
+- Deprecated NhsFeedback and NhsEmergencyAlert components
+- Header component transactional service is now controlled by `transactional-service` prop instead of `service`
+
+:new: **New features**
+- Header component now accepts organisation logo/details (see [docs](https://xlasercut.github.io/nhsuk-frontend-vue/#/layout/header) for more details)
+
+
 ## 1.1.4 - 4th Nov 2019
 
 - Updated frontend library version to 2.3.1

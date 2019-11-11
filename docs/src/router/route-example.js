@@ -21,12 +21,10 @@ import DateInputError from '../examples/DateInputError.vue'
 import DateInputErrorMulti from '../examples/DateInputErrorMulti.vue'
 import Details from '../examples/Details.vue'
 import DoDont from '../examples/DoDont.vue'
-import EmergencyAlert from '../examples/EmergencyAlert.vue'
 import ErrorText from '../examples/ErrorText.vue'
 import ErrorSummary from '../examples/ErrorSummary.vue'
 import Expander from '../examples/Expander.vue'
 import ExpanderGroup from '../examples/ExpanderGroup.vue'
-import FeedbackBanner from '../examples/FeedbackBanner.vue'
 import Fieldset from '../examples/Fieldset.vue'
 import FieldsetHeading from '../examples/FieldsetHeading.vue'
 import FieldsetInput from '../examples/FieldsetInput.vue'
@@ -86,6 +84,9 @@ import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
 import WarningCallout from '../examples/WarningCallout.vue'
+import HeaderOrg from '../examples/HeaderOrg.vue'
+import HeaderOrgWhite from '../examples/HeaderOrgWhite.vue'
+import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
 
 export default [
   {
@@ -181,10 +182,6 @@ export default [
     component: DoDont
   },
   {
-    path: '/example/emergency-alert',
-    component: EmergencyAlert
-  },
-  {
     path: '/example/error-text',
     component: ErrorText
   },
@@ -199,10 +196,6 @@ export default [
   {
     path: '/example/expander-group',
     component: ExpanderGroup
-  },
-  {
-    path: '/example/feedback',
-    component: FeedbackBanner
   },
   {
     path: '/example/fieldset',
@@ -439,5 +432,17 @@ export default [
   {
     path: '/example/warning-callout',
     component: WarningCallout
+  },
+  {
+    path: '/example/header-org',
+    component: HeaderOrg
+  },
+  {
+    path: '/example/header-org-white',
+    component: HeaderOrgWhite
+  },
+  {
+    path: '/example/header-org-white-nav',
+    component: HeaderOrgWhiteNav
   }
 ]

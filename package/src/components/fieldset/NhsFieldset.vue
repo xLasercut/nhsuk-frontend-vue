@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  const sizes = [ 'xl', 'l' ]
+  const sizes = [ 'xl', 'l', 'm' ]
 
   export default {
     name: 'NhsFieldset',

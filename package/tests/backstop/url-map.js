@@ -21,12 +21,10 @@ module.exports = {
   'components/date-input/multiple-errors.html': 'example/date-input-error-multi',
   'components/details/index.html': 'example/details',
   'components/do-dont-list/index.html': 'example/do-dont',
-  'components/emergency-alert/index.html': 'example/emergency-alert',
   'components/error-message/index.html': 'example/error-text',
   'components/error-summary/index.html': 'example/error-summary',
   'components/details/expander.html': 'example/expander',
   'components/details/expander-group.html': 'example/expander-group',
-  'components/feedback-banner/index.html': 'example/feedback',
   'components/footer/index.html': 'example/footer',
   'components/footer/columns.html': 'example/footer-column',
   'components/fieldset/index.html': 'example/fieldset',
@@ -81,5 +79,8 @@ module.exports = {
   'components/tables/tables-panel.html': 'example/table-panel',
   'components/textarea/index.html': 'example/textarea',
   'components/textarea/error.html': 'example/textarea-error',
-  'components/warning-callout/index.html': 'example/warning-callout'
+  'components/warning-callout/index.html': 'example/warning-callout',
+  'components/header/header-org.html': 'example/header-org',
+  'components/header/header-org-white.html': 'example/header-org-white',
+  'components/header/header-org-white-nav.html': 'example/header-org-white-nav'
 }

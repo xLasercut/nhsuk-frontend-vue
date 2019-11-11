@@ -20,12 +20,10 @@
   import Details from '../examples/Details.vue'
   import DoDont from '../examples/DoDont.vue'
   import DoDontSlots from '../examples/DoDontSlots.vue'
-  import EmergencyAlert from '../examples/EmergencyAlert.vue'
   import ErrorSummary from '../examples/ErrorSummary.vue'
   import ErrorText from '../examples/ErrorText.vue'
   import Expander from '../examples/Expander.vue'
   import ExpanderGroup from '../examples/ExpanderGroup.vue'
-  import FeedbackBannerDocs from '../examples/FeedbackBannerDocs.vue'
   import Fieldset from '../examples/Fieldset.vue'
   import FieldsetHeading from '../examples/FieldsetHeading.vue'
   import FieldsetSlots from '../examples/FieldsetSlots.vue'
@@ -76,6 +74,8 @@
   import Panel from '../examples/Panel.vue'
   import PanelGroup from '../examples/PanelGroup.vue'
   import PanelLabel from '../examples/PanelLabel.vue'
+  import HeaderOrg from '../examples/HeaderOrg.vue'
+  import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -95,12 +95,10 @@
     'Details': Details,
     'DoDont': DoDont,
     'DoDontSlots': DoDontSlots,
-    'EmergencyAlert': EmergencyAlert,
     'ErrorSummary': ErrorSummary,
     'ErrorText': ErrorText,
     'Expander': Expander,
     'ExpanderGroup': ExpanderGroup,
-    'FeedbackBanner': FeedbackBannerDocs,
     'Fieldset': Fieldset,
     'FieldsetHeading': FieldsetHeading,
     'FieldsetSlots': FieldsetSlots,
@@ -150,7 +148,9 @@
     'DateInputSlots': DateInputSlots,
     'Panel': Panel,
     'PanelGroup': PanelGroup,
-    'PanelLabel': PanelLabel
+    'PanelLabel': PanelLabel,
+    'HeaderOrg': HeaderOrg,
+    'HeaderOrgWhiteNav': HeaderOrgWhiteNav
   }
 
   export default {
