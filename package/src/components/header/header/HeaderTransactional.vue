@@ -1,7 +1,7 @@
 <template>
-  <div :class="classes" v-if="transactionalService">
+  <div :class="classes" v-if="service">
     <link-switcher class="nhsuk-header__transactional-service-name--link" :href="href">
-      {{ transactionalService.name }}
+      {{ service.name }}
     </link-switcher>
   </div>
 </template>
@@ -14,7 +14,7 @@
       LinkSwitcher
     },
     props: {
-      transactionalService: {
+      service: {
         required: true
       }
     },
@@ -22,15 +22,15 @@
       classes() {
         var classes = ['nhsuk-header__transactional-service-name']
 
-        if (this.transactionalService.name.length > 22) {
+        if (this.service.name.length > 22) {
           classes.push('nhsuk-header__transactional-service-name--long')
         }
 
         return classes.join(' ')
       },
       href() {
-        if (this.transactionalService.href) {
-          return this.transactionalService.href
+        if (this.service.href) {
+          return this.service.href
         }
         return '/'
       }

@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <header-logo-org :organisation="organisation" v-if="organisation" :home-href="homeHref"></header-logo-org>
-    <header-logo-normal :aria-label="ariaLabel" :home-href="homeHref" :service="service" v-if="!organisation"></header-logo-normal>
+    <header-logo-normal :aria-label="ariaLabel" :home-href="homeHref" :service="service" v-if="!organisation" :show-transactional="showTransactional"></header-logo-normal>
   </div>
 </template>
 
@@ -25,7 +25,7 @@
       service: {
         required: true
       },
-      transactional: {
+      showTransactional: {
         type: Boolean,
         required: true
       },

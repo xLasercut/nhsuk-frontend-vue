@@ -3,10 +3,10 @@
     <div class="nhsuk-width-container nhsuk-header__container">
       <header-logo
         :home-href="homeHref" :service="service" :organisation="organisation"
-        :aria-label="ariaLabel" :transactional="transactional"
+        :aria-label="ariaLabel" :show-transactional="showTransactional"
         :showNav="showNav" :showSearch="showSearch"
       ></header-logo>
-      <header-transactional v-if="!showNav && !showSearch" :transactionalService="transactionalService"></header-transactional>
+      <header-transactional v-if="!showNav && !showSearch" :service="service"></header-transactional>
 
       <div class="nhsuk-header__content" id="content-header" v-if="showNav || showSearch">
         <header-menu :show-search="showSearch" :show-nav="showNav"></header-menu>
@@ -102,7 +102,7 @@
     computed: {
       classes() {
         var classes = ['nhsuk-header']
-        if (this.transactional || this.transactionalService) {
+        if (this.showTransactional) {
           classes.push('nhsuk-header--transactional')
         }
 
@@ -119,6 +119,9 @@
         }
 
         return classes.join(' ')
+      },
+      showTransactional() {
+        return this.transactional && !this.showSearch && !this.showNav
       }
     },
     mounted() {

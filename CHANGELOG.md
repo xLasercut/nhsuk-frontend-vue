@@ -1,5 +1,10 @@
 # NHS.UK frontend vue Changelog
 
+## 2.1.0 - 16th Nov 2019
+
+:boom: **Breaking changes**
+- Reverted header transactional service to pre 2.0.0
+
 ## 2.0.0 - 11th Nov 2019
 
 - Updated frontend library version to [3.0.2](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#302---11-november-2019)

@@ -44,9 +44,6 @@ describe('header tests', () => {
   it('test header props', () => {
     const wrapper = mount(NhsHeader, {
       propsData: {
-        transactionalService: {
-          name: 'test'
-        },
         showNav: true,
         showSearch: true,
         homeHref: '/test',
@@ -73,7 +70,8 @@ describe('header tests', () => {
   it('test header transactional long', () => {
     const wrapper = mount(NhsHeader, {
       propsData: {
-        transactionalService: {
+        transactional: true,
+        service: {
           name: 'aaaaaaaaaaaaaaaaaaaaaaaa',
           href: '/test'
         }

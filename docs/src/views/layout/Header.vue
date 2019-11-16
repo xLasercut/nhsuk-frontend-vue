@@ -47,11 +47,6 @@
             description: "Object containing the name and href of the service"
           },
           {
-            name: 'transactional-service',
-            type: 'object',
-            description: 'Object containing the name and href of the service (for transactional header only)'
-          },
-          {
             name: 'organisation',
             type: 'object',
             description: 'Settings for header with organisation logo'
