@@ -37,3 +37,21 @@ jobs:
     - run: npm run test:unit
       working-directory: ./package
 
+
+  backstop-test:
+    name: Backstop Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - run: npm ci
+      working-directory: ./package
+    - run: npm ci
+      working-directory: ./docs
+    - run: npm run serve
+      working-directory: ./docs
+    - run: docker run --rm -it --network="host" --mount type=bind,source="/home/travis/build/xLasercut/nhsuk-frontend-vue/package",target=/src backstopjs/backstopjs:4.1.9 test --config=tests/backstop/config.js --moby --testhost=http://127.0.0.1:8080
+      working-directory: ./package
