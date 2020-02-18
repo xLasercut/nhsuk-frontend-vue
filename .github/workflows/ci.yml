@@ -1,9 +1,6 @@
 name: CI Build
 
-on:
-  push:
-    branches:
-      - '!tags/**'
+on: [push]
 
 
 jobs:
@@ -11,28 +8,11 @@ jobs:
     name: Linting
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Setup Node.js
-        uses: actions/setup-node@master
+      - name: Setup
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v1
         with:
-          node-version: 10.0.0
-      - name: NPM Install
+          node-version: 12
         run: cd package && npm ci
       - name: Run Linter
         run: npm run lint
-
-  unit:
-    name: Unit Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Setup Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: 10.0.0
-      - name: NPM Install
-        run: cd package && npm ci
-      - name: Run Linter
-        run: npm run test:unit
