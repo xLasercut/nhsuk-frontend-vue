@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Install Packages
         run: cd package && npm ci
       - name: Run Linter
-        run: npm run lint
+        run: npm lint
