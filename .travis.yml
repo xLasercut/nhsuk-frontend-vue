@@ -59,9 +59,9 @@ jobs:
         - popd
       deploy:
         provider: pages
-        local-dir: ./docs/dist
-        keep-history: true
-        github-token: $GITHUB_TOKEN
+        local_dir: ./docs/dist
+        keep_history: true
+        token: $GITHUB_TOKEN
         on:
           tags: true
 
@@ -77,6 +77,6 @@ jobs:
       deploy:
         provider: npm
         email: $NPM_EMAIL
-        api_key: $NPM_KEY
+        api_token: $NPM_KEY
         on:
           tags: true
