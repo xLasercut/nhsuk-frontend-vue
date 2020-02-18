@@ -1,29 +1,40 @@
 name: CI Build
 
-on: [push]
+on:
+  push:
+    branches:
+      - '!tags/**'
 
 
 jobs:
   linting:
     name: Linting
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Setup
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd package && npm ci
-      - run: cd package && npm run lint
+      - name: Install packages and run test
+        working-directory: ./package
+        run: npm ci
+        run: npm run lint
 
 
   unit-test:
     name: Unit Test
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Setup
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd package && npm ci
-      - run: cd package && npm run test:unit
+      - name: Install packages and run test
+        working-directory: ./package
+        run: npm ci
+        run: npm run test:unit
 
