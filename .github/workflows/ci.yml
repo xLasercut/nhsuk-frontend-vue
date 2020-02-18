@@ -8,7 +8,7 @@ on:
 
 jobs:
   linting:
-    name: linting
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,3 +21,18 @@ jobs:
         run: cd package && npm ci
       - name: Run Linter
         run: npm run lint
+
+  unit:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 10.0.0
+      - name: NPM Install
+        run: cd package && npm ci
+      - name: Run Linter
+        run: npm run test:unit
