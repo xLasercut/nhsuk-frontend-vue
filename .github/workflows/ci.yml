@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 12
       - run: cd package && npm ci
-      - run: npm run lint
+      - run: cd package && npm run lint
 
 
   unit-test:
@@ -25,5 +25,5 @@ jobs:
         with:
           node-version: 12
       - run: cd package && npm ci
-      - run: npm run test:unit
+      - run: cd package && npm run test:unit
 
