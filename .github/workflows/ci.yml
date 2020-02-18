@@ -8,12 +8,9 @@ jobs:
     name: Linting
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: actions/checkout@v2
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install Packages
-        run: cd package && npm ci
-      - name: Run Linter
-        run: npm lint
+      - run: cd package && npm ci
+      - run: npm lint
