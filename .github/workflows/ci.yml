@@ -13,4 +13,17 @@ jobs:
         with:
           node-version: 12
       - run: cd package && npm ci
-      - run: npm lint
+      - run: npm run lint
+
+
+  unit-test:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: cd package && npm ci
+      - run: npm run test:unit
+
