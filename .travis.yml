@@ -1,3 +1,4 @@
+os: linux
 language: node_js
 node_js:
   - "lts/*"
@@ -12,11 +13,6 @@ cache:
   directories:
     - ~/.npm
     - ~/.cache
-  services:
-    - docker
-  stages:
-    - tests
-    - deploy
 
 jobs:
   include:
@@ -62,7 +58,6 @@ jobs:
         - npm run build:gh
         - popd
       deploy:
-        skip_cleanup: true
         provider: pages
         local-dir: ./docs/dist
         keep-history: true
@@ -83,6 +78,5 @@ jobs:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_KEY
-        skip_cleanup: true
         on:
           tags: true
