@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
   "description": "Unofficial port of NHS UK frontend library to vue.js",
   "scripts": {
@@ -26,12 +26,12 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^23.6.0",
-    "backstopjs": "^4.1.12",
+    "backstopjs": "^4.4.2",
     "core-js": "^3.3.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "nhsuk-frontend": "^3.0.2",
-    "node-sass": "^4.13.0",
+    "nhsuk-frontend": "^3.0.3",
+    "node-sass": "^4.13.1",
     "sass-loader": "^7.3.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
