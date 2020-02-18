@@ -61,7 +61,8 @@ jobs:
         provider: pages
         local_dir: ./docs/dist
         keep_history: true
-        token: $GITHUB_TOKEN
+        github_token: $GITHUB_TOKEN
+        skip_cleanup: true
         on:
           tags: true
 
@@ -77,6 +78,7 @@ jobs:
       deploy:
         provider: npm
         email: $NPM_EMAIL
-        api_token: $NPM_KEY
+        api_key: $NPM_KEY
+        skip_cleanup: true
         on:
           tags: true
