@@ -3,7 +3,8 @@ name: CI Build
 on:
   push:
     branches:
-      - '!tags/**'
+      - 'dev'
+      - 'master'
 
 
 jobs:
