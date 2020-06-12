@@ -4,6 +4,7 @@
     <code-block file="CheckboxDisabled" />
     <code-block file="CheckboxError" />
     <code-block file="CheckboxSlots" />
+    <code-block file="CheckboxConditional" />
     <argument-table heading="checkboxes" :data-props="props" :data-slots="slots" :data-methods="methods" />
   </nhs-main>
 </template>
@@ -37,8 +38,8 @@
           },
           {
             name: 'items.{}.conditional',
-            type: 'string',
-            description: 'conditional text of individual checkbox when checked'
+            type: 'object',
+            description: 'conditional text or object of individual checkbox when checked'
           },
           {
             name: 'items.{}.value',

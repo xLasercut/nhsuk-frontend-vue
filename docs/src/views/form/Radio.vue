@@ -4,7 +4,7 @@
     <code-block file="RadioDisabled" />
     <code-block file="RadioDivider" />
     <code-block file="RadioSlots" />
-
+    <code-block file="RadioConditional"/>
     <argument-table heading="radio" :data-props="props" :data-slots="slots" :data-methods="methods" />
   </nhs-main>
 </template>
@@ -41,6 +41,11 @@
             type: 'string',
             required: 'yes',
             description: 'Value of individual radio'
+          },
+          {
+            name: 'items.{}.conditional',
+            type: 'object',
+            description: 'conditional text or object of individual radio when checked'
           },
           {
             name: 'label',
@@ -97,6 +102,11 @@
           {
             name: 'item-hint',
             description: 'slot for hint of individual radio',
+            props: 'individual radio data object'
+          },
+          {
+            name: 'item-conditional',
+            description: 'slot for conditional text of individual radio',
             props: 'individual radio data object'
           }
         ],

@@ -76,6 +76,8 @@
   import PanelLabel from '../examples/PanelLabel.vue'
   import HeaderOrg from '../examples/HeaderOrg.vue'
   import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
+  import RadioConditional from '../examples/RadioConditional.vue'
+  import CheckboxConditional from '../examples/CheckboxConditional.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -150,7 +152,9 @@
     'PanelGroup': PanelGroup,
     'PanelLabel': PanelLabel,
     'HeaderOrg': HeaderOrg,
-    'HeaderOrgWhiteNav': HeaderOrgWhiteNav
+    'HeaderOrgWhiteNav': HeaderOrgWhiteNav,
+    'RadioConditional': RadioConditional,
+    'CheckboxConditional': CheckboxConditional
   }
 
   export default {
