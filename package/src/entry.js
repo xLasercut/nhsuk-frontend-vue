@@ -1,5 +1,6 @@
 // Import vue components
 import '../node_modules/nhsuk-frontend/dist/nhsuk.css'
+import '../node_modules/nhsuk-frontend/packages/polyfills'
 
 import * as components from './components/index'
 

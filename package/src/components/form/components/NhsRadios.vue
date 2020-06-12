@@ -13,22 +13,26 @@
         <slot name="error" :props="errorMsg">{{errorMsg}}</slot>
       </nhs-error-text>
       <div :class="classes">
-        <component
-          v-for="(item, index) in items"
-          :label="item.label"
-          :hint="item.hint"
-          :disabled="item.disabled || disabled"
-          :id="`${id}-${index}`" :name="item.name" :radio-value="item.value"
-          v-model="model" :key="`${id}-${index}`"
-          :is="component(item)" :divider="item.divider"
-        >
-          <template slot="item-label">
-            <slot name="item-label" :props="item"></slot>
-          </template>
-          <template slot="item-hint">
-            <slot name="item-hint" :props="item"></slot>
-          </template>
-        </component>
+        <div v-for="(item, index) in items" :key="`${id}-${index}`">
+          <component
+            :label="item.label"
+            :hint="item.hint"
+            :disabled="item.disabled || disabled"
+            :id="`${id}-${index + 1}`" :name="item.name" :radio-value="item.value"
+            v-model="model"
+            :is="component(item)" :divider="item.divider"
+          >
+            <template slot="item-label">
+              <slot name="item-label" :props="item"></slot>
+            </template>
+            <template slot="item-hint">
+              <slot name="item-hint" :props="item"></slot>
+            </template>
+          </component>
+          <div class="nhsuk-radios__conditional" v-show="showConditional(item.value, item.conditional)">
+            <slot name="item-conditional" :props="item">{{item}}</slot>
+          </div>
+        </div>
       </div>
     </nhs-fieldset>
   </form-item>
@@ -66,6 +70,9 @@
           return RadioDivider
         }
         return Radio
+      },
+      showConditional(radioValue, conditional) {
+        return radioValue === this.model && conditional
       }
     }
   }

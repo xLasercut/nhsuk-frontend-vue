@@ -82,5 +82,7 @@ module.exports = {
   'components/warning-callout/index.html': 'example/warning-callout',
   'components/header/header-org.html': 'example/header-org',
   'components/header/header-org-white.html': 'example/header-org-white',
-  'components/header/header-org-white-nav.html': 'example/header-org-white-nav'
+  'components/header/header-org-white-nav.html': 'example/header-org-white-nav',
+  'components/checkboxes/conditional.html': 'example/checkbox-conditional',
+  'components/radios/conditional.html': 'example/radio-conditional'
 }

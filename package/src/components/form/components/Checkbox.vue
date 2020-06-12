@@ -10,7 +10,7 @@
     <nhs-hint-text v-if="hint" :id="hintId" class="nhsuk-checkboxes__hint">
       <slot name="item-hint">{{hint}}</slot>
     </nhs-hint-text>
-    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="model && conditional">
+    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="showConditional()">
       <slot name="item-conditional">{{conditional}}</slot>
     </div>
   </div>
@@ -26,9 +26,7 @@
       checkboxValue: {
         type: String
       },
-      conditional: {
-        type: String
-      },
+      conditional: {},
       hint: {
         type: String
       },
@@ -50,6 +48,14 @@
     },
     mixins: [ VModel ],
     components: { NhsLabel, NhsHintText },
+    methods: {
+      showConditional() {
+        if (Array.isArray(this.model)) {
+          return this.model.includes(this.checkboxValue) && this.conditional
+        }
+        return this.model && this.conditional
+      }
+    },
     computed: {
       attributes() {
         var attributes = {}

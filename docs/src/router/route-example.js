@@ -87,6 +87,8 @@ import WarningCallout from '../examples/WarningCallout.vue'
 import HeaderOrg from '../examples/HeaderOrg.vue'
 import HeaderOrgWhite from '../examples/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
+import CheckboxConditional from '../examples/CheckboxConditional.vue'
+import RadioConditional from '../examples/RadioConditional.vue'
 
 export default [
   {
@@ -444,5 +446,13 @@ export default [
   {
     path: '/example/header-org-white-nav',
     component: HeaderOrgWhiteNav
+  },
+  {
+    path: '/example/checkbox-conditional',
+    component: CheckboxConditional
+  },
+  {
+    path: '/example/radio-conditional',
+    component: RadioConditional
   }
 ]

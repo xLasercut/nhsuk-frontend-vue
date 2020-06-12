@@ -31,16 +31,16 @@ describe('form checkbox tests', () => {
     expect(labels.at(0).text()).toBe('disabled')
     expect(labels.at(1).text()).toBe('not disabled')
 
-    expect(labels.at(0).attributes().for).toBe('checkbox-0')
-    expect(labels.at(1).attributes().for).toBe('checkbox-1')
+    expect(labels.at(0).attributes().for).toBe('checkbox-1')
+    expect(labels.at(1).attributes().for).toBe('checkbox-2')
 
-    expect(inputs.at(0).attributes().id).toBe('checkbox-0')
-    expect(inputs.at(1).attributes().id).toBe('checkbox-1')
+    expect(inputs.at(0).attributes().id).toBe('checkbox-1')
+    expect(inputs.at(1).attributes().id).toBe('checkbox-2')
 
     expect(inputs.at(0).attributes().disabled).toBe('disabled')
     expect(inputs.at(1).attributes().disabled).toBe(undefined)
 
-    expect(inputs.at(0).attributes()['aria-describedby']).toBe('checkbox-0-hint')
+    expect(inputs.at(0).attributes()['aria-describedby']).toBe('checkbox-1-hint')
     expect(inputs.at(1).attributes()['aria-describedby']).toBe(undefined)
 
     expect(inputs.at(0).attributes().value).toBe('disabled')

@@ -19,7 +19,7 @@
           :hint="item.hint"
           :conditional="item.conditional"
           :disabled="item.disabled || disabled"
-          :id="`${id}-${index}`" :name="item.name" :checkbox-value="item.value"
+          :id="`${id}-${index + 1}`" :name="item.name" :checkbox-value="item.value"
           v-model="model" :key="`${id}-${index}`"
         >
           <template slot="item-label">

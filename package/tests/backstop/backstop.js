@@ -1,5 +1,5 @@
 // Get the --testhost=... argument from the backstop command
-const arguments = require('minimist')(process.argv.slice(2))
+const arguments = require('minimist')(process.argv.slice(2));
 const TEST_HOST = arguments.testhost || "http://host.docker.internal:3000"
 
 module.exports = {
@@ -108,6 +108,11 @@ module.exports = {
     {
       "label": "Checkboxes with error message",
       "url": `${TEST_HOST}/components/checkboxes/error.html`
+    },
+    {
+      "label": "Checkboxes with conditional content",
+      "url": `${TEST_HOST}/components/checkboxes/conditional.html`,
+      "clickSelector": "#contact-1"
     },
     {
       "label": "Contents list",
@@ -370,6 +375,11 @@ module.exports = {
     {
       "label": "Radios with hint text and error message",
       "url": `${TEST_HOST}/components/radios/hint-error.html`
+    },
+    {
+      "label": "Radios with conditional content",
+      "url": `${TEST_HOST}/components/radios/conditional.html`,
+      "clickSelector": "#contact-1"
     },
     {
       "label": "Review date",

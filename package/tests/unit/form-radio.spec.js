@@ -28,16 +28,16 @@ describe('form radio tests', () => {
     expect(labels.at(0).text()).toBe('disabled')
     expect(labels.at(1).text()).toBe('not disabled')
 
-    expect(labels.at(0).attributes().for).toBe('radio-0')
-    expect(labels.at(1).attributes().for).toBe('radio-1')
+    expect(labels.at(0).attributes().for).toBe('radio-1')
+    expect(labels.at(1).attributes().for).toBe('radio-2')
 
-    expect(inputs.at(0).attributes().id).toBe('radio-0')
-    expect(inputs.at(1).attributes().id).toBe('radio-1')
+    expect(inputs.at(0).attributes().id).toBe('radio-1')
+    expect(inputs.at(1).attributes().id).toBe('radio-2')
 
     expect(inputs.at(0).attributes().disabled).toBe('disabled')
     expect(inputs.at(1).attributes().disabled).toBe(undefined)
 
-    expect(inputs.at(0).attributes()['aria-describedby']).toBe('radio-0-hint')
+    expect(inputs.at(0).attributes()['aria-describedby']).toBe('radio-1-hint')
     expect(inputs.at(1).attributes()['aria-describedby']).toBe(undefined)
 
     expect(inputs.at(0).attributes().value).toBe('disabled')
