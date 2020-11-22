@@ -11,6 +11,7 @@ import Promo from '../views/information/Promo.vue'
 import SummaryList from '../views/information/SummaryList.vue'
 import ReviewDate from '../views/information/ReviewDate.vue'
 import Panel from '../views/information/Panel.vue'
+import Card from '../views/information/Card.vue'
 
 const information = [
   {
@@ -77,6 +78,11 @@ const information = [
     path: '/information/panel',
     name: 'Panel',
     component: Panel
+  },
+  {
+    path: '/information/card',
+    name: 'Card',
+    component: Card
   },
   {
     path: '/information/*',

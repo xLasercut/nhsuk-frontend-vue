@@ -90,6 +90,11 @@ import HeaderOrgWhite from '../examples/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
 import CheckboxConditional from '../examples/CheckboxConditional.vue'
 import RadioConditional from '../examples/RadioConditional.vue'
+import CardBasic from '../examples/CardBasic.vue'
+import CardClickable from '../examples/CardClickable.vue'
+import CardImage from '../examples/CardImage.vue'
+import CardGroup from '../examples/CardGroup.vue'
+import CardFeature from '../examples/CardFeature.vue'
 
 export default [
   {
@@ -459,5 +464,25 @@ export default [
   {
     path: '/example/radio-conditional',
     component: RadioConditional
+  },
+  {
+    path: '/example/card-basic',
+    component: CardBasic
+  },
+  {
+    path: '/example/card-clickable',
+    component: CardClickable
+  },
+  {
+    path: '/example/card-image',
+    component: CardImage
+  },
+  {
+    path: '/example/card-group',
+    component: CardGroup
+  },
+  {
+    path: '/example/card-feature',
+    component: CardFeature
   }
 ]

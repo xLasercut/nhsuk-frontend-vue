@@ -85,5 +85,10 @@ module.exports = {
   'components/header/header-org-white.html': 'example/header-org-white',
   'components/header/header-org-white-nav.html': 'example/header-org-white-nav',
   'components/checkboxes/conditional.html': 'example/checkbox-conditional',
-  'components/radios/conditional.html': 'example/radio-conditional'
+  'components/radios/conditional.html': 'example/radio-conditional',
+  'components/card/basic-card.html': 'example/card-basic',
+  'components/card/card-with-image.html': 'example/card-image',
+  'components/card/clickable-card.html': 'example/card-clickable',
+  'components/card/card-group.html': 'example/card-group',
+  'components/card/feature-card.html': 'example/card-feature'
 }

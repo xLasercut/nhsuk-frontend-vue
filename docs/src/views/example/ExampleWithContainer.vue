@@ -16,7 +16,8 @@
     '/example/promo-no-description',
     '/example/promo-small',
     '/example/promo-image',
-    '/example/promo-group'
+    '/example/promo-group',
+    '/example/card-group'
   ]
 
   export default {

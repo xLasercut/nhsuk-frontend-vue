@@ -79,6 +79,11 @@
   import RadioConditional from '../examples/RadioConditional.vue'
   import CheckboxConditional from '../examples/CheckboxConditional.vue'
   import TableResponsive from '../examples/TableResponsive'
+  import CardBasic from '../examples/CardBasic.vue'
+  import CardClickable from '../examples/CardClickable.vue'
+  import CardImage from '../examples/CardImage.vue'
+  import CardGroup from '../examples/CardGroup.vue'
+  import CardFeature from '../examples/CardFeature.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -156,7 +161,12 @@
     'HeaderOrg': HeaderOrg,
     'HeaderOrgWhiteNav': HeaderOrgWhiteNav,
     'RadioConditional': RadioConditional,
-    'CheckboxConditional': CheckboxConditional
+    'CheckboxConditional': CheckboxConditional,
+    'CardBasic': CardBasic,
+    'CardClickable': CardClickable,
+    'CardImage': CardImage,
+    'CardGroup': CardGroup,
+    'CardFeature': CardFeature
   }
 
   export default {
