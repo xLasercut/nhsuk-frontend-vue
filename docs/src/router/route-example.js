@@ -80,6 +80,7 @@ import SummaryListNoAction from '../examples/SummaryListNoAction.vue'
 import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
 import Table from '../examples/Table.vue'
 import TablePanel from '../examples/TablePanel.vue'
+import TableResponsive from '../examples/TableResponsive.vue'
 import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
@@ -418,6 +419,10 @@ export default [
   {
     path: '/example/table-panel',
     component: TablePanel
+  },
+  {
+    path: '/example/table-responsive',
+    component: TableResponsive
   },
   {
     path: '/example/textarea',

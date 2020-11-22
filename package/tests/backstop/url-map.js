@@ -77,6 +77,7 @@ module.exports = {
   'components/summary-list/without-border.html': 'example/summary-list-no-border',
   'components/tables/index.html': 'example/table',
   'components/tables/tables-panel.html': 'example/table-panel',
+  'components/tables/responsive-table.html': 'example/table-responsive',
   'components/textarea/index.html': 'example/textarea',
   'components/textarea/error.html': 'example/textarea-error',
   'components/warning-callout/index.html': 'example/warning-callout',

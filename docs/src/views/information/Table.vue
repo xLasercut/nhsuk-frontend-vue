@@ -2,6 +2,7 @@
   <nhs-main>
     <code-block file="Table" />
     <code-block file="TablePanel" />
+    <code-block file="TableResponsive" />
     <argument-table heading="table" :data-props="props" :data-slots="slots" />
   </nhs-main>
 </template>
@@ -41,7 +42,7 @@
           {
             name: 'responsive',
             type: 'boolean',
-            description: 'Toggle responsive table'
+            description: 'Toggle responsive table (default: true)'
           }
         ],
         slots: [

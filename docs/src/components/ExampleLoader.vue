@@ -78,6 +78,7 @@
   import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
   import RadioConditional from '../examples/RadioConditional.vue'
   import CheckboxConditional from '../examples/CheckboxConditional.vue'
+  import TableResponsive from '../examples/TableResponsive'
 
   const map = {
     'ActionLink': ActionLink,
@@ -142,6 +143,7 @@
     'SummaryListNoBorder': SummaryListNoBorder,
     'Table': Table,
     'TablePanel': TablePanel,
+    'TableResponsive': TableResponsive,
     'WarningCallout': WarningCallout,
     'Textarea': Textarea,
     'TextareaError': TextareaError,
