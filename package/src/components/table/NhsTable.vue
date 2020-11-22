@@ -1,20 +1,23 @@
 <template>
-  <component :is="tableType" :heading="heading" :heading-level="headingLevel">
-    <table class="nhsuk-table">
-      <caption class="nhsuk-table__caption">{{caption}}</caption>
-      <thead class="nhsuk-table__head">
-        <tr class="nhsuk-table__row">
-          <th class="nhsuk-table__header" scope="col" v-for="(item, index) in headers" :key="index">
-            <slot name="header" :props="item">{{item}}</slot>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="nhsuk-table__body">
-        <tr class="nhsuk-table__row" v-for="(item, index) in data" :key="index">
-          <slot name="item" :props="item"></slot>
-        </tr>
-      </tbody>
-    </table>
+  <component :is="tableType" :heading="heading" :heading-level="headingLevel" :responsive="responsive">
+    <caption v-if="caption" class="nhsuk-table__caption">{{ caption }}</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" scope="col" v-for="(item, index) in headers" :key="index">
+          <slot name="header" :props="item">{{item.text}}</slot>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class="nhsuk-table__body">
+      <tr class="nhsuk-table__row" v-for="(item, index) in data" :key="index">
+        <td role="cell" class="nhsuk-table__cell" v-for="(headerItem, index) in headers" :key="index" v-if="responsive">
+          <span class="nhsuk-table-responsive__heading">{{headerItem.text}} </span><slot :name="`item.${headerItem.value}`" :props="item">{{item[headerItem.value]}}</slot>
+        </td>
+
+        <td class="nhsuk-table__cell" v-else><slot :name="`item.${headerItem.value}`" :props="item">{{item[headerItem.value]}}</slot></td>
+      </tr>
+    </tbody>
   </component>
 </template>
 
@@ -42,6 +45,10 @@
       data: {
         type: Array,
         required: true
+      },
+      responsive: {
+        type: Boolean,
+        default: true
       }
     },
     computed: {

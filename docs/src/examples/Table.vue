@@ -3,11 +3,8 @@
     :headers="headers"
     :data="data"
     caption="Skin symptoms and possible causes"
+    :responsive="false"
   >
-    <template #item="item">
-      <nhs-table-item>{{item.props.symptoms}}</nhs-table-item>
-      <nhs-table-item>{{item.props.cause}}</nhs-table-item>
-    </template>
   </nhs-table>
 </template>
 
@@ -29,7 +26,16 @@
             cause: 'shingles, chickenpox'
           }
         ],
-        headers: [ 'Skin symptoms', 'Possible cause' ]
+        headers: [
+          {
+            text: 'Skin symptoms',
+            value: 'symptoms'
+          },
+          {
+            text: 'Possible cause',
+            value: 'cause'
+          }
+        ]
       }
     }
   }

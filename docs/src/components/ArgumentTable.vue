@@ -20,36 +20,19 @@
       </div>
       <div class="table-container">
         <nhs-table :headers="headerProps" :data="dataProps" v-if="tab == 'props'">
-          <template #item="item">
-            <nhs-table-item>{{item.props.name}}</nhs-table-item>
-            <nhs-table-item>{{item.props.type}}</nhs-table-item>
-            <nhs-table-item>{{item.props.required||'-'}}</nhs-table-item>
-            <nhs-table-item>{{item.props.description}}</nhs-table-item>
-          </template>
+          <template #item.required="item">{{item.props.required||'-'}}</template>
         </nhs-table>
 
         <nhs-table :headers="headerSlots" :data="dataSlots" v-if="tab == 'slots'">
-          <template #item="item">
-            <nhs-table-item>{{item.props.name}}</nhs-table-item>
-            <nhs-table-item>{{item.props.props||'-'}}</nhs-table-item>
-            <nhs-table-item>{{item.props.description}}</nhs-table-item>
-          </template>
+          <template #item.props="item">{{item.props.props||'-'}}</template>
         </nhs-table>
 
         <nhs-table :headers="headerEvents" :data="dataEvents" v-if="tab == 'events'">
-          <template #item="item">
-            <nhs-table-item>{{item.props.name}}</nhs-table-item>
-            <nhs-table-item>{{item.props.trigger}}</nhs-table-item>
-            <nhs-table-item>{{item.props.value||'-'}}</nhs-table-item>
-          </template>
+          <template #item.value="item">{{item.props.value||'-'}}</template>
         </nhs-table>
 
         <nhs-table :headers="headerMethods" :data="dataMethods" v-if="tab == 'methods'">
-          <template #item="item">
-            <nhs-table-item>{{item.props.name}}</nhs-table-item>
-            <nhs-table-item>{{item.props.input||'-'}}</nhs-table-item>
-            <nhs-table-item>{{item.props.description}}</nhs-table-item>
-          </template>
+          <template #item.input="item">{{item.props.input||'-'}}</template>
         </nhs-table>
       </div>
     </nhs-col>
@@ -94,10 +77,66 @@
     data() {
       return {
         tab: this.defaultTab(),
-        headerProps: [ 'Name', 'Type', 'Required', 'Description' ],
-        headerSlots: [ 'Name', 'Props', 'Description' ],
-        headerEvents: [ 'Name', 'Trigger', 'Event Value' ],
-        headerMethods: [ 'Name', 'Input', 'Description' ]
+        headerProps: [
+          {
+            text: 'Name',
+            value: 'name'
+          },
+          {
+            text: 'Type',
+            value: 'type'
+          },
+          {
+            text: 'Required',
+            value: 'required'
+          },
+          {
+            text: 'Description',
+            value: 'description'
+          }
+        ],
+        headerSlots: [
+          {
+            text: 'Name',
+            value: 'name'
+          },
+          {
+            text: 'Props',
+            value: 'props'
+          },
+          {
+            text: 'Description',
+            value: 'description'
+          }
+        ],
+        headerEvents: [
+          {
+            text: 'Name',
+            value: 'name'
+          },
+          {
+            text: 'Trigger',
+            value: 'trigger'
+          },
+          {
+            text: 'Event Value',
+            value: 'value'
+          }
+        ],
+        headerMethods: [
+          {
+            text: 'Name',
+            value: 'name'
+          },
+          {
+            text: 'Input',
+            value: 'input'
+          },
+          {
+            text: 'Description',
+            value: 'description'
+          }
+        ]
       }
     },
     methods: {

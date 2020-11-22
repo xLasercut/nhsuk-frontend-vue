@@ -3,7 +3,6 @@
     <code-block file="Table" />
     <code-block file="TablePanel" />
     <argument-table heading="table" :data-props="props" :data-slots="slots" />
-    <argument-table heading="table-item" :data-slots="itemSlots" />
   </nhs-main>
 </template>
 
@@ -38,19 +37,18 @@
             name: 'caption',
             type: 'string',
             description: 'Optional caption for the table.'
+          },
+          {
+            name: 'responsive',
+            type: 'boolean',
+            description: 'Toggle responsive table'
           }
         ],
         slots: [
           {
-            name: 'item',
+            name: 'item.<header_value>',
             props: 'each item in \'data\' prop',
             description: 'slot for table-items'
-          }
-        ],
-        itemSlots: [
-          {
-            name: 'default',
-            description: 'default vue slots'
           }
         ]
       }

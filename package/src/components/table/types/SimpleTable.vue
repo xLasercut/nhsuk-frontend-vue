@@ -1,7 +1,7 @@
 <template>
-  <div class="nhsuk-table-responsive">
+  <table role="table" :class="classes">
     <slot></slot>
-  </div>
+  </table>
 </template>
 
 <script>
@@ -12,6 +12,18 @@
       },
       headingLevel: {
         type: Number
+      },
+      responsive: {
+        type: Boolean,
+        default: true
+      }
+    },
+    computed: {
+      classes() {
+        if (this.responsive) {
+          return 'nhsuk-table-responsive'
+        }
+        return 'nhsuk-table'
       }
     }
   }
