@@ -3,7 +3,7 @@
     <caption v-if="caption" class="nhsuk-table__caption">{{ caption }}</caption>
     <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
-        <th role="columnheader" scope="col" v-for="(item, index) in headers" :key="index">
+        <th class="nhsuk-table__header" scope="col" v-for="(item, index) in headers" :key="index">
           <slot name="header" :props="item">{{item.text}}</slot>
         </th>
       </tr>

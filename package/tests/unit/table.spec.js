@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { NhsTable, NhsTableItem } from '../../src/components/table'
+import { NhsTable } from '../../src/components/table'
 
 describe('table tests', () => {
   it('test table default props', () => {
@@ -11,13 +11,18 @@ describe('table tests', () => {
     })
 
     expect(wrapper.contains('h3')).toBe(false)
-    expect(wrapper.find('.nhsuk-table__caption').text()).toBe('')
+    expect(wrapper.contains('.nhsuk-table__caption')).toBe(false)
   })
 
   it('test table props', () => {
     const wrapper = mount(NhsTable, {
       propsData: {
-        headers: [ 'Test' ],
+        headers: [
+          {
+            text: 'Test',
+            value: 'test'
+          }
+        ],
         data: [
           {
             test: 'cheese',
@@ -27,9 +32,10 @@ describe('table tests', () => {
         heading: 'heading',
         headingLevel: 1,
         caption: 'caption',
+        responsive: false
       },
       scopedSlots: {
-        item(item) {
+        'item.test'(item) {
           return this.$createElement('span', item.props.test)
         }
       }
@@ -43,15 +49,5 @@ describe('table tests', () => {
     const cells = wrapper.findAll('span')
     expect(cells.length).toBe(1)
     expect(cells.at(0).text()).toBe('cheese')
-  })
-
-  it('test table item slots', () => {
-    const wrapper = mount(NhsTableItem, {
-      slots: {
-        default: 'test'
-      }
-    })
-
-    expect(wrapper.find('.nhsuk-table__cell').text()).toBe('test')
   })
 })
