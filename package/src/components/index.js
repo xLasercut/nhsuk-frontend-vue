@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-eval */
 export { default as NhsButton } from './button'
 export { default as NhsActionLink } from './action-link'
 export { default as NhsBackLink } from './back-link'

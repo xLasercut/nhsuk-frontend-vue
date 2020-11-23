@@ -11,6 +11,7 @@
 
     <tbody class="nhsuk-table__body">
       <tr class="nhsuk-table__row" v-for="(item, index) in data" :key="index">
+        <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for -->
         <td role="cell" class="nhsuk-table__cell" v-for="(headerItem, index) in headers" :key="index" v-if="responsive">
           <span class="nhsuk-table-responsive__heading">{{headerItem.text}} </span><slot :name="`item.${headerItem.value}`" :props="item">{{item[headerItem.value]}}</slot>
         </td>
