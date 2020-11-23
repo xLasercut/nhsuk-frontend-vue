@@ -16,7 +16,7 @@
             name: 'headers',
             type: 'array',
             required: 'yes',
-            description: 'Array of table head cells.'
+            description: 'Array of table head cells. { text: "Text of header", value: "Value of key", style: "additional header styles" }'
           },
           {
             name: 'data',
