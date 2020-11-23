@@ -55,15 +55,6 @@ import LabelHeading from '../examples/LabelHeading.vue'
 import ListPanel from '../examples/ListPanel.vue'
 import NavAZ from '../examples/NavAZ.vue'
 import Pagination from '../examples/Pagination.vue'
-import Panel from '../examples/Panel.vue'
-import PanelGrey from '../examples/PanelGrey.vue'
-import PanelLabel from '../examples/PanelLabel.vue'
-import PanelGroup from '../examples/PanelGroup.vue'
-import Promo from '../examples/Promo.vue'
-import PromoNoDescription from '../examples/PromoNoDescription.vue'
-import PromoSmall from '../examples/PromoSmall.vue'
-import PromoImage from '../examples/PromoImage.vue'
-import PromoGroup from '../examples/PromoGroup.vue'
 import Radio from '../examples/Radio.vue'
 import RadioInline from '../examples/RadioInline.vue'
 import RadioDisabled from '../examples/RadioDisabled.vue'
@@ -325,42 +316,6 @@ export default [
   {
     path: '/example/pagination',
     component: Pagination
-  },
-  {
-    path: '/example/panel',
-    component: Panel
-  },
-  {
-    path: '/example/panel-grey',
-    component: PanelGrey
-  },
-  {
-    path: '/example/panel-label',
-    component: PanelLabel
-  },
-  {
-    path: '/example/panel-group',
-    component: PanelGroup
-  },
-  {
-    path: '/example/promo',
-    component: Promo
-  },
-  {
-    path: '/example/promo-no-description',
-    component: PromoNoDescription
-  },
-  {
-    path: '/example/promo-small',
-    component: PromoSmall
-  },
-  {
-    path: '/example/promo-image',
-    component: PromoImage
-  },
-  {
-    path: '/example/promo-group',
-    component: PromoGroup
   },
   {
     path: '/example/radio',

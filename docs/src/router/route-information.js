@@ -7,10 +7,8 @@ import Image from '../views/information/Image.vue'
 import ErrorSummary from '../views/information/ErrorSummary.vue'
 import Table from '../views/information/Table.vue'
 import WarningCallout from '../views/information/WarningCallout.vue'
-import Promo from '../views/information/Promo.vue'
 import SummaryList from '../views/information/SummaryList.vue'
 import ReviewDate from '../views/information/ReviewDate.vue'
-import Panel from '../views/information/Panel.vue'
 import Card from '../views/information/Card.vue'
 import Tag from '../views/information/Tag.vue'
 
@@ -61,11 +59,6 @@ const information = [
     component: WarningCallout
   },
   {
-    path: '/information/promo',
-    name: 'Promo',
-    component: Promo
-  },
-  {
     path: '/information/summarylist',
     name: 'Summary List',
     component: SummaryList
@@ -74,11 +67,6 @@ const information = [
     path: '/information/reviewdate',
     name: 'Review Date',
     component: ReviewDate
-  },
-  {
-    path: '/information/panel',
-    name: 'Panel',
-    component: Panel
   },
   {
     path: '/information/card',

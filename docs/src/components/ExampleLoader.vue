@@ -50,8 +50,6 @@
   import ListPanel from '../examples/ListPanel.vue'
   import NavAZ from '../examples/NavAZ.vue'
   import Pagination from '../examples/Pagination.vue'
-  import Promo from '../examples/Promo.vue'
-  import PromoGroup from '../examples/PromoGroup.vue'
   import RadioError from '../examples/RadioError.vue'
   import RadioDisabled from '../examples/RadioDisabled.vue'
   import RadioDivider from '../examples/RadioDivider.vue'
@@ -71,9 +69,6 @@
   import TextareaSlots from '../examples/TextareaSlots'
   import DateInputError from '../examples/DateInputError.vue'
   import DateInputSlots from '../examples/DateInputSlots.vue'
-  import Panel from '../examples/Panel.vue'
-  import PanelGroup from '../examples/PanelGroup.vue'
-  import PanelLabel from '../examples/PanelLabel.vue'
   import HeaderOrg from '../examples/HeaderOrg.vue'
   import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
   import RadioConditional from '../examples/RadioConditional.vue'
@@ -134,8 +129,6 @@
     'ListPanel': ListPanel,
     'NavAZ': NavAZ,
     'Pagination': Pagination,
-    'Promo': Promo,
-    'PromoGroup': PromoGroup,
     'RadioError': RadioError,
     'RadioDisabled': RadioDisabled,
     'RadioDivider': RadioDivider,
@@ -156,9 +149,6 @@
     'TextareaSlots': TextareaSlots,
     'DateInputError': DateInputError,
     'DateInputSlots': DateInputSlots,
-    'Panel': Panel,
-    'PanelGroup': PanelGroup,
-    'PanelLabel': PanelLabel,
     'HeaderOrg': HeaderOrg,
     'HeaderOrgWhiteNav': HeaderOrgWhiteNav,
     'RadioConditional': RadioConditional,
