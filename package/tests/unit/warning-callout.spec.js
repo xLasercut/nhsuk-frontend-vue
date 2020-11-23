@@ -15,7 +15,7 @@ describe('warning callout tests', () => {
   it('test warning callout props', () => {
     const wrapper = mount(NhsWarningCallout, {
       propsData: {
-        heading: 'heading',
+        heading: 'important',
         headingLevel: 1,
         test: 'test'
       }
@@ -23,7 +23,7 @@ describe('warning callout tests', () => {
 
     expect(wrapper.contains('h1')).toBe(true)
     expect(wrapper.attributes().test).toBe('test')
-    expect(wrapper.find('.nhsuk-warning-callout__label').text()).toBe('heading')
+    expect(wrapper.find('.nhsuk-warning-callout__label').text()).toBe('important')
   })
 
   it('test warning callout slots', () => {
