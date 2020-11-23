@@ -84,6 +84,7 @@
   import CardImage from '../examples/CardImage.vue'
   import CardGroup from '../examples/CardGroup.vue'
   import CardFeature from '../examples/CardFeature.vue'
+  import Tag from '../examples/Tag.vue'
 
   const map = {
     'ActionLink': ActionLink,
@@ -166,7 +167,8 @@
     'CardClickable': CardClickable,
     'CardImage': CardImage,
     'CardGroup': CardGroup,
-    'CardFeature': CardFeature
+    'CardFeature': CardFeature,
+    'Tag': Tag
   }
 
   export default {

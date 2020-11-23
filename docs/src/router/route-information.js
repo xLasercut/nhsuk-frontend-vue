@@ -12,6 +12,7 @@ import SummaryList from '../views/information/SummaryList.vue'
 import ReviewDate from '../views/information/ReviewDate.vue'
 import Panel from '../views/information/Panel.vue'
 import Card from '../views/information/Card.vue'
+import Tag from '../views/information/Tag.vue'
 
 const information = [
   {
@@ -83,6 +84,11 @@ const information = [
     path: '/information/card',
     name: 'Card',
     component: Card
+  },
+  {
+    path: '/information/tag',
+    name: 'Tag',
+    component: Tag
   },
   {
     path: '/information/*',

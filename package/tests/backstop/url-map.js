@@ -90,5 +90,6 @@ module.exports = {
   'components/card/card-with-image.html': 'example/card-image',
   'components/card/clickable-card.html': 'example/card-clickable',
   'components/card/card-group.html': 'example/card-group',
-  'components/card/feature-card.html': 'example/card-feature'
+  'components/card/feature-card.html': 'example/card-feature',
+  'components/tag/index.html': 'example/tag'
 }

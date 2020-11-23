@@ -95,6 +95,7 @@ import CardClickable from '../examples/CardClickable.vue'
 import CardImage from '../examples/CardImage.vue'
 import CardGroup from '../examples/CardGroup.vue'
 import CardFeature from '../examples/CardFeature.vue'
+import Tag from '../examples/Tag.vue'
 
 export default [
   {
@@ -484,5 +485,9 @@ export default [
   {
     path: '/example/card-feature',
     component: CardFeature
+  },
+  {
+    path: '/example/tag',
+    component: Tag
   }
 ]
