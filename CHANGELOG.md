@@ -1,6 +1,19 @@
 # NHS.UK frontend vue Changelog
 
-## 2.2.0 - 12th Jun 202
+## 3.0.0 - 23rd Nov 2020
+
+- Updated frontend library version to [4.0.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#400---26-october-2020)
+
+:boom: **Breaking changes**
+- Table header now require an array of dictionaries: [docs](https://xlasercut.github.io/nhsuk-frontend-vue/#/information/table)
+- Removed promo component
+- Removed panel component
+
+:new: **New features**
+- Added card component. Please use this component instead of promo and panel components: [docs](https://xlasercut.github.io/nhsuk-frontend-vue/#/information/card)
+- Added tag component. [docs](https://xlasercut.github.io/nhsuk-frontend-vue/#/information/tag)
+
+## 2.2.0 - 12th Jun 2020
 
 - Updated frontend library version to [3.1.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#310---24-april-2020)
 

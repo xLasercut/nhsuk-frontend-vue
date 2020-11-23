@@ -76,6 +76,7 @@ import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
 import WarningCallout from '../examples/WarningCallout.vue'
+import WarningCalloutNonImportant from '../examples/WarningCalloutNonImportant.vue'
 import HeaderOrg from '../examples/HeaderOrg.vue'
 import HeaderOrgWhite from '../examples/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
@@ -400,6 +401,10 @@ export default [
   {
     path: '/example/warning-callout',
     component: WarningCallout
+  },
+  {
+    path: '/example/warning-callout-non-important',
+    component: WarningCalloutNonImportant
   },
   {
     path: '/example/header-org',

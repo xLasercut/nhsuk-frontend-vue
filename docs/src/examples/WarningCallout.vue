@@ -1,9 +1,9 @@
 <template>
   <nhs-warning-callout
-    heading="School, nursery or work"
+    heading="Important"
   >
     <p>
-      Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.
+      If you develop symptoms of anaphylaxis, such as difficulty breathing, you should inject yourself in the outer thigh before seeking emergency medical help.
     </p>
   </nhs-warning-callout>
 </template>

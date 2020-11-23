@@ -81,6 +81,7 @@ module.exports = {
   'components/textarea/index.html': 'example/textarea',
   'components/textarea/error.html': 'example/textarea-error',
   'components/warning-callout/index.html': 'example/warning-callout',
+  'components/warning-callout/custom-heading.html': 'example/warning-callout-non-important',
   'components/header/header-org.html': 'example/header-org',
   'components/header/header-org-white.html': 'example/header-org-white',
   'components/header/header-org-white-nav.html': 'example/header-org-white-nav',
