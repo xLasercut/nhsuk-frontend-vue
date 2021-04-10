@@ -1,5 +1,5 @@
 <template>
-  <nhs-header show-nav show-search :service="service" :search-config="config">
+  <nhs-header show-nav :service="service">
     <nhs-header-item v-for="(item, index) in headerLinks" :key="index" :href="item.href">
       {{item.text}}
     </nhs-header-item>
@@ -38,27 +38,7 @@
         service: {
           name: "Unofficial NHS UK frontend vue component library",
           longName: true
-        },
-        config: {
-          onConfirm: (SelectedContent) => {
-            this.$router.push({ name: SelectedContent })
-          },
-          source: this.searchResults
         }
-      }
-    },
-    methods: {
-      searchResults(query, callback) {
-        var results = []
-        var allRoutes = this.getAllRoutes()
-        for (var i = 0; i < allRoutes.length; i++) {
-          if (query) {
-            if (allRoutes[i].name.toLowerCase().includes(query.toLowerCase())) {
-              results.push(allRoutes[i].name)
-            }
-          }
-        }
-        callback(results)
       }
     }
   }

@@ -67,6 +67,16 @@
             name: 'autocomplete',
             type: 'string',
             description: 'Attribute to identify input purpose, for instance "postal-code" or "username".'
+          },
+          {
+            name: 'inputmode',
+            type: 'string',
+            description: 'Optional value for inputmode (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode)'
+          },
+          {
+            name: 'spellcheck',
+            type: 'boolean',
+            description: 'Optional field to enable or disable the spellcheck attribute on the input.'
           }
         ],
         slots: [

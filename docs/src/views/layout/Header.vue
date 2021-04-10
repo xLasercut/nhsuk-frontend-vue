@@ -72,21 +72,6 @@
             description: 'Organisation logo if using a static asset, such as PNG, is preferred.'
           },
           {
-            name: 'search-config',
-            type: 'object',
-            description: 'Object for search config.'
-          },
-          {
-            name: 'search-config.source',
-            type: 'method',
-            description: 'Defines what is rendered in autocomplete. Takes a method with query and callback'
-          },
-          {
-            name: 'search-config.onConfirm',
-            type: 'method',
-            description: 'Defines what happens after item is selected in autocomplete.'
-          },
-          {
             name: 'search-action',
             type: 'string',
             description: 'The search action endpoint. Defaults to "https://www.nhs.uk/search/"'

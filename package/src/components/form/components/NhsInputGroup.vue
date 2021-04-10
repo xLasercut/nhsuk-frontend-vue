@@ -16,6 +16,7 @@
         <input-item
           v-for="(item, index) in items"
           :label="item.label" :width="item.width" :type="item.type" :autocomplete="item.autocomplete"
+          :inputmode="item.inputmode"
           :disabled="item.disabled || disabled"
           :id="`${id}-${index}`" :name="item.name" :rules="item.rules"
           v-model="model[`${id}-${index}`]" :key="`${id}-${index}`" :ref="`${id}-${index}`"

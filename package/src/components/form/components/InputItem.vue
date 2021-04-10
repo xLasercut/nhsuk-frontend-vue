@@ -11,6 +11,7 @@
         :type="type"
         :disabled="disabled"
         :autocomplete="autocomplete"
+        :inputmode="inputmode"
         v-model="model"
       >
     </form-item>
@@ -60,6 +61,9 @@
         default() {
           return []
         }
+      },
+      inputmode: {
+        type: String
       }
     },
     computed: {
