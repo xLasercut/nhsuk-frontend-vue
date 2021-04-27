@@ -1,5 +1,16 @@
 # NHS.UK frontend vue Changelog
 
+## 4.0.0 - 27th Apr 2021
+
+- Updated frontend library version to [5.0.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#500---16-march-2021)
+
+:boom: **Breaking changes**
+- Removed header search autocomplete
+- Removed Footer with list columns variant
+
+:new: **New features**
+- Add `inputmode` and `spellcheck` options to the text input
+
 ## 3.0.0 - 23rd Nov 2020
 
 - Updated frontend library version to [4.0.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#400---26-october-2020)
