@@ -1,7 +1,6 @@
 <template>
   <nhs-main>
     <code-block file="Footer" />
-    <code-block file="FooterColumn" />
 
     <argument-table heading="footer" :data-props="props" :data-slots="slots" />
     <argument-table heading="footer-item" :data-props="propsItem" :data-slots="slotsItem" />
@@ -22,11 +21,6 @@
             name: "hidden-text",
             type: "string",
             description: "Hidden text used for text-to-speech. Default: Support links"
-          },
-          {
-            name: 'column',
-            type: 'boolean',
-            description: 'Change footer links to column'
           }
         ],
         slots: [

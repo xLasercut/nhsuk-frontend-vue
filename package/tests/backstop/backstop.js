@@ -174,14 +174,6 @@ module.exports = {
       clickSelector: '.nhsuk-details__summary',
     },
     {
-      label: 'Footer',
-      url: `${TEST_URL}/footer/index.html`,
-    },
-    {
-      label: 'Footer with list columns',
-      url: `${TEST_URL}/footer/columns.html`,
-    },
-    {
       label: 'Fieldset',
       url: `${TEST_URL}/fieldset/index.html`,
     },
@@ -200,6 +192,14 @@ module.exports = {
     {
       label: 'Header with logo only',
       url: `${TEST_URL}/header/header-logo.html`,
+    },
+    {
+      label: 'Header with a service name',
+      url: `${TEST_URL}/header/header-service-name.html`,
+    },
+    {
+      label: 'Header with a service name, search and navigation',
+      url: `${TEST_URL}/header/header-service-name-with-nav.html`,
     },
     {
       label: 'Header transactional',
@@ -364,10 +364,6 @@ module.exports = {
       label: 'Radios with conditional content',
       url: `${TEST_URL}/radios/conditional.html`,
       clickSelector: '#contact-1',
-    },
-    {
-      label: 'Review date',
-      url: `${TEST_URL}/review-date/index.html`,
     },
     {
       label: 'Select',

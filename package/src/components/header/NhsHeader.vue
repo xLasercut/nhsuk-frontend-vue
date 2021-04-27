@@ -6,7 +6,7 @@
         :aria-label="ariaLabel" :show-transactional="showTransactional"
         :showNav="showNav" :showSearch="showSearch"
       ></header-logo>
-      <header-transactional v-if="!showNav && !showSearch" :service="service"></header-transactional>
+      <header-transactional v-if="showTransactional" :service="service"></header-transactional>
 
       <div class="nhsuk-header__content" id="content-header" v-if="showNav || showSearch">
         <header-menu :show-search="showSearch" :show-nav="showNav"></header-menu>

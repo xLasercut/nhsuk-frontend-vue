@@ -24,19 +24,11 @@
       copyright: {
         type: String,
         default: 'Crown copyright'
-      },
-      column: {
-        type: Boolean,
-        default: false
       }
     },
     computed: {
       classes() {
         var classes = [ 'nhsuk-footer__list' ]
-
-        if (this.column) {
-          classes.push('nhsuk-footer__list--three-columns')
-        }
 
         return classes.join(' ')
       }

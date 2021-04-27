@@ -1,5 +1,5 @@
 <template>
-  <nhs-header :service="service" show-search></nhs-header>
+  <nhs-header :service="service"></nhs-header>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
     data() {
       return {
         service: {
-          name: 'Digital service manual'
+          name: 'Prototype kit'
         }
       }
     }

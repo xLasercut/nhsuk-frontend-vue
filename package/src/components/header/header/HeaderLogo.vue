@@ -45,7 +45,7 @@
       classes() {
         var classes = ['nhsuk-header__logo']
 
-        if (!this.showSearch && this.showNav) {
+        if (!this.showSearch && !this.showNav) {
           classes.push('nhsuk-header__logo--only')
         }
 
