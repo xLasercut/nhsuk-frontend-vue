@@ -134,6 +134,10 @@ module.exports = {
       url: `${TEST_URL}/checkboxes/conditional.html`,
       clickSelector: '#contact-1',
     },
+    // {
+    //   label: 'Checkboxes with "none of the above" option',
+    //   url: `${TEST_URL}/checkboxes/none-of-the-above.html`,
+    // },
     {
       label: 'Contents list',
       url: `${TEST_URL}/contents-list/index.html`,
@@ -163,6 +167,14 @@ module.exports = {
       label: 'Error summary',
       url: `${TEST_URL}/error-summary/index.html`,
     },
+    // {
+    //   label: 'Error summary with link to an input field',
+    //   url: `${TEST_URL}/error-summary/linking-to-input.html`,
+    // },
+    // {
+    //   label: 'Error summary with link to a radio field',
+    //   url: `${TEST_URL}/error-summary/linking-to-radios.html`,
+    // },
     {
       label: 'Expander',
       url: `${TEST_URL}/details/expander.html`,
@@ -172,6 +184,10 @@ module.exports = {
       label: 'Expander group',
       url: `${TEST_URL}/details/expander-group.html`,
       clickSelector: '.nhsuk-details__summary',
+    },
+    {
+      label: 'Footer',
+      url: `${TEST_URL}/footer/index.html`,
     },
     {
       label: 'Fieldset',
@@ -197,6 +213,10 @@ module.exports = {
       label: 'Header with a service name',
       url: `${TEST_URL}/header/header-service-name.html`,
     },
+    // {
+    //   label: 'Header with a service name, search and navigation',
+    //   url: `${TEST_URL}/header/header-service-name-with-nav.html`,
+    // },
     {
       label: 'Header transactional',
       url: `${TEST_URL}/header/header-transactional.html`,
@@ -204,10 +224,6 @@ module.exports = {
     {
       label: 'Header transactional with service name',
       url: `${TEST_URL}/header/header-transactional-service-name.html`,
-    },
-    {
-      label: 'Header transactional with a long service name',
-      url: `${TEST_URL}/header/header-transactional-long-service-name.html`,
     },
     {
       label: 'Header with navigation',
