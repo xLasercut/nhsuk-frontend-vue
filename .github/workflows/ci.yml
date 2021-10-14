@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - *
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          pushd docs
+          npm ci
+          popd
+          pushd package
+          npm ci
+          popd
+
+      - name: Run linting
+        run: |
+          pushd package
+          npm run lint
+          popd
+          pushd docs
+          npm run lint
+          popd
+
+#      - name: Run backstop
+#        run: npm run backstop:ci
