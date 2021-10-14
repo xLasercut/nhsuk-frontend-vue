@@ -1,17 +1,13 @@
-name: CI
+name: Release
 
 on:
   push:
-    branches:
-      - master
-      - dev
-  pull_request:
-    branches:
+    tags:
       - '*'
 
 jobs:
   build:
-    name: CI
+    name: Release
     runs-on: ubuntu-latest
 
     steps:
@@ -56,14 +52,14 @@ jobs:
           npm run build:gh
           popd
 
-#      - name: Run backstop tests
-#        run: |
-#          pushd docs
-#          npm run serve &
-#          popd
-#          pushd package
-#          npm run test:backstop
-#          popd
+      - name: Run backstop tests
+        run: |
+          pushd docs
+          npm run serve &
+          popd
+          pushd package
+          npm run test:backstop
+          popd
 
       - name: Build docs
         run: |
@@ -76,3 +72,10 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/dist
+
+      - name: Publish npm package
+        run: |
+          cd package
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
