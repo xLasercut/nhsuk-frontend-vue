@@ -17,6 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Install dependencies
         run: |
           pushd docs
@@ -35,5 +41,17 @@ jobs:
           npm run lint
           popd
 
-#      - name: Run backstop
-#        run: npm run backstop:ci
+      - name: Run unit tests
+        run: |
+          pushd package
+          npm run test:unit
+          popd
+
+      - name: Run build tests
+        run: |
+          pushd package
+          npm run build
+          popd
+          pushd docs
+          npm run build:gh
+          popd
