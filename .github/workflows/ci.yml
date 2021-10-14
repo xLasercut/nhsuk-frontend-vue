@@ -55,3 +55,12 @@ jobs:
           pushd docs
           npm run build:gh
           popd
+
+      - name: Run backstop tests
+        run: |
+          pushd docs
+          npm run serve &
+          popd
+          pushd package
+          npm run test:backstop
+          popd
