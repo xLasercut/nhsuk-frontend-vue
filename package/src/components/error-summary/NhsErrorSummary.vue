@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import ErrorSummary from  '../../../node_modules/nhsuk-frontend/packages/components/error-summary/error-summary'
+
   export default {
     name: 'NhsErrorSummary',
     props: {
@@ -17,6 +19,9 @@
         type: String,
         required: true
       }
+    },
+    mounted() {
+      ErrorSummary()
     }
   }
 </script>

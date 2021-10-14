@@ -7,13 +7,16 @@
       Live Well
     </nhs-header-item>
     <nhs-header-item href="https://www.nhs.uk/conditions/social-care-and-support/">
+      Mental health
+    </nhs-header-item>
+    <nhs-header-item href="https://www.nhs.uk/conditions/social-care-and-support/">
       Care and support
     </nhs-header-item>
     <nhs-header-item href="https://www.nhs.uk/news/">
-      Health news
+      Pregnancy
     </nhs-header-item>
     <nhs-header-item href="https://www.nhs.uk/service-search">
-      Services near you
+      NHS services
     </nhs-header-item>
   </nhs-header>
 </template>

@@ -1,5 +1,9 @@
 # NHS.UK frontend vue Changelog
 
+## 4.1.0 - 14th Oct 2021
+
+- Updated frontend library version to [5.2.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#520---22-september-2021)
+
 ## 4.0.0 - 27th Apr 2021
 
 - Updated frontend library version to [5.0.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#500---16-march-2021)

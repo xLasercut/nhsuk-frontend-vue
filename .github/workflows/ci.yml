@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: |
+          pushd docs
+          npm ci
+          popd
+          pushd package
+          npm ci
+          popd
+
+      - name: Run linting
+        run: |
+          pushd package
+          npm run lint
+          popd
+          pushd docs
+          npm run lint
+          popd
+
+      - name: Run unit tests
+        run: |
+          pushd package
+          npm run test:unit
+          popd
+
+      - name: Run build tests
+        run: |
+          pushd package
+          npm run build
+          popd
+          pushd docs
+          npm run build:gh
+          popd
+
+      - name: Run backstop tests
+        run: |
+          pushd docs
+          npm run serve &
+          popd
+          pushd package
+          npm run test:backstop
+          popd
