@@ -1,0 +1,181 @@
+<template>
+  <header :class="classes" role="banner" v-bind="$attrs">
+    <div class="nhsuk-width-container nhsuk-header__container">
+      <header-logo
+        :home-href="homeHref" :service="service" :organisation="organisation"
+        :aria-label="ariaLabel" :show-transactional="showTransactional"
+        :showNav="showNav" :showSearch="showSearch"
+      ></header-logo>
+      <header-transactional v-if="showTransactional" :service="service"></header-transactional>
+
+      <div :class="headerContentClasses" id="content-header" v-if="showNav || showSearch">
+        <header-menu
+          :show-search="showSearch"
+          :show-nav="showNav"
+          :model-value="navOpen"
+          @update:model-value="navOpen = $event"
+        ></header-menu>
+        <header-search
+          v-if="showSearch"
+          :search-config="searchConfig"
+          :search-action="searchAction"
+          :search-input-name="searchInputName"
+          :model-value="searchOpen"
+          @update:model-value="searchOpen = $event"
+          :search-results="searchResults"
+          :search-text="searchText"
+          @update:search-text="$emit('update:search-text', $event)"
+        ></header-search>
+      </div>
+    </div>
+
+    <header-nav :nav-open="navOpen" v-if="showNav" :home-href="homeHref" :home-text="homeText">
+      <slot></slot>
+    </header-nav>
+  </header>
+</template>
+
+<script lang="ts">
+import HeaderLogo from './components/HeaderLogo.vue'
+import HeaderNav from './components/HeaderNav.vue'
+import HeaderSearch from './components/HeaderSearch.vue'
+import HeaderTransactional from './components/HeaderTransactional.vue'
+import HeaderMenu from './components/HeaderMenu.vue'
+import {computed, defineComponent, PropType, reactive, toRefs} from 'vue'
+import {NhsHeaderSearchResult} from './components/interfaces'
+
+export default defineComponent({
+  inheritAttrs: false,
+  name: 'nhs-header',
+  props: {
+    showSearch: {
+      type: Boolean,
+      default: false
+    },
+    showNav: {
+      type: Boolean,
+      default: false
+    },
+    transactional: {
+      type: Boolean,
+      default: false
+    },
+    transactionalService: {
+      type: Object,
+      default: null
+    },
+    service: {
+      type: Object,
+      default: null
+    },
+    organisation: {
+      type: Object,
+      default: null
+    },
+    ariaLabel: {
+      type: String,
+      default: (): string => {
+        return 'NHS homepage'
+      }
+    },
+    homeHref: {
+      type: String,
+      default: (): string => {
+        return '/'
+      }
+    },
+    searchConfig: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    },
+    whiteHeader: {
+      type: Boolean,
+      default: (): boolean => {
+        return false
+      }
+    },
+    whiteNav: {
+      type: Boolean,
+      default: (): boolean => {
+        return false
+      }
+    },
+    searchAction: {
+      type: String,
+      default: (): string => {
+        return 'https://www.nhs.uk/search/'
+      }
+    },
+    searchInputName: {
+      type: String,
+      default: (): string => {
+        return 'q'
+      }
+    },
+    homeText: {
+      type: String,
+      default: (): string => {
+        return 'Home'
+      }
+    },
+    searchResults: {
+      type: Object as Object as PropType<Array<NhsHeaderSearchResult>>,
+      default: (): Array<NhsHeaderSearchResult> => {
+        return []
+      }
+    },
+    searchText: {
+      type: String,
+      default: (): string => {
+        return ''
+      }
+    }
+  },
+  components: {HeaderNav, HeaderSearch, HeaderLogo, HeaderTransactional, HeaderMenu},
+  setup(props) {
+    const state = reactive({
+      navOpen: false,
+      searchOpen: false
+    })
+
+    const showTransactional = computed((): boolean => {
+      return props.transactional && !props.showSearch && !props.showNav
+    })
+
+    const classes = computed((): string => {
+      const classes = ['nhsuk-header']
+      if (showTransactional) {
+        classes.push('nhsuk-header--transactional')
+      }
+
+      if (props.organisation && props.organisation.name) {
+        classes.push('nhsuk-header--organisation')
+      }
+
+      if (props.whiteHeader) {
+        classes.push('nhsuk-header--white')
+      }
+
+      if (props.whiteNav) {
+        classes.push('nhsuk-header--white-nav')
+      }
+
+      return classes.join(' ')
+    })
+
+    const headerContentClasses = computed((): string => {
+      const classes = ['nhsuk-header__content']
+
+      if (state.searchOpen) {
+        classes.push('js-show')
+      }
+
+      return classes.join(' ')
+    })
+
+    return {classes, showTransactional, ...toRefs(state), headerContentClasses}
+  }
+})
+</script>

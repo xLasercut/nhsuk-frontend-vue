@@ -1,0 +1,19 @@
+{
+  "name": "nhsuk-frontend-vue",
+  "version": "1.0.0",
+  "private": false,
+  "main": "dist/nhsuk-frontend-vue.umd.js",
+  "module": "dist/nhsuk-frontend-vue.es.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite configs",
+    "build:lib": "vue-tsc --noEmit && vite build -c ./vite.config.ts"
+  },
+  "dependencies": {
+    "nhsuk-frontend": "^5.2.0"
+  },
+  "devDependencies": {}
+}
