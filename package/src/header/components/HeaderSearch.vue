@@ -201,7 +201,7 @@ export default defineComponent({
     }
 
     function submitSearch(index: number | undefined = undefined): void {
-      if (index) {
+      if (index || index === 0) {
         context.emit('submit-search', props.searchResults[index])
       }
       else if (state.currentResultCount > -1) {

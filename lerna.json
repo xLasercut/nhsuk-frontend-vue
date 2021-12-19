@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages",
+    "package",
     "docs"
   ],
   "version": "0.0.0"
