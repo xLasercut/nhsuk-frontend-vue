@@ -9,13 +9,11 @@ import Router from './types/NhsRouterLink.vue'
 import Normal from './types/NhsNormalLink.vue'
 import {computed, defineComponent, inject, PropType} from 'vue'
 import {NhsLinkType} from './types'
-import DivLink from './types/NhsDivLink.vue'
 
 const NON_ROUTER_LINK_PATTERN = new RegExp('^((http|https|ftp):\/\/)')
 
 const LINK_TYPES = {
-  a: Normal,
-  div: DivLink
+  a: Normal
 }
 
 export default defineComponent({

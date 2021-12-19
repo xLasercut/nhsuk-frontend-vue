@@ -1,3 +1,3 @@
-type NhsLinkType = 'div' | 'a'
+type NhsLinkType = 'a'
 
 export {NhsLinkType}
