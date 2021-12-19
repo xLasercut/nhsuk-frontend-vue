@@ -8,13 +8,12 @@
 <script lang="ts">
 import HeaderLogoNormal from './logo/HeaderLogoNormal.vue'
 import HeaderLogoOrg from './logo/HeaderLogoOrg.vue'
-import {computed, defineComponent} from 'vue'
+import {computed, defineComponent, PropType} from 'vue'
+import {NhsHeaderOrganisation, NhsHeaderService} from '../interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
-  components: {
-    HeaderLogoNormal, HeaderLogoOrg
-  },
+  components: {HeaderLogoNormal, HeaderLogoOrg},
   props: {
     ariaLabel: {
       type: String,
@@ -25,6 +24,7 @@ export default defineComponent({
       required: true
     },
     service: {
+      type: Object as PropType<NhsHeaderService>,
       required: true
     },
     showTransactional: {
@@ -32,6 +32,7 @@ export default defineComponent({
       required: true
     },
     organisation: {
+      type: Object as PropType<NhsHeaderOrganisation>,
       required: true
     },
     showNav: {

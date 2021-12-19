@@ -25,11 +25,17 @@
           :search-results="searchResults"
           :search-text="searchText"
           @update:search-text="$emit('update:search-text', $event)"
+          @submit-search="$emit('submit-search', $event)"
         ></header-search>
       </div>
     </div>
 
-    <header-nav :nav-open="navOpen" v-if="showNav" :home-href="homeHref" :home-text="homeText">
+    <header-nav
+      :model-value="navOpen"
+      @update:model-value="navOpen = $event"
+      v-if="showNav"
+      :home-href="homeHref"
+      :home-text="homeText">
       <slot></slot>
     </header-nav>
   </header>
@@ -43,6 +49,7 @@ import HeaderTransactional from './components/HeaderTransactional.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
 import {computed, defineComponent, PropType, reactive, toRefs} from 'vue'
 import {NhsHeaderSearchResult} from './components/interfaces'
+import {NhsHeaderOrganisation, NhsHeaderService} from './interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -60,17 +67,17 @@ export default defineComponent({
       type: Boolean,
       default: false
     },
-    transactionalService: {
-      type: Object,
-      default: null
-    },
     service: {
-      type: Object,
-      default: null
+      type: Object as PropType<NhsHeaderService>,
+      default: (): NhsHeaderService => {
+        return {}
+      }
     },
     organisation: {
-      type: Object,
-      default: null
+      type: Object as PropType<NhsHeaderOrganisation>,
+      default: (): NhsHeaderOrganisation => {
+        return {}
+      }
     },
     ariaLabel: {
       type: String,
@@ -121,7 +128,7 @@ export default defineComponent({
       }
     },
     searchResults: {
-      type: Object as Object as PropType<Array<NhsHeaderSearchResult>>,
+      type: Array as PropType<Array<NhsHeaderSearchResult>>,
       default: (): Array<NhsHeaderSearchResult> => {
         return []
       }
@@ -150,7 +157,7 @@ export default defineComponent({
         classes.push('nhsuk-header--transactional')
       }
 
-      if (props.organisation && props.organisation.name) {
+      if (props.organisation.name) {
         classes.push('nhsuk-header--organisation')
       }
 

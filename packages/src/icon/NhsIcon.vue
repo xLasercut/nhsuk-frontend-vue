@@ -4,13 +4,15 @@
 
 <script lang="ts">
 import icons from './icons/icons'
-import {defineComponent} from 'vue'
+import {defineComponent, PropType} from 'vue'
+import {NhsIconType} from './types'
 
 export default defineComponent({
+  name: 'nhs-icon',
   inheritAttrs: false,
   props: {
     icon: {
-      type: String,
+      type: String as PropType<NhsIconType>,
       required: true
     }
   },

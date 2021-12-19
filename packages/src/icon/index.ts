@@ -3,7 +3,7 @@ import {App, Plugin} from 'vue'
 
 const NhsIconPlugin: Plugin = {
   install: (app: App) => {
-    app.component('nhs-icon', NhsIcon)
+    app.component(NhsIcon.name, NhsIcon)
   }
 }
 

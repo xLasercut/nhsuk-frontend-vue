@@ -22,6 +22,16 @@ import {NhsCol, NhsColPlugin, NhsMain, NhsMainPlugin, NhsRow, NhsRowPlugin} from
 import {NhsHeader, NhsHeaderItem, NhsHeaderItemPlugin, NhsHeaderPlugin} from './header'
 import {NhsHero, NhsHeroPlugin} from './hero'
 import {NhsIcon, NhsIconPlugin} from './icon'
+import {NhsImage, NhsImagePlugin} from './image'
+import {NhsListPanel, NhsListPanelItem, NhsListPanelItemPlugin, NhsListPanelPlugin} from './list-panel'
+import {NhsNavAz, NhsNavAzItem, NhsNavAzItemPlugin, NhsNavAzPlugin} from './nav-az'
+import {NhsPagination, NhsPaginationPlugin} from './pagination'
+import {NhsReviewDate, NhsReviewDatePlugin} from './review-date'
+import {NhsSkipLink, NhsSkipLinkPlugin} from './skip-link'
+import {NhsSummaryList, NhsSummaryListItem, NhsSummaryListItemPlugin, NhsSummaryListPlugin} from './summary-list'
+import {NhsTable, NhsTablePlugin} from './table'
+import {NhsTag, NhsTagPlugin} from './tag'
+import {NhsWarningCallout, NhsWarningCalloutPlugin} from './warning-callout'
 import {App, Plugin} from 'vue'
 import {NhsukFrontendVueOptions} from './interfaces'
 
@@ -52,6 +62,19 @@ const plugins = [
   NhsHeaderItemPlugin,
   NhsHeroPlugin,
   NhsIconPlugin,
+  NhsImagePlugin,
+  NhsListPanelPlugin,
+  NhsListPanelItemPlugin,
+  NhsNavAzPlugin,
+  NhsNavAzItemPlugin,
+  NhsPaginationPlugin,
+  NhsReviewDatePlugin,
+  NhsSkipLinkPlugin,
+  NhsSummaryListPlugin,
+  NhsSummaryListItemPlugin,
+  NhsTablePlugin,
+  NhsTagPlugin,
+  NhsWarningCalloutPlugin
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -93,4 +116,17 @@ export {
   NhsHeaderItem,
   NhsHero,
   NhsIcon,
+  NhsImage,
+  NhsListPanel,
+  NhsListPanelItem,
+  NhsNavAz,
+  NhsNavAzItem,
+  NhsPagination,
+  NhsReviewDate,
+  NhsSkipLink,
+  NhsSummaryList,
+  NhsSummaryListItem,
+  NhsTable,
+  NhsTag,
+  NhsWarningCallout
 }

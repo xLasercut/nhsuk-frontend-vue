@@ -23,7 +23,7 @@ export default defineComponent({
   props: {
     href: {
       type: String,
-      required:  true
+      required: true
     },
     tag: {
       type: String as PropType<NhsLinkType>,

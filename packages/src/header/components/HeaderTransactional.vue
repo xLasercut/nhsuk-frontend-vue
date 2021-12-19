@@ -8,13 +8,15 @@
 
 <script lang="ts">
 import {NhsLinkSwitcher} from '../../shared/link-switcher'
-import {computed, defineComponent} from 'vue'
+import {computed, defineComponent, PropType} from 'vue'
+import {NhsHeaderService} from '../interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
   components: {NhsLinkSwitcher},
   props: {
     service: {
+      type: Object as PropType<NhsHeaderService>,
       required: true
     }
   },
@@ -22,7 +24,7 @@ export default defineComponent({
     const classes = computed(() => {
       let classes = ['nhsuk-header__transactional-service-name']
 
-      if (props.service.name.length > 22) {
+      if (props.service.name && props.service.name.length > 22) {
         classes.push('nhsuk-header__transactional-service-name--long')
       }
 

@@ -5,7 +5,7 @@
       id="toggle-menu"
       aria-controls="header-navigation"
       aria-label="Open menu"
-      :aria-expanded="open"
+      :aria-expanded="modelValue"
       @click="toggleNav()"
     >
       Menu
@@ -33,10 +33,6 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const state = reactive({
-      open: props.modelValue
-    })
-
     const classes = computed((): string => {
       const classes = ['nhsuk-header__menu']
 
@@ -50,7 +46,7 @@ export default defineComponent({
     const menuButtonClasses = computed((): string => {
       const classes = ['nhsuk-header__menu-toggle']
 
-      if (state.open) {
+      if (props.modelValue) {
         classes.push('is-active')
       }
 
@@ -58,11 +54,10 @@ export default defineComponent({
     })
 
     function toggleNav(): void {
-      state.open = !state.open
-      context.emit('update:modelValue', state.open)
+      context.emit('update:model-value', !props.modelValue)
     }
 
-    return {classes, menuButtonClasses, ...toRefs(state), toggleNav}
+    return {classes, menuButtonClasses, toggleNav}
   }
 })
 </script>

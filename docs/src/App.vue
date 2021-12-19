@@ -4,6 +4,7 @@
     show-search
     :search-results="filterSearchResults()"
     v-model:search-text="searchText"
+    @submit-search="submitSearch"
   >
     <nhs-header-item href="/">test</nhs-header-item>
   </nhs-header>
@@ -49,13 +50,17 @@ export default defineComponent({
       console.log(val)
     })
 
+    function submitSearch(event): void {
+      console.log(event)
+    }
+
     function filterSearchResults(): Array<NhsHeaderSearchResult> {
       return state.searchResults.filter((item) => {
         return item.text.toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText
       })
     }
 
-    return {...toRefs(state), filterSearchResults}
+    return {...toRefs(state), filterSearchResults, submitSearch}
   }
 })
 </script>

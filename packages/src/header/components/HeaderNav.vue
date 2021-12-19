@@ -2,7 +2,11 @@
   <nav :class="classes" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation" v-bind="$attrs">
     <div class="nhsuk-width-container">
       <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
-        <button class="nhsuk-header__navigation-close" id="close-menu">
+        <button
+          class="nhsuk-header__navigation-close"
+          id="close-menu"
+          @click.prevent="$emit('update:model-value', false)"
+        >
           <nhs-icon icon="close"></nhs-icon>
           <span class="nhsuk-u-visually-hidden">Close menu</span>
         </button>
@@ -37,7 +41,7 @@ export default defineComponent({
       type: String,
       required: true
     },
-    navOpen: {
+    modelValue: {
       type: Boolean,
       required: true
     }
@@ -46,7 +50,7 @@ export default defineComponent({
     const classes = computed((): string => {
       const classes = ['nhsuk-header__navigation']
 
-      if (props.navOpen) {
+      if (props.modelValue) {
         classes.push('js-show')
       }
 

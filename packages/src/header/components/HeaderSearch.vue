@@ -28,9 +28,9 @@
           aria-controls="search-results"
           @keydown.down.prevent="onArrowDown()"
           @keydown.up.prevent="onArrowUp()"
+          @keydown.enter.prevent="submitSearch()"
           v-model="searchTextInternal"
-          @focus="isFocus = true"
-          @blur="isFocus = false"
+          @focus="searchOpen = true"
         >
         <ul :class="searchMenuClasses" id="search-results" role="listbox">
           <li
@@ -45,7 +45,7 @@
             @mouseover="onMouseOver()"
             :key="index"
           >
-            <nhs-icon icon="search"></nhs-icon>
+            <nhs-icon :id="`search-field-icon__option--${index}`" icon="search"></nhs-icon>
             {{ item.text }}
           </li>
         </ul>
@@ -64,7 +64,7 @@
 
 <script lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue'
-import {computed, defineComponent, reactive, toRefs, PropType, watch} from 'vue'
+import {computed, defineComponent, onMounted, onUnmounted, PropType, reactive, toRefs, watch} from 'vue'
 import {NhsHeaderSearchResult} from './interfaces'
 
 export default defineComponent({
@@ -89,7 +89,7 @@ export default defineComponent({
       required: true
     },
     searchResults: {
-      type: Object as PropType<Array<NhsHeaderSearchResult>>,
+      type: Array as PropType<Array<NhsHeaderSearchResult>>,
       required: true
     },
     searchText: {
@@ -101,7 +101,7 @@ export default defineComponent({
   setup(props, context) {
     const state = reactive({
       open: props.modelValue,
-      isFocus: false,
+      searchOpen: false,
       currentResultCount: -1,
       ariaLabelledBy: '',
       searchTextInternal: props.searchText
@@ -134,7 +134,7 @@ export default defineComponent({
     const searchMenuClasses = computed((): string => {
       const classes = ['autocomplete__menu']
 
-      if (props.searchResults.length > 0 && state.isFocus) {
+      if (props.searchResults.length > 0 && state.searchOpen) {
         classes.push('autocomplete__menu--visible')
       }
       else {
@@ -182,14 +182,43 @@ export default defineComponent({
       state.currentResultCount = -1
     }
 
+
+    function onClickOutside(event: any): void {
+      if (
+        event.target.id !== 'search-field' &&
+        event.target.id !== 'search-results' &&
+        !event.target.id.includes('search-field__option--') &&
+        !event.target.id.includes('search-field-icon__option--')
+      ) {
+        state.searchOpen = false
+        state.currentResultCount = -1
+      }
+    }
+
     function toggleSearch(): void {
       state.open = !state.open
       context.emit('update:modelValue', state.open)
     }
 
-    function submitSearch(index: number | undefined): void {
-      console.log(index)
+    function submitSearch(index: number | undefined = undefined): void {
+      if (index) {
+        context.emit('submit-search', props.searchResults[index])
+      }
+      else if (state.currentResultCount > -1) {
+        context.emit('submit-search', props.searchResults[state.currentResultCount])
+      }
+      else {
+        context.emit('submit-search', state.searchTextInternal)
+      }
     }
+
+    onMounted(() => {
+      document.addEventListener('click', onClickOutside)
+    })
+
+    onUnmounted(() => {
+      document.removeEventListener('click', onClickOutside)
+    })
 
     return {
       submitSearch,
@@ -241,7 +270,7 @@ export default defineComponent({
     -webkit-box-shadow: none;
     border: none;
     box-shadow: none;
-    margin: 0;
+    margin-top: 10px;
     position: absolute;
     left: -16px;
     width: calc(100% + 32px);

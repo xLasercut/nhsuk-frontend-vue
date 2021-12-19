@@ -21,7 +21,8 @@
 
 <script lang="ts">
 import {NhsLinkSwitcher} from '../../../shared/link-switcher'
-import {computed, defineComponent} from 'vue'
+import {computed, defineComponent, PropType} from 'vue'
+import {NhsHeaderOrganisation} from '../../interfaces'
 
 export default defineComponent({
   components: { NhsLinkSwitcher },
@@ -32,6 +33,7 @@ export default defineComponent({
       required: true
     },
     organisation: {
+      type: Object as PropType<NhsHeaderOrganisation>,
       required: true
     }
   },
