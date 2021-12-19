@@ -1,24 +1,17 @@
 <template>
-  <nhs-header
-    show-nav
-    show-search
-    :search-results="filterSearchResults()"
-    v-model:search-text="searchText"
-    @submit-search="submitSearch"
-  >
-    <nhs-header-item href="/">test</nhs-header-item>
-  </nhs-header>
-  <nhs-main></nhs-main>
-  <nhs-footer></nhs-footer>
+  <site-header></site-header>
+  <router-view></router-view>
+  <site-footer></site-footer>
 </template>
 
 <script lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import SiteFooter from './components/app/SiteFooter.vue'
+import SiteHeader from './components/app/SiteHeader.vue'
 import {defineComponent, reactive, toRefs, watch} from 'vue'
 import {NhsHeaderSearchResult} from 'nhsuk-frontend-vue/src/header/components/interfaces'
 
 export default defineComponent({
-  components: {HelloWorld},
+  components: {SiteFooter, SiteHeader},
   setup(props) {
     const state = reactive({
       searchResults: [

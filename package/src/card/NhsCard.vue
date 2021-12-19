@@ -1,10 +1,10 @@
 <template>
-  <component :is="cardType" :href="href" :class="classes" v-bind="$attrs">
+  <div @click="onClickCard" :class="classes" v-bind="$attrs">
     <img class="nhsuk-card__img" :src="imgUrl" :alt="imgAlt" v-if="imgUrl">
     <div :class="contentClasses">
       <slot name="heading">
         <nhs-heading-switcher :heading-level="headingLevel" :class="headingClassesComputed">
-          <nhs-link-switcher v-if="isHeadingLink" class="nhsuk-card__link" :href="href">{{ heading }}</nhs-link-switcher>
+          <nhs-link-switcher v-if="isHeadingLink" :id="linkId" class="nhsuk-card__link" :href="href">{{ heading }}</nhs-link-switcher>
           <div v-else>{{heading}}</div>
         </nhs-heading-switcher>
       </slot>
@@ -14,16 +14,15 @@
         </p>
       </slot>
     </div>
-  </component>
+  </div>
 </template>
 
 <script lang="ts">
 import {NhsHeadingSwitcher} from '../shared/heading-switcher'
 import {NhsLinkSwitcher} from '../shared/link-switcher'
-import {computed, defineComponent, PropType} from 'vue'
+import {computed, defineComponent, PropType, reactive, toRefs} from 'vue'
 import {NhsHeadingType} from '../shared/heading-switcher/types'
-import NhsNormalCard from './types/NhsNormalCard.vue'
-import NhsClickCard from './types/NhsClickCard.vue'
+import {randomString} from '../shared/helpers'
 
 export default defineComponent({
   name: 'nhs-card',
@@ -88,6 +87,10 @@ export default defineComponent({
     NhsHeadingSwitcher, NhsLinkSwitcher
   },
   setup(props) {
+    const state = reactive({
+      linkId: randomString()
+    })
+
     const classes = computed((): string => {
       const classes = ['nhsuk-card']
 
@@ -130,19 +133,20 @@ export default defineComponent({
       return Boolean(props.href) && !props.feature
     })
 
-    const cardType = computed(() => {
-      if (isHeadingLink && props.clickable) {
-        return NhsClickCard
+    function onClickCard(event: any): void {
+      if (props.clickable && isHeadingLink && event.target.id !== state.linkId) {
+        //@ts-ignore
+        document.querySelector(`#${state.linkId}`).click()
       }
-      return NhsNormalCard
-    })
+    }
 
     return {
       classes,
       contentClasses,
       headingClassesComputed,
       isHeadingLink,
-      cardType
+      ...toRefs(state),
+      onClickCard
     }
   }
 })
