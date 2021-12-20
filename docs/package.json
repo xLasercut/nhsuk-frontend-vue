@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/xLasercut/nhsuk-frontend-vue/issues"
   },
-  "homepage": "https://github.com/xLasercut/nhsuk-frontend-vue#readme"
+  "homepage": "https://github.com/xLasercut/nhsuk-frontend-vue#readme",
+  "web-types": "../package/dist/web-types.json"
 }

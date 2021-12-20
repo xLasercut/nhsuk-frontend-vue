@@ -16,7 +16,8 @@ export default defineConfig({
       output: {
         globals: {
           vue: 'vue'
-        }
+        },
+        assetFileNames: `nhsuk-frontend-vue.[ext]`
       }
     }
   },

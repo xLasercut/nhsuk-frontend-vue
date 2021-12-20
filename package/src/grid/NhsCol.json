@@ -1,0 +1,21 @@
+{
+  "name": "nhs-col",
+  "attributes": [
+    {
+      "name": "span",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "100",
+      "description": "Width of container (100, 75, 66, 33 or 25)."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

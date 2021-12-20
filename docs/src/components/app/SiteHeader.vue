@@ -1,5 +1,5 @@
 <template>
-  <nhs-header show-search></nhs-header>
+  <nhs-header :search-results="headerLinks"  show-search></nhs-header>
 </template>
 
 <script lang="ts">
@@ -11,23 +11,23 @@ export default defineComponent({
       headerLinks: [
         {
           text: "Layout",
-          href: "/layout"
+          value: "/layout"
         },
         {
           text: "Information",
-          href: "/information"
+          value: "/information"
         },
         {
           text: "Navigation",
-          href: "/navigation"
+          value: "/navigation"
         },
         {
           text: "Form",
-          href: "/form"
+          value: "/form"
         },
         {
           text: "Typography",
-          href: "/typography"
+          value: "/typography"
         }
       ]
     })

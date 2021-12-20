@@ -1,0 +1,20 @@
+{
+  "name": "nhs-breadcrumb-item",
+  "attributes": [
+    {
+      "name": "href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Link for the breadcrumb item. If not provided, breadcrumb item will show as normal text"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

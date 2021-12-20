@@ -4,7 +4,7 @@
     <ul :class="`nhsuk-list nhsuk-list--${type}`">
       <li v-for="(item, index) in items" :key="index">
         <nhs-icon :icon="type"></nhs-icon>
-        <slot name="item" :props="item">{{item}}</slot>
+        <slot name="item" :item="item">{{item}}</slot>
       </li>
     </ul>
   </div>

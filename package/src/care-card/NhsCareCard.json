@@ -1,0 +1,50 @@
+{
+  "name": "nhs-care-card",
+  "attributes": [
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "non-urgent",
+      "description": "Care card component variant type - non-urgent, urgent or immediate."
+    },
+    {
+      "name": "heading",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "Heading to be used within the care card component"
+    },
+    {
+      "name": "heading-level",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "3",
+      "description": "Optional heading level for the card heading."
+    },
+    {
+      "name": "hidden-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Non-Urgent Advice:",
+      "description": "Hidden text used for speech playback."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

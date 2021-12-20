@@ -1,0 +1,36 @@
+{
+  "name": "nhs-nav-az-item",
+  "attributes": [
+    {
+      "name": "disabled",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If set to true, then the navigation item will not be within an anchor element."
+    },
+    {
+      "name": "href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The value of the link href attribute"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "on click event"
+    }
+  ]
+}

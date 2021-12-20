@@ -5,15 +5,16 @@
   "main": "dist/nhsuk-frontend-vue.umd.js",
   "module": "dist/nhsuk-frontend-vue.es.js",
   "types": "dist/src/index.d.ts",
+  "style": "dist/nhsuk-frontend-vue.css",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vue-tsc --noEmit && vite configs",
-    "build:lib": "vue-tsc --noEmit && vite build -c ./vite.config.ts"
+    "build": "yarn build:lib && yarn build:web-types",
+    "build:lib": "vue-tsc --noEmit && vite build -c ./vite.config.ts",
+    "build:web-types": "node build/build-web-types.js"
   },
-  "dependencies": {
-    "nhsuk-frontend": "^5.2.0"
-  },
-  "devDependencies": {}
+  "web-types": "dist/web-types.json",
+  "license": "MIT",
+  "repository": "https://github.com/xLasercut/nhsuk-frontend-vue"
 }

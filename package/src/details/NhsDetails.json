@@ -1,0 +1,20 @@
+{
+  "name": "nhs-details",
+  "attributes": [
+    {
+      "name": "text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "Text to be displayed on the details component."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

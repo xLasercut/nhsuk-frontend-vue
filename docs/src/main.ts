@@ -1,8 +1,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import NhsukFrontendVue from 'nhsuk-frontend-vue/src'
-import '../../node_modules/nhsuk-frontend/dist/nhsuk.css'
-import '../../node_modules/nhsuk-frontend/packages/polyfills'
+import hljsVuePlugin from './highlight-js'
 
-createApp(App).use(NhsukFrontendVue, {router: true}).use(router).mount('#app')
+//import '../../package/dist/nhsuk-frontend-vue.css'
+import NhsukFrontendVue from 'nhsuk-frontend-vue/src'
+import ArgumentTable from './components/components/ArgumentTable.vue'
+
+const app = createApp(App)
+
+app.component('argument-table', ArgumentTable)
+
+app
+  .use(NhsukFrontendVue, {router: true})
+  .use(router)
+  .use(hljsVuePlugin)
+  .mount('#app')

@@ -15,7 +15,7 @@
           <span class="nhsuk-table-responsive__heading" v-if="responsive">
             {{headerItem.text}}
           </span>
-          <slot :name="`item.${headerItem.value}`" :props="item">{{item[headerItem.value]}}</slot>
+          <slot :name="`item.${headerItem.value}`" :item="item">{{item[headerItem.value]}}</slot>
         </td>
       </tr>
     </tbody>

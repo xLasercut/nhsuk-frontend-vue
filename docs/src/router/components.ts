@@ -1,6 +1,7 @@
 import Button from '../views/components/Button.vue'
 import ComponentsHome from '../views/components/ComponentsHome.vue'
-import {filterRoutes} from '../assets/helpers/helpers'
+import {filterRoutes} from '../assets/helpers'
+import Dodont from '../views/components/Dodont.vue'
 
 const componentRoutes = [
   {
@@ -13,9 +14,9 @@ const componentRoutes = [
     name: 'Button'
   },
   {
-    path: '/components/a',
-    component: Button,
-    name: 'A'
+    path: '/components/dodont',
+    component: Dodont,
+    name: 'Do Don\'t'
   }
 ]
 

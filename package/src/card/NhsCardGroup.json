@@ -1,0 +1,21 @@
+{
+  "name": "nhs-card-group",
+  "attributes": [
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "half",
+      "description": "Card group type (half, third, quarter)."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

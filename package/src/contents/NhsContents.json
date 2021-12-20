@@ -1,0 +1,31 @@
+{
+  "name": "nhs-contents",
+  "attributes": [
+    {
+      "name": "aria-label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Pages in this guide",
+      "description": "Label used for text-to-speech."
+    },
+    {
+      "name": "hidden-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Contents",
+      "description": "Hidden text used for text-to-speech."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}
