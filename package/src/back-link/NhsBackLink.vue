@@ -1,6 +1,6 @@
 <template>
   <div class="nhsuk-back-link" v-bind="$attrs">
-    <nhs-link-switcher class="nhsuk-back-link__link" :href="href">
+    <nhs-link-switcher class="nhsuk-back-link__link" @click="$emit('click')" :href="href">
       <nhs-icon icon="chevron-left"></nhs-icon>
       <slot></slot>
     </nhs-link-switcher>
@@ -15,6 +15,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-back-link',
   inheritAttrs: false,
+  emits: ['click'],
   components: { NhsLinkSwitcher, NhsIcon },
   props: {
     href: {

@@ -30,6 +30,7 @@ const CARE_CARD_TYPES = {
 export default defineComponent({
   name: 'nhs-care-card',
   inheritAttrs: false,
+  emits: [],
   props: {
     heading: {
       type: String,

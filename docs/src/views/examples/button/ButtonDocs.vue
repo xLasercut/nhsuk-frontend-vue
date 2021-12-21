@@ -1,5 +1,5 @@
 <template>
-  <nhs-button href="/components/button">
+  <nhs-button @click="clickHandler('primary')">
     Primary Button
   </nhs-button>
 

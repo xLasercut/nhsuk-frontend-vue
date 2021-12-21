@@ -19,7 +19,7 @@ const COMPONENT_DOCS = COMPONENT_DOCS_RAW.map((component) => {
   }
 })
 
-function getComponentDoc(name: string) {
+const getComponentDoc = (name: string) => {
   const index = COMPONENT_NAMES.indexOf(name)
   return COMPONENT_DOCS[index]
 }

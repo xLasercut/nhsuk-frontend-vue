@@ -12,10 +12,11 @@ export default defineConfig({
       name: 'nhsuk-frontend-vue'
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'vue-router'],
       output: {
         globals: {
-          vue: 'vue'
+          vue: 'vue',
+          'vue-router': 'vue-router'
         },
         assetFileNames: `nhsuk-frontend-vue.[ext]`
       }

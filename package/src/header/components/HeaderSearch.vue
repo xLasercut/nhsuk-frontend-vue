@@ -108,6 +108,8 @@ export default defineComponent({
     })
 
     watch(() => state.searchTextInternal, (val: string): void => {
+      state.searchOpen = true
+      state.currentResultCount = -1
       context.emit('update:search-text', val)
     })
 
@@ -210,6 +212,8 @@ export default defineComponent({
       else {
         context.emit('submit-search', state.searchTextInternal)
       }
+      state.searchOpen = false
+      state.currentResultCount = -1
     }
 
     onMounted(() => {

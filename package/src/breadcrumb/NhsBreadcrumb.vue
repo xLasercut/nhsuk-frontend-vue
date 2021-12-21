@@ -15,6 +15,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-breadcrumb',
   inheritAttrs: false,
+  emits: [],
   props: {
     ariaLabel: {
       type: String,

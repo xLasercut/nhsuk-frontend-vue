@@ -21,6 +21,7 @@ const CARD_GROUP_TYPES: Set<NhsCardGroupType> = new Set(['half', 'third', 'quart
 export default defineComponent({
   name: 'nhs-card-group',
   inheritAttrs: false,
+  emit: [],
   props: {
     type: {
       type: String as PropType<NhsCardGroupType>,

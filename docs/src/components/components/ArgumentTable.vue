@@ -48,15 +48,7 @@ export default defineComponent({
   setup(props) {
     const { propsDocs, slotsDocs, eventsDocs } = getComponentDoc(props.heading)
 
-    const state = reactive({
-      dataProps: propsDocs,
-      dataSlots: slotsDocs,
-      dataEvents: eventsDocs,
-      dataMethods: [],
-      tab: defaultTab()
-    })
-
-    function defaultTab() {
+    const defaultTab = (): string => {
       if (propsDocs.length > 0) {
         return 'props'
       }
@@ -70,6 +62,14 @@ export default defineComponent({
         return 'methods'
       }
     }
+
+    const state = reactive({
+      dataProps: propsDocs,
+      dataSlots: slotsDocs,
+      dataEvents: eventsDocs,
+      dataMethods: [],
+      tab: defaultTab()
+    })
 
     return {...toRefs(state)}
   }

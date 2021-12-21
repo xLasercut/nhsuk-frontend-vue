@@ -1,5 +1,5 @@
 <template>
-  <nhs-footer>
+  <nhs-footer v-if="showFooter">
     <nhs-footer-item v-for="(item, index) in footerLinks" :key="index" :href="item.href">
       {{item.text}}
     </nhs-footer-item>
@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import {computed, defineComponent, reactive, toRefs} from 'vue'
+import router from '../../router'
 
 export default defineComponent({
   setup() {
@@ -20,7 +21,11 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    const showFooter = computed((): boolean => {
+      return !router.currentRoute.value.fullPath.includes('/examples/')
+    })
+
+    return {...toRefs(state), showFooter}
   }
 })
 </script>

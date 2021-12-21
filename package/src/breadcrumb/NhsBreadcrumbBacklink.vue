@@ -1,6 +1,6 @@
 <template>
   <p class="nhsuk-breadcrumb__back">
-    <nhs-link-switcher class="nhsuk-breadcrumb__backlink" :href="href" v-bind="$attrs">
+    <nhs-link-switcher class="nhsuk-breadcrumb__backlink" @click="$emit('click')" :href="href" v-bind="$attrs">
       <slot></slot>
     </nhs-link-switcher>
   </p>
@@ -13,6 +13,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-breadcrumb-backlink',
   inheritAttrs: false,
+  emits: ['click'],
   components: {NhsLinkSwitcher},
   props: {
     href: {

@@ -1,5 +1,7 @@
+import {Router} from 'vue-router'
+
 interface NhsukFrontendVueOptions {
-  router?: boolean
+  router?: Router
 }
 
 export {NhsukFrontendVueOptions}

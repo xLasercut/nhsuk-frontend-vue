@@ -1,10 +1,32 @@
 import ButtonDocs from '../views/examples/button/ButtonDocs.vue?raw'
 import ButtonDocsDisabled from '../views/examples/button/ButtonDocsDisabled.vue?raw'
+import ActionLink from '../views/examples/action-link/ActionLink.vue?raw'
+import BackLink from '../views/examples/back-link/BackLink.vue?raw'
+import Breadcrumb from '../views/examples/breadcrumb/Breadcrumb.vue?raw'
+import CardBasic from '../views/examples/card/CardBasic.vue?raw'
+import CardClickable from '../views/examples/card/CardClickable.vue?raw'
+import CardImage from '../views/examples/card/CardImage.vue?raw'
+import CardFeature from '../views/examples/card/CardFeature.vue?raw'
+import CardGroup from '../views/examples/card/CardGroup.vue?raw'
+import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue?raw'
+import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue?raw'
+import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue?raw'
 import {ExampleStrings} from './interfaces'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs,
-  ButtonDocsDisabled
+  ButtonDocsDisabled,
+  ActionLink,
+  BackLink,
+  Breadcrumb,
+  CardBasic,
+  CardClickable,
+  CardImage,
+  CardFeature,
+  CardGroup,
+  CareCardNonUrgent,
+  CareCardUrgent,
+  CareCardImmediate
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

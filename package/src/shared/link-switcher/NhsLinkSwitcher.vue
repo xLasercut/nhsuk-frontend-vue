@@ -5,9 +5,11 @@
 </template>
 
 <script lang="ts">
-import Router from './types/NhsRouterLink.vue'
-import Normal from './types/NhsNormalLink.vue'
+import NhsRouterLink from './types/NhsRouterLink.vue'
+import NhsNormalLink from './types/NhsNormalLink.vue'
 import {computed, defineComponent, inject} from 'vue'
+import {Router} from 'vue-router'
+import {isRouterLink} from '../helpers/route-helper'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -25,17 +27,12 @@ export default defineComponent({
     }
   },
   setup(props) {
-    function isRouterLink(): boolean {
-      const router = Boolean(inject('router'))
-      const pattern = /^((http|https|ftp):\/\/)/
-      return router && !pattern.test(props.href)
-    }
-
+    const router = inject<Router>('router')
     const linkType = computed(() => {
-      if (isRouterLink()) {
-        return Router
+      if (isRouterLink(router, props.href)) {
+        return NhsRouterLink
       }
-      return Normal
+      return NhsNormalLink
     })
 
     return {linkType}

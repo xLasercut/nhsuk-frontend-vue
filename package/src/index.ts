@@ -30,6 +30,7 @@ import {NhsTag} from './tag'
 import {NhsWarningCallout} from './warning-callout'
 import {App, Plugin} from 'vue'
 import {NhsukFrontendVueOptions} from './interfaces'
+import {Router} from 'vue-router'
 
 const components = [
   NhsActionLink,
@@ -79,7 +80,7 @@ const NhsukFrontendVue: Plugin = {
       app.component(component.name, component)
     }
 
-    app.provide('router', options.router)
+    app.provide<Router | undefined>('router', options.router)
   }
 }
 

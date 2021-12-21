@@ -1,7 +1,7 @@
-function filterRoutes(item: Array<any>): Array<any> {
+function filterRoutes(item: Array<any>, names: Array<string>): Array<any> {
   return item
     .filter((route) => {
-      return Boolean(route.name)
+      return !names.includes(route.name)
     })
     .sort((a, b) => {
       if (a.name < b.name)

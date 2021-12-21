@@ -1,5 +1,12 @@
 <template>
-  <nhs-link-switcher :href="href" :disabled="disabled" role="button" draggable="false" v-bind="$attrs">
+  <nhs-link-switcher
+    :href="href"
+    :disabled="disabled"
+    role="button"
+    draggable="false"
+    v-bind="$attrs"
+    @click="$emit('click')"
+  >
     <slot></slot>
   </nhs-link-switcher>
 </template>
@@ -10,7 +17,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: [],
+  emits: ['click'],
   components: {NhsLinkSwitcher},
   props: {
     href: {

@@ -1,10 +1,10 @@
 <template>
-  <div @click="onClickCard" :class="classes" v-bind="$attrs">
+  <div @click="onClickCard()" :class="classes" v-bind="$attrs">
     <img class="nhsuk-card__img" :src="imgUrl" :alt="imgAlt" v-if="imgUrl">
     <div :class="contentClasses">
       <slot name="heading">
         <nhs-heading-switcher :heading-level="headingLevel" :class="headingClassesComputed">
-          <nhs-link-switcher v-if="isHeadingLink" :id="linkId" class="nhsuk-card__link" :href="href">{{ heading }}</nhs-link-switcher>
+          <nhs-link-switcher v-if="isHeadingLink" class="nhsuk-card__link" :href="href">{{ heading }}</nhs-link-switcher>
           <div v-else>{{heading}}</div>
         </nhs-heading-switcher>
       </slot>
@@ -20,13 +20,15 @@
 <script lang="ts">
 import {NhsHeadingSwitcher} from '../shared/heading-switcher'
 import {NhsLinkSwitcher} from '../shared/link-switcher'
-import {computed, defineComponent, PropType, reactive, toRefs} from 'vue'
+import {computed, defineComponent, inject, PropType} from 'vue'
 import {NhsHeadingType} from '../shared/heading-switcher/types'
-import {randomString} from '../shared/helpers'
+import {Router} from 'vue-router'
+import {isRouterLink} from '../shared/helpers/route-helper'
 
 export default defineComponent({
   name: 'nhs-card',
   inheritAttrs: false,
+  emit: [],
   props: {
     clickable: {
       type: Boolean,
@@ -87,10 +89,7 @@ export default defineComponent({
     NhsHeadingSwitcher, NhsLinkSwitcher
   },
   setup(props) {
-    const state = reactive({
-      linkId: randomString()
-    })
-
+    const router = inject<Router>('router')
     const classes = computed((): string => {
       const classes = ['nhsuk-card']
 
@@ -133,10 +132,15 @@ export default defineComponent({
       return Boolean(props.href) && !props.feature
     })
 
-    function onClickCard(event: any): void {
-      if (props.clickable && isHeadingLink && event.target.id !== state.linkId) {
-        //@ts-ignore
-        document.querySelector(`#${state.linkId}`).click()
+    function onClickCard(): void {
+      if (props.clickable && isHeadingLink) {
+        if (isRouterLink(router, props.href)) {
+          //@ts-ignore
+          router.push(props.href)
+        }
+        else {
+          window.location.href = props.href
+        }
       }
     }
 
@@ -145,7 +149,6 @@ export default defineComponent({
       contentClasses,
       headingClassesComputed,
       isHeadingLink,
-      ...toRefs(state),
       onClickCard
     }
   }
