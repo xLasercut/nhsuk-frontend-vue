@@ -29,6 +29,7 @@ const BUTTON_TYPES = {
 export default defineComponent({
   name: 'nhs-button',
   inheritAttrs: false,
+  emits: ['click'],
   props: {
     color: {
       type: String as PropType<NhsButtonColor>,

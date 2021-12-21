@@ -19,39 +19,26 @@
         </doc-tab>
       </div>
       <div class="table-container">
-        <nhs-table :headers="headerProps" :data="dataProps" v-if="tab == 'props'">
-          <template #item.type="{item}">{{item.value.type}}</template>
-          <template #item.required="{item}">{{item.required || '-'}}</template>
-          <template #item.default="{item}">{{item.default || '-'}}</template>
-        </nhs-table>
-
-        <nhs-table :headers="headerSlots" :data="dataSlots" v-if="tab == 'slots'">
-          <template #item.vue-properties="{item}">
-            <highlightjs language="typescript" :code="slotPropsDisplay(item['vue-properties'])">
-            </highlightjs>
-          </template>
-        </nhs-table>
-
-        <nhs-table :headers="headerEvents" :data="dataEvents" v-if="tab == 'events'">
-          <template #item.value="{item}">{{item.value||'-'}}</template>
-        </nhs-table>
-
-        <nhs-table :headers="headerMethods" :data="dataMethods" v-if="tab == 'methods'">
-          <template #item.input="item">{{item.props.input||'-'}}</template>
-        </nhs-table>
+        <props-table :data="dataProps" v-if="tab === 'props'"></props-table>
+        <slots-table :data="dataSlots" v-if="tab === 'slots'"></slots-table>
+        <events-table :data="dataEvents"  v-if="tab === 'events'"></events-table>
+        <methods-table :data="dataMethods" v-if="tab === 'methods'"></methods-table>
       </div>
     </nhs-col>
   </nhs-row>
 </template>
 
 <script lang="ts">
-import DocTab from './DocTab.vue'
+import DocTab from './argument-table/DocTab.vue'
 import {defineComponent, reactive, toRefs} from 'vue'
 import {getComponentDoc} from '../../assets/component-docs'
-import {SlotsDocProperties} from '../../assets/interfaces'
+import PropsTable from './argument-table/PropsTable.vue'
+import SlotsTable from './argument-table/SlotsTable.vue'
+import EventsTable from './argument-table/EventsTable.vue'
+import MethodsTable from './argument-table/MethodsTable.vue'
 
 export default defineComponent({
-  components: { DocTab },
+  components: {MethodsTable, EventsTable, SlotsTable, PropsTable, DocTab },
   props: {
     heading: {
       type: String,
@@ -61,106 +48,31 @@ export default defineComponent({
   setup(props) {
     const { propsDocs, slotsDocs, eventsDocs } = getComponentDoc(props.heading)
 
-    function slotPropsDisplay(slotProps: Array<SlotsDocProperties>): string {
-      let properties = `{\n`
-      for (const slotProp of slotProps) {
-        properties = properties + `  ${slotProp.name}: ${slotProp.type || 'any'}\n`
-      }
-      properties = properties + `}\n`
-
-      return properties
-    }
-
     const state = reactive({
       dataProps: propsDocs,
       dataSlots: slotsDocs,
       dataEvents: eventsDocs,
       dataMethods: [],
-      headerProps: [
-        {
-          text: 'Name',
-          value: 'name'
-        },
-        {
-          text: 'Type',
-          value: 'type'
-        },
-        {
-          text: 'Required',
-          value: 'required'
-        },
-        {
-          text: 'Default',
-          value: 'default'
-        },
-        {
-          text: 'Description',
-          value: 'description'
-        }
-      ],
-      headerSlots: [
-        {
-          text: 'Name',
-          value: 'name'
-        },
-        {
-          text: 'Props',
-          value: 'vue-properties'
-        },
-        {
-          text: 'Description',
-          value: 'description'
-        }
-      ],
-      headerEvents: [
-        {
-          text: 'Name',
-          value: 'name'
-        },
-        {
-          text: 'Description',
-          value: 'description'
-        },
-        {
-          text: 'Event Value',
-          value: 'value'
-        }
-      ],
-      headerMethods: [
-        {
-          text: 'Name',
-          value: 'name'
-        },
-        {
-          text: 'Input',
-          value: 'input'
-        },
-        {
-          text: 'Description',
-          value: 'description'
-        }
-      ],
-      tab: 'slots'
+      tab: defaultTab()
     })
 
-    return {...toRefs(state), slotPropsDisplay}
+    function defaultTab() {
+      if (propsDocs.length > 0) {
+        return 'props'
+      }
+      else if (slotsDocs.length > 0) {
+        return 'slots'
+      }
+      else if (eventsDocs.length > 0) {
+        return 'events'
+      }
+      else {
+        return 'methods'
+      }
+    }
+
+    return {...toRefs(state)}
   }
-  // methods: {
-  //   defaultTab() {
-  //     if (this.dataProps.length > 0) {
-  //       return 'props'
-  //     }
-  //     else if (this.dataSlots.length > 0) {
-  //       return 'slots'
-  //     }
-  //     else if (this.dataEvents.length > 0) {
-  //       return 'events'
-  //     }
-  //     else {
-  //       return 'methods'
-  //     }
-  //   }
-  // }
 })
 </script>
 

@@ -1,26 +1,31 @@
 <template>
-  <router-link :to="href" @click="$emit('click')" :tag="tag" v-bind="$attrs">
+  <router-link :to="href" @click="$emit('click')" v-bind="attributes">
     <slot></slot>
   </router-link>
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue'
-import {NhsLinkType} from '../types'
+import {defineComponent} from 'vue'
+import {disableAttributeHelper} from '../../helpers/attribute-helper'
 
 export default defineComponent({
+  inheritAttrs: false,
+  emits: ['click'],
   props: {
     href: {
       type: String,
       required: true
     },
-    tag: {
-      type: String as PropType<NhsLinkType>,
-      default: (): NhsLinkType => {
-        return 'a'
+    disabled: {
+      type: Boolean,
+      default: (): boolean => {
+        return false
       }
     }
   },
-  inheritAttrs: false
+  setup(props, context) {
+    const {attributes} = disableAttributeHelper(props.disabled, context.attrs)
+    return {attributes}
+  }
 })
 </script>

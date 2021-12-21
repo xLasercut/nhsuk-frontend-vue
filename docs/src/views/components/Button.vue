@@ -1,19 +1,17 @@
 <template>
   <nhs-main>
-    <nhs-button></nhs-button>
-    <nhs-button></nhs-button>
-
-<!--    <code-block file="ButtonDocs" />-->
-<!--    <code-block file="ButtonDocsDisabled" />-->
+    <code-block name="ButtonDocs" />
+    <code-block name="ButtonDocsDisabled" />
     <argument-table heading="nhs-button"></argument-table>
   </nhs-main>
 </template>
 
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
-import ButtonDocs from '../examples/button/ButtonDocs.vue?raw'
+import {defineComponent} from 'vue'
+import CodeBlock from '../../components/components/CodeBlock.vue'
 
 export default defineComponent({
+  components: {CodeBlock}
 })
 </script>

@@ -2,6 +2,10 @@ interface ExampleStrings {
   [key: string]: string
 }
 
+interface ExampleModules {
+  [key: string]: any
+}
+
 interface EventsDoc {
   name: string
   description: string
@@ -42,5 +46,6 @@ export {
   PropsDoc,
   EventsDoc,
   ComponentDoc,
-  SlotsDocProperties
+  SlotsDocProperties,
+  ExampleModules
 }

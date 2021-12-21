@@ -1,5 +1,5 @@
 <template>
-  <component :is="linkType" :href="href" @click="$emit('click')" :tag="tag" v-bind="$attrs">
+  <component :is="linkType" :disabled="disabled" :href="href" @click="$emit('click')" v-bind="$attrs">
     <slot></slot>
   </component>
 </template>
@@ -7,43 +7,35 @@
 <script lang="ts">
 import Router from './types/NhsRouterLink.vue'
 import Normal from './types/NhsNormalLink.vue'
-import {computed, defineComponent, inject, PropType} from 'vue'
-import {NhsLinkType} from './types'
-
-const NON_ROUTER_LINK_PATTERN = new RegExp('^((http|https|ftp):\/\/)')
-
-const LINK_TYPES = {
-  a: Normal
-}
+import {computed, defineComponent, inject} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: ['click'],
   props: {
     href: {
       type: String,
       required: true
     },
-    tag: {
-      type: String as PropType<NhsLinkType>,
-      default: (): NhsLinkType => {
-        return 'a'
-      },
-      validator: (val: NhsLinkType): boolean => {
-        return val in LINK_TYPES
+    disabled: {
+      type: Boolean,
+      default: (): boolean => {
+        return false
       }
     }
   },
   setup(props) {
     function isRouterLink(): boolean {
       const router = Boolean(inject('router'))
-      return router && !NON_ROUTER_LINK_PATTERN.test(props.href)
+      const pattern = /^((http|https|ftp):\/\/)/
+      return router && !pattern.test(props.href)
     }
 
     const linkType = computed(() => {
       if (isRouterLink()) {
         return Router
       }
-      return LINK_TYPES[props.tag]
+      return Normal
     })
 
     return {linkType}
