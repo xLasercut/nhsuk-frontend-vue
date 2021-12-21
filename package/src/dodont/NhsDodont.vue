@@ -22,10 +22,8 @@ const DO_DONT_TYPES: Array<NhsDodontType> = ['tick', 'cross']
 export default defineComponent({
   name: 'nhs-dodont',
   inheritAttrs: false,
-  components: {
-    NhsIcon,
-    NhsHeadingSwitcher
-  },
+  emits: [],
+  components: {NhsIcon, NhsHeadingSwitcher},
   props: {
     title: {
       type: String,

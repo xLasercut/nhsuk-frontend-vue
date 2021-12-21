@@ -3,7 +3,7 @@
     <span class="nhsuk-contents-list__current" v-if="!href" v-bind="$attrs">
       <slot></slot>
     </span>
-    <nhs-link-switcher class="nhsuk-contents-list__link" v-if="href" :href="href" v-bind="$attrs">
+    <nhs-link-switcher class="nhsuk-contents-list__link" @click="$emit('click')" v-if="href" :href="href" v-bind="$attrs">
       <slot></slot>
     </nhs-link-switcher>
   </li>
@@ -18,6 +18,7 @@ export default defineComponent({
   name: 'nhs-contents-item',
   inheritAttrs: false,
   components: { NhsLinkSwitcher },
+  emits: ['click'],
   props: {
     href: {
       type: String

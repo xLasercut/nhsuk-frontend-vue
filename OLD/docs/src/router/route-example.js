@@ -20,9 +20,9 @@ import DateInputAutocomplete from '../examples/DateInputAutocomplete.vue'
 import DateInputError from '../examples/DateInputError.vue'
 import DateInputErrorMulti from '../examples/DateInputErrorMulti.vue'
 import Details from '../examples/Details.vue'
-import DoDont from '../examples/DoDont.vue'
+import DoDont from 'nhsuk-frontend-vue-docs/src/views/examples/do-dont/DoDont.vue'
 import ErrorText from '../examples/ErrorText.vue'
-import ErrorSummary from '../examples/ErrorSummary.vue'
+import ErrorSummary from 'nhsuk-frontend-vue-docs/src/views/examples/error-summary/ErrorSummary.vue'
 import Expander from '../examples/Expander.vue'
 import ExpanderGroup from '../examples/ExpanderGroup.vue'
 import Fieldset from '../examples/Fieldset.vue'
@@ -91,50 +91,6 @@ import Tag from '../examples/Tag.vue'
 
 export default [
   {
-    path: '/example/action-link',
-    component: ActionLink
-  },
-  {
-    path: '/example/back-link',
-    component: BackLink
-  },
-  {
-    path: '/example/breadcrumb',
-    component: Breadcrumb
-  },
-  {
-    path: '/example/button',
-    component: Button
-  },
-  {
-    path: '/example/button-link',
-    component: ButtonLink
-  },
-  {
-    path: '/example/button-disabled',
-    component: ButtonDisabled
-  },
-  {
-    path: '/example/button-secondary',
-    component: ButtonSecondary
-  },
-  {
-    path: '/example/button-reversed',
-    component: ButtonReversed
-  },
-  {
-    path: '/example/care-card-non-urgent',
-    component: CareCardNonUrgent
-  },
-  {
-    path: '/example/care-card-urgent',
-    component: CareCardUrgent
-  },
-  {
-    path: '/example/care-card-immediate',
-    component: CareCardImmediate
-  },
-  {
     path: '/example/checkbox',
     component: Checkbox
   },
@@ -155,10 +111,6 @@ export default [
     component: CheckboxError
   },
   {
-    path: '/example/contents-list',
-    component: ContentsList
-  },
-  {
     path: '/example/date-input',
     component: DateInput
   },
@@ -174,22 +126,12 @@ export default [
     path: '/example/date-input-error-multi',
     component: DateInputErrorMulti
   },
-  {
-    path: '/example/details',
-    component: Details
-  },
-  {
-    path: '/example/do-dont',
-    component: DoDont
-  },
+
   {
     path: '/example/error-text',
     component: ErrorText
   },
-  {
-    path: '/example/error-summary',
-    component: ErrorSummary
-  },
+
   {
     path: '/example/expander',
     component: Expander

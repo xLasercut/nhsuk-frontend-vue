@@ -1,9 +1,7 @@
 <template>
-  <nhs-main>
-<!--    <code-block file="DoDont" />-->
-<!--    <code-block file="DoDontSlots" />-->
-    <argument-table heading="nhs-dodont" />
-  </nhs-main>
+  <code-block name="DoDont" />
+  <code-block name="DoDontSlots" />
+  <argument-table heading="nhs-dodont" />
 </template>
 
 <script lang="ts">

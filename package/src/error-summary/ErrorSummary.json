@@ -1,0 +1,30 @@
+{
+  "name": "nhs-error-summary",
+  "attributes": [
+    {
+      "name": "title",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "Title to be displayed on the do and don't list component."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    },
+    {
+      "name": "title",
+      "vue-properties": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ],
+      "description": "slots for error summary title"
+    }
+  ]
+}

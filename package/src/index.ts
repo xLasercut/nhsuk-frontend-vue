@@ -28,6 +28,8 @@ import {NhsSummaryList, NhsSummaryListItem} from './summary-list'
 import {NhsTable} from './table'
 import {NhsTag} from './tag'
 import {NhsWarningCallout} from './warning-callout'
+import {NhsBody} from './body'
+import {NhsList} from './list'
 import {App, Plugin} from 'vue'
 import {NhsukFrontendVueOptions} from './interfaces'
 import {Router} from 'vue-router'
@@ -71,7 +73,9 @@ const components = [
   NhsSummaryListItem,
   NhsTable,
   NhsTag,
-  NhsWarningCallout
+  NhsWarningCallout,
+  NhsBody,
+  NhsList
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -125,5 +129,7 @@ export {
   NhsSummaryListItem,
   NhsTable,
   NhsTag,
-  NhsWarningCallout
+  NhsWarningCallout,
+  NhsBody,
+  NhsList
 }

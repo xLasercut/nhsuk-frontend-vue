@@ -1,13 +1,13 @@
 <template>
   <nhs-table :headers="headers" :data="data">
     <template #item.type="{item}">{{item.value.type}}</template>
-    <template #item.required="{item}">{{item.required || '-'}}</template>
+    <template #item.required="{item}">{{isRequired(item.required)}}</template>
     <template #item.default="{item}">{{item.default || '-'}}</template>
   </nhs-table>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import {computed, defineComponent, reactive, toRefs} from 'vue'
 
 export default defineComponent({
   props: {
@@ -42,7 +42,14 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    function isRequired(required: boolean): string {
+      if (required) {
+        return 'yes'
+      }
+      return 'no'
+    }
+
+    return {...toRefs(state), isRequired}
   }
 })
 </script>

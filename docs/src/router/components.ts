@@ -7,6 +7,11 @@ import BackLink from '../views/components/BackLink.vue'
 import Breadrumb from '../views/components/Breadcrumb.vue'
 import Card from '../views/components/Card.vue'
 import CareCard from '../views/components/CareCard.vue'
+import Contents from '../views/components/Contents.vue'
+import Details from '../views/components/Details.vue'
+import ErrorSummary from '../views/components/ErrorSummary.vue'
+import Body from '../views/components/Body.vue'
+import List from '../views/components/List.vue'
 
 
 const componentRoutes = [
@@ -46,9 +51,34 @@ const componentRoutes = [
     name: 'Care Card'
   },
   {
+    path: '/components/contents',
+    component: Contents,
+    name: 'Contents'
+  },
+  {
+    path: '/components/details',
+    component: Details,
+    name: 'Details'
+  },
+  {
     path: '/components/dodont',
     component: Dodont,
     name: 'Do Don\'t'
+  },
+  {
+    path: '/components/error-summary',
+    component: ErrorSummary,
+    name: 'Error Summary'
+  },
+  {
+    path: '/components/body',
+    component: Body,
+    name: 'Body'
+  },
+  {
+    path: '/components/list',
+    component: List,
+    name: 'List'
   }
 ]
 

@@ -27,5 +27,11 @@
       "name": "default",
       "description": "default vue slots"
     }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "on click event"
+    }
   ]
 }

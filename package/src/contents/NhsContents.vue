@@ -13,6 +13,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-contents',
   inheritAttrs: false,
+  emit: [],
   props: {
     ariaLabel: {
       type: String,

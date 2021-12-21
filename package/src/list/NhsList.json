@@ -1,0 +1,21 @@
+{
+  "name": "nhs-list",
+  "attributes": [
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "bullet",
+      "description": "Type of list - bullet, number or error"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

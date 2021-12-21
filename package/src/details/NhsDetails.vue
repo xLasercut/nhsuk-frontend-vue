@@ -17,6 +17,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-details',
   inheritAttrs: false,
+  emits: [],
   props: {
     text: {
       type: String,

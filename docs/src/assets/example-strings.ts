@@ -11,6 +11,13 @@ import CardGroup from '../views/examples/card/CardGroup.vue?raw'
 import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue?raw'
 import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue?raw'
 import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue?raw'
+import ContentsList from '../views/examples/contents/ContentsList.vue?raw'
+import Details from '../views/examples/details/Details.vue?raw'
+import DoDont from '../views/examples/do-dont/DoDont.vue?raw'
+import DoDontSlots from '../views/examples/do-dont/DoDontSlots.vue?raw'
+import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue?raw'
+import Body from '../views/examples/body/Body.vue?raw'
+import List from '../views/examples/list/List.vue?raw'
 import {ExampleStrings} from './interfaces'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
@@ -26,7 +33,14 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   CardGroup,
   CareCardNonUrgent,
   CareCardUrgent,
-  CareCardImmediate
+  CareCardImmediate,
+  ContentsList,
+  Details,
+  DoDont,
+  DoDontSlots,
+  ErrorSummary,
+  Body,
+  List
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

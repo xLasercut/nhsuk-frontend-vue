@@ -15,7 +15,12 @@ import CardFeature from '../views/examples/card/CardFeature.vue'
 import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue'
 import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue'
 import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue'
+import ContentsList from '../views/examples/contents/ContentsList.vue'
+import Details from '../views/examples/details/Details.vue'
+import DoDont from '../views/examples/do-dont/DoDont.vue'
+import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue'
 import {filterRoutes} from '../assets/helpers'
+
 
 const examplesRoutes = [
   {
@@ -102,6 +107,26 @@ const examplesRoutes = [
     path: '/examples/care-card-immediate',
     component: CareCardImmediate,
     name: 'Card - Care card emergency (red and black)'
+  },
+  {
+    path: '/examples/contents-list',
+    component: ContentsList,
+    name: 'Contents list'
+  },
+  {
+    path: '/examples/details',
+    component: Details,
+    name: 'Details'
+  },
+  {
+    path: '/examples/do-dont',
+    component: DoDont,
+    name: 'Do and Don\'t list'
+  },
+  {
+    path: '/examples/error-summary',
+    component: ErrorSummary,
+    name: 'Error summary'
   },
 ].map((item) => {
   const {name, ...rest} = item

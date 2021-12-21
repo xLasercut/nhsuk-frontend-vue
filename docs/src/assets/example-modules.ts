@@ -11,6 +11,13 @@ import CardGroup from '../views/examples/card/CardGroup.vue'
 import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue'
 import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue'
 import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue'
+import ContentsList from '../views/examples/contents/ContentsList.vue'
+import Details from '../views/examples/details/Details.vue'
+import DoDont from '../views/examples/do-dont/DoDont.vue'
+import DoDontSlots from '../views/examples/do-dont/DoDontSlots.vue'
+import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue'
+import Body from '../views/examples/body/Body.vue'
+import List from '../views/examples/list/List.vue'
 import {ExampleModules} from './interfaces'
 
 
@@ -27,7 +34,14 @@ const EXAMPLE_MODULES: ExampleModules = {
   CardGroup,
   CareCardNonUrgent,
   CareCardUrgent,
-  CareCardImmediate
+  CareCardImmediate,
+  ContentsList,
+  Details,
+  DoDont,
+  DoDontSlots,
+  ErrorSummary,
+  Body,
+  List
 }
 
 function getExampleModule(name: string) {
