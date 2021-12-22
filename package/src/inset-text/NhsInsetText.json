@@ -1,0 +1,21 @@
+{
+  "name": "nhs-inset-text",
+  "attributes": [
+    {
+      "name": "hidden-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Information: ",
+      "description": "Hidden text used for text-to-speech."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

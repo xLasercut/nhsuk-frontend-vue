@@ -1,0 +1,20 @@
+{
+  "name": "nhs-hint-text",
+  "attributes": [
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Optional id attribute to add to the error message span tag."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

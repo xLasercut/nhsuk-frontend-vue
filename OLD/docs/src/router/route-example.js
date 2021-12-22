@@ -21,7 +21,7 @@ import DateInputError from '../examples/DateInputError.vue'
 import DateInputErrorMulti from '../examples/DateInputErrorMulti.vue'
 import Details from '../examples/Details.vue'
 import DoDont from 'nhsuk-frontend-vue-docs/src/views/examples/do-dont/DoDont.vue'
-import ErrorText from '../examples/ErrorText.vue'
+import ErrorText from 'nhsuk-frontend-vue-docs/src/views/examples/error-text/ErrorText.vue'
 import ErrorSummary from 'nhsuk-frontend-vue-docs/src/views/examples/error-summary/ErrorSummary.vue'
 import Expander from '../examples/Expander.vue'
 import ExpanderGroup from '../examples/ExpanderGroup.vue'
@@ -41,17 +41,17 @@ import HeaderSearch from '../examples/HeaderSearch.vue'
 import Hero from '../examples/Hero.vue'
 import HeroImage from '../examples/HeroImage.vue'
 import HeroImageText from '../examples/HeroImageText.vue'
-import HintText from '../examples/HintText.vue'
+import HintText from 'nhsuk-frontend-vue-docs/src/views/examples/hint-text/HintText.vue'
 import Image from '../examples/Image.vue'
 import Input from '../examples/Input.vue'
 import InputAutocomplete from '../examples/InputAutocomplete.vue'
 import InputHint from '../examples/InputHint.vue'
 import InputError from '../examples/InputError.vue'
 import InputWidth from '../examples/InputWidth.vue'
-import InsetText from '../examples/InsetText.vue'
-import Label from '../examples/Label.vue'
-import LabelBold from '../examples/LabelBold.vue'
-import LabelHeading from '../examples/LabelHeading.vue'
+import InsetText from 'nhsuk-frontend-vue-docs/src/views/examples/inset-text/InsetText.vue'
+import Label from 'nhsuk-frontend-vue-docs/src/views/examples/label/Label.vue'
+import LabelBold from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelBold.vue'
+import LabelHeading from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelHeading.vue'
 import ListPanel from '../examples/ListPanel.vue'
 import NavAZ from '../examples/NavAZ.vue'
 import Pagination from '../examples/Pagination.vue'
@@ -127,10 +127,7 @@ export default [
     component: DateInputErrorMulti
   },
 
-  {
-    path: '/example/error-text',
-    component: ErrorText
-  },
+
 
   {
     path: '/example/expander',
@@ -204,10 +201,7 @@ export default [
     path: '/example/hero-image-text',
     component: HeroImageText
   },
-  {
-    path: '/example/hint-text',
-    component: HintText
-  },
+
   {
     path: '/example/image',
     component: Image
@@ -232,22 +226,8 @@ export default [
     path: '/example/input-width',
     component: InputWidth
   },
-  {
-    path: '/example/inset-text',
-    component: InsetText
-  },
-  {
-    path: '/example/label',
-    component: Label
-  },
-  {
-    path: '/example/label-bold',
-    component: LabelBold
-  },
-  {
-    path: '/example/label-heading',
-    component: LabelHeading
-  },
+
+
   {
     path: '/example/list-panel',
     component: ListPanel

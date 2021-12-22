@@ -4,12 +4,13 @@
   </span>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
-  name: 'NhsHintText',
+  emits: [],
+  name: 'nhs-hint-text',
   props: {
     id: {
       type: String

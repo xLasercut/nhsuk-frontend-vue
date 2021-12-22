@@ -1,11 +1,11 @@
 import TypographyHome from '../views/typography/Home.vue'
-import Heading from '../views/typography/Heading.vue'
+import Heading from 'nhsuk-frontend-vue-docs/src/views/components/Heading.vue'
 import Body from 'nhsuk-frontend-vue-docs/src/views/components/Body.vue'
 import List from 'nhsuk-frontend-vue-docs/src/views/components/List.vue'
-import ErrorText from '../views/typography/ErrorText.vue'
-import HintText from '../views/typography/HintText.vue'
-import InsetText from '../views/typography/InsetText.vue'
-import Label from '../views/typography/Label.vue'
+import ErrorText from 'nhsuk-frontend-vue-docs/src/views/components/ErrorText.vue'
+import HintText from 'nhsuk-frontend-vue-docs/src/views/components/HintText.vue'
+import InsetText from 'nhsuk-frontend-vue-docs/src/views/components/InsetText.vue'
+import Label from 'nhsuk-frontend-vue-docs/src/views/components/Label.vue'
 
 const typography = [
   {

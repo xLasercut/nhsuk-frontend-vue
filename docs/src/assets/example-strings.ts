@@ -1,3 +1,4 @@
+import {ExampleStrings} from './interfaces'
 import ButtonDocs from '../views/examples/button/ButtonDocs.vue?raw'
 import ButtonDocsDisabled from '../views/examples/button/ButtonDocsDisabled.vue?raw'
 import ActionLink from '../views/examples/action-link/ActionLink.vue?raw'
@@ -18,29 +19,32 @@ import DoDontSlots from '../views/examples/do-dont/DoDontSlots.vue?raw'
 import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue?raw'
 import Body from '../views/examples/body/Body.vue?raw'
 import List from '../views/examples/list/List.vue?raw'
-import {ExampleStrings} from './interfaces'
+import ErrorText from '../views/examples/error-text/ErrorText.vue?raw'
+import HintText from '../views/examples/hint-text/HintText.vue?raw'
+import InsetText from '../views/examples/inset-text/InsetText.vue?raw'
+import Heading from '../views/examples/heading/Heading.vue?raw'
+import Label from '../views/examples/label/Label.vue?raw'
+import LabelBold from '../views/examples/label/LabelBold.vue?raw'
+import LabelHeading from '../views/examples/label/LabelHeading.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
-  ButtonDocs,
-  ButtonDocsDisabled,
+  ButtonDocs, ButtonDocsDisabled,
   ActionLink,
   BackLink,
   Breadcrumb,
-  CardBasic,
-  CardClickable,
-  CardImage,
-  CardFeature,
-  CardGroup,
-  CareCardNonUrgent,
-  CareCardUrgent,
-  CareCardImmediate,
+  CardBasic, CardClickable, CardImage, CardFeature, CardGroup,
+  CareCardNonUrgent, CareCardUrgent, CareCardImmediate,
   ContentsList,
   Details,
-  DoDont,
-  DoDontSlots,
+  DoDont, DoDontSlots,
   ErrorSummary,
   Body,
-  List
+  List,
+  ErrorText,
+  HintText,
+  InsetText,
+  Heading,
+  Label, LabelBold, LabelHeading
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

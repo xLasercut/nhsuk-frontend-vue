@@ -1,0 +1,21 @@
+{
+  "name": "nhs-heading",
+  "attributes": [
+    {
+      "name": "size",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "l",
+      "description": "Size of heading. xl, l, m, s or xs"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

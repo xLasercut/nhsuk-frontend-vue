@@ -4,14 +4,16 @@
   </label>
 </template>
 
-<script>
-import {computed, defineComponent} from 'vue'
+<script lang="ts">
+import {computed, defineComponent, PropType} from 'vue'
+import {NhsLabelSize} from '../types'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: [],
   props: {
     size: {
-      type: String
+      type: String as PropType<NhsLabelSize>
     }
   },
   setup(props) {

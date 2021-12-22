@@ -1,3 +1,4 @@
+import {filterRoutes} from '../assets/helpers'
 import ExamplesHome from '../views/examples/ExamplesHome.vue'
 import ActionLink from '../views/examples/action-link/ActionLink.vue'
 import BackLink from '../views/examples/back-link/BackLink.vue'
@@ -19,7 +20,12 @@ import ContentsList from '../views/examples/contents/ContentsList.vue'
 import Details from '../views/examples/details/Details.vue'
 import DoDont from '../views/examples/do-dont/DoDont.vue'
 import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue'
-import {filterRoutes} from '../assets/helpers'
+import ErrorText from '../views/examples/error-text/ErrorText.vue'
+import HintText from '../views/examples/hint-text/HintText.vue'
+import InsetText from '../views/examples/inset-text/InsetText.vue'
+import Label from '../views/examples/label/Label.vue'
+import LabelBold from '../views/examples/label/LabelBold.vue'
+import LabelHeading from '../views/examples/label/LabelHeading.vue'
 
 
 const examplesRoutes = [
@@ -127,6 +133,36 @@ const examplesRoutes = [
     path: '/examples/error-summary',
     component: ErrorSummary,
     name: 'Error summary'
+  },
+  {
+    path: '/examples/error-text',
+    component: ErrorText,
+    name: 'Error message'
+  },
+  {
+    path: '/examples/hint-text',
+    component: HintText,
+    name: 'Hint'
+  },
+  {
+    path: '/examples/inset-text',
+    component: InsetText,
+    name: 'Inset text'
+  },
+  {
+    path: '/examples/label',
+    component: Label,
+    name: 'Label'
+  },
+  {
+    path: '/examples/label-bold',
+    component: LabelBold,
+    name: 'Label with bold text'
+  },
+  {
+    path: '/examples/label-heading',
+    component: LabelHeading,
+    name: 'Label as page heading'
   },
 ].map((item) => {
   const {name, ...rest} = item

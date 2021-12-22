@@ -1,3 +1,6 @@
+import {App, Plugin} from 'vue'
+import {NhsukFrontendVueOptions} from './interfaces'
+import {Router} from 'vue-router'
 import '../../node_modules/nhsuk-frontend/dist/nhsuk.css'
 import '../../node_modules/nhsuk-frontend/packages/polyfills'
 
@@ -30,9 +33,11 @@ import {NhsTag} from './tag'
 import {NhsWarningCallout} from './warning-callout'
 import {NhsBody} from './body'
 import {NhsList} from './list'
-import {App, Plugin} from 'vue'
-import {NhsukFrontendVueOptions} from './interfaces'
-import {Router} from 'vue-router'
+import {NhsErrorText} from './error-text'
+import {NhsHintText} from './hint-text'
+import {NhsInsetText} from './inset-text'
+import {NhsHeading} from './heading'
+import {NhsLabel} from './label'
 
 const components = [
   NhsActionLink,
@@ -75,7 +80,12 @@ const components = [
   NhsTag,
   NhsWarningCallout,
   NhsBody,
-  NhsList
+  NhsList,
+  NhsErrorText,
+  NhsHintText,
+  NhsInsetText,
+  NhsHeading,
+  NhsLabel
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -131,5 +141,10 @@ export {
   NhsTag,
   NhsWarningCallout,
   NhsBody,
-  NhsList
+  NhsList,
+  NhsErrorText,
+  NhsHintText,
+  NhsInsetText,
+  NhsHeading,
+  NhsLabel
 }

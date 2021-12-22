@@ -1,3 +1,4 @@
+import {ExampleModules} from './interfaces'
 import ButtonDocs from '../views/examples/button/ButtonDocs.vue'
 import ButtonDocsDisabled from '../views/examples/button/ButtonDocsDisabled.vue'
 import ActionLink from '../views/examples/action-link/ActionLink.vue'
@@ -18,30 +19,32 @@ import DoDontSlots from '../views/examples/do-dont/DoDontSlots.vue'
 import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue'
 import Body from '../views/examples/body/Body.vue'
 import List from '../views/examples/list/List.vue'
-import {ExampleModules} from './interfaces'
-
+import ErrorText from '../views/examples/error-text/ErrorText.vue'
+import HintText from '../views/examples/hint-text/HintText.vue'
+import InsetText from '../views/examples/inset-text/InsetText.vue'
+import Heading from '../views/examples/heading/Heading.vue'
+import Label from '../views/examples/label/Label.vue'
+import LabelBold from '../views/examples/label/LabelBold.vue'
+import LabelHeading from '../views/examples/label/LabelHeading.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
-  ButtonDocs,
-  ButtonDocsDisabled,
+  ButtonDocs, ButtonDocsDisabled,
   ActionLink,
   BackLink,
   Breadcrumb,
-  CardBasic,
-  CardClickable,
-  CardImage,
-  CardFeature,
-  CardGroup,
-  CareCardNonUrgent,
-  CareCardUrgent,
-  CareCardImmediate,
+  CardBasic, CardClickable, CardImage, CardFeature, CardGroup,
+  CareCardNonUrgent, CareCardUrgent, CareCardImmediate,
   ContentsList,
   Details,
-  DoDont,
-  DoDontSlots,
+  DoDont, DoDontSlots,
   ErrorSummary,
   Body,
-  List
+  List,
+  ErrorText,
+  HintText,
+  InsetText,
+  Heading,
+  Label, LabelBold, LabelHeading
 }
 
 function getExampleModule(name: string) {

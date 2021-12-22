@@ -5,16 +5,19 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
-  name: 'NhsInsetText',
+  emits: [],
+  name: 'nhs-inset-text',
   props: {
     hiddenText: {
       type: String,
-      default: 'Information: '
+      default: (): string => {
+        return 'Information: '
+      }
     }
   }
 })

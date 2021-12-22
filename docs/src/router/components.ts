@@ -12,6 +12,11 @@ import Details from '../views/components/Details.vue'
 import ErrorSummary from '../views/components/ErrorSummary.vue'
 import Body from '../views/components/Body.vue'
 import List from '../views/components/List.vue'
+import ErrorText from '../views/components/ErrorText.vue'
+import HintText from '../views/components/HintText.vue'
+import InsetText from '../views/components/InsetText.vue'
+import Heading from '../views/components/Heading.vue'
+import Label from '../views/components/Label.vue'
 
 
 const componentRoutes = [
@@ -79,6 +84,31 @@ const componentRoutes = [
     path: '/components/list',
     component: List,
     name: 'List'
+  },
+  {
+    path: '/components/error-text',
+    component: ErrorText,
+    name: 'Error Text'
+  },
+  {
+    path: '/components/hint-text',
+    component: HintText,
+    name: 'Hint Text'
+  },
+  {
+    path: '/components/inset-text',
+    component: InsetText,
+    name: 'Inset Text'
+  },
+  {
+    path: '/components/heading',
+    component: Heading,
+    name: 'Heading'
+  },
+  {
+    path: '/components/label',
+    component: Label,
+    name: 'Label'
   }
 ]
 
