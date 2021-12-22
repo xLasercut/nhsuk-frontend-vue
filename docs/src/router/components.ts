@@ -17,6 +17,9 @@ import HintText from '../views/components/HintText.vue'
 import InsetText from '../views/components/InsetText.vue'
 import Heading from '../views/components/Heading.vue'
 import Label from '../views/components/Label.vue'
+import Expander from '../views/components/Expander.vue'
+import Fieldset from '../views/components/Fieldset.vue'
+import Footer from '../views/components/Footer.vue'
 
 
 const componentRoutes = [
@@ -109,6 +112,21 @@ const componentRoutes = [
     path: '/components/label',
     component: Label,
     name: 'Label'
+  },
+  {
+    path: '/components/expander',
+    component: Expander,
+    name: 'Expander'
+  },
+  {
+    path: '/components/fieldset',
+    component: Fieldset,
+    name: 'Fieldset'
+  },
+  {
+    path: '/components/footer',
+    component: Footer,
+    name: 'Footer'
   }
 ]
 

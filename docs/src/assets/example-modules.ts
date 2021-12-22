@@ -26,6 +26,13 @@ import Heading from '../views/examples/heading/Heading.vue'
 import Label from '../views/examples/label/Label.vue'
 import LabelBold from '../views/examples/label/LabelBold.vue'
 import LabelHeading from '../views/examples/label/LabelHeading.vue'
+import Expander from '../views/examples/expander/Expander.vue'
+import ExpanderGroup from '../views/examples/expander/ExpanderGroup.vue'
+import Fieldset from '../views/examples/fieldset/Fieldset.vue'
+import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
+import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
+import FieldsetSlots from '../views/examples/fieldset/FieldsetSlots.vue'
+import Footer from '../views/examples/footer/Footer.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -44,7 +51,10 @@ const EXAMPLE_MODULES: ExampleModules = {
   HintText,
   InsetText,
   Heading,
-  Label, LabelBold, LabelHeading
+  Label, LabelBold, LabelHeading,
+  Expander, ExpanderGroup,
+  Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
+  Footer
 }
 
 function getExampleModule(name: string) {

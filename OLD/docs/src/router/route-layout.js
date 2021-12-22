@@ -1,8 +1,8 @@
 import Grid from '../views/layout/Grid.vue'
 import Header from '../views/layout/Header.vue'
 import LayoutHome from '../views/layout/Home.vue'
-import Footer from '../views/layout/Footer.vue'
-import Fieldset from '../views/layout/Fieldset.vue'
+import Footer from 'nhsuk-frontend-vue-docs/src/views/components/Footer.vue'
+import Fieldset from 'nhsuk-frontend-vue-docs/src/views/components/Fieldset.vue'
 import Hero from '../views/layout/Hero.vue'
 
 const layout = [

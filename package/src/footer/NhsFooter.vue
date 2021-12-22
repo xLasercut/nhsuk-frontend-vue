@@ -18,6 +18,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-footer',
   inheritAttrs: false,
+  emits: [],
   props: {
     hiddenText: {
       type: String,

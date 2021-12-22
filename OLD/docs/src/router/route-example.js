@@ -23,13 +23,13 @@ import Details from '../examples/Details.vue'
 import DoDont from 'nhsuk-frontend-vue-docs/src/views/examples/do-dont/DoDont.vue'
 import ErrorText from 'nhsuk-frontend-vue-docs/src/views/examples/error-text/ErrorText.vue'
 import ErrorSummary from 'nhsuk-frontend-vue-docs/src/views/examples/error-summary/ErrorSummary.vue'
-import Expander from '../examples/Expander.vue'
-import ExpanderGroup from '../examples/ExpanderGroup.vue'
-import Fieldset from '../examples/Fieldset.vue'
-import FieldsetHeading from '../examples/FieldsetHeading.vue'
-import FieldsetInput from '../examples/FieldsetInput.vue'
-import Footer from '../examples/Footer.vue'
-import FooterColumn from '../examples/FooterColumn.vue'
+import Expander from 'nhsuk-frontend-vue-docs/src/views/examples/expander/Expander.vue'
+import ExpanderGroup from 'nhsuk-frontend-vue-docs/src/views/examples/expander/ExpanderGroup.vue'
+import Fieldset from 'nhsuk-frontend-vue-docs/src/views/examples/fieldset/Fieldset.vue'
+import FieldsetHeading from 'nhsuk-frontend-vue-docs/src/views/examples/fieldset/FieldsetHeading.vue'
+import FieldsetInput from 'nhsuk-frontend-vue-docs/src/views/examples/fieldset/FieldsetInput.vue'
+import Footer from 'nhsuk-frontend-vue-docs/src/views/examples/footer/Footer.vue'
+import FooterColumn from 'nhsuk-frontend-vue-docs/src/views/examples/footer/FooterColumn.vue'
 import Header from '../examples/Header.vue'
 import HeaderLogo from '../examples/HeaderLogo.vue'
 import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
@@ -129,34 +129,10 @@ export default [
 
 
 
-  {
-    path: '/example/expander',
-    component: Expander
-  },
-  {
-    path: '/example/expander-group',
-    component: ExpanderGroup
-  },
-  {
-    path: '/example/fieldset',
-    component: Fieldset
-  },
-  {
-    path: '/example/fieldset-heading',
-    component: FieldsetHeading
-  },
-  {
-    path: '/example/fieldset-input',
-    component: FieldsetInput
-  },
-  {
-    path: '/example/footer',
-    component: Footer
-  },
-  {
-    path: '/example/footer-column',
-    component: FooterColumn
-  },
+
+
+
+
   {
     path: '/example/header',
     component: Header

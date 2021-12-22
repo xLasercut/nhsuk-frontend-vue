@@ -1,4 +1,4 @@
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/stackoverflow-light.css'
 import hljs from 'highlight.js/lib/core'
 import typescript from 'highlight.js/lib/languages/typescript'
 import xml from 'highlight.js/lib/languages/xml'

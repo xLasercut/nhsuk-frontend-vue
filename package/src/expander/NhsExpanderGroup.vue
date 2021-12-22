@@ -9,6 +9,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'nhs-expander-group',
+  emits: [],
   inheritAttrs: false
 })
 </script>

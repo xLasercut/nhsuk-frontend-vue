@@ -16,6 +16,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'nhs-expander',
+  emits: [],
   inheritAttrs: false,
   props: {
     text: {

@@ -2,11 +2,11 @@
   <fieldset class="nhsuk-fieldset" v-bind="$attrs">
     <legend :class="classes" v-if="legend && pageHeading">
       <h1 class="nhsuk-fieldset__heading">
-        <slot name="legend" :props="legend">{{legend}}</slot>
+        <slot name="legend" :legend="legend">{{legend}}</slot>
       </h1>
     </legend>
     <legend :class="classes" v-if="legend && !pageHeading">
-      <slot name="legend" :props="legend">{{legend}}</slot>
+      <slot name="legend" :legend="legend">{{legend}}</slot>
     </legend>
     <slot></slot>
   </fieldset>
@@ -21,6 +21,7 @@ const FIELDSET_SIZES: Array<NhsFieldsetSize> = [ 'xl', 'l', 'm' ]
 export default defineComponent({
   name: 'nhs-fieldset',
   inheritAttrs: false,
+  emits: [],
   props: {
     legend: {
       type: String

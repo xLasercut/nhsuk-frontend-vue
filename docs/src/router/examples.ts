@@ -26,6 +26,12 @@ import InsetText from '../views/examples/inset-text/InsetText.vue'
 import Label from '../views/examples/label/Label.vue'
 import LabelBold from '../views/examples/label/LabelBold.vue'
 import LabelHeading from '../views/examples/label/LabelHeading.vue'
+import Expander from '../views/examples/expander/Expander.vue'
+import ExpanderGroup from '../views/examples/expander/ExpanderGroup.vue'
+import Fieldset from '../views/examples/fieldset/Fieldset.vue'
+import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
+import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
+import Footer from '../views/examples/footer/Footer.vue'
 
 
 const examplesRoutes = [
@@ -163,6 +169,36 @@ const examplesRoutes = [
     path: '/examples/label-heading',
     component: LabelHeading,
     name: 'Label as page heading'
+  },
+  {
+    path: '/examples/expander',
+    component: Expander,
+    name: 'Expander'
+  },
+  {
+    path: '/examples/expander-group',
+    component: ExpanderGroup,
+    name: 'Expander group'
+  },
+  {
+    path: '/examples/fieldset',
+    component: Fieldset,
+    name: 'Fieldset'
+  },
+  {
+    path: '/examples/fieldset-heading',
+    component: FieldsetHeading,
+    name: 'Fieldset as page heading'
+  },
+  {
+    path: '/examples/fieldset-input',
+    component: FieldsetInput,
+    name: 'Fieldset with inputs'
+  },
+  {
+    path: '/examples/footer',
+    component: Footer,
+    name: 'Footer'
   },
 ].map((item) => {
   const {name, ...rest} = item
