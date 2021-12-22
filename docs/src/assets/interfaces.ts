@@ -9,6 +9,10 @@ interface ExampleModules {
 interface EventsDoc {
   name: string
   description: string
+  arguments?: Array<{
+    name: string
+    type: string
+  }>
 }
 
 interface PropsDoc {

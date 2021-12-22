@@ -8,16 +8,20 @@
   </nhs-header>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        organisation: {
-          name: 'Anytown Anyplace',
-          split: 'Anywhere',
-          descriptor: 'NHS Foundation Trust'
-        }
+<script lang="ts">
+import {defineComponent, reactive, toRefs} from 'vue'
+
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      organisation: {
+        name: 'Anytown Anyplace',
+        split: 'Anywhere',
+        descriptor: 'NHS Foundation Trust'
       }
-    }
+    })
+
+    return {...toRefs(state)}
   }
+})
 </script>

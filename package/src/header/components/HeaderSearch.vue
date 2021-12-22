@@ -70,12 +70,6 @@ import {NhsHeaderSearchResult} from './interfaces'
 export default defineComponent({
   inheritAttrs: false,
   props: {
-    searchConfig: {
-      type: Object,
-      default: () => {
-        return {}
-      }
-    },
     searchAction: {
       type: String,
       required: true

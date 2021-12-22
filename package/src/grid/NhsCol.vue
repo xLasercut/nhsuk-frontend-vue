@@ -20,6 +20,7 @@ const NHS_COL_SPANS = {
 export default defineComponent({
   name: 'nhs-col',
   inheritAttrs: false,
+  emits: [],
   props: {
     span: {
       type: Number as PropType<NhsColSize>,

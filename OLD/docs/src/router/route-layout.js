@@ -1,5 +1,5 @@
-import Grid from '../views/layout/Grid.vue'
-import Header from '../views/layout/Header.vue'
+import Grid from 'nhsuk-frontend-vue-docs/src/views/components/Grid.vue'
+import Header from 'nhsuk-frontend-vue-docs/src/views/components/Header.vue'
 import LayoutHome from '../views/layout/Home.vue'
 import Footer from 'nhsuk-frontend-vue-docs/src/views/components/Footer.vue'
 import Fieldset from 'nhsuk-frontend-vue-docs/src/views/components/Fieldset.vue'

@@ -17,7 +17,6 @@
         ></header-menu>
         <header-search
           v-if="showSearch"
-          :search-config="searchConfig"
           :search-action="searchAction"
           :search-input-name="searchInputName"
           :model-value="searchOpen"
@@ -54,6 +53,7 @@ import {NhsHeaderOrganisation, NhsHeaderService} from './interfaces'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-header',
+  emits: ['submit-search', 'update:search-text'],
   props: {
     showSearch: {
       type: Boolean,
@@ -89,12 +89,6 @@ export default defineComponent({
       type: String,
       default: (): string => {
         return '/'
-      }
-    },
-    searchConfig: {
-      type: Object,
-      default: () => {
-        return {}
       }
     },
     whiteHeader: {

@@ -10,5 +10,6 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-row',
   inheritAttrs: false,
+  emits: []
 })
 </script>

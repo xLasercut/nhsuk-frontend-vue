@@ -33,6 +33,12 @@ import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
 import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
 import FieldsetSlots from '../views/examples/fieldset/FieldsetSlots.vue'
 import Footer from '../views/examples/footer/Footer.vue'
+import Grid from '../views/examples/grid/Grid.vue'
+import Header from '../views/examples/header/Header.vue'
+import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vue'
+import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue'
+import HeaderOrg from '../views/examples/header/HeaderOrg.vue'
+import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -54,7 +60,9 @@ const EXAMPLE_MODULES: ExampleModules = {
   Label, LabelBold, LabelHeading,
   Expander, ExpanderGroup,
   Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
-  Footer
+  Footer,
+  Grid,
+  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav
 }
 
 function getExampleModule(name: string) {

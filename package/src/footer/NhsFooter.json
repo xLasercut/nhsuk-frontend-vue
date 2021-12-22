@@ -15,7 +15,7 @@
       "name": "hidden-text",
       "value": {
         "kind": "expression",
-        "type": "boolean"
+        "type": "string"
       },
       "required": false,
       "default": "Support links",

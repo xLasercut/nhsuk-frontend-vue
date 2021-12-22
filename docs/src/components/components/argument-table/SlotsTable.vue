@@ -1,9 +1,9 @@
 <template>
   <nhs-table :headers="headers" :data="data">
     <template #item.vue-properties="{item}">
+      {{slotPropsDisplayBlank(item)}}
       <highlightjs language="typescript" :code="slotPropsDisplay(item['vue-properties'])" v-if="item['vue-properties']">
       </highlightjs>
-      {{slotPropsDisplayBlank(item)}}
     </template>
   </nhs-table>
 </template>
@@ -39,7 +39,7 @@ export default defineComponent({
 
     function slotPropsDisplayBlank(item: SlotsDoc): string {
       if (item['vue-properties']) {
-        return ''
+        return 'object'
       }
       return '-'
     }

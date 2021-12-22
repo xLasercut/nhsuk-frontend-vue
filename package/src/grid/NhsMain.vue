@@ -18,6 +18,7 @@ const NHS_MAIN_TYPES = {
 export default defineComponent({
   name: 'nhs-main',
   inheritAttrs: false,
+  emits: [],
   props: {
     type: {
       type: String as PropType<NhsMainType>,

@@ -20,6 +20,8 @@ import Label from '../views/components/Label.vue'
 import Expander from '../views/components/Expander.vue'
 import Fieldset from '../views/components/Fieldset.vue'
 import Footer from '../views/components/Footer.vue'
+import Grid from '../views/components/Grid.vue'
+import Header from '../views/components/Header.vue'
 
 
 const componentRoutes = [
@@ -127,6 +129,16 @@ const componentRoutes = [
     path: '/components/footer',
     component: Footer,
     name: 'Footer'
+  },
+  {
+    path: '/components/grid',
+    component: Grid,
+    name: 'Grid'
+  },
+  {
+    path: '/components/header',
+    component: Header,
+    name: 'Header'
   }
 ]
 

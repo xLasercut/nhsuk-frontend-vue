@@ -30,14 +30,14 @@ import FieldsetHeading from 'nhsuk-frontend-vue-docs/src/views/examples/fieldset
 import FieldsetInput from 'nhsuk-frontend-vue-docs/src/views/examples/fieldset/FieldsetInput.vue'
 import Footer from 'nhsuk-frontend-vue-docs/src/views/examples/footer/Footer.vue'
 import FooterColumn from 'nhsuk-frontend-vue-docs/src/views/examples/footer/FooterColumn.vue'
-import Header from '../examples/Header.vue'
-import HeaderLogo from '../examples/HeaderLogo.vue'
-import HeaderServiceSearch from '../examples/HeaderServiceSearch.vue'
-import HeaderTransactional from '../examples/HeaderTransactional.vue'
-import HeaderTransactionalName from '../examples/HeaderTransactionalName.vue'
-import HeaderTransactionalLong from '../examples/HeaderTransactionalLong.vue'
-import HeaderNav from '../examples/HeaderNav.vue'
-import HeaderSearch from '../examples/HeaderSearch.vue'
+import Header from 'nhsuk-frontend-vue-docs/src/views/examples/header/Header.vue'
+import HeaderLogo from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderLogo.vue'
+import HeaderServiceSearch from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderServiceSearch.vue'
+import HeaderTransactional from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderTransactional.vue'
+import HeaderTransactionalName from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderTransactionalName.vue'
+import HeaderTransactionalLong from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderTransactionalLong.vue'
+import HeaderNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderNav.vue'
+import HeaderSearch from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderSearch.vue'
 import Hero from '../examples/Hero.vue'
 import HeroImage from '../examples/HeroImage.vue'
 import HeroImageText from '../examples/HeroImageText.vue'
@@ -77,9 +77,9 @@ import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
 import WarningCallout from '../examples/WarningCallout.vue'
 import WarningCalloutNonImportant from '../examples/WarningCalloutNonImportant.vue'
-import HeaderOrg from '../examples/HeaderOrg.vue'
-import HeaderOrgWhite from '../examples/HeaderOrgWhite.vue'
-import HeaderOrgWhiteNav from '../examples/HeaderOrgWhiteNav.vue'
+import HeaderOrg from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrg.vue'
+import HeaderOrgWhite from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhite.vue'
+import HeaderOrgWhiteNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhiteNav.vue'
 import CheckboxConditional from '../examples/CheckboxConditional.vue'
 import RadioConditional from '../examples/RadioConditional.vue'
 import CardBasic from '../examples/CardBasic.vue'
@@ -133,38 +133,7 @@ export default [
 
 
 
-  {
-    path: '/example/header',
-    component: Header
-  },
-  {
-    path: '/example/header-logo',
-    component: HeaderLogo
-  },
-  {
-    path: '/example/header-service-search',
-    component: HeaderServiceSearch
-  },
-  {
-    path: '/example/header-transactional',
-    component: HeaderTransactional
-  },
-  {
-    path: '/example/header-transactional-name',
-    component: HeaderTransactionalName
-  },
-  {
-    path: '/example/header-transactional-long',
-    component: HeaderTransactionalLong
-  },
-  {
-    path: '/example/header-nav',
-    component: HeaderNav
-  },
-  {
-    path: '/example/header-search',
-    component: HeaderSearch
-  },
+
   {
     path: '/example/hero',
     component: Hero
@@ -304,18 +273,7 @@ export default [
     path: '/example/warning-callout-non-important',
     component: WarningCalloutNonImportant
   },
-  {
-    path: '/example/header-org',
-    component: HeaderOrg
-  },
-  {
-    path: '/example/header-org-white',
-    component: HeaderOrgWhite
-  },
-  {
-    path: '/example/header-org-white-nav',
-    component: HeaderOrgWhiteNav
-  },
+
   {
     path: '/example/checkbox-conditional',
     component: CheckboxConditional

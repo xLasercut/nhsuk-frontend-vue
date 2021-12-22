@@ -1,6 +1,6 @@
 interface NhsHeaderSearchResult {
   text: string
-  value: string
+  value: any
 }
 
 export {NhsHeaderSearchResult}

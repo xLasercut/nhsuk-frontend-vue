@@ -33,6 +33,12 @@ import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue?raw'
 import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue?raw'
 import FieldsetSlots from '../views/examples/fieldset/FieldsetSlots.vue?raw'
 import Footer from '../views/examples/footer/Footer.vue?raw'
+import Grid from '../views/examples/grid/Grid.vue?raw'
+import Header from '../views/examples/header/Header.vue?raw'
+import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vue?raw'
+import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue?raw'
+import HeaderOrg from '../views/examples/header/HeaderOrg.vue?raw'
+import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -54,7 +60,9 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Label, LabelBold, LabelHeading,
   Expander, ExpanderGroup,
   Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
-  Footer
+  Footer,
+  Grid,
+  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

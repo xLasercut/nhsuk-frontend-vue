@@ -32,6 +32,17 @@ import Fieldset from '../views/examples/fieldset/Fieldset.vue'
 import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
 import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
 import Footer from '../views/examples/footer/Footer.vue'
+import HeaderOrgWhite from '../views/examples/header/HeaderOrgWhite.vue'
+import HeaderLogo from '../views/examples/header/HeaderLogo.vue'
+import HeaderTransactional from '../views/examples/header/HeaderTransactional.vue'
+import HeaderTransactionalLong from '../views/examples/header/HeaderTransactionalLong.vue'
+import HeaderNav from '../views/examples/header/HeaderNav.vue'
+import HeaderSearch from '../views/examples/header/HeaderSearch.vue'
+import Header from '../views/examples/header/Header.vue'
+import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vue'
+import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue'
+import HeaderOrg from '../views/examples/header/HeaderOrg.vue'
+import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 
 
 const examplesRoutes = [
@@ -199,6 +210,59 @@ const examplesRoutes = [
     path: '/examples/footer',
     component: Footer,
     name: 'Footer'
+  },
+  {
+    path: '/examples/header',
+    component: Header,
+    name: 'Header'
+  },
+  {
+    path: '/examples/header-logo',
+    component: HeaderLogo,
+    name: 'Header with logo only'
+  },
+  {
+    path: '/examples/header-service-search',
+    component: HeaderServiceSearch
+  },
+  {
+    path: '/examples/header-transactional',
+    component: HeaderTransactional,
+    name: 'Header transactional'
+  },
+  {
+    path: '/examples/header-transactional-name',
+    component: HeaderTransactionalName,
+    name: 'Header transactional with service name'
+  },
+  {
+    path: '/examples/header-transactional-long',
+    component: HeaderTransactionalLong
+  },
+  {
+    path: '/examples/header-nav',
+    component: HeaderNav,
+    name: 'Header with navigation'
+  },
+  {
+    path: '/examples/header-search',
+    component: HeaderSearch,
+    name: 'Header with search'
+  },
+  {
+    path: '/examples/header-org',
+    component: HeaderOrg,
+    name: 'Header organisational'
+  },
+  {
+    path: '/examples/header-org-white',
+    component: HeaderOrgWhite,
+    name: 'Header organisational with white header'
+  },
+  {
+    path: '/examples/header-org-white-nav',
+    component: HeaderOrgWhiteNav,
+    name: 'Header organisational with white header and navigation'
   },
 ].map((item) => {
   const {name, ...rest} = item
