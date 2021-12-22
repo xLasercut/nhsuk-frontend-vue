@@ -14,6 +14,7 @@ import {NhsHeaderService} from '../interfaces'
 export default defineComponent({
   inheritAttrs: false,
   components: {NhsLinkSwitcher},
+  emits: [],
   props: {
     service: {
       type: Object as PropType<NhsHeaderService>,

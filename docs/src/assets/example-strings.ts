@@ -39,6 +39,9 @@ import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vu
 import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue?raw'
 import HeaderOrg from '../views/examples/header/HeaderOrg.vue?raw'
 import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue?raw'
+import Hero from '../views/examples/hero/Hero.vue?raw'
+import HeroImage from '../views/examples/hero/HeroImage.vue?raw'
+import HeroImageText from '../views/examples/hero/HeroImageText.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -62,7 +65,8 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
   Footer,
   Grid,
-  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav
+  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav,
+  Hero, HeroImage, HeroImageText
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

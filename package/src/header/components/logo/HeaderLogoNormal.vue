@@ -18,6 +18,7 @@ import {NhsHeaderService} from '../../interfaces'
 export default defineComponent({
   components: { NhsLinkSwitcher },
   inheritAttrs: false,
+  emits: [],
   props: {
     ariaLabel: {
       type: String,

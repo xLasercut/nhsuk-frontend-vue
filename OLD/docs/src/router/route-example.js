@@ -38,9 +38,7 @@ import HeaderTransactionalName from 'nhsuk-frontend-vue-docs/src/views/examples/
 import HeaderTransactionalLong from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderTransactionalLong.vue'
 import HeaderNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderNav.vue'
 import HeaderSearch from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderSearch.vue'
-import Hero from '../examples/Hero.vue'
-import HeroImage from '../examples/HeroImage.vue'
-import HeroImageText from '../examples/HeroImageText.vue'
+
 import HintText from 'nhsuk-frontend-vue-docs/src/views/examples/hint-text/HintText.vue'
 import Image from '../examples/Image.vue'
 import Input from '../examples/Input.vue'
@@ -134,18 +132,6 @@ export default [
 
 
 
-  {
-    path: '/example/hero',
-    component: Hero
-  },
-  {
-    path: '/example/hero-image',
-    component: HeroImage
-  },
-  {
-    path: '/example/hero-image-text',
-    component: HeroImageText
-  },
 
   {
     path: '/example/image',

@@ -39,6 +39,9 @@ import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vu
 import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue'
 import HeaderOrg from '../views/examples/header/HeaderOrg.vue'
 import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
+import Hero from '../views/examples/hero/Hero.vue'
+import HeroImage from '../views/examples/hero/HeroImage.vue'
+import HeroImageText from '../views/examples/hero/HeroImageText.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -62,7 +65,8 @@ const EXAMPLE_MODULES: ExampleModules = {
   Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
   Footer,
   Grid,
-  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav
+  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav,
+  Hero, HeroImage, HeroImageText
 }
 
 function getExampleModule(name: string) {

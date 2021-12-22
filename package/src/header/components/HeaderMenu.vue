@@ -18,6 +18,7 @@ import {computed, defineComponent, reactive, toRefs} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: ['update:model-value'],
   props: {
     showNav: {
       type: Boolean,

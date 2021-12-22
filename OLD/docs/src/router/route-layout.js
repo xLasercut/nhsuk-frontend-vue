@@ -3,7 +3,7 @@ import Header from 'nhsuk-frontend-vue-docs/src/views/components/Header.vue'
 import LayoutHome from '../views/layout/Home.vue'
 import Footer from 'nhsuk-frontend-vue-docs/src/views/components/Footer.vue'
 import Fieldset from 'nhsuk-frontend-vue-docs/src/views/components/Fieldset.vue'
-import Hero from '../views/layout/Hero.vue'
+import Hero from 'nhsuk-frontend-vue-docs/src/views/components/Hero.vue'
 
 const layout = [
   {

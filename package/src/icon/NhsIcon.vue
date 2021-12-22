@@ -10,6 +10,7 @@ import {NhsIconType} from './types'
 export default defineComponent({
   name: 'nhs-icon',
   inheritAttrs: false,
+  emits: [],
   props: {
     icon: {
       type: String as PropType<NhsIconType>,

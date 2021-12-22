@@ -35,6 +35,7 @@ import {NhsHeroSectionStyle} from './interface'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-hero',
+  emits: [],
   props: {
     heading: {
       type: String

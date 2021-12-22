@@ -13,6 +13,7 @@ import {NhsHeaderOrganisation, NhsHeaderService} from '../interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: [],
   components: {HeaderLogoNormal, HeaderLogoOrg},
   props: {
     ariaLabel: {

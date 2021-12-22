@@ -31,6 +31,7 @@ import {computed, defineComponent} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: ['update:model-value'],
   components: {NhsIcon, NhsLinkSwitcher},
   props: {
     homeHref: {

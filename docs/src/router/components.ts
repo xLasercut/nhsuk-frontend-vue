@@ -22,6 +22,7 @@ import Fieldset from '../views/components/Fieldset.vue'
 import Footer from '../views/components/Footer.vue'
 import Grid from '../views/components/Grid.vue'
 import Header from '../views/components/Header.vue'
+import Hero from '../views/components/Hero.vue'
 
 
 const componentRoutes = [
@@ -139,6 +140,11 @@ const componentRoutes = [
     path: '/components/header',
     component: Header,
     name: 'Header'
+  },
+  {
+    path: '/components/hero',
+    component: Hero,
+    name: 'Hero'
   }
 ]
 

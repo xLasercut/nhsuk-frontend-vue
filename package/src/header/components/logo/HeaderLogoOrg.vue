@@ -27,6 +27,7 @@ import {NhsHeaderOrganisation} from '../../interfaces'
 export default defineComponent({
   components: { NhsLinkSwitcher },
   inheritAttrs: false,
+  emits: [],
   props: {
     homeHref: {
       type: String,

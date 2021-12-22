@@ -69,6 +69,7 @@ import {NhsHeaderSearchResult} from './interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: ['update:model-value', 'submit-search', 'update:search-text'],
   props: {
     searchAction: {
       type: String,
@@ -193,7 +194,7 @@ export default defineComponent({
 
     function toggleSearch(): void {
       state.open = !state.open
-      context.emit('update:modelValue', state.open)
+      context.emit('update:model-value', state.open)
     }
 
     function submitSearch(index: number | undefined = undefined): void {
