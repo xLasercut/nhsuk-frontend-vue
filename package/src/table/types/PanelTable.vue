@@ -16,6 +16,7 @@ import {NhsHeadingType} from '../../shared/heading-switcher/types'
 
 export default defineComponent({
   inheritAttrs: false,
+  emit: [],
   props: {
     heading: {
       type: String

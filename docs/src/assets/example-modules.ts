@@ -54,6 +54,9 @@ import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBor
 import Tag from '../views/examples/tag/Tag.vue'
 import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue'
 import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue'
+import Table from '../views/examples/table/Table.vue'
+import TablePanel from '../views/examples/table/TablePanel.vue'
+import TableResponsive from '../views/examples/table/TableResponsive.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -87,7 +90,8 @@ const EXAMPLE_MODULES: ExampleModules = {
   SkipLink,
   SummaryList, SummaryListNoAction, SummaryListNoBorder,
   Tag,
-  WarningCallout, WarningCalloutNonImportant
+  WarningCallout, WarningCalloutNonImportant,
+  Table, TablePanel, TableResponsive
 }
 
 function getExampleModule(name: string) {

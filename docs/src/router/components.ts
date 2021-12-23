@@ -32,6 +32,7 @@ import SkipLink from '../views/components/SkipLink.vue'
 import SummaryList from '../views/components/SummaryList.vue'
 import Tag from '../views/components/Tag.vue'
 import WarningCallout from '../views/components/WarningCallout.vue'
+import Table from '../views/components/Table.vue'
 
 
 const componentRoutes = [
@@ -199,6 +200,11 @@ const componentRoutes = [
     path: '/components/warning-callout',
     component: WarningCallout,
     name: 'Warning Callout'
+  },
+  {
+    path: '/components/table',
+    component: Table,
+    name: 'Table'
   }
 ]
 

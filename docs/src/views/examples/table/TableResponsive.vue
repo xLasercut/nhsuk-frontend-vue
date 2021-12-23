@@ -7,10 +7,12 @@
   </nhs-table>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
+<script lang="ts">
+import {defineComponent, reactive, toRefs} from 'vue'
+
+export default defineComponent({
+  setup() {
+    const state = reactive({
       data: [
         {
           age: '3 to 5 months (weighing more than 5kg)',
@@ -62,7 +64,9 @@ export default {
           value: 'howOften'
         }
       ]
-    }
+    })
+
+    return {...toRefs(state)}
   }
-}
+})
 </script>

@@ -67,9 +67,9 @@ import SkipLink from 'nhsuk-frontend-vue-docs/src/views/examples/skip-link/SkipL
 import SummaryList from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryList.vue'
 import SummaryListNoAction from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryListNoAction.vue'
 import SummaryListNoBorder from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryListNoBorder.vue'
-import Table from '../examples/Table.vue'
-import TablePanel from '../examples/TablePanel.vue'
-import TableResponsive from '../examples/TableResponsive.vue'
+import Table from 'nhsuk-frontend-vue-docs/src/views/examples/table/Table.vue'
+import TablePanel from 'nhsuk-frontend-vue-docs/src/views/examples/table/TablePanel.vue'
+import TableResponsive from 'nhsuk-frontend-vue-docs/src/views/examples/table/TableResponsive.vue'
 import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
@@ -196,18 +196,7 @@ export default [
   },
 
 
-  {
-    path: '/example/table',
-    component: Table
-  },
-  {
-    path: '/example/table-panel',
-    component: TablePanel
-  },
-  {
-    path: '/example/table-responsive',
-    component: TableResponsive
-  },
+
   {
     path: '/example/textarea',
     component: Textarea

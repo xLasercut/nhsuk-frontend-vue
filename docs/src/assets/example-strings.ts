@@ -54,6 +54,9 @@ import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBor
 import Tag from '../views/examples/tag/Tag.vue?raw'
 import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue?raw'
 import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue?raw'
+import Table from '../views/examples/table/Table.vue?raw'
+import TablePanel from '../views/examples/table/TablePanel.vue?raw'
+import TableResponsive from '../views/examples/table/TableResponsive.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -87,7 +90,8 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   SkipLink,
   SummaryList, SummaryListNoAction, SummaryListNoBorder,
   Tag,
-  WarningCallout, WarningCalloutNonImportant
+  WarningCallout, WarningCalloutNonImportant,
+  Table, TablePanel, TableResponsive
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

@@ -32,6 +32,7 @@ import {NhsTableHeader, NhsTableItem} from './interfaces'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-table',
+  emits: [],
   props: {
     heading: {
       type: String

@@ -58,6 +58,9 @@ import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBor
 import Tag from '../views/examples/tag/Tag.vue'
 import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue'
 import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue'
+import Table from '../views/examples/table/Table.vue'
+import TablePanel from '../views/examples/table/TablePanel.vue'
+import TableResponsive from '../views/examples/table/TableResponsive.vue'
 
 
 const examplesRoutes = [
@@ -353,6 +356,21 @@ const examplesRoutes = [
     path: '/examples/warning-callout-non-important',
     component: WarningCalloutNonImportant,
     name: 'Warning callout with custom heading'
+  },
+  {
+    path: '/examples/table',
+    component: Table,
+    name: 'Table'
+  },
+  {
+    path: '/examples/table-panel',
+    component: TablePanel,
+    name: 'Table as a panel'
+  },
+  {
+    path: '/examples/table-responsive',
+    component: TableResponsive,
+    name: 'Responsive table'
   },
 ].map((item) => {
   const {name, ...rest} = item
