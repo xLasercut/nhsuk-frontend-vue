@@ -42,6 +42,9 @@ import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue?ra
 import Hero from '../views/examples/hero/Hero.vue?raw'
 import HeroImage from '../views/examples/hero/HeroImage.vue?raw'
 import HeroImageText from '../views/examples/hero/HeroImageText.vue?raw'
+import Image from '../views/examples/image/Image.vue?raw'
+import ListPanel from '../views/examples/list-panel/ListPanel.vue?raw'
+import NavAZ from '../views/examples/nav-az/NavAZ.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -66,7 +69,10 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Footer,
   Grid,
   Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav,
-  Hero, HeroImage, HeroImageText
+  Hero, HeroImage, HeroImageText,
+  Image,
+  ListPanel,
+  NavAZ
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

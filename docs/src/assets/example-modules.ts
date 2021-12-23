@@ -42,6 +42,9 @@ import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 import Hero from '../views/examples/hero/Hero.vue'
 import HeroImage from '../views/examples/hero/HeroImage.vue'
 import HeroImageText from '../views/examples/hero/HeroImageText.vue'
+import Image from '../views/examples/image/Image.vue'
+import ListPanel from '../views/examples/list-panel/ListPanel.vue'
+import NavAZ from '../views/examples/nav-az/NavAZ.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -66,7 +69,10 @@ const EXAMPLE_MODULES: ExampleModules = {
   Footer,
   Grid,
   Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav,
-  Hero, HeroImage, HeroImageText
+  Hero, HeroImage, HeroImageText,
+  Image,
+  ListPanel,
+  NavAZ
 }
 
 function getExampleModule(name: string) {

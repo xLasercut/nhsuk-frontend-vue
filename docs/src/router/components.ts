@@ -23,6 +23,9 @@ import Footer from '../views/components/Footer.vue'
 import Grid from '../views/components/Grid.vue'
 import Header from '../views/components/Header.vue'
 import Hero from '../views/components/Hero.vue'
+import Image from '../views/components/Image.vue'
+import ListPanel from '../views/components/ListPanel.vue'
+import NavAz from '../views/components/NavAz.vue'
 
 
 const componentRoutes = [
@@ -145,6 +148,21 @@ const componentRoutes = [
     path: '/components/hero',
     component: Hero,
     name: 'Hero'
+  },
+  {
+    path: '/components/image',
+    component: Image,
+    name: 'Image'
+  },
+  {
+    path: '/components/list-panel',
+    component: ListPanel,
+    name: 'List Panel'
+  },
+  {
+    path: '/components/nav-az',
+    component: NavAz,
+    name: 'Nav AZ'
   }
 ]
 

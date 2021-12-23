@@ -12,6 +12,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-nav-az',
+  emits: [],
   props: {
     ariaLabel: {
       type: String,

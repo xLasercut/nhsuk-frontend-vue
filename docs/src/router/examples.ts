@@ -46,6 +46,9 @@ import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 import Hero from '../views/examples/hero/Hero.vue'
 import HeroImage from '../views/examples/hero/HeroImage.vue'
 import HeroImageText from '../views/examples/hero/HeroImageText.vue'
+import Image from '../views/examples/image/Image.vue'
+import ListPanel from '../views/examples/list-panel/ListPanel.vue'
+import NavAZ from '../views/examples/nav-az/NavAZ.vue'
 
 
 const examplesRoutes = [
@@ -281,6 +284,21 @@ const examplesRoutes = [
     path: '/examples/hero-image-text',
     component: HeroImageText,
     name: 'Hero with image with content'
+  },
+  {
+    path: '/examples/image',
+    component: Image,
+    name: 'Images'
+  },
+  {
+    path: '/examples/list-panel',
+    component: ListPanel,
+    name: 'List Panel'
+  },
+  {
+    path: '/examples/nav-az',
+    component: NavAZ,
+    name: 'Nav AZ'
   },
 ].map((item) => {
   const {name, ...rest} = item

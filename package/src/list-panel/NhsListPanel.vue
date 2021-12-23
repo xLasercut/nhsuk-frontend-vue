@@ -28,6 +28,7 @@ import {NhsHeadingType} from '../shared/heading-switcher/types'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-list-panel',
+  emits: ['back-to-top'],
   components: { NhsHeadingSwitcher, NhsLinkSwitcher, NhsIcon },
   props: {
     label: {

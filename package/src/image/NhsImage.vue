@@ -13,6 +13,7 @@ import {computed, defineComponent} from 'vue'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-image',
+  emits: [],
   props: {
     src: {
       type: String,

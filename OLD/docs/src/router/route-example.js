@@ -40,7 +40,7 @@ import HeaderNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderN
 import HeaderSearch from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderSearch.vue'
 
 import HintText from 'nhsuk-frontend-vue-docs/src/views/examples/hint-text/HintText.vue'
-import Image from '../examples/Image.vue'
+
 import Input from '../examples/Input.vue'
 import InputAutocomplete from '../examples/InputAutocomplete.vue'
 import InputHint from '../examples/InputHint.vue'
@@ -50,8 +50,8 @@ import InsetText from 'nhsuk-frontend-vue-docs/src/views/examples/inset-text/Ins
 import Label from 'nhsuk-frontend-vue-docs/src/views/examples/label/Label.vue'
 import LabelBold from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelBold.vue'
 import LabelHeading from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelHeading.vue'
-import ListPanel from '../examples/ListPanel.vue'
-import NavAZ from '../examples/NavAZ.vue'
+import ListPanel from 'nhsuk-frontend-vue-docs/src/views/examples/list-panel/ListPanel.vue'
+import NavAZ from 'nhsuk-frontend-vue-docs/src/views/examples/nav-az/NavAZ.vue'
 import Pagination from '../examples/Pagination.vue'
 import Radio from '../examples/Radio.vue'
 import RadioInline from '../examples/RadioInline.vue'
@@ -134,10 +134,6 @@ export default [
 
 
   {
-    path: '/example/image',
-    component: Image
-  },
-  {
     path: '/example/input',
     component: Input
   },
@@ -159,14 +155,8 @@ export default [
   },
 
 
-  {
-    path: '/example/list-panel',
-    component: ListPanel
-  },
-  {
-    path: '/example/nav-az',
-    component: NavAZ
-  },
+
+
   {
     path: '/example/pagination',
     component: Pagination

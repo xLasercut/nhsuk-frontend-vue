@@ -1,6 +1,6 @@
 <template>
   <li class="nhsuk-list-panel__item">
-    <nhs-link-switcher class="nhsuk-list-panel__link" :href="href" v-bind="$attrs">
+    <nhs-link-switcher class="nhsuk-list-panel__link" @click="$emit('click')" :href="href" v-bind="$attrs">
       <slot></slot>
     </nhs-link-switcher>
   </li>
@@ -12,6 +12,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'nhs-list-panel-item',
+  emits: ['click'],
   inheritAttrs: false,
   components: { NhsLinkSwitcher },
   props: {

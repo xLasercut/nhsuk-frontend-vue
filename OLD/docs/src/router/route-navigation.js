@@ -4,8 +4,8 @@ import BackLink from '../views/navigation/BackLink.vue'
 import BreadCrum from '../views/navigation/Breadcrumb.vue'
 import Contents from '../views/navigation/Contents.vue'
 import Pagination from '../views/navigation/Pagination.vue'
-import NavAz from '../views/navigation/NavAz.vue'
-import ListPanel from '../views/navigation/ListPanel.vue'
+import NavAz from 'nhsuk-frontend-vue-docs/src/views/components/NavAz.vue'
+import ListPanel from 'nhsuk-frontend-vue-docs/src/views/components/ListPanel.vue'
 import SkipLink from '../views/navigation/SkipLink.vue'
 
 const navigation = [

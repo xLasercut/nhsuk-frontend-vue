@@ -19,6 +19,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'nhs-nav-az-item',
   inheritAttrs: false,
+  emits: ['click'],
   components: { NhsLinkSwitcher },
   props: {
     disabled: {
