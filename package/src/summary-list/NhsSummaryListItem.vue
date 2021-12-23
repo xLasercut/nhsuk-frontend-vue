@@ -16,6 +16,7 @@ const SUMMARY_LIST_ITEM_TYPES: Array<NhsSummaryListItemType> = [ 'key', 'value',
 export default defineComponent({
   inheritAttrs: false,
   name: 'NhsSummaryListItem',
+  emits: [],
   props: {
     type: {
       type: String as PropType<NhsSummaryListItemType>,

@@ -45,6 +45,15 @@ import HeroImageText from '../views/examples/hero/HeroImageText.vue?raw'
 import Image from '../views/examples/image/Image.vue?raw'
 import ListPanel from '../views/examples/list-panel/ListPanel.vue?raw'
 import NavAZ from '../views/examples/nav-az/NavAZ.vue?raw'
+import Pagination from '../views/examples/pagination/Pagination.vue?raw'
+import ReviewDate from '../views/examples/review-date/ReviewDate.vue?raw'
+import SkipLink from '../views/examples/skip-link/SkipLink.vue?raw'
+import SummaryList from '../views/examples/summary-list/SummaryList.vue?raw'
+import SummaryListNoAction from '../views/examples/summary-list/SummaryListNoAction.vue?raw'
+import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBorder.vue?raw'
+import Tag from '../views/examples/tag/Tag.vue?raw'
+import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue?raw'
+import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -72,7 +81,13 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Hero, HeroImage, HeroImageText,
   Image,
   ListPanel,
-  NavAZ
+  NavAZ,
+  Pagination,
+  ReviewDate,
+  SkipLink,
+  SummaryList, SummaryListNoAction, SummaryListNoBorder,
+  Tag,
+  WarningCallout, WarningCalloutNonImportant
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

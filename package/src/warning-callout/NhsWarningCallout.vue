@@ -21,6 +21,7 @@ import {NhsHeadingType} from '../shared/heading-switcher/types'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-warning-callout',
+  emits: [],
   components: { NhsHeadingSwitcher },
   props: {
     heading: {

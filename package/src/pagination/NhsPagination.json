@@ -1,0 +1,61 @@
+{
+  "name": "nhs-pagination",
+  "attributes": [
+    {
+      "name": "aria-label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Pagination",
+      "description": "The aria-label of the pagination component."
+    },
+    {
+      "name": "previous-href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The value of the previous link href attribute."
+    },
+    {
+      "name": "previous-page",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The text of the previous link."
+    },
+    {
+      "name": "next-href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The value of the next link href attribute."
+    },
+    {
+      "name": "next-page",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The text of the next link."
+    }
+  ],
+  "events": [
+    {
+      "name": "click-previous",
+      "description": "on click previous-page link event"
+    },
+    {
+      "name": "click-next",
+      "description": "on click next-page link event"
+    }
+  ]
+}

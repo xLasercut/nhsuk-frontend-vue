@@ -26,6 +26,12 @@ import Hero from '../views/components/Hero.vue'
 import Image from '../views/components/Image.vue'
 import ListPanel from '../views/components/ListPanel.vue'
 import NavAz from '../views/components/NavAz.vue'
+import Pagination from '../views/components/Pagination.vue'
+import ReviewDate from '../views/components/ReviewDate.vue'
+import SkipLink from '../views/components/SkipLink.vue'
+import SummaryList from '../views/components/SummaryList.vue'
+import Tag from '../views/components/Tag.vue'
+import WarningCallout from '../views/components/WarningCallout.vue'
 
 
 const componentRoutes = [
@@ -163,6 +169,36 @@ const componentRoutes = [
     path: '/components/nav-az',
     component: NavAz,
     name: 'Nav AZ'
+  },
+  {
+    path: '/components/pagination',
+    component: Pagination,
+    name: 'Pagination'
+  },
+  {
+    path: '/components/review-date',
+    component: ReviewDate,
+    name: 'Review Date'
+  },
+  {
+    path: '/components/skip-link',
+    component: SkipLink,
+    name: 'Skip Link'
+  },
+  {
+    path: '/components/summary-list',
+    component: SummaryList,
+    name: 'Summary List'
+  },
+  {
+    path: '/components/tag',
+    component: Tag,
+    name: 'Tag'
+  },
+  {
+    path: '/components/warning-callout',
+    component: WarningCallout,
+    name: 'Warning Callout'
   }
 ]
 

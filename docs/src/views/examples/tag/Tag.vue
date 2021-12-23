@@ -4,20 +4,22 @@
     :data="items"
     :responsive="false"
   >
-    <template #item.classname="item">
-      <code>{{item.props.classname}}</code>
+    <template #item.classname="{item}">
+      <code>{{item.classname}}</code>
     </template>
 
-    <template #item.tag="item">
-      <nhs-tag :color="item.props.tag">{{item.props.tagText}}</nhs-tag>
+    <template #item.tag="{item}">
+      <nhs-tag :color="item.tag">{{item.tagText}}</nhs-tag>
     </template>
   </nhs-table>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
+<script lang="ts">
+import {defineComponent, reactive, toRefs} from 'vue'
+
+export default defineComponent({
+  setup() {
+    const state = reactive({
       headers: [
         {
           text: 'Class name',
@@ -86,7 +88,9 @@ export default {
           tagText: 'Delayed'
         }
       ]
-    }
+    })
+
+    return {...toRefs(state)}
   }
-}
+})
 </script>

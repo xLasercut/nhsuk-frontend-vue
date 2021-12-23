@@ -6,11 +6,11 @@ import Dodont from '../views/information/DoDont.vue'
 import Image from 'nhsuk-frontend-vue-docs/src/views/components/Image.vue'
 import ErrorSummary from 'nhsuk-frontend-vue-docs/src/views/components/ErrorSummary.vue'
 import Table from '../views/information/Table.vue'
-import WarningCallout from '../views/information/WarningCallout.vue'
-import SummaryList from '../views/information/SummaryList.vue'
-import ReviewDate from '../views/information/ReviewDate.vue'
+import WarningCallout from 'nhsuk-frontend-vue-docs/src/views/components/WarningCallout.vue'
+import SummaryList from 'nhsuk-frontend-vue-docs/src/views/components/SummaryList.vue'
+import ReviewDate from 'nhsuk-frontend-vue-docs/src/views/components/ReviewDate.vue'
 import Card from '../views/information/Card.vue'
-import Tag from '../views/information/Tag.vue'
+import Tag from 'nhsuk-frontend-vue-docs/src/views/components/Tag.vue'
 
 const information = [
   {

@@ -2,7 +2,7 @@
   <nav class="nhsuk-pagination" role="navigation" :aria-label="ariaLabel" v-bind="$attrs">
     <ul class="nhsuk-list nhsuk-pagination__list">
       <li class="nhsuk-pagination-item--previous" v-if="previousHref && previousPage">
-        <nhs-link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--prev" :href="previousHref">
+        <nhs-link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--prev" @click="$emit('click-previous')" :href="previousHref">
           <span class="nhsuk-pagination__title">Previous</span>
           <span class="nhsuk-u-visually-hidden">:</span>
           <span class="nhsuk-pagination__page">{{previousPage}}</span>
@@ -10,7 +10,7 @@
         </nhs-link-switcher>
       </li>
       <li class="nhsuk-pagination-item--next" v-if="nextHref && nextPage">
-        <nhs-link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--next" :href="nextHref">
+        <nhs-link-switcher class="nhsuk-pagination__link nhsuk-pagination__link--next" @click="$emit('click-next')" :href="nextHref">
           <span class="nhsuk-pagination__title">Next</span>
           <span class="nhsuk-u-visually-hidden">:</span>
           <span class="nhsuk-pagination__page">{{nextPage}}</span>
@@ -29,6 +29,7 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-pagination',
+  emits: ['click-next', 'click-previous'],
   props: {
     ariaLabel: {
       type: String,

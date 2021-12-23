@@ -1,0 +1,35 @@
+{
+  "name": "nhs-summary-list",
+  "attributes": [
+    {
+      "name": "data",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": true,
+      "description": "Array of row item objects."
+    },
+    {
+      "name": "border",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "true",
+      "description": "Toggle summary list border."
+    }
+  ],
+  "slots": [
+    {
+      "name": "item",
+      "vue-properties": [
+        {
+          "name": "item"
+        }
+      ],
+      "description": "slot for summary-list-items"
+    }
+  ]
+}

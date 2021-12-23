@@ -12,6 +12,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
+  emits: [],
   name: 'nhs-review-date',
   props: {
     lastReview: {

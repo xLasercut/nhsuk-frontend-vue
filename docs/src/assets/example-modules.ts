@@ -45,6 +45,15 @@ import HeroImageText from '../views/examples/hero/HeroImageText.vue'
 import Image from '../views/examples/image/Image.vue'
 import ListPanel from '../views/examples/list-panel/ListPanel.vue'
 import NavAZ from '../views/examples/nav-az/NavAZ.vue'
+import Pagination from '../views/examples/pagination/Pagination.vue'
+import ReviewDate from '../views/examples/review-date/ReviewDate.vue'
+import SkipLink from '../views/examples/skip-link/SkipLink.vue'
+import SummaryList from '../views/examples/summary-list/SummaryList.vue'
+import SummaryListNoAction from '../views/examples/summary-list/SummaryListNoAction.vue'
+import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBorder.vue'
+import Tag from '../views/examples/tag/Tag.vue'
+import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue'
+import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -72,7 +81,13 @@ const EXAMPLE_MODULES: ExampleModules = {
   Hero, HeroImage, HeroImageText,
   Image,
   ListPanel,
-  NavAZ
+  NavAZ,
+  Pagination,
+  ReviewDate,
+  SkipLink,
+  SummaryList, SummaryListNoAction, SummaryListNoBorder,
+  Tag,
+  WarningCallout, WarningCalloutNonImportant
 }
 
 function getExampleModule(name: string) {

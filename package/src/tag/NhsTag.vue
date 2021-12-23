@@ -13,6 +13,7 @@ const TAG_COLORS: Array<NhsTagColor> = ['', 'white', 'grey', 'green', 'aqua-gree
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-tag',
+  emits: [],
   props: {
     color: {
       type: String as PropType<NhsTagColor>,

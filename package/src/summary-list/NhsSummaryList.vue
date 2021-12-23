@@ -1,7 +1,7 @@
 <template>
   <dl :class="classes" v-bind="$attrs">
     <div class="nhsuk-summary-list__row" v-for="(item, index) in data" :key="index">
-      <slot name="item" :props="item"></slot>
+      <slot name="item" :item="item"></slot>
     </div>
   </dl>
 </template>
@@ -12,6 +12,7 @@ import {computed, defineComponent} from 'vue'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-summary-list',
+  emits: [],
   props: {
     data: {
       type: Array,

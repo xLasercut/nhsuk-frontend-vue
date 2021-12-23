@@ -52,7 +52,7 @@ import LabelBold from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelBol
 import LabelHeading from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelHeading.vue'
 import ListPanel from 'nhsuk-frontend-vue-docs/src/views/examples/list-panel/ListPanel.vue'
 import NavAZ from 'nhsuk-frontend-vue-docs/src/views/examples/nav-az/NavAZ.vue'
-import Pagination from '../examples/Pagination.vue'
+import Pagination from 'nhsuk-frontend-vue-docs/src/views/examples/pagination/Pagination.vue'
 import Radio from '../examples/Radio.vue'
 import RadioInline from '../examples/RadioInline.vue'
 import RadioDisabled from '../examples/RadioDisabled.vue'
@@ -60,21 +60,20 @@ import RadioDivider from '../examples/RadioDivider.vue'
 import RadioHint from '../examples/RadioHint.vue'
 import RadioNoHeading from '../examples/RadioNoHeading.vue'
 import RadioError from '../examples/RadioError.vue'
-import ReviewDate from '../examples/ReviewDate.vue'
+import ReviewDate from 'nhsuk-frontend-vue-docs/src/views/examples/review-date/ReviewDate.vue'
 import Select from '../examples/Select.vue'
 import SelectError from '../examples/SelectError.vue'
-import SkipLink from '../examples/SkipLink.vue'
-import SummaryList from '../examples/SummaryList.vue'
-import SummaryListNoAction from '../examples/SummaryListNoAction.vue'
-import SummaryListNoBorder from '../examples/SummaryListNoBorder.vue'
+import SkipLink from 'nhsuk-frontend-vue-docs/src/views/examples/skip-link/SkipLink.vue'
+import SummaryList from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryList.vue'
+import SummaryListNoAction from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryListNoAction.vue'
+import SummaryListNoBorder from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryListNoBorder.vue'
 import Table from '../examples/Table.vue'
 import TablePanel from '../examples/TablePanel.vue'
 import TableResponsive from '../examples/TableResponsive.vue'
 import Textarea from '../examples/Textarea.vue'
 import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
 import TextareaError from '../examples/TextareaError.vue'
-import WarningCallout from '../examples/WarningCallout.vue'
-import WarningCalloutNonImportant from '../examples/WarningCalloutNonImportant.vue'
+
 import HeaderOrg from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrg.vue'
 import HeaderOrgWhite from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhiteNav.vue'
@@ -85,7 +84,7 @@ import CardClickable from '../examples/CardClickable.vue'
 import CardImage from '../examples/CardImage.vue'
 import CardGroup from '../examples/CardGroup.vue'
 import CardFeature from '../examples/CardFeature.vue'
-import Tag from '../examples/Tag.vue'
+import Tag from 'nhsuk-frontend-vue-docs/src/views/examples/tag/Tag.vue'
 
 export default [
   {
@@ -157,10 +156,7 @@ export default [
 
 
 
-  {
-    path: '/example/pagination',
-    component: Pagination
-  },
+
   {
     path: '/example/radio',
     component: Radio
@@ -189,10 +185,7 @@ export default [
     path: '/example/radio-error',
     component: RadioError
   },
-  {
-    path: '/example/review-date',
-    component: ReviewDate
-  },
+
   {
     path: '/example/select',
     component: Select
@@ -201,22 +194,8 @@ export default [
     path: '/example/select-error',
     component: SelectError
   },
-  {
-    path: '/example/skip-link',
-    component: SkipLink
-  },
-  {
-    path: '/example/summary-list',
-    component: SummaryList
-  },
-  {
-    path: '/example/summary-list-no-action',
-    component: SummaryListNoAction
-  },
-  {
-    path: '/example/summary-list-no-border',
-    component: SummaryListNoBorder
-  },
+
+
   {
     path: '/example/table',
     component: Table
@@ -241,14 +220,7 @@ export default [
     path: '/example/textarea-error',
     component: TextareaError
   },
-  {
-    path: '/example/warning-callout',
-    component: WarningCallout
-  },
-  {
-    path: '/example/warning-callout-non-important',
-    component: WarningCalloutNonImportant
-  },
+
 
   {
     path: '/example/checkbox-conditional',
@@ -278,8 +250,5 @@ export default [
     path: '/example/card-feature',
     component: CardFeature
   },
-  {
-    path: '/example/tag',
-    component: Tag
-  }
+
 ]

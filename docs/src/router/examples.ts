@@ -49,6 +49,15 @@ import HeroImageText from '../views/examples/hero/HeroImageText.vue'
 import Image from '../views/examples/image/Image.vue'
 import ListPanel from '../views/examples/list-panel/ListPanel.vue'
 import NavAZ from '../views/examples/nav-az/NavAZ.vue'
+import Pagination from '../views/examples/pagination/Pagination.vue'
+import ReviewDate from '../views/examples/review-date/ReviewDate.vue'
+import SkipLink from '../views/examples/skip-link/SkipLink.vue'
+import SummaryList from '../views/examples/summary-list/SummaryList.vue'
+import SummaryListNoAction from '../views/examples/summary-list/SummaryListNoAction.vue'
+import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBorder.vue'
+import Tag from '../views/examples/tag/Tag.vue'
+import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue'
+import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue'
 
 
 const examplesRoutes = [
@@ -299,6 +308,51 @@ const examplesRoutes = [
     path: '/examples/nav-az',
     component: NavAZ,
     name: 'Nav AZ'
+  },
+  {
+    path: '/examples/pagination',
+    component: Pagination,
+    name: 'Pagination'
+  },
+  {
+    path: '/examples/review-date',
+    component: ReviewDate,
+    name: 'Review date'
+  },
+  {
+    path: '/examples/skip-link',
+    component: SkipLink,
+    name: 'Skip link'
+  },
+  {
+    path: '/examples/summary-list',
+    component: SummaryList,
+    name: 'Summary list'
+  },
+  {
+    path: '/examples/summary-list-no-action',
+    component: SummaryListNoAction,
+    name: 'Summary list without actions'
+  },
+  {
+    path: '/examples/summary-list-no-border',
+    component: SummaryListNoBorder,
+    name: 'Summary list without border'
+  },
+  {
+    path: '/examples/tag',
+    component: Tag,
+    name: 'Tag'
+  },
+  {
+    path: '/examples/warning-callout',
+    component: WarningCallout,
+    name: 'Warning callout'
+  },
+  {
+    path: '/examples/warning-callout-non-important',
+    component: WarningCalloutNonImportant,
+    name: 'Warning callout with custom heading'
   },
 ].map((item) => {
   const {name, ...rest} = item

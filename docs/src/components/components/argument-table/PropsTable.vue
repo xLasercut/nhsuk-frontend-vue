@@ -47,7 +47,7 @@ export default defineComponent({
     })
 
     function itemTypeObject(typeString: string): string {
-      if (typeString.startsWith('object') || typeString.startsWith('array')) {
+      if (showCodeBlock(typeString)) {
         let output = `{\n`
         const parsed = JSON.parse(typeString.split('|')[1])
         for (const key in parsed) {
@@ -60,14 +60,14 @@ export default defineComponent({
     }
 
     function itemType(typeString: string): string {
-      if (typeString.startsWith('object') || typeString.startsWith('array')) {
+      if (showCodeBlock(typeString)) {
         return typeString.split('|')[0]
       }
       return typeString
     }
 
     function showCodeBlock(typeString: string): boolean {
-      return typeString.startsWith('object') || typeString.startsWith('array')
+      return typeString.startsWith('object|') || typeString.startsWith('array|')
     }
 
     function isRequired(required: boolean): string {
