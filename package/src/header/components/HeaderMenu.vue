@@ -5,7 +5,7 @@
       id="toggle-menu"
       aria-controls="header-navigation"
       aria-label="Open menu"
-      :aria-expanded="modelValue"
+      :aria-expanded="navOpen"
       @click="toggleNav()"
     >
       Menu
@@ -14,11 +14,12 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, reactive, toRefs} from 'vue'
+import {computed, defineComponent, inject} from 'vue'
+import {NHS_HEADER_INJECTS} from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value'],
+  emits: [],
   props: {
     showNav: {
       type: Boolean,
@@ -28,12 +29,12 @@ export default defineComponent({
       type: Boolean,
       required: true
     },
-    modelValue: {
+    navOpen: {
       type: Boolean,
       required: true
     }
   },
-  setup(props, context) {
+  setup(props) {
     const classes = computed((): string => {
       const classes = ['nhsuk-header__menu']
 
@@ -47,16 +48,14 @@ export default defineComponent({
     const menuButtonClasses = computed((): string => {
       const classes = ['nhsuk-header__menu-toggle']
 
-      if (props.modelValue) {
+      if (props.navOpen) {
         classes.push('is-active')
       }
 
       return classes.join(' ')
     })
 
-    function toggleNav(): void {
-      context.emit('update:model-value', !props.modelValue)
-    }
+    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
 
     return {classes, menuButtonClasses, toggleNav}
   }

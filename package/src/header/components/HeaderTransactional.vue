@@ -23,7 +23,7 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed(() => {
-      let classes = ['nhsuk-header__transactional-service-name']
+      const classes = ['nhsuk-header__transactional-service-name']
 
       if (props.service.name && props.service.name.length > 22) {
         classes.push('nhsuk-header__transactional-service-name--long')

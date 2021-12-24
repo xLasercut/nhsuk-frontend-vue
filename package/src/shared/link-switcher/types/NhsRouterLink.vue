@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
-import {disableAttributeHelper} from '../../helpers/attribute-helper'
+import {computed, defineComponent} from 'vue'
+import {disableAttributeHelper, getAttributes} from '../../helpers/attribute-helper'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -24,7 +24,9 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const {attributes} = disableAttributeHelper(props.disabled, context.attrs)
+    const attributes = computed(() => {
+      return getAttributes(props.disabled, context.attrs)
+    })
     return {attributes}
   }
 })

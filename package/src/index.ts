@@ -38,6 +38,8 @@ import {NhsHintText} from './hint-text'
 import {NhsInsetText} from './inset-text'
 import {NhsHeading} from './heading'
 import {NhsLabel} from './label'
+import {NhsForm} from './form'
+import {NhsInput} from './input'
 
 const components = [
   NhsActionLink,
@@ -85,7 +87,9 @@ const components = [
   NhsHintText,
   NhsInsetText,
   NhsHeading,
-  NhsLabel
+  NhsLabel,
+  NhsForm,
+  NhsInput
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -146,5 +150,7 @@ export {
   NhsHintText,
   NhsInsetText,
   NhsHeading,
-  NhsLabel
+  NhsLabel,
+  NhsForm,
+  NhsInput
 }

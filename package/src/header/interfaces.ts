@@ -1,3 +1,8 @@
+interface NhsHeaderSearchResult {
+  text: string
+  value: any
+}
+
 interface NhsHeaderOrganisation {
   name?: string
   split?: string
@@ -12,5 +17,6 @@ interface NhsHeaderService {
 
 export {
   NhsHeaderOrganisation,
-  NhsHeaderService
+  NhsHeaderService,
+  NhsHeaderSearchResult
 }

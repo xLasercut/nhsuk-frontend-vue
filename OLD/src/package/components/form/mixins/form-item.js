@@ -1,4 +1,4 @@
-import FormItem from '../shared/FormItem.vue'
+import FormItem from 'nhsuk-frontend-vue/src/shared/form/FormItem.vue'
 import { NhsLabel, NhsErrorText, NhsHintText } from '../../typography'
 import FormAria from './form-aria.js'
 import VModel from './v-model.js'

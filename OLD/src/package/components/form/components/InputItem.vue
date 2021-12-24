@@ -20,7 +20,7 @@
 
 <script>
   import { NhsLabel } from '../../typography'
-  import FormItem from '../shared/FormItem.vue'
+  import FormItem from 'nhsuk-frontend-vue/src/shared/form/FormItem.vue'
   import VModel from '../mixins/v-model.js'
 
   const widths = ['2', '3', '4', '5', '10', '20']

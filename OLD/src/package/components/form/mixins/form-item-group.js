@@ -1,6 +1,6 @@
 import { NhsHintText, NhsErrorText } from '../../typography'
 import NhsFieldset from '../../fieldset'
-import FormItem from '../shared/FormItem.vue'
+import FormItem from 'nhsuk-frontend-vue/src/shared/form/FormItem.vue'
 
 import FormValidation from './form-validation.js'
 import VModel from './v-model.js'

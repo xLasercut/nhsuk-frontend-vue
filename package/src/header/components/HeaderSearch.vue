@@ -5,7 +5,7 @@
       id="toggle-search"
       aria-controls="search"
       aria-label="Open search"
-      :aria-expanded="open"
+      :aria-expanded="searchMenuOpen"
       @click="toggleSearch()"
     >
       <nhs-icon icon="search"></nhs-icon>
@@ -64,12 +64,13 @@
 
 <script lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue'
-import {computed, defineComponent, onMounted, onUnmounted, PropType, reactive, toRefs, watch} from 'vue'
-import {NhsHeaderSearchResult} from './interfaces'
+import {computed, defineComponent, inject, onMounted, onUnmounted, PropType, reactive, toRefs, watch} from 'vue'
+import {NhsHeaderSearchResult} from '../interfaces'
+import {NHS_HEADER_INJECTS} from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value', 'submit-search', 'update:search-text'],
+  emits: ['submit-search', 'update:search-text'],
   props: {
     searchAction: {
       type: String,
@@ -79,7 +80,7 @@ export default defineComponent({
       type: String,
       required: true
     },
-    modelValue: {
+    searchMenuOpen: {
       type: Boolean,
       required: true
     },
@@ -95,7 +96,6 @@ export default defineComponent({
   components: { NhsIcon },
   setup(props, context) {
     const state = reactive({
-      open: props.modelValue,
       searchOpen: false,
       currentResultCount: -1,
       ariaLabelledBy: '',
@@ -111,7 +111,7 @@ export default defineComponent({
     const toggleSearchButtonClasses = computed((): string => {
       const classes = ['nhsuk-header__search-toggle']
 
-      if (state.open) {
+      if (props.searchMenuOpen) {
         classes.push('is-active')
       }
 
@@ -121,7 +121,7 @@ export default defineComponent({
     const searchWrapClasses = computed((): string => {
       const classes = ['nhsuk-header__search-wrap']
 
-      if (state.open) {
+      if (props.searchMenuOpen) {
         classes.push('js-show')
       }
 
@@ -192,10 +192,7 @@ export default defineComponent({
       }
     }
 
-    function toggleSearch(): void {
-      state.open = !state.open
-      context.emit('update:model-value', state.open)
-    }
+    const toggleSearch: Function = inject<any>(NHS_HEADER_INJECTS.toggleSearch)
 
     function submitSearch(index: number | undefined = undefined): void {
       if (index || index === 0) {

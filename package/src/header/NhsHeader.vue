@@ -12,15 +12,13 @@
         <header-menu
           :show-search="showSearch"
           :show-nav="showNav"
-          :model-value="navOpen"
-          @update:model-value="navOpen = $event"
+          :nav-open="navOpen"
         ></header-menu>
         <header-search
           v-if="showSearch"
           :search-action="searchAction"
           :search-input-name="searchInputName"
-          :model-value="searchOpen"
-          @update:model-value="searchOpen = $event"
+          :search-menu-open="searchOpen"
           :search-results="searchResults"
           :search-text="searchText"
           @update:search-text="$emit('update:search-text', $event)"
@@ -30,8 +28,7 @@
     </div>
 
     <header-nav
-      :model-value="navOpen"
-      @update:model-value="navOpen = $event"
+      :nav-open="navOpen"
       v-if="showNav"
       :home-href="homeHref"
       :home-text="homeText">
@@ -46,9 +43,9 @@ import HeaderNav from './components/HeaderNav.vue'
 import HeaderSearch from './components/HeaderSearch.vue'
 import HeaderTransactional from './components/HeaderTransactional.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
-import {computed, defineComponent, PropType, reactive, toRefs} from 'vue'
-import {NhsHeaderSearchResult} from './components/interfaces'
-import {NhsHeaderOrganisation, NhsHeaderService} from './interfaces'
+import {computed, defineComponent, PropType, provide, reactive, toRefs} from 'vue'
+import {NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult} from './interfaces'
+import {NHS_HEADER_INJECTS} from './constants'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -140,6 +137,17 @@ export default defineComponent({
       navOpen: false,
       searchOpen: false
     })
+
+    function toggleNav() {
+      state.navOpen = !state.navOpen
+    }
+
+    function toggleSearch() {
+      state.searchOpen = !state.searchOpen
+    }
+
+    provide(NHS_HEADER_INJECTS.toggleNav, toggleNav)
+    provide(NHS_HEADER_INJECTS.toggleSearch, toggleSearch)
 
     const showTransactional = computed((): boolean => {
       return props.transactional && !props.showSearch && !props.showNav

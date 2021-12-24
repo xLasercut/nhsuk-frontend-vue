@@ -5,7 +5,7 @@
         <button
           class="nhsuk-header__navigation-close"
           id="close-menu"
-          @click.prevent="$emit('update:model-value', false)"
+          @click.prevent="toggleNav()"
         >
           <nhs-icon icon="close"></nhs-icon>
           <span class="nhsuk-u-visually-hidden">Close menu</span>
@@ -27,11 +27,12 @@
 <script lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue'
 import {NhsLinkSwitcher} from '../../shared/link-switcher'
-import {computed, defineComponent} from 'vue'
+import {computed, defineComponent, inject} from 'vue'
+import {NHS_HEADER_INJECTS} from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value'],
+  emits: [],
   components: {NhsIcon, NhsLinkSwitcher},
   props: {
     homeHref: {
@@ -42,7 +43,7 @@ export default defineComponent({
       type: String,
       required: true
     },
-    modelValue: {
+    navOpen: {
       type: Boolean,
       required: true
     }
@@ -51,14 +52,16 @@ export default defineComponent({
     const classes = computed((): string => {
       const classes = ['nhsuk-header__navigation']
 
-      if (props.modelValue) {
+      if (props.navOpen) {
         classes.push('js-show')
       }
 
       return classes.join(' ')
     })
 
-    return {classes}
+    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
+
+    return {classes, toggleNav}
   }
 })
 </script>
