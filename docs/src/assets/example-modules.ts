@@ -57,6 +57,12 @@ import WarningCalloutNonImportant from '../views/examples/warning-callout/Warnin
 import Table from '../views/examples/table/Table.vue'
 import TablePanel from '../views/examples/table/TablePanel.vue'
 import TableResponsive from '../views/examples/table/TableResponsive.vue'
+import Input from '../views/examples/input/Input.vue'
+import InputAutocomplete from '../views/examples/input/InputAutocomplete.vue'
+import InputHint from '../views/examples/input/InputHint.vue'
+import InputError from '../views/examples/input/InputError.vue'
+import InputWidth from '../views/examples/input/InputWidth.vue'
+import InputSlots from '../views/examples/input/InputSlots.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -91,7 +97,8 @@ const EXAMPLE_MODULES: ExampleModules = {
   SummaryList, SummaryListNoAction, SummaryListNoBorder,
   Tag,
   WarningCallout, WarningCalloutNonImportant,
-  Table, TablePanel, TableResponsive
+  Table, TablePanel, TableResponsive,
+  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots
 }
 
 function getExampleModule(name: string) {

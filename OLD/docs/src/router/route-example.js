@@ -41,11 +41,7 @@ import HeaderSearch from 'nhsuk-frontend-vue-docs/src/views/examples/header/Head
 
 import HintText from 'nhsuk-frontend-vue-docs/src/views/examples/hint-text/HintText.vue'
 
-import Input from '../examples/Input.vue'
-import InputAutocomplete from '../examples/InputAutocomplete.vue'
-import InputHint from '../examples/InputHint.vue'
-import InputError from '../examples/InputError.vue'
-import InputWidth from '../examples/InputWidth.vue'
+
 import InsetText from 'nhsuk-frontend-vue-docs/src/views/examples/inset-text/InsetText.vue'
 import Label from 'nhsuk-frontend-vue-docs/src/views/examples/label/Label.vue'
 import LabelBold from 'nhsuk-frontend-vue-docs/src/views/examples/label/LabelBold.vue'
@@ -132,26 +128,7 @@ export default [
 
 
 
-  {
-    path: '/example/input',
-    component: Input
-  },
-  {
-    path: '/example/input-autocomplete',
-    component: InputAutocomplete
-  },
-  {
-    path: '/example/input-hint',
-    component: InputHint
-  },
-  {
-    path: '/example/input-error',
-    component: InputError
-  },
-  {
-    path: '/example/input-width',
-    component: InputWidth
-  },
+
 
 
 

@@ -15,7 +15,7 @@
       v-bind="attributes" v-model="internalModel"
       :maxlength="maxlength"
       :inputmode="inputmode" :spellcheck="spellcheck"
-      @blur="$emit('blur')" @focus="$emit('focus')" @change="$emit('change')"
+      @blur="onBlur()" @focus="$emit('focus')" @change="onChange()"
       :autocomplete="autocomplete"
       ref="form-item"
     >
@@ -29,12 +29,15 @@ import {NhsInputWidth} from './types'
 import {getAttributes} from '../shared/helpers/attribute-helper'
 import {randomString} from '../shared/helpers/random-string'
 import {NHS_FORM_INJECTS} from '../form/constants'
+import {NhsFormInject} from '../form/types'
+import {validate} from '../shared/form/validate-helper'
+import {NhsFormItemValidateOn} from '../shared/form/types'
 
 const NHS_INPUT_WIDTHS: Array<NhsInputWidth> = ['2', '3', '4', '5', '10', '20']
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value', 'focus', 'blur'],
+  emits: ['update:model-value', 'focus', 'blur', 'change'],
   name: 'nhs-input',
   components: {NhsFormItem},
   props: {
@@ -74,7 +77,7 @@ export default defineComponent({
     id: {
       type: String,
       default: (): string => {
-        return `input-${randomString()}`
+        return `nhs-input-${randomString()}`
       }
     },
     name: {
@@ -97,6 +100,12 @@ export default defineComponent({
       default: (): string => {
         return ''
       }
+    },
+    validateOn: {
+      type: String as PropType<NhsFormItemValidateOn>,
+      default: (): NhsFormItemValidateOn => {
+        return 'blur'
+      }
     }
   },
   setup: function (props, context) {
@@ -106,32 +115,25 @@ export default defineComponent({
       errorMsg: ''
     })
 
-    function validate() {
-      for (const rule of props.rules) {
-        const result = rule(state.internalModel)
-        if (typeof result === 'string') {
-          return {
-            errorMsg: result,
-            error: true
-          }
-        }
-      }
-      return {
-        errorMsg: '',
-        error: false
-      }
-    }
-
     function validator(): void {
-      const {errorMsg, error} = validate()
+      const {errorMsg, error} = validate(state.internalModel, props.rules)
       state.error = error
       state.errorMsg = errorMsg
     }
 
-    const registerValidator = inject<any>(NHS_FORM_INJECTS.registerFormItemValidator)
-    const registerErrorStatus = inject<any>(NHS_FORM_INJECTS.registerFormItemErrorStatus)
-    const unregisterItem = inject<any>(NHS_FORM_INJECTS.unregisterFormItem)
+    function errorStatus(): boolean {
+      return state.error
+    }
 
+    function reset(): void {
+      state.error = false
+      state.errorMsg = ''
+    }
+
+    const registerValidator = inject<NhsFormInject>(NHS_FORM_INJECTS.registerValidator, null)
+    const registerErrorStatus = inject<NhsFormInject>(NHS_FORM_INJECTS.registerErrorStatus, null)
+    const registerReset = inject<NhsFormInject>(NHS_FORM_INJECTS.registerReset, null)
+    const unregisterItem = inject<NhsFormInject>(NHS_FORM_INJECTS.unregisterItem, null)
 
     watch(() => props.modelValue, (val) => {
       state.internalModel = val
@@ -141,17 +143,24 @@ export default defineComponent({
       context.emit('update:model-value', val)
     })
 
-    watch(() => state.error, () => {
-      registerErrorStatus(props.id, state.error)
-    })
-
     onMounted(() => {
-      registerValidator(props.id, validator)
-      registerErrorStatus(props.id, state.error)
+      if (registerValidator) {
+        registerValidator(props.id, validator)
+      }
+
+      if (registerErrorStatus) {
+        registerErrorStatus(props.id, errorStatus)
+      }
+
+      if (registerReset) {
+        registerReset(props.id, reset)
+      }
     })
 
     onUnmounted(() => {
-      unregisterItem(props.id)
+      if (unregisterItem) {
+        unregisterItem(props.id)
+      }
     })
 
     const attributes = computed(() => {
@@ -194,13 +203,29 @@ export default defineComponent({
       return describedby.join(' ')
     })
 
+    function onBlur(): void {
+      if (props.validateOn === 'blur') {
+        validator()
+      }
+      context.emit('blur')
+    }
+
+    function onChange(): void {
+      if (props.validateOn === 'change') {
+        validator()
+      }
+      context.emit('change')
+    }
+
     return {
       classes,
       ...toRefs(state),
       attributes,
       ariaDescribedby,
       hintId,
-      errorId
+      errorId,
+      onBlur,
+      onChange
     }
   }
 })

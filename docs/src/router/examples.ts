@@ -61,6 +61,11 @@ import WarningCalloutNonImportant from '../views/examples/warning-callout/Warnin
 import Table from '../views/examples/table/Table.vue'
 import TablePanel from '../views/examples/table/TablePanel.vue'
 import TableResponsive from '../views/examples/table/TableResponsive.vue'
+import Input from 'nhsuk-frontend-vue-docs/src/views/examples/input/Input.vue'
+import InputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputAutocomplete.vue'
+import InputHint from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputHint.vue'
+import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputError.vue'
+import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue'
 
 
 const examplesRoutes = [
@@ -371,6 +376,31 @@ const examplesRoutes = [
     path: '/examples/table-responsive',
     component: TableResponsive,
     name: 'Responsive table'
+  },
+  {
+    path: '/examples/input',
+    component: Input,
+    name: 'Input'
+  },
+  {
+    path: '/examples/input-autocomplete',
+    component: InputAutocomplete,
+    name: 'Input with autocomplete attribute'
+  },
+  {
+    path: '/examples/input-hint',
+    component: InputHint,
+    name: 'Input with hint text'
+  },
+  {
+    path: '/examples/input-error',
+    component: InputError,
+    name: 'Input with error message'
+  },
+  {
+    path: '/examples/input-width',
+    component: InputWidth,
+    name: 'Input with width modifier'
   },
 ].map((item) => {
   const {name, ...rest} = item

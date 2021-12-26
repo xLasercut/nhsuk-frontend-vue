@@ -3,7 +3,7 @@ import Button from '../views/form/Button.vue'
 import Checkbox from '../views/form/Checkbox.vue'
 import Radio from '../views/form/Radio.vue'
 import Select from '../views/form/Select.vue'
-import Input from '../views/form/Input.vue'
+import Input from 'nhsuk-frontend-vue-docs/src/views/components/Input.vue'
 import Textarea from '../views/form/Textarea.vue'
 import InputGroup from '../views/form/InputGroup.vue'
 

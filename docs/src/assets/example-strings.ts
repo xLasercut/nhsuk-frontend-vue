@@ -57,6 +57,12 @@ import WarningCalloutNonImportant from '../views/examples/warning-callout/Warnin
 import Table from '../views/examples/table/Table.vue?raw'
 import TablePanel from '../views/examples/table/TablePanel.vue?raw'
 import TableResponsive from '../views/examples/table/TableResponsive.vue?raw'
+import Input from '../views/examples/input/Input.vue?raw'
+import InputAutocomplete from '../views/examples/input/InputAutocomplete.vue?raw'
+import InputHint from '../views/examples/input/InputHint.vue?raw'
+import InputError from '../views/examples/input/InputError.vue?raw'
+import InputWidth from '../views/examples/input/InputWidth.vue?raw'
+import InputSlots from '../views/examples/input/InputSlots.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -91,7 +97,8 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   SummaryList, SummaryListNoAction, SummaryListNoBorder,
   Tag,
   WarningCallout, WarningCalloutNonImportant,
-  Table, TablePanel, TableResponsive
+  Table, TablePanel, TableResponsive,
+  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

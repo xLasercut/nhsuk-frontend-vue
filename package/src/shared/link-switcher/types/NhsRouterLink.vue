@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import {computed, defineComponent} from 'vue'
-import {disableAttributeHelper, getAttributes} from '../../helpers/attribute-helper'
+import {getAttributes} from '../../helpers/attribute-helper'
 
 export default defineComponent({
   inheritAttrs: false,

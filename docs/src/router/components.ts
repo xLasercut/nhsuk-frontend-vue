@@ -33,6 +33,7 @@ import SummaryList from '../views/components/SummaryList.vue'
 import Tag from '../views/components/Tag.vue'
 import WarningCallout from '../views/components/WarningCallout.vue'
 import Table from '../views/components/Table.vue'
+import Input from '../views/components/Input.vue'
 
 
 const componentRoutes = [
@@ -205,6 +206,11 @@ const componentRoutes = [
     path: '/components/table',
     component: Table,
     name: 'Table'
+  },
+  {
+    path: '/components/input',
+    component: Input,
+    name: 'Input'
   }
 ]
 

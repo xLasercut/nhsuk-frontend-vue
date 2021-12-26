@@ -1,6 +1,7 @@
 interface NhsFormSate {
-  formItemValidators: NhsFormItemValidators,
-  formItemErrorStatuses: NhsFormItemErrorStatuses
+  validators: NhsFormItemValidators
+  errorStatuses: NhsFormItemErrorStatuses
+  resets: NhsFormItemResets
 }
 
 interface NhsFormItemValidators {
@@ -8,7 +9,11 @@ interface NhsFormItemValidators {
 }
 
 interface NhsFormItemErrorStatuses {
-  [key: string]: boolean
+  [key: string]: Function
+}
+
+interface NhsFormItemResets {
+  [key: string]: Function
 }
 
 export {
