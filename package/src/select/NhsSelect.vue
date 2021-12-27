@@ -9,61 +9,37 @@
     <nhs-error-text v-if="error" :id="errorId(id)">
       <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
     </nhs-error-text>
-    <input
-      :class="classes" :id="id" :name="name" :type="type"
-      :aria-describedby="ariaDescribedby"
-      v-bind="attributes" v-model="internalModel"
-      :maxlength="maxlength"
-      :inputmode="inputmode" :spellcheck="spellcheck"
-      @blur="onBlur()" @focus="$emit('focus')" @change="onChange()"
-      :autocomplete="autocomplete"
+    <select
+      :class="classes" :id="id" :name="name"
+      v-bind="attributes" :aria-describedby="ariaDescribedby"
+      v-model="internalModel"
+      @blur="onBlur()" @change="onChange()"
     >
+      <slot></slot>
+    </select>
   </nhs-form-item>
 </template>
 
 <script lang="ts">
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
 import {computed, defineComponent, PropType} from 'vue'
-import {NhsInputInputmode, NhsInputWidth} from './types'
+import NhsFormItem from '../shared/form/NhsFormItem.vue'
 import {getAttributes} from '../shared/helpers/attribute-helper'
 import {randomString} from '../shared/helpers/random-string'
 import {NhsFormItemValidateOn} from '../shared/form/types'
 import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
 import {handleItemRegistry} from '../shared/form/form-item-registry'
-import {getFormEvents} from '../shared/form/event-helper'
 import {getInternalModel} from '../shared/form/v-model'
+import {getFormEvents} from '../shared/form/event-helper'
 
-const NHS_INPUT_WIDTHS: Array<NhsInputWidth> = ['2', '3', '4', '5', '10', '20']
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value', 'focus', 'blur', 'change'],
-  name: 'nhs-input',
+  name: 'nhs-select',
+  emits: ['update:model-value', 'blur', 'change'],
   components: {NhsFormItem},
   props: {
-    width: {
-      type: String as PropType<NhsInputWidth>,
-      validator: (val: NhsInputWidth): boolean => {
-        return NHS_INPUT_WIDTHS.includes(val)
-      }
-    },
-    type: {
-      type: String,
-      default: (): string => {
-        return 'text'
-      }
-    },
-    maxlength: {
-      type: Number
-    },
-    autocomplete: {
-      type: String
-    },
-    inputmode: {
-      type: String as PropType<NhsInputInputmode>
-    },
-    spellcheck: {
-      type: Boolean
+    modelValue: {
+      required: true
     },
     disabled: {
       type: Boolean,
@@ -71,13 +47,10 @@ export default defineComponent({
         return false
       }
     },
-    modelValue: {
-      required: true
-    },
     id: {
       type: String,
       default: (): string => {
-        return `nhs-input-${randomString()}`
+        return `nhs-select-${randomString()}`
       }
     },
     name: {
@@ -114,16 +87,11 @@ export default defineComponent({
     const attributes = getAttributes(['disabled'], props, context)
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-input']
-
-      if (props.width) {
-        classes.push(`nhsuk-input--width-${props.width}`)
-      }
+      const classes = ['nhsuk-select']
 
       if (error.value) {
-        classes.push('nhsuk-input--error')
+        classes.push('nhsuk-select--error')
       }
-
       return classes.join(' ')
     })
 
@@ -138,9 +106,9 @@ export default defineComponent({
       errorId,
       onBlur,
       onChange,
-      internalModel,
       error,
-      errorMsg
+      errorMsg,
+      internalModel
     }
   }
 })

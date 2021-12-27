@@ -1,10 +1,15 @@
 <template>
   <nhs-form v-model="valid" @submit="onSubmit()" @reset="onReset()">
-    <nhs-input
-      label="National Insurance number"
-      hint="It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
-      :rules="rules" v-model="model"
+    <nhs-select
+      label="Label text goes here"
+      hint="Hint text goes here"
+      v-model="model"
+      :rules="rules"
     >
+      <option>NHS.UK frontend option 1</option>
+      <option>NHS.UK frontend option 2</option>
+      <option>NHS.UK frontend option 3</option>
+
       <template #label="{label}">
         <h1>{{label}}</h1>
       </template>
@@ -16,12 +21,12 @@
       <template #error="{error}">
         <h2>{{error}}</h2>
       </template>
-    </nhs-input>
+    </nhs-select>
     <nhs-row>
       <nhs-col :span="33">
-        <nhs-button type="submit">Validate</nhs-button>
+        <nhs-button type="submit">Submit</nhs-button>
       </nhs-col>
-      <nhs-col :span="33">
+       <nhs-col :span="33">
         <nhs-button type="reset">Reset</nhs-button>
       </nhs-col>
       <nhs-col :span="33">
@@ -37,16 +42,16 @@ import {defineComponent, reactive, toRefs} from 'vue'
 export default defineComponent({
   setup() {
     const state = reactive({
+      model: 'NHS.UK frontend option 1',
       rules: [
-        (v: string) => !!v || 'Error message goes here'
+        (v: string) => v !== 'NHS.UK frontend option 1' || 'Error message goes here'
       ],
-      model: '',
       valid: false
     })
 
     function onSubmit(): void {
       if (state.valid) {
-        alert('submit form')
+        alert('success submission')
       }
     }
 

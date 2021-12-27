@@ -9,12 +9,16 @@
   </nhs-select>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        model: 'NHS.UK frontend option 2'
-      }
-    }
+<script lang="ts">
+import {defineComponent, reactive, toRefs} from 'vue'
+
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      model: 'NHS.UK frontend option 2'
+    })
+
+    return {...toRefs(state)}
   }
+})
 </script>

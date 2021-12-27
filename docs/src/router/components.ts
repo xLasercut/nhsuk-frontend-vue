@@ -34,6 +34,8 @@ import Tag from '../views/components/Tag.vue'
 import WarningCallout from '../views/components/WarningCallout.vue'
 import Table from '../views/components/Table.vue'
 import Input from '../views/components/Input.vue'
+import Form from '../views/components/Form.vue'
+import Select from '../views/components/Select.vue'
 
 
 const componentRoutes = [
@@ -211,6 +213,16 @@ const componentRoutes = [
     path: '/components/input',
     component: Input,
     name: 'Input'
+  },
+  {
+    path: '/components/form',
+    component: Form,
+    name: 'Form'
+  },
+  {
+    path: '/components/select',
+    component: Select,
+    name: 'Select'
   }
 ]
 

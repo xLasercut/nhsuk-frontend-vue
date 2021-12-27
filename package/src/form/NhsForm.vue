@@ -12,9 +12,9 @@ import {NHS_FORM_INJECTS} from './constants'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-form',
-  emits: ['submit', 'update:valid', 'reset'],
+  emits: ['submit', 'update:model-value', 'reset'],
   props: {
-    valid: {
+    modelValue: {
       type: Boolean,
       default: (): boolean => {
         return true
@@ -61,7 +61,7 @@ export default defineComponent({
     }
 
     function updateValid(valid: boolean): void {
-      context.emit('update:valid', valid)
+      context.emit('update:model-value', valid)
     }
 
     function onSubmit(): void {

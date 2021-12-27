@@ -63,6 +63,10 @@ import InputHint from '../views/examples/input/InputHint.vue'
 import InputError from '../views/examples/input/InputError.vue'
 import InputWidth from '../views/examples/input/InputWidth.vue'
 import InputSlots from '../views/examples/input/InputSlots.vue'
+import Form from '../views/examples/form/Form.vue'
+import Select from '../views/examples/select/Select.vue'
+import SelectError from '../views/examples/select/SelectError.vue'
+import SelectSlots from '../views/examples/select/SelectSlots.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -98,7 +102,9 @@ const EXAMPLE_MODULES: ExampleModules = {
   Tag,
   WarningCallout, WarningCalloutNonImportant,
   Table, TablePanel, TableResponsive,
-  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots
+  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
+  Form,
+  Select, SelectError, SelectSlots
 }
 
 function getExampleModule(name: string) {

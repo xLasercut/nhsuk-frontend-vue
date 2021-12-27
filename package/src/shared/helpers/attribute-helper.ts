@@ -1,10 +1,15 @@
-function getAttributes(disabled: boolean, attrs: any) {
-  const attributes = Object.assign({}, attrs)
-  if (disabled) {
-    attributes['disabled'] = true
-  }
+import {computed, SetupContext} from 'vue'
 
-  return attributes
+function getAttributes(attrsToAdd: Array<string>, props: { [key: string]: any }, context: SetupContext<any>) {
+  return computed(() => {
+    const attributes = Object.assign({}, context.attrs)
+    for (const attributeName of attrsToAdd) {
+      if (props[attributeName]) {
+        attributes[attributeName] = props[attributeName]
+      }
+    }
+    return attributes
+  })
 }
 
 export {getAttributes}

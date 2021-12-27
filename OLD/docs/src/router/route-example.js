@@ -57,8 +57,8 @@ import RadioHint from '../examples/RadioHint.vue'
 import RadioNoHeading from '../examples/RadioNoHeading.vue'
 import RadioError from '../examples/RadioError.vue'
 import ReviewDate from 'nhsuk-frontend-vue-docs/src/views/examples/review-date/ReviewDate.vue'
-import Select from '../examples/Select.vue'
-import SelectError from '../examples/SelectError.vue'
+import Select from 'nhsuk-frontend-vue-docs/src/views/examples/select/Select.vue'
+import SelectError from 'nhsuk-frontend-vue-docs/src/views/examples/select/SelectError.vue'
 import SkipLink from 'nhsuk-frontend-vue-docs/src/views/examples/skip-link/SkipLink.vue'
 import SummaryList from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryList.vue'
 import SummaryListNoAction from 'nhsuk-frontend-vue-docs/src/views/examples/summary-list/SummaryListNoAction.vue'
@@ -163,14 +163,7 @@ export default [
     component: RadioError
   },
 
-  {
-    path: '/example/select',
-    component: Select
-  },
-  {
-    path: '/example/select-error',
-    component: SelectError
-  },
+
 
 
 

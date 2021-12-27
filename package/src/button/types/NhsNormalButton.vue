@@ -23,9 +23,7 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const attributes = computed(() => {
-      return getAttributes(props.disabled, context.attrs)
-    })
+    const attributes = getAttributes(['disabled'], props, context)
 
     return {attributes}
   }

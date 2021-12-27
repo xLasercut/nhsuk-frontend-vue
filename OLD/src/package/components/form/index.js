@@ -1,5 +1,5 @@
 import NhsInput from 'nhsuk-frontend-vue/src/input/NhsInput.vue'
-import NhsSelect from './components/NhsSelect.vue'
+import NhsSelect from 'nhsuk-frontend-vue/src/select/NhsSelect.vue'
 import NhsTextarea from './components/NhsTextarea.vue'
 import NhsRadios from './components/NhsRadios.vue'
 import NhsCheckboxes from 'nhsuk-frontend-vue/src/checkboxes/NhsCheckboxes.vue'

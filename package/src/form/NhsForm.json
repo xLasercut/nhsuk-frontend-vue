@@ -2,7 +2,7 @@
   "name": "nhs-form",
   "attributes": [
     {
-      "name": "v-model:valid",
+      "name": "v-model",
       "value": {
         "kind": "expression",
         "type": "boolean"

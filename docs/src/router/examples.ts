@@ -66,6 +66,8 @@ import InputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input/
 import InputHint from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputHint.vue'
 import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputError.vue'
 import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue'
+import Select from '../views/examples/select/Select.vue'
+import SelectError from '../views/examples/select/SelectError.vue'
 
 
 const examplesRoutes = [
@@ -401,6 +403,16 @@ const examplesRoutes = [
     path: '/examples/input-width',
     component: InputWidth,
     name: 'Input with width modifier'
+  },
+  {
+    path: '/examples/select',
+    component: Select,
+    name: 'Select'
+  },
+  {
+    path: '/examples/select-error',
+    component: SelectError,
+    name: 'Select with hint text and error message'
   },
 ].map((item) => {
   const {name, ...rest} = item

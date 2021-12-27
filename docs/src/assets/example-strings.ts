@@ -63,6 +63,10 @@ import InputHint from '../views/examples/input/InputHint.vue?raw'
 import InputError from '../views/examples/input/InputError.vue?raw'
 import InputWidth from '../views/examples/input/InputWidth.vue?raw'
 import InputSlots from '../views/examples/input/InputSlots.vue?raw'
+import Form from '../views/examples/form/Form.vue?raw'
+import Select from '../views/examples/select/Select.vue?raw'
+import SelectError from '../views/examples/select/SelectError.vue?raw'
+import SelectSlots from '../views/examples/select/SelectSlots.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -98,7 +102,9 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Tag,
   WarningCallout, WarningCalloutNonImportant,
   Table, TablePanel, TableResponsive,
-  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots
+  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
+  Form,
+  Select, SelectError, SelectSlots
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

@@ -5,17 +5,6 @@
       hint="It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
       :rules="rules" v-model="model"
     >
-      <template #label="{label}">
-        <h1>{{label}}</h1>
-      </template>
-
-      <template #hint="{hint}">
-        <a>{{hint}}</a>
-      </template>
-
-      <template #error="{error}">
-        <h2>{{error}}</h2>
-      </template>
     </nhs-input>
     <nhs-row>
       <nhs-col :span="33">

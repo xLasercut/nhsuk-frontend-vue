@@ -40,6 +40,7 @@ import {NhsHeading} from './heading'
 import {NhsLabel} from './label'
 import {NhsForm} from './form'
 import {NhsInput} from './input'
+import {NhsSelect} from './select'
 
 const components = [
   NhsActionLink,
@@ -89,7 +90,8 @@ const components = [
   NhsHeading,
   NhsLabel,
   NhsForm,
-  NhsInput
+  NhsInput,
+  NhsSelect
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -152,5 +154,6 @@ export {
   NhsHeading,
   NhsLabel,
   NhsForm,
-  NhsInput
+  NhsInput,
+  NhsSelect
 }
