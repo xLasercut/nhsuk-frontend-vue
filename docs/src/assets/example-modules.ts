@@ -67,6 +67,10 @@ import Form from '../views/examples/form/Form.vue'
 import Select from '../views/examples/select/Select.vue'
 import SelectError from '../views/examples/select/SelectError.vue'
 import SelectSlots from '../views/examples/select/SelectSlots.vue'
+import Textarea from '../views/examples/textarea/Textarea.vue'
+import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue'
+import TextareaError from '../views/examples/textarea/TextareaError.vue'
+import TextareaSlots from '../views/examples/textarea/TextareaSlots.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -104,7 +108,8 @@ const EXAMPLE_MODULES: ExampleModules = {
   Table, TablePanel, TableResponsive,
   Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
   Form,
-  Select, SelectError, SelectSlots
+  Select, SelectError, SelectSlots,
+  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots
 }
 
 function getExampleModule(name: string) {

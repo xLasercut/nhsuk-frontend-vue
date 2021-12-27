@@ -66,9 +66,9 @@ import SummaryListNoBorder from 'nhsuk-frontend-vue-docs/src/views/examples/summ
 import Table from 'nhsuk-frontend-vue-docs/src/views/examples/table/Table.vue'
 import TablePanel from 'nhsuk-frontend-vue-docs/src/views/examples/table/TablePanel.vue'
 import TableResponsive from 'nhsuk-frontend-vue-docs/src/views/examples/table/TableResponsive.vue'
-import Textarea from '../examples/Textarea.vue'
-import TextareaAutocomplete from '../examples/TextareaAutocomplete.vue'
-import TextareaError from '../examples/TextareaError.vue'
+import Textarea from 'nhsuk-frontend-vue-docs/src/views/examples/textarea/Textarea.vue'
+import TextareaAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/textarea/TextareaAutocomplete.vue'
+import TextareaError from 'nhsuk-frontend-vue-docs/src/views/examples/textarea/TextareaError.vue'
 
 import HeaderOrg from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrg.vue'
 import HeaderOrgWhite from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhite.vue'
@@ -167,18 +167,7 @@ export default [
 
 
 
-  {
-    path: '/example/textarea',
-    component: Textarea
-  },
-  {
-    path: '/example/textarea-autocomplete',
-    component: TextareaAutocomplete
-  },
-  {
-    path: '/example/textarea-error',
-    component: TextareaError
-  },
+
 
 
   {

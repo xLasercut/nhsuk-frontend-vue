@@ -41,6 +41,7 @@ import {NhsLabel} from './label'
 import {NhsForm} from './form'
 import {NhsInput} from './input'
 import {NhsSelect} from './select'
+import {NhsTextarea} from './textarea'
 
 const components = [
   NhsActionLink,
@@ -91,7 +92,8 @@ const components = [
   NhsLabel,
   NhsForm,
   NhsInput,
-  NhsSelect
+  NhsSelect,
+  NhsTextarea
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -155,5 +157,6 @@ export {
   NhsLabel,
   NhsForm,
   NhsInput,
-  NhsSelect
+  NhsSelect,
+  NhsTextarea
 }

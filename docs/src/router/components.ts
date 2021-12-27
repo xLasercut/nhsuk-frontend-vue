@@ -36,6 +36,7 @@ import Table from '../views/components/Table.vue'
 import Input from '../views/components/Input.vue'
 import Form from '../views/components/Form.vue'
 import Select from '../views/components/Select.vue'
+import Textarea from '../views/components/Textarea.vue'
 
 
 const componentRoutes = [
@@ -223,6 +224,11 @@ const componentRoutes = [
     path: '/components/select',
     component: Select,
     name: 'Select'
+  },
+  {
+    path: '/components/textarea',
+    component: Textarea,
+    name: 'Textarea'
   }
 ]
 

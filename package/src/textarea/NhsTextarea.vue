@@ -9,33 +9,30 @@
     <nhs-error-text v-if="error" :id="errorId(id)">
       <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
     </nhs-error-text>
-    <select
-      :class="classes" :id="id" :name="name"
-      v-bind="attributes" :aria-describedby="ariaDescribedby"
-      v-model="internalModel"
-      @blur="onBlur()" @change="onChange()"
-    >
-      <slot></slot>
-    </select>
+    <textarea
+      :class="classes" :id="id" :rows="rows" :name="name"
+      v-model="internalModel" v-bind="attributes" :aria-describedby="ariaDescribedby"
+      @blur="onBlur()" @change="onChange()" @focus="$emit('focus')"
+      :autocomplete="autocomplete"
+    ></textarea>
   </nhs-form-item>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import {getAttributes} from '../shared/helpers/attribute-helper'
+import {computed, defineComponent, PropType} from 'vue'
 import {randomString} from '../shared/helpers/random-string'
 import {NhsFormItemValidateOn} from '../shared/form/types'
-import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
-import {handleItemRegistry} from '../shared/form/form-item-registry'
 import {getInternalModel} from '../shared/form/v-model'
+import {handleItemRegistry} from '../shared/form/form-item-registry'
+import {getAttributes} from '../shared/helpers/attribute-helper'
+import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
 import {getFormEvents} from '../shared/form/event-helper'
 
-
 export default defineComponent({
+  name: 'nhs-textarea',
   inheritAttrs: false,
-  name: 'nhs-select',
-  emits: ['update:model-value', 'blur', 'change'],
+  emits: ['update:model-value', 'blur', 'change', 'focus'],
   components: {NhsFormItem},
   props: {
     modelValue: {
@@ -79,6 +76,15 @@ export default defineComponent({
       default: (): NhsFormItemValidateOn => {
         return 'blur'
       }
+    },
+    rows: {
+      type: Number,
+      default: (): number => {
+        return 5
+      }
+    },
+    autocomplete: {
+      type: String
     }
   },
   setup(props, context) {
@@ -89,25 +95,26 @@ export default defineComponent({
     const {onBlur, onChange} = getFormEvents(props, validator, context)
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-select']
+      const classes = [ 'nhsuk-textarea' ]
 
       if (error.value) {
-        classes.push('nhsuk-select--error')
+        classes.push('nhsuk-textarea--error')
       }
+
       return classes.join(' ')
     })
 
     return {
       classes,
-      attributes,
-      ariaDescribedby,
-      hintId,
-      errorId,
-      onBlur,
-      onChange,
+      internalModel,
       error,
       errorMsg,
-      internalModel
+      attributes,
+      ariaDescribedby,
+      onBlur,
+      onChange,
+      hintId,
+      errorId
     }
   }
 })

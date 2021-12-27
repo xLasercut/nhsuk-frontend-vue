@@ -68,6 +68,9 @@ import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputEr
 import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue'
 import Select from '../views/examples/select/Select.vue'
 import SelectError from '../views/examples/select/SelectError.vue'
+import Textarea from '../views/examples/textarea/Textarea.vue'
+import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue'
+import TextareaError from '../views/examples/textarea/TextareaError.vue'
 
 
 const examplesRoutes = [
@@ -413,6 +416,21 @@ const examplesRoutes = [
     path: '/examples/select-error',
     component: SelectError,
     name: 'Select with hint text and error message'
+  },
+  {
+    path: '/examples/textarea',
+    component: Textarea,
+    name: 'Textarea'
+  },
+  {
+    path: '/examples/textarea-autocomplete',
+    component: TextareaAutocomplete,
+    name: 'Textarea with autocomplete attribute'
+  },
+  {
+    path: '/examples/textarea-error',
+    component: TextareaError,
+    name: 'Textarea with error message'
   },
 ].map((item) => {
   const {name, ...rest} = item

@@ -67,6 +67,10 @@ import Form from '../views/examples/form/Form.vue?raw'
 import Select from '../views/examples/select/Select.vue?raw'
 import SelectError from '../views/examples/select/SelectError.vue?raw'
 import SelectSlots from '../views/examples/select/SelectSlots.vue?raw'
+import Textarea from '../views/examples/textarea/Textarea.vue?raw'
+import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue?raw'
+import TextareaError from '../views/examples/textarea/TextareaError.vue?raw'
+import TextareaSlots from '../views/examples/textarea/TextareaSlots.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -104,7 +108,8 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Table, TablePanel, TableResponsive,
   Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
   Form,
-  Select, SelectError, SelectSlots
+  Select, SelectError, SelectSlots,
+  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')
