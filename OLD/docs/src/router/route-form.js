@@ -1,11 +1,11 @@
 import FormHome from '../views/form/Home.vue'
 import Button from '../views/form/Button.vue'
-import Checkbox from '../views/form/Checkbox.vue'
+import Checkbox from 'nhsuk-frontend-vue-docs/src/views/components/Checkbox.vue'
 import Radio from '../views/form/Radio.vue'
 import Select from 'nhsuk-frontend-vue-docs/src/views/components/Select.vue'
 import Input from 'nhsuk-frontend-vue-docs/src/views/components/Input.vue'
 import Textarea from 'nhsuk-frontend-vue-docs/src/views/components/Textarea.vue'
-import InputGroup from '../views/form/InputGroup.vue'
+import InputGroup from 'nhsuk-frontend-vue-docs/src/views/components/InputGroup.vue'
 
 const form = [
   {

@@ -20,6 +20,9 @@
 
 <script lang="ts">
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
+import NhsHintText from '../hint-text/NhsHintText.vue'
+import NhsLabel from '../label/NhsLabel.vue'
+import NhsErrorText from '../error-text/NhsErrorText.vue'
 import {computed, defineComponent, PropType} from 'vue'
 import {randomString} from '../shared/helpers/random-string'
 import {NhsFormItemValidateOn} from '../shared/form/types'
@@ -33,7 +36,7 @@ export default defineComponent({
   name: 'nhs-textarea',
   inheritAttrs: false,
   emits: ['update:model-value', 'blur', 'change', 'focus'],
-  components: {NhsFormItem},
+  components: {NhsFormItem, NhsHintText, NhsErrorText, NhsLabel},
   props: {
     modelValue: {
       required: true

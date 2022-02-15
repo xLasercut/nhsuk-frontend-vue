@@ -7,7 +7,7 @@
 <script lang="ts">
 import {defineComponent, provide, reactive, watch} from 'vue'
 import {NhsFormSate} from './interfaces'
-import {NHS_FORM_INJECTS} from './constants'
+import {NHS_FORM_INJECTS} from '../shared/form/constants'
 
 export default defineComponent({
   inheritAttrs: false,

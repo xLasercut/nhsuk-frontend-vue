@@ -71,6 +71,17 @@ import Textarea from '../views/examples/textarea/Textarea.vue?raw'
 import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue?raw'
 import TextareaError from '../views/examples/textarea/TextareaError.vue?raw'
 import TextareaSlots from '../views/examples/textarea/TextareaSlots.vue?raw'
+import DateInput from '../views/examples/input-group/DateInput.vue?raw'
+import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue?raw'
+import DateInputError from '../views/examples/input-group/DateInputError.vue?raw'
+import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue?raw'
+import DateInputSlots from '../views/examples/input-group/DateInputSlots.vue?raw'
+import Checkbox from '../views/examples/checkbox/Checkbox.vue?raw'
+import CheckboxHint from '../views/examples/checkbox/CheckboxHint.vue?raw'
+import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue?raw'
+import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue?raw'
+import CheckboxError from '../views/examples/checkbox/CheckboxError.vue?raw'
+import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -109,7 +120,9 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
   Form,
   Select, SelectError, SelectSlots,
-  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots
+  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
+  DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
+  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

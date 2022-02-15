@@ -1,4 +1,4 @@
-import {Ref, ref, SetupContext, watch} from 'vue'
+import {reactive, Ref, ref, SetupContext, watch} from 'vue'
 import {NhsVueProp} from '../interface'
 
 function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
@@ -15,4 +15,20 @@ function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
   return internalModel
 }
 
-export {getInternalModel}
+function getInternalModelItemGroup(props: NhsVueProp, context: SetupContext<any>) {
+  const state = reactive({
+    internalModel: props.modelValue
+  })
+
+  watch(() => props.modelValue, (val) => {
+    state.internalModel = val
+  })
+
+  watch(() => state.internalModel, (val) => {
+    context.emit('update:model-value', val)
+  })
+
+  return state
+}
+
+export {getInternalModel, getInternalModelItemGroup}

@@ -9,16 +9,16 @@ import ButtonReversed from '../examples/ButtonReversed.vue'
 import CareCardNonUrgent from '../examples/CareCardNonUrgent.vue'
 import CareCardUrgent from '../examples/CareCardUrgent.vue'
 import CareCardImmediate from '../examples/CareCardImmediate.vue'
-import Checkbox from '../examples/Checkbox.vue'
-import CheckboxHint from '../examples/CheckboxHint.vue'
-import CheckboxDisabled from '../examples/CheckboxDisabled.vue'
-import CheckboxHeading from '../examples/CheckboxHeading.vue'
-import CheckboxError from '../examples/CheckboxError.vue'
+import Checkbox from 'nhsuk-frontend-vue-docs/src/views/examples/checkbox/Checkbox.vue'
+import CheckboxHint from 'nhsuk-frontend-vue-docs/src/views/examples/checkbox/CheckboxHint.vue'
+import CheckboxDisabled from 'nhsuk-frontend-vue-docs/src/views/examples/checkbox/CheckboxDisabled.vue'
+import CheckboxHeading from 'nhsuk-frontend-vue-docs/src/views/examples/checkbox/CheckboxHeading.vue'
+import CheckboxError from 'nhsuk-frontend-vue-docs/src/views/examples/checkbox/CheckboxError.vue'
 import ContentsList from '../examples/ContentsList.vue'
-import DateInput from '../examples/DateInput.vue'
-import DateInputAutocomplete from '../examples/DateInputAutocomplete.vue'
-import DateInputError from '../examples/DateInputError.vue'
-import DateInputErrorMulti from '../examples/DateInputErrorMulti.vue'
+import DateInput from 'nhsuk-frontend-vue-docs/src/views/examples/input-group/DateInput.vue'
+import DateInputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input-group/DateInputAutocomplete.vue'
+import DateInputError from 'nhsuk-frontend-vue-docs/src/views/examples/input-group/DateInputError.vue'
+import DateInputErrorMulti from 'nhsuk-frontend-vue-docs/src/views/examples/input-group/DateInputErrorMulti.vue'
 import Details from '../examples/Details.vue'
 import DoDont from 'nhsuk-frontend-vue-docs/src/views/examples/do-dont/DoDont.vue'
 import ErrorText from 'nhsuk-frontend-vue-docs/src/views/examples/error-text/ErrorText.vue'
@@ -73,7 +73,7 @@ import TextareaError from 'nhsuk-frontend-vue-docs/src/views/examples/textarea/T
 import HeaderOrg from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrg.vue'
 import HeaderOrgWhite from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhiteNav.vue'
-import CheckboxConditional from '../examples/CheckboxConditional.vue'
+
 import RadioConditional from '../examples/RadioConditional.vue'
 import CardBasic from '../examples/CardBasic.vue'
 import CardClickable from '../examples/CardClickable.vue'
@@ -83,42 +83,8 @@ import CardFeature from '../examples/CardFeature.vue'
 import Tag from 'nhsuk-frontend-vue-docs/src/views/examples/tag/Tag.vue'
 
 export default [
-  {
-    path: '/example/checkbox',
-    component: Checkbox
-  },
-  {
-    path: '/example/checkbox-hint',
-    component: CheckboxHint
-  },
-  {
-    path: '/example/checkbox-disabled',
-    component: CheckboxDisabled
-  },
-  {
-    path: '/example/checkbox-heading',
-    component: CheckboxHeading
-  },
-  {
-    path: '/example/checkbox-error',
-    component: CheckboxError
-  },
-  {
-    path: '/example/date-input',
-    component: DateInput
-  },
-  {
-    path: '/example/date-input-autocomplete',
-    component: DateInputAutocomplete
-  },
-  {
-    path: '/example/date-input-error',
-    component: DateInputError
-  },
-  {
-    path: '/example/date-input-error-multi',
-    component: DateInputErrorMulti
-  },
+
+
 
 
 
@@ -170,10 +136,7 @@ export default [
 
 
 
-  {
-    path: '/example/checkbox-conditional',
-    component: CheckboxConditional
-  },
+
   {
     path: '/example/radio-conditional',
     component: RadioConditional

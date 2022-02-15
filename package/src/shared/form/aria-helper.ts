@@ -25,8 +25,25 @@ function getAriaDescribedBy(props: NhsVueProp, error: Ref) {
   })
 }
 
+function getItemGroupAriaDescribedBy(props: NhsVueProp, errorStatus: Function) {
+  return computed((): string => {
+    const describedby = []
+
+    if (props.hint) {
+      describedby.push(hintId(props.id))
+    }
+
+    if (errorStatus()) {
+      describedby.push(errorId(props.id))
+    }
+
+    return describedby.join(' ')
+  })
+}
+
 export {
   hintId,
   errorId,
-  getAriaDescribedBy
+  getAriaDescribedBy,
+  getItemGroupAriaDescribedBy
 }

@@ -23,6 +23,9 @@
 <script lang="ts">
 import {computed, defineComponent, PropType} from 'vue'
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
+import NhsHintText from '../hint-text/NhsHintText.vue'
+import NhsLabel from '../label/NhsLabel.vue'
+import NhsErrorText from '../error-text/NhsErrorText.vue'
 import {getAttributes} from '../shared/helpers/attribute-helper'
 import {randomString} from '../shared/helpers/random-string'
 import {NhsFormItemValidateOn} from '../shared/form/types'
@@ -36,7 +39,7 @@ export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-select',
   emits: ['update:model-value', 'blur', 'change'],
-  components: {NhsFormItem},
+  components: {NhsFormItem, NhsHintText, NhsErrorText, NhsLabel},
   props: {
     modelValue: {
       required: true

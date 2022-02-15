@@ -7,8 +7,7 @@
         "kind": "expression",
         "type": "array|{\"text\":\"string\",\"value\":\"string\",\"style\":\"object\"}"
       },
-      "required": false,
-      "default": "true",
+      "required": true,
       "description": "Array of table head cells."
     },
     {

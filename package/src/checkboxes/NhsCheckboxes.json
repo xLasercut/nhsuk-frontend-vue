@@ -1,0 +1,144 @@
+{
+  "name": "nhs-checkboxes",
+  "attributes": [
+    {
+      "name": "v-model",
+      "value": {
+        "kind": "expression",
+        "type": "any"
+      },
+      "required": true,
+      "description": "model binding for value of item"
+    },
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "nhs-input-group-<random string>",
+      "description": "The id of the input group."
+    },
+    {
+      "name": "disabled",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Disable all inputs"
+    },
+    {
+      "name": "label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Label of input group"
+    },
+    {
+      "name": "hint",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Hint of input group"
+    },
+    {
+      "name": "page-heading",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Wraps label of input group inside a heading tag"
+    },
+    {
+      "name": "heading-size",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Changes size of input group label. (m, l, xl)"
+    },
+    {
+      "name": "items",
+      "value": {
+        "kind": "expression",
+        "type": "array|{\"name\":\"string\",\"type\":\"string\",\"width\":\"string\",\"disabled\":\"boolean\",\"label\":\"string\",\"autocomplete\":\"string\",\"rules\":\"array\",\"inputmode\":\"string\",\"validate-on\":\"string\"}"
+      },
+      "required": true,
+      "description": "Array of input data objects"
+    }
+  ],
+  "slots": [
+    {
+      "name": "item-label",
+      "vue-properties": [
+        {
+          "name": "item",
+          "type": "object"
+        }
+      ],
+      "description": "slot for label of each input item"
+    },
+    {
+      "name": "hint",
+      "vue-properties": [
+        {
+          "name": "hint",
+          "type": "string"
+        }
+      ],
+      "description": "slot for hint"
+    },
+    {
+      "name": "error",
+      "vue-properties": [
+        {
+          "name": "error",
+          "type": "string"
+        }
+      ],
+      "description": "slot for error message"
+    }
+  ],
+  "events": [
+    {
+      "name": "blur",
+      "description": "on blur event",
+      "arguments": [
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "focus",
+      "description": "on focus event",
+      "arguments": [
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "change",
+      "description": "on change event",
+      "arguments": [
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -71,6 +71,17 @@ import Textarea from '../views/examples/textarea/Textarea.vue'
 import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue'
 import TextareaError from '../views/examples/textarea/TextareaError.vue'
 import TextareaSlots from '../views/examples/textarea/TextareaSlots.vue'
+import DateInput from '../views/examples/input-group/DateInput.vue'
+import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue'
+import DateInputError from '../views/examples/input-group/DateInputError.vue'
+import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue'
+import DateInputSlots from '../views/examples/input-group/DateInputSlots.vue'
+import Checkbox from '../views/examples/checkbox/Checkbox.vue'
+import CheckboxHint from '../views/examples/checkbox/CheckboxHint.vue'
+import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
+import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
+import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
+import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -109,7 +120,9 @@ const EXAMPLE_MODULES: ExampleModules = {
   Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
   Form,
   Select, SelectError, SelectSlots,
-  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots
+  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
+  DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
+  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional
 }
 
 function getExampleModule(name: string) {

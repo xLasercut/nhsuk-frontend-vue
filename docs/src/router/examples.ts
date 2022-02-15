@@ -71,6 +71,16 @@ import SelectError from '../views/examples/select/SelectError.vue'
 import Textarea from '../views/examples/textarea/Textarea.vue'
 import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue'
 import TextareaError from '../views/examples/textarea/TextareaError.vue'
+import DateInput from '../views/examples/input-group/DateInput.vue'
+import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue'
+import DateInputError from '../views/examples/input-group/DateInputError.vue'
+import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue'
+import Checkbox from '../views/examples/checkbox/Checkbox.vue'
+import CheckboxHint from '../views/examples/checkbox/CheckboxHint.vue'
+import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
+import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
+import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
+import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
 
 
 const examplesRoutes = [
@@ -432,6 +442,56 @@ const examplesRoutes = [
     component: TextareaError,
     name: 'Textarea with error message'
   },
+  {
+    path: '/examples/date-input',
+    component: DateInput,
+    name: 'Date input'
+  },
+  {
+    path: '/examples/date-input-autocomplete',
+    component: DateInputAutocomplete,
+    name: 'Date input with autocomplete attribute'
+  },
+  {
+    path: '/examples/date-input-error',
+    component: DateInputError,
+    name: 'Date input with error'
+  },
+  {
+    path: '/examples/date-input-error-multi',
+    component: DateInputErrorMulti,
+    name: 'Date input with multiple errors'
+  },
+  {
+    path: '/examples/checkbox',
+    component: Checkbox,
+    name: 'Checkboxes'
+  },
+  {
+    path: '/examples/checkbox-hint',
+    component: CheckboxHint,
+    name: 'Checkboxes with hint text'
+  },
+  {
+    path: '/examples/checkbox-disabled',
+    component: CheckboxDisabled,
+    name: 'Checkboxes with disabled item'
+  },
+  {
+    path: '/examples/checkbox-heading',
+    component: CheckboxHeading,
+    name: 'Checkboxes with legend as page heading'
+  },
+  {
+    path: '/examples/checkbox-error',
+    component: CheckboxError,
+    name: 'Checkboxes with error message'
+  },
+  {
+    path: '/examples/checkbox-conditional',
+    component: CheckboxConditional,
+    name: 'Checkboxes with conditional content'
+  }
 ].map((item) => {
   const {name, ...rest} = item
   return {

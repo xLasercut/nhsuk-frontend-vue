@@ -37,6 +37,8 @@ import Input from '../views/components/Input.vue'
 import Form from '../views/components/Form.vue'
 import Select from '../views/components/Select.vue'
 import Textarea from '../views/components/Textarea.vue'
+import InputGroup from '../views/components/InputGroup.vue'
+import Checkbox from '../views/components/Checkbox.vue'
 
 
 const componentRoutes = [
@@ -229,6 +231,16 @@ const componentRoutes = [
     path: '/components/textarea',
     component: Textarea,
     name: 'Textarea'
+  },
+  {
+    path: '/components/input-group',
+    component: InputGroup,
+    name: 'Input Group'
+  },
+  {
+    path: '/components/checkbox',
+    component: Checkbox,
+    name: 'Checkbox'
   }
 ]
 
