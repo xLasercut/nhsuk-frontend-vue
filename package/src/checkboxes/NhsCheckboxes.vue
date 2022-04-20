@@ -6,10 +6,10 @@
       :aria-describedby="ariaDescribedby"
       :size="headingSize"
     >
-      <nhs-hint-text v-if="hint" :id="hintId">
+      <nhs-hint-text v-if="hint" :id="hintId(id)">
         <slot name="hint" :hint="hint">{{hint}}</slot>
       </nhs-hint-text>
-      <nhs-error-text v-if="error" :id="errorId">
+      <nhs-error-text v-if="error" :id="errorId(id)">
         <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
       </nhs-error-text>
       <div class="nhsuk-checkboxes">
