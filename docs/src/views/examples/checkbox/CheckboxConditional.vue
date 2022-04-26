@@ -5,8 +5,12 @@
     hint="Select all options that are relevant to you."
     heading-size="l"
   >
-    <template #item-conditional="item">
-      <nhs-input :label="item.props.conditional.label" class="nhsuk-u-width-two-thirds"></nhs-input>
+    <template #item-conditional="{item}">
+      <nhs-input
+        :label="item.conditional.label"
+        class="nhsuk-u-width-two-thirds"
+        v-model="inputModel[item.conditional.value]"
+      ></nhs-input>
     </template>
   </nhs-checkboxes>
 </template>
@@ -40,7 +44,12 @@ export default defineComponent({
           }
         }
       ],
-      model: []
+      model: ['email', 'phone', 'text'],
+      inputModel: {
+        email: '',
+        phone: '',
+        text: ''
+      }
     })
 
     return {...toRefs(state)}

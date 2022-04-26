@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
 
 export default defineComponent({
   setup() {
@@ -27,8 +27,22 @@ export default defineComponent({
         }
       ],
       rules: [
-        (v) => v.length > 0 || 'Please select an option'
+        (v: Array<string>) => v.length > 0 || 'Please select an option'
       ]
+    })
+
+    let _itemId: string
+    let _validator: Function
+
+    function registerValidator(id: string, validator: Function) {
+      _itemId = id
+      _validator = validator
+    }
+
+    provide('register-validator', registerValidator)
+
+    onMounted(() => {
+      _validator()
     })
 
     return {...toRefs(state)}

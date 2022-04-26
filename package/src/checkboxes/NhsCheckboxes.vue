@@ -17,10 +17,12 @@
           v-for="(item, index) in items"
           :label="item.label"
           :hint="item.hint"
-          :conditional="item.conditional"
           :disabled="item.disabled || disabled"
           :id="`${id}-${index + 1}`" :name="item.name" :checkbox-value="item.value"
           v-model="internalModel" :key="`${id}-${index}`"
+          @blur="onBlur"
+          @change="onChange"
+          @focus="$emit('focus', $event)"
         >
           <template #item-label>
             <slot name="item-label" :item="item"></slot>
@@ -48,6 +50,7 @@ import {handleItemRegistry} from '../shared/form/form-item-registry'
 import {getFormEvents} from '../shared/form/event-helper'
 import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
 import {NhsCheckboxesItemConfig} from './interfaces'
+import {NhsFormItemValidateOn} from '../shared/form/types'
 
 export default defineComponent({
   name: 'nhs-checkboxes',
@@ -91,6 +94,18 @@ export default defineComponent({
       type: Array as PropType<Array<NhsCheckboxesItemConfig>>,
       default: () => {
         return []
+      }
+    },
+    rules: {
+      type: Array as PropType<Array<Function>>,
+      default: (): Array<Function> => {
+        return []
+      }
+    },
+    validateOn: {
+      type: String as PropType<NhsFormItemValidateOn>,
+      default: (): NhsFormItemValidateOn => {
+        return 'blur'
       }
     }
   },

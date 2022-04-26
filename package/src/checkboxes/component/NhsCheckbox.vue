@@ -8,6 +8,10 @@
       :value="checkboxValue"
       v-model="internalModel"
       v-bind="attributes"
+      ref="checkbox"
+      @change="updateChecked"
+      @blur="$emit('blur', id)"
+      @focus="$emit('focus', id)"
     >
     <nhs-label :for="id" class="nhsuk-checkboxes__label">
       <slot name="item-label">{{label}}</slot>
@@ -16,25 +20,24 @@
       <slot name="item-hint">{{hint}}</slot>
     </nhs-hint-text>
     <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="showConditional()">
-      <slot name="item-conditional">{{conditional}}</slot>
+      <slot name="item-conditional"></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
+import {computed, defineComponent, onMounted, reactive, ref} from 'vue'
 import NhsHintText from '../../hint-text/NhsHintText.vue'
 import NhsLabel from '../../label/NhsLabel.vue'
 import {getInternalModel} from '../../shared/form/v-model'
 
 export default defineComponent({
   inheritAttrs: false,
-  emits: ['update:model-value'],
+  emits: ['update:model-value', 'blur', 'change', 'focus'],
   props: {
     checkboxValue: {
       type: String
     },
-    conditional: {},
     hint: {
       type: String
     },
@@ -61,9 +64,22 @@ export default defineComponent({
   },
   components: { NhsLabel, NhsHintText },
   setup(props, context) {
+    const checkbox = ref(null)
+    const state = reactive({
+      isChecked: false
+    })
     const internalModel = getInternalModel(props, context)
     function showConditional(): boolean {
-      return false
+      if (
+        !context.slots['item-conditional'] ||
+        context.slots['item-conditional']().length === 0 ||
+        !state.isChecked
+      ) {
+        return false
+      }
+
+      const slotItems: any = context.slots['item-conditional']()[0].children
+      return slotItems && slotItems.length > 0
     }
 
     const attributes = computed(() => {
@@ -83,34 +99,27 @@ export default defineComponent({
       return `${props.id}-hint`
     }
 
-    return {hintId, internalModel, attributes, showConditional}
+    onMounted(() => {
+      if (checkbox.value) {
+        state.isChecked = checkbox.value['checked']
+      }
+    })
+
+    function updateChecked(event: any) {
+      if (event.target) {
+        state.isChecked = event.target.checked
+      }
+      context.emit('change', props.id)
+    }
+
+    return {
+      hintId,
+      internalModel,
+      attributes,
+      showConditional,
+      checkbox,
+      updateChecked
+    }
   }
 })
-
-  // export default {
-  //   ,
-  //   mixins: [ VModel ],
-  //
-  //   methods: {
-  //     showConditional() {
-  //       if (Array.isArray(this.model)) {
-  //         return this.model.includes(this.checkboxValue) && this.conditional
-  //       }
-  //       return this.model && this.conditional
-  //     }
-  //   },
-  //   computed: {
-  //     attributes() {
-  //       var attributes = {}
-  //       if (this.hint) {
-  //         attributes['aria-describedby'] = this.hintId
-  //       }
-  //
-  //       return attributes
-  //     },
-  //     hintId() {
-  //       return `${this.id}-hint`
-  //     }
-  //   }
-  // }
 </script>

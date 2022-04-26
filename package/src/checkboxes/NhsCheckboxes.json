@@ -17,8 +17,8 @@
         "type": "string"
       },
       "required": false,
-      "default": "nhs-input-group-<random string>",
-      "description": "The id of the input group."
+      "default": "nhs-checkbox-<random string>",
+      "description": "The id of the checkbox group"
     },
     {
       "name": "disabled",
@@ -28,7 +28,7 @@
       },
       "required": false,
       "default": "false",
-      "description": "Disable all inputs"
+      "description": "Disable all checkboxes"
     },
     {
       "name": "label",
@@ -37,7 +37,7 @@
         "type": "string"
       },
       "required": false,
-      "description": "Label of input group"
+      "description": "Label of checkbox group"
     },
     {
       "name": "hint",
@@ -46,7 +46,7 @@
         "type": "string"
       },
       "required": false,
-      "description": "Hint of input group"
+      "description": "Hint of checkbox group"
     },
     {
       "name": "page-heading",
@@ -56,7 +56,7 @@
       },
       "required": false,
       "default": "false",
-      "description": "Wraps label of input group inside a heading tag"
+      "description": "Wraps label of checkbox group inside a heading tag"
     },
     {
       "name": "heading-size",
@@ -65,16 +65,35 @@
         "type": "string"
       },
       "required": false,
-      "description": "Changes size of input group label. (m, l, xl)"
+      "description": "Changes size of checkbox group label. (m, l, xl)"
     },
     {
       "name": "items",
       "value": {
         "kind": "expression",
-        "type": "array|{\"name\":\"string\",\"type\":\"string\",\"width\":\"string\",\"disabled\":\"boolean\",\"label\":\"string\",\"autocomplete\":\"string\",\"rules\":\"array\",\"inputmode\":\"string\",\"validate-on\":\"string\"}"
+        "type": "array|{\"label\":\"string\",\"value\":\"string\",\"disabled\":\"boolean\",\"name\":\"string\",\"hint\":\"string\"}"
       },
       "required": true,
-      "description": "Array of input data objects"
+      "description": "Array of checkbox data objects"
+    },
+    {
+      "name": "rules",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": false,
+      "description": "Accepts an array of functions that return either True or a String with an error message"
+    },
+    {
+      "name": "validate-on",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "blur",
+      "description": "Determines when to auto apply validation. (blur, change or null)"
     }
   ],
   "slots": [
@@ -86,7 +105,27 @@
           "type": "object"
         }
       ],
-      "description": "slot for label of each input item"
+      "description": "slot for label of each individual checkbox"
+    },
+    {
+      "name": "item-hint",
+      "vue-properties": [
+        {
+          "name": "item",
+          "type": "object"
+        }
+      ],
+      "description": "slot for hint of each individual checkbox"
+    },
+    {
+      "name": "item-conditional",
+      "vue-properties": [
+        {
+          "name": "item",
+          "type": "object"
+        }
+      ],
+      "description": "slot for conditional component of each individual checkbox"
     },
     {
       "name": "hint",

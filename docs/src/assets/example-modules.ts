@@ -82,6 +82,7 @@ import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
 import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
 import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
 import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
+import CheckboxSlots from '../views/examples/checkbox/CheckboxSlots.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -122,7 +123,7 @@ const EXAMPLE_MODULES: ExampleModules = {
   Select, SelectError, SelectSlots,
   Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
   DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
-  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional
+  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional, CheckboxSlots
 }
 
 function getExampleModule(name: string) {
