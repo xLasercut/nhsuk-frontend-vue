@@ -30,16 +30,6 @@
       "description": "Optional heading level for the label heading."
     },
     {
-      "name": "back-to-top",
-      "value": {
-        "kind": "expression",
-        "type": "boolean"
-      },
-      "required": false,
-      "default": "false",
-      "description": "If set to true, back-to-top link will be displayed"
-    },
-    {
       "name": "disabled",
       "value": {
         "kind": "expression",
@@ -63,12 +53,6 @@
     {
       "name": "default",
       "description": "default vue slots"
-    }
-  ],
-  "events": [
-    {
-      "name": "back-to-top",
-      "description": "on click back-to-top link event"
     }
   ]
 }

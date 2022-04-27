@@ -13,9 +13,8 @@
       <nhs-list-panel
         v-for="panel in panels" :key="panel.name"
         :label="panel.name" :id="`panel-${panel.name}`"
-        :back-to-top="true" @back-to-top="backToTop()"
       >
-        <nhs-list-panel-item v-for="(item, index) in panel.items" :key="index" :href="item.path" @click="backToTop()">
+        <nhs-list-panel-item v-for="(item, index) in panel.items" :key="index" :href="item.path">
           {{item.name}}
         </nhs-list-panel-item>
       </nhs-list-panel>
@@ -80,12 +79,7 @@ export default defineComponent({
       document.getElementById('panel-' + event).scrollIntoView()
     }
 
-    function backToTop(): void {
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
-    }
-
-    return {navItems, panels, scrollTo, backToTop}
+    return {navItems, panels, scrollTo}
   }
 })
 </script>

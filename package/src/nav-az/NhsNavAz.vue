@@ -1,6 +1,6 @@
 <template>
-  <nav class="nhsuk-nav-a-z" id="nhsuk-nav-a-z" role="navigation" :aria-label="ariaLabel" v-bind="$attrs">
-    <ol class="nhsuk-nav-a-z__list" role="list">
+  <nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" :aria-label="ariaLabel" v-bind="$attrs">
+    <ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0" role="list">
       <slot></slot>
     </ol>
   </nav>

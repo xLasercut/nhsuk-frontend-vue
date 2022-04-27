@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import {defineComponent, reactive, toRefs} from 'vue'
-import {NhsHeaderSearchResult} from 'nhsuk-frontend-vue/dist/src/header/components/interfaces'
+import {NhsHeaderSearchResult} from 'nhsuk-frontend-vue/dist/header/interfaces'
 
 export default defineComponent({
   setup() {

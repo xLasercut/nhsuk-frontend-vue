@@ -1,21 +1,19 @@
 <template>
-  <div class="nhsuk-list-panel" v-bind="$attrs">
-    <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-list-panel__label" :id="id" v-if="label">
-      {{label}}
-    </nhs-heading-switcher>
-    <div :class="classes" v-if="disabled">
-      <p class="nhsuk-list-panel--results-items__no-results">{{message}}</p>
-    </div>
-    <ul :class="classes" v-if="!disabled">
-      <slot></slot>
-    </ul>
-    <div class="nhsuk-back-to-top" v-if="backToTop">
-      <nhs-link-switcher class="nhsuk-back-to-top__link" @click="$emit('back-to-top')" href="">
-        <nhs-icon icon="arrow-right"></nhs-icon>
-        Back to top
-      </nhs-link-switcher>
-    </div>
-  </div>
+  <nhs-card
+    feature v-bind="$attrs"
+    :heading-level="headingLevel"
+    :heading="label"
+    :id="id"
+  >
+    <template #description>
+      <ul :class="classes" v-if="!disabled">
+        <slot></slot>
+      </ul>
+      <div :class="classes" v-if="disabled">
+        {{message}}
+      </div>
+    </template>
+  </nhs-card>
 </template>
 
 <script lang="ts">
@@ -28,7 +26,7 @@ import {NhsHeadingType} from '../shared/heading-switcher/types'
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-list-panel',
-  emits: ['back-to-top'],
+  emits: [],
   components: { NhsHeadingSwitcher, NhsLinkSwitcher, NhsIcon },
   props: {
     label: {
@@ -51,22 +49,11 @@ export default defineComponent({
     },
     message: {
       type: String
-    },
-    backToTop: {
-      type: Boolean,
-      default: (): boolean => {
-        return false
-      }
     }
   },
-  setup(props) {
+  setup() {
     const classes = computed((): string => {
-      const classes = [ 'nhsuk-list-panel__box' ]
-
-      if (props.label) {
-        classes.push('nhsuk-list-panel__box--with-label')
-      }
-
+      const classes = [ 'nhsuk-list nhsuk-list--border' ]
       return classes.join(' ')
     })
 

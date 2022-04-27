@@ -1,15 +1,15 @@
 <template>
-  <div :class="`nhsuk-care-card nhsuk-care-card--${type}`" v-bind="$attrs">
-    <div class="nhsuk-care-card__heading-container">
-      <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-care-card__heading">
+  <div :class="`nhsuk-card nhsuk-card--care nhsuk-card--care--${type}`" v-bind="$attrs">
+    <div class="nhsuk-card--care__heading-container">
+      <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-card--care__heading">
         <span role="text">
           <span class="nhsuk-u-visually-hidden">{{accessibilityText}}</span>
           {{heading}}
         </span>
       </nhs-heading-switcher>
-      <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
     </div>
-    <div class="nhsuk-care-card__content">
+    <div class="nhsuk-card__content">
       <slot></slot>
     </div>
   </div>

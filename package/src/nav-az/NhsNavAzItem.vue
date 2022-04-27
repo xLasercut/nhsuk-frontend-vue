@@ -1,10 +1,10 @@
 <template>
-  <li class="nhsuk-nav-a-z__item">
-    <span class="nhsuk-nav-a-z__link--disabled" v-if="disabled" v-bind="$attrs">
+  <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+    <span class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" v-if="disabled" v-bind="$attrs">
       <slot></slot>
     </span>
     <nhs-link-switcher
-      class="nhsuk-nav-a-z__link" :href="href"
+      class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" :href="href"
       v-if="!disabled" @click="$emit('click')" v-bind="$attrs"
     >
       <slot></slot>

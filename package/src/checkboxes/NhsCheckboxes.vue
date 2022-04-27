@@ -51,11 +51,15 @@ import {getFormEvents} from '../shared/form/event-helper'
 import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
 import {NhsCheckboxesItemConfig} from './interfaces'
 import {NhsFormItemValidateOn} from '../shared/form/types'
+import NhsFieldset from '../fieldset/NhsFieldset.vue'
+import NhsErrorText from '../error-text/NhsErrorText.vue'
+import NhsHintText from '../hint-text/NhsHintText.vue'
 
 export default defineComponent({
   name: 'nhs-checkboxes',
   inheritAttrs: false,
-  components: { NhsCheckbox, NhsFormItem },
+  emits: ['update:model-value', 'blur', 'change', 'focus'],
+  components: { NhsCheckbox, NhsFormItem, NhsFieldset, NhsErrorText, NhsHintText },
   props: {
     id: {
       type: String,
