@@ -60,6 +60,12 @@ export default defineComponent({
     },
     modelValue: {
       required: true
+    },
+    conditional: {
+      type: Boolean,
+      default: (): boolean => {
+        return false
+      }
     }
   },
   components: { NhsLabel, NhsHintText },
@@ -70,16 +76,7 @@ export default defineComponent({
     })
     const internalModel = getInternalModel(props, context)
     function showConditional(): boolean {
-      if (
-        !context.slots['item-conditional'] ||
-        context.slots['item-conditional']().length === 0 ||
-        !state.isChecked
-      ) {
-        return false
-      }
-
-      const slotItems: any = context.slots['item-conditional']()[0].children
-      return slotItems && slotItems.length > 0
+      return props.conditional && state.isChecked
     }
 
     const attributes = computed(() => {

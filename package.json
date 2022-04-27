@@ -5,7 +5,8 @@
     "serve": "yarn --cwd docs serve",
     "build": "yarn --cwd package build",
     "build:web-types": "yarn --cwd package build:web-types",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:docs": "yarn --cwd docs build"
   },
   "workspaces": [
     "package",

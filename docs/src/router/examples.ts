@@ -81,6 +81,14 @@ import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
 import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
 import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
 import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
+import Radio from '../views/examples/radios/Radio.vue'
+import RadioInline from '../views/examples/radios/RadioInline.vue'
+import RadioDisabled from '../views/examples/radios/RadioDisabled.vue'
+import RadioDivider from '../views/examples/radios/RadioDivider.vue'
+import RadioHint from '../views/examples/radios/RadioHint.vue'
+import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
+import RadioError from '../views/examples/radios/RadioError.vue'
+import RadioConditional from '../views/examples/radios/RadioConditional.vue'
 
 
 const examplesRoutes = [
@@ -491,6 +499,46 @@ const examplesRoutes = [
     path: '/examples/checkbox-conditional',
     component: CheckboxConditional,
     name: 'Checkboxes with conditional content'
+  },
+  {
+    path: '/examples/radio',
+    component: Radio,
+    name: 'Radios'
+  },
+  {
+    path: '/examples/radio-inline',
+    component: RadioInline,
+    name: 'Radios inline'
+  },
+  {
+    path: '/examples/radio-disabled',
+    component: RadioDisabled,
+    name: 'Radios disabled'
+  },
+  {
+    path: '/examples/radio-divider',
+    component: RadioDivider,
+    name: 'Radios with a divider'
+  },
+  {
+    path: '/examples/radio-hint',
+    component: RadioHint,
+    name: 'Radios with hint text'
+  },
+  {
+    path: '/examples/radio-no-heading',
+    component: RadioNoHeading,
+    name: 'Radios without fieldset'
+  },
+  {
+    path: '/examples/radio-error',
+    component: RadioError,
+    name: 'Radios with hint text and error message'
+  },
+  {
+    path: '/examples/radio-conditional',
+    component: RadioConditional,
+    name: 'Radios with conditional content'
   }
 ].map((item) => {
   const {name, ...rest} = item

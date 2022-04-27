@@ -1,26 +1,24 @@
 <template>
-  <nhs-checkboxes
+  <nhs-radios
     :items="items" v-model="model"
-    label="How would you prefer to be contacted?"
-    hint="Select all options that are relevant to you."
-    heading-size="l"
+    label="How would you prefer to be contacted?" heading-size="l"
+    hint="Select one option."
+    id="contact"
+    page-heading
   >
     <template #item-conditional="{item}">
-      <nhs-input
-        :label="item.conditionalProps.label"
-        class="nhsuk-u-width-two-thirds"
-        v-model="inputModel[item.conditional.value]"
-      ></nhs-input>
+      <nhs-input :label="item.conditionalProps.label" class="nhsuk-u-width-two-thirds" v-model="inputModels[item.value]"></nhs-input>
     </template>
-  </nhs-checkboxes>
+  </nhs-radios>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import {defineComponent} from 'vue'
 
 export default defineComponent({
-  setup() {
-    const state = reactive({
+  data() {
+    return {
+      model: 'email',
       items: [
         {
           label: 'Email',
@@ -47,15 +45,12 @@ export default defineComponent({
           conditional: true
         }
       ],
-      model: ['email', 'phone', 'text'],
-      inputModel: {
+      inputModels: {
         email: '',
         phone: '',
         text: ''
       }
-    })
-
-    return {...toRefs(state)}
+    }
   }
 })
 </script>

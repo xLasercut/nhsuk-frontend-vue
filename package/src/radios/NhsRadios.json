@@ -18,7 +18,7 @@
       },
       "required": false,
       "default": "nhs-radios-<random string>",
-      "description": "The id of the checkbox group"
+      "description": "The id of the radios group"
     },
     {
       "name": "disabled",
@@ -37,7 +37,7 @@
         "type": "string"
       },
       "required": false,
-      "description": "Label of checkbox group"
+      "description": "Label of radio group"
     },
     {
       "name": "hint",
@@ -46,7 +46,7 @@
         "type": "string"
       },
       "required": false,
-      "description": "Hint of checkbox group"
+      "description": "Hint of radio group"
     },
     {
       "name": "page-heading",
@@ -56,7 +56,7 @@
       },
       "required": false,
       "default": "false",
-      "description": "Wraps label of checkbox group inside a heading tag"
+      "description": "Wraps label of radio group inside a heading tag"
     },
     {
       "name": "heading-size",
@@ -65,16 +65,16 @@
         "type": "string"
       },
       "required": false,
-      "description": "Changes size of checkbox group label. (m, l, xl)"
+      "description": "Changes size of radio group label. (m, l, xl)"
     },
     {
       "name": "items",
       "value": {
         "kind": "expression",
-        "type": "array|{\"label\":\"string\",\"value\":\"string\",\"disabled\":\"boolean\",\"name\":\"string\",\"hint\":\"string\"}"
+        "type": "array|{\"label\":\"string\",\"value\":\"string\",\"disabled\":\"boolean\",\"name\":\"string\",\"hint\":\"string\",\"conditional\":\"boolean\"}"
       },
       "required": true,
-      "description": "Array of checkbox data objects"
+      "description": "Array of radio data objects"
     },
     {
       "name": "rules",
@@ -105,7 +105,7 @@
           "type": "object"
         }
       ],
-      "description": "slot for label of each individual checkbox"
+      "description": "slot for label of each individual radio"
     },
     {
       "name": "item-hint",
@@ -115,7 +115,7 @@
           "type": "object"
         }
       ],
-      "description": "slot for hint of each individual checkbox"
+      "description": "slot for hint of each individual radio"
     },
     {
       "name": "item-conditional",
@@ -125,7 +125,7 @@
           "type": "object"
         }
       ],
-      "description": "slot for conditional component of each individual checkbox"
+      "description": "slot for conditional component of each individual radio"
     },
     {
       "name": "hint",

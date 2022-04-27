@@ -83,6 +83,15 @@ import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
 import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
 import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
 import CheckboxSlots from '../views/examples/checkbox/CheckboxSlots.vue'
+import Radio from '../views/examples/radios/Radio.vue'
+import RadioInline from '../views/examples/radios/RadioInline.vue'
+import RadioDisabled from '../views/examples/radios/RadioDisabled.vue'
+import RadioDivider from '../views/examples/radios/RadioDivider.vue'
+import RadioHint from '../views/examples/radios/RadioHint.vue'
+import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
+import RadioError from '../views/examples/radios/RadioError.vue'
+import RadioConditional from '../views/examples/radios/RadioConditional.vue'
+import RadioSlots from '../views/examples/radios/RadioSlots.vue'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -123,7 +132,8 @@ const EXAMPLE_MODULES: ExampleModules = {
   Select, SelectError, SelectSlots,
   Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
   DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
-  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional, CheckboxSlots
+  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional, CheckboxSlots,
+  Radio, RadioInline, RadioDisabled, RadioDivider, RadioHint, RadioNoHeading, RadioError, RadioConditional, RadioSlots
 }
 
 function getExampleModule(name: string) {

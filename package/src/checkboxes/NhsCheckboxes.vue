@@ -18,6 +18,7 @@
           :label="item.label"
           :hint="item.hint"
           :disabled="item.disabled || disabled"
+          :conditional="item.conditional"
           :id="`${id}-${index + 1}`" :name="item.name" :checkbox-value="item.value"
           v-model="internalModel" :key="`${id}-${index}`"
           @blur="onBlur"

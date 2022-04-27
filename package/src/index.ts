@@ -44,6 +44,7 @@ import {NhsSelect} from './select'
 import {NhsTextarea} from './textarea'
 import {NhsInputGroup} from './input-group'
 import {NhsCheckboxes} from './checkboxes'
+import {NhsRadios} from './radios'
 
 const components = [
   NhsActionLink,
@@ -97,7 +98,8 @@ const components = [
   NhsSelect,
   NhsTextarea,
   NhsInputGroup,
-  NhsCheckboxes
+  NhsCheckboxes,
+  NhsRadios
 ]
 
 const NhsukFrontendVue: Plugin = {
@@ -164,5 +166,6 @@ export {
   NhsSelect,
   NhsTextarea,
   NhsInputGroup,
-  NhsCheckboxes
+  NhsCheckboxes,
+  NhsRadios
 }

@@ -49,13 +49,7 @@ import LabelHeading from 'nhsuk-frontend-vue-docs/src/views/examples/label/Label
 import ListPanel from 'nhsuk-frontend-vue-docs/src/views/examples/list-panel/ListPanel.vue'
 import NavAZ from 'nhsuk-frontend-vue-docs/src/views/examples/nav-az/NavAZ.vue'
 import Pagination from 'nhsuk-frontend-vue-docs/src/views/examples/pagination/Pagination.vue'
-import Radio from '../examples/Radio.vue'
-import RadioInline from '../examples/RadioInline.vue'
-import RadioDisabled from '../examples/RadioDisabled.vue'
-import RadioDivider from '../examples/RadioDivider.vue'
-import RadioHint from '../examples/RadioHint.vue'
-import RadioNoHeading from '../examples/RadioNoHeading.vue'
-import RadioError from '../examples/RadioError.vue'
+
 import ReviewDate from 'nhsuk-frontend-vue-docs/src/views/examples/review-date/ReviewDate.vue'
 import Select from 'nhsuk-frontend-vue-docs/src/views/examples/select/Select.vue'
 import SelectError from 'nhsuk-frontend-vue-docs/src/views/examples/select/SelectError.vue'
@@ -74,7 +68,7 @@ import HeaderOrg from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderO
 import HeaderOrgWhite from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhite.vue'
 import HeaderOrgWhiteNav from 'nhsuk-frontend-vue-docs/src/views/examples/header/HeaderOrgWhiteNav.vue'
 
-import RadioConditional from '../examples/RadioConditional.vue'
+
 import CardBasic from '../examples/CardBasic.vue'
 import CardClickable from '../examples/CardClickable.vue'
 import CardImage from '../examples/CardImage.vue'
@@ -100,47 +94,7 @@ export default [
 
 
 
-  {
-    path: '/example/radio',
-    component: Radio
-  },
-  {
-    path: '/example/radio-inline',
-    component: RadioInline
-  },
-  {
-    path: '/example/radio-disabled',
-    component: RadioDisabled
-  },
-  {
-    path: '/example/radio-divider',
-    component: RadioDivider
-  },
-  {
-    path: '/example/radio-hint',
-    component: RadioHint
-  },
-  {
-    path: '/example/radio-no-heading',
-    component: RadioNoHeading
-  },
-  {
-    path: '/example/radio-error',
-    component: RadioError
-  },
 
-
-
-
-
-
-
-
-
-  {
-    path: '/example/radio-conditional',
-    component: RadioConditional
-  },
   {
     path: '/example/card-basic',
     component: CardBasic

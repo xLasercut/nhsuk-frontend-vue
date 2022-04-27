@@ -39,6 +39,7 @@ import Select from '../views/components/Select.vue'
 import Textarea from '../views/components/Textarea.vue'
 import InputGroup from '../views/components/InputGroup.vue'
 import Checkbox from '../views/components/Checkbox.vue'
+import Radio from '../views/components/Radio.vue'
 
 
 const componentRoutes = [
@@ -241,6 +242,11 @@ const componentRoutes = [
     path: '/components/checkbox',
     component: Checkbox,
     name: 'Checkbox'
+  },
+  {
+    path: '/components/radio',
+    component: Radio,
+    name: 'Radio'
   }
 ]
 

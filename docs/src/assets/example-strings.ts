@@ -82,6 +82,15 @@ import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue?ra
 import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue?raw'
 import CheckboxError from '../views/examples/checkbox/CheckboxError.vue?raw'
 import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue?raw'
+import Radio from '../views/examples/radios/Radio.vue?raw'
+import RadioInline from '../views/examples/radios/RadioInline.vue?raw'
+import RadioDisabled from '../views/examples/radios/RadioDisabled.vue?raw'
+import RadioDivider from '../views/examples/radios/RadioDivider.vue?raw'
+import RadioHint from '../views/examples/radios/RadioHint.vue?raw'
+import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue?raw'
+import RadioError from '../views/examples/radios/RadioError.vue?raw'
+import RadioConditional from '../views/examples/radios/RadioConditional.vue?raw'
+import RadioSlots from '../views/examples/radios/RadioSlots.vue?raw'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
   ButtonDocs, ButtonDocsDisabled,
@@ -122,7 +131,8 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   Select, SelectError, SelectSlots,
   Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
   DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
-  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional
+  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional,
+  Radio, RadioInline, RadioDisabled, RadioDivider, RadioHint, RadioNoHeading, RadioError, RadioConditional, RadioSlots
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')

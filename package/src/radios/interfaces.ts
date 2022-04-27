@@ -5,6 +5,7 @@ interface NhsRadiosItemConfig {
   name?: string
   hint?: string
   divider?: string
+  conditional?: boolean
 }
 
 export {NhsRadiosItemConfig}
