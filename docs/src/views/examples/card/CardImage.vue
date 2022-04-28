@@ -5,6 +5,6 @@
     clickable
     heading="Exercise"
     heading-classes="nhsuk-heading-m"
-    description="Programmes, workouts and tips to get you moving and improve your fitness and wellbeing."
+    description="Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
   ></nhs-card>
 </template>

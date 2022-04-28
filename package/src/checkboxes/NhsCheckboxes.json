@@ -71,7 +71,7 @@
       "name": "items",
       "value": {
         "kind": "expression",
-        "type": "array|{\"label\":\"string\",\"value\":\"string\",\"disabled\":\"boolean\",\"name\":\"string\",\"hint\":\"string\",\"conditional\":\"boolean\"}"
+        "type": "array|{\"label\":\"string\",\"value\":\"string\",\"disabled\":\"boolean\",\"name\":\"string\",\"hint\":\"string\",\"conditional\":\"boolean\",\"divider\":\"string\"}"
       },
       "required": true,
       "description": "Array of checkbox data objects"

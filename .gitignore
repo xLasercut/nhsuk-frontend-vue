@@ -20,5 +20,5 @@ lerna-debug.log*
 *.sw?
 
 #backstop generated images
-OLD/package/tests/backstop/bitmaps_test/*
-OLD/package/tests/backstop/html_report/*
+package/tests/backstop/bitmaps_test/*
+package/tests/backstop/html_report/*

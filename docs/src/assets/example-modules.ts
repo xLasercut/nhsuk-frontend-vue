@@ -9,9 +9,6 @@ import CardClickable from '../views/examples/card/CardClickable.vue'
 import CardImage from '../views/examples/card/CardImage.vue'
 import CardFeature from '../views/examples/card/CardFeature.vue'
 import CardGroup from '../views/examples/card/CardGroup.vue'
-import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue'
-import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue'
-import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue'
 import ContentsList from '../views/examples/contents/ContentsList.vue'
 import Details from '../views/examples/details/Details.vue'
 import DoDont from '../views/examples/do-dont/DoDont.vue'
@@ -34,11 +31,6 @@ import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
 import FieldsetSlots from '../views/examples/fieldset/FieldsetSlots.vue'
 import Footer from '../views/examples/footer/Footer.vue'
 import Grid from '../views/examples/grid/Grid.vue'
-import Header from '../views/examples/header/Header.vue'
-import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vue'
-import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue'
-import HeaderOrg from '../views/examples/header/HeaderOrg.vue'
-import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 import Hero from '../views/examples/hero/Hero.vue'
 import HeroImage from '../views/examples/hero/HeroImage.vue'
 import HeroImageText from '../views/examples/hero/HeroImageText.vue'
@@ -76,13 +68,6 @@ import DateInputAutocomplete from '../views/examples/input-group/DateInputAutoco
 import DateInputError from '../views/examples/input-group/DateInputError.vue'
 import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue'
 import DateInputSlots from '../views/examples/input-group/DateInputSlots.vue'
-import Checkbox from '../views/examples/checkbox/Checkbox.vue'
-import CheckboxHint from '../views/examples/checkbox/CheckboxHint.vue'
-import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
-import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
-import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
-import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
-import CheckboxSlots from '../views/examples/checkbox/CheckboxSlots.vue'
 import Radio from '../views/examples/radios/Radio.vue'
 import RadioInline from '../views/examples/radios/RadioInline.vue'
 import RadioDisabled from '../views/examples/radios/RadioDisabled.vue'
@@ -92,6 +77,9 @@ import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
 import RadioError from '../views/examples/radios/RadioError.vue'
 import RadioConditional from '../views/examples/radios/RadioConditional.vue'
 import RadioSlots from '../views/examples/radios/RadioSlots.vue'
+import {CARE_CARD_MODULES} from './example-modules/care-card'
+import {CHECKBOXES_MODULES} from './example-modules/checkboxes'
+import {HEADER_MODULES} from './example-modules/header'
 
 const EXAMPLE_MODULES: ExampleModules = {
   ButtonDocs, ButtonDocsDisabled,
@@ -99,7 +87,7 @@ const EXAMPLE_MODULES: ExampleModules = {
   BackLink,
   Breadcrumb,
   CardBasic, CardClickable, CardImage, CardFeature, CardGroup,
-  CareCardNonUrgent, CareCardUrgent, CareCardImmediate,
+  ...CARE_CARD_MODULES,
   ContentsList,
   Details,
   DoDont, DoDontSlots,
@@ -115,7 +103,7 @@ const EXAMPLE_MODULES: ExampleModules = {
   Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
   Footer,
   Grid,
-  Header, HeaderServiceSearch, HeaderTransactionalName, HeaderOrg, HeaderOrgWhiteNav,
+  ...HEADER_MODULES,
   Hero, HeroImage, HeroImageText,
   Image,
   ListPanel,
@@ -132,7 +120,7 @@ const EXAMPLE_MODULES: ExampleModules = {
   Select, SelectError, SelectSlots,
   Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
   DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
-  Checkbox, CheckboxHint, CheckboxDisabled, CheckboxHeading, CheckboxError, CheckboxConditional, CheckboxSlots,
+  ...CHECKBOXES_MODULES,
   Radio, RadioInline, RadioDisabled, RadioDivider, RadioHint, RadioNoHeading, RadioError, RadioConditional, RadioSlots
 }
 

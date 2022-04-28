@@ -1,7 +1,7 @@
 <template>
   <code-block name="CareCardNonUrgent" />
   <code-block name="CareCardUrgent" />
-  <code-block name="CareCardImmediate" />
+  <code-block name="CareCardEmergency" />
   <argument-table heading="nhs-care-card" />
 </template>
 

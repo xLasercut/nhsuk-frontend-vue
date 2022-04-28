@@ -1,7 +1,7 @@
 <template>
   <div :class="classes" v-bind="$attrs">
-    <header-logo-org :organisation="organisation" v-if="organisation" :home-href="homeHref"></header-logo-org>
-    <header-logo-normal :aria-label="ariaLabel" :home-href="homeHref" :service="service" v-if="!organisation" :show-transactional="showTransactional"></header-logo-normal>
+    <header-logo-org :organisation="organisation" v-if="isOrgLogo" :home-href="homeHref"></header-logo-org>
+    <header-logo-normal :aria-label="ariaLabel" :home-href="homeHref" :service="service" v-if="!isOrgLogo" :show-transactional="showTransactional"></header-logo-normal>
   </div>
 </template>
 
@@ -56,7 +56,11 @@ export default defineComponent({
       return classes.join(' ')
     })
 
-    return {classes}
+    const isOrgLogo = computed((): boolean => {
+      return Object.keys(props.organisation).length > 0
+    })
+
+    return {classes, isOrgLogo}
   }
 })
 </script>

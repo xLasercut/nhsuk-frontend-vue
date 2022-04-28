@@ -5,6 +5,7 @@ interface NhsCheckboxesItemConfig {
   name?: string
   hint?: string
   conditional?: boolean
+  divider?: string
 }
 
 export {NhsCheckboxesItemConfig}

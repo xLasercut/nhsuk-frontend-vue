@@ -3,10 +3,10 @@
     <div class="nhsuk-width-container nhsuk-header__container">
       <header-logo
         :home-href="homeHref" :service="service" :organisation="organisation"
-        :aria-label="ariaLabel" :show-transactional="showTransactional"
+        :aria-label="ariaLabel" :show-transactional="showTransactional()"
         :showNav="showNav" :showSearch="showSearch"
       ></header-logo>
-      <header-transactional v-if="showTransactional" :service="service"></header-transactional>
+      <header-transactional v-if="showTransactional()" :service="service"></header-transactional>
 
       <div :class="headerContentClasses" id="content-header" v-if="showNav || showSearch">
         <header-menu
@@ -149,13 +149,13 @@ export default defineComponent({
     provide(NHS_HEADER_INJECTS.toggleNav, toggleNav)
     provide(NHS_HEADER_INJECTS.toggleSearch, toggleSearch)
 
-    const showTransactional = computed((): boolean => {
+    function showTransactional(): boolean {
       return props.transactional && !props.showSearch && !props.showNav
-    })
+    }
 
     const classes = computed((): string => {
       const classes = ['nhsuk-header']
-      if (showTransactional) {
+      if (showTransactional()) {
         classes.push('nhsuk-header--transactional')
       }
 

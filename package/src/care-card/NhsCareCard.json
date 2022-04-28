@@ -9,7 +9,7 @@
       },
       "required": false,
       "default": "non-urgent",
-      "description": "Care card component variant type - non-urgent, urgent or immediate."
+      "description": "Care card component variant type - non-urgent, urgent or emergency."
     },
     {
       "name": "heading",

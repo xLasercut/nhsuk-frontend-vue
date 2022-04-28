@@ -14,9 +14,7 @@ export default defineComponent({
     divider: {
       type: String,
       required: true
-    },
-    id: {},
-    value: {}
+    }
   }
 })
 </script>

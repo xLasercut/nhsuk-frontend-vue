@@ -24,7 +24,7 @@ import {NhsHeadingType} from '../shared/heading-switcher/types'
 const CARE_CARD_TYPES = {
   'non-urgent': 'Non-urgent advice: ',
   'urgent': 'Urgent advice: ',
-  'immediate': 'Immediate action required: '
+  'emergency': 'Immediate action required: '
 }
 
 export default defineComponent({

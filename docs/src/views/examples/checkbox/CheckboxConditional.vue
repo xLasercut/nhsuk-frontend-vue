@@ -4,6 +4,8 @@
     label="How would you prefer to be contacted?"
     hint="Select all options that are relevant to you."
     heading-size="l"
+    id="contact"
+    page-heading
   >
     <template #item-conditional="{item}">
       <nhs-input
@@ -47,7 +49,7 @@ export default defineComponent({
           conditional: true
         }
       ],
-      model: ['email', 'phone', 'text'],
+      model: [],
       inputModel: {
         email: '',
         phone: '',

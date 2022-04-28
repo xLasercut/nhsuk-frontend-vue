@@ -1,11 +1,12 @@
 <template>
-  <span class="nhsuk-hint" v-bind="$attrs" :id="id">
+  <component :is="element" class="nhsuk-hint" v-bind="$attrs" :id="id">
     <slot></slot>
-  </span>
+  </component>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, PropType} from 'vue'
+import {NhsHintTextElement} from './types'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -14,6 +15,12 @@ export default defineComponent({
   props: {
     id: {
       type: String
+    },
+    element: {
+      type: String as PropType<NhsHintTextElement>,
+      default: (): NhsHintTextElement => {
+        return 'span'
+      }
     }
   }
 })

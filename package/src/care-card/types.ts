@@ -1,3 +1,3 @@
-type NhsCareCardType =  'non-urgent' | 'urgent' | 'immediate'
+type NhsCareCardType =  'non-urgent' | 'urgent' | 'emergency'
 
 export {NhsCareCardType}

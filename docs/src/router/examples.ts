@@ -1,6 +1,5 @@
 import {filterRoutes} from '../assets/helpers'
 import ExamplesHome from '../views/examples/ExamplesHome.vue'
-import ActionLink from '../views/examples/action-link/ActionLink.vue'
 import BackLink from '../views/examples/back-link/BackLink.vue'
 import Breadcrumb from '../views/examples/breadcrumb/Breadcrumb.vue'
 import Button from '../views/examples/button/Button.vue'
@@ -8,14 +7,6 @@ import ButtonLink from '../views/examples/button/ButtonLink.vue'
 import ButtonDisabled from '../views/examples/button/ButtonDisabled.vue'
 import ButtonSecondary from '../views/examples/button/ButtonSecondary.vue'
 import ButtonReversed from '../views/examples/button/ButtonReversed.vue'
-import CardBasic from '../views/examples/card/CardBasic.vue'
-import CardClickable from '../views/examples/card/CardClickable.vue'
-import CardImage from '../views/examples/card/CardImage.vue'
-import CardGroup from '../views/examples/card/CardGroup.vue'
-import CardFeature from '../views/examples/card/CardFeature.vue'
-import CareCardNonUrgent from '../views/examples/care-card/CareCardNonUrgent.vue'
-import CareCardUrgent from '../views/examples/care-card/CareCardUrgent.vue'
-import CareCardImmediate from '../views/examples/care-card/CareCardImmediate.vue'
 import ContentsList from '../views/examples/contents/ContentsList.vue'
 import Details from '../views/examples/details/Details.vue'
 import DoDont from '../views/examples/do-dont/DoDont.vue'
@@ -32,17 +23,6 @@ import Fieldset from '../views/examples/fieldset/Fieldset.vue'
 import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
 import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
 import Footer from '../views/examples/footer/Footer.vue'
-import HeaderOrgWhite from '../views/examples/header/HeaderOrgWhite.vue'
-import HeaderLogo from '../views/examples/header/HeaderLogo.vue'
-import HeaderTransactional from '../views/examples/header/HeaderTransactional.vue'
-import HeaderTransactionalLong from '../views/examples/header/HeaderTransactionalLong.vue'
-import HeaderNav from '../views/examples/header/HeaderNav.vue'
-import HeaderSearch from '../views/examples/header/HeaderSearch.vue'
-import Header from '../views/examples/header/Header.vue'
-import HeaderServiceSearch from '../views/examples/header/HeaderServiceSearch.vue'
-import HeaderTransactionalName from '../views/examples/header/HeaderTransactionalName.vue'
-import HeaderOrg from '../views/examples/header/HeaderOrg.vue'
-import HeaderOrgWhiteNav from '../views/examples/header/HeaderOrgWhiteNav.vue'
 import Hero from '../views/examples/hero/Hero.vue'
 import HeroImage from '../views/examples/hero/HeroImage.vue'
 import HeroImageText from '../views/examples/hero/HeroImageText.vue'
@@ -75,12 +55,6 @@ import DateInput from '../views/examples/input-group/DateInput.vue'
 import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue'
 import DateInputError from '../views/examples/input-group/DateInputError.vue'
 import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue'
-import Checkbox from '../views/examples/checkbox/Checkbox.vue'
-import CheckboxHint from '../views/examples/checkbox/CheckboxHint.vue'
-import CheckboxDisabled from '../views/examples/checkbox/CheckboxDisabled.vue'
-import CheckboxHeading from '../views/examples/checkbox/CheckboxHeading.vue'
-import CheckboxError from '../views/examples/checkbox/CheckboxError.vue'
-import CheckboxConditional from '../views/examples/checkbox/CheckboxConditional.vue'
 import Radio from '../views/examples/radios/Radio.vue'
 import RadioInline from '../views/examples/radios/RadioInline.vue'
 import RadioDisabled from '../views/examples/radios/RadioDisabled.vue'
@@ -89,6 +63,11 @@ import RadioHint from '../views/examples/radios/RadioHint.vue'
 import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
 import RadioError from '../views/examples/radios/RadioError.vue'
 import RadioConditional from '../views/examples/radios/RadioConditional.vue'
+import {cardExampleRoutes} from './examples/card'
+import {careCardExampleRoutes} from './examples/care-card'
+import {actionLinkExampleRoutes} from './examples/action-link'
+import {checkboxesExampleRoutes} from './examples/checkboxes'
+import {headerExampleRoutes} from './examples/header'
 
 
 const examplesRoutes = [
@@ -97,11 +76,7 @@ const examplesRoutes = [
     component: ExamplesHome,
     name: 'Examples'
   },
-  {
-    path: '/examples/action-link',
-    component: ActionLink,
-    name: 'Action link'
-  },
+  ...actionLinkExampleRoutes,
   {
     path: '/examples/back-link',
     component: BackLink,
@@ -137,46 +112,8 @@ const examplesRoutes = [
     component: ButtonReversed,
     name: 'Button reverse'
   },
-  {
-    path: '/examples/card-basic',
-    component: CardBasic,
-    name: 'Card - Basic card'
-  },
-  {
-    path: '/examples/card-clickable',
-    component: CardClickable,
-    name: 'Card - Clickable card'
-  },
-  {
-    path: '/examples/card-image',
-    component: CardImage,
-    name: 'Card - card with an image'
-  },
-  {
-    path: '/examples/card-group',
-    component: CardGroup,
-    name: 'Card - Card group'
-  },
-  {
-    path: '/examples/card-feature',
-    component: CardFeature,
-    name: 'Card - Feature card'
-  },
-  {
-    path: '/examples/care-card-non-urgent',
-    component: CareCardNonUrgent,
-    name: 'Card - Care card non-urgent (blue)'
-  },
-  {
-    path: '/examples/care-card-urgent',
-    component: CareCardUrgent,
-    name: 'Card - Care card urgent (red)'
-  },
-  {
-    path: '/examples/care-card-immediate',
-    component: CareCardImmediate,
-    name: 'Card - Care card emergency (red and black)'
-  },
+  ...cardExampleRoutes,
+  ...careCardExampleRoutes,
   {
     path: '/examples/contents-list',
     component: ContentsList,
@@ -257,59 +194,7 @@ const examplesRoutes = [
     component: Footer,
     name: 'Footer'
   },
-  {
-    path: '/examples/header',
-    component: Header,
-    name: 'Header'
-  },
-  {
-    path: '/examples/header-logo',
-    component: HeaderLogo,
-    name: 'Header with logo only'
-  },
-  {
-    path: '/examples/header-service-search',
-    component: HeaderServiceSearch
-  },
-  {
-    path: '/examples/header-transactional',
-    component: HeaderTransactional,
-    name: 'Header transactional'
-  },
-  {
-    path: '/examples/header-transactional-name',
-    component: HeaderTransactionalName,
-    name: 'Header transactional with service name'
-  },
-  {
-    path: '/examples/header-transactional-long',
-    component: HeaderTransactionalLong
-  },
-  {
-    path: '/examples/header-nav',
-    component: HeaderNav,
-    name: 'Header with navigation'
-  },
-  {
-    path: '/examples/header-search',
-    component: HeaderSearch,
-    name: 'Header with search'
-  },
-  {
-    path: '/examples/header-org',
-    component: HeaderOrg,
-    name: 'Header organisational'
-  },
-  {
-    path: '/examples/header-org-white',
-    component: HeaderOrgWhite,
-    name: 'Header organisational with white header'
-  },
-  {
-    path: '/examples/header-org-white-nav',
-    component: HeaderOrgWhiteNav,
-    name: 'Header organisational with white header and navigation'
-  },
+  ...headerExampleRoutes,
   {
     path: '/examples/hero',
     component: Hero,
@@ -470,36 +355,7 @@ const examplesRoutes = [
     component: DateInputErrorMulti,
     name: 'Date input with multiple errors'
   },
-  {
-    path: '/examples/checkbox',
-    component: Checkbox,
-    name: 'Checkboxes'
-  },
-  {
-    path: '/examples/checkbox-hint',
-    component: CheckboxHint,
-    name: 'Checkboxes with hint text'
-  },
-  {
-    path: '/examples/checkbox-disabled',
-    component: CheckboxDisabled,
-    name: 'Checkboxes with disabled item'
-  },
-  {
-    path: '/examples/checkbox-heading',
-    component: CheckboxHeading,
-    name: 'Checkboxes with legend as page heading'
-  },
-  {
-    path: '/examples/checkbox-error',
-    component: CheckboxError,
-    name: 'Checkboxes with error message'
-  },
-  {
-    path: '/examples/checkbox-conditional',
-    component: CheckboxConditional,
-    name: 'Checkboxes with conditional content'
-  },
+  ...checkboxesExampleRoutes,
   {
     path: '/examples/radio',
     component: Radio,

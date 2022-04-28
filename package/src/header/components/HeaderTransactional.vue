@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" v-if="service" v-bind="$attrs">
+  <div :class="classes" v-if="isService" v-bind="$attrs">
     <nhs-link-switcher class="nhsuk-header__transactional-service-name--link" :href="href">
       {{ service.name }}
     </nhs-link-switcher>
@@ -39,7 +39,11 @@ export default defineComponent({
       return '/'
     })
 
-    return {classes, href}
+    const isService = computed((): boolean => {
+      return Object.keys(props.service).length > 0
+    })
+
+    return {classes, href, isService}
   }
 })
 </script>

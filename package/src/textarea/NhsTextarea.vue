@@ -3,7 +3,7 @@
     <nhs-label v-if="label" :for="id">
       <slot name="label" :label="label">{{label}}</slot>
     </nhs-label>
-    <nhs-hint-text v-if="hint" :id="hintId(id)">
+    <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
       <slot name="hint" :hint="hint">{{hint}}</slot>
     </nhs-hint-text>
     <nhs-error-text v-if="error" :id="errorId(id)">

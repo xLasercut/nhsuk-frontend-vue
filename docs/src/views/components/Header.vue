@@ -1,6 +1,5 @@
 <template>
     <code-block name="Header" />
-    <code-block name="HeaderServiceSearch" />
     <code-block name="HeaderTransactionalName" />
     <code-block name="HeaderOrg" />
     <code-block name="HeaderOrgWhiteNav" />

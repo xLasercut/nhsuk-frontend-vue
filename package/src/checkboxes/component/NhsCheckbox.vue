@@ -16,12 +16,12 @@
     <nhs-label :for="id" class="nhsuk-checkboxes__label">
       <slot name="item-label">{{label}}</slot>
     </nhs-label>
-    <nhs-hint-text v-if="hint" :id="hintId()" class="nhsuk-checkboxes__hint">
+    <nhs-hint-text element="div" v-if="hint" :id="hintId()" class="nhsuk-checkboxes__hint">
       <slot name="item-hint">{{hint}}</slot>
     </nhs-hint-text>
-    <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="showConditional()">
-      <slot name="item-conditional"></slot>
-    </div>
+  </div>
+  <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="showConditional()">
+    <slot name="item-conditional"></slot>
   </div>
 </template>
 

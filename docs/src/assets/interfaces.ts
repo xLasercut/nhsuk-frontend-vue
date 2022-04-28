@@ -44,6 +44,15 @@ interface ComponentDoc {
   events?: Array<EventsDoc>
 }
 
+interface ExampleDisplayConfig {
+  [key: string]: {
+    container?: boolean
+    containerBg?: string
+    bodyBg?: string
+    containerSize?: number
+  }
+}
+
 export {
   ExampleStrings,
   SlotsDoc,
@@ -51,5 +60,6 @@ export {
   EventsDoc,
   ComponentDoc,
   SlotsDocProperties,
-  ExampleModules
+  ExampleModules,
+  ExampleDisplayConfig
 }

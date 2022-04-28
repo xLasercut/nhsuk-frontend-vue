@@ -8,7 +8,17 @@
         "type": "string"
       },
       "required": false,
-      "description": "Optional id attribute to add to the error message span tag."
+      "description": "Optional id attribute to add to the hint text tag."
+    },
+    {
+      "name": "element",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "span",
+      "description": "Select which element hint text uses - div or span"
     }
   ],
   "slots": [

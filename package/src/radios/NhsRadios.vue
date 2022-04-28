@@ -6,7 +6,7 @@
       :aria-describedby="ariaDescribedby"
       :size="headingSize"
     >
-      <nhs-hint-text v-if="hint" :id="hintId(id)">
+      <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
         <slot name="hint" :hint="hint">{{hint}}</slot>
       </nhs-hint-text>
       <nhs-error-text v-if="error" :id="errorId(id)">
@@ -139,8 +139,8 @@ export default defineComponent({
       return NhsRadio
     }
 
-    function showConditional(radioValue: any, hasConditional: boolean): boolean {
-     return internalModel.value === radioValue && hasConditional
+    function showConditional(radioValue: any, hasConditional: boolean | undefined): boolean {
+     return internalModel.value === radioValue && Boolean(hasConditional)
     }
 
     return {

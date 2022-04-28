@@ -12,4 +12,17 @@ function filterRoutes(item: Array<any>, names: Array<string>): Array<any> {
     })
 }
 
-export {filterRoutes}
+function setPageColor(color: string = ''): void {
+  const page = document.querySelector('html')
+  if (page) {
+    if (color) {
+      page.setAttribute('style', `background-color: ${color};`)
+    }
+    else {
+      page.setAttribute('style', '')
+    }
+
+  }
+}
+
+export {filterRoutes, setPageColor}

@@ -6,14 +6,15 @@
       :aria-describedby="ariaDescribedby"
       :size="headingSize"
     >
-      <nhs-hint-text v-if="hint" :id="hintId(id)">
+      <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
         <slot name="hint" :hint="hint">{{hint}}</slot>
       </nhs-hint-text>
       <nhs-error-text v-if="error" :id="errorId(id)">
         <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
       </nhs-error-text>
       <div class="nhsuk-checkboxes">
-        <nhs-checkbox
+        <component
+          :is="component(item)"
           v-for="(item, index) in items"
           :label="item.label"
           :hint="item.hint"
@@ -24,6 +25,7 @@
           @blur="onBlur"
           @change="onChange"
           @focus="$emit('focus', $event)"
+          :divider="item.divider"
         >
           <template #item-label>
             <slot name="item-label" :item="item"></slot>
@@ -34,7 +36,7 @@
           <template #item-conditional>
             <slot name="item-conditional" :item="item"></slot>
           </template>
-        </nhs-checkbox>
+        </component>
       </div>
     </nhs-fieldset>
   </nhs-form-item>
@@ -55,12 +57,13 @@ import {NhsFormItemValidateOn} from '../shared/form/types'
 import NhsFieldset from '../fieldset/NhsFieldset.vue'
 import NhsErrorText from '../error-text/NhsErrorText.vue'
 import NhsHintText from '../hint-text/NhsHintText.vue'
+import NhsCheckboxDivider from './component/NhsCheckboxDivider.vue'
 
 export default defineComponent({
   name: 'nhs-checkboxes',
   inheritAttrs: false,
   emits: ['update:model-value', 'blur', 'change', 'focus'],
-  components: { NhsCheckbox, NhsFormItem, NhsFieldset, NhsErrorText, NhsHintText },
+  components: { NhsFormItem, NhsFieldset, NhsErrorText, NhsHintText },
   props: {
     id: {
       type: String,
@@ -115,6 +118,13 @@ export default defineComponent({
     }
   },
   setup(props, context) {
+    function component(item: NhsCheckboxesItemConfig) {
+      if (item.divider) {
+        return NhsCheckboxDivider
+      }
+      return NhsCheckbox
+    }
+
     const internalModel = getInternalModel(props, context)
     const {error, errorMsg, validator} = handleItemRegistry(props, internalModel)
 
@@ -129,7 +139,8 @@ export default defineComponent({
       errorId,
       hintId,
       onBlur,
-      onChange
+      onChange,
+      component
     }
   }
 })
