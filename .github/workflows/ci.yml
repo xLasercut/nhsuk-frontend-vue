@@ -28,13 +28,12 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run build tests
+      - name: Build
         run: |
           yarn build
           yarn build:docs
 
       - name: Run backstop tests
         run: |
-          yarn build
           yarn serve &
           yarn backstop:test
