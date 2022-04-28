@@ -32,7 +32,6 @@ jobs:
 
       - name: Run backstop tests
         run: |
-          yarn build
           yarn serve &
           yarn backstop:test
 
