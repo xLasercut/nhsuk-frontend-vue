@@ -10,7 +10,6 @@ import ButtonReversed from '../views/examples/button/ButtonReversed.vue'
 import ContentsList from '../views/examples/contents/ContentsList.vue'
 import Details from '../views/examples/details/Details.vue'
 import DoDont from '../views/examples/do-dont/DoDont.vue'
-import ErrorSummary from '../views/examples/error-summary/ErrorSummary.vue'
 import ErrorText from '../views/examples/error-text/ErrorText.vue'
 import HintText from '../views/examples/hint-text/HintText.vue'
 import InsetText from '../views/examples/inset-text/InsetText.vue'
@@ -68,6 +67,7 @@ import {careCardExampleRoutes} from './examples/care-card'
 import {actionLinkExampleRoutes} from './examples/action-link'
 import {checkboxesExampleRoutes} from './examples/checkboxes'
 import {headerExampleRoutes} from './examples/header'
+import {errorSummaryExampleRoutes} from './examples/error-summary'
 
 
 const examplesRoutes = [
@@ -129,11 +129,7 @@ const examplesRoutes = [
     component: DoDont,
     name: 'Do and Don\'t list'
   },
-  {
-    path: '/examples/error-summary',
-    component: ErrorSummary,
-    name: 'Error summary'
-  },
+  ...errorSummaryExampleRoutes,
   {
     path: '/examples/error-text',
     component: ErrorText,

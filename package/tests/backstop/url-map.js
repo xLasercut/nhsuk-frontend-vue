@@ -24,6 +24,8 @@ module.exports = {
   'components/do-dont-list/index.html': 'examples/do-dont',
   'components/error-message/index.html': 'examples/error-text',
   'components/error-summary/index.html': 'examples/error-summary',
+  'components/error-summary/linking-to-input.html': 'examples/error-summary-link-to-input',
+  'components/error-summary/linking-to-radios.html': 'examples/error-summary-link-to-radio',
   'components/details/expander.html': 'examples/expander',
   'components/details/expander-group.html': 'examples/expander-group',
   'components/footer/index.html': 'examples/footer',

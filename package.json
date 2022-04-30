@@ -7,7 +7,9 @@
     "build:web-types": "yarn --cwd package build:web-types",
     "preview": "vite preview",
     "build:docs": "yarn --cwd docs build",
-    "backstop:test": "yarn --cwd package backstop:test"
+    "backstop:test": "yarn --cwd package backstop:test",
+    "backstop:clean": "yarn --cwd package backstop:clean",
+    "backstop:approve": "yarn --cwd package backstop:approve"
   },
   "workspaces": [
     "package",
