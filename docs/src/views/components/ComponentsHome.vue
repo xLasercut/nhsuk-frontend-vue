@@ -14,7 +14,7 @@
         v-for="panel in panels" :key="panel.name"
         :label="panel.name" :id="`panel-${panel.name}`"
       >
-        <nhs-list-panel-item v-for="(item, index) in panel.items" :key="index" :href="item.path">
+        <nhs-list-panel-item @click="toTop()" v-for="(item, index) in panel.items" :key="index" :href="item.path">
           {{item.name}}
         </nhs-list-panel-item>
       </nhs-list-panel>
@@ -79,7 +79,11 @@ export default defineComponent({
       document.getElementById('panel-' + event).scrollIntoView()
     }
 
-    return {navItems, panels, scrollTo}
+    function toTop() {
+      window.scrollTo(0, 0)
+    }
+
+    return {navItems, panels, scrollTo, toTop}
   }
 })
 </script>
