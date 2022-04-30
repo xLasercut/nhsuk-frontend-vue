@@ -1,0 +1,21 @@
+{
+  "name": "nhs-nav-az",
+  "attributes": [
+    {
+      "name": "aria-label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "A to Z Navigation",
+      "description": "aria-label for nav-az component."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

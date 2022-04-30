@@ -1,0 +1,181 @@
+{
+  "name": "nhs-input",
+  "attributes": [
+    {
+      "name": "v-model",
+      "value": {
+        "kind": "expression",
+        "type": "any"
+      },
+      "required": true,
+      "description": "model binding for value of item"
+    },
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "nhs-input-<random string>",
+      "description": "The id of the input."
+    },
+    {
+      "name": "name",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The name of the input, which is submitted with the form data."
+    },
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "text",
+      "description": "Type of input control to render."
+    },
+    {
+      "name": "disabled",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If true, input is disabled"
+    },
+    {
+      "name": "width",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "width of input. (2, 3, 4, 5, 10, 20)"
+    },
+    {
+      "name": "label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Label of input component"
+    },
+    {
+      "name": "hint",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Hint of input component"
+    },
+    {
+      "name": "rules",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": false,
+      "description": "Accepts an array of functions that return either True or a String with an error message"
+    },
+    {
+      "name": "max-length",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "description": "maximum number of characters of input field"
+    },
+    {
+      "name": "autocomplete",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Attribute to identify input purpose, for instance \"postal-code\" or \"username\"."
+    },
+    {
+      "name": "inputmode",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Optional value for inputmode (https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode)"
+    },
+    {
+      "name": "spellcheck",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "description": "Optional field to enable or disable the spellcheck attribute on the input."
+    },
+    {
+      "name": "validate-on",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "blur",
+      "description": "Determines when to auto apply validation. (blur, change or null)"
+    }
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "vue-properties": [
+        {
+          "name": "label",
+          "type": "string"
+        }
+      ],
+      "description": "slot for label"
+    },
+    {
+      "name": "hint",
+      "vue-properties": [
+        {
+          "name": "hint",
+          "type": "string"
+        }
+      ],
+      "description": "slot for hint"
+    },
+    {
+      "name": "error",
+      "vue-properties": [
+        {
+          "name": "error",
+          "type": "string"
+        }
+      ],
+      "description": "slot for error message"
+    }
+  ],
+  "events": [
+    {
+      "name": "blur",
+      "description": "on blur event"
+    },
+    {
+      "name": "focus",
+      "description": "on focus event"
+    },
+    {
+      "name": "change",
+      "description": "on change event"
+    }
+  ]
+}

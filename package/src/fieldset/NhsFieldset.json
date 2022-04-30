@@ -1,0 +1,49 @@
+{
+  "name": "nhs-fieldset",
+  "attributes": [
+    {
+      "name": "legend",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Legend text."
+    },
+    {
+      "name": "page-heading",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Whether the legend also acts as the heading for the page"
+    },
+    {
+      "name": "size",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "size of heading. xl, l or m"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    },
+    {
+      "name": "legend",
+      "vue-properties": [
+        {
+          "name": "legend",
+          "type": "string"
+        }
+      ],
+      "description": "fieldset heading slots"
+    }
+  ]
+}

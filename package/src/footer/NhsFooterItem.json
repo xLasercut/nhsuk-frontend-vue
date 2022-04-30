@@ -1,0 +1,26 @@
+{
+  "name": "nhs-footer-item",
+  "attributes": [
+    {
+      "name": "href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The href of a primary navigation item in the footer."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "on click event"
+    }
+  ]
+}

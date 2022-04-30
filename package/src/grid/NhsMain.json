@@ -1,0 +1,21 @@
+{
+  "name": "nhs-main",
+  "attributes": [
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "normal",
+      "description": "type of main container (normal or fluid). Fluid container fill entire screen width."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

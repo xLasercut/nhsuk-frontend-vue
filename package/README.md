@@ -13,15 +13,31 @@ Changelog: [Changelog](https://github.com/xLasercut/nhsuk-frontend-vue/blob/mast
 ```
 npm install nhsuk-frontend-vue
 ```
+or
+```
+yarn add nhsuk-frontend-vue
+```
 
 ## Use
 
 ```jsx
+import { createApp } from 'vue'
+import App from './App.vue'
 import NhsukFrontendVue from 'nhsuk-frontend-vue'
 
-Vue.use(NhsukFrontendVue)
+const app = createApp(App)
+app.use(NhsukFrontendVue)
 ```
+If require router support, import router and add as option
+```jsx
+import { createApp } from 'vue'
+import App from './App.vue'
+import NhsukFrontendVue from 'nhsuk-frontend-vue'
+import router from './router'
 
+const app = createApp(App)
+app.use(NhsukFrontendVue, {router})
+```
 Then in vue components:
 
 ```jsx
@@ -47,13 +63,14 @@ Import each component individually
 </template>
 
 <script>
+  import { defineComponent } from 'vue'
   import { NhsMain } from 'nhsuk-frontend-vue'
 
-  export default {
+  export default defineComponent({
     components: {
       NhsMain
     }
-  }
+  })
 </script>
 ```
 
@@ -63,23 +80,18 @@ Import each component individually
 ```
 git clone https://github.com/xLasercut/nhsuk-frontend-vue.git
 cd nhsuk-frontend-vue
-npm run build
+yarn build
 ```
 
 The output files will be located in the `dist` folder
 
 ## Running tests
 
-This project uses [jest](https://jestjs.io/) for unit tests and [backstop](https://garris.github.io/BackstopJS/) for screenshot tests
-
-Unit tests:
-```
-npm run test:unit
-```
+This project uses [backstop](https://garris.github.io/BackstopJS/) for screenshot tests
 
 Backstop tests:
 ```
-npm run backstop:test
+yarn backstop:test
 ```
 
 ## License

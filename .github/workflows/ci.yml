@@ -22,44 +22,18 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Install yarn
+        run: npm install -g yarn
+
       - name: Install dependencies
-        run: |
-          pushd docs
-          npm ci
-          popd
-          pushd package
-          npm ci
-          popd
+        run: yarn install --frozen-lockfile
 
-      - name: Run linting
+      - name: Build
         run: |
-          pushd package
-          npm run lint
-          popd
-          pushd docs
-          npm run lint
-          popd
-
-      - name: Run unit tests
-        run: |
-          pushd package
-          npm run test:unit
-          popd
-
-      - name: Run build tests
-        run: |
-          pushd package
-          npm run build
-          popd
-          pushd docs
-          npm run build:gh
-          popd
+          yarn build
+          yarn build:docs
 
       - name: Run backstop tests
         run: |
-          pushd docs
-          npm run serve &
-          popd
-          pushd package
-          npm run test:backstop
-          popd
+          yarn serve &
+          yarn backstop:test

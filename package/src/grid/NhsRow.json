@@ -1,0 +1,9 @@
+{
+  "name": "nhs-row",
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

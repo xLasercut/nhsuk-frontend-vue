@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <site-header v-if="!$route.path.includes('example')" />
-    <router-view></router-view>
-    <site-footer v-if="!$route.path.includes('example')"/>
-  </div>
+  <site-header></site-header>
+  <router-view></router-view>
+  <site-footer></site-footer>
 </template>
 
-<script>
-  import SiteHeader from './components/SiteHeader.vue'
-  import SiteFooter from './components/SiteFooter.vue'
+<script lang="ts">
+import SiteFooter from './components/app/SiteFooter.vue'
+import SiteHeader from './components/app/SiteHeader.vue'
+import {defineComponent} from 'vue'
 
-  export default {
-    name:  'App',
-    components: { SiteHeader, SiteFooter }
-  }
+export default defineComponent({
+  components: {SiteFooter, SiteHeader}
+})
 </script>
+
+<style>
+td .hljs {
+  font-size: 11pt;
+  border-radius: 5px;
+}
+</style>

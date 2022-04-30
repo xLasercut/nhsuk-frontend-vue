@@ -1,0 +1,47 @@
+{
+  "name": "nhs-image",
+  "attributes": [
+    {
+      "name": "src",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The source location of the image."
+    },
+    {
+      "name": "alt",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The alt text of the image."
+    },
+    {
+      "name": "srcset",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "A list of image source URLs and their respective sizes. Separate each image with a comma."
+    },
+    {
+      "name": "alt",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "A list of screen sizes for the browser to load the correct image from the srcset images."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

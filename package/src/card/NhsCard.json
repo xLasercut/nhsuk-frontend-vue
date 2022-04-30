@@ -1,0 +1,105 @@
+{
+  "name": "nhs-card",
+  "attributes": [
+    {
+      "name": "heading",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "Text heading of the card."
+    },
+    {
+      "name": "heading-classes",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "Optional additional classes to add to heading. Separate each class with a space."
+    },
+    {
+      "name": "heading-level",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "2",
+      "description": "Optional heading level for the card heading."
+    },
+    {
+      "name": "href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "The value of the card href attribute"
+    },
+    {
+      "name": "clickable",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If set to true, then the class nhsuk-card--clickable will be applied."
+    },
+    {
+      "name": "feature",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If set to true, then the class nhsuk-card__heading--feature and nhsuk-card__content--feature will be applied."
+    },
+    {
+      "name": "img-url",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "The URL of the image in the card"
+    },
+    {
+      "name": "img-alt",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "The alternative text of the image in the card"
+    },
+    {
+      "name": "description",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "",
+      "description": "Text description within the card content."
+    }
+  ],
+  "slots": [
+    {
+      "name": "heading",
+      "description": "slot to replace heading with another component"
+    },
+    {
+      "name": "description",
+      "description": "slot to replace description with another component"
+    }
+  ]
+}

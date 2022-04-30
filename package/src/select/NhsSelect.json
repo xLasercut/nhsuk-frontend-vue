@@ -1,0 +1,130 @@
+{
+  "name": "nhs-select",
+  "attributes": [
+    {
+      "name": "v-model",
+      "value": {
+        "kind": "expression",
+        "type": "any"
+      },
+      "required": true,
+      "description": "model binding for value of item"
+    },
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "nhs-select-<random string>",
+      "description": "The id of the select."
+    },
+    {
+      "name": "name",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The name of the select, which is submitted with the form data."
+    },
+    {
+      "name": "disabled",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If true, select is disabled"
+    },
+    {
+      "name": "label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Label of select component"
+    },
+    {
+      "name": "hint",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Hint of select component"
+    },
+    {
+      "name": "rules",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": false,
+      "description": "Accepts an array of functions that return either True or a String with an error message"
+    },
+    {
+      "name": "validate-on",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "blur",
+      "description": "Determines when to auto apply validation. (blur, change or null)"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots. used for adding select options"
+    },
+    {
+      "name": "label",
+      "vue-properties": [
+        {
+          "name": "label",
+          "type": "string"
+        }
+      ],
+      "description": "slot for label"
+    },
+    {
+      "name": "hint",
+      "vue-properties": [
+        {
+          "name": "hint",
+          "type": "string"
+        }
+      ],
+      "description": "slot for hint"
+    },
+    {
+      "name": "error",
+      "vue-properties": [
+        {
+          "name": "error",
+          "type": "string"
+        }
+      ],
+      "description": "slot for error message"
+    }
+  ],
+  "events": [
+    {
+      "name": "blur",
+      "description": "on blur event"
+    },
+    {
+      "name": "focus",
+      "description": "on focus event"
+    },
+    {
+      "name": "change",
+      "description": "on change event"
+    }
+  ]
+}

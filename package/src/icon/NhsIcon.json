@@ -1,0 +1,14 @@
+{
+  "name": "nhs-icon",
+  "attributes": [
+    {
+      "name": "icon",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "Name of icon."
+    }
+  ]
+}

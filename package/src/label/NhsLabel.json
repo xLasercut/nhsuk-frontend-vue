@@ -1,0 +1,30 @@
+{
+  "name": "nhs-label",
+  "attributes": [
+    {
+      "name": "page-heading",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Whether the label also acts as the heading for the page."
+    },
+    {
+      "name": "size",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Size of the label font. xl or s"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

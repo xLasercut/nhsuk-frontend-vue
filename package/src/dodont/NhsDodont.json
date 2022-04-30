@@ -1,0 +1,54 @@
+{
+  "name": "nhs-dodont",
+  "attributes": [
+    {
+      "name": "title",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "Title to be displayed on the do and don't list component."
+    },
+    {
+      "name": "type",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "tick",
+      "description": "Type of do and don't list component, 'cross', 'tick'."
+    },
+    {
+      "name": "items",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": true,
+      "description": "Items to be displayed within the do and don't list component"
+    },
+    {
+      "name": "heading-level",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "3",
+      "description": "Optional heading level for the title heading."
+    }
+  ],
+  "slots": [
+    {
+      "name": "item",
+      "vue-properties": [
+        {
+          "name": "item"
+        }
+      ],
+      "description": "slot for each list item"
+    }
+  ]
+}

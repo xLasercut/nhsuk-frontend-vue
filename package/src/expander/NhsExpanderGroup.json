@@ -1,0 +1,9 @@
+{
+  "name": "nhs-expander-group",
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

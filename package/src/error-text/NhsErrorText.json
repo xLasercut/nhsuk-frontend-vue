@@ -1,0 +1,30 @@
+{
+  "name": "nhs-error-text",
+  "attributes": [
+    {
+      "name": "hidden-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Error:",
+      "description": "Hidden text used to text to speech."
+    },
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Optional id attribute to add to the error message span tag."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

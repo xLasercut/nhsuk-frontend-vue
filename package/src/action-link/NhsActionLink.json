@@ -1,0 +1,26 @@
+{
+  "name": "nhs-action-link",
+  "attributes": [
+    {
+      "name": "href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The value of the link href attribute"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "on click event"
+    }
+  ]
+}

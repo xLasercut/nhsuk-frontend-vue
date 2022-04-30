@@ -30,10 +30,6 @@ module.exports = {
   onReadyScript: 'puppet/onReady.js',
   scenarios: [
     {
-      label: 'A-Z navigation',
-      url: `${TEST_URL}/nav-a-z/index.html`,
-    },
-    {
       label: 'Action link',
       url: `${TEST_URL}/action-link/index.html`,
     },
@@ -99,15 +95,15 @@ module.exports = {
     },
     {
       label: 'Care card - Non urgent',
-      url: `${TEST_URL}/care-card/care-card-non-urgent.html`,
+      url: `${TEST_URL}/card/care-card-non-urgent.html`,
     },
     {
       label: 'Care card - Urgent',
-      url: `${TEST_URL}/care-card/care-card-urgent.html`,
+      url: `${TEST_URL}/card/care-card-urgent.html`,
     },
     {
-      label: 'Care card - Immediate',
-      url: `${TEST_URL}/care-card/care-card-immediate.html`,
+      label: 'Care card - Emergency',
+      url: `${TEST_URL}/card/care-card-emergency.html`,
     },
     {
       label: 'Checkboxes',
@@ -134,10 +130,10 @@ module.exports = {
       url: `${TEST_URL}/checkboxes/conditional.html`,
       clickSelector: '#contact-1',
     },
-    // {
-    //   label: 'Checkboxes with "none of the above" option',
-    //   url: `${TEST_URL}/checkboxes/none-of-the-above.html`,
-    // },
+    {
+      label: 'Checkboxes with "none of the above" option',
+      url: `${TEST_URL}/checkboxes/none-of-the-above.html`,
+    },
     {
       label: 'Contents list',
       url: `${TEST_URL}/contents-list/index.html`,
@@ -167,14 +163,14 @@ module.exports = {
       label: 'Error summary',
       url: `${TEST_URL}/error-summary/index.html`,
     },
-    // {
-    //   label: 'Error summary with link to an input field',
-    //   url: `${TEST_URL}/error-summary/linking-to-input.html`,
-    // },
-    // {
-    //   label: 'Error summary with link to a radio field',
-    //   url: `${TEST_URL}/error-summary/linking-to-radios.html`,
-    // },
+    {
+      label: 'Error summary with link to an input field',
+      url: `${TEST_URL}/error-summary/linking-to-input.html`,
+    },
+    {
+      label: 'Error summary with link to a radio field',
+      url: `${TEST_URL}/error-summary/linking-to-radios.html`,
+    },
     {
       label: 'Expander',
       url: `${TEST_URL}/details/expander.html`,
@@ -213,10 +209,10 @@ module.exports = {
       label: 'Header with a service name',
       url: `${TEST_URL}/header/header-service-name.html`,
     },
-    // {
-    //   label: 'Header with a service name, search and navigation',
-    //   url: `${TEST_URL}/header/header-service-name-with-nav.html`,
-    // },
+    {
+      label: 'Header with a service name, search and navigation',
+      url: `${TEST_URL}/header/header-service-name-with-nav.html`,
+    },
     {
       label: 'Header transactional',
       url: `${TEST_URL}/header/header-transactional.html`,
@@ -335,10 +331,6 @@ module.exports = {
     {
       label: 'Label as page heading',
       url: `${TEST_URL}/label/page-heading.html`,
-    },
-    {
-      label: 'List panel',
-      url: `${TEST_URL}/list-panel/index.html`,
     },
     {
       label: 'Pagination',

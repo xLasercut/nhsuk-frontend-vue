@@ -1,0 +1,20 @@
+{
+  "name": "nhs-body",
+  "attributes": [
+    {
+      "name": "size",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "size of the body text. (blank or s)"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "nhs-hero",
+  "attributes": [
+    {
+      "name": "heading",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Text heading of the hero component."
+    },
+    {
+      "name": "text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Text content of the hero component."
+    },
+    {
+      "name": "image-url",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "URL of the image of the hero component."
+    }
+  ]
+}

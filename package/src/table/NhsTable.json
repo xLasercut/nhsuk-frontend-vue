@@ -1,0 +1,72 @@
+{
+  "name": "nhs-table",
+  "attributes": [
+    {
+      "name": "headers",
+      "value": {
+        "kind": "expression",
+        "type": "array|{\"text\":\"string\",\"value\":\"string\",\"style\":\"object\"}"
+      },
+      "required": true,
+      "description": "Array of table head cells."
+    },
+    {
+      "name": "data",
+      "value": {
+        "kind": "expression",
+        "type": "array"
+      },
+      "required": true,
+      "description": "Array of table rows"
+    },
+    {
+      "name": "heading",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Heading/label of the table"
+    },
+    {
+      "name": "heading-level",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "3",
+      "description": "Optional heading level for the heading."
+    },
+    {
+      "name": "caption",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Optional caption for the table."
+    },
+    {
+      "name": "responsive",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "true",
+      "description": "Toggle responsive table"
+    }
+  ],
+  "slots": [
+    {
+      "name": "item.<header_value>",
+      "vue-properties": [
+        {
+          "name": "item"
+        }
+      ],
+      "description": "slot for table-items"
+    }
+  ]
+}

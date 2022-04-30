@@ -1,0 +1,25 @@
+{
+  "name": "nhs-breadcrumb",
+  "attributes": [
+    {
+      "name": "aria-label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Breadcrumb",
+      "description": "aria-label attribute for breadcrumb container."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots (used for breadcrumb item)"
+    },
+    {
+      "name": "backlink",
+      "description": "slots for breadcrumb back link"
+    }
+  ]
+}

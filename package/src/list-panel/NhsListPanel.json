@@ -1,0 +1,58 @@
+{
+  "name": "nhs-list-panel",
+  "attributes": [
+    {
+      "name": "label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The text label of the list panel."
+    },
+    {
+      "name": "id",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The ID of the label heading."
+    },
+    {
+      "name": "heading-level",
+      "value": {
+        "kind": "expression",
+        "type": "number"
+      },
+      "required": false,
+      "default": "2",
+      "description": "Optional heading level for the label heading."
+    },
+    {
+      "name": "disabled",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "If set to true, this indicates there are no items in the list panel."
+    },
+    {
+      "name": "message",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "The text value to display if disabled has been set to true."
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ]
+}

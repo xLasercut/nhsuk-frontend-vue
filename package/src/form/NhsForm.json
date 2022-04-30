@@ -1,0 +1,30 @@
+{
+  "name": "nhs-form",
+  "attributes": [
+    {
+      "name": "v-model",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "description": "model binding for validity of form"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ],
+  "events": [
+    {
+      "name": "submit",
+      "description": "on form submit event"
+    },
+    {
+      "name": "reset",
+      "description": "on form reset event"
+    }
+  ]
+}

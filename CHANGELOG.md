@@ -1,5 +1,26 @@
 # NHS.UK frontend vue Changelog
 
+## 5.0.0
+
+- Updated frontend library version to [6.1.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#610---12-january-2022)
+
+:boom: **Breaking changes**
+
+**Vue version change**
+- Library rewritten in typescript and Vue 3 composition api. Will no longer support Vue 2
+
+**Nav A-Z**
+- Font size and type change
+
+**List Panel**
+- Removed "back to top" functions of list panel
+
+**Form**
+- All form components now use inject, provide system
+  - All component methods are provided by inject
+- Checkboxes and Radios component conditional flag now requires boolean
+
+
 ## 4.1.0 - 14th Oct 2021
 
 - Updated frontend library version to [5.2.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#520---22-september-2021)

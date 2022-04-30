@@ -1,0 +1,163 @@
+{
+  "name": "nhs-header",
+  "attributes": [
+    {
+      "name": "show-nav",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Set to 'true' to show the navigation links in the header."
+    },
+    {
+      "name": "show-search",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Set to 'true' to show the site search input form."
+    },
+    {
+      "name": "home-href",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "/",
+      "description": "The href of the link for the logo and mobile home link in the navigation links."
+    },
+    {
+      "name": "home-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "Home",
+      "description": "Text of home link of navigation in mobile mode."
+    },
+    {
+      "name": "aria-label",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "NHS homepage",
+      "description": "Aria label for the logo href."
+    },
+    {
+      "name": "transactional",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Set to 'true' if this is a transactional header (with smaller logo)."
+    },
+    {
+      "name": "service",
+      "value": {
+        "kind": "expression",
+        "type": "object|{\"name\":\"string\",\"href\":\"string\"}"
+      },
+      "required": false,
+      "description": "Object containing the name and href of the service"
+    },
+    {
+      "name": "organisation",
+      "value": {
+        "kind": "expression",
+        "type": "object|{\"name\":\"string\",\"descriptor\":\"string\",\"split\":\"string\",\"logoURL\":\"string\"}"
+      },
+      "required": false,
+      "description": "Settings for header with organisation logo"
+    },
+    {
+      "name": "search-action",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "https://www.nhs.uk/search/",
+      "description": "The search action endpoint."
+    },
+    {
+      "name": "search-input-name",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "default": "q",
+      "description": "The name for the search field."
+    },
+    {
+      "name": "search-results",
+      "value": {
+        "kind": "expression",
+        "type": "array|{\"text\":\"string\",\"value\":\"any\"}"
+      },
+      "required": false,
+      "description": "List of search results to display"
+    },
+    {
+      "name": "v-model:search-text",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": false,
+      "description": "Model binding for search input field"
+    },
+    {
+      "name": "white-nav",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Toggle white navigation bar."
+    },
+    {
+      "name": "white-header",
+      "value": {
+        "kind": "expression",
+        "type": "boolean"
+      },
+      "required": false,
+      "default": "false",
+      "description": "Toggle white header. "
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "default vue slots"
+    }
+  ],
+  "events": [
+    {
+      "name": "submit-search",
+      "arguments": [
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "description": "submit search event"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "nhs-review-date",
+  "attributes": [
+    {
+      "name": "last-review",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The value of the last review date"
+    },
+    {
+      "name": "next-review",
+      "value": {
+        "kind": "expression",
+        "type": "string"
+      },
+      "required": true,
+      "description": "The value of the next review date"
+    }
+  ]
+}
