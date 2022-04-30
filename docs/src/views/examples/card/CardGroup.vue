@@ -7,28 +7,28 @@
       clickable
       heading="Introduction to care and support"
       heading-classes="nhsuk-heading-m"
-      description="A quick guide for people who have care and support needs and their carers."
+      description="A quick guide for people who have care and support needs and their carers"
     ></nhs-card>
     <nhs-card
       href="#"
       clickable
-      heading="Help from social services and charitiest"
+      heading="Help from social services and charities"
       heading-classes="nhsuk-heading-m"
-      description="Includes helplines, needs assessments, advocacy and reporting abuse."
+      description="Includes helplines, needs assessments, advocacy and reporting abuse"
     ></nhs-card>
     <nhs-card
       href="#"
       clickable
       heading="Money, work and benefits"
       heading-classes="nhsuk-heading-m"
-      description="How to pay for care and support, and where you can get help with costs."
+      description="How to pay for care and support, and where you can get help with costs"
     ></nhs-card>
     <nhs-card
       href="#"
       clickable
       heading="Care after a hospital stay"
       heading-classes="nhsuk-heading-m"
-      description="Includes hospital discharge and care and support afterwards."
+      description="Includes hospital discharge and care and support afterwards"
     ></nhs-card>
   </nhs-card-group>
 
@@ -40,21 +40,21 @@
       clickable
       heading="5 steps to mental wellbeing"
       heading-classes="nhsuk-heading-m"
-      description="Practical advice to help you feel mentally and emotionally better."
+      description="Practical advice to help you feel mentally and emotionally better"
     ></nhs-card>
     <nhs-card
       href="#"
       clickable
       heading="Healthy weight"
       heading-classes="nhsuk-heading-m"
-      description="Check your BMI using our healthy weight calculator and find out if you're a healthy weight."
+      description="Check your BMI using our healthy weight calculator and find out if you're a healthy weight"
     ></nhs-card>
     <nhs-card
       href="#"
       clickable
       heading="Exercise"
       heading-classes="nhsuk-heading-m"
-      description="Programmes, workouts and tips to get you moving and improve your fitness and wellbeing."
+      description="Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
     ></nhs-card>
   </nhs-card-group>
 

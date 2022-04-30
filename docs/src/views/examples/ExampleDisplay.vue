@@ -68,6 +68,9 @@ const DISPLAY_STYLE: ExampleDisplayConfig = {
   },
   '/examples/header-service-nav': {
     container: false
+  },
+  '/examples/card-group': {
+    containerSize: 100
   }
 }
 
