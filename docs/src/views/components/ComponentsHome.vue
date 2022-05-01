@@ -25,6 +25,7 @@
 <script lang="ts">
 import {computed, defineComponent} from 'vue'
 import {filteredComponentRoutes} from '../../router/components'
+import {RouteRecordRaw} from 'vue-router'
 
 const AZ_ALPHABETS = [
   'A', 'B', 'C', 'D', 'E', 'F',
@@ -38,7 +39,8 @@ export default defineComponent({
   setup() {
     const navItems = computed(() => {
       const routeAlphabets = new Set(filteredComponentRoutes.map((route) => {
-        return route.name[0].toUpperCase()
+        const routeName = route.name || ''
+        return routeName.toString()[0].toUpperCase()
       }))
 
       return AZ_ALPHABETS.map((alphabet) => {
@@ -57,11 +59,12 @@ export default defineComponent({
       return AZ_ALPHABETS
         .map((alphabet) => {
           const items = filteredComponentRoutes.filter((route) => {
-            return route.name[0].toUpperCase() === alphabet
+            const routeName = route.name || ''
+            return routeName.toString()[0].toUpperCase() === alphabet
           })
 
           if (items.length === 0) {
-            return null
+            return {}
           }
 
           return {
@@ -70,7 +73,7 @@ export default defineComponent({
           }
         })
         .filter((panel) => {
-          return panel
+          return Object.keys(panel).length !== 0
         })
     })
 

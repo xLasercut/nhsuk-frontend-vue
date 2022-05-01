@@ -2,7 +2,7 @@
   <code-block name="Hero" />
   <code-block name="HeroImageText" />
 
-  <argument-table heading="nhs-hero" :data-props="props" />
+  <argument-table heading="nhs-hero" />
 </template>
 
 <script lang="ts">

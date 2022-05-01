@@ -15,7 +15,8 @@ export default defineComponent({
       required: true
     },
     modelValue: {
-      required: true
+      required: true,
+      type: Boolean
     }
   },
   setup(props, context) {

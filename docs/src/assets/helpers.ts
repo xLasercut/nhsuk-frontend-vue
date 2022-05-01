@@ -1,4 +1,6 @@
-function filterRoutes(item: Array<any>, names: Array<string>): Array<any> {
+import {RouteRecordRaw} from 'vue-router'
+
+function filterRoutes(item: Array<any>, names: Array<string>): Array<RouteRecordRaw> {
   return item
     .filter((route) => {
       return !names.includes(route.name)

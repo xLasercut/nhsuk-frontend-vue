@@ -23,10 +23,13 @@ export default defineComponent({
   setup() {
     const examples = computed(() => {
       return filteredExamplesRoutes.map((item) => {
-        const {name, ...rest} = item
+        let {name, ...rest} = item
+        if (!name) {
+          name = ''
+        }
         return {
           ...rest,
-          name: name.replace('examples-', '')
+          name: name.toString().replace('examples-', '')
         }
       })
     })
