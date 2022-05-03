@@ -1,6 +1,6 @@
 # NHS.UK frontend vue Changelog
 
-## 5.0.0
+## 5.0.0 - 30th Apr 2022
 
 - Updated frontend library version to [6.1.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#610---12-january-2022)
 
@@ -8,6 +8,7 @@
 
 **Vue version change**
 - Library rewritten in typescript and Vue 3 composition api. Will no longer support Vue 2
+- Add typescript support and web-types support
 
 **Nav A-Z**
 - Font size and type change
