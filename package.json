@@ -2,14 +2,14 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "serve": "yarn --cwd docs serve",
-    "build": "yarn --cwd package build",
-    "build:web-types": "yarn --cwd package build:web-types",
-    "preview": "vite preview",
-    "build:docs": "yarn --cwd docs build",
-    "backstop:test": "yarn --cwd package backstop:test",
-    "backstop:clean": "yarn --cwd package backstop:clean",
-    "backstop:approve": "yarn --cwd package backstop:approve"
+    "serve": "npm run serve --workspace=docs",
+    "build": "npm run build --workspaces",
+    "build:package": "npm run build --workspace=package",
+    "build:docs": "npm run build --workspace=package",
+    "lint": "npm run lint --workspaces",
+    "backstop:test": "npm run backstop:test --workspace=package",
+    "backstop:clean": "npm run backstop:clean --workspace=package",
+    "backstop:approve": "npm run backstop:approve --workspace=package"
   },
   "workspaces": [
     "package",
@@ -25,7 +25,6 @@
     "nhsuk-frontend": "^6.1.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.6",
-    "vite-plugin-dts": "^1.1.1",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",
     "vue-tsc": "^0.34.10"

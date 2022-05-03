@@ -24,6 +24,7 @@ yarn add nhsuk-frontend-vue
 import { createApp } from 'vue'
 import App from './App.vue'
 import NhsukFrontendVue from 'nhsuk-frontend-vue'
+import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css'
 
 const app = createApp(App)
 app.use(NhsukFrontendVue)
@@ -33,6 +34,7 @@ If require router support, import router and add as option
 import { createApp } from 'vue'
 import App from './App.vue'
 import NhsukFrontendVue from 'nhsuk-frontend-vue'
+import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css'
 import router from './router'
 
 const app = createApp(App)

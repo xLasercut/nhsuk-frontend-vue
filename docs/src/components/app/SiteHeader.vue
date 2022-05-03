@@ -22,7 +22,8 @@ export default defineComponent({
     function filteredSearchResults() {
       return filteredComponentRoutes
         .filter((item) => {
-          return item.name.toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText
+          const itemName = item.name || ''
+          return itemName.toString().toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText
         })
         .map((item) => {
           return {

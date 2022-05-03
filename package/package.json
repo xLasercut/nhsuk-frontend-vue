@@ -1,23 +1,33 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "5.0.0",
-  "private": false,
-  "main": "dist/nhsuk-frontend-vue.umd.js",
-  "module": "dist/nhsuk-frontend-vue.es.js",
-  "types": "dist/src/index.d.ts",
-  "style": "dist/nhsuk-frontend-vue.css",
+  "version": "5.1.0",
+  "main": "./dist/nhsuk-frontend-vue.umd.js",
+  "module": "./dist/nhsuk-frontend-vue.es.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/nhsuk-frontend-vue.css",
+  "exports": {
+    ".": {
+      "import": "./dist/nhsuk-frontend-vue.es.js",
+      "require": "./dist/nhsuk-frontend-vue.umd.js"
+    },
+    "./nhsuk-frontend-vue.css": {
+      "import": "./dist/nhsuk-frontend-vue.css",
+      "require": "./dist/nhsuk-frontend-vue.css"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "yarn build:lib && yarn build:web-types",
-    "build:lib": "vue-tsc --noEmit && vite build -c ./vite.config.ts",
+    "build": "npm run build:lib && npm run build:web-types",
+    "build:lib": "npm run lint && vite build && vue-tsc --emitDeclarationOnly",
     "build:web-types": "node build/build-web-types.js",
+    "lint": "vue-tsc --noEmit",
     "backstop:test": "backstop --config=./tests/backstop/config.js test --docker",
     "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",
     "backstop:approve": "backstop --config=./tests/backstop/config.js approve"
   },
-  "web-types": "dist/web-types.json",
+  "web-types": "./dist/web-types.json",
   "license": "MIT",
   "repository": {
     "type": "git",
