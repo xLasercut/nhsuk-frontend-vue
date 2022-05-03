@@ -3,8 +3,8 @@ import App from './App.vue'
 import router from './router'
 import hljsVuePlugin from './highlight-js'
 
-import '../../package/dist/nhsuk-frontend-vue.css'
-import NhsukFrontendVue from 'nhsuk-frontend-vue/src'
+import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css'
+import NhsukFrontendVue from 'nhsuk-frontend-vue'
 import ArgumentTable from './components/components/ArgumentTable.vue'
 import CodeBlock from './components/components/CodeBlock.vue'
 

@@ -25,7 +25,6 @@
 <script lang="ts">
 import {computed, defineComponent} from 'vue'
 import {filteredComponentRoutes} from '../../router/components'
-import {RouteRecordRaw} from 'vue-router'
 
 const AZ_ALPHABETS = [
   'A', 'B', 'C', 'D', 'E', 'F',
