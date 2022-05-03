@@ -1,5 +1,10 @@
 # NHS.UK frontend vue Changelog
 
+## 5.1.0 - 3rd May 2022
+
+- Fixed type definition import for typescript
+- Fixed incorrect README usage instructions
+
 ## 5.0.0 - 30th Apr 2022
 
 - Updated frontend library version to [6.1.0](https://github.com/nhsuk/nhsuk-frontend/blob/master/CHANGELOG.md#610---12-january-2022)
