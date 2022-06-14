@@ -1,7 +1,9 @@
 <template>
   <component
-    :is="buttonElement" :class="classes"
-    :href="href" :disabled="disabled"
+    :is="buttonElement"
+    :class="classes"
+    :href="href"
+    :disabled="disabled"
     v-bind="$attrs"
     @click="$emit('click')"
   >
@@ -12,8 +14,8 @@
 <script lang="ts">
 import NhsNormalButton from './types/NhsNormalButton.vue'
 import NhsLinkButton from './types/NhsLinkButton.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsButtonColor, NhsButtonType} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsButtonColor, NhsButtonType } from './types'
 
 const BUTTON_COLORS = {
   primary: 'nhsuk-button',
@@ -71,7 +73,7 @@ export default defineComponent({
       return BUTTON_TYPES[props.element]
     })
 
-    return {classes, buttonElement}
+    return { classes, buttonElement }
   }
 })
 </script>

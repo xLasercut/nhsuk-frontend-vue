@@ -2,4 +2,4 @@ interface NhsContentsItemAttribute {
   'aria-current'?: any
 }
 
-export {NhsContentsItemAttribute}
+export { NhsContentsItemAttribute }

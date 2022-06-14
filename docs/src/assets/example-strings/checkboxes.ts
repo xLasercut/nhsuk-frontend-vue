@@ -1,4 +1,4 @@
-import {ExampleStrings} from '../interfaces'
+import { ExampleStrings } from '../interfaces'
 import Checkbox from '../../views/examples/checkbox/Checkbox.vue?raw'
 import CheckboxHint from '../../views/examples/checkbox/CheckboxHint.vue?raw'
 import CheckboxDisabled from '../../views/examples/checkbox/CheckboxDisabled.vue?raw'
@@ -19,4 +19,4 @@ const CHECKBOXES_STRINGS: ExampleStrings = {
   CheckboxNonOfAbove
 }
 
-export {CHECKBOXES_STRINGS}
+export { CHECKBOXES_STRINGS }

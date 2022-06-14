@@ -1,6 +1,6 @@
 <template>
   <figure class="nhsuk-image" v-bind="$attrs">
-    <img class="nhsuk-image__img" :src="src" :alt="alt" :sizes="sizes" :srcset="srcset">
+    <img class="nhsuk-image__img" :src="src" :alt="alt" :sizes="sizes" :srcset="srcset" />
     <figcaption class="nhsuk-image__caption" v-if="isCaption">
       <slot></slot>
     </figcaption>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -41,7 +41,7 @@ export default defineComponent({
       return Boolean(context.slots.default)
     })
 
-    return {isCaption}
+    return { isCaption }
   }
 })
 </script>

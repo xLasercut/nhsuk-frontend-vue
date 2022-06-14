@@ -1,3 +1,3 @@
 type NhsListType = 'bullet' | 'number' | 'error'
 
-export {NhsListType}
+export { NhsListType }

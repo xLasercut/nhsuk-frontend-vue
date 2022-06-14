@@ -7,7 +7,7 @@ const NHS_FORM_INJECTS = {
   registerItemErrorStatus: 'register-item-error-status',
   registerItemErrorMsg: 'register-item-error-msg',
   registerItemReset: 'register-item-reset',
-  unregisterItemGroupItem: 'unregister-item-group-item',
+  unregisterItemGroupItem: 'unregister-item-group-item'
 }
 
-export {NHS_FORM_INJECTS}
+export { NHS_FORM_INJECTS }

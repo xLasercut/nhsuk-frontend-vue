@@ -1,5 +1,3 @@
 import NhsBackLink from './NhsBackLink.vue'
 
-export {
-  NhsBackLink
-}
+export { NhsBackLink }

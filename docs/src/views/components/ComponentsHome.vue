@@ -2,8 +2,13 @@
   <nhs-row>
     <nhs-col>
       <nhs-nav-az>
-        <nhs-nav-az-item v-for="(item, index) in navItems" :key="index" :disabled="item.disabled" @click="scrollTo(item.text)">
-          {{item.text}}
+        <nhs-nav-az-item
+          v-for="(item, index) in navItems"
+          :key="index"
+          :disabled="item.disabled"
+          @click="scrollTo(item.text)"
+        >
+          {{ item.text }}
         </nhs-nav-az-item>
       </nhs-nav-az>
     </nhs-col>
@@ -11,11 +16,18 @@
   <nhs-row>
     <nhs-col>
       <nhs-list-panel
-        v-for="panel in panels" :key="panel.name"
-        :label="panel.name" :id="`panel-${panel.name}`"
+        v-for="panel in panels"
+        :key="panel.name"
+        :label="panel.name"
+        :id="`panel-${panel.name}`"
       >
-        <nhs-list-panel-item @click="toTop()" v-for="(item, index) in panel.items" :key="index" :href="item.path">
-          {{item.name}}
+        <nhs-list-panel-item
+          @click="toTop()"
+          v-for="(item, index) in panel.items"
+          :key="index"
+          :href="item.path"
+        >
+          {{ item.name }}
         </nhs-list-panel-item>
       </nhs-list-panel>
     </nhs-col>
@@ -23,24 +35,47 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
-import {filteredComponentRoutes} from '../../router/components'
+import { computed, defineComponent } from 'vue'
+import { filteredComponentRoutes } from '../../router/components'
 
 const AZ_ALPHABETS = [
-  'A', 'B', 'C', 'D', 'E', 'F',
-  'G', 'H', 'I', 'J', 'K', 'L',
-  'M', 'N', 'O', 'P', 'Q', 'R',
-  'S', 'T', 'U', 'V', 'W', 'X',
-  'Y', 'Z'
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
 ]
 
 export default defineComponent({
   setup() {
     const navItems = computed(() => {
-      const routeAlphabets = new Set(filteredComponentRoutes.map((route) => {
-        const routeName = route.name || ''
-        return routeName.toString()[0].toUpperCase()
-      }))
+      const routeAlphabets = new Set(
+        filteredComponentRoutes.map((route) => {
+          const routeName = route.name || ''
+          return routeName.toString()[0].toUpperCase()
+        })
+      )
 
       return AZ_ALPHABETS.map((alphabet) => {
         let disabled = true
@@ -55,25 +90,23 @@ export default defineComponent({
     })
 
     const panels = computed(() => {
-      return AZ_ALPHABETS
-        .map((alphabet) => {
-          const items = filteredComponentRoutes.filter((route) => {
-            const routeName = route.name || ''
-            return routeName.toString()[0].toUpperCase() === alphabet
-          })
-
-          if (items.length === 0) {
-            return {}
-          }
-
-          return {
-            name: alphabet,
-            items: items
-          }
+      return AZ_ALPHABETS.map((alphabet) => {
+        const items = filteredComponentRoutes.filter((route) => {
+          const routeName = route.name || ''
+          return routeName.toString()[0].toUpperCase() === alphabet
         })
-        .filter((panel) => {
-          return Object.keys(panel).length !== 0
-        })
+
+        if (items.length === 0) {
+          return {}
+        }
+
+        return {
+          name: alphabet,
+          items: items
+        }
+      }).filter((panel) => {
+        return Object.keys(panel).length !== 0
+      })
     })
 
     function scrollTo(event: string): void {
@@ -85,7 +118,7 @@ export default defineComponent({
       window.scrollTo(0, 0)
     }
 
-    return {navItems, panels, scrollTo, toTop}
+    return { navItems, panels, scrollTo, toTop }
   }
 })
 </script>

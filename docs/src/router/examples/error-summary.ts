@@ -20,4 +20,4 @@ const errorSummaryExampleRoutes = [
   }
 ]
 
-export {errorSummaryExampleRoutes}
+export { errorSummaryExampleRoutes }

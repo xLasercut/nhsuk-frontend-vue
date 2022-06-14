@@ -1,13 +1,16 @@
 <template>
   <nhs-checkboxes
-    :items="items" v-model="model" page-heading
+    :items="items"
+    v-model="model"
+    page-heading
     label="Which types of waste do you transport regularly?"
-    hint="Select all that apply." heading-size="m"
+    hint="Select all that apply."
+    heading-size="m"
   ></nhs-checkboxes>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -29,7 +32,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

@@ -1,4 +1,4 @@
-import {RouteRecordRaw} from 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
 
 function filterRoutes(item: Array<any>, names: Array<string>): Array<RouteRecordRaw> {
   return item
@@ -6,10 +6,8 @@ function filterRoutes(item: Array<any>, names: Array<string>): Array<RouteRecord
       return !names.includes(route.name)
     })
     .sort((a, b) => {
-      if (a.name < b.name)
-        return -1
-      if (a.name > b.name)
-        return 1
+      if (a.name < b.name) return -1
+      if (a.name > b.name) return 1
       return 0
     })
 }
@@ -19,12 +17,10 @@ function setPageColor(color: string = ''): void {
   if (page) {
     if (color) {
       page.setAttribute('style', `background-color: ${color};`)
-    }
-    else {
+    } else {
       page.setAttribute('style', '')
     }
-
   }
 }
 
-export {filterRoutes, setPageColor}
+export { filterRoutes, setPageColor }

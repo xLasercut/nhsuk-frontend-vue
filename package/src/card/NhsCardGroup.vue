@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import NhsVNode from '../shared/NhsVNode.vue'
-import {defineComponent, PropType} from 'vue'
-import {NhsCardGroupType} from './types'
+import { defineComponent, PropType } from 'vue'
+import { NhsCardGroupType } from './types'
 
 const CARD_GROUP_TYPES: Set<NhsCardGroupType> = new Set(['half', 'third', 'quarter'])
 
@@ -33,6 +33,6 @@ export default defineComponent({
       }
     }
   },
-  components: {NhsVNode}
+  components: { NhsVNode }
 })
 </script>

@@ -44,4 +44,4 @@ const checkboxesExampleRoutes = [
   }
 ]
 
-export {checkboxesExampleRoutes}
+export { checkboxesExampleRoutes }

@@ -1,5 +1,5 @@
-import {NhsInputInputmode, NhsInputWidth} from '../input/types'
-import {NhsFormItemValidateOn} from '../shared/form/types'
+import { NhsInputInputmode, NhsInputWidth } from '../input/types'
+import { NhsFormItemValidateOn } from '../shared/form/types'
 
 interface NhsInputGroupState {
   errorMsgs: { [key: string]: Function }
@@ -20,4 +20,4 @@ interface NhsInputGroupItemConfig {
   rules?: Array<Function>
 }
 
-export {NhsInputGroupState, NhsInputGroupItemConfig}
+export { NhsInputGroupState, NhsInputGroupItemConfig }

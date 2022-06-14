@@ -1,6 +1,6 @@
 //@ts-ignore
 import WebTypes from '../../../package/dist/web-types.json'
-import {ComponentDoc, EventsDoc, PropsDoc, SlotsDoc} from './interfaces'
+import { ComponentDoc, EventsDoc, PropsDoc, SlotsDoc } from './interfaces'
 
 const COMPONENT_DOCS_RAW: Array<ComponentDoc> = WebTypes.contributions.html.tags
 
@@ -24,4 +24,4 @@ const getComponentDoc = (name: string) => {
   return COMPONENT_DOCS[index]
 }
 
-export {getComponentDoc}
+export { getComponentDoc }

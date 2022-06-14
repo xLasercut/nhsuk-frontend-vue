@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "vite --host 0.0.0.0 --port 8080",
     "build": "npm run lint && vite build",
-    "lint": "vue-tsc --noEmit --allowJs"
+    "lint": "vue-tsc --noEmit --allowJs",
+    "prettier-format": "prettier --config ../.prettierrc 'src/**/*.{ts,vue}' --write"
   },
   "repository": {
     "type": "git",

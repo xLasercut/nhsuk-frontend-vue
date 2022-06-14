@@ -1,5 +1,3 @@
 import NhsWarningCallout from './NhsWarningCallout.vue'
 
-export {
-  NhsWarningCallout
-}
+export { NhsWarningCallout }

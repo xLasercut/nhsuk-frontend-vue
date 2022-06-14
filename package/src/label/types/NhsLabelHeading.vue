@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import NhsLabelNormal from './NhsLabelNormal.vue'
-import {defineComponent, PropType} from 'vue'
-import {NhsLabelSize} from '../types'
+import { defineComponent, PropType } from 'vue'
+import { NhsLabelSize } from '../types'
 
 export default defineComponent({
   inheritAttrs: false,

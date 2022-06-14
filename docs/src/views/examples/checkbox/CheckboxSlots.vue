@@ -1,20 +1,20 @@
 <template>
   <nhs-form v-model="valid" @submit="onSubmit()" @reset="onReset()">
     <nhs-checkboxes
-      :items="items" v-model="model"
+      :items="items"
+      v-model="model"
       label="What is your nationality?"
       hint="If you have more than 1 nationality, select all options that are relevant to you."
-      ref="checkbox" :rules="rules"
+      ref="checkbox"
+      :rules="rules"
     >
-
-      <template #hint="{hint}">
-        <a>{{hint}}</a>
+      <template #hint="{ hint }">
+        <a>{{ hint }}</a>
       </template>
 
-      <template #item-label="{item}">
-        <h3>{{item}}</h3>
+      <template #item-label="{ item }">
+        <h3>{{ item }}</h3>
       </template>
-
     </nhs-checkboxes>
     <nhs-row>
       <nhs-col :span="33">
@@ -23,15 +23,13 @@
       <nhs-col :span="33">
         <nhs-button type="reset">Reset</nhs-button>
       </nhs-col>
-      <nhs-col :span="33">
-        Form valid: {{valid}}
-      </nhs-col>
+      <nhs-col :span="33"> Form valid: {{ valid }} </nhs-col>
     </nhs-row>
   </nhs-form>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -51,9 +49,7 @@ export default defineComponent({
         }
       ],
       model: [],
-      rules: [
-        (v: Array<string>) => v.length > 0 || 'Please select an option'
-      ],
+      rules: [(v: Array<string>) => v.length > 0 || 'Please select an option'],
       valid: false
     })
 
@@ -67,7 +63,7 @@ export default defineComponent({
       state.model = []
     }
 
-    return {...toRefs(state), onSubmit, onReset}
+    return { ...toRefs(state), onSubmit, onReset }
   }
 })
 </script>

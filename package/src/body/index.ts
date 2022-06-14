@@ -1,5 +1,3 @@
 import NhsBody from './NhsBody.vue'
 
-export {
-  NhsBody
-}
+export { NhsBody }

@@ -25,7 +25,8 @@
     "lint": "vue-tsc --noEmit",
     "backstop:test": "backstop --config=./tests/backstop/config.js test --docker",
     "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",
-    "backstop:approve": "backstop --config=./tests/backstop/config.js approve"
+    "backstop:approve": "backstop --config=./tests/backstop/config.js approve",
+    "prettier-format": "prettier --config ../.prettierrc 'src/**/*.{ts,vue,json}' --write"
   },
   "web-types": "./dist/web-types.json",
   "license": "MIT",

@@ -10,7 +10,4 @@ interface NhsTableItem {
   [key: string]: any
 }
 
-export {
-  NhsTableHeader,
-  NhsTableItem
-}
+export { NhsTableHeader, NhsTableItem }

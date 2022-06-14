@@ -1,21 +1,17 @@
 <template>
-  <nhs-table
-    :headers="headers"
-    :data="items"
-    :responsive="false"
-  >
-    <template #item.classname="{item}">
-      <code>{{item.classname}}</code>
+  <nhs-table :headers="headers" :data="items" :responsive="false">
+    <template #item.classname="{ item }">
+      <code>{{ item.classname }}</code>
     </template>
 
-    <template #item.tag="{item}">
-      <nhs-tag :color="item.tag">{{item.tagText}}</nhs-tag>
+    <template #item.tag="{ item }">
+      <nhs-tag :color="item.tag">{{ item.tagText }}</nhs-tag>
     </template>
   </nhs-table>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -90,7 +86,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

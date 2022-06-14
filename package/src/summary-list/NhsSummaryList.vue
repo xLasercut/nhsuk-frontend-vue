@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -27,7 +27,7 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed((): string => {
-      const classes = [ 'nhsuk-summary-list' ]
+      const classes = ['nhsuk-summary-list']
 
       if (!props.border) {
         classes.push('nhsuk-summary-list--no-border')
@@ -36,7 +36,7 @@ export default defineComponent({
       return classes.join(' ')
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

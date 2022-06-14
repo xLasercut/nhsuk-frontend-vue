@@ -1,3 +1,3 @@
 import NhsInsetText from './NhsInsetText.vue'
 
-export {NhsInsetText}
+export { NhsInsetText }

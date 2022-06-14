@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsColSize} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsColSize } from './types'
 
 const NHS_COL_SPANS = {
   100: 'full',
@@ -36,7 +36,7 @@ export default defineComponent({
     const classes = computed((): string => {
       return `nhsuk-grid-column-${NHS_COL_SPANS[props.span]}`
     })
-    return {classes}
+    return { classes }
   }
 })
 </script>

@@ -10,4 +10,4 @@ function randomString(): string {
   return results.join('')
 }
 
-export {randomString}
+export { randomString }

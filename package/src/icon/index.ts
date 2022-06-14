@@ -1,5 +1,3 @@
 import NhsIcon from './NhsIcon.vue'
 
-export {
-  NhsIcon
-}
+export { NhsIcon }

@@ -1,5 +1,3 @@
 type NhsCardGroupType = 'half' | 'third' | 'quarter'
 
-export {
-  NhsCardGroupType
-}
+export { NhsCardGroupType }

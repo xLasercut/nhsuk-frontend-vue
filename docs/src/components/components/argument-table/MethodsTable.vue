@@ -1,11 +1,11 @@
 <template>
   <nhs-table :headers="headers" :data="data">
-    <template #item.input="item">{{item.props.input||'-'}}</template>
+    <template #item.input="item">{{ item.props.input || '-' }}</template>
   </nhs-table>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   props: {
@@ -32,7 +32,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

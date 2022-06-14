@@ -6,6 +6,9 @@
       <li>your child is <a href="https://www.nhs.uk/conditions/dehydration">dehydrated</a></li>
       <li>you're concerned about your child or they get worse</li>
     </ul>
-    <p>Tell the receptionist you think it's chickenpox before going in. They may recommend a special appointment time if other patients are at risk.</p>
+    <p>
+      Tell the receptionist you think it's chickenpox before going in. They may recommend a special
+      appointment time if other patients are at risk.
+    </p>
   </nhs-care-card>
 </template>

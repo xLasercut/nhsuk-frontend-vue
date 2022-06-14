@@ -1,13 +1,13 @@
 <template>
   <nhs-footer v-if="showFooter">
     <nhs-footer-item v-for="(item, index) in footerLinks" :key="index" :href="item.href">
-      {{item.text}}
+      {{ item.text }}
     </nhs-footer-item>
   </nhs-footer>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, reactive, toRefs} from 'vue'
+import { computed, defineComponent, reactive, toRefs } from 'vue'
 import router from '../../router'
 
 export default defineComponent({
@@ -15,8 +15,8 @@ export default defineComponent({
     const state = reactive({
       footerLinks: [
         {
-          text: "Github",
-          href: "https://github.com/xLasercut/nhsuk-frontend-vue"
+          text: 'Github',
+          href: 'https://github.com/xLasercut/nhsuk-frontend-vue'
         }
       ]
     })
@@ -25,7 +25,7 @@ export default defineComponent({
       return !router.currentRoute.value.fullPath.includes('/examples/')
     })
 
-    return {...toRefs(state), showFooter}
+    return { ...toRefs(state), showFooter }
   }
 })
 </script>

@@ -5,10 +5,22 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsTagColor} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsTagColor } from './types'
 
-const TAG_COLORS: Array<NhsTagColor> = ['', 'white', 'grey', 'green', 'aqua-green', 'blue', 'purple', 'pink', 'red', 'orange', 'yellow']
+const TAG_COLORS: Array<NhsTagColor> = [
+  '',
+  'white',
+  'grey',
+  'green',
+  'aqua-green',
+  'blue',
+  'purple',
+  'pink',
+  'red',
+  'orange',
+  'yellow'
+]
 
 export default defineComponent({
   inheritAttrs: false,
@@ -36,7 +48,7 @@ export default defineComponent({
       return classes.join(' ')
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

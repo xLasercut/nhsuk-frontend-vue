@@ -1,4 +1,4 @@
-import {ExampleStrings} from './interfaces'
+import { ExampleStrings } from './interfaces'
 import ButtonDocs from '../views/examples/button/ButtonDocs.vue?raw'
 import ButtonDocsDisabled from '../views/examples/button/ButtonDocsDisabled.vue?raw'
 import ActionLink from '../views/examples/action-link/ActionLink.vue?raw'
@@ -77,20 +77,26 @@ import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue?raw'
 import RadioError from '../views/examples/radios/RadioError.vue?raw'
 import RadioConditional from '../views/examples/radios/RadioConditional.vue?raw'
 import RadioSlots from '../views/examples/radios/RadioSlots.vue?raw'
-import {CARE_CARD_STRINGS} from './example-strings/care-card'
-import {CHECKBOXES_STRINGS} from './example-strings/checkboxes'
-import {HEADER_STRINGS} from './example-strings/header'
+import { CARE_CARD_STRINGS } from './example-strings/care-card'
+import { CHECKBOXES_STRINGS } from './example-strings/checkboxes'
+import { HEADER_STRINGS } from './example-strings/header'
 
 const EXAMPLE_STRINGS: ExampleStrings = {
-  ButtonDocs, ButtonDocsDisabled,
+  ButtonDocs,
+  ButtonDocsDisabled,
   ActionLink,
   BackLink,
   Breadcrumb,
-  CardBasic, CardClickable, CardImage, CardFeature, CardGroup,
+  CardBasic,
+  CardClickable,
+  CardImage,
+  CardFeature,
+  CardGroup,
   ...CARE_CARD_STRINGS,
   ContentsList,
   Details,
-  DoDont, DoDontSlots,
+  DoDont,
+  DoDontSlots,
   ErrorSummary,
   Body,
   List,
@@ -98,30 +104,65 @@ const EXAMPLE_STRINGS: ExampleStrings = {
   HintText,
   InsetText,
   Heading,
-  Label, LabelBold, LabelHeading,
-  Expander, ExpanderGroup,
-  Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
+  Label,
+  LabelBold,
+  LabelHeading,
+  Expander,
+  ExpanderGroup,
+  Fieldset,
+  FieldsetHeading,
+  FieldsetInput,
+  FieldsetSlots,
   Footer,
   Grid,
   ...HEADER_STRINGS,
-  Hero, HeroImage, HeroImageText,
+  Hero,
+  HeroImage,
+  HeroImageText,
   Image,
   ListPanel,
   NavAZ,
   Pagination,
   ReviewDate,
   SkipLink,
-  SummaryList, SummaryListNoAction, SummaryListNoBorder,
+  SummaryList,
+  SummaryListNoAction,
+  SummaryListNoBorder,
   Tag,
-  WarningCallout, WarningCalloutNonImportant,
-  Table, TablePanel, TableResponsive,
-  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
+  WarningCallout,
+  WarningCalloutNonImportant,
+  Table,
+  TablePanel,
+  TableResponsive,
+  Input,
+  InputAutocomplete,
+  InputHint,
+  InputError,
+  InputWidth,
+  InputSlots,
   Form,
-  Select, SelectError, SelectSlots,
-  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
-  DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
+  Select,
+  SelectError,
+  SelectSlots,
+  Textarea,
+  TextareaAutocomplete,
+  TextareaError,
+  TextareaSlots,
+  DateInput,
+  DateInputAutocomplete,
+  DateInputError,
+  DateInputErrorMulti,
+  DateInputSlots,
   ...CHECKBOXES_STRINGS,
-  Radio, RadioInline, RadioDisabled, RadioDivider, RadioHint, RadioNoHeading, RadioError, RadioConditional, RadioSlots
+  Radio,
+  RadioInline,
+  RadioDisabled,
+  RadioDivider,
+  RadioHint,
+  RadioNoHeading,
+  RadioError,
+  RadioConditional,
+  RadioSlots
 }
 
 const TEMPLATE_REGEX = new RegExp('(?:\\<template\\>\\n)([^]+)(?:\\<\\/template\\>)', 'i')
@@ -137,9 +178,12 @@ function getMatchedString(rawString: string, regex: RegExp): string {
 
 function parseTemplateCode(rawString: string): string {
   const rawTemplateCode = getMatchedString(rawString, TEMPLATE_REGEX)
-  return rawTemplateCode.split('\n').map((row) => {
-    return row.replace(/^ {2}/, '')
-  }).join('\n')
+  return rawTemplateCode
+    .split('\n')
+    .map((row) => {
+      return row.replace(/^ {2}/, '')
+    })
+    .join('\n')
 }
 
 function getExampleCode(name: string) {
@@ -151,4 +195,4 @@ function getExampleCode(name: string) {
   }
 }
 
-export {getExampleCode}
+export { getExampleCode }

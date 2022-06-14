@@ -1,3 +1,3 @@
 type NhsBodySize = 's'
 
-export {NhsBodySize}
+export { NhsBodySize }

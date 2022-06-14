@@ -8,4 +8,4 @@ interface NhsCheckboxesItemConfig {
   divider?: string
 }
 
-export {NhsCheckboxesItemConfig}
+export { NhsCheckboxesItemConfig }

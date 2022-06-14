@@ -8,4 +8,4 @@ const actionLinkExampleRoutes = [
   }
 ]
 
-export {actionLinkExampleRoutes}
+export { actionLinkExampleRoutes }

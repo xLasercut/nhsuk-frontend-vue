@@ -5,27 +5,19 @@
     v-model:search-text="searchText"
     @submit-search="onSubmitSearch"
   >
-    <nhs-header-item href="https://www.nhs.uk/conditions">
-      Health A-Z
-    </nhs-header-item>
-    <nhs-header-item href="https://www.nhs.uk/live-well/">
-      Live Well
-    </nhs-header-item>
+    <nhs-header-item href="https://www.nhs.uk/conditions"> Health A-Z </nhs-header-item>
+    <nhs-header-item href="https://www.nhs.uk/live-well/"> Live Well </nhs-header-item>
     <nhs-header-item href="https://www.nhs.uk/conditions/social-care-and-support/">
       Care and support
     </nhs-header-item>
-    <nhs-header-item href="https://www.nhs.uk/news/">
-      Health news
-    </nhs-header-item>
-    <nhs-header-item href="https://www.nhs.uk/service-search">
-      Services near you
-    </nhs-header-item>
+    <nhs-header-item href="https://www.nhs.uk/news/"> Health news </nhs-header-item>
+    <nhs-header-item href="https://www.nhs.uk/service-search"> Services near you </nhs-header-item>
   </nhs-header>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
-import {NhsHeaderSearchResult} from '../../../../../package/dist/header/interfaces'
+import { defineComponent, reactive, toRefs } from 'vue'
+import { NhsHeaderSearchResult } from '../../../../../package/dist/header/interfaces'
 
 export default defineComponent({
   setup() {
@@ -57,7 +49,7 @@ export default defineComponent({
       alert(event)
     }
 
-    return {...toRefs(state), searchResults, onSubmitSearch}
+    return { ...toRefs(state), searchResults, onSubmitSearch }
   }
 })
 </script>

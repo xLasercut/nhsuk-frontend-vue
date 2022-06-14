@@ -3,18 +3,19 @@
     <nhs-input-group
       label="What is your date of birth?"
       hint="For example, 31 3 1980"
-      :items="items" v-model="model" ref="input"
+      :items="items"
+      v-model="model"
     >
-      <template #hint="{hint}">
-        <a>{{hint}}</a>
+      <template #hint="{ hint }">
+        <a>{{ hint }}</a>
       </template>
 
-      <template #error="{error}">
-        {{error}}
+      <template #error="{ error }">
+        {{ error }}
       </template>
 
-      <template #item-label="{item}">
-        {{item}}
+      <template #item-label="{ item }">
+        {{ item }}
       </template>
     </nhs-input-group>
     <nhs-row>
@@ -25,15 +26,15 @@
         <nhs-button type="reset">Reset</nhs-button>
       </nhs-col>
       <nhs-col :span="33">
-        <p>form valid: {{valid}}</p>
-        <p>model value: {{model}}</p>
+        <p>form valid: {{ valid }}</p>
+        <p>model value: {{ model }}</p>
       </nhs-col>
     </nhs-row>
   </nhs-form>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -43,9 +44,7 @@ export default defineComponent({
           label: 'Day',
           width: '2',
           type: 'number',
-          rules: [
-            (v: string) => !!v || 'Error message goes here'
-          ]
+          rules: [(v: string) => !!v || 'Error message goes here']
         },
         {
           label: 'Month',
@@ -72,7 +71,7 @@ export default defineComponent({
       state.model = {}
     }
 
-    return {...toRefs(state), onReset, onSubmit}
+    return { ...toRefs(state), onReset, onSubmit }
   }
 })
 </script>

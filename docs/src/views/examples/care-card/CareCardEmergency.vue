@@ -5,6 +5,9 @@
       <li>makes your chest feel tight or heavy</li>
       <li>also started with shortness of breath, sweating and feeling or being sick</li>
     </ul>
-    <p>You could be having a heart attack. Call 999 immediately as you need immediate treatment in hospital.</p>
+    <p>
+      You could be having a heart attack. Call 999 immediately as you need immediate treatment in
+      hospital.
+    </p>
   </nhs-care-card>
 </template>

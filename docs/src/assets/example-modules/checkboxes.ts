@@ -1,4 +1,4 @@
-import {ExampleModules} from '../interfaces'
+import { ExampleModules } from '../interfaces'
 import Checkbox from '../../views/examples/checkbox/Checkbox.vue'
 import CheckboxHint from '../../views/examples/checkbox/CheckboxHint.vue'
 import CheckboxDisabled from '../../views/examples/checkbox/CheckboxDisabled.vue'
@@ -19,4 +19,4 @@ const CHECKBOXES_MODULES: ExampleModules = {
   CheckboxNonOfAbove
 }
 
-export {CHECKBOXES_MODULES}
+export { CHECKBOXES_MODULES }

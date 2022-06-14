@@ -3,16 +3,22 @@
     <span class="nhsuk-contents-list__current" v-if="!href" v-bind="$attrs">
       <slot></slot>
     </span>
-    <nhs-link-switcher class="nhsuk-contents-list__link" @click="$emit('click')" v-if="href" :href="href" v-bind="$attrs">
+    <nhs-link-switcher
+      class="nhsuk-contents-list__link"
+      @click="$emit('click')"
+      v-if="href"
+      :href="href"
+      v-bind="$attrs"
+    >
       <slot></slot>
     </nhs-link-switcher>
   </li>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
-import {NhsLinkSwitcher} from '../shared/link-switcher'
-import {NhsContentsItemAttribute} from './interfaces'
+import { computed, defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../shared/link-switcher'
+import { NhsContentsItemAttribute } from './interfaces'
 
 export default defineComponent({
   name: 'nhs-contents-item',
@@ -39,7 +45,7 @@ export default defineComponent({
       return attributes
     })
 
-    return {attributes}
+    return { attributes }
   }
 })
 </script>

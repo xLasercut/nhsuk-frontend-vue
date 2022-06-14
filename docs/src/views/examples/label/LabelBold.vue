@@ -1,5 +1,3 @@
 <template>
-  <nhs-label size="s">
-    National Insurance number
-  </nhs-label>
+  <nhs-label size="s"> National Insurance number </nhs-label>
 </template>

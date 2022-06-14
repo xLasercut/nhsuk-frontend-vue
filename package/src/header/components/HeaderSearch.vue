@@ -12,7 +12,13 @@
       <span class="nhsuk-u-visually-hidden">Search</span>
     </button>
     <div :class="searchWrapClasses" id="wrap-search">
-      <form class="nhsuk-header__search-form" id="search" :action="searchAction" method="get" role="search">
+      <form
+        class="nhsuk-header__search-form"
+        id="search"
+        :action="searchAction"
+        method="get"
+        role="search"
+      >
         <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS website</label>
         <input
           class="nhsuk-search__input"
@@ -31,7 +37,7 @@
           @keydown.enter.prevent="submitSearch()"
           v-model="searchTextInternal"
           @focus="searchOpen = true"
-        >
+        />
         <ul :class="searchMenuClasses" id="search-results" role="listbox">
           <li
             v-for="(item, index) in searchResults"
@@ -64,9 +70,19 @@
 
 <script lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue'
-import {computed, defineComponent, inject, onMounted, onUnmounted, PropType, reactive, toRefs, watch} from 'vue'
-import {NhsHeaderSearchResult} from '../interfaces'
-import {NHS_HEADER_INJECTS} from '../constants'
+import {
+  computed,
+  defineComponent,
+  inject,
+  onMounted,
+  onUnmounted,
+  PropType,
+  reactive,
+  toRefs,
+  watch
+} from 'vue'
+import { NhsHeaderSearchResult } from '../interfaces'
+import { NHS_HEADER_INJECTS } from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -102,11 +118,14 @@ export default defineComponent({
       searchTextInternal: props.searchText
     })
 
-    watch(() => state.searchTextInternal, (val: string): void => {
-      state.searchOpen = true
-      state.currentResultCount = -1
-      context.emit('update:search-text', val)
-    })
+    watch(
+      () => state.searchTextInternal,
+      (val: string): void => {
+        state.searchOpen = true
+        state.currentResultCount = -1
+        context.emit('update:search-text', val)
+      }
+    )
 
     const toggleSearchButtonClasses = computed((): string => {
       const classes = ['nhsuk-header__search-toggle']
@@ -133,8 +152,7 @@ export default defineComponent({
 
       if (props.searchResults.length > 0 && state.searchOpen) {
         classes.push('autocomplete__menu--visible')
-      }
-      else {
+      } else {
         classes.push('autocomplete__menu--hidden')
       }
 
@@ -179,7 +197,6 @@ export default defineComponent({
       state.currentResultCount = -1
     }
 
-
     function onClickOutside(event: any): void {
       if (
         event.target.id !== 'search-field' &&
@@ -197,11 +214,9 @@ export default defineComponent({
     function submitSearch(index: number | undefined = undefined): void {
       if (index || index === 0) {
         context.emit('submit-search', props.searchResults[index])
-      }
-      else if (state.currentResultCount > -1) {
+      } else if (state.currentResultCount > -1) {
         context.emit('submit-search', props.searchResults[state.currentResultCount])
-      }
-      else {
+      } else {
         context.emit('submit-search', state.searchTextInternal)
       }
       state.searchOpen = false
@@ -241,26 +256,26 @@ export default defineComponent({
 }
 
 .autocomplete__menu {
-  -moz-box-shadow:0 3px 5px rgba(66,84,98,.5);
-  -webkit-box-shadow:0 3px 5px rgba(66,84,98,.5);
-  background-color:#fff;
-  border-bottom:1px solid #d8dde0;
-  border-bottom-left-radius:4px;
-  border-bottom-right-radius:4px;
-  border-left:1px solid #d8dde0;
-  border-right:1px solid #d8dde0;
-  box-shadow:0 0 3px 0 rgba(66,84,98,.5);
-  list-style:none;
-  margin-top:2px;
-  overflow-x:hidden;
-  overflow-y:auto;
-  padding:16px;
-  position:absolute;
-  top:100%;
-  width:100%;
-  z-index:1
+  -moz-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  -webkit-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  background-color: #fff;
+  border-bottom: 1px solid #d8dde0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 1px solid #d8dde0;
+  border-right: 1px solid #d8dde0;
+  box-shadow: 0 0 3px 0 rgba(66, 84, 98, 0.5);
+  list-style: none;
+  margin-top: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
 }
-@media (max-width:40.0525em) {
+@media (max-width: 40.0525em) {
   .autocomplete__menu {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -273,64 +288,64 @@ export default defineComponent({
   }
 }
 .autocomplete__menu--visible {
-  display:block
+  display: block;
 }
 .autocomplete__menu--hidden {
-  display:none
+  display: none;
 }
 
 .autocomplete__option {
-  border-bottom:1px solid #f0f4f5;
-  color:#005eb8;
-  cursor:pointer;
-  font-size:16px;
-  padding-bottom:12px;
-  text-align:left;
-  text-decoration:underline
+  border-bottom: 1px solid #f0f4f5;
+  color: #005eb8;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 12px;
+  text-align: left;
+  text-decoration: underline;
 }
 
 .autocomplete__option .nhsuk-icon__search {
-  fill:#aeb7bd;
-  float:left;
-  height:22px;
-  margin:2px 4px 0 0;
-  width:22px
+  fill: #aeb7bd;
+  float: left;
+  height: 22px;
+  margin: 2px 4px 0 0;
+  width: 22px;
 }
 
 .autocomplete__option--focused,
 .autocomplete__option:active,
 .autocomplete__option:hover {
-  text-decoration:none
+  text-decoration: none;
 }
 .autocomplete__option:focus {
-  outline:1px solid transparent;
-  text-decoration:none
+  outline: 1px solid transparent;
+  text-decoration: none;
 }
 .autocomplete__option:focus a {
-  background-color:#ffeb3b;
-  box-shadow:0 -2px #ffeb3b,0 4px #212b32;
-  color:#212b32;
-  outline:4px solid transparent;
-  text-decoration:none
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
 }
-@media (min-width:40.0625em) {
+@media (min-width: 40.0625em) {
   .autocomplete__option:last-child {
-    border-bottom:0
+    border-bottom: 0;
   }
 }
 .autocomplete__option--no-results {
-  border-bottom:0;
-  color:#212b32;
-  font-size:16px;
-  line-height:24px;
-  margin:0;
-  padding:0;
-  text-align:left;
-  text-decoration:none
+  border-bottom: 0;
+  color: #212b32;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
 }
-@media (max-width:40.0525em) {
+@media (max-width: 40.0525em) {
   .autocomplete__option--no-results {
-    padding:16px 0
+    padding: 16px 0;
   }
 }
 </style>

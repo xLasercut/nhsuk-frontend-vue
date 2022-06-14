@@ -1,20 +1,30 @@
 <template>
   <div :class="classes" v-bind="$attrs">
-    <header-logo-org :organisation="organisation" v-if="isOrgLogo" :home-href="homeHref"></header-logo-org>
-    <header-logo-normal :aria-label="ariaLabel" :home-href="homeHref" :service="service" v-if="!isOrgLogo" :show-transactional="showTransactional"></header-logo-normal>
+    <header-logo-org
+      :organisation="organisation"
+      v-if="isOrgLogo"
+      :home-href="homeHref"
+    ></header-logo-org>
+    <header-logo-normal
+      :aria-label="ariaLabel"
+      :home-href="homeHref"
+      :service="service"
+      v-if="!isOrgLogo"
+      :show-transactional="showTransactional"
+    ></header-logo-normal>
   </div>
 </template>
 
 <script lang="ts">
 import HeaderLogoNormal from './logo/HeaderLogoNormal.vue'
 import HeaderLogoOrg from './logo/HeaderLogoOrg.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeaderOrganisation, NhsHeaderService} from '../interfaces'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeaderOrganisation, NhsHeaderService } from '../interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
   emits: [],
-  components: {HeaderLogoNormal, HeaderLogoOrg},
+  components: { HeaderLogoNormal, HeaderLogoOrg },
   props: {
     ariaLabel: {
       type: String,
@@ -60,7 +70,7 @@ export default defineComponent({
       return Object.keys(props.organisation).length > 0
     })
 
-    return {classes, isOrgLogo}
+    return { classes, isOrgLogo }
   }
 })
 </script>

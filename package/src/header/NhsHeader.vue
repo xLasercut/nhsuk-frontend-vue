@@ -2,9 +2,13 @@
   <header :class="classes" role="banner" v-bind="$attrs">
     <div class="nhsuk-width-container nhsuk-header__container">
       <header-logo
-        :home-href="homeHref" :service="service" :organisation="organisation"
-        :aria-label="ariaLabel" :show-transactional="showTransactional()"
-        :showNav="showNav" :showSearch="showSearch"
+        :home-href="homeHref"
+        :service="service"
+        :organisation="organisation"
+        :aria-label="ariaLabel"
+        :show-transactional="showTransactional()"
+        :showNav="showNav"
+        :showSearch="showSearch"
       ></header-logo>
       <header-transactional v-if="showTransactional()" :service="service"></header-transactional>
 
@@ -27,11 +31,7 @@
       </div>
     </div>
 
-    <header-nav
-      :nav-open="navOpen"
-      v-if="showNav"
-      :home-href="homeHref"
-      :home-text="homeText">
+    <header-nav :nav-open="navOpen" v-if="showNav" :home-href="homeHref" :home-text="homeText">
       <slot></slot>
     </header-nav>
   </header>
@@ -43,9 +43,9 @@ import HeaderNav from './components/HeaderNav.vue'
 import HeaderSearch from './components/HeaderSearch.vue'
 import HeaderTransactional from './components/HeaderTransactional.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
-import {computed, defineComponent, PropType, provide, reactive, toRefs} from 'vue'
-import {NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult} from './interfaces'
-import {NHS_HEADER_INJECTS} from './constants'
+import { computed, defineComponent, PropType, provide, reactive, toRefs } from 'vue'
+import { NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult } from './interfaces'
+import { NHS_HEADER_INJECTS } from './constants'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -131,7 +131,7 @@ export default defineComponent({
       }
     }
   },
-  components: {HeaderNav, HeaderSearch, HeaderLogo, HeaderTransactional, HeaderMenu},
+  components: { HeaderNav, HeaderSearch, HeaderLogo, HeaderTransactional, HeaderMenu },
   setup(props) {
     const state = reactive({
       navOpen: false,
@@ -184,7 +184,7 @@ export default defineComponent({
       return classes.join(' ')
     })
 
-    return {classes, showTransactional, ...toRefs(state), headerContentClasses}
+    return { classes, showTransactional, ...toRefs(state), headerContentClasses }
   }
 })
 </script>

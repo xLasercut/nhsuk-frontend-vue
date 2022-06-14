@@ -1,5 +1,3 @@
 import NhsReviewDate from './NhsReviewDate.vue'
 
-export {
-  NhsReviewDate
-}
+export { NhsReviewDate }

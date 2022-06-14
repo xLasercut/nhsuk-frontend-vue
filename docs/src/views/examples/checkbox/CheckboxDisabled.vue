@@ -1,11 +1,9 @@
 <template>
-  <nhs-checkboxes
-    :items="items" v-model="model"
-  ></nhs-checkboxes>
+  <nhs-checkboxes :items="items" v-model="model"></nhs-checkboxes>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -28,7 +26,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

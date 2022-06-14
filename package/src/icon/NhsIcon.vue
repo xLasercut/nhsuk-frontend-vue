@@ -1,11 +1,11 @@
 <template>
-  <component :is="icon" v-bind="$attrs"/>
+  <component :is="icon" v-bind="$attrs" />
 </template>
 
 <script lang="ts">
 import icons from './icons/icons'
-import {defineComponent, PropType} from 'vue'
-import {NhsIconType} from './types'
+import { defineComponent, PropType } from 'vue'
+import { NhsIconType } from './types'
 
 export default defineComponent({
   name: 'nhs-icon',

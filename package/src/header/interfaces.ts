@@ -15,8 +15,4 @@ interface NhsHeaderService {
   href?: string
 }
 
-export {
-  NhsHeaderOrganisation,
-  NhsHeaderService,
-  NhsHeaderSearchResult
-}
+export { NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult }

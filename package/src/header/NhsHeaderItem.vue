@@ -1,6 +1,11 @@
 <template>
   <li class="nhsuk-header__navigation-item">
-    <nhs-link-switcher @click="$emit('click')" class="nhsuk-header__navigation-link" :href="href" v-bind="$attrs">
+    <nhs-link-switcher
+      @click="$emit('click')"
+      class="nhsuk-header__navigation-link"
+      :href="href"
+      v-bind="$attrs"
+    >
       <slot></slot>
       <nhs-icon icon="chevron-right"></nhs-icon>
     </nhs-link-switcher>
@@ -8,9 +13,9 @@
 </template>
 
 <script lang="ts">
-import {NhsLinkSwitcher} from '../shared/link-switcher'
+import { NhsLinkSwitcher } from '../shared/link-switcher'
 import NhsIcon from '../icon/NhsIcon.vue'
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,

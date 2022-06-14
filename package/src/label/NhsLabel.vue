@@ -7,10 +7,10 @@
 <script lang="ts">
 import NhsLabelHeading from './types/NhsLabelHeading.vue'
 import NhsLabelNormal from './types/NhsLabelNormal.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsLabelSize} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsLabelSize } from './types'
 
-const NHS_LABEL_SIZES: Array<NhsLabelSize> = [ 'xl', 's' ]
+const NHS_LABEL_SIZES: Array<NhsLabelSize> = ['xl', 's']
 
 export default defineComponent({
   inheritAttrs: false,
@@ -41,7 +41,7 @@ export default defineComponent({
       return NhsLabelNormal
     })
 
-    return {labelType}
+    return { labelType }
   }
 })
 </script>

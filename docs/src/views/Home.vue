@@ -23,8 +23,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, reactive, toRefs} from 'vue'
-import {setPageColor} from '../assets/helpers'
+import { defineComponent, onMounted, reactive, toRefs } from 'vue'
+import { setPageColor } from '../assets/helpers'
 
 export default defineComponent({
   setup() {
@@ -37,7 +37,7 @@ export default defineComponent({
       setPageColor()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

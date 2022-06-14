@@ -8,7 +8,9 @@
       {{ item.text }}
     </nhs-breadcrumb-item>
     <template #backlink>
-      <nhs-breadcrumb-backlink :href="breadcrumbBackItem().href">{{ breadcrumbBackItem().text }}</nhs-breadcrumb-backlink>
+      <nhs-breadcrumb-backlink :href="breadcrumbBackItem().href">
+        {{ breadcrumbBackItem().text }}
+      </nhs-breadcrumb-backlink>
     </template>
   </nhs-breadcrumb>
   <nhs-main>
@@ -17,13 +19,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import router from '../router'
-import {setPageColor} from '../assets/helpers'
+import { setPageColor } from '../assets/helpers'
 
 export default defineComponent({
   setup(_props) {
-
     function breadcrumbBackItem() {
       const routeSplit = router.currentRoute.value.fullPath.split('/')
       if (routeSplit.length === 2) {
@@ -40,7 +41,7 @@ export default defineComponent({
     }
 
     function breadcrumbItems() {
-      const items: Array<{href?: string, text: string | symbol}> = [
+      const items: Array<{ href?: string; text: string | symbol }> = [
         {
           href: '/',
           text: 'Home'
@@ -72,8 +73,7 @@ export default defineComponent({
       setPageColor()
     })
 
-
-    return {breadcrumbItems, breadcrumbBackItem}
+    return { breadcrumbItems, breadcrumbBackItem }
   }
 })
 </script>

@@ -1,3 +1,3 @@
 import NhsInput from './NhsInput.vue'
 
-export {NhsInput}
+export { NhsInput }

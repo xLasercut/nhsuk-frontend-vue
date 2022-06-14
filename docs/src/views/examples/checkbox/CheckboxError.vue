@@ -1,12 +1,15 @@
 <template>
   <nhs-checkboxes
-    :items="items" v-model="model" :rules="rules" heading-size="m"
+    :items="items"
+    v-model="model"
+    :rules="rules"
+    heading-size="m"
     label="Which types of waste do you transport regularly?"
   ></nhs-checkboxes>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -26,9 +29,7 @@ export default defineComponent({
           value: 'farm'
         }
       ],
-      rules: [
-        (v: Array<string>) => v.length > 0 || 'Please select an option'
-      ]
+      rules: [(v: Array<string>) => v.length > 0 || 'Please select an option']
     })
 
     let _itemId: string
@@ -45,7 +46,7 @@ export default defineComponent({
       _validator()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

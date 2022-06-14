@@ -1,19 +1,19 @@
 <template>
   <nhs-dodont title="Do" type="tick" :items="doItems">
-    <template #item="{item}">
-      <a>{{item}}</a>
+    <template #item="{ item }">
+      <a>{{ item }}</a>
     </template>
   </nhs-dodont>
 
   <nhs-dodont title="Don't" type="cross" :items="dontItems">
-    <template #item="{item}">
-      <a>{{item}}</a>
+    <template #item="{ item }">
+      <a>{{ item }}</a>
     </template>
   </nhs-dodont>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -31,7 +31,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

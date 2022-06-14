@@ -1,5 +1,3 @@
 import NhsPagination from './NhsPagination.vue'
 
-export {
-  NhsPagination
-}
+export { NhsPagination }

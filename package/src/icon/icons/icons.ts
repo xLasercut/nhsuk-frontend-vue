@@ -13,8 +13,19 @@ import Search from './search.vue'
 import Tick from './tick.vue'
 
 const components = {
-  ArrowLeft, ArrowRightCircle, ArrowRight, ChevronLeft, ChevronRight,
-  Close, Cross, EmdashSmall, Emdash, Minus, Plus, Search, Tick
+  ArrowLeft,
+  ArrowRightCircle,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Close,
+  Cross,
+  EmdashSmall,
+  Emdash,
+  Minus,
+  Plus,
+  Search,
+  Tick
 }
 
 export default components

@@ -7,10 +7,10 @@
       :size="headingSize"
     >
       <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
-        <slot name="hint" :hint="hint">{{hint}}</slot>
+        <slot name="hint" :hint="hint">{{ hint }}</slot>
       </nhs-hint-text>
       <nhs-error-text v-if="error" :id="errorId(id)">
-        <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
+        <slot name="error" :error="errorMsg">{{ errorMsg }}</slot>
       </nhs-error-text>
       <div class="nhsuk-checkboxes">
         <component
@@ -20,8 +20,11 @@
           :hint="item.hint"
           :disabled="item.disabled || disabled"
           :conditional="item.conditional"
-          :id="`${id}-${index + 1}`" :name="item.name" :checkbox-value="item.value"
-          v-model="internalModel" :key="`${id}-${index}`"
+          :id="`${id}-${index + 1}`"
+          :name="item.name"
+          :checkbox-value="item.value"
+          v-model="internalModel"
+          :key="`${id}-${index}`"
           @blur="onBlur"
           @change="onChange"
           @focus="$emit('focus', $event)"
@@ -43,17 +46,17 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue'
+import { defineComponent, PropType } from 'vue'
 import NhsCheckbox from './component/NhsCheckbox.vue'
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import {getInternalModel} from '../shared/form/v-model'
-import {randomString} from '../shared/helpers/random-string'
-import {NhsFieldsetSize} from '../fieldset/types'
-import {handleItemRegistry} from '../shared/form/form-item-registry'
-import {getFormEvents} from '../shared/form/event-helper'
-import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
-import {NhsCheckboxesItemConfig} from './interfaces'
-import {NhsFormItemValidateOn} from '../shared/form/types'
+import { getInternalModel } from '../shared/form/v-model'
+import { randomString } from '../shared/helpers/random-string'
+import { NhsFieldsetSize } from '../fieldset/types'
+import { handleItemRegistry } from '../shared/form/form-item-registry'
+import { getFormEvents } from '../shared/form/event-helper'
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
+import { NhsCheckboxesItemConfig } from './interfaces'
+import { NhsFormItemValidateOn } from '../shared/form/types'
 import NhsFieldset from '../fieldset/NhsFieldset.vue'
 import NhsErrorText from '../error-text/NhsErrorText.vue'
 import NhsHintText from '../hint-text/NhsHintText.vue'
@@ -126,10 +129,10 @@ export default defineComponent({
     }
 
     const internalModel = getInternalModel(props, context)
-    const {error, errorMsg, validator} = handleItemRegistry(props, internalModel)
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
 
     const ariaDescribedby = getAriaDescribedBy(props, error)
-    const {onBlur, onChange} = getFormEvents(props, validator, context)
+    const { onBlur, onChange } = getFormEvents(props, validator, context)
 
     return {
       internalModel,
