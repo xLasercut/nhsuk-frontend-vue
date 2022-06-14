@@ -1,13 +1,13 @@
 <template>
   <nhs-nav-az>
     <nhs-nav-az-item v-for="item in items" :key="`nav-${item.label}`" :disabled="item.disabled">
-      {{item.label}}
+      {{ item.label }}
     </nhs-nav-az-item>
   </nhs-nav-az>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -95,7 +95,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

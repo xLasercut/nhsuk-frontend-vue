@@ -2,7 +2,7 @@
   <div class="nhsuk-warning-callout" v-bind="$attrs">
     <nhs-heading-switcher class="nhsuk-warning-callout__label" :heading-level="headingLevel">
       <slot name="heading" :props="heading">
-        {{showNormalHeading()}}
+        {{ showNormalHeading() }}
         <span role="text" v-if="!isHeadingContainsImportant()">
           <span class="nhsuk-u-visually-hidden">Important: </span>
           {{ heading }}
@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {defineComponent, PropType} from 'vue'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { defineComponent, PropType } from 'vue'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -47,7 +47,7 @@ export default defineComponent({
       return ''
     }
 
-    return {isHeadingContainsImportant, showNormalHeading}
+    return { isHeadingContainsImportant, showNormalHeading }
   }
 })
 </script>

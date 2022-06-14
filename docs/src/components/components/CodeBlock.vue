@@ -13,10 +13,8 @@
         </code-block-tab>
       </div>
       <div class="code_container" :style="codeContainerStyle">
-        <highlightjs language="xml" :code="template" v-if="showTemplate">
-        </highlightjs>
-        <highlightjs language="typescript" :code="script" v-if="showScript">
-        </highlightjs>
+        <highlightjs language="xml" :code="template" v-if="showTemplate"> </highlightjs>
+        <highlightjs language="typescript" :code="script" v-if="showScript"> </highlightjs>
       </div>
     </nhs-col>
   </nhs-row>
@@ -24,10 +22,9 @@
 
 <script lang="ts">
 import CodeBlockTab from './code-block/CodeBlockTab.vue'
-import {computed, defineComponent, reactive, toRefs, watch} from 'vue'
-import {getExampleCode} from '../../assets/example-strings'
-import {getExampleModule} from '../../assets/example-modules'
-
+import { computed, defineComponent, reactive, toRefs, watch } from 'vue'
+import { getExampleCode } from '../../assets/example-strings'
+import { getExampleModule } from '../../assets/example-modules'
 
 export default defineComponent({
   components: { CodeBlockTab },
@@ -38,7 +35,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const {templateCode, scriptCode} = getExampleCode(props.name)
+    const { templateCode, scriptCode } = getExampleCode(props.name)
 
     const state = reactive({
       template: templateCode,
@@ -50,7 +47,7 @@ export default defineComponent({
     const codeContainerStyle = computed(() => {
       if (!state.showTemplate && !state.showScript) {
         return {
-          'display': 'none',
+          display: 'none',
           'margin-bottom': '0px'
         }
       }
@@ -67,54 +64,60 @@ export default defineComponent({
       return {}
     })
 
-    watch(() => state.showTemplate, (val) => {
-      if (val && state.showScript) {
-        state.showScript = false
+    watch(
+      () => state.showTemplate,
+      (val) => {
+        if (val && state.showScript) {
+          state.showScript = false
+        }
       }
-    })
+    )
 
-    watch(() => state.showScript, (val) => {
-      if (val && state.showTemplate) {
-        state.showTemplate = false
+    watch(
+      () => state.showScript,
+      (val) => {
+        if (val && state.showTemplate) {
+          state.showTemplate = false
+        }
       }
-    })
+    )
 
-    return {getExampleModule, ...toRefs(state), codeContainerStyle, expandContainerStyle}
+    return { getExampleModule, ...toRefs(state), codeContainerStyle, expandContainerStyle }
   }
 })
 </script>
 
 <style scoped>
-  .example_container {
-    width: 100%;
-    background: #f0f4f5;
-    border: 1px solid #d8dde0;
-    border-bottom: none;
-    margin: 0;
-    padding: 20px;
-  }
+.example_container {
+  width: 100%;
+  background: #f0f4f5;
+  border: 1px solid #d8dde0;
+  border-bottom: none;
+  margin: 0;
+  padding: 20px;
+}
 
-  .code_container {
-    border: 1px solid #d8dde0;
-    background: #f0f4f5;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 40px;
-  }
+.code_container {
+  border: 1px solid #d8dde0;
+  background: #f0f4f5;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+}
 
-  .expand_container {
-    width: 100%;
-    border-left: 1px solid #d8dde0;
-    border-right: 1px solid #d8dde0;
-    border-top: 1px solid #d8dde0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
+.expand_container {
+  width: 100%;
+  border-left: 1px solid #d8dde0;
+  border-right: 1px solid #d8dde0;
+  border-top: 1px solid #d8dde0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
-  pre {
-    padding: 0;
-    margin: 0;
-  }
+pre {
+  padding: 0;
+  margin: 0;
+}
 </style>

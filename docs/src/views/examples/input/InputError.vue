@@ -9,14 +9,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
     const state = reactive({
-      rules: [
-        (v: string) => !!v || 'Error message goes here'
-      ],
+      rules: [(v: string) => !!v || 'Error message goes here'],
       model: ''
     })
 
@@ -34,7 +32,7 @@ export default defineComponent({
       _validator()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

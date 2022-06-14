@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, provide, reactive, watch} from 'vue'
-import {NhsFormSate} from './interfaces'
-import {NHS_FORM_INJECTS} from '../shared/form/constants'
+import { defineComponent, provide, reactive, watch } from 'vue'
+import { NhsFormSate } from './interfaces'
+import { NHS_FORM_INJECTS } from '../shared/form/constants'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -80,11 +80,14 @@ export default defineComponent({
       context.emit('reset')
     }
 
-    watch(() => isFormValid(), (val) => {
-      updateValid(val)
-    })
+    watch(
+      () => isFormValid(),
+      (val) => {
+        updateValid(val)
+      }
+    )
 
-    return {onSubmit, onReset}
+    return { onSubmit, onReset }
   }
 })
 </script>

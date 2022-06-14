@@ -1,9 +1,9 @@
 <template>
-  <div class="nhsuk-checkboxes__divider">{{divider}}</div>
+  <div class="nhsuk-checkboxes__divider">{{ divider }}</div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,

@@ -3,10 +3,9 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import router from '../router'
 import ExampleDisplay from './examples/ExampleDisplay.vue'
-
 
 export default defineComponent({
   setup() {
@@ -18,7 +17,7 @@ export default defineComponent({
       return ExampleDisplay
     }
 
-    return {component}
+    return { component }
   }
 })
 </script>

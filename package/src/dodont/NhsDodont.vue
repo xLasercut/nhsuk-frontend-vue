@@ -1,10 +1,12 @@
 <template>
   <div class="nhsuk-do-dont-list" v-bind="$attrs">
-    <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-do-dont-list__label">{{title}}</nhs-heading-switcher>
+    <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-do-dont-list__label">{{
+      title
+    }}</nhs-heading-switcher>
     <ul :class="`nhsuk-list nhsuk-list--${type}`">
       <li v-for="(item, index) in items" :key="index">
         <nhs-icon :icon="type"></nhs-icon>
-        <slot name="item" :item="item">{{item}}</slot>
+        <slot name="item" :item="item">{{ item }}</slot>
       </li>
     </ul>
   </div>
@@ -12,10 +14,10 @@
 
 <script lang="ts">
 import NhsIcon from '../icon/NhsIcon.vue'
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {defineComponent, PropType} from 'vue'
-import {NhsDodontType} from './types'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { defineComponent, PropType } from 'vue'
+import { NhsDodontType } from './types'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
 
 const DO_DONT_TYPES: Array<NhsDodontType> = ['tick', 'cross']
 
@@ -23,7 +25,7 @@ export default defineComponent({
   name: 'nhs-dodont',
   inheritAttrs: false,
   emits: [],
-  components: {NhsIcon, NhsHeadingSwitcher},
+  components: { NhsIcon, NhsHeadingSwitcher },
   props: {
     title: {
       type: String,

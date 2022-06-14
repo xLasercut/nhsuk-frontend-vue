@@ -1,17 +1,21 @@
 <template>
   <nhs-table :headers="headers" :data="data">
-    <template #item.type="{item}">
-      {{itemType(item.value.type)}}
-      <highlightjs language="typescript" :code="itemTypeObject(item.value.type)" v-if="showCodeBlock(item.value.type)">
+    <template #item.type="{ item }">
+      {{ itemType(item.value.type) }}
+      <highlightjs
+        language="typescript"
+        :code="itemTypeObject(item.value.type)"
+        v-if="showCodeBlock(item.value.type)"
+      >
       </highlightjs>
     </template>
-    <template #item.required="{item}">{{isRequired(item.required)}}</template>
-    <template #item.default="{item}">{{item.default || '-'}}</template>
+    <template #item.required="{ item }">{{ isRequired(item.required) }}</template>
+    <template #item.default="{ item }">{{ item.default || '-' }}</template>
   </nhs-table>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   props: {
@@ -77,7 +81,7 @@ export default defineComponent({
       return 'no'
     }
 
-    return {...toRefs(state), isRequired, itemTypeObject, itemType, showCodeBlock}
+    return { ...toRefs(state), isRequired, itemTypeObject, itemType, showCodeBlock }
   }
 })
 </script>

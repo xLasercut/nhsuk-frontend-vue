@@ -3,18 +3,19 @@
     <nhs-textarea
       label="Why can't you provide a National Insurance number?"
       hint="Hint text"
-      :rules="rules" v-model="model"
+      :rules="rules"
+      v-model="model"
     >
-      <template #label="{label}">
-        <h1>{{label}}</h1>
+      <template #label="{ label }">
+        <h1>{{ label }}</h1>
       </template>
 
-      <template #hint="{hint}">
-        <h2>{{hint}}</h2>
+      <template #hint="{ hint }">
+        <h2>{{ hint }}</h2>
       </template>
 
-      <template #error="{error}">
-        <h3>{{error}}</h3>
+      <template #error="{ error }">
+        <h3>{{ error }}</h3>
       </template>
     </nhs-textarea>
     <nhs-row>
@@ -29,15 +30,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
     const state = reactive({
       model: '',
-      rules: [
-        (v: string) => !!v || 'You must provide an explanation'
-      ],
+      rules: [(v: string) => !!v || 'You must provide an explanation'],
       valid: false
     })
 
@@ -51,7 +50,7 @@ export default defineComponent({
       state.model = ''
     }
 
-    return {...toRefs(state), onSubmit, onReset}
+    return { ...toRefs(state), onSubmit, onReset }
   }
 })
 </script>

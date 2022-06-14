@@ -1,6 +1,6 @@
 import Button from '../views/components/Button.vue'
 import ComponentsHome from '../views/components/ComponentsHome.vue'
-import {filterRoutes} from '../assets/helpers'
+import { filterRoutes } from '../assets/helpers'
 import Dodont from '../views/components/Dodont.vue'
 import ActionLink from '../views/components/ActionLink.vue'
 import BackLink from '../views/components/BackLink.vue'
@@ -40,7 +40,6 @@ import Textarea from '../views/components/Textarea.vue'
 import InputGroup from '../views/components/InputGroup.vue'
 import Checkbox from '../views/components/Checkbox.vue'
 import Radio from '../views/components/Radio.vue'
-
 
 const componentRoutes = [
   {
@@ -91,7 +90,7 @@ const componentRoutes = [
   {
     path: '/components/dodont',
     component: Dodont,
-    name: 'Do Don\'t'
+    name: "Do Don't"
   },
   {
     path: '/components/error-summary',
@@ -252,7 +251,4 @@ const componentRoutes = [
 
 const filteredComponentRoutes = filterRoutes(componentRoutes, ['Components'])
 
-export {
-  componentRoutes,
-  filteredComponentRoutes
-}
+export { componentRoutes, filteredComponentRoutes }

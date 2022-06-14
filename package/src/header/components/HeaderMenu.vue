@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, inject} from 'vue'
-import {NHS_HEADER_INJECTS} from '../constants'
+import { computed, defineComponent, inject } from 'vue'
+import { NHS_HEADER_INJECTS } from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -57,7 +57,7 @@ export default defineComponent({
 
     const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
 
-    return {classes, menuButtonClasses, toggleNav}
+    return { classes, menuButtonClasses, toggleNav }
   }
 })
 </script>

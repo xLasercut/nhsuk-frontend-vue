@@ -1,16 +1,18 @@
 <template>
   <div @click="onClickCard()" :class="classes" v-bind="$attrs">
-    <img class="nhsuk-card__img" :src="imgUrl" :alt="imgAlt" v-if="imgUrl">
+    <img class="nhsuk-card__img" :src="imgUrl" :alt="imgAlt" v-if="imgUrl" />
     <div :class="contentClasses">
       <slot name="heading">
         <nhs-heading-switcher :heading-level="headingLevel" :class="headingClassesComputed">
-          <nhs-link-switcher v-if="isHeadingLink" class="nhsuk-card__link" :href="href">{{ heading }}</nhs-link-switcher>
-          <div v-else>{{heading}}</div>
+          <nhs-link-switcher v-if="isHeadingLink" class="nhsuk-card__link" :href="href">{{
+            heading
+          }}</nhs-link-switcher>
+          <div v-else>{{ heading }}</div>
         </nhs-heading-switcher>
       </slot>
       <slot name="description">
         <p class="nhsuk-card__description">
-          {{description}}
+          {{ description }}
         </p>
       </slot>
     </div>
@@ -18,12 +20,12 @@
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {NhsLinkSwitcher} from '../shared/link-switcher'
-import {computed, defineComponent, inject, PropType} from 'vue'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
-import {Router} from 'vue-router'
-import {isRouterLink} from '../shared/helpers/route-helper'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { NhsLinkSwitcher } from '../shared/link-switcher'
+import { computed, defineComponent, inject, PropType } from 'vue'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
+import { Router } from 'vue-router'
+import { isRouterLink } from '../shared/helpers/route-helper'
 
 export default defineComponent({
   name: 'nhs-card',
@@ -86,7 +88,8 @@ export default defineComponent({
     }
   },
   components: {
-    NhsHeadingSwitcher, NhsLinkSwitcher
+    NhsHeadingSwitcher,
+    NhsLinkSwitcher
   },
   setup(props) {
     const router = inject<Router>('router')
@@ -137,8 +140,7 @@ export default defineComponent({
         if (isRouterLink(router, props.href)) {
           //@ts-ignore
           router.push(props.href)
-        }
-        else {
+        } else {
           window.location.href = props.href
         }
       }

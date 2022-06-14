@@ -12,12 +12,12 @@
       @change="updateChecked"
       @blur="$emit('blur', id)"
       @focus="$emit('focus', id)"
-    >
+    />
     <nhs-label :for="id" class="nhsuk-checkboxes__label">
-      <slot name="item-label">{{label}}</slot>
+      <slot name="item-label">{{ label }}</slot>
     </nhs-label>
     <nhs-hint-text element="div" v-if="hint" :id="hintId()" class="nhsuk-checkboxes__hint">
-      <slot name="item-hint">{{hint}}</slot>
+      <slot name="item-hint">{{ hint }}</slot>
     </nhs-hint-text>
   </div>
   <div class="nhsuk-checkboxes__conditional" :id="`conditional-${id}`" v-if="showConditional()">
@@ -26,10 +26,10 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, onMounted, reactive, ref} from 'vue'
+import { computed, defineComponent, onMounted, reactive, ref } from 'vue'
 import NhsHintText from '../../hint-text/NhsHintText.vue'
 import NhsLabel from '../../label/NhsLabel.vue'
-import {getInternalModel} from '../../shared/form/v-model'
+import { getInternalModel } from '../../shared/form/v-model'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -80,7 +80,7 @@ export default defineComponent({
     }
 
     const attributes = computed(() => {
-      const attributes: {[key: string]: any} = {}
+      const attributes: { [key: string]: any } = {}
       if (props.disabled) {
         attributes['disabled'] = true
       }

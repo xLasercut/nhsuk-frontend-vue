@@ -9,7 +9,8 @@
     "lint": "npm run lint --workspaces",
     "backstop:test": "npm run backstop:test --workspace=package",
     "backstop:clean": "npm run backstop:clean --workspace=package",
-    "backstop:approve": "npm run backstop:approve --workspace=package"
+    "backstop:approve": "npm run backstop:approve --workspace=package",
+    "prettier-format": "npm run prettier-format --workspaces"
   },
   "workspaces": [
     "package",
@@ -23,6 +24,7 @@
     "backstopjs": "^6.0.4",
     "highlight.js": "^11.5.1",
     "nhsuk-frontend": "^6.1.0",
+    "prettier": "^2.7.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.6",
     "vue": "^3.2.33",

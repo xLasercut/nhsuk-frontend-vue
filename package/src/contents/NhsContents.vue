@@ -1,6 +1,6 @@
 <template>
   <nav class="nhsuk-contents-list" v-bind="$attrs" role="navigation" :aria-label="ariaLabel">
-    <h2 class="nhsuk-u-visually-hidden">{{hiddenText}}</h2>
+    <h2 class="nhsuk-u-visually-hidden">{{ hiddenText }}</h2>
     <ol class="nhsuk-contents-list__list">
       <slot></slot>
     </ol>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'nhs-contents',

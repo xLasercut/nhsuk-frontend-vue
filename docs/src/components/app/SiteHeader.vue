@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, reactive, toRefs} from 'vue'
-import {filteredComponentRoutes} from '../../router/components'
+import { computed, defineComponent, reactive, toRefs } from 'vue'
+import { filteredComponentRoutes } from '../../router/components'
 import router from '../../router'
 
 export default defineComponent({
@@ -23,7 +23,10 @@ export default defineComponent({
       return filteredComponentRoutes
         .filter((item) => {
           const itemName = item.name || ''
-          return itemName.toString().toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText
+          return (
+            itemName.toString().toLowerCase().includes(state.searchText.toLowerCase()) &&
+            state.searchText
+          )
         })
         .map((item) => {
           return {
@@ -42,7 +45,7 @@ export default defineComponent({
       return !router.currentRoute.value.fullPath.includes('/examples/')
     })
 
-    return {...toRefs(state), filteredSearchResults, submitSearch, showHeader}
+    return { ...toRefs(state), filteredSearchResults, submitSearch, showHeader }
   }
 })
 </script>

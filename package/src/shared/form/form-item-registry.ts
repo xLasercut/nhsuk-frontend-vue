@@ -1,8 +1,8 @@
-import {inject, onMounted, onUnmounted, provide, reactive, Ref, ref} from 'vue'
-import {NhsFormInject} from '../../form/types'
-import {NHS_FORM_INJECTS} from './constants'
-import {NhsVueProp} from '../interface'
-import {NhsInputGroupState} from '../../input-group/interfaces'
+import { inject, onMounted, onUnmounted, provide, reactive, Ref, ref } from 'vue'
+import { NhsFormInject } from '../../form/types'
+import { NHS_FORM_INJECTS } from './constants'
+import { NhsVueProp } from '../interface'
+import { NhsInputGroupState } from '../../input-group/interfaces'
 
 function validate(value: any, rules: Array<Function>) {
   for (const rule of rules) {
@@ -26,7 +26,7 @@ function handleItemRegistry(props: NhsVueProp, internalModel: Ref) {
   const errorMsg = ref('')
 
   function validator(): void {
-    const {errorMessage, errorStatus} = validate(internalModel.value, props.rules)
+    const { errorMessage, errorStatus } = validate(internalModel.value, props.rules)
     error.value = errorStatus
     errorMsg.value = errorMessage
   }
@@ -65,7 +65,7 @@ function handleItemRegistry(props: NhsVueProp, internalModel: Ref) {
     }
   })
 
-  return {error, errorMsg, validator}
+  return { error, errorMsg, validator }
 }
 
 function handleItemGroupItemRegistry(props: NhsVueProp, internalModel: Ref) {
@@ -73,7 +73,7 @@ function handleItemGroupItemRegistry(props: NhsVueProp, internalModel: Ref) {
   const errorMsg = ref('')
 
   function validator(): void {
-    const {errorMessage, errorStatus} = validate(internalModel.value, props.rules)
+    const { errorMessage, errorStatus } = validate(internalModel.value, props.rules)
     error.value = errorStatus
     errorMsg.value = errorMessage
   }
@@ -92,10 +92,16 @@ function handleItemGroupItemRegistry(props: NhsVueProp, internalModel: Ref) {
   }
 
   const registerItemValidator = inject<NhsFormInject>(NHS_FORM_INJECTS.registerItemValidator, null)
-  const registerItemErrorStatus = inject<NhsFormInject>(NHS_FORM_INJECTS.registerItemErrorStatus, null)
+  const registerItemErrorStatus = inject<NhsFormInject>(
+    NHS_FORM_INJECTS.registerItemErrorStatus,
+    null
+  )
   const registerItemReset = inject<NhsFormInject>(NHS_FORM_INJECTS.registerItemReset, null)
   const registerItemErrorMsg = inject<NhsFormInject>(NHS_FORM_INJECTS.registerItemErrorMsg, null)
-  const unregisterItemGroupItem = inject<NhsFormInject>(NHS_FORM_INJECTS.unregisterItemGroupItem, null)
+  const unregisterItemGroupItem = inject<NhsFormInject>(
+    NHS_FORM_INJECTS.unregisterItemGroupItem,
+    null
+  )
 
   onMounted(() => {
     if (registerItemValidator) {
@@ -121,7 +127,7 @@ function handleItemGroupItemRegistry(props: NhsVueProp, internalModel: Ref) {
     }
   })
 
-  return {error, errorMsg, validator}
+  return { error, errorMsg, validator }
 }
 
 function handleItemGroupRegistry(props: NhsVueProp) {
@@ -218,11 +224,7 @@ function handleItemGroupRegistry(props: NhsVueProp) {
     }
   })
 
-  return {errorStatus, errorMsg, validator}
+  return { errorStatus, errorMsg, validator }
 }
 
-export {
-  handleItemRegistry,
-  handleItemGroupItemRegistry,
-  handleItemGroupRegistry
-}
+export { handleItemRegistry, handleItemGroupItemRegistry, handleItemGroupRegistry }

@@ -1,6 +1,6 @@
 <template>
   <div :id="id()" :style="containerStyle()" v-if="hasContainer">
-    <nhs-main >
+    <nhs-main>
       <nhs-row>
         <nhs-col :span="containerSize">
           <router-view></router-view>
@@ -12,10 +12,10 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 import router from '../../router'
-import {ExampleDisplayConfig} from '../../assets/interfaces'
-import {setPageColor} from '../../assets/helpers'
+import { ExampleDisplayConfig } from '../../assets/interfaces'
+import { setPageColor } from '../../assets/helpers'
 
 const DISPLAY_STYLE: ExampleDisplayConfig = {
   '/examples/breadcrumb': {
@@ -100,7 +100,7 @@ export default defineComponent({
       }
 
       return {
-        'background-color': DISPLAY_STYLE[currentRoutePath]['containerBg'] || 'none',
+        'background-color': DISPLAY_STYLE[currentRoutePath]['containerBg'] || 'none'
       }
     }
 
@@ -119,10 +119,10 @@ export default defineComponent({
         return true
       }
 
-      return DISPLAY_STYLE[currentRoutePath]['container'] !== false;
+      return DISPLAY_STYLE[currentRoutePath]['container'] !== false
     })
 
-    return {containerSize, hasContainer, containerStyle, id}
+    return { containerSize, hasContainer, containerStyle, id }
   }
 })
 </script>

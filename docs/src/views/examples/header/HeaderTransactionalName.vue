@@ -1,11 +1,9 @@
 <template>
-  <nhs-header
-    :service="service" transactional
-  ></nhs-header>
+  <nhs-header :service="service" transactional></nhs-header>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -16,7 +14,7 @@ export default defineComponent({
       }
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

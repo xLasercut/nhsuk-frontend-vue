@@ -3,4 +3,4 @@ const NHS_HEADER_INJECTS = {
   toggleSearch: 'toggle-search'
 }
 
-export {NHS_HEADER_INJECTS}
+export { NHS_HEADER_INJECTS }

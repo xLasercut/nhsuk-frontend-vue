@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
-import {NhsLinkSwitcher} from '../../shared/link-switcher'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeaderService} from '../interfaces'
+import { NhsLinkSwitcher } from '../../shared/link-switcher'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeaderService } from '../interfaces'
 
 export default defineComponent({
   inheritAttrs: false,
-  components: {NhsLinkSwitcher},
+  components: { NhsLinkSwitcher },
   emits: [],
   props: {
     service: {
@@ -43,7 +43,7 @@ export default defineComponent({
       return Object.keys(props.service).length > 0
     })
 
-    return {classes, href, isService}
+    return { classes, href, isService }
   }
 })
 </script>

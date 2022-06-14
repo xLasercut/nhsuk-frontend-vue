@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsBodySize} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsBodySize } from './types'
 
-const NHS_BODY_SIZES: Array<NhsBodySize> = [ 's' ]
+const NHS_BODY_SIZES: Array<NhsBodySize> = ['s']
 
 export default defineComponent({
   inheritAttrs: false,
@@ -30,7 +30,7 @@ export default defineComponent({
       return 'nhsuk-body'
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

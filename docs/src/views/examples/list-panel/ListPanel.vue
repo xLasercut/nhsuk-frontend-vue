@@ -2,15 +2,17 @@
   <ol class="nhsuk-list">
     <li v-for="(panel, index) in listPanels" :key="`panel-${index}`">
       <nhs-list-panel
-        :label="panel.label" :message="panel.message"
-        back-to-top :disabled="panel.disabled"
+        :label="panel.label"
+        :message="panel.message"
+        back-to-top
+        :disabled="panel.disabled"
       >
         <nhs-list-panel-item
           v-for="(item, index) in panel.items"
           :key="`panel-${panel.label}-${index}`"
           :href="item.href"
         >
-          {{item.text}}
+          {{ item.text }}
         </nhs-list-panel-item>
       </nhs-list-panel>
     </li>
@@ -18,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -79,7 +81,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

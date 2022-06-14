@@ -66,7 +66,10 @@
         <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
           91 <span class="nhsuk-u-visually-hidden">Applicants</span>
         </p>
-        <a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">
+        <a
+          href="#"
+          class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+        >
           Applicants
         </a>
       </template>
@@ -76,7 +79,10 @@
         <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
           23 <span class="nhsuk-u-visually-hidden">Jobs</span>
         </p>
-        <a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">
+        <a
+          href="#"
+          class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+        >
           Jobs
         </a>
       </template>
@@ -86,7 +92,10 @@
         <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
           8 <span class="nhsuk-u-visually-hidden">Services</span>
         </p>
-        <a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">
+        <a
+          href="#"
+          class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+        >
           Services
         </a>
       </template>
@@ -96,7 +105,10 @@
         <p class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
           33 <span class="nhsuk-u-visually-hidden">Messages</span>
         </p>
-        <a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">
+        <a
+          href="#"
+          class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+        >
           Messages
         </a>
       </template>

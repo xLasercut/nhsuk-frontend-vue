@@ -1,12 +1,14 @@
 <template>
   <nhs-radios
-    label="How do you want to sign in?" heading-size="l"
-    :items="items" v-model="model"
+    label="How do you want to sign in?"
+    heading-size="l"
+    :items="items"
+    v-model="model"
   ></nhs-radios>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -31,7 +33,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

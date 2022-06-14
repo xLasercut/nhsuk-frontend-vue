@@ -3,8 +3,8 @@
     <div class="nhsuk-card--care__heading-container">
       <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-card--care__heading">
         <span role="text">
-          <span class="nhsuk-u-visually-hidden">{{accessibilityText}}</span>
-          {{heading}}
+          <span class="nhsuk-u-visually-hidden">{{ accessibilityText }}</span>
+          {{ heading }}
         </span>
       </nhs-heading-switcher>
       <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
@@ -16,15 +16,15 @@
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsCareCardType} from './types'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsCareCardType } from './types'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
 
 const CARE_CARD_TYPES = {
   'non-urgent': 'Non-urgent advice: ',
-  'urgent': 'Urgent advice: ',
-  'emergency': 'Immediate action required: '
+  urgent: 'Urgent advice: ',
+  emergency: 'Immediate action required: '
 }
 
 export default defineComponent({
@@ -67,8 +67,7 @@ export default defineComponent({
       return CARE_CARD_TYPES[props.type]
     })
 
-    return {accessibilityText}
+    return { accessibilityText }
   }
 })
 </script>
-

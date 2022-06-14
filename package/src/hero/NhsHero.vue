@@ -5,8 +5,8 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
             <div :class="heroContentClass">
-              <h1 :class="headingClass">{{heading}}</h1>
-              <p class="nhsuk-body-l nhsuk-u-margin-bottom-0" v-if="text">{{text}}</p>
+              <h1 :class="headingClass">{{ heading }}</h1>
+              <p class="nhsuk-body-l nhsuk-u-margin-bottom-0" v-if="text">{{ text }}</p>
               <span class="nhsuk-hero__arrow" aria-hidden="true" v-if="imageUrl"></span>
             </div>
           </div>
@@ -18,8 +18,8 @@
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <div :class="heroContentClass">
-            <h1 :class="headingClass">{{heading}}</h1>
-            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0" v-if="text">{{text}}</p>
+            <h1 :class="headingClass">{{ heading }}</h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0" v-if="text">{{ text }}</p>
             <span class="nhsuk-hero__arrow" aria-hidden="true" v-if="imageUrl"></span>
           </div>
         </div>
@@ -29,8 +29,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent} from 'vue'
-import {NhsHeroSectionStyle} from './interface'
+import { computed, defineComponent } from 'vue'
+import { NhsHeroSectionStyle } from './interface'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -49,12 +49,11 @@ export default defineComponent({
   },
   setup(props) {
     const sectionClass = computed((): string => {
-      const classes = [ 'nhsuk-hero' ]
+      const classes = ['nhsuk-hero']
 
       if (props.heading && props.imageUrl) {
         classes.push('nhsuk-hero--image nhsuk-hero--image-description')
-      }
-      else if (props.imageUrl) {
+      } else if (props.imageUrl) {
         classes.push('nhsuk-hero--image')
       }
 
@@ -72,7 +71,7 @@ export default defineComponent({
     })
 
     const widthContainerClass = computed((): string => {
-      const classes = [ 'nhsuk-width-container' ]
+      const classes = ['nhsuk-width-container']
 
       if (!props.imageUrl) {
         classes.push('nhsuk-hero--border')
@@ -95,7 +94,7 @@ export default defineComponent({
       return ''
     })
 
-    return {sectionClass, sectionStyle, widthContainerClass, heroContentClass, headingClass}
+    return { sectionClass, sectionStyle, widthContainerClass, heroContentClass, headingClass }
   }
 })
 </script>

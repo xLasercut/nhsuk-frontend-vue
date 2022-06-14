@@ -1,19 +1,23 @@
 <template>
   <nhs-form-item :error="error">
     <nhs-label v-if="label" :for="id">
-      <slot name="label" :label="label">{{label}}</slot>
+      <slot name="label" :label="label">{{ label }}</slot>
     </nhs-label>
     <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
-      <slot name="hint" :hint="hint">{{hint}}</slot>
+      <slot name="hint" :hint="hint">{{ hint }}</slot>
     </nhs-hint-text>
     <nhs-error-text v-if="error" :id="errorId(id)">
-      <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
+      <slot name="error" :error="errorMsg">{{ errorMsg }}</slot>
     </nhs-error-text>
     <select
-      :class="classes" :id="id" :name="name"
-      v-bind="attributes" :aria-describedby="ariaDescribedby"
+      :class="classes"
+      :id="id"
+      :name="name"
+      v-bind="attributes"
+      :aria-describedby="ariaDescribedby"
       v-model="internalModel"
-      @blur="onBlur()" @change="onChange()"
+      @blur="onBlur()"
+      @change="onChange()"
     >
       <slot></slot>
     </select>
@@ -21,25 +25,24 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
+import { computed, defineComponent, PropType } from 'vue'
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
 import NhsHintText from '../hint-text/NhsHintText.vue'
 import NhsLabel from '../label/NhsLabel.vue'
 import NhsErrorText from '../error-text/NhsErrorText.vue'
-import {getAttributes} from '../shared/helpers/attribute-helper'
-import {randomString} from '../shared/helpers/random-string'
-import {NhsFormItemValidateOn} from '../shared/form/types'
-import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
-import {handleItemRegistry} from '../shared/form/form-item-registry'
-import {getInternalModel} from '../shared/form/v-model'
-import {getFormEvents} from '../shared/form/event-helper'
-
+import { getAttributes } from '../shared/helpers/attribute-helper'
+import { randomString } from '../shared/helpers/random-string'
+import { NhsFormItemValidateOn } from '../shared/form/types'
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
+import { handleItemRegistry } from '../shared/form/form-item-registry'
+import { getInternalModel } from '../shared/form/v-model'
+import { getFormEvents } from '../shared/form/event-helper'
 
 export default defineComponent({
   inheritAttrs: false,
   name: 'nhs-select',
   emits: ['update:model-value', 'blur', 'change'],
-  components: {NhsFormItem, NhsHintText, NhsErrorText, NhsLabel},
+  components: { NhsFormItem, NhsHintText, NhsErrorText, NhsLabel },
   props: {
     modelValue: {
       required: true
@@ -86,10 +89,10 @@ export default defineComponent({
   },
   setup(props, context) {
     const internalModel = getInternalModel(props, context)
-    const {error, errorMsg, validator} = handleItemRegistry(props, internalModel)
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
     const attributes = getAttributes(['disabled'], props, context)
     const ariaDescribedby = getAriaDescribedBy(props, error)
-    const {onBlur, onChange} = getFormEvents(props, validator, context)
+    const { onBlur, onChange } = getFormEvents(props, validator, context)
 
     const classes = computed((): string => {
       const classes = ['nhsuk-select']

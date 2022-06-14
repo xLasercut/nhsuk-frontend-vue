@@ -1,5 +1,5 @@
-import {computed, Ref} from 'vue'
-import {NhsVueProp} from '../interface'
+import { computed, Ref } from 'vue'
+import { NhsVueProp } from '../interface'
 
 function hintId(id: string): string {
   return `${id}-hint`
@@ -41,9 +41,4 @@ function getItemGroupAriaDescribedBy(props: NhsVueProp, errorStatus: Function) {
   })
 }
 
-export {
-  hintId,
-  errorId,
-  getAriaDescribedBy,
-  getItemGroupAriaDescribedBy
-}
+export { hintId, errorId, getAriaDescribedBy, getItemGroupAriaDescribedBy }

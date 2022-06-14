@@ -1,4 +1,4 @@
-import {ExampleModules} from '../interfaces'
+import { ExampleModules } from '../interfaces'
 import Header from '../../views/examples/header/Header.vue'
 import HeaderTransactionalName from '../../views/examples/header/HeaderTransactionalName.vue'
 import HeaderOrg from '../../views/examples/header/HeaderOrg.vue'
@@ -11,4 +11,4 @@ const HEADER_MODULES: ExampleModules = {
   HeaderOrgWhiteNav
 }
 
-export {HEADER_MODULES}
+export { HEADER_MODULES }

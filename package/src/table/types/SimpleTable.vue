@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeadingType} from '../../shared/heading-switcher/types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeadingType } from '../../shared/heading-switcher/types'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -36,7 +36,7 @@ export default defineComponent({
       return 'nhsuk-table'
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

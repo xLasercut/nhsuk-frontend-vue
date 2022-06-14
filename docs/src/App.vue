@@ -7,10 +7,10 @@
 <script lang="ts">
 import SiteFooter from './components/app/SiteFooter.vue'
 import SiteHeader from './components/app/SiteHeader.vue'
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {SiteFooter, SiteHeader}
+  components: { SiteFooter, SiteHeader }
 })
 </script>
 

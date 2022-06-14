@@ -1,9 +1,9 @@
-import {createRouter, createWebHashHistory} from 'vue-router'
-import {componentRoutes} from './components'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { componentRoutes } from './components'
 import Home from '../views/Home.vue'
 import Components from '../views/Components.vue'
 import Examples from '../views/Examples.vue'
-import {examplesRoutes} from './examples'
+import { examplesRoutes } from './examples'
 
 const routes = [
   {
@@ -30,4 +30,3 @@ export default createRouter({
   history: createWebHashHistory(),
   routes
 })
-

@@ -7,8 +7,8 @@
 <script lang="ts">
 import NhsListOrdered from './types/NhsListOrdered.vue'
 import NhsListUnordered from './types/NhsListUnordered.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsListType} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsListType } from './types'
 
 const NHS_LIST_TYPES = {
   bullet: 'nhsuk-list--bullet',
@@ -43,7 +43,7 @@ export default defineComponent({
       return `nhsuk-list ${NHS_LIST_TYPES[props.type]}`
     })
 
-    return {element, classes}
+    return { element, classes }
   }
 })
 </script>

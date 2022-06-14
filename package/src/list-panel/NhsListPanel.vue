@@ -1,27 +1,22 @@
 <template>
-  <nhs-card
-    feature v-bind="$attrs"
-    :heading-level="headingLevel"
-    :heading="label"
-    :id="id"
-  >
+  <nhs-card feature v-bind="$attrs" :heading-level="headingLevel" :heading="label" :id="id">
     <template #description>
       <ul :class="classes" v-if="!disabled">
         <slot></slot>
       </ul>
       <div :class="classes" v-if="disabled">
-        {{message}}
+        {{ message }}
       </div>
     </template>
   </nhs-card>
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {NhsLinkSwitcher} from '../shared/link-switcher'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { NhsLinkSwitcher } from '../shared/link-switcher'
 import NhsIcon from '../icon/NhsIcon.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -53,11 +48,11 @@ export default defineComponent({
   },
   setup() {
     const classes = computed((): string => {
-      const classes = [ 'nhsuk-list nhsuk-list--border' ]
+      const classes = ['nhsuk-list nhsuk-list--border']
       return classes.join(' ')
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

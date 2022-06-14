@@ -1,14 +1,17 @@
 <template>
   <nhs-radios
-    :items="items" v-model="model"
-    label="Have you changed your name?" heading-size="m"
+    :items="items"
+    v-model="model"
+    label="Have you changed your name?"
+    heading-size="m"
     hint="This includes changing your last name or spelling your name differently."
-    :rules="rules" ref="radios"
+    :rules="rules"
+    ref="radios"
   ></nhs-radios>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -24,9 +27,7 @@ export default defineComponent({
           value: 'no'
         }
       ],
-      rules: [
-        (v: string) => v != 'no' || 'Please select an option'
-      ]
+      rules: [(v: string) => v != 'no' || 'Please select an option']
     })
 
     let _itemId: string
@@ -43,7 +44,7 @@ export default defineComponent({
       _validator()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

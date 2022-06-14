@@ -12,13 +12,13 @@
 </template>
 
 <script lang="ts">
-import {NhsLinkSwitcher} from '../../shared/link-switcher'
-import {defineComponent} from 'vue'
+import { NhsLinkSwitcher } from '../../shared/link-switcher'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   inheritAttrs: false,
   emits: ['click'],
-  components: {NhsLinkSwitcher},
+  components: { NhsLinkSwitcher },
   props: {
     href: {
       type: String,

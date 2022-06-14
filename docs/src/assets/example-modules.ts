@@ -1,4 +1,4 @@
-import {ExampleModules} from './interfaces'
+import { ExampleModules } from './interfaces'
 import ButtonDocs from '../views/examples/button/ButtonDocs.vue'
 import ButtonDocsDisabled from '../views/examples/button/ButtonDocsDisabled.vue'
 import ActionLink from '../views/examples/action-link/ActionLink.vue'
@@ -77,20 +77,26 @@ import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
 import RadioError from '../views/examples/radios/RadioError.vue'
 import RadioConditional from '../views/examples/radios/RadioConditional.vue'
 import RadioSlots from '../views/examples/radios/RadioSlots.vue'
-import {CARE_CARD_MODULES} from './example-modules/care-card'
-import {CHECKBOXES_MODULES} from './example-modules/checkboxes'
-import {HEADER_MODULES} from './example-modules/header'
+import { CARE_CARD_MODULES } from './example-modules/care-card'
+import { CHECKBOXES_MODULES } from './example-modules/checkboxes'
+import { HEADER_MODULES } from './example-modules/header'
 
 const EXAMPLE_MODULES: ExampleModules = {
-  ButtonDocs, ButtonDocsDisabled,
+  ButtonDocs,
+  ButtonDocsDisabled,
   ActionLink,
   BackLink,
   Breadcrumb,
-  CardBasic, CardClickable, CardImage, CardFeature, CardGroup,
+  CardBasic,
+  CardClickable,
+  CardImage,
+  CardFeature,
+  CardGroup,
   ...CARE_CARD_MODULES,
   ContentsList,
   Details,
-  DoDont, DoDontSlots,
+  DoDont,
+  DoDontSlots,
   ErrorSummary,
   Body,
   List,
@@ -98,34 +104,69 @@ const EXAMPLE_MODULES: ExampleModules = {
   HintText,
   InsetText,
   Heading,
-  Label, LabelBold, LabelHeading,
-  Expander, ExpanderGroup,
-  Fieldset, FieldsetHeading, FieldsetInput, FieldsetSlots,
+  Label,
+  LabelBold,
+  LabelHeading,
+  Expander,
+  ExpanderGroup,
+  Fieldset,
+  FieldsetHeading,
+  FieldsetInput,
+  FieldsetSlots,
   Footer,
   Grid,
   ...HEADER_MODULES,
-  Hero, HeroImage, HeroImageText,
+  Hero,
+  HeroImage,
+  HeroImageText,
   Image,
   ListPanel,
   NavAZ,
   Pagination,
   ReviewDate,
   SkipLink,
-  SummaryList, SummaryListNoAction, SummaryListNoBorder,
+  SummaryList,
+  SummaryListNoAction,
+  SummaryListNoBorder,
   Tag,
-  WarningCallout, WarningCalloutNonImportant,
-  Table, TablePanel, TableResponsive,
-  Input, InputAutocomplete, InputHint, InputError, InputWidth, InputSlots,
+  WarningCallout,
+  WarningCalloutNonImportant,
+  Table,
+  TablePanel,
+  TableResponsive,
+  Input,
+  InputAutocomplete,
+  InputHint,
+  InputError,
+  InputWidth,
+  InputSlots,
   Form,
-  Select, SelectError, SelectSlots,
-  Textarea, TextareaAutocomplete, TextareaError, TextareaSlots,
-  DateInput, DateInputAutocomplete, DateInputError, DateInputErrorMulti, DateInputSlots,
+  Select,
+  SelectError,
+  SelectSlots,
+  Textarea,
+  TextareaAutocomplete,
+  TextareaError,
+  TextareaSlots,
+  DateInput,
+  DateInputAutocomplete,
+  DateInputError,
+  DateInputErrorMulti,
+  DateInputSlots,
   ...CHECKBOXES_MODULES,
-  Radio, RadioInline, RadioDisabled, RadioDivider, RadioHint, RadioNoHeading, RadioError, RadioConditional, RadioSlots
+  Radio,
+  RadioInline,
+  RadioDisabled,
+  RadioDivider,
+  RadioHint,
+  RadioNoHeading,
+  RadioError,
+  RadioConditional,
+  RadioSlots
 }
 
 function getExampleModule(name: string) {
   return EXAMPLE_MODULES[name]
 }
 
-export {getExampleModule}
+export { getExampleModule }

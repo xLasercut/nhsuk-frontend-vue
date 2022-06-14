@@ -32,4 +32,4 @@ const cardExampleRoutes = [
   }
 ]
 
-export {cardExampleRoutes}
+export { cardExampleRoutes }

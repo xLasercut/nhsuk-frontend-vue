@@ -1,25 +1,27 @@
 <template>
   <nhs-form v-model="valid" @submit="onSubmit()" @reset="onReset()">
     <nhs-radios
-      :items="items" v-model="model"
+      :items="items"
+      v-model="model"
       label="Have you changed your name?"
       hint="This includes changing your last name or spelling your name differently."
-      :rules="rules" ref="radios"
+      :rules="rules"
+      ref="radios"
     >
-      <template #item-label="{item}">
-        <h3>{{item}}</h3>
+      <template #item-label="{ item }">
+        <h3>{{ item }}</h3>
       </template>
 
-      <template #item-hint="{item}">
-        <a>{{item}}</a>
+      <template #item-hint="{ item }">
+        <a>{{ item }}</a>
       </template>
 
-      <template #hint="{hint}">
-        <h2>{{hint}}</h2>
+      <template #hint="{ hint }">
+        <h2>{{ hint }}</h2>
       </template>
 
-      <template #error="{error}">
-        <h2>{{error}}</h2>
+      <template #error="{ error }">
+        <h2>{{ error }}</h2>
       </template>
     </nhs-radios>
     <nhs-row>
@@ -29,15 +31,13 @@
       <nhs-col :span="33">
         <nhs-button type="reset">Reset</nhs-button>
       </nhs-col>
-      <nhs-col :span="33">
-        Form valid: {{valid}}
-      </nhs-col>
+      <nhs-col :span="33"> Form valid: {{ valid }} </nhs-col>
     </nhs-row>
   </nhs-form>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -61,9 +61,7 @@ export default defineComponent({
           value: 'maybe'
         }
       ],
-      rules: [
-        (v: string) => !!v || 'Please select an option'
-      ],
+      rules: [(v: string) => !!v || 'Please select an option'],
       valid: false
     })
 
@@ -77,7 +75,7 @@ export default defineComponent({
       state.model = ''
     }
 
-    return {...toRefs(state), onSubmit, onReset}
+    return { ...toRefs(state), onSubmit, onReset }
   }
 })
 </script>

@@ -1,3 +1,3 @@
 import NhsLinkSwitcher from './NhsLinkSwitcher.vue'
 
-export {NhsLinkSwitcher}
+export { NhsLinkSwitcher }

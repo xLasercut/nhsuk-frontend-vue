@@ -1,4 +1,4 @@
-import {filterRoutes} from '../assets/helpers'
+import { filterRoutes } from '../assets/helpers'
 import ExamplesHome from '../views/examples/ExamplesHome.vue'
 import BackLink from '../views/examples/back-link/BackLink.vue'
 import Breadcrumb from '../views/examples/breadcrumb/Breadcrumb.vue'
@@ -62,13 +62,12 @@ import RadioHint from '../views/examples/radios/RadioHint.vue'
 import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
 import RadioError from '../views/examples/radios/RadioError.vue'
 import RadioConditional from '../views/examples/radios/RadioConditional.vue'
-import {cardExampleRoutes} from './examples/card'
-import {careCardExampleRoutes} from './examples/care-card'
-import {actionLinkExampleRoutes} from './examples/action-link'
-import {checkboxesExampleRoutes} from './examples/checkboxes'
-import {headerExampleRoutes} from './examples/header'
-import {errorSummaryExampleRoutes} from './examples/error-summary'
-
+import { cardExampleRoutes } from './examples/card'
+import { careCardExampleRoutes } from './examples/care-card'
+import { actionLinkExampleRoutes } from './examples/action-link'
+import { checkboxesExampleRoutes } from './examples/checkboxes'
+import { headerExampleRoutes } from './examples/header'
+import { errorSummaryExampleRoutes } from './examples/error-summary'
 
 const examplesRoutes = [
   {
@@ -127,7 +126,7 @@ const examplesRoutes = [
   {
     path: '/examples/do-dont',
     component: DoDont,
-    name: 'Do and Don\'t list'
+    name: "Do and Don't list"
   },
   ...errorSummaryExampleRoutes,
   {
@@ -393,7 +392,7 @@ const examplesRoutes = [
     name: 'Radios with conditional content'
   }
 ].map((item) => {
-  const {name, ...rest} = item
+  const { name, ...rest } = item
   return {
     ...rest,
     name: `examples-${name}`
@@ -402,7 +401,4 @@ const examplesRoutes = [
 
 const filteredExamplesRoutes = filterRoutes(examplesRoutes, ['examples-Examples'])
 
-export {
-  examplesRoutes,
-  filteredExamplesRoutes
-}
+export { examplesRoutes, filteredExamplesRoutes }

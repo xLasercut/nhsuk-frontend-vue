@@ -1,7 +1,14 @@
 <template>
-  <div ref="errorSummary" class="nhsuk-error-summary" v-bind="$attrs" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <div
+    ref="errorSummary"
+    class="nhsuk-error-summary"
+    v-bind="$attrs"
+    aria-labelledby="error-summary-title"
+    role="alert"
+    tabindex="-1"
+  >
     <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-      <slot name="title" :title="title">{{title}}</slot>
+      <slot name="title" :title="title">{{ title }}</slot>
     </h2>
     <div class="nhsuk-error-summary__body">
       <slot></slot>
@@ -10,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, nextTick, onMounted, ref} from 'vue'
+import { defineComponent, nextTick, onMounted, ref } from 'vue'
 
 export default defineComponent({
   name: 'nhs-error-summary',
@@ -32,7 +39,7 @@ export default defineComponent({
       })
     })
 
-    return {errorSummary}
+    return { errorSummary }
   }
 })
 </script>

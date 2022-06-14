@@ -1,14 +1,14 @@
 <template>
   <nhs-summary-list :data="data">
-    <template #item="{item}">
-      <nhs-summary-list-item type="key">{{item.key}}</nhs-summary-list-item>
+    <template #item="{ item }">
+      <nhs-summary-list-item type="key">{{ item.key }}</nhs-summary-list-item>
       <nhs-summary-list-item type="value" v-html="item.value"></nhs-summary-list-item>
     </template>
   </nhs-summary-list>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -37,7 +37,7 @@ export default defineComponent({
       ]
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

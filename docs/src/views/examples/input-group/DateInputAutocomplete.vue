@@ -2,12 +2,13 @@
   <nhs-input-group
     label="What is your date of birth?"
     hint="For example, 31 3 1980"
-    :items="items" v-model="model"
+    :items="items"
+    v-model="model"
   ></nhs-input-group>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -35,7 +36,7 @@ export default defineComponent({
       model: {}
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

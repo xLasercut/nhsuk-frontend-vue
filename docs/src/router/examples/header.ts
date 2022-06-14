@@ -68,4 +68,4 @@ const headerExampleRoutes = [
   }
 ]
 
-export {headerExampleRoutes}
+export { headerExampleRoutes }

@@ -16,6 +16,4 @@ interface NhsFormItemResets {
   [key: string]: Function
 }
 
-export {
-  NhsFormSate
-}
+export { NhsFormSate }

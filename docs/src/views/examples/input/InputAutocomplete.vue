@@ -1,13 +1,9 @@
 <template>
-  <nhs-input
-    label="Postcode"
-    autocomplete="postal-code"
-    v-model="model"
-  ></nhs-input>
+  <nhs-input label="Postcode" autocomplete="postal-code" v-model="model"></nhs-input>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -15,7 +11,7 @@ export default defineComponent({
       model: ''
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

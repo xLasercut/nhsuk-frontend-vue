@@ -1,19 +1,25 @@
 <template>
   <nhs-radios
-    :items="items" v-model="model"
-    label="How would you prefer to be contacted?" heading-size="l"
+    :items="items"
+    v-model="model"
+    label="How would you prefer to be contacted?"
+    heading-size="l"
     hint="Select one option."
     id="contact"
     page-heading
   >
-    <template #item-conditional="{item}">
-      <nhs-input :label="item.conditionalProps.label" class="nhsuk-u-width-two-thirds" v-model="inputModels[item.value]"></nhs-input>
+    <template #item-conditional="{ item }">
+      <nhs-input
+        :label="item.conditionalProps.label"
+        class="nhsuk-u-width-two-thirds"
+        v-model="inputModels[item.value]"
+      ></nhs-input>
     </template>
   </nhs-radios>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   data() {

@@ -1,16 +1,20 @@
 <template>
-  <nhs-heading-switcher :heading-level="headingLevel" :class="`nhsuk-heading-${size}`" v-bind="$attrs">
+  <nhs-heading-switcher
+    :heading-level="headingLevel"
+    :class="`nhsuk-heading-${size}`"
+    v-bind="$attrs"
+  >
     <slot></slot>
   </nhs-heading-switcher>
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../shared/heading-switcher'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeadingSize} from './types'
-import {NhsHeadingType} from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeadingSize } from './types'
+import { NhsHeadingType } from '../shared/heading-switcher/types'
 
-const NHS_HEADING_SIZES: {[key: string]: NhsHeadingType} = {
+const NHS_HEADING_SIZES: { [key: string]: NhsHeadingType } = {
   xl: 1,
   l: 2,
   m: 3,
@@ -39,7 +43,7 @@ export default defineComponent({
       return NHS_HEADING_SIZES[props.size]
     })
 
-    return {headingLevel}
+    return { headingLevel }
   }
 })
 </script>

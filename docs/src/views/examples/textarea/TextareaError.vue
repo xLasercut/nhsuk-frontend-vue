@@ -1,20 +1,19 @@
 <template>
   <nhs-textarea
     label="Why can't you provide a National Insurance number?"
-    :rules="rules" v-model="model"
+    :rules="rules"
+    v-model="model"
   ></nhs-textarea>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
     const state = reactive({
       model: '',
-      rules: [
-        (v: string) => !!v || 'You must provide an explanation'
-      ]
+      rules: [(v: string) => !!v || 'You must provide an explanation']
     })
 
     let _itemId: string
@@ -31,7 +30,7 @@ export default defineComponent({
       _validator()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

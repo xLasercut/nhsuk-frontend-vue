@@ -8,4 +8,4 @@ interface NhsRadiosItemConfig {
   conditional?: boolean
 }
 
-export {NhsRadiosItemConfig}
+export { NhsRadiosItemConfig }

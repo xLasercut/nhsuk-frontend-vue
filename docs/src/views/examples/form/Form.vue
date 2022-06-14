@@ -3,7 +3,8 @@
     <nhs-input
       label="National Insurance number"
       hint="It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
-      :rules="rules" v-model="model"
+      :rules="rules"
+      v-model="model"
     >
     </nhs-input>
     <nhs-row>
@@ -13,22 +14,18 @@
       <nhs-col :span="33">
         <nhs-button type="reset">Reset</nhs-button>
       </nhs-col>
-      <nhs-col :span="33">
-        Form valid: {{valid}}
-      </nhs-col>
+      <nhs-col :span="33"> Form valid: {{ valid }} </nhs-col>
     </nhs-row>
   </nhs-form>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
     const state = reactive({
-      rules: [
-        (v: string) => !!v || 'Error message goes here'
-      ],
+      rules: [(v: string) => !!v || 'Error message goes here'],
       model: '',
       valid: false
     })
@@ -43,7 +40,7 @@ export default defineComponent({
       state.model = ''
     }
 
-    return {...toRefs(state), onSubmit, onReset}
+    return { ...toRefs(state), onSubmit, onReset }
   }
 })
 </script>

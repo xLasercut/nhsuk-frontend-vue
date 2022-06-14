@@ -1,4 +1,4 @@
-import {SetupContext} from 'vue'
+import { SetupContext } from 'vue'
 
 function itemGroupItemId(id: string, index: number): string {
   return `${id}-${index}`
@@ -17,7 +17,7 @@ function getItemGroupFormEvents(context: SetupContext<any>) {
     context.emit('change', itemGroupItemId(id, index))
   }
 
-  return {onBlur, onFocus, onChange}
+  return { onBlur, onFocus, onChange }
 }
 
-export {itemGroupItemId, getItemGroupFormEvents}
+export { itemGroupItemId, getItemGroupFormEvents }

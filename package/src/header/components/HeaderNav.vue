@@ -1,12 +1,16 @@
 <template>
-  <nav :class="classes" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation" v-bind="$attrs">
+  <nav
+    :class="classes"
+    id="header-navigation"
+    role="navigation"
+    aria-label="Primary navigation"
+    aria-labelledby="label-navigation"
+    v-bind="$attrs"
+  >
     <div class="nhsuk-width-container">
-      <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
-        <button
-          class="nhsuk-header__navigation-close"
-          id="close-menu"
-          @click.prevent="toggleNav()"
-        >
+      <p class="nhsuk-header__navigation-title">
+        <span id="label-navigation">Menu</span>
+        <button class="nhsuk-header__navigation-close" id="close-menu" @click.prevent="toggleNav()">
           <nhs-icon icon="close"></nhs-icon>
           <span class="nhsuk-u-visually-hidden">Close menu</span>
         </button>
@@ -26,14 +30,14 @@
 
 <script lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue'
-import {NhsLinkSwitcher} from '../../shared/link-switcher'
-import {computed, defineComponent, inject} from 'vue'
-import {NHS_HEADER_INJECTS} from '../constants'
+import { NhsLinkSwitcher } from '../../shared/link-switcher'
+import { computed, defineComponent, inject } from 'vue'
+import { NHS_HEADER_INJECTS } from '../constants'
 
 export default defineComponent({
   inheritAttrs: false,
   emits: [],
-  components: {NhsIcon, NhsLinkSwitcher},
+  components: { NhsIcon, NhsLinkSwitcher },
   props: {
     homeHref: {
       type: String,
@@ -61,7 +65,7 @@ export default defineComponent({
 
     const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
 
-    return {classes, toggleNav}
+    return { classes, toggleNav }
   }
 })
 </script>

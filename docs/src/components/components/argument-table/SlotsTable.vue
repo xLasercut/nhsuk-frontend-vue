@@ -1,16 +1,20 @@
 <template>
   <nhs-table :headers="headers" :data="data">
-    <template #item.vue-properties="{item}">
-      {{slotPropsDisplayBlank(item)}}
-      <highlightjs language="typescript" :code="slotPropsDisplay(item['vue-properties'])" v-if="item['vue-properties']">
+    <template #item.vue-properties="{ item }">
+      {{ slotPropsDisplayBlank(item) }}
+      <highlightjs
+        language="typescript"
+        :code="slotPropsDisplay(item['vue-properties'])"
+        v-if="item['vue-properties']"
+      >
       </highlightjs>
     </template>
   </nhs-table>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from 'vue'
-import {SlotsDoc, SlotsDocProperties} from '../../../assets/interfaces'
+import { defineComponent, reactive, toRefs } from 'vue'
+import { SlotsDoc, SlotsDocProperties } from '../../../assets/interfaces'
 
 export default defineComponent({
   props: {
@@ -21,7 +25,7 @@ export default defineComponent({
   },
   setup() {
     const state = reactive({
-      headers:  [
+      headers: [
         {
           text: 'Name',
           value: 'name'
@@ -54,7 +58,7 @@ export default defineComponent({
       return properties
     }
 
-    return {...toRefs(state), slotPropsDisplay, slotPropsDisplayBlank}
+    return { ...toRefs(state), slotPropsDisplay, slotPropsDisplayBlank }
   }
 })
 </script>

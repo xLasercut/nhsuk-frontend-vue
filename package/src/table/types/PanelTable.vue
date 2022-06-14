@@ -1,7 +1,7 @@
 <template>
   <div class="nhsuk-table__panel-with-heading-tab" v-bind="$attrs">
     <nhs-heading-switcher :heading-level="headingLevel" class="nhsuk-table__heading-tab">
-      {{heading}}
+      {{ heading }}
     </nhs-heading-switcher>
     <table role="table" :class="classes">
       <slot></slot>
@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts">
-import {NhsHeadingSwitcher} from '../../shared/heading-switcher'
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsHeadingType} from '../../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../../shared/heading-switcher'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsHeadingType } from '../../shared/heading-switcher/types'
 
 export default defineComponent({
   inheritAttrs: false,
@@ -34,7 +34,7 @@ export default defineComponent({
       }
     }
   },
-  components: {NhsHeadingSwitcher},
+  components: { NhsHeadingSwitcher },
   setup(props) {
     const classes = computed((): string => {
       if (props.responsive) {
@@ -43,7 +43,7 @@ export default defineComponent({
       return 'nhsuk-table'
     })
 
-    return {classes}
+    return { classes }
   }
 })
 </script>

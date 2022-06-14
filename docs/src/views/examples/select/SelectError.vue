@@ -12,15 +12,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, provide, reactive, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {
     const state = reactive({
       model: 'NHS.UK frontend option 1',
-      rules: [
-        (v: string) => v !== 'NHS.UK frontend option 1' || 'Error message goes here'
-      ]
+      rules: [(v: string) => v !== 'NHS.UK frontend option 1' || 'Error message goes here']
     })
 
     let _itemId: string
@@ -37,7 +35,7 @@ export default defineComponent({
       _validator()
     })
 
-    return {...toRefs(state)}
+    return { ...toRefs(state) }
   }
 })
 </script>

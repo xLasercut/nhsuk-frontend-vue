@@ -1,5 +1,3 @@
 import NhsErrorSummary from './NhsErrorSummary.vue'
 
-export {
-  NhsErrorSummary
-}
+export { NhsErrorSummary }

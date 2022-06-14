@@ -7,10 +7,10 @@
       :size="headingSize"
     >
       <nhs-hint-text element="div" v-if="hint" :id="hintId(id)">
-        <slot name="hint" :hint="hint">{{hint}}</slot>
+        <slot name="hint" :hint="hint">{{ hint }}</slot>
       </nhs-hint-text>
       <nhs-error-text v-if="error" :id="errorId(id)">
-        <slot name="error" :error="errorMsg">{{errorMsg}}</slot>
+        <slot name="error" :error="errorMsg">{{ errorMsg }}</slot>
       </nhs-error-text>
       <div :class="classes">
         <div v-for="(item, index) in items" :key="`${id}-${index}`">
@@ -18,9 +18,12 @@
             :label="item.label"
             :hint="item.hint"
             :disabled="item.disabled || disabled"
-            :id="`${id}-${index + 1}`" :name="item.name" :radio-value="item.value"
+            :id="`${id}-${index + 1}`"
+            :name="item.name"
+            :radio-value="item.value"
             v-model="internalModel"
-            :is="component(item)" :divider="item.divider"
+            :is="component(item)"
+            :divider="item.divider"
             @blur="onBlur"
             @change="onChange"
             @focus="$emit('focus', $event)"
@@ -32,8 +35,11 @@
               <slot name="item-hint" :item="item"></slot>
             </template>
           </component>
-          <div class="nhsuk-radios__conditional" v-show="showConditional(item.value, item.conditional)">
-            <slot name="item-conditional" :item="item">{{item}}</slot>
+          <div
+            class="nhsuk-radios__conditional"
+            v-show="showConditional(item.value, item.conditional)"
+          >
+            <slot name="item-conditional" :item="item">{{ item }}</slot>
           </div>
         </div>
       </div>
@@ -44,19 +50,19 @@
 <script lang="ts">
 import NhsRadio from './components/NhsRadio.vue'
 import NhsRadioDivider from './components/NhsRadioDivider.vue'
-import {computed, defineComponent, PropType} from 'vue'
-import {getInternalModel} from '../shared/form/v-model'
+import { computed, defineComponent, PropType } from 'vue'
+import { getInternalModel } from '../shared/form/v-model'
 import NhsFormItem from '../shared/form/NhsFormItem.vue'
 import NhsFieldset from '../fieldset/NhsFieldset.vue'
 import NhsHintText from '../hint-text/NhsHintText.vue'
 import NhsErrorText from '../error-text/NhsErrorText.vue'
-import {handleItemRegistry} from '../shared/form/form-item-registry'
-import {errorId, getAriaDescribedBy, hintId} from '../shared/form/aria-helper'
-import {getFormEvents} from '../shared/form/event-helper'
-import {randomString} from '../shared/helpers/random-string'
-import {NhsFieldsetSize} from '../fieldset/types'
-import {NhsRadiosItemConfig} from './interfaces'
-import {NhsFormItemValidateOn} from '../shared/form/types'
+import { handleItemRegistry } from '../shared/form/form-item-registry'
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
+import { getFormEvents } from '../shared/form/event-helper'
+import { randomString } from '../shared/helpers/random-string'
+import { NhsFieldsetSize } from '../fieldset/types'
+import { NhsRadiosItemConfig } from './interfaces'
+import { NhsFormItemValidateOn } from '../shared/form/types'
 
 export default defineComponent({
   name: 'nhs-radios',
@@ -117,13 +123,13 @@ export default defineComponent({
   components: { NhsHintText, NhsFormItem, NhsFieldset, NhsErrorText },
   setup(props, context) {
     const internalModel = getInternalModel(props, context)
-    const {error, errorMsg, validator} = handleItemRegistry(props, internalModel)
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
 
     const ariaDescribedby = getAriaDescribedBy(props, error)
-    const {onBlur, onChange} = getFormEvents(props, validator, context)
+    const { onBlur, onChange } = getFormEvents(props, validator, context)
 
     const classes = computed((): string => {
-      const classes = [ 'nhsuk-radios' ]
+      const classes = ['nhsuk-radios']
 
       if (props.inline) {
         classes.push('nhsuk-radios--inline')
@@ -140,7 +146,7 @@ export default defineComponent({
     }
 
     function showConditional(radioValue: any, hasConditional: boolean | undefined): boolean {
-     return internalModel.value === radioValue && Boolean(hasConditional)
+      return internalModel.value === radioValue && Boolean(hasConditional)
     }
 
     return {

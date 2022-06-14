@@ -20,4 +20,4 @@ const careCardExampleRoutes = [
   }
 ]
 
-export {careCardExampleRoutes}
+export { careCardExampleRoutes }

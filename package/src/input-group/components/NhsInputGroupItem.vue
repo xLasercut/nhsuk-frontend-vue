@@ -2,7 +2,7 @@
   <div class="nhsuk-date-input__item">
     <nhs-form-item :error="false">
       <nhs-label class="nhsuk-date-input__label" :for="id" v-if="label">
-        <slot name="item-label">{{label}}</slot>
+        <slot name="item-label">{{ label }}</slot>
       </nhs-label>
       <input
         :class="classes"
@@ -16,22 +16,22 @@
         @change="onChange()"
         @blur="onBlur()"
         @focus="$emit('focus')"
-      >
+      />
     </nhs-form-item>
   </div>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
+import { computed, defineComponent, PropType } from 'vue'
 import NhsFormItem from '../../shared/form/NhsFormItem.vue'
 import NhsLabel from '../../label/NhsLabel.vue'
-import {getInternalModel} from '../../shared/form/v-model'
-import {getAttributes} from '../../shared/helpers/attribute-helper'
-import {NhsInputInputmode, NhsInputWidth} from '../../input/types'
-import {NHS_INPUT_WIDTHS} from '../../input/constants'
-import {handleItemGroupItemRegistry} from '../../shared/form/form-item-registry'
-import {getFormEvents} from '../../shared/form/event-helper'
-import {NhsFormItemValidateOn} from '../../shared/form/types'
+import { getInternalModel } from '../../shared/form/v-model'
+import { getAttributes } from '../../shared/helpers/attribute-helper'
+import { NhsInputInputmode, NhsInputWidth } from '../../input/types'
+import { NHS_INPUT_WIDTHS } from '../../input/constants'
+import { handleItemGroupItemRegistry } from '../../shared/form/form-item-registry'
+import { getFormEvents } from '../../shared/form/event-helper'
+import { NhsFormItemValidateOn } from '../../shared/form/types'
 
 export default defineComponent({
   components: { NhsLabel, NhsFormItem },
@@ -88,13 +88,13 @@ export default defineComponent({
       }
     }
   },
-  setup(props, context){
+  setup(props, context) {
     const internalModel = getInternalModel(props, context)
-    const {error, validator} = handleItemGroupItemRegistry(props, internalModel)
-    const {onChange, onBlur} = getFormEvents(props, validator, context)
+    const { error, validator } = handleItemGroupItemRegistry(props, internalModel)
+    const { onChange, onBlur } = getFormEvents(props, validator, context)
 
     const classes = computed((): string => {
-      const classes = [ 'nhsuk-input nhsuk-date-input__input' ]
+      const classes = ['nhsuk-input nhsuk-date-input__input']
 
       if (props.width) {
         classes.push(`nhsuk-input--width-${props.width}`)

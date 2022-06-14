@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
-import {NhsMainType} from './types'
+import { computed, defineComponent, PropType } from 'vue'
+import { NhsMainType } from './types'
 
 const NHS_MAIN_TYPES = {
   fluid: 'nhsuk-width-container-fluid',
@@ -34,7 +34,7 @@ export default defineComponent({
     const classes = computed((): string => {
       return NHS_MAIN_TYPES[props.type]
     })
-    return {classes}
+    return { classes }
   }
 })
 </script>
