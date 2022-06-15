@@ -82,7 +82,7 @@ Import each component individually
 ```
 git clone https://github.com/xLasercut/nhsuk-frontend-vue.git
 cd nhsuk-frontend-vue
-yarn build
+npm run build
 ```
 
 The output files will be located in the `dist` folder
@@ -93,7 +93,7 @@ This project uses [backstop](https://garris.github.io/BackstopJS/) for screensho
 
 Backstop tests:
 ```
-yarn backstop:test
+npm run backstop:test
 ```
 
 ## License
