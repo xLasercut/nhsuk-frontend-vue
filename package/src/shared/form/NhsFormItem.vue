@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -18,16 +18,16 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed((): string => {
-      const classes = ['nhsuk-form-group']
+      const classes = ['nhsuk-form-group'];
 
       if (props.error) {
-        classes.push('nhsuk-form-group--error')
+        classes.push('nhsuk-form-group--error');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

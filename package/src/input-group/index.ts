@@ -1,3 +1,3 @@
-import NhsInputGroup from './NhsInputGroup.vue'
+import NhsInputGroup from './NhsInputGroup.vue';
 
-export { NhsInputGroup }
+export { NhsInputGroup };

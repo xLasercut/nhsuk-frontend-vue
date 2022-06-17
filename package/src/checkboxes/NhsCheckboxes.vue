@@ -46,21 +46,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import NhsCheckbox from './component/NhsCheckbox.vue'
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import { getInternalModel } from '../shared/form/v-model'
-import { randomString } from '../shared/helpers/random-string'
-import { NhsFieldsetSize } from '../fieldset/types'
-import { handleItemRegistry } from '../shared/form/form-item-registry'
-import { getFormEvents } from '../shared/form/event-helper'
-import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { NhsCheckboxesItemConfig } from './interfaces'
-import { NhsFormItemValidateOn } from '../shared/form/types'
-import NhsFieldset from '../fieldset/NhsFieldset.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsCheckboxDivider from './component/NhsCheckboxDivider.vue'
+import { defineComponent, PropType } from 'vue';
+import NhsCheckbox from './component/NhsCheckbox.vue';
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import { getInternalModel } from '../shared/form/v-model';
+import { randomString } from '../shared/helpers/random-string';
+import { NhsFieldsetSize } from '../fieldset/types';
+import { handleItemRegistry } from '../shared/form/form-item-registry';
+import { getFormEvents } from '../shared/form/event-helper';
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { NhsCheckboxesItemConfig } from './interfaces';
+import { NhsFormItemValidateOn } from '../shared/form/types';
+import NhsFieldset from '../fieldset/NhsFieldset.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsCheckboxDivider from './component/NhsCheckboxDivider.vue';
 
 export default defineComponent({
   name: 'nhs-checkboxes',
@@ -71,7 +71,7 @@ export default defineComponent({
     id: {
       type: String,
       default: (): string => {
-        return `nhs-checkbox-${randomString()}`
+        return `nhs-checkbox-${randomString()}`;
       }
     },
     hint: {
@@ -83,13 +83,13 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     pageHeading: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     headingSize: {
@@ -98,41 +98,41 @@ export default defineComponent({
     modelValue: {
       type: Object,
       default: () => {
-        return {}
+        return {};
       }
     },
     items: {
       type: Array as PropType<Array<NhsCheckboxesItemConfig>>,
       default: () => {
-        return []
+        return [];
       }
     },
     rules: {
       type: Array as PropType<Array<Function>>,
       default: (): Array<Function> => {
-        return []
+        return [];
       }
     },
     validateOn: {
       type: String as PropType<NhsFormItemValidateOn>,
       default: (): NhsFormItemValidateOn => {
-        return 'blur'
+        return 'blur';
       }
     }
   },
   setup(props, context) {
     function component(item: NhsCheckboxesItemConfig) {
       if (item.divider) {
-        return NhsCheckboxDivider
+        return NhsCheckboxDivider;
       }
-      return NhsCheckbox
+      return NhsCheckbox;
     }
 
-    const internalModel = getInternalModel(props, context)
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
+    const internalModel = getInternalModel(props, context);
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
 
-    const ariaDescribedby = getAriaDescribedBy(props, error)
-    const { onBlur, onChange } = getFormEvents(props, validator, context)
+    const ariaDescribedby = getAriaDescribedBy(props, error);
+    const { onBlur, onChange } = getFormEvents(props, validator, context);
 
     return {
       internalModel,
@@ -144,7 +144,7 @@ export default defineComponent({
       onBlur,
       onChange,
       component
-    }
+    };
   }
-})
+});
 </script>

@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeadingType } from '../../shared/heading-switcher/types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeadingType } from '../../shared/heading-switcher/types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -18,25 +18,25 @@ export default defineComponent({
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 3
+        return 3;
       }
     },
     responsive: {
       type: Boolean,
       default: (): boolean => {
-        return true
+        return true;
       }
     }
   },
   setup(props) {
     const classes = computed((): string => {
       if (props.responsive) {
-        return 'nhsuk-table-responsive'
+        return 'nhsuk-table-responsive';
       }
-      return 'nhsuk-table'
-    })
+      return 'nhsuk-table';
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

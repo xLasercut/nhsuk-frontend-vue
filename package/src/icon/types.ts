@@ -11,6 +11,6 @@ type NhsIconType =
   | 'minus'
   | 'plus'
   | 'search'
-  | 'tick'
+  | 'tick';
 
-export { NhsIconType }
+export { NhsIconType };

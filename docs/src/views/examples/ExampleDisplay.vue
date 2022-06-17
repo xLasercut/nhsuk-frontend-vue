@@ -12,10 +12,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import router from '../../router'
-import { ExampleDisplayConfig } from '../../assets/interfaces'
-import { setPageColor } from '../../assets/helpers'
+import { computed, defineComponent } from 'vue';
+import router from '../../router';
+import { ExampleDisplayConfig } from '../../assets/interfaces';
+import { setPageColor } from '../../assets/helpers';
 
 const DISPLAY_STYLE: ExampleDisplayConfig = {
   '/examples/breadcrumb': {
@@ -72,57 +72,57 @@ const DISPLAY_STYLE: ExampleDisplayConfig = {
   '/examples/card-group': {
     containerSize: 100
   }
-}
+};
 
 export default defineComponent({
   setup() {
     function id() {
-      bodyStyle()
-      return ''
+      bodyStyle();
+      return '';
     }
 
     function bodyStyle(): void {
-      const currentRoutePath = router.currentRoute.value.path
+      const currentRoutePath = router.currentRoute.value.path;
       if (!(currentRoutePath in DISPLAY_STYLE)) {
-        setPageColor('#f0f4f5')
-        return
+        setPageColor('#f0f4f5');
+        return;
       }
 
-      setPageColor(DISPLAY_STYLE[currentRoutePath]['bodyBg'] || '#f0f4f5')
+      setPageColor(DISPLAY_STYLE[currentRoutePath]['bodyBg'] || '#f0f4f5');
     }
 
     function containerStyle() {
-      const currentRoutePath = router.currentRoute.value.path
+      const currentRoutePath = router.currentRoute.value.path;
       if (!(currentRoutePath in DISPLAY_STYLE)) {
         return {
           'background-color': 'none'
-        }
+        };
       }
 
       return {
         'background-color': DISPLAY_STYLE[currentRoutePath]['containerBg'] || 'none'
-      }
+      };
     }
 
     const containerSize = computed((): number => {
-      const currentRoutePath = router.currentRoute.value.path
+      const currentRoutePath = router.currentRoute.value.path;
       if (!(currentRoutePath in DISPLAY_STYLE)) {
-        return 66
+        return 66;
       }
 
-      return DISPLAY_STYLE[currentRoutePath]['containerSize'] || 66
-    })
+      return DISPLAY_STYLE[currentRoutePath]['containerSize'] || 66;
+    });
 
     const hasContainer = computed((): boolean => {
-      const currentRoutePath = router.currentRoute.value.path
+      const currentRoutePath = router.currentRoute.value.path;
       if (!(currentRoutePath in DISPLAY_STYLE)) {
-        return true
+        return true;
       }
 
-      return DISPLAY_STYLE[currentRoutePath]['container'] !== false
-    })
+      return DISPLAY_STYLE[currentRoutePath]['container'] !== false;
+    });
 
-    return { containerSize, hasContainer, containerStyle, id }
+    return { containerSize, hasContainer, containerStyle, id };
   }
-})
+});
 </script>

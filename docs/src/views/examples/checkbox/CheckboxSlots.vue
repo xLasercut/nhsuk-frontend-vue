@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -51,19 +51,19 @@ export default defineComponent({
       model: [],
       rules: [(v: Array<string>) => v.length > 0 || 'Please select an option'],
       valid: false
-    })
+    });
 
     function onSubmit(): void {
       if (state.valid) {
-        alert('submit form')
+        alert('submit form');
       }
     }
 
     function onReset(): void {
-      state.model = []
+      state.model = [];
     }
 
-    return { ...toRefs(state), onSubmit, onReset }
+    return { ...toRefs(state), onSubmit, onReset };
   }
-})
+});
 </script>

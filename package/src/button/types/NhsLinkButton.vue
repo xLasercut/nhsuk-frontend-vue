@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../../shared/link-switcher'
-import { defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../../shared/link-switcher';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -23,15 +23,15 @@ export default defineComponent({
     href: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     }
   }
-})
+});
 </script>

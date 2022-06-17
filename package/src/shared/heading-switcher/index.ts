@@ -1,3 +1,3 @@
-import NhsHeadingSwitcher from './NhsHeadingSwitcher.vue'
+import NhsHeadingSwitcher from './NhsHeadingSwitcher.vue';
 
-export { NhsHeadingSwitcher }
+export { NhsHeadingSwitcher };

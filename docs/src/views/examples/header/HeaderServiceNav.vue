@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -17,9 +17,9 @@ export default defineComponent({
       service: {
         name: 'Digital service manual'
       }
-    })
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

@@ -1,73 +1,73 @@
-import { filterRoutes } from '../assets/helpers'
-import ExamplesHome from '../views/examples/ExamplesHome.vue'
-import BackLink from '../views/examples/back-link/BackLink.vue'
-import Breadcrumb from '../views/examples/breadcrumb/Breadcrumb.vue'
-import Button from '../views/examples/button/Button.vue'
-import ButtonLink from '../views/examples/button/ButtonLink.vue'
-import ButtonDisabled from '../views/examples/button/ButtonDisabled.vue'
-import ButtonSecondary from '../views/examples/button/ButtonSecondary.vue'
-import ButtonReversed from '../views/examples/button/ButtonReversed.vue'
-import ContentsList from '../views/examples/contents/ContentsList.vue'
-import Details from '../views/examples/details/Details.vue'
-import DoDont from '../views/examples/do-dont/DoDont.vue'
-import ErrorText from '../views/examples/error-text/ErrorText.vue'
-import HintText from '../views/examples/hint-text/HintText.vue'
-import InsetText from '../views/examples/inset-text/InsetText.vue'
-import Label from '../views/examples/label/Label.vue'
-import LabelBold from '../views/examples/label/LabelBold.vue'
-import LabelHeading from '../views/examples/label/LabelHeading.vue'
-import Expander from '../views/examples/expander/Expander.vue'
-import ExpanderGroup from '../views/examples/expander/ExpanderGroup.vue'
-import Fieldset from '../views/examples/fieldset/Fieldset.vue'
-import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue'
-import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue'
-import Footer from '../views/examples/footer/Footer.vue'
-import Hero from '../views/examples/hero/Hero.vue'
-import HeroImage from '../views/examples/hero/HeroImage.vue'
-import HeroImageText from '../views/examples/hero/HeroImageText.vue'
-import Image from '../views/examples/image/Image.vue'
-import ListPanel from '../views/examples/list-panel/ListPanel.vue'
-import NavAZ from '../views/examples/nav-az/NavAZ.vue'
-import Pagination from '../views/examples/pagination/Pagination.vue'
-import ReviewDate from '../views/examples/review-date/ReviewDate.vue'
-import SkipLink from '../views/examples/skip-link/SkipLink.vue'
-import SummaryList from '../views/examples/summary-list/SummaryList.vue'
-import SummaryListNoAction from '../views/examples/summary-list/SummaryListNoAction.vue'
-import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBorder.vue'
-import Tag from '../views/examples/tag/Tag.vue'
-import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue'
-import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue'
-import Table from '../views/examples/table/Table.vue'
-import TablePanel from '../views/examples/table/TablePanel.vue'
-import TableResponsive from '../views/examples/table/TableResponsive.vue'
-import Input from 'nhsuk-frontend-vue-docs/src/views/examples/input/Input.vue'
-import InputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputAutocomplete.vue'
-import InputHint from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputHint.vue'
-import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputError.vue'
-import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue'
-import Select from '../views/examples/select/Select.vue'
-import SelectError from '../views/examples/select/SelectError.vue'
-import Textarea from '../views/examples/textarea/Textarea.vue'
-import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue'
-import TextareaError from '../views/examples/textarea/TextareaError.vue'
-import DateInput from '../views/examples/input-group/DateInput.vue'
-import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue'
-import DateInputError from '../views/examples/input-group/DateInputError.vue'
-import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue'
-import Radio from '../views/examples/radios/Radio.vue'
-import RadioInline from '../views/examples/radios/RadioInline.vue'
-import RadioDisabled from '../views/examples/radios/RadioDisabled.vue'
-import RadioDivider from '../views/examples/radios/RadioDivider.vue'
-import RadioHint from '../views/examples/radios/RadioHint.vue'
-import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue'
-import RadioError from '../views/examples/radios/RadioError.vue'
-import RadioConditional from '../views/examples/radios/RadioConditional.vue'
-import { cardExampleRoutes } from './examples/card'
-import { careCardExampleRoutes } from './examples/care-card'
-import { actionLinkExampleRoutes } from './examples/action-link'
-import { checkboxesExampleRoutes } from './examples/checkboxes'
-import { headerExampleRoutes } from './examples/header'
-import { errorSummaryExampleRoutes } from './examples/error-summary'
+import { filterRoutes } from '../assets/helpers';
+import ExamplesHome from '../views/examples/ExamplesHome.vue';
+import BackLink from '../views/examples/back-link/BackLink.vue';
+import Breadcrumb from '../views/examples/breadcrumb/Breadcrumb.vue';
+import Button from '../views/examples/button/Button.vue';
+import ButtonLink from '../views/examples/button/ButtonLink.vue';
+import ButtonDisabled from '../views/examples/button/ButtonDisabled.vue';
+import ButtonSecondary from '../views/examples/button/ButtonSecondary.vue';
+import ButtonReversed from '../views/examples/button/ButtonReversed.vue';
+import ContentsList from '../views/examples/contents/ContentsList.vue';
+import Details from '../views/examples/details/Details.vue';
+import DoDont from '../views/examples/do-dont/DoDont.vue';
+import ErrorText from '../views/examples/error-text/ErrorText.vue';
+import HintText from '../views/examples/hint-text/HintText.vue';
+import InsetText from '../views/examples/inset-text/InsetText.vue';
+import Label from '../views/examples/label/Label.vue';
+import LabelBold from '../views/examples/label/LabelBold.vue';
+import LabelHeading from '../views/examples/label/LabelHeading.vue';
+import Expander from '../views/examples/expander/Expander.vue';
+import ExpanderGroup from '../views/examples/expander/ExpanderGroup.vue';
+import Fieldset from '../views/examples/fieldset/Fieldset.vue';
+import FieldsetHeading from '../views/examples/fieldset/FieldsetHeading.vue';
+import FieldsetInput from '../views/examples/fieldset/FieldsetInput.vue';
+import Footer from '../views/examples/footer/Footer.vue';
+import Hero from '../views/examples/hero/Hero.vue';
+import HeroImage from '../views/examples/hero/HeroImage.vue';
+import HeroImageText from '../views/examples/hero/HeroImageText.vue';
+import Image from '../views/examples/image/Image.vue';
+import ListPanel from '../views/examples/list-panel/ListPanel.vue';
+import NavAZ from '../views/examples/nav-az/NavAZ.vue';
+import Pagination from '../views/examples/pagination/Pagination.vue';
+import ReviewDate from '../views/examples/review-date/ReviewDate.vue';
+import SkipLink from '../views/examples/skip-link/SkipLink.vue';
+import SummaryList from '../views/examples/summary-list/SummaryList.vue';
+import SummaryListNoAction from '../views/examples/summary-list/SummaryListNoAction.vue';
+import SummaryListNoBorder from '../views/examples/summary-list/SummaryListNoBorder.vue';
+import Tag from '../views/examples/tag/Tag.vue';
+import WarningCallout from '../views/examples/warning-callout/WarningCallout.vue';
+import WarningCalloutNonImportant from '../views/examples/warning-callout/WarningCalloutNonImportant.vue';
+import Table from '../views/examples/table/Table.vue';
+import TablePanel from '../views/examples/table/TablePanel.vue';
+import TableResponsive from '../views/examples/table/TableResponsive.vue';
+import Input from 'nhsuk-frontend-vue-docs/src/views/examples/input/Input.vue';
+import InputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputAutocomplete.vue';
+import InputHint from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputHint.vue';
+import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputError.vue';
+import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue';
+import Select from '../views/examples/select/Select.vue';
+import SelectError from '../views/examples/select/SelectError.vue';
+import Textarea from '../views/examples/textarea/Textarea.vue';
+import TextareaAutocomplete from '../views/examples/textarea/TextareaAutocomplete.vue';
+import TextareaError from '../views/examples/textarea/TextareaError.vue';
+import DateInput from '../views/examples/input-group/DateInput.vue';
+import DateInputAutocomplete from '../views/examples/input-group/DateInputAutocomplete.vue';
+import DateInputError from '../views/examples/input-group/DateInputError.vue';
+import DateInputErrorMulti from '../views/examples/input-group/DateInputErrorMulti.vue';
+import Radio from '../views/examples/radios/Radio.vue';
+import RadioInline from '../views/examples/radios/RadioInline.vue';
+import RadioDisabled from '../views/examples/radios/RadioDisabled.vue';
+import RadioDivider from '../views/examples/radios/RadioDivider.vue';
+import RadioHint from '../views/examples/radios/RadioHint.vue';
+import RadioNoHeading from '../views/examples/radios/RadioNoHeading.vue';
+import RadioError from '../views/examples/radios/RadioError.vue';
+import RadioConditional from '../views/examples/radios/RadioConditional.vue';
+import { cardExampleRoutes } from './examples/card';
+import { careCardExampleRoutes } from './examples/care-card';
+import { actionLinkExampleRoutes } from './examples/action-link';
+import { checkboxesExampleRoutes } from './examples/checkboxes';
+import { headerExampleRoutes } from './examples/header';
+import { errorSummaryExampleRoutes } from './examples/error-summary';
 
 const examplesRoutes = [
   {
@@ -392,13 +392,13 @@ const examplesRoutes = [
     name: 'Radios with conditional content'
   }
 ].map((item) => {
-  const { name, ...rest } = item
+  const { name, ...rest } = item;
   return {
     ...rest,
     name: `examples-${name}`
-  }
-})
+  };
+});
 
-const filteredExamplesRoutes = filterRoutes(examplesRoutes, ['examples-Examples'])
+const filteredExamplesRoutes = filterRoutes(examplesRoutes, ['examples-Examples']);
 
-export { examplesRoutes, filteredExamplesRoutes }
+export { examplesRoutes, filteredExamplesRoutes };

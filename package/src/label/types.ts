@@ -1,3 +1,3 @@
-type NhsLabelSize = 'xl' | 's' | ''
+type NhsLabelSize = 'xl' | 's' | '';
 
-export { NhsLabelSize }
+export { NhsLabelSize };

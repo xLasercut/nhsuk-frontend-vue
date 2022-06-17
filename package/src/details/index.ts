@@ -1,3 +1,3 @@
-import NhsDetails from './NhsDetails.vue'
+import NhsDetails from './NhsDetails.vue';
 
-export { NhsDetails }
+export { NhsDetails };

@@ -25,7 +25,7 @@ export default {
           hint: 'You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

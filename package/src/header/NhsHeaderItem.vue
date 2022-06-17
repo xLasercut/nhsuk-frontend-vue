@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import NhsIcon from '../icon/NhsIcon.vue'
-import { defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import NhsIcon from '../icon/NhsIcon.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -28,5 +28,5 @@ export default defineComponent({
       required: true
     }
   }
-})
+});
 </script>

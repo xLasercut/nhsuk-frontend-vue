@@ -21,7 +21,7 @@ export default {
           value: 'blue'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

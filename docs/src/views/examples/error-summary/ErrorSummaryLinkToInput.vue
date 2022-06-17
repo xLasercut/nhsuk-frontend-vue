@@ -23,30 +23,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
     const state = reactive({
       rules: [(v: string) => !!v || 'Error message goes here'],
       model: ''
-    })
+    });
 
-    let _id: string
-    let _validator: Function
+    let _id: string;
+    let _validator: Function;
 
     function registerValidator(id: string, validator: Function) {
-      _id = id
-      _validator = validator
+      _id = id;
+      _validator = validator;
     }
 
-    provide('register-validator', registerValidator)
+    provide('register-validator', registerValidator);
 
     onMounted(() => {
-      _validator()
-    })
+      _validator();
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

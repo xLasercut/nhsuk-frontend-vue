@@ -23,21 +23,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, toRefs } from 'vue'
-import { setPageColor } from '../assets/helpers'
+import { defineComponent, onMounted, reactive, toRefs } from 'vue';
+import { setPageColor } from '../assets/helpers';
 
 export default defineComponent({
   setup() {
     const state = reactive({
       title: 'NHS.UK frontend Vue',
       description: 'Port of nhsuk-frontend library to vue.js'
-    })
+    });
 
     onMounted(() => {
-      setPageColor()
-    })
+      setPageColor();
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

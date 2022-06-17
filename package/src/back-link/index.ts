@@ -1,3 +1,3 @@
-import NhsBackLink from './NhsBackLink.vue'
+import NhsBackLink from './NhsBackLink.vue';
 
-export { NhsBackLink }
+export { NhsBackLink };

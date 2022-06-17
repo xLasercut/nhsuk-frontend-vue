@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { getAttributes } from '../../helpers/attribute-helper'
+import { computed, defineComponent } from 'vue';
+import { getAttributes } from '../../helpers/attribute-helper';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -19,13 +19,13 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     }
   },
   setup(props, context) {
-    const attributes = getAttributes(['disabled'], props, context)
-    return { attributes }
+    const attributes = getAttributes(['disabled'], props, context);
+    return { attributes };
   }
-})
+});
 </script>

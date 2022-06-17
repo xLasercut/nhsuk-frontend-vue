@@ -1,8 +1,8 @@
-import CardBasic from '../../views/examples/card/CardBasic.vue'
-import CardClickable from '../../views/examples/card/CardClickable.vue'
-import CardImage from '../../views/examples/card/CardImage.vue'
-import CardGroup from '../../views/examples/card/CardGroup.vue'
-import CardFeature from '../../views/examples/card/CardFeature.vue'
+import CardBasic from '../../views/examples/card/CardBasic.vue';
+import CardClickable from '../../views/examples/card/CardClickable.vue';
+import CardImage from '../../views/examples/card/CardImage.vue';
+import CardGroup from '../../views/examples/card/CardGroup.vue';
+import CardFeature from '../../views/examples/card/CardFeature.vue';
 
 const cardExampleRoutes = [
   {
@@ -30,6 +30,6 @@ const cardExampleRoutes = [
     component: CardFeature,
     name: 'Card - Feature card'
   }
-]
+];
 
-export { cardExampleRoutes }
+export { cardExampleRoutes };

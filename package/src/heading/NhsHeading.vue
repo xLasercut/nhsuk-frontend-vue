@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import { NhsHeadingSwitcher } from '../shared/heading-switcher'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeadingSize } from './types'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeadingSize } from './types';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
 
 const NHS_HEADING_SIZES: { [key: string]: NhsHeadingType } = {
   xl: 1,
@@ -20,7 +20,7 @@ const NHS_HEADING_SIZES: { [key: string]: NhsHeadingType } = {
   m: 3,
   s: 4,
   xs: 5
-}
+};
 
 export default defineComponent({
   inheritAttrs: false,
@@ -31,19 +31,19 @@ export default defineComponent({
     size: {
       type: String as PropType<NhsHeadingSize>,
       default: (): NhsHeadingSize => {
-        return 'l'
+        return 'l';
       },
       validators: (val: NhsHeadingSize): boolean => {
-        return val in NHS_HEADING_SIZES
+        return val in NHS_HEADING_SIZES;
       }
     }
   },
   setup(props) {
     const headingLevel = computed((): NhsHeadingType => {
-      return NHS_HEADING_SIZES[props.size]
-    })
+      return NHS_HEADING_SIZES[props.size];
+    });
 
-    return { headingLevel }
+    return { headingLevel };
   }
-})
+});
 </script>

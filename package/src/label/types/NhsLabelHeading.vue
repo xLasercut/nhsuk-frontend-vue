@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-import NhsLabelNormal from './NhsLabelNormal.vue'
-import { defineComponent, PropType } from 'vue'
-import { NhsLabelSize } from '../types'
+import NhsLabelNormal from './NhsLabelNormal.vue';
+import { defineComponent, PropType } from 'vue';
+import { NhsLabelSize } from '../types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -20,5 +20,5 @@ export default defineComponent({
       type: String as PropType<NhsLabelSize>
     }
   }
-})
+});
 </script>

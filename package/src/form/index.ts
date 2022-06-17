@@ -1,3 +1,3 @@
-import NhsForm from './NhsForm.vue'
+import NhsForm from './NhsForm.vue';
 
-export { NhsForm }
+export { NhsForm };

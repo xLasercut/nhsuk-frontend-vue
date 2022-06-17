@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import { defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'nhs-breadcrumb-backlink',
@@ -26,5 +26,5 @@ export default defineComponent({
       required: true
     }
   }
-})
+});
 </script>

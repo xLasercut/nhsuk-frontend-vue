@@ -1,3 +1,3 @@
-import NhsFieldset from './NhsFieldset.vue'
+import NhsFieldset from './NhsFieldset.vue';
 
-export { NhsFieldset }
+export { NhsFieldset };

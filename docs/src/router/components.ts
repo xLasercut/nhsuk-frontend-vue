@@ -1,45 +1,45 @@
-import Button from '../views/components/Button.vue'
-import ComponentsHome from '../views/components/ComponentsHome.vue'
-import { filterRoutes } from '../assets/helpers'
-import Dodont from '../views/components/Dodont.vue'
-import ActionLink from '../views/components/ActionLink.vue'
-import BackLink from '../views/components/BackLink.vue'
-import Breadrumb from '../views/components/Breadcrumb.vue'
-import Card from '../views/components/Card.vue'
-import CareCard from '../views/components/CareCard.vue'
-import Contents from '../views/components/Contents.vue'
-import Details from '../views/components/Details.vue'
-import ErrorSummary from '../views/components/ErrorSummary.vue'
-import Body from '../views/components/Body.vue'
-import List from '../views/components/List.vue'
-import ErrorText from '../views/components/ErrorText.vue'
-import HintText from '../views/components/HintText.vue'
-import InsetText from '../views/components/InsetText.vue'
-import Heading from '../views/components/Heading.vue'
-import Label from '../views/components/Label.vue'
-import Expander from '../views/components/Expander.vue'
-import Fieldset from '../views/components/Fieldset.vue'
-import Footer from '../views/components/Footer.vue'
-import Grid from '../views/components/Grid.vue'
-import Header from '../views/components/Header.vue'
-import Hero from '../views/components/Hero.vue'
-import Image from '../views/components/Image.vue'
-import ListPanel from '../views/components/ListPanel.vue'
-import NavAz from '../views/components/NavAz.vue'
-import Pagination from '../views/components/Pagination.vue'
-import ReviewDate from '../views/components/ReviewDate.vue'
-import SkipLink from '../views/components/SkipLink.vue'
-import SummaryList from '../views/components/SummaryList.vue'
-import Tag from '../views/components/Tag.vue'
-import WarningCallout from '../views/components/WarningCallout.vue'
-import Table from '../views/components/Table.vue'
-import Input from '../views/components/Input.vue'
-import Form from '../views/components/Form.vue'
-import Select from '../views/components/Select.vue'
-import Textarea from '../views/components/Textarea.vue'
-import InputGroup from '../views/components/InputGroup.vue'
-import Checkbox from '../views/components/Checkbox.vue'
-import Radio from '../views/components/Radio.vue'
+import Button from '../views/components/Button.vue';
+import ComponentsHome from '../views/components/ComponentsHome.vue';
+import { filterRoutes } from '../assets/helpers';
+import Dodont from '../views/components/Dodont.vue';
+import ActionLink from '../views/components/ActionLink.vue';
+import BackLink from '../views/components/BackLink.vue';
+import Breadrumb from '../views/components/Breadcrumb.vue';
+import Card from '../views/components/Card.vue';
+import CareCard from '../views/components/CareCard.vue';
+import Contents from '../views/components/Contents.vue';
+import Details from '../views/components/Details.vue';
+import ErrorSummary from '../views/components/ErrorSummary.vue';
+import Body from '../views/components/Body.vue';
+import List from '../views/components/List.vue';
+import ErrorText from '../views/components/ErrorText.vue';
+import HintText from '../views/components/HintText.vue';
+import InsetText from '../views/components/InsetText.vue';
+import Heading from '../views/components/Heading.vue';
+import Label from '../views/components/Label.vue';
+import Expander from '../views/components/Expander.vue';
+import Fieldset from '../views/components/Fieldset.vue';
+import Footer from '../views/components/Footer.vue';
+import Grid from '../views/components/Grid.vue';
+import Header from '../views/components/Header.vue';
+import Hero from '../views/components/Hero.vue';
+import Image from '../views/components/Image.vue';
+import ListPanel from '../views/components/ListPanel.vue';
+import NavAz from '../views/components/NavAz.vue';
+import Pagination from '../views/components/Pagination.vue';
+import ReviewDate from '../views/components/ReviewDate.vue';
+import SkipLink from '../views/components/SkipLink.vue';
+import SummaryList from '../views/components/SummaryList.vue';
+import Tag from '../views/components/Tag.vue';
+import WarningCallout from '../views/components/WarningCallout.vue';
+import Table from '../views/components/Table.vue';
+import Input from '../views/components/Input.vue';
+import Form from '../views/components/Form.vue';
+import Select from '../views/components/Select.vue';
+import Textarea from '../views/components/Textarea.vue';
+import InputGroup from '../views/components/InputGroup.vue';
+import Checkbox from '../views/components/Checkbox.vue';
+import Radio from '../views/components/Radio.vue';
 
 const componentRoutes = [
   {
@@ -247,8 +247,8 @@ const componentRoutes = [
     component: Radio,
     name: 'Radio'
   }
-]
+];
 
-const filteredComponentRoutes = filterRoutes(componentRoutes, ['Components'])
+const filteredComponentRoutes = filterRoutes(componentRoutes, ['Components']);
 
-export { componentRoutes, filteredComponentRoutes }
+export { componentRoutes, filteredComponentRoutes };

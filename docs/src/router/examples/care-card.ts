@@ -1,6 +1,6 @@
-import CareCardNonUrgent from '../../views/examples/care-card/CareCardNonUrgent.vue'
-import CareCardUrgent from '../../views/examples/care-card/CareCardUrgent.vue'
-import CareCardEmergency from '../../views/examples/care-card/CareCardEmergency.vue'
+import CareCardNonUrgent from '../../views/examples/care-card/CareCardNonUrgent.vue';
+import CareCardUrgent from '../../views/examples/care-card/CareCardUrgent.vue';
+import CareCardEmergency from '../../views/examples/care-card/CareCardEmergency.vue';
 
 const careCardExampleRoutes = [
   {
@@ -18,6 +18,6 @@ const careCardExampleRoutes = [
     component: CareCardEmergency,
     name: 'Card - Care card emergency (red and black)'
   }
-]
+];
 
-export { careCardExampleRoutes }
+export { careCardExampleRoutes };

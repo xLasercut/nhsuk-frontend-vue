@@ -49,13 +49,13 @@
 </template>
 
 <script lang="ts">
-import DocTab from './argument-table/DocTab.vue'
-import { defineComponent, reactive, toRefs } from 'vue'
-import { getComponentDoc } from '../../assets/component-docs'
-import PropsTable from './argument-table/PropsTable.vue'
-import SlotsTable from './argument-table/SlotsTable.vue'
-import EventsTable from './argument-table/EventsTable.vue'
-import MethodsTable from './argument-table/MethodsTable.vue'
+import DocTab from './argument-table/DocTab.vue';
+import { defineComponent, reactive, toRefs } from 'vue';
+import { getComponentDoc } from '../../assets/component-docs';
+import PropsTable from './argument-table/PropsTable.vue';
+import SlotsTable from './argument-table/SlotsTable.vue';
+import EventsTable from './argument-table/EventsTable.vue';
+import MethodsTable from './argument-table/MethodsTable.vue';
 
 export default defineComponent({
   components: { MethodsTable, EventsTable, SlotsTable, PropsTable, DocTab },
@@ -66,19 +66,19 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { propsDocs, slotsDocs, eventsDocs } = getComponentDoc(props.heading)
+    const { propsDocs, slotsDocs, eventsDocs } = getComponentDoc(props.heading);
 
     const defaultTab = (): string => {
       if (propsDocs.length > 0) {
-        return 'props'
+        return 'props';
       } else if (slotsDocs.length > 0) {
-        return 'slots'
+        return 'slots';
       } else if (eventsDocs.length > 0) {
-        return 'events'
+        return 'events';
       } else {
-        return 'methods'
+        return 'methods';
       }
-    }
+    };
 
     const state = reactive({
       dataProps: propsDocs,
@@ -86,11 +86,11 @@ export default defineComponent({
       dataEvents: eventsDocs,
       dataMethods: [],
       tab: defaultTab()
-    })
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>
 
 <style scoped>

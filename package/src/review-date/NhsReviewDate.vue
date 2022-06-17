@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -24,5 +24,5 @@ export default defineComponent({
       required: true
     }
   }
-})
+});
 </script>

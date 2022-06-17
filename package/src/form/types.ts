@@ -1,3 +1,3 @@
-type NhsFormInject = Function | null
+type NhsFormInject = Function | null;
 
-export { NhsFormInject }
+export { NhsFormInject };

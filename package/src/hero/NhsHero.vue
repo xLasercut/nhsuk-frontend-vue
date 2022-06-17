@@ -29,8 +29,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { NhsHeroSectionStyle } from './interface'
+import { computed, defineComponent } from 'vue';
+import { NhsHeroSectionStyle } from './interface';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -49,52 +49,52 @@ export default defineComponent({
   },
   setup(props) {
     const sectionClass = computed((): string => {
-      const classes = ['nhsuk-hero']
+      const classes = ['nhsuk-hero'];
 
       if (props.heading && props.imageUrl) {
-        classes.push('nhsuk-hero--image nhsuk-hero--image-description')
+        classes.push('nhsuk-hero--image nhsuk-hero--image-description');
       } else if (props.imageUrl) {
-        classes.push('nhsuk-hero--image')
+        classes.push('nhsuk-hero--image');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const sectionStyle = computed((): NhsHeroSectionStyle => {
-      const style: NhsHeroSectionStyle = {}
+      const style: NhsHeroSectionStyle = {};
 
       if (props.imageUrl) {
-        style['background-image'] = `url('${props.imageUrl}')`
+        style['background-image'] = `url('${props.imageUrl}')`;
       }
 
-      return style
-    })
+      return style;
+    });
 
     const widthContainerClass = computed((): string => {
-      const classes = ['nhsuk-width-container']
+      const classes = ['nhsuk-width-container'];
 
       if (!props.imageUrl) {
-        classes.push('nhsuk-hero--border')
+        classes.push('nhsuk-hero--border');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const heroContentClass = computed((): string => {
       if (props.imageUrl) {
-        return 'nhsuk-hero-content'
+        return 'nhsuk-hero-content';
       }
-      return 'nhsuk-hero__wrapper'
-    })
+      return 'nhsuk-hero__wrapper';
+    });
 
     const headingClass = computed((): string => {
       if (props.text) {
-        return 'nhsuk-u-margin-bottom-3'
+        return 'nhsuk-u-margin-bottom-3';
       }
-      return ''
-    })
+      return '';
+    });
 
-    return { sectionClass, sectionStyle, widthContainerClass, heroContentClass, headingClass }
+    return { sectionClass, sectionStyle, widthContainerClass, heroContentClass, headingClass };
   }
-})
+});
 </script>

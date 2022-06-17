@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts">
-import NhsLabelHeading from './types/NhsLabelHeading.vue'
-import NhsLabelNormal from './types/NhsLabelNormal.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsLabelSize } from './types'
+import NhsLabelHeading from './types/NhsLabelHeading.vue';
+import NhsLabelNormal from './types/NhsLabelNormal.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsLabelSize } from './types';
 
-const NHS_LABEL_SIZES: Array<NhsLabelSize> = ['xl', 's']
+const NHS_LABEL_SIZES: Array<NhsLabelSize> = ['xl', 's'];
 
 export default defineComponent({
   inheritAttrs: false,
@@ -20,28 +20,28 @@ export default defineComponent({
     pageHeading: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     size: {
       type: String as PropType<NhsLabelSize>,
       validator: (val: NhsLabelSize): boolean => {
         if (val) {
-          return NHS_LABEL_SIZES.includes(val)
+          return NHS_LABEL_SIZES.includes(val);
         }
-        return true
+        return true;
       }
     }
   },
   setup(props) {
     const labelType = computed(() => {
       if (props.pageHeading) {
-        return NhsLabelHeading
+        return NhsLabelHeading;
       }
-      return NhsLabelNormal
-    })
+      return NhsLabelNormal;
+    });
 
-    return { labelType }
+    return { labelType };
   }
-})
+});
 </script>

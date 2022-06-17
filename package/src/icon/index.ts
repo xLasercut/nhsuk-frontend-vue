@@ -1,3 +1,3 @@
-import NhsIcon from './NhsIcon.vue'
+import NhsIcon from './NhsIcon.vue';
 
-export { NhsIcon }
+export { NhsIcon };

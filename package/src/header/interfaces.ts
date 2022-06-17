@@ -1,18 +1,18 @@
 interface NhsHeaderSearchResult {
-  text: string
-  value: any
+  text: string;
+  value: any;
 }
 
 interface NhsHeaderOrganisation {
-  name?: string
-  split?: string
-  descriptor?: string
-  logoURL?: string
+  name?: string;
+  split?: string;
+  descriptor?: string;
+  logoURL?: string;
 }
 
 interface NhsHeaderService {
-  name?: string
-  href?: string
+  name?: string;
+  href?: string;
 }
 
-export { NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult }
+export { NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult };

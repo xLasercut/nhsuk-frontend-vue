@@ -41,19 +41,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, ref, toRefs } from 'vue'
-import NhsInputGroupItem from './components/NhsInputGroupItem.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import NhsFieldset from '../fieldset/NhsFieldset.vue'
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import { randomString } from '../shared/helpers/random-string'
-import { handleItemGroupRegistry } from '../shared/form/form-item-registry'
-import { errorId, getItemGroupAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { getItemGroupFormEvents, itemGroupItemId } from '../shared/form/form-item-group'
-import { NhsFieldsetSize } from '../fieldset/types'
-import { NhsInputGroupItemConfig } from './interfaces'
-import { getInternalModelItemGroup } from '../shared/form/v-model'
+import { defineComponent, PropType, reactive, ref, toRefs } from 'vue';
+import NhsInputGroupItem from './components/NhsInputGroupItem.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import NhsFieldset from '../fieldset/NhsFieldset.vue';
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import { randomString } from '../shared/helpers/random-string';
+import { handleItemGroupRegistry } from '../shared/form/form-item-registry';
+import { errorId, getItemGroupAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { getItemGroupFormEvents, itemGroupItemId } from '../shared/form/form-item-group';
+import { NhsFieldsetSize } from '../fieldset/types';
+import { NhsInputGroupItemConfig } from './interfaces';
+import { getInternalModelItemGroup } from '../shared/form/v-model';
 
 export default defineComponent({
   name: 'nhs-input-group',
@@ -64,7 +64,7 @@ export default defineComponent({
     id: {
       type: String,
       default: (): string => {
-        return `nhs-input-group-${randomString()}`
+        return `nhs-input-group-${randomString()}`;
       }
     },
     hint: {
@@ -76,19 +76,19 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     pageHeading: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     items: {
       type: Array as PropType<Array<NhsInputGroupItemConfig>>,
       default: (): Array<NhsInputGroupItemConfig> => {
-        return []
+        return [];
       }
     },
     headingSize: {
@@ -97,15 +97,15 @@ export default defineComponent({
     modelValue: {
       type: Object,
       default: () => {
-        return {}
+        return {};
       }
     }
   },
   setup(props, context) {
-    const state = getInternalModelItemGroup(props, context)
-    const { errorStatus, errorMsg } = handleItemGroupRegistry(props)
-    const ariaDescribedby = getItemGroupAriaDescribedBy(props, errorStatus)
-    const { onBlur, onChange, onFocus } = getItemGroupFormEvents(context)
+    const state = getInternalModelItemGroup(props, context);
+    const { errorStatus, errorMsg } = handleItemGroupRegistry(props);
+    const ariaDescribedby = getItemGroupAriaDescribedBy(props, errorStatus);
+    const { onBlur, onChange, onFocus } = getItemGroupFormEvents(context);
 
     return {
       errorStatus,
@@ -118,7 +118,7 @@ export default defineComponent({
       onFocus,
       itemGroupItemId,
       ...toRefs(state)
-    }
+    };
   }
-})
+});
 </script>

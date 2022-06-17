@@ -5,16 +5,16 @@
 </template>
 
 <script lang="ts">
-import NhsListOrdered from './types/NhsListOrdered.vue'
-import NhsListUnordered from './types/NhsListUnordered.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsListType } from './types'
+import NhsListOrdered from './types/NhsListOrdered.vue';
+import NhsListUnordered from './types/NhsListUnordered.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsListType } from './types';
 
 const NHS_LIST_TYPES = {
   bullet: 'nhsuk-list--bullet',
   number: 'nhsuk-list--number',
   error: 'nhsuk-error-summary__list'
-}
+};
 
 export default defineComponent({
   inheritAttrs: false,
@@ -24,26 +24,26 @@ export default defineComponent({
     type: {
       type: String as PropType<NhsListType>,
       default: (): NhsListType => {
-        return 'bullet'
+        return 'bullet';
       },
       validator: (val: NhsListType): boolean => {
-        return val in NHS_LIST_TYPES
+        return val in NHS_LIST_TYPES;
       }
     }
   },
   setup(props) {
     const element = computed(() => {
       if (props.type === 'number') {
-        return NhsListOrdered
+        return NhsListOrdered;
       }
-      return NhsListUnordered
-    })
+      return NhsListUnordered;
+    });
 
     const classes = computed(() => {
-      return `nhsuk-list ${NHS_LIST_TYPES[props.type]}`
-    })
+      return `nhsuk-list ${NHS_LIST_TYPES[props.type]}`;
+    });
 
-    return { element, classes }
+    return { element, classes };
   }
-})
+});
 </script>

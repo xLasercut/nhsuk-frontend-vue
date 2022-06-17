@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'nhs-footer',
@@ -23,15 +23,15 @@ export default defineComponent({
     hiddenText: {
       type: String,
       default: (): string => {
-        return 'Support links'
+        return 'Support links';
       }
     },
     copyright: {
       type: String,
       default: (): string => {
-        return 'Crown copyright'
+        return 'Crown copyright';
       }
     }
   }
-})
+});
 </script>

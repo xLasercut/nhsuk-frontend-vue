@@ -9,6 +9,6 @@ type NhsTagColor =
   | 'pink'
   | 'red'
   | 'orange'
-  | 'yellow'
+  | 'yellow';
 
-export { NhsTagColor }
+export { NhsTagColor };

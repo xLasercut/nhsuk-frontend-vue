@@ -1,5 +1,5 @@
 interface NhsContentsItemAttribute {
-  'aria-current'?: any
+  'aria-current'?: any;
 }
 
-export { NhsContentsItemAttribute }
+export { NhsContentsItemAttribute };

@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
-import { SlotsDoc, SlotsDocProperties } from '../../../assets/interfaces'
+import { defineComponent, reactive, toRefs } from 'vue';
+import { SlotsDoc, SlotsDocProperties } from '../../../assets/interfaces';
 
 export default defineComponent({
   props: {
@@ -39,26 +39,26 @@ export default defineComponent({
           value: 'description'
         }
       ]
-    })
+    });
 
     function slotPropsDisplayBlank(item: SlotsDoc): string {
       if (item['vue-properties']) {
-        return 'object'
+        return 'object';
       }
-      return '-'
+      return '-';
     }
 
     function slotPropsDisplay(slotProps: Array<SlotsDocProperties>): string {
-      let properties = `{\n`
+      let properties = `{\n`;
       for (const slotProp of slotProps) {
-        properties = properties + `  ${slotProp.name}: ${slotProp.type || 'any'}\n`
+        properties = properties + `  ${slotProp.name}: ${slotProp.type || 'any'}\n`;
       }
-      properties = properties + `}\n`
+      properties = properties + `}\n`;
 
-      return properties
+      return properties;
     }
 
-    return { ...toRefs(state), slotPropsDisplay, slotPropsDisplayBlank }
+    return { ...toRefs(state), slotPropsDisplay, slotPropsDisplayBlank };
   }
-})
+});
 </script>

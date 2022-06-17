@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -38,19 +38,19 @@ export default defineComponent({
       model: '',
       rules: [(v: string) => !!v || 'You must provide an explanation'],
       valid: false
-    })
+    });
 
     function onSubmit(): void {
       if (state.valid) {
-        alert('success submission')
+        alert('success submission');
       }
     }
 
     function onReset(): void {
-      state.model = ''
+      state.model = '';
     }
 
-    return { ...toRefs(state), onSubmit, onReset }
+    return { ...toRefs(state), onSubmit, onReset };
   }
-})
+});
 </script>

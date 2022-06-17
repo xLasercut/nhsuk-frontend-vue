@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-frontend-vue",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "main": "./dist/nhsuk-frontend-vue.umd.js",
   "module": "./dist/nhsuk-frontend-vue.es.js",
   "types": "./dist/index.d.ts",

@@ -29,10 +29,10 @@
 </template>
 
 <script lang="ts">
-import NhsIcon from '../../icon/NhsIcon.vue'
-import { NhsLinkSwitcher } from '../../shared/link-switcher'
-import { computed, defineComponent, inject } from 'vue'
-import { NHS_HEADER_INJECTS } from '../constants'
+import NhsIcon from '../../icon/NhsIcon.vue';
+import { NhsLinkSwitcher } from '../../shared/link-switcher';
+import { computed, defineComponent, inject } from 'vue';
+import { NHS_HEADER_INJECTS } from '../constants';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -54,18 +54,18 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed((): string => {
-      const classes = ['nhsuk-header__navigation']
+      const classes = ['nhsuk-header__navigation'];
 
       if (props.navOpen) {
-        classes.push('js-show')
+        classes.push('js-show');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
+    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav);
 
-    return { classes, toggleNav }
+    return { classes, toggleNav };
   }
-})
+});
 </script>

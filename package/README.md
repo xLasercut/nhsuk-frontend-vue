@@ -21,24 +21,24 @@ yarn add nhsuk-frontend-vue
 ## Use
 
 ```jsx
-import { createApp } from 'vue'
-import App from './App.vue'
-import NhsukFrontendVue from 'nhsuk-frontend-vue'
-import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css'
+import { createApp } from 'vue';
+import App from './App.vue';
+import NhsukFrontendVue from 'nhsuk-frontend-vue';
+import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css';
 
-const app = createApp(App)
-app.use(NhsukFrontendVue)
+const app = createApp(App);
+app.use(NhsukFrontendVue);
 ```
 If require router support, import router and add as option
 ```jsx
-import { createApp } from 'vue'
-import App from './App.vue'
-import NhsukFrontendVue from 'nhsuk-frontend-vue'
-import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import NhsukFrontendVue from 'nhsuk-frontend-vue';
+import 'nhsuk-frontend-vue/nhsuk-frontend-vue.css';
+import router from './router';
 
-const app = createApp(App)
-app.use(NhsukFrontendVue, {router})
+const app = createApp(App);
+app.use(NhsukFrontendVue, {router});
 ```
 Then in vue components:
 
@@ -65,14 +65,14 @@ Import each component individually
 </template>
 
 <script>
-  import { defineComponent } from 'vue'
-  import { NhsMain } from 'nhsuk-frontend-vue'
+  import { defineComponent } from 'vue';
+  import { NhsMain } from 'nhsuk-frontend-vue';
 
   export default defineComponent({
     components: {
       NhsMain
     }
-  })
+  });
 </script>
 ```
 

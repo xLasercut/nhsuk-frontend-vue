@@ -1,5 +1,5 @@
 interface NhsHeroSectionStyle {
-  'background-image'?: string
+  'background-image'?: string;
 }
 
-export { NhsHeroSectionStyle }
+export { NhsHeroSectionStyle };

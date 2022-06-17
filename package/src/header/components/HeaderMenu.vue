@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, inject } from 'vue'
-import { NHS_HEADER_INJECTS } from '../constants'
+import { computed, defineComponent, inject } from 'vue';
+import { NHS_HEADER_INJECTS } from '../constants';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -36,28 +36,28 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed((): string => {
-      const classes = ['nhsuk-header__menu']
+      const classes = ['nhsuk-header__menu'];
 
       if (!props.showSearch) {
-        classes.push('nhsuk-header__menu--only')
+        classes.push('nhsuk-header__menu--only');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const menuButtonClasses = computed((): string => {
-      const classes = ['nhsuk-header__menu-toggle']
+      const classes = ['nhsuk-header__menu-toggle'];
 
       if (props.navOpen) {
-        classes.push('is-active')
+        classes.push('is-active');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav)
+    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav);
 
-    return { classes, menuButtonClasses, toggleNav }
+    return { classes, menuButtonClasses, toggleNav };
   }
-})
+});
 </script>

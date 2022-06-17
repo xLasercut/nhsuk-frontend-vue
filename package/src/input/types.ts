@@ -1,4 +1,4 @@
-type NhsInputWidth = '2' | '3' | '4' | '5' | '10' | '20' | ''
+type NhsInputWidth = '2' | '3' | '4' | '5' | '10' | '20' | '';
 type NhsInputInputmode =
   | 'search'
   | 'numeric'
@@ -8,6 +8,6 @@ type NhsInputInputmode =
   | 'decimal'
   | 'tel'
   | 'email'
-  | undefined
+  | undefined;
 
-export { NhsInputWidth, NhsInputInputmode }
+export { NhsInputWidth, NhsInputInputmode };

@@ -1,3 +1,3 @@
-import NhsSelect from './NhsSelect.vue'
+import NhsSelect from './NhsSelect.vue';
 
-export { NhsSelect }
+export { NhsSelect };

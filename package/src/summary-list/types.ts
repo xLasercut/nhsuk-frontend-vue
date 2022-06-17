@@ -1,3 +1,3 @@
-type NhsSummaryListItemType = 'key' | 'value' | 'actions'
+type NhsSummaryListItemType = 'key' | 'value' | 'actions';
 
-export { NhsSummaryListItemType }
+export { NhsSummaryListItemType };

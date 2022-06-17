@@ -1,44 +1,44 @@
-import { computed, Ref } from 'vue'
-import { NhsVueProp } from '../interface'
+import { computed, Ref } from 'vue';
+import { NhsVueProp } from '../interface';
 
 function hintId(id: string): string {
-  return `${id}-hint`
+  return `${id}-hint`;
 }
 
 function errorId(id: string): string {
-  return `${id}-error`
+  return `${id}-error`;
 }
 
 function getAriaDescribedBy(props: NhsVueProp, error: Ref) {
   return computed((): string => {
-    const describedby = []
+    const describedby = [];
 
     if (props.hint) {
-      describedby.push(hintId(props.id))
+      describedby.push(hintId(props.id));
     }
 
     if (error.value) {
-      describedby.push(errorId(props.id))
+      describedby.push(errorId(props.id));
     }
 
-    return describedby.join(' ')
-  })
+    return describedby.join(' ');
+  });
 }
 
 function getItemGroupAriaDescribedBy(props: NhsVueProp, errorStatus: Function) {
   return computed((): string => {
-    const describedby = []
+    const describedby = [];
 
     if (props.hint) {
-      describedby.push(hintId(props.id))
+      describedby.push(hintId(props.id));
     }
 
     if (errorStatus()) {
-      describedby.push(errorId(props.id))
+      describedby.push(errorId(props.id));
     }
 
-    return describedby.join(' ')
-  })
+    return describedby.join(' ');
+  });
 }
 
-export { hintId, errorId, getAriaDescribedBy, getItemGroupAriaDescribedBy }
+export { hintId, errorId, getAriaDescribedBy, getItemGroupAriaDescribedBy };

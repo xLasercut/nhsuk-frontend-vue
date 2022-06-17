@@ -12,11 +12,11 @@
 </template>
 
 <script lang="ts">
-import { NhsHeadingSwitcher } from '../shared/heading-switcher'
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import NhsIcon from '../icon/NhsIcon.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher';
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import NhsIcon from '../icon/NhsIcon.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -33,13 +33,13 @@ export default defineComponent({
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 2
+        return 2;
       }
     },
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     message: {
@@ -48,11 +48,11 @@ export default defineComponent({
   },
   setup() {
     const classes = computed((): string => {
-      const classes = ['nhsuk-list nhsuk-list--border']
-      return classes.join(' ')
-    })
+      const classes = ['nhsuk-list nhsuk-list--border'];
+      return classes.join(' ');
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

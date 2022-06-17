@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide, reactive, watch } from 'vue'
-import { NhsFormSate } from './interfaces'
-import { NHS_FORM_INJECTS } from '../shared/form/constants'
+import { defineComponent, provide, reactive, watch } from 'vue';
+import { NhsFormSate } from './interfaces';
+import { NHS_FORM_INJECTS } from '../shared/form/constants';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -17,7 +17,7 @@ export default defineComponent({
     modelValue: {
       type: Boolean,
       default: (): boolean => {
-        return true
+        return true;
       }
     }
   },
@@ -26,68 +26,68 @@ export default defineComponent({
       validators: {},
       errorStatuses: {},
       resets: {}
-    })
+    });
 
     function registerValidator(id: string, validator: Function): void {
-      state.validators[id] = validator
+      state.validators[id] = validator;
     }
 
     function registerErrorStatus(id: string, errorStatus: Function): void {
-      state.errorStatuses[id] = errorStatus
+      state.errorStatuses[id] = errorStatus;
     }
 
     function registerReset(id: string, reset: Function): void {
-      state.resets[id] = reset
+      state.resets[id] = reset;
     }
 
     function unregisterItem(id: string): void {
-      delete state.validators[id]
-      delete state.errorStatuses[id]
-      delete state.resets[id]
+      delete state.validators[id];
+      delete state.errorStatuses[id];
+      delete state.resets[id];
     }
 
-    provide(NHS_FORM_INJECTS.registerValidator, registerValidator)
-    provide(NHS_FORM_INJECTS.registerErrorStatus, registerErrorStatus)
-    provide(NHS_FORM_INJECTS.registerReset, registerReset)
-    provide(NHS_FORM_INJECTS.unregisterItem, unregisterItem)
+    provide(NHS_FORM_INJECTS.registerValidator, registerValidator);
+    provide(NHS_FORM_INJECTS.registerErrorStatus, registerErrorStatus);
+    provide(NHS_FORM_INJECTS.registerReset, registerReset);
+    provide(NHS_FORM_INJECTS.unregisterItem, unregisterItem);
 
     function isFormValid(): boolean {
       for (const errorStatus of Object.values(state.errorStatuses)) {
         if (errorStatus()) {
-          return false
+          return false;
         }
       }
-      return true
+      return true;
     }
 
     function updateValid(valid: boolean): void {
-      context.emit('update:model-value', valid)
+      context.emit('update:model-value', valid);
     }
 
     function onSubmit(): void {
       for (const validator of Object.values(state.validators)) {
-        validator()
+        validator();
       }
-      const valid = isFormValid()
-      updateValid(valid)
-      context.emit('submit')
+      const valid = isFormValid();
+      updateValid(valid);
+      context.emit('submit');
     }
 
     function onReset(): void {
       for (const reset of Object.values(state.resets)) {
-        reset()
+        reset();
       }
-      context.emit('reset')
+      context.emit('reset');
     }
 
     watch(
       () => isFormValid(),
       (val) => {
-        updateValid(val)
+        updateValid(val);
       }
-    )
+    );
 
-    return { onSubmit, onReset }
+    return { onSubmit, onReset };
   }
-})
+});
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   props: {
@@ -30,9 +30,9 @@ export default defineComponent({
           value: 'description'
         }
       ]
-    })
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

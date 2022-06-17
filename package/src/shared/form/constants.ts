@@ -8,6 +8,6 @@ const NHS_FORM_INJECTS = {
   registerItemErrorMsg: 'register-item-error-msg',
   registerItemReset: 'register-item-reset',
   unregisterItemGroupItem: 'unregister-item-group-item'
-}
+};
 
-export { NHS_FORM_INJECTS }
+export { NHS_FORM_INJECTS };

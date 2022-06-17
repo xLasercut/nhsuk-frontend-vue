@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'nhs-contents',
@@ -18,15 +18,15 @@ export default defineComponent({
     ariaLabel: {
       type: String,
       default: (): string => {
-        return 'Pages in this guide'
+        return 'Pages in this guide';
       }
     },
     hiddenText: {
       type: String,
       default: (): string => {
-        return 'Contents'
+        return 'Contents';
       }
     }
   }
-})
+});
 </script>

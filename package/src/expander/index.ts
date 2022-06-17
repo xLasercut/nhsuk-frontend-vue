@@ -1,4 +1,4 @@
-import NhsExpander from './NhsExpander.vue'
-import NhsExpanderGroup from './NhsExpanderGroup.vue'
+import NhsExpander from './NhsExpander.vue';
+import NhsExpanderGroup from './NhsExpanderGroup.vue';
 
-export { NhsExpander, NhsExpanderGroup }
+export { NhsExpander, NhsExpanderGroup };

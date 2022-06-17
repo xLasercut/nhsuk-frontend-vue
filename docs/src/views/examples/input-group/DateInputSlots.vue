@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -59,19 +59,19 @@ export default defineComponent({
       ],
       model: {},
       valid: false
-    })
+    });
 
     function onSubmit() {
       if (state.valid) {
-        alert('submit form')
+        alert('submit form');
       }
     }
 
     function onReset() {
-      state.model = {}
+      state.model = {};
     }
 
-    return { ...toRefs(state), onReset, onSubmit }
+    return { ...toRefs(state), onReset, onSubmit };
   }
-})
+});
 </script>
