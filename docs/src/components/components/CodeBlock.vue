@@ -21,10 +21,10 @@
 </template>
 
 <script lang="ts">
-import CodeBlockTab from './code-block/CodeBlockTab.vue'
-import { computed, defineComponent, reactive, toRefs, watch } from 'vue'
-import { getExampleCode } from '../../assets/example-strings'
-import { getExampleModule } from '../../assets/example-modules'
+import CodeBlockTab from './code-block/CodeBlockTab.vue';
+import { computed, defineComponent, reactive, toRefs, watch } from 'vue';
+import { getExampleCode } from '../../assets/example-strings';
+import { getExampleModule } from '../../assets/example-modules';
 
 export default defineComponent({
   components: { CodeBlockTab },
@@ -35,56 +35,56 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { templateCode, scriptCode } = getExampleCode(props.name)
+    const { templateCode, scriptCode } = getExampleCode(props.name);
 
     const state = reactive({
       template: templateCode,
       script: scriptCode,
       showTemplate: false,
       showScript: false
-    })
+    });
 
     const codeContainerStyle = computed(() => {
       if (!state.showTemplate && !state.showScript) {
         return {
           display: 'none',
           'margin-bottom': '0px'
-        }
+        };
       }
-      return {}
-    })
+      return {};
+    });
 
     const expandContainerStyle = computed(() => {
       if (!state.showTemplate && !state.showScript) {
         return {
           'border-bottom': '1px solid #d8dde0',
           'margin-bottom': '40px'
-        }
+        };
       }
-      return {}
-    })
+      return {};
+    });
 
     watch(
       () => state.showTemplate,
       (val) => {
         if (val && state.showScript) {
-          state.showScript = false
+          state.showScript = false;
         }
       }
-    )
+    );
 
     watch(
       () => state.showScript,
       (val) => {
         if (val && state.showTemplate) {
-          state.showTemplate = false
+          state.showTemplate = false;
         }
       }
-    )
+    );
 
-    return { getExampleModule, ...toRefs(state), codeContainerStyle, expandContainerStyle }
+    return { getExampleModule, ...toRefs(state), codeContainerStyle, expandContainerStyle };
   }
-})
+});
 </script>
 
 <style scoped>

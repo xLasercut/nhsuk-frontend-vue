@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsBodySize } from './types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsBodySize } from './types';
 
-const NHS_BODY_SIZES: Array<NhsBodySize> = ['s']
+const NHS_BODY_SIZES: Array<NhsBodySize> = ['s'];
 
 export default defineComponent({
   inheritAttrs: false,
@@ -18,19 +18,19 @@ export default defineComponent({
     size: {
       type: String as PropType<NhsBodySize>,
       validator: (val: NhsBodySize): boolean => {
-        return NHS_BODY_SIZES.includes(val)
+        return NHS_BODY_SIZES.includes(val);
       }
     }
   },
   setup(props) {
     const classes = computed((): string => {
       if (props.size) {
-        return `nhsuk-body-${props.size}`
+        return `nhsuk-body-${props.size}`;
       }
-      return 'nhsuk-body'
-    })
+      return 'nhsuk-body';
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

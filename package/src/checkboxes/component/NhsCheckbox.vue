@@ -26,10 +26,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, reactive, ref } from 'vue'
-import NhsHintText from '../../hint-text/NhsHintText.vue'
-import NhsLabel from '../../label/NhsLabel.vue'
-import { getInternalModel } from '../../shared/form/v-model'
+import { computed, defineComponent, onMounted, reactive, ref } from 'vue';
+import NhsHintText from '../../hint-text/NhsHintText.vue';
+import NhsLabel from '../../label/NhsLabel.vue';
+import { getInternalModel } from '../../shared/form/v-model';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -51,7 +51,7 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     id: {
@@ -64,49 +64,49 @@ export default defineComponent({
     conditional: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     }
   },
   components: { NhsLabel, NhsHintText },
   setup(props, context) {
-    const checkbox = ref(null)
+    const checkbox = ref(null);
     const state = reactive({
       isChecked: false
-    })
-    const internalModel = getInternalModel(props, context)
+    });
+    const internalModel = getInternalModel(props, context);
     function showConditional(): boolean {
-      return props.conditional && state.isChecked
+      return props.conditional && state.isChecked;
     }
 
     const attributes = computed(() => {
-      const attributes: { [key: string]: any } = {}
+      const attributes: { [key: string]: any } = {};
       if (props.disabled) {
-        attributes['disabled'] = true
+        attributes['disabled'] = true;
       }
 
       if (props.hint) {
-        attributes['aria-describedby'] = hintId()
+        attributes['aria-describedby'] = hintId();
       }
 
-      return attributes
-    })
+      return attributes;
+    });
 
     function hintId(): string {
-      return `${props.id}-hint`
+      return `${props.id}-hint`;
     }
 
     onMounted(() => {
       if (checkbox.value) {
-        state.isChecked = checkbox.value['checked']
+        state.isChecked = checkbox.value['checked'];
       }
-    })
+    });
 
     function updateChecked(event: any) {
       if (event.target) {
-        state.isChecked = event.target.checked
+        state.isChecked = event.target.checked;
       }
-      context.emit('change', props.id)
+      context.emit('change', props.id);
     }
 
     return {
@@ -116,7 +116,7 @@ export default defineComponent({
       showConditional,
       checkbox,
       updateChecked
-    }
+    };
   }
-})
+});
 </script>

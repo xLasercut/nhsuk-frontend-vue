@@ -1,3 +1,3 @@
-import NhsPagination from './NhsPagination.vue'
+import NhsPagination from './NhsPagination.vue';
 
-export { NhsPagination }
+export { NhsPagination };

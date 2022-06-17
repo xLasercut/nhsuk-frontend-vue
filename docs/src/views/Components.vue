@@ -19,25 +19,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import router from '../router'
-import { setPageColor } from '../assets/helpers'
+import { defineComponent, onMounted } from 'vue';
+import router from '../router';
+import { setPageColor } from '../assets/helpers';
 
 export default defineComponent({
   setup(_props) {
     function breadcrumbBackItem() {
-      const routeSplit = router.currentRoute.value.fullPath.split('/')
+      const routeSplit = router.currentRoute.value.fullPath.split('/');
       if (routeSplit.length === 2) {
         return {
           text: 'Home',
           href: '/'
-        }
+        };
       }
 
       return {
         text: 'Components',
         href: '/components'
-      }
+      };
     }
 
     function breadcrumbItems() {
@@ -46,34 +46,34 @@ export default defineComponent({
           href: '/',
           text: 'Home'
         }
-      ]
+      ];
 
-      const routeSplit = router.currentRoute.value.fullPath.split('/')
+      const routeSplit = router.currentRoute.value.fullPath.split('/');
 
       if (routeSplit.length === 2) {
         items.push({
           text: 'Components'
-        })
+        });
       }
 
       if (routeSplit.length === 3) {
         items.push({
           text: 'Components',
           href: '/components'
-        })
+        });
         items.push({
           text: router.currentRoute.value.name || ''
-        })
+        });
       }
 
-      return items
+      return items;
     }
 
     onMounted(() => {
-      setPageColor()
-    })
+      setPageColor();
+    });
 
-    return { breadcrumbItems, breadcrumbBackItem }
+    return { breadcrumbItems, breadcrumbBackItem };
   }
-})
+});
 </script>

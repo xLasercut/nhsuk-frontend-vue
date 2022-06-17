@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts">
-import { NhsHeadingSwitcher } from '../shared/heading-switcher'
-import { defineComponent, PropType } from 'vue'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher';
+import { defineComponent, PropType } from 'vue';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -31,23 +31,23 @@ export default defineComponent({
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 3
+        return 3;
       }
     }
   },
   setup(props) {
     function isHeadingContainsImportant(): boolean {
-      return props.heading.toLowerCase().includes('important')
+      return props.heading.toLowerCase().includes('important');
     }
 
     function showNormalHeading(): string {
       if (isHeadingContainsImportant()) {
-        return props.heading
+        return props.heading;
       }
-      return ''
+      return '';
     }
 
-    return { isHeadingContainsImportant, showNormalHeading }
+    return { isHeadingContainsImportant, showNormalHeading };
   }
-})
+});
 </script>

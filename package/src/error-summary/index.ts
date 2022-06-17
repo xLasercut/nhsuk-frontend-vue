@@ -1,3 +1,3 @@
-import NhsErrorSummary from './NhsErrorSummary.vue'
+import NhsErrorSummary from './NhsErrorSummary.vue';
 
-export { NhsErrorSummary }
+export { NhsErrorSummary };

@@ -1,3 +1,3 @@
-import NhsSkipLink from './NhsSkipLink.vue'
+import NhsSkipLink from './NhsSkipLink.vue';
 
-export { NhsSkipLink }
+export { NhsSkipLink };

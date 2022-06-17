@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts">
-import HeaderLogoNormal from './logo/HeaderLogoNormal.vue'
-import HeaderLogoOrg from './logo/HeaderLogoOrg.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeaderOrganisation, NhsHeaderService } from '../interfaces'
+import HeaderLogoNormal from './logo/HeaderLogoNormal.vue';
+import HeaderLogoOrg from './logo/HeaderLogoOrg.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeaderOrganisation, NhsHeaderService } from '../interfaces';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -57,20 +57,20 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed((): string => {
-      const classes = ['nhsuk-header__logo']
+      const classes = ['nhsuk-header__logo'];
 
       if (!props.showSearch && !props.showNav) {
-        classes.push('nhsuk-header__logo--only')
+        classes.push('nhsuk-header__logo--only');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const isOrgLogo = computed((): boolean => {
-      return Object.keys(props.organisation).length > 0
-    })
+      return Object.keys(props.organisation).length > 0;
+    });
 
-    return { classes, isOrgLogo }
+    return { classes, isOrgLogo };
   }
-})
+});
 </script>

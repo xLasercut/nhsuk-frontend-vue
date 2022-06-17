@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsTagColor } from './types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsTagColor } from './types';
 
 const TAG_COLORS: Array<NhsTagColor> = [
   '',
@@ -20,7 +20,7 @@ const TAG_COLORS: Array<NhsTagColor> = [
   'red',
   'orange',
   'yellow'
-]
+];
 
 export default defineComponent({
   inheritAttrs: false,
@@ -30,25 +30,25 @@ export default defineComponent({
     color: {
       type: String as PropType<NhsTagColor>,
       default: (): NhsTagColor => {
-        return ''
+        return '';
       },
       validator: (val: NhsTagColor): boolean => {
-        return TAG_COLORS.includes(val)
+        return TAG_COLORS.includes(val);
       }
     }
   },
   setup(props) {
     const classes = computed((): string => {
-      let classes = ['nhsuk-tag']
+      let classes = ['nhsuk-tag'];
 
       if (props.color) {
-        classes.push(`nhsuk-tag--${props.color}`)
+        classes.push(`nhsuk-tag--${props.color}`);
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

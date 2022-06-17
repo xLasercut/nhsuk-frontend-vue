@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsFieldsetSize } from './types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsFieldsetSize } from './types';
 
-const FIELDSET_SIZES: Array<NhsFieldsetSize> = ['xl', 'l', 'm']
+const FIELDSET_SIZES: Array<NhsFieldsetSize> = ['xl', 'l', 'm'];
 
 export default defineComponent({
   name: 'nhs-fieldset',
@@ -29,31 +29,31 @@ export default defineComponent({
     pageHeading: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     size: {
       type: String as PropType<NhsFieldsetSize>,
       validator: (val: NhsFieldsetSize): boolean => {
         if (val) {
-          return FIELDSET_SIZES.includes(val)
+          return FIELDSET_SIZES.includes(val);
         }
-        return true
+        return true;
       }
     }
   },
   setup(props) {
     const classes = computed((): string => {
-      let classes = ['nhsuk-fieldset__legend']
+      let classes = ['nhsuk-fieldset__legend'];
 
       if (props.size) {
-        classes.push(`nhsuk-fieldset__legend--${props.size}`)
+        classes.push(`nhsuk-fieldset__legend--${props.size}`);
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

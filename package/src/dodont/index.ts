@@ -1,3 +1,3 @@
-import NhsDodont from './NhsDodont.vue'
+import NhsDodont from './NhsDodont.vue';
 
-export { NhsDodont }
+export { NhsDodont };

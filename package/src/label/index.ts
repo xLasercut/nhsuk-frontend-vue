@@ -1,3 +1,3 @@
-import NhsLabel from './NhsLabel.vue'
+import NhsLabel from './NhsLabel.vue';
 
-export { NhsLabel }
+export { NhsLabel };

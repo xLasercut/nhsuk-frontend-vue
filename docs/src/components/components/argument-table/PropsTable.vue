@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   props: {
@@ -48,42 +48,42 @@ export default defineComponent({
           value: 'description'
         }
       ]
-    })
+    });
 
     function itemTypeObject(typeString: string): string {
       if (showCodeBlock(typeString)) {
-        let output = `{\n`
-        const parsed = JSON.parse(typeString.split('|')[1])
+        let output = `{\n`;
+        const parsed = JSON.parse(typeString.split('|')[1]);
         for (const key in parsed) {
-          output = output + `  ${key}: ${parsed[key]}\n`
+          output = output + `  ${key}: ${parsed[key]}\n`;
         }
-        output = output + '}'
-        return output
+        output = output + '}';
+        return output;
       }
-      return typeString
+      return typeString;
     }
 
     function itemType(typeString: string): string {
       if (showCodeBlock(typeString)) {
-        return typeString.split('|')[0]
+        return typeString.split('|')[0];
       }
-      return typeString
+      return typeString;
     }
 
     function showCodeBlock(typeString: string): boolean {
-      return typeString.startsWith('object|') || typeString.startsWith('array|')
+      return typeString.startsWith('object|') || typeString.startsWith('array|');
     }
 
     function isRequired(required: boolean): string {
       if (required) {
-        return 'yes'
+        return 'yes';
       }
-      return 'no'
+      return 'no';
     }
 
-    return { ...toRefs(state), isRequired, itemTypeObject, itemType, showCodeBlock }
+    return { ...toRefs(state), isRequired, itemTypeObject, itemType, showCodeBlock };
   }
-})
+});
 </script>
 
 <style scoped>

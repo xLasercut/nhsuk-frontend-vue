@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -29,9 +29,9 @@ export default defineComponent({
         'do not pick at the edges of the remaining skin',
         'do not wear the shoes or use the equipment that caused your blister until it heals'
       ]
-    })
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsLabelSize } from '../types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsLabelSize } from '../types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -18,16 +18,16 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed(() => {
-      let classes = ['nhsuk-label']
+      let classes = ['nhsuk-label'];
 
       if (props.size) {
-        classes.push(`nhsuk-label--${props.size}`)
+        classes.push(`nhsuk-label--${props.size}`);
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    return { classes }
+    return { classes };
   }
-})
+});
 </script>

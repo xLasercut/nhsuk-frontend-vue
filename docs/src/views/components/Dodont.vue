@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   data() {
@@ -41,7 +41,7 @@ export default defineComponent({
           description: 'slot for each list item'
         }
       ]
-    }
+    };
   }
-})
+});
 </script>

@@ -12,11 +12,11 @@
 </template>
 
 <script lang="ts">
-import NhsVNode from '../shared/NhsVNode.vue'
-import { defineComponent, PropType } from 'vue'
-import { NhsCardGroupType } from './types'
+import NhsVNode from '../shared/NhsVNode.vue';
+import { defineComponent, PropType } from 'vue';
+import { NhsCardGroupType } from './types';
 
-const CARD_GROUP_TYPES: Set<NhsCardGroupType> = new Set(['half', 'third', 'quarter'])
+const CARD_GROUP_TYPES: Set<NhsCardGroupType> = new Set(['half', 'third', 'quarter']);
 
 export default defineComponent({
   name: 'nhs-card-group',
@@ -26,13 +26,13 @@ export default defineComponent({
     type: {
       type: String as PropType<NhsCardGroupType>,
       default: (): NhsCardGroupType => {
-        return 'half'
+        return 'half';
       },
       validator: (val: NhsCardGroupType): boolean => {
-        return CARD_GROUP_TYPES.has(val)
+        return CARD_GROUP_TYPES.has(val);
       }
     }
   },
   components: { NhsVNode }
-})
+});
 </script>

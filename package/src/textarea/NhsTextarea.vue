@@ -26,18 +26,18 @@
 </template>
 
 <script lang="ts">
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsLabel from '../label/NhsLabel.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { randomString } from '../shared/helpers/random-string'
-import { NhsFormItemValidateOn } from '../shared/form/types'
-import { getInternalModel } from '../shared/form/v-model'
-import { handleItemRegistry } from '../shared/form/form-item-registry'
-import { getAttributes } from '../shared/helpers/attribute-helper'
-import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { getFormEvents } from '../shared/form/event-helper'
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsLabel from '../label/NhsLabel.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { randomString } from '../shared/helpers/random-string';
+import { NhsFormItemValidateOn } from '../shared/form/types';
+import { getInternalModel } from '../shared/form/v-model';
+import { handleItemRegistry } from '../shared/form/form-item-registry';
+import { getAttributes } from '../shared/helpers/attribute-helper';
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { getFormEvents } from '../shared/form/event-helper';
 
 export default defineComponent({
   name: 'nhs-textarea',
@@ -51,13 +51,13 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     id: {
       type: String,
       default: (): string => {
-        return `nhs-select-${randomString()}`
+        return `nhs-select-${randomString()}`;
       }
     },
     name: {
@@ -66,31 +66,31 @@ export default defineComponent({
     rules: {
       type: Array as PropType<Array<Function>>,
       default: (): Array<Function> => {
-        return []
+        return [];
       }
     },
     label: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     hint: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     validateOn: {
       type: String as PropType<NhsFormItemValidateOn>,
       default: (): NhsFormItemValidateOn => {
-        return 'blur'
+        return 'blur';
       }
     },
     rows: {
       type: Number,
       default: (): number => {
-        return 5
+        return 5;
       }
     },
     autocomplete: {
@@ -98,21 +98,21 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const internalModel = getInternalModel(props, context)
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
-    const attributes = getAttributes(['disabled'], props, context)
-    const ariaDescribedby = getAriaDescribedBy(props, error)
-    const { onBlur, onChange } = getFormEvents(props, validator, context)
+    const internalModel = getInternalModel(props, context);
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+    const attributes = getAttributes(['disabled'], props, context);
+    const ariaDescribedby = getAriaDescribedBy(props, error);
+    const { onBlur, onChange } = getFormEvents(props, validator, context);
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-textarea']
+      const classes = ['nhsuk-textarea'];
 
       if (error.value) {
-        classes.push('nhsuk-textarea--error')
+        classes.push('nhsuk-textarea--error');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     return {
       classes,
@@ -125,7 +125,7 @@ export default defineComponent({
       onChange,
       hintId,
       errorId
-    }
+    };
   }
-})
+});
 </script>

@@ -16,8 +16,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
-import { NhsHeaderSearchResult } from '../../../../../package/dist/header/interfaces'
+import { defineComponent, reactive, toRefs } from 'vue';
+import { NhsHeaderSearchResult } from '../../../../../package/dist/header/interfaces';
 
 export default defineComponent({
   setup() {
@@ -37,19 +37,19 @@ export default defineComponent({
         }
       ],
       searchText: ''
-    })
+    });
 
     function searchResults() {
       return state.searchItems.filter((item) => {
-        return item.text.toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText
-      })
+        return item.text.toLowerCase().includes(state.searchText.toLowerCase()) && state.searchText;
+      });
     }
 
     function onSubmitSearch(event: NhsHeaderSearchResult) {
-      alert(event)
+      alert(event);
     }
 
-    return { ...toRefs(state), searchResults, onSubmitSearch }
+    return { ...toRefs(state), searchResults, onSubmitSearch };
   }
-})
+});
 </script>

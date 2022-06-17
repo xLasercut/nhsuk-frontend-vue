@@ -1,3 +1,3 @@
-type NhsDodontType = 'tick' | 'cross'
+type NhsDodontType = 'tick' | 'cross';
 
-export { NhsDodontType }
+export { NhsDodontType };

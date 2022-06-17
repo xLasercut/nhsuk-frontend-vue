@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../../../shared/link-switcher'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeaderService } from '../../interfaces'
+import { NhsLinkSwitcher } from '../../../shared/link-switcher';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeaderService } from '../../interfaces';
 
 export default defineComponent({
   components: { NhsLinkSwitcher },
@@ -48,20 +48,20 @@ export default defineComponent({
   },
   setup(props) {
     function showService(): boolean {
-      return Object.keys(props.service).length > 0 && !props.showTransactional
+      return Object.keys(props.service).length > 0 && !props.showTransactional;
     }
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-header__link']
+      const classes = ['nhsuk-header__link'];
 
       if (showService()) {
-        classes.push('nhsuk-header__link--service')
+        classes.push('nhsuk-header__link--service');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    return { classes, showService }
+    return { classes, showService };
   }
-})
+});
 </script>

@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, toRefs } from 'vue'
-import router from '../../router'
+import { computed, defineComponent, reactive, toRefs } from 'vue';
+import router from '../../router';
 
 export default defineComponent({
   setup() {
@@ -19,13 +19,13 @@ export default defineComponent({
           href: 'https://github.com/xLasercut/nhsuk-frontend-vue'
         }
       ]
-    })
+    });
 
     const showFooter = computed((): boolean => {
-      return !router.currentRoute.value.fullPath.includes('/examples/')
-    })
+      return !router.currentRoute.value.fullPath.includes('/examples/');
+    });
 
-    return { ...toRefs(state), showFooter }
+    return { ...toRefs(state), showFooter };
   }
-})
+});
 </script>

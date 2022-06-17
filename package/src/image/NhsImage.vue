@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -26,22 +26,22 @@ export default defineComponent({
     sizes: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     srcset: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     }
   },
   setup(props, context) {
     const isCaption = computed((): boolean => {
-      return Boolean(context.slots.default)
-    })
+      return Boolean(context.slots.default);
+    });
 
-    return { isCaption }
+    return { isCaption };
   }
-})
+});
 </script>

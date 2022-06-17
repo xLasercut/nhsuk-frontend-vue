@@ -1,4 +1,4 @@
-import { computed, SetupContext } from 'vue'
+import { computed, SetupContext } from 'vue';
 
 function getAttributes(
   attrsToAdd: Array<string>,
@@ -6,14 +6,14 @@ function getAttributes(
   context: SetupContext<any>
 ) {
   return computed(() => {
-    const attributes = Object.assign({}, context.attrs)
+    const attributes = Object.assign({}, context.attrs);
     for (const attributeName of attrsToAdd) {
       if (props[attributeName]) {
-        attributes[attributeName] = props[attributeName]
+        attributes[attributeName] = props[attributeName];
       }
     }
-    return attributes
-  })
+    return attributes;
+  });
 }
 
-export { getAttributes }
+export { getAttributes };

@@ -1,3 +1,3 @@
-type NhsHintTextElement = 'span' | 'div'
+type NhsHintTextElement = 'span' | 'div';
 
-export { NhsHintTextElement }
+export { NhsHintTextElement };

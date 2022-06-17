@@ -38,9 +38,9 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../../../shared/link-switcher'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeaderOrganisation } from '../../interfaces'
+import { NhsLinkSwitcher } from '../../../shared/link-switcher';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeaderOrganisation } from '../../interfaces';
 
 export default defineComponent({
   components: { NhsLinkSwitcher },
@@ -58,30 +58,30 @@ export default defineComponent({
   },
   setup(props) {
     const ariaLabel = computed((): string => {
-      const labels = []
+      const labels = [];
 
-      const name = props.organisation.name
-      const split = props.organisation.split
-      const descriptor = props.organisation.descriptor
+      const name = props.organisation.name;
+      const split = props.organisation.split;
+      const descriptor = props.organisation.descriptor;
 
       if (name) {
-        labels.push(name)
+        labels.push(name);
       }
 
       if (split) {
-        labels.push(split)
+        labels.push(split);
       }
 
       if (descriptor) {
-        labels.push(descriptor)
+        labels.push(descriptor);
       }
 
-      labels.push('homepage')
+      labels.push('homepage');
 
-      return labels.join(' ')
-    })
+      return labels.join(' ');
+    });
 
-    return { ariaLabel }
+    return { ariaLabel };
   }
-})
+});
 </script>

@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts">
-import NhsRouterLink from './types/NhsRouterLink.vue'
-import NhsNormalLink from './types/NhsNormalLink.vue'
-import { computed, defineComponent, inject } from 'vue'
-import { Router } from 'vue-router'
-import { isRouterLink } from '../helpers/route-helper'
+import NhsRouterLink from './types/NhsRouterLink.vue';
+import NhsNormalLink from './types/NhsNormalLink.vue';
+import { computed, defineComponent, inject } from 'vue';
+import { Router } from 'vue-router';
+import { isRouterLink } from '../helpers/route-helper';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -28,20 +28,20 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     }
   },
   setup(props) {
-    const router = inject<Router>('router')
+    const router = inject<Router>('router');
     const linkType = computed(() => {
       if (isRouterLink(router, props.href)) {
-        return NhsRouterLink
+        return NhsRouterLink;
       }
-      return NhsNormalLink
-    })
+      return NhsNormalLink;
+    });
 
-    return { linkType }
+    return { linkType };
   }
-})
+});
 </script>

@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { NhsHintTextElement } from './types'
+import { defineComponent, PropType } from 'vue';
+import { NhsHintTextElement } from './types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -19,9 +19,9 @@ export default defineComponent({
     element: {
       type: String as PropType<NhsHintTextElement>,
       default: (): NhsHintTextElement => {
-        return 'span'
+        return 'span';
       }
     }
   }
-})
+});
 </script>

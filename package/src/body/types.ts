@@ -1,3 +1,3 @@
-type NhsBodySize = 's'
+type NhsBodySize = 's';
 
-export { NhsBodySize }
+export { NhsBodySize };

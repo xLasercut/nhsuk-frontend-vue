@@ -1,3 +1,3 @@
-import NhsCareCard from './NhsCareCard.vue'
+import NhsCareCard from './NhsCareCard.vue';
 
-export { NhsCareCard }
+export { NhsCareCard };

@@ -1,3 +1,3 @@
-import NhsTag from './NhsTag.vue'
+import NhsTag from './NhsTag.vue';
 
-export { NhsTag }
+export { NhsTag };

@@ -30,9 +30,9 @@
 </template>
 
 <script lang="ts">
-import NhsIcon from '../icon/NhsIcon.vue'
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import { defineComponent } from 'vue'
+import NhsIcon from '../icon/NhsIcon.vue';
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -42,7 +42,7 @@ export default defineComponent({
     ariaLabel: {
       type: String,
       default: (): string => {
-        return 'Pagination'
+        return 'Pagination';
       }
     },
     previousHref: {
@@ -59,5 +59,5 @@ export default defineComponent({
     }
   },
   components: { NhsIcon, NhsLinkSwitcher }
-})
+});
 </script>

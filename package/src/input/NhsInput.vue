@@ -29,20 +29,20 @@
 </template>
 
 <script lang="ts">
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsLabel from '../label/NhsLabel.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsInputInputmode, NhsInputWidth } from './types'
-import { getAttributes } from '../shared/helpers/attribute-helper'
-import { randomString } from '../shared/helpers/random-string'
-import { NhsFormItemValidateOn } from '../shared/form/types'
-import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { handleItemRegistry } from '../shared/form/form-item-registry'
-import { getFormEvents } from '../shared/form/event-helper'
-import { getInternalModel } from '../shared/form/v-model'
-import { NHS_INPUT_WIDTHS } from './constants'
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsLabel from '../label/NhsLabel.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsInputInputmode, NhsInputWidth } from './types';
+import { getAttributes } from '../shared/helpers/attribute-helper';
+import { randomString } from '../shared/helpers/random-string';
+import { NhsFormItemValidateOn } from '../shared/form/types';
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { handleItemRegistry } from '../shared/form/form-item-registry';
+import { getFormEvents } from '../shared/form/event-helper';
+import { getInternalModel } from '../shared/form/v-model';
+import { NHS_INPUT_WIDTHS } from './constants';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -53,13 +53,13 @@ export default defineComponent({
     width: {
       type: String as PropType<NhsInputWidth>,
       validator: (val: NhsInputWidth): boolean => {
-        return NHS_INPUT_WIDTHS.includes(val)
+        return NHS_INPUT_WIDTHS.includes(val);
       }
     },
     type: {
       type: String,
       default: (): string => {
-        return 'text'
+        return 'text';
       }
     },
     maxlength: {
@@ -77,7 +77,7 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     modelValue: {
@@ -86,7 +86,7 @@ export default defineComponent({
     id: {
       type: String,
       default: (): string => {
-        return `nhs-input-${randomString()}`
+        return `nhs-input-${randomString()}`;
       }
     },
     name: {
@@ -95,49 +95,49 @@ export default defineComponent({
     rules: {
       type: Array as PropType<Array<Function>>,
       default: (): Array<Function> => {
-        return []
+        return [];
       }
     },
     label: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     hint: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     validateOn: {
       type: String as PropType<NhsFormItemValidateOn>,
       default: (): NhsFormItemValidateOn => {
-        return 'blur'
+        return 'blur';
       }
     }
   },
   setup(props, context) {
-    const internalModel = getInternalModel(props, context)
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
-    const attributes = getAttributes(['disabled'], props, context)
+    const internalModel = getInternalModel(props, context);
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+    const attributes = getAttributes(['disabled'], props, context);
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-input']
+      const classes = ['nhsuk-input'];
 
       if (props.width) {
-        classes.push(`nhsuk-input--width-${props.width}`)
+        classes.push(`nhsuk-input--width-${props.width}`);
       }
 
       if (error.value) {
-        classes.push('nhsuk-input--error')
+        classes.push('nhsuk-input--error');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
-    const ariaDescribedby = getAriaDescribedBy(props, error)
-    const { onBlur, onChange } = getFormEvents(props, validator, context)
+    const ariaDescribedby = getAriaDescribedBy(props, error);
+    const { onBlur, onChange } = getFormEvents(props, validator, context);
 
     return {
       classes,
@@ -150,7 +150,7 @@ export default defineComponent({
       internalModel,
       error,
       errorMsg
-    }
+    };
   }
-})
+});
 </script>

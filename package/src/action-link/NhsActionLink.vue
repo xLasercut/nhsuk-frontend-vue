@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import NhsIcon from '../icon/NhsIcon.vue'
-import { defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import NhsIcon from '../icon/NhsIcon.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'nhs-action-link',
@@ -25,5 +25,5 @@ export default defineComponent({
     }
   },
   components: { NhsLinkSwitcher, NhsIcon }
-})
+});
 </script>

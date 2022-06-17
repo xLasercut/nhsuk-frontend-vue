@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../../shared/link-switcher'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeaderService } from '../interfaces'
+import { NhsLinkSwitcher } from '../../shared/link-switcher';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeaderService } from '../interfaces';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -23,27 +23,27 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed(() => {
-      const classes = ['nhsuk-header__transactional-service-name']
+      const classes = ['nhsuk-header__transactional-service-name'];
 
       if (props.service.name && props.service.name.length > 22) {
-        classes.push('nhsuk-header__transactional-service-name--long')
+        classes.push('nhsuk-header__transactional-service-name--long');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const href = computed(() => {
       if (props.service.href) {
-        return props.service.href
+        return props.service.href;
       }
-      return '/'
-    })
+      return '/';
+    });
 
     const isService = computed((): boolean => {
-      return Object.keys(props.service).length > 0
-    })
+      return Object.keys(props.service).length > 0;
+    });
 
-    return { classes, href, isService }
+    return { classes, href, isService };
   }
-})
+});
 </script>

@@ -1,4 +1,4 @@
-import NhsSummaryList from './NhsSummaryList.vue'
-import NhsSummaryListItem from './NhsSummaryListItem.vue'
+import NhsSummaryList from './NhsSummaryList.vue';
+import NhsSummaryListItem from './NhsSummaryListItem.vue';
 
-export { NhsSummaryList, NhsSummaryListItem }
+export { NhsSummaryList, NhsSummaryListItem };

@@ -1,3 +1,3 @@
-import NhsTextarea from './NhsTextarea.vue'
+import NhsTextarea from './NhsTextarea.vue';
 
-export { NhsTextarea }
+export { NhsTextarea };

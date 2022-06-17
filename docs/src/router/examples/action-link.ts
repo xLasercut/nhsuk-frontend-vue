@@ -1,4 +1,4 @@
-import ActionLink from '../../views/examples/action-link/ActionLink.vue'
+import ActionLink from '../../views/examples/action-link/ActionLink.vue';
 
 const actionLinkExampleRoutes = [
   {
@@ -6,6 +6,6 @@ const actionLinkExampleRoutes = [
     component: ActionLink,
     name: 'Action link'
   }
-]
+];
 
-export { actionLinkExampleRoutes }
+export { actionLinkExampleRoutes };

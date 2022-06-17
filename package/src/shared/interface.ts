@@ -1,5 +1,5 @@
 interface NhsVueProp {
-  [key: string]: any
+  [key: string]: any;
 }
 
-export { NhsVueProp }
+export { NhsVueProp };

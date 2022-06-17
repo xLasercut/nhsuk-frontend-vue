@@ -44,11 +44,11 @@
 </template>
 
 <script lang="ts">
-import PanelTable from './types/PanelTable.vue'
-import SimpleTable from './types/SimpleTable.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
-import { NhsTableHeader, NhsTableItem } from './interfaces'
+import PanelTable from './types/PanelTable.vue';
+import SimpleTable from './types/SimpleTable.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
+import { NhsTableHeader, NhsTableItem } from './interfaces';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -61,7 +61,7 @@ export default defineComponent({
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 3
+        return 3;
       }
     },
     caption: {
@@ -78,26 +78,26 @@ export default defineComponent({
     responsive: {
       type: Boolean,
       default: (): boolean => {
-        return true
+        return true;
       }
     }
   },
   setup(props) {
     const tableType = computed(() => {
       if (props.heading) {
-        return PanelTable
+        return PanelTable;
       }
-      return SimpleTable
-    })
+      return SimpleTable;
+    });
 
     const tableCellRole = computed((): string => {
       if (props.responsive) {
-        return 'cell'
+        return 'cell';
       }
-      return ''
-    })
+      return '';
+    });
 
-    return { tableType, tableCellRole }
+    return { tableType, tableCellRole };
   }
-})
+});
 </script>

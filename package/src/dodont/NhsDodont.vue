@@ -13,13 +13,13 @@
 </template>
 
 <script lang="ts">
-import NhsIcon from '../icon/NhsIcon.vue'
-import { NhsHeadingSwitcher } from '../shared/heading-switcher'
-import { defineComponent, PropType } from 'vue'
-import { NhsDodontType } from './types'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
+import NhsIcon from '../icon/NhsIcon.vue';
+import { NhsHeadingSwitcher } from '../shared/heading-switcher';
+import { defineComponent, PropType } from 'vue';
+import { NhsDodontType } from './types';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
 
-const DO_DONT_TYPES: Array<NhsDodontType> = ['tick', 'cross']
+const DO_DONT_TYPES: Array<NhsDodontType> = ['tick', 'cross'];
 
 export default defineComponent({
   name: 'nhs-dodont',
@@ -34,10 +34,10 @@ export default defineComponent({
     type: {
       type: String as PropType<NhsDodontType>,
       default: (): NhsDodontType => {
-        return 'tick'
+        return 'tick';
       },
       validator: (val: NhsDodontType): boolean => {
-        return DO_DONT_TYPES.includes(val)
+        return DO_DONT_TYPES.includes(val);
       }
     },
     items: {
@@ -47,9 +47,9 @@ export default defineComponent({
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 3
+        return 3;
       }
     }
   }
-})
+});
 </script>

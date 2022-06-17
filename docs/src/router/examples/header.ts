@@ -1,14 +1,14 @@
-import Header from '../../views/examples/header/Header.vue'
-import HeaderLogo from '../../views/examples/header/HeaderLogo.vue'
-import HeaderTransactional from '../../views/examples/header/HeaderTransactional.vue'
-import HeaderTransactionalName from '../../views/examples/header/HeaderTransactionalName.vue'
-import HeaderNav from '../../views/examples/header/HeaderNav.vue'
-import HeaderSearch from '../../views/examples/header/HeaderSearch.vue'
-import HeaderOrg from '../../views/examples/header/HeaderOrg.vue'
-import HeaderOrgWhite from '../../views/examples/header/HeaderOrgWhite.vue'
-import HeaderOrgWhiteNav from '../../views/examples/header/HeaderOrgWhiteNav.vue'
-import HeaderService from '../../views/examples/header/HeaderService.vue'
-import HeaderServiceNav from '../../views/examples/header/HeaderServiceNav.vue'
+import Header from '../../views/examples/header/Header.vue';
+import HeaderLogo from '../../views/examples/header/HeaderLogo.vue';
+import HeaderTransactional from '../../views/examples/header/HeaderTransactional.vue';
+import HeaderTransactionalName from '../../views/examples/header/HeaderTransactionalName.vue';
+import HeaderNav from '../../views/examples/header/HeaderNav.vue';
+import HeaderSearch from '../../views/examples/header/HeaderSearch.vue';
+import HeaderOrg from '../../views/examples/header/HeaderOrg.vue';
+import HeaderOrgWhite from '../../views/examples/header/HeaderOrgWhite.vue';
+import HeaderOrgWhiteNav from '../../views/examples/header/HeaderOrgWhiteNav.vue';
+import HeaderService from '../../views/examples/header/HeaderService.vue';
+import HeaderServiceNav from '../../views/examples/header/HeaderServiceNav.vue';
 
 const headerExampleRoutes = [
   {
@@ -66,6 +66,6 @@ const headerExampleRoutes = [
     component: HeaderOrgWhiteNav,
     name: 'Header organisational with white header and navigation'
   }
-]
+];
 
-export { headerExampleRoutes }
+export { headerExampleRoutes };

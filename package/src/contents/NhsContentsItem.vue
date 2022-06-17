@@ -16,9 +16,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import { NhsContentsItemAttribute } from './interfaces'
+import { computed, defineComponent } from 'vue';
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import { NhsContentsItemAttribute } from './interfaces';
 
 export default defineComponent({
   name: 'nhs-contents-item',
@@ -32,20 +32,20 @@ export default defineComponent({
     ariaCurrent: {
       type: String,
       default: (): string => {
-        return 'page'
+        return 'page';
       }
     }
   },
   setup(props) {
     const attributes = computed(() => {
-      const attributes: NhsContentsItemAttribute = {}
+      const attributes: NhsContentsItemAttribute = {};
       if (!props.href) {
-        attributes['aria-current'] = props.ariaCurrent
+        attributes['aria-current'] = props.ariaCurrent;
       }
-      return attributes
-    })
+      return attributes;
+    });
 
-    return { attributes }
+    return { attributes };
   }
-})
+});
 </script>

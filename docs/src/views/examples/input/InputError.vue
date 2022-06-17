@@ -9,30 +9,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue'
+import { defineComponent, onMounted, provide, reactive, toRefs } from 'vue';
 
 export default defineComponent({
   setup() {
     const state = reactive({
       rules: [(v: string) => !!v || 'Error message goes here'],
       model: ''
-    })
+    });
 
-    let _itemId: string
-    let _validator: Function
+    let _itemId: string;
+    let _validator: Function;
 
     function registerValidator(id: string, validator: Function) {
-      _itemId = id
-      _validator = validator
+      _itemId = id;
+      _validator = validator;
     }
 
-    provide('register-validator', registerValidator)
+    provide('register-validator', registerValidator);
 
     onMounted(() => {
-      _validator()
-    })
+      _validator();
+    });
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>

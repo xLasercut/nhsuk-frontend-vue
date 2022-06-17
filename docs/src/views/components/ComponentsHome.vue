@@ -35,8 +35,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { filteredComponentRoutes } from '../../router/components'
+import { computed, defineComponent } from 'vue';
+import { filteredComponentRoutes } from '../../router/components';
 
 const AZ_ALPHABETS = [
   'A',
@@ -65,60 +65,60 @@ const AZ_ALPHABETS = [
   'X',
   'Y',
   'Z'
-]
+];
 
 export default defineComponent({
   setup() {
     const navItems = computed(() => {
       const routeAlphabets = new Set(
         filteredComponentRoutes.map((route) => {
-          const routeName = route.name || ''
-          return routeName.toString()[0].toUpperCase()
+          const routeName = route.name || '';
+          return routeName.toString()[0].toUpperCase();
         })
-      )
+      );
 
       return AZ_ALPHABETS.map((alphabet) => {
-        let disabled = true
+        let disabled = true;
         if (routeAlphabets.has(alphabet)) {
-          disabled = false
+          disabled = false;
         }
         return {
           text: alphabet,
           disabled: disabled
-        }
-      })
-    })
+        };
+      });
+    });
 
     const panels = computed(() => {
       return AZ_ALPHABETS.map((alphabet) => {
         const items = filteredComponentRoutes.filter((route) => {
-          const routeName = route.name || ''
-          return routeName.toString()[0].toUpperCase() === alphabet
-        })
+          const routeName = route.name || '';
+          return routeName.toString()[0].toUpperCase() === alphabet;
+        });
 
         if (items.length === 0) {
-          return {}
+          return {};
         }
 
         return {
           name: alphabet,
           items: items
-        }
+        };
       }).filter((panel) => {
-        return Object.keys(panel).length !== 0
-      })
-    })
+        return Object.keys(panel).length !== 0;
+      });
+    });
 
     function scrollTo(event: string): void {
       //@ts-ignore
-      document.getElementById('panel-' + event).scrollIntoView()
+      document.getElementById('panel-' + event).scrollIntoView();
     }
 
     function toTop() {
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     }
 
-    return { navItems, panels, scrollTo, toTop }
+    return { navItems, panels, scrollTo, toTop };
   }
-})
+});
 </script>

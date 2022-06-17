@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts">
-import { NhsLinkSwitcher } from '../shared/link-switcher'
-import { defineComponent } from 'vue'
+import { NhsLinkSwitcher } from '../shared/link-switcher';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'nhs-nav-az-item',
@@ -32,15 +32,15 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     href: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     }
   }
-})
+});
 </script>

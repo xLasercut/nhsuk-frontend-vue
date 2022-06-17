@@ -48,21 +48,21 @@
 </template>
 
 <script lang="ts">
-import NhsRadio from './components/NhsRadio.vue'
-import NhsRadioDivider from './components/NhsRadioDivider.vue'
-import { computed, defineComponent, PropType } from 'vue'
-import { getInternalModel } from '../shared/form/v-model'
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import NhsFieldset from '../fieldset/NhsFieldset.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import { handleItemRegistry } from '../shared/form/form-item-registry'
-import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { getFormEvents } from '../shared/form/event-helper'
-import { randomString } from '../shared/helpers/random-string'
-import { NhsFieldsetSize } from '../fieldset/types'
-import { NhsRadiosItemConfig } from './interfaces'
-import { NhsFormItemValidateOn } from '../shared/form/types'
+import NhsRadio from './components/NhsRadio.vue';
+import NhsRadioDivider from './components/NhsRadioDivider.vue';
+import { computed, defineComponent, PropType } from 'vue';
+import { getInternalModel } from '../shared/form/v-model';
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import NhsFieldset from '../fieldset/NhsFieldset.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import { handleItemRegistry } from '../shared/form/form-item-registry';
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { getFormEvents } from '../shared/form/event-helper';
+import { randomString } from '../shared/helpers/random-string';
+import { NhsFieldsetSize } from '../fieldset/types';
+import { NhsRadiosItemConfig } from './interfaces';
+import { NhsFormItemValidateOn } from '../shared/form/types';
 
 export default defineComponent({
   name: 'nhs-radios',
@@ -72,7 +72,7 @@ export default defineComponent({
     id: {
       type: String,
       default: (): string => {
-        return `nhs-radios-${randomString()}`
+        return `nhs-radios-${randomString()}`;
       }
     },
     hint: {
@@ -88,13 +88,13 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     pageHeading: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     headingSize: {
@@ -107,7 +107,7 @@ export default defineComponent({
     rules: {
       type: Array as PropType<Array<Function>>,
       default: (): Array<Function> => {
-        return []
+        return [];
       }
     },
     modelValue: {
@@ -116,37 +116,37 @@ export default defineComponent({
     validateOn: {
       type: String as PropType<NhsFormItemValidateOn>,
       default: (): NhsFormItemValidateOn => {
-        return 'blur'
+        return 'blur';
       }
     }
   },
   components: { NhsHintText, NhsFormItem, NhsFieldset, NhsErrorText },
   setup(props, context) {
-    const internalModel = getInternalModel(props, context)
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
+    const internalModel = getInternalModel(props, context);
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
 
-    const ariaDescribedby = getAriaDescribedBy(props, error)
-    const { onBlur, onChange } = getFormEvents(props, validator, context)
+    const ariaDescribedby = getAriaDescribedBy(props, error);
+    const { onBlur, onChange } = getFormEvents(props, validator, context);
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-radios']
+      const classes = ['nhsuk-radios'];
 
       if (props.inline) {
-        classes.push('nhsuk-radios--inline')
+        classes.push('nhsuk-radios--inline');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     function component(item: NhsRadiosItemConfig) {
       if (item.divider) {
-        return NhsRadioDivider
+        return NhsRadioDivider;
       }
-      return NhsRadio
+      return NhsRadio;
     }
 
     function showConditional(radioValue: any, hasConditional: boolean | undefined): boolean {
-      return internalModel.value === radioValue && Boolean(hasConditional)
+      return internalModel.value === radioValue && Boolean(hasConditional);
     }
 
     return {
@@ -161,7 +161,7 @@ export default defineComponent({
       hintId,
       component,
       showConditional
-    }
+    };
   }
-})
+});
 </script>

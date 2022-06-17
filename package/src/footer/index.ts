@@ -1,4 +1,4 @@
-import NhsFooter from './NhsFooter.vue'
-import NhsFooterItem from './NhsFooterItem.vue'
+import NhsFooter from './NhsFooter.vue';
+import NhsFooterItem from './NhsFooterItem.vue';
 
-export { NhsFooter, NhsFooterItem }
+export { NhsFooter, NhsFooterItem };

@@ -1,3 +1,3 @@
-import NhsImage from './NhsImage.vue'
+import NhsImage from './NhsImage.vue';
 
-export { NhsImage }
+export { NhsImage };

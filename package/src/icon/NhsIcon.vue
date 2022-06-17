@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import icons from './icons/icons'
-import { defineComponent, PropType } from 'vue'
-import { NhsIconType } from './types'
+import icons from './icons/icons';
+import { defineComponent, PropType } from 'vue';
+import { NhsIconType } from './types';
 
 export default defineComponent({
   name: 'nhs-icon',
@@ -18,5 +18,5 @@ export default defineComponent({
     }
   },
   components: icons
-})
+});
 </script>

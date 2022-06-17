@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, watch } from 'vue'
+import { defineComponent, reactive, toRefs, watch } from 'vue';
 
 export default defineComponent({
   props: {
@@ -24,25 +24,25 @@ export default defineComponent({
   setup(props, context) {
     const state = reactive({
       checked: props.modelValue
-    })
+    });
 
     watch(
       () => props.modelValue,
       (val) => {
-        state.checked = val
+        state.checked = val;
       }
-    )
+    );
 
     watch(
       () => state.checked,
       (val) => {
-        context.emit('update:model-value', val)
+        context.emit('update:model-value', val);
       }
-    )
+    );
 
-    return { ...toRefs(state) }
+    return { ...toRefs(state) };
   }
-})
+});
 </script>
 
 <style scoped>

@@ -25,18 +25,18 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import NhsFormItem from '../shared/form/NhsFormItem.vue'
-import NhsHintText from '../hint-text/NhsHintText.vue'
-import NhsLabel from '../label/NhsLabel.vue'
-import NhsErrorText from '../error-text/NhsErrorText.vue'
-import { getAttributes } from '../shared/helpers/attribute-helper'
-import { randomString } from '../shared/helpers/random-string'
-import { NhsFormItemValidateOn } from '../shared/form/types'
-import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper'
-import { handleItemRegistry } from '../shared/form/form-item-registry'
-import { getInternalModel } from '../shared/form/v-model'
-import { getFormEvents } from '../shared/form/event-helper'
+import { computed, defineComponent, PropType } from 'vue';
+import NhsFormItem from '../shared/form/NhsFormItem.vue';
+import NhsHintText from '../hint-text/NhsHintText.vue';
+import NhsLabel from '../label/NhsLabel.vue';
+import NhsErrorText from '../error-text/NhsErrorText.vue';
+import { getAttributes } from '../shared/helpers/attribute-helper';
+import { randomString } from '../shared/helpers/random-string';
+import { NhsFormItemValidateOn } from '../shared/form/types';
+import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
+import { handleItemRegistry } from '../shared/form/form-item-registry';
+import { getInternalModel } from '../shared/form/v-model';
+import { getFormEvents } from '../shared/form/event-helper';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -50,13 +50,13 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: (): boolean => {
-        return false
+        return false;
       }
     },
     id: {
       type: String,
       default: (): string => {
-        return `nhs-select-${randomString()}`
+        return `nhs-select-${randomString()}`;
       }
     },
     name: {
@@ -65,43 +65,43 @@ export default defineComponent({
     rules: {
       type: Array as PropType<Array<Function>>,
       default: (): Array<Function> => {
-        return []
+        return [];
       }
     },
     label: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     hint: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     },
     validateOn: {
       type: String as PropType<NhsFormItemValidateOn>,
       default: (): NhsFormItemValidateOn => {
-        return 'blur'
+        return 'blur';
       }
     }
   },
   setup(props, context) {
-    const internalModel = getInternalModel(props, context)
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel)
-    const attributes = getAttributes(['disabled'], props, context)
-    const ariaDescribedby = getAriaDescribedBy(props, error)
-    const { onBlur, onChange } = getFormEvents(props, validator, context)
+    const internalModel = getInternalModel(props, context);
+    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+    const attributes = getAttributes(['disabled'], props, context);
+    const ariaDescribedby = getAriaDescribedBy(props, error);
+    const { onBlur, onChange } = getFormEvents(props, validator, context);
 
     const classes = computed((): string => {
-      const classes = ['nhsuk-select']
+      const classes = ['nhsuk-select'];
 
       if (error.value) {
-        classes.push('nhsuk-select--error')
+        classes.push('nhsuk-select--error');
       }
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     return {
       classes,
@@ -114,7 +114,7 @@ export default defineComponent({
       error,
       errorMsg,
       internalModel
-    }
+    };
   }
-})
+});
 </script>

@@ -1,3 +1,3 @@
-type NhsCareCardType = 'non-urgent' | 'urgent' | 'emergency'
+type NhsCareCardType = 'non-urgent' | 'urgent' | 'emergency';
 
-export { NhsCareCardType }
+export { NhsCareCardType };

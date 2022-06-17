@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsColSize } from './types'
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsColSize } from './types';
 
 const NHS_COL_SPANS = {
   100: 'full',
@@ -15,7 +15,7 @@ const NHS_COL_SPANS = {
   50: 'one-half',
   33: 'one-third',
   25: 'one-quarter'
-}
+};
 
 export default defineComponent({
   name: 'nhs-col',
@@ -25,18 +25,18 @@ export default defineComponent({
     span: {
       type: Number as PropType<NhsColSize>,
       default: (): NhsColSize => {
-        return 100
+        return 100;
       },
       validator: (val: NhsColSize): boolean => {
-        return val in NHS_COL_SPANS
+        return val in NHS_COL_SPANS;
       }
     }
   },
   setup(props) {
     const classes = computed((): string => {
-      return `nhsuk-grid-column-${NHS_COL_SPANS[props.span]}`
-    })
-    return { classes }
+      return `nhsuk-grid-column-${NHS_COL_SPANS[props.span]}`;
+    });
+    return { classes };
   }
-})
+});
 </script>

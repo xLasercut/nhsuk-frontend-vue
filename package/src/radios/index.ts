@@ -1,3 +1,3 @@
-import NhsRadios from './NhsRadios.vue'
+import NhsRadios from './NhsRadios.vue';
 
-export { NhsRadios }
+export { NhsRadios };

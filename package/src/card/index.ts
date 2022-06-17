@@ -1,4 +1,4 @@
-import NhsCard from './NhsCard.vue'
-import NhsCardGroup from './NhsCardGroup.vue'
+import NhsCard from './NhsCard.vue';
+import NhsCardGroup from './NhsCardGroup.vue';
 
-export { NhsCard, NhsCardGroup }
+export { NhsCard, NhsCardGroup };

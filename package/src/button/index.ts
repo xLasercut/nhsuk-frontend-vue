@@ -1,3 +1,3 @@
-import NhsButton from './NhsButton.vue'
+import NhsButton from './NhsButton.vue';
 
-export { NhsButton }
+export { NhsButton };

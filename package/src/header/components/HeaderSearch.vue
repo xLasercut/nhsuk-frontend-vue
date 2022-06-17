@@ -69,7 +69,7 @@
 </template>
 
 <script lang="ts">
-import NhsIcon from '../../icon/NhsIcon.vue'
+import NhsIcon from '../../icon/NhsIcon.vue';
 import {
   computed,
   defineComponent,
@@ -80,9 +80,9 @@ import {
   reactive,
   toRefs,
   watch
-} from 'vue'
-import { NhsHeaderSearchResult } from '../interfaces'
-import { NHS_HEADER_INJECTS } from '../constants'
+} from 'vue';
+import { NhsHeaderSearchResult } from '../interfaces';
+import { NHS_HEADER_INJECTS } from '../constants';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -116,85 +116,85 @@ export default defineComponent({
       currentResultCount: -1,
       ariaLabelledBy: '',
       searchTextInternal: props.searchText
-    })
+    });
 
     watch(
       () => state.searchTextInternal,
       (val: string): void => {
-        state.searchOpen = true
-        state.currentResultCount = -1
-        context.emit('update:search-text', val)
+        state.searchOpen = true;
+        state.currentResultCount = -1;
+        context.emit('update:search-text', val);
       }
-    )
+    );
 
     const toggleSearchButtonClasses = computed((): string => {
-      const classes = ['nhsuk-header__search-toggle']
+      const classes = ['nhsuk-header__search-toggle'];
 
       if (props.searchMenuOpen) {
-        classes.push('is-active')
+        classes.push('is-active');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const searchWrapClasses = computed((): string => {
-      const classes = ['nhsuk-header__search-wrap']
+      const classes = ['nhsuk-header__search-wrap'];
 
       if (props.searchMenuOpen) {
-        classes.push('js-show')
+        classes.push('js-show');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const searchMenuClasses = computed((): string => {
-      const classes = ['autocomplete__menu']
+      const classes = ['autocomplete__menu'];
 
       if (props.searchResults.length > 0 && state.searchOpen) {
-        classes.push('autocomplete__menu--visible')
+        classes.push('autocomplete__menu--visible');
       } else {
-        classes.push('autocomplete__menu--hidden')
+        classes.push('autocomplete__menu--hidden');
       }
 
-      return classes.join(' ')
-    })
+      return classes.join(' ');
+    });
 
     const activeDescendant = computed((): string => {
       if (state.currentResultCount > -1) {
-        return searchResultId(state.currentResultCount)
+        return searchResultId(state.currentResultCount);
       }
 
-      return ''
-    })
+      return '';
+    });
 
     function searchResultClasses(index: number): string {
-      const classes = ['autocomplete__option']
+      const classes = ['autocomplete__option'];
 
       if (state.currentResultCount === index) {
-        classes.push('autocomplete__option--focused')
+        classes.push('autocomplete__option--focused');
       }
 
-      return classes.join(' ')
+      return classes.join(' ');
     }
 
     function searchResultId(index: number): string {
-      return `search-field__option--${index}`
+      return `search-field__option--${index}`;
     }
 
     function onArrowDown(): void {
       if (state.currentResultCount < props.searchResults.length - 1) {
-        state.currentResultCount = state.currentResultCount + 1
+        state.currentResultCount = state.currentResultCount + 1;
       }
     }
 
     function onArrowUp(): void {
       if (state.currentResultCount >= 0) {
-        state.currentResultCount = state.currentResultCount - 1
+        state.currentResultCount = state.currentResultCount - 1;
       }
     }
 
     function onMouseOver(): void {
-      state.currentResultCount = -1
+      state.currentResultCount = -1;
     }
 
     function onClickOutside(event: any): void {
@@ -204,32 +204,32 @@ export default defineComponent({
         !event.target.id.includes('search-field__option--') &&
         !event.target.id.includes('search-field-icon__option--')
       ) {
-        state.searchOpen = false
-        state.currentResultCount = -1
+        state.searchOpen = false;
+        state.currentResultCount = -1;
       }
     }
 
-    const toggleSearch: Function = inject<any>(NHS_HEADER_INJECTS.toggleSearch)
+    const toggleSearch: Function = inject<any>(NHS_HEADER_INJECTS.toggleSearch);
 
     function submitSearch(index: number | undefined = undefined): void {
       if (index || index === 0) {
-        context.emit('submit-search', props.searchResults[index])
+        context.emit('submit-search', props.searchResults[index]);
       } else if (state.currentResultCount > -1) {
-        context.emit('submit-search', props.searchResults[state.currentResultCount])
+        context.emit('submit-search', props.searchResults[state.currentResultCount]);
       } else {
-        context.emit('submit-search', state.searchTextInternal)
+        context.emit('submit-search', state.searchTextInternal);
       }
-      state.searchOpen = false
-      state.currentResultCount = -1
+      state.searchOpen = false;
+      state.currentResultCount = -1;
     }
 
     onMounted(() => {
-      document.addEventListener('click', onClickOutside)
-    })
+      document.addEventListener('click', onClickOutside);
+    });
 
     onUnmounted(() => {
-      document.removeEventListener('click', onClickOutside)
-    })
+      document.removeEventListener('click', onClickOutside);
+    });
 
     return {
       submitSearch,
@@ -244,9 +244,9 @@ export default defineComponent({
       searchResultClasses,
       searchResultId,
       activeDescendant
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped>

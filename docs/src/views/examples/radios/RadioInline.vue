@@ -24,7 +24,7 @@ export default {
           value: 'no'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

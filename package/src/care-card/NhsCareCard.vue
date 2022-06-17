@@ -16,16 +16,16 @@
 </template>
 
 <script lang="ts">
-import { NhsHeadingSwitcher } from '../shared/heading-switcher'
-import { computed, defineComponent, PropType } from 'vue'
-import { NhsCareCardType } from './types'
-import { NhsHeadingType } from '../shared/heading-switcher/types'
+import { NhsHeadingSwitcher } from '../shared/heading-switcher';
+import { computed, defineComponent, PropType } from 'vue';
+import { NhsCareCardType } from './types';
+import { NhsHeadingType } from '../shared/heading-switcher/types';
 
 const CARE_CARD_TYPES = {
   'non-urgent': 'Non-urgent advice: ',
   urgent: 'Urgent advice: ',
   emergency: 'Immediate action required: '
-}
+};
 
 export default defineComponent({
   name: 'nhs-care-card',
@@ -39,22 +39,22 @@ export default defineComponent({
     type: {
       type: String as PropType<NhsCareCardType>,
       default: (): NhsCareCardType => {
-        return 'non-urgent'
+        return 'non-urgent';
       },
       validator: (val: NhsCareCardType): boolean => {
-        return val in CARE_CARD_TYPES
+        return val in CARE_CARD_TYPES;
       }
     },
     headingLevel: {
       type: Number as PropType<NhsHeadingType>,
       default: (): NhsHeadingType => {
-        return 3
+        return 3;
       }
     },
     hiddenText: {
       type: String,
       default: (): string => {
-        return ''
+        return '';
       }
     }
   },
@@ -62,12 +62,12 @@ export default defineComponent({
   setup(props) {
     const accessibilityText = computed((): string => {
       if (props.hiddenText) {
-        return props.hiddenText
+        return props.hiddenText;
       }
-      return CARE_CARD_TYPES[props.type]
-    })
+      return CARE_CARD_TYPES[props.type];
+    });
 
-    return { accessibilityText }
+    return { accessibilityText };
   }
-})
+});
 </script>

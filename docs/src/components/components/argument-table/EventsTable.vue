@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
-import { EventsDoc, SlotsDocProperties } from '../../../assets/interfaces'
+import { defineComponent, reactive, toRefs } from 'vue';
+import { EventsDoc, SlotsDocProperties } from '../../../assets/interfaces';
 
 export default defineComponent({
   props: {
@@ -40,26 +40,26 @@ export default defineComponent({
           value: 'description'
         }
       ]
-    })
+    });
 
     function eventsPropsDisplayBlank(item: EventsDoc): string {
       if (item.arguments) {
-        return 'object'
+        return 'object';
       }
-      return '-'
+      return '-';
     }
 
     function eventsPropsDisplay(slotProps: Array<SlotsDocProperties>): string {
-      let properties = `{\n`
+      let properties = `{\n`;
       for (const slotProp of slotProps) {
-        properties = properties + `  ${slotProp.name}: ${slotProp.type || 'any'}\n`
+        properties = properties + `  ${slotProp.name}: ${slotProp.type || 'any'}\n`;
       }
-      properties = properties + `}\n`
+      properties = properties + `}\n`;
 
-      return properties
+      return properties;
     }
 
-    return { ...toRefs(state), eventsPropsDisplay, eventsPropsDisplayBlank }
+    return { ...toRefs(state), eventsPropsDisplay, eventsPropsDisplayBlank };
   }
-})
+});
 </script>

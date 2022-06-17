@@ -1,3 +1,3 @@
-import NhsReviewDate from './NhsReviewDate.vue'
+import NhsReviewDate from './NhsReviewDate.vue';
 
-export { NhsReviewDate }
+export { NhsReviewDate };

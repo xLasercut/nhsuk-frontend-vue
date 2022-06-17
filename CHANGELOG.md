@@ -1,5 +1,9 @@
 # NHS.UK frontend vue Changelog
 
+## 5.1.1 17th June 2022
+
+- Document and typing fixes
+
 ## 5.1.0 - 3rd May 2022
 
 - Fixed type definition import for typescript

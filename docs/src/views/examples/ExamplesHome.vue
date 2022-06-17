@@ -16,25 +16,25 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { filteredExamplesRoutes } from '../../router/examples'
+import { computed, defineComponent } from 'vue';
+import { filteredExamplesRoutes } from '../../router/examples';
 
 export default defineComponent({
   setup() {
     const examples = computed(() => {
       return filteredExamplesRoutes.map((item) => {
-        let { name, ...rest } = item
+        let { name, ...rest } = item;
         if (!name) {
-          name = ''
+          name = '';
         }
         return {
           ...rest,
           name: name.toString().replace('examples-', '')
-        }
-      })
-    })
+        };
+      });
+    });
 
-    return { examples }
+    return { examples };
   }
-})
+});
 </script>

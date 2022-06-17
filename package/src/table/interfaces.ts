@@ -1,13 +1,13 @@
 interface NhsTableHeader {
-  text: string
-  value: string
+  text: string;
+  value: string;
   style?: {
-    [key: string]: string
-  }
+    [key: string]: string;
+  };
 }
 
 interface NhsTableItem {
-  [key: string]: any
+  [key: string]: any;
 }
 
-export { NhsTableHeader, NhsTableItem }
+export { NhsTableHeader, NhsTableItem };

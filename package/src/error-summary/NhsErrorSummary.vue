@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, onMounted, ref } from 'vue'
+import { defineComponent, nextTick, onMounted, ref } from 'vue';
 
 export default defineComponent({
   name: 'nhs-error-summary',
@@ -30,16 +30,16 @@ export default defineComponent({
     }
   },
   setup() {
-    const errorSummary = ref(null)
+    const errorSummary = ref(null);
 
     onMounted(() => {
       nextTick(() => {
         //@ts-ignore
-        errorSummary.value.focus()
-      })
-    })
+        errorSummary.value.focus();
+      });
+    });
 
-    return { errorSummary }
+    return { errorSummary };
   }
-})
+});
 </script>
