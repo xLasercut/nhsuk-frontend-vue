@@ -1,5 +1,6 @@
 <template>
   <nhs-radios
+    id="example"
     :items="items"
     v-model="model"
     label="Have you changed your name?"

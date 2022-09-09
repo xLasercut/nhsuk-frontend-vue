@@ -1,5 +1,6 @@
 <template>
   <nhs-checkboxes
+    id="waste"
     :items="items"
     v-model="model"
     :rules="rules"

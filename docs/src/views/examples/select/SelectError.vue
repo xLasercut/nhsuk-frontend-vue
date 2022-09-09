@@ -1,5 +1,6 @@
 <template>
   <nhs-select
+    id="select-2"
     label="Label text goes here"
     hint="Hint text goes here"
     v-model="model"

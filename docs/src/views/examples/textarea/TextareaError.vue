@@ -1,5 +1,6 @@
 <template>
   <nhs-textarea
+    id="no-ni-reason"
     label="Why can't you provide a National Insurance number?"
     :rules="rules"
     v-model="model"
