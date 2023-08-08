@@ -11,21 +11,23 @@ import Minus from './minus.vue';
 import Plus from './plus.vue';
 import Search from './search.vue';
 import Tick from './tick.vue';
+import { NhsIconType } from '../types';
+import { Component } from 'vue';
 
-const components = {
-  ArrowLeft,
-  ArrowRightCircle,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Close,
-  Cross,
-  EmdashSmall,
-  Emdash,
-  Minus,
-  Plus,
-  Search,
-  Tick
+const ICON_MAP: Record<NhsIconType, Component> = {
+  'arrow-left': ArrowLeft,
+  'arrow-right-circle': ArrowRightCircle,
+  'arrow-right': ArrowRight,
+  'chevron-left': ChevronLeft,
+  'chevron-right': ChevronRight,
+  close: Close,
+  cross: Cross,
+  'emdash-small': EmdashSmall,
+  dmdash: Emdash,
+  minus: Minus,
+  plus: Plus,
+  search: Search,
+  tick: Tick
 };
 
-export default components;
+export { ICON_MAP };

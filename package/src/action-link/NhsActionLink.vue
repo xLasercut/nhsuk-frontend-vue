@@ -9,21 +9,16 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
 import NhsIcon from '../icon/NhsIcon.vue';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'nhs-action-link',
-  emits: ['click'],
-  inheritAttrs: false,
-  props: {
-    href: {
-      type: String,
-      required: true
-    }
-  },
-  components: { NhsLinkSwitcher, NhsIcon }
+defineProps({
+  href: {
+    type: String,
+    required: true
+  }
 });
+
+defineEmits(['click']);
 </script>
