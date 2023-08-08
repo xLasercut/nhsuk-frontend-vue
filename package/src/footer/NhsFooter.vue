@@ -12,25 +12,23 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-footer',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    hiddenText: {
-      type: String,
-      default: (): string => {
-        return 'Support links';
-      }
-    },
-    copyright: {
-      type: String,
-      default: (): string => {
-        return 'Crown copyright';
-      }
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  hiddenText: {
+    type: String,
+    default: (): string => {
+      return 'Support links';
+    }
+  },
+  copyright: {
+    type: String,
+    default: (): string => {
+      return 'Crown copyright';
     }
   }
 });

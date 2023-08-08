@@ -4,28 +4,26 @@
   </router-link>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
 import { addAttributes } from '../../helpers/attribute-helper';
+import { useAttrs } from 'vue';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: ['click'],
-  props: {
-    href: {
-      type: String,
-      required: true
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    }
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits(['click']);
+const props = defineProps({
+  href: {
+    type: String,
+    required: true
   },
-  setup(props, context) {
-    const attributes = addAttributes(['disabled'], props, context);
-    return { attributes };
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
   }
 });
+const attrs = useAttrs();
+const attributes = addAttributes(['disabled'], props, attrs);
 </script>

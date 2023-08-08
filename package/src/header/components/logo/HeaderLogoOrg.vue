@@ -37,51 +37,46 @@
   </nhs-link-switcher>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../../../shared/link-switcher';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsHeaderOrganisation } from '../../interfaces';
 
-export default defineComponent({
-  components: { NhsLinkSwitcher },
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    homeHref: {
-      type: String,
-      required: true
-    },
-    organisation: {
-      type: Object as PropType<NhsHeaderOrganisation>,
-      required: true
-    }
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  homeHref: {
+    type: String,
+    required: true
   },
-  setup(props) {
-    const ariaLabel = computed((): string => {
-      const labels = [];
-
-      const name = props.organisation.name;
-      const split = props.organisation.split;
-      const descriptor = props.organisation.descriptor;
-
-      if (name) {
-        labels.push(name);
-      }
-
-      if (split) {
-        labels.push(split);
-      }
-
-      if (descriptor) {
-        labels.push(descriptor);
-      }
-
-      labels.push('homepage');
-
-      return labels.join(' ');
-    });
-
-    return { ariaLabel };
+  organisation: {
+    type: Object as PropType<NhsHeaderOrganisation>,
+    required: true
   }
+});
+const ariaLabel = computed((): string => {
+  const labels = [];
+
+  const name = props.organisation.name;
+  const split = props.organisation.split;
+  const descriptor = props.organisation.descriptor;
+
+  if (name) {
+    labels.push(name);
+  }
+
+  if (split) {
+    labels.push(split);
+  }
+
+  if (descriptor) {
+    labels.push(descriptor);
+  }
+
+  labels.push('homepage');
+
+  return labels.join(' ');
 });
 </script>

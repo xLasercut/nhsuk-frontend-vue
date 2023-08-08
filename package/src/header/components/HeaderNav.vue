@@ -63,7 +63,7 @@ export default defineComponent({
       return classes.join(' ');
     });
 
-    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav);
+    const toggleNav: Function = inject<Function>(NHS_HEADER_INJECTS.toggleNav);
 
     return { classes, toggleNav };
   }
