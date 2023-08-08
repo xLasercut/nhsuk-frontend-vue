@@ -35,7 +35,7 @@ import { randomString } from '../shared/helpers/random-string';
 import { NhsFormItemValidateOn } from '../shared/form/types';
 import { getInternalModel } from '../shared/form/v-model';
 import { handleItemRegistry } from '../shared/form/form-item-registry';
-import { getAttributes } from '../shared/helpers/attribute-helper';
+import { addAttributes } from '../shared/helpers/attribute-helper';
 import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
 import { getFormEvents } from '../shared/form/event-helper';
 
@@ -100,7 +100,7 @@ export default defineComponent({
   setup(props, context) {
     const internalModel = getInternalModel(props, context);
     const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-    const attributes = getAttributes(['disabled'], props, context);
+    const attributes = addAttributes(['disabled'], props, context);
     const ariaDescribedby = getAriaDescribedBy(props, error);
     const { onBlur, onChange } = getFormEvents(props, validator, context);
 

@@ -30,7 +30,7 @@ import NhsFormItem from '../shared/form/NhsFormItem.vue';
 import NhsHintText from '../hint-text/NhsHintText.vue';
 import NhsLabel from '../label/NhsLabel.vue';
 import NhsErrorText from '../error-text/NhsErrorText.vue';
-import { getAttributes } from '../shared/helpers/attribute-helper';
+import { addAttributes } from '../shared/helpers/attribute-helper';
 import { randomString } from '../shared/helpers/random-string';
 import { NhsFormItemValidateOn } from '../shared/form/types';
 import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
@@ -90,7 +90,7 @@ export default defineComponent({
   setup(props, context) {
     const internalModel = getInternalModel(props, context);
     const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-    const attributes = getAttributes(['disabled'], props, context);
+    const attributes = addAttributes(['disabled'], props, context);
     const ariaDescribedby = getAriaDescribedBy(props, error);
     const { onBlur, onChange } = getFormEvents(props, validator, context);
 

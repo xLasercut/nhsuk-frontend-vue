@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import { getAttributes } from '../../helpers/attribute-helper';
+import { addAttributes } from '../../helpers/attribute-helper';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -24,7 +24,7 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const attributes = getAttributes(['disabled'], props, context);
+    const attributes = addAttributes(['disabled'], props, context);
     return { attributes };
   }
 });

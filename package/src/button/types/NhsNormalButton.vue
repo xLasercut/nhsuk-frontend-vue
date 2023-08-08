@@ -4,28 +4,25 @@
   </button>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
-import { getAttributes } from '../../shared/helpers/attribute-helper';
+<script setup lang="ts">
+import { addAttributes } from '../../shared/helpers/attribute-helper';
+import { useAttrs } from 'vue';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: ['click'],
-  props: {
-    disabled: {
-      type: Boolean,
-      default: () => {
-        return false;
-      }
-    },
-    href: {
-      type: String
+const props = defineProps({
+  disabled: {
+    type: Boolean,
+    default: () => {
+      return false;
     }
   },
-  setup(props, context) {
-    const attributes = getAttributes(['disabled'], props, context);
-
-    return { attributes };
+  href: {
+    type: String
   }
 });
+defineEmits(['click']);
+defineOptions({
+  inheritAttrs: false
+});
+const attrs = useAttrs();
+const attributes = addAttributes(['disabled'], props, attrs);
 </script>

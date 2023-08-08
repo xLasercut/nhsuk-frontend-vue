@@ -35,7 +35,7 @@ import NhsLabel from '../label/NhsLabel.vue';
 import NhsErrorText from '../error-text/NhsErrorText.vue';
 import { computed, defineComponent, PropType } from 'vue';
 import { NhsInputInputmode, NhsInputWidth } from './types';
-import { getAttributes } from '../shared/helpers/attribute-helper';
+import { addAttributes } from '../shared/helpers/attribute-helper';
 import { randomString } from '../shared/helpers/random-string';
 import { NhsFormItemValidateOn } from '../shared/form/types';
 import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
@@ -120,7 +120,7 @@ export default defineComponent({
   setup(props, context) {
     const internalModel = getInternalModel(props, context);
     const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-    const attributes = getAttributes(['disabled'], props, context);
+    const attributes = addAttributes(['disabled'], props, context);
 
     const classes = computed((): string => {
       const classes = ['nhsuk-input'];
