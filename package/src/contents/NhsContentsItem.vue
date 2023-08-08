@@ -15,37 +15,33 @@
   </li>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsLinkSwitcher } from '../shared/link-switcher';
 import { NhsContentsItemAttribute } from './interfaces';
+import { AriaCurrentType } from '../shared/types';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-contents-item',
-  inheritAttrs: false,
-  components: { NhsLinkSwitcher },
-  emits: ['click'],
-  props: {
-    href: {
-      type: String
-    },
-    ariaCurrent: {
-      type: String,
-      default: (): string => {
-        return 'page';
-      }
-    }
+  inheritAttrs: false
+});
+defineEmits(['click']);
+const props = defineProps({
+  href: {
+    type: String
   },
-  setup(props) {
-    const attributes = computed(() => {
-      const attributes: NhsContentsItemAttribute = {};
-      if (!props.href) {
-        attributes['aria-current'] = props.ariaCurrent;
-      }
-      return attributes;
-    });
-
-    return { attributes };
+  ariaCurrent: {
+    type: String as PropType<AriaCurrentType>,
+    default: (): string => {
+      return 'page';
+    }
   }
+});
+const attributes = computed(() => {
+  const attributes: NhsContentsItemAttribute = {};
+  if (!props.href) {
+    attributes['aria-current'] = props.ariaCurrent;
+  }
+  return attributes;
 });
 </script>

@@ -1,7 +1,7 @@
 import { reactive, Ref, ref, SetupContext, watch } from 'vue';
 import { NhsVueProp } from '../interface';
 
-function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
+function getInternalModel(props: NhsVueProp, context: any): Ref {
   const internalModel = ref(props.modelValue);
 
   watch(
@@ -21,7 +21,7 @@ function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
   return internalModel;
 }
 
-function getInternalModelItemGroup(props: NhsVueProp, context: SetupContext<any>) {
+function getInternalModelItemGroup(props: NhsVueProp, context: any) {
   const state = reactive({
     internalModel: props.modelValue
   });

@@ -23,6 +23,7 @@ defineProps({
 
 defineEmits(['click']);
 defineOptions({
+  name: 'nhs-breadcrumb-backlink',
   inheritAttrs: false
 });
 </script>

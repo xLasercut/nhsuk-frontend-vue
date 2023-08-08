@@ -12,21 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import NhsNormalButton from './types/NhsNormalButton.vue';
 import NhsLinkButton from './types/NhsLinkButton.vue';
 import { computed, PropType } from 'vue';
 import { NhsButtonColor, NhsButtonType } from './types';
-
-const BUTTON_COLORS = {
-  primary: 'nhsuk-button',
-  secondary: 'nhsuk-button nhsuk-button--secondary',
-  reverse: 'nhsuk-button nhsuk-button--reverse'
-};
-
-const BUTTON_TYPES = {
-  button: NhsNormalButton,
-  a: NhsLinkButton
-};
+import { BUTTON_COLORS, BUTTON_TYPES } from './costants';
 
 const props = defineProps({
   color: {
@@ -59,6 +48,7 @@ const props = defineProps({
 });
 defineEmits(['click']);
 defineOptions({
+  name: 'nhs-button',
   inheritAttrs: false
 });
 const classes = computed((): string => {

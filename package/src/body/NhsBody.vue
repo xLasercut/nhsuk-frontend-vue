@@ -7,8 +7,8 @@
 <script setup lang="ts">
 import { computed, PropType } from 'vue';
 import { NhsBodySize } from './types';
+import { NHS_BODY_SIZES } from './constants';
 
-const NHS_BODY_SIZES: Array<NhsBodySize> = ['s'];
 const props = defineProps({
   size: {
     type: String as PropType<NhsBodySize>,
@@ -19,6 +19,7 @@ const props = defineProps({
 });
 defineEmits([]);
 defineOptions({
+  name: 'nhs-body',
   inheritAttrs: false
 });
 

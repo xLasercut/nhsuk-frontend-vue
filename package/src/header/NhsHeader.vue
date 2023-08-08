@@ -5,7 +5,7 @@
         :home-href="homeHref"
         :service="service"
         :organisation="organisation"
-        :aria-label="ariaLabel"
+        :ariaLabel="ariaLabel"
         :show-transactional="showTransactional()"
         :showNav="showNav"
         :showSearch="showSearch"

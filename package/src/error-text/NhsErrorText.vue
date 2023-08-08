@@ -5,23 +5,21 @@
   </span>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-error-text',
-  emits: [],
-  props: {
-    hiddenText: {
-      type: String,
-      default: (): string => {
-        return 'Error: ';
-      }
-    },
-    id: {
-      type: String
+  name: 'nhs-error-text'
+});
+defineEmits([]);
+defineProps({
+  hiddenText: {
+    type: String,
+    default: (): string => {
+      return 'Error: ';
     }
+  },
+  id: {
+    type: String
   }
 });
 </script>

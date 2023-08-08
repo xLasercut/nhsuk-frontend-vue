@@ -16,30 +16,27 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, nextTick, onMounted, ref } from 'vue';
+<script setup lang="ts">
+import { nextTick, onMounted, ref } from 'vue';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-error-summary',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  },
-  setup() {
-    const errorSummary = ref(null);
-
-    onMounted(() => {
-      nextTick(() => {
-        //@ts-ignore
-        errorSummary.value.focus();
-      });
-    });
-
-    return { errorSummary };
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  title: {
+    type: String,
+    required: true
   }
+});
+const errorSummary = ref<HTMLDivElement>();
+
+onMounted(() => {
+  nextTick(() => {
+    if (errorSummary.value) {
+      errorSummary.value.focus();
+    }
+  });
 });
 </script>

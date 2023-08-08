@@ -7,25 +7,23 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-contents',
-  inheritAttrs: false,
-  emit: [],
-  props: {
-    ariaLabel: {
-      type: String,
-      default: (): string => {
-        return 'Pages in this guide';
-      }
-    },
-    hiddenText: {
-      type: String,
-      default: (): string => {
-        return 'Contents';
-      }
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  ariaLabel: {
+    type: String,
+    default: (): string => {
+      return 'Pages in this guide';
+    }
+  },
+  hiddenText: {
+    type: String,
+    default: (): string => {
+      return 'Contents';
     }
   }
 });

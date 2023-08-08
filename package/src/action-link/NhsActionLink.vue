@@ -19,6 +19,9 @@ defineProps({
     required: true
   }
 });
+defineOptions({
+  name: 'nhs-action-link'
+})
 
 defineEmits(['click']);
 </script>

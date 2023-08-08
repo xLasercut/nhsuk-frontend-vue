@@ -26,6 +26,7 @@ defineProps({
 
 defineEmits(['click']);
 defineOptions({
+  name: 'nhs-breadcrumb-item',
   inheritAttrs: false
 });
 </script>

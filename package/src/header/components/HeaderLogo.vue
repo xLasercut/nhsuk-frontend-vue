@@ -6,7 +6,7 @@
       :home-href="homeHref"
     ></header-logo-org>
     <header-logo-normal
-      :aria-label="ariaLabel"
+      :ariaLabel="ariaLabel"
       :home-href="homeHref"
       :service="service"
       v-if="!isOrgLogo"

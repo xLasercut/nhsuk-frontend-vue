@@ -15,7 +15,7 @@ function onFormEvent(
   context.emit(name, event);
 }
 
-function getFormEvents(props: NhsVueProp, validator: Function, context: SetupContext<any>) {
+function getFormEvents(props: NhsVueProp, validator: Function, context: any) {
   function onBlur(event: any = null): void {
     onFormEvent('blur', props.validateOn, validator, context, event);
   }

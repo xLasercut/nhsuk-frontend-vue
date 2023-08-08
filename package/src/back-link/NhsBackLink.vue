@@ -19,6 +19,7 @@ defineProps({
 });
 defineEmits(['click']);
 defineOptions({
+  name: 'nhs-back-link',
   inheritAttrs: false
 });
 </script>

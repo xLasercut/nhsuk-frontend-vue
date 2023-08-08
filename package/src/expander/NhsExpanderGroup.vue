@@ -4,12 +4,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-expander-group',
-  emits: [],
   inheritAttrs: false
 });
+defineEmits([]);
 </script>
