@@ -6,37 +6,33 @@
   </dl>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-summary-list',
-  emits: [],
-  props: {
-    data: {
-      type: Array,
-      required: true
-    },
-    border: {
-      type: Boolean,
-      default: (): boolean => {
-        return true;
-      }
-    }
+  name: 'nhs-summary-list'
+});
+defineEmits([]);
+const props = defineProps({
+  data: {
+    type: Array,
+    required: true
   },
-  setup(props) {
-    const classes = computed((): string => {
-      const classes = ['nhsuk-summary-list'];
-
-      if (!props.border) {
-        classes.push('nhsuk-summary-list--no-border');
-      }
-
-      return classes.join(' ');
-    });
-
-    return { classes };
+  border: {
+    type: Boolean,
+    default: (): boolean => {
+      return true;
+    }
   }
+});
+const classes = computed((): string => {
+  const classes = ['nhsuk-summary-list'];
+
+  if (!props.border) {
+    classes.push('nhsuk-summary-list--no-border');
+  }
+
+  return classes.join(' ');
 });
 </script>

@@ -19,27 +19,25 @@
   </li>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-nav-az-item',
-  inheritAttrs: false,
-  emits: ['click'],
-  components: { NhsLinkSwitcher },
-  props: {
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    href: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
+  inheritAttrs: false
+});
+defineEmits(['click']);
+defineProps({
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  href: {
+    type: String,
+    default: (): string => {
+      return '';
     }
   }
 });

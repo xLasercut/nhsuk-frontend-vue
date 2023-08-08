@@ -4,12 +4,10 @@
   </a>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-skip-link',
-  emits: ['click']
+  name: 'nhs-skip-link'
 });
+defineEmits(['click']);
 </script>

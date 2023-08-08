@@ -28,73 +28,70 @@
   </section>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 import { NhsHeroSectionStyle } from './interface';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-hero',
-  emits: [],
-  props: {
-    heading: {
-      type: String
-    },
-    imageUrl: {
-      type: String
-    },
-    text: {
-      type: String
-    }
+  name: 'nhs-hero'
+});
+defineEmits([]);
+const props = defineProps({
+  heading: {
+    type: String
   },
-  setup(props) {
-    const sectionClass = computed((): string => {
-      const classes = ['nhsuk-hero'];
-
-      if (props.heading && props.imageUrl) {
-        classes.push('nhsuk-hero--image nhsuk-hero--image-description');
-      } else if (props.imageUrl) {
-        classes.push('nhsuk-hero--image');
-      }
-
-      return classes.join(' ');
-    });
-
-    const sectionStyle = computed((): NhsHeroSectionStyle => {
-      const style: NhsHeroSectionStyle = {};
-
-      if (props.imageUrl) {
-        style['background-image'] = `url('${props.imageUrl}')`;
-      }
-
-      return style;
-    });
-
-    const widthContainerClass = computed((): string => {
-      const classes = ['nhsuk-width-container'];
-
-      if (!props.imageUrl) {
-        classes.push('nhsuk-hero--border');
-      }
-
-      return classes.join(' ');
-    });
-
-    const heroContentClass = computed((): string => {
-      if (props.imageUrl) {
-        return 'nhsuk-hero-content';
-      }
-      return 'nhsuk-hero__wrapper';
-    });
-
-    const headingClass = computed((): string => {
-      if (props.text) {
-        return 'nhsuk-u-margin-bottom-3';
-      }
-      return '';
-    });
-
-    return { sectionClass, sectionStyle, widthContainerClass, heroContentClass, headingClass };
+  imageUrl: {
+    type: String
+  },
+  text: {
+    type: String
   }
+});
+
+const sectionClass = computed((): string => {
+  const classes = ['nhsuk-hero'];
+
+  if (props.heading && props.imageUrl) {
+    classes.push('nhsuk-hero--image nhsuk-hero--image-description');
+  } else if (props.imageUrl) {
+    classes.push('nhsuk-hero--image');
+  }
+
+  return classes.join(' ');
+});
+
+const sectionStyle = computed((): NhsHeroSectionStyle => {
+  const style: NhsHeroSectionStyle = {};
+
+  if (props.imageUrl) {
+    style['background-image'] = `url('${props.imageUrl}')`;
+  }
+
+  return style;
+});
+
+const widthContainerClass = computed((): string => {
+  const classes = ['nhsuk-width-container'];
+
+  if (!props.imageUrl) {
+    classes.push('nhsuk-hero--border');
+  }
+
+  return classes.join(' ');
+});
+
+const heroContentClass = computed((): string => {
+  if (props.imageUrl) {
+    return 'nhsuk-hero-content';
+  }
+  return 'nhsuk-hero__wrapper';
+});
+
+const headingClass = computed((): string => {
+  if (props.text) {
+    return 'nhsuk-u-margin-bottom-3';
+  }
+  return '';
 });
 </script>

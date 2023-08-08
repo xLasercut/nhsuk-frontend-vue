@@ -14,8 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineComponent, inject } from 'vue';
+import { computed } from 'vue';
 import { NHS_HEADER_INJECTS } from '../constants';
+import { injectStrict } from '../../shared/helpers/inject-helper';
+import { ToggleFunctionType } from '../types';
 
 defineOptions({
   inheritAttrs: false
@@ -56,5 +58,5 @@ const menuButtonClasses = computed((): string => {
   return classes.join(' ');
 });
 
-const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav);
+const toggleNav = injectStrict<ToggleFunctionType>(NHS_HEADER_INJECTS.TOGGLE_NAV);
 </script>

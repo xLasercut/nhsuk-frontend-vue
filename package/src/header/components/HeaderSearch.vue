@@ -68,184 +68,157 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue';
-import {
-  computed,
-  defineComponent,
-  inject,
-  onMounted,
-  onUnmounted,
-  PropType,
-  reactive,
-  toRefs,
-  watch
-} from 'vue';
+import { computed, onMounted, onUnmounted, PropType, ref, watch } from 'vue';
 import { NhsHeaderSearchResult } from '../interfaces';
 import { NHS_HEADER_INJECTS } from '../constants';
+import { injectStrict } from '../../shared/helpers/inject-helper';
+import { ToggleFunctionType } from '../types';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: ['submit-search', 'update:search-text'],
-  props: {
-    searchAction: {
-      type: String,
-      required: true
-    },
-    searchInputName: {
-      type: String,
-      required: true
-    },
-    searchMenuOpen: {
-      type: Boolean,
-      required: true
-    },
-    searchResults: {
-      type: Array as PropType<Array<NhsHeaderSearchResult>>,
-      required: true
-    },
-    searchText: {
-      type: String,
-      required: true
-    }
+defineOptions({
+  inheritAttrs: false
+});
+const emit = defineEmits(['submit-search', 'update:search-text']);
+const props = defineProps({
+  searchAction: {
+    type: String,
+    required: true
   },
-  components: { NhsIcon },
-  setup(props, context) {
-    const state = reactive({
-      searchOpen: false,
-      currentResultCount: -1,
-      ariaLabelledBy: '',
-      searchTextInternal: props.searchText
-    });
-
-    watch(
-      () => state.searchTextInternal,
-      (val: string): void => {
-        state.searchOpen = true;
-        state.currentResultCount = -1;
-        context.emit('update:search-text', val);
-      }
-    );
-
-    const toggleSearchButtonClasses = computed((): string => {
-      const classes = ['nhsuk-header__search-toggle'];
-
-      if (props.searchMenuOpen) {
-        classes.push('is-active');
-      }
-
-      return classes.join(' ');
-    });
-
-    const searchWrapClasses = computed((): string => {
-      const classes = ['nhsuk-header__search-wrap'];
-
-      if (props.searchMenuOpen) {
-        classes.push('js-show');
-      }
-
-      return classes.join(' ');
-    });
-
-    const searchMenuClasses = computed((): string => {
-      const classes = ['autocomplete__menu'];
-
-      if (props.searchResults.length > 0 && state.searchOpen) {
-        classes.push('autocomplete__menu--visible');
-      } else {
-        classes.push('autocomplete__menu--hidden');
-      }
-
-      return classes.join(' ');
-    });
-
-    const activeDescendant = computed((): string => {
-      if (state.currentResultCount > -1) {
-        return searchResultId(state.currentResultCount);
-      }
-
-      return '';
-    });
-
-    function searchResultClasses(index: number): string {
-      const classes = ['autocomplete__option'];
-
-      if (state.currentResultCount === index) {
-        classes.push('autocomplete__option--focused');
-      }
-
-      return classes.join(' ');
-    }
-
-    function searchResultId(index: number): string {
-      return `search-field__option--${index}`;
-    }
-
-    function onArrowDown(): void {
-      if (state.currentResultCount < props.searchResults.length - 1) {
-        state.currentResultCount = state.currentResultCount + 1;
-      }
-    }
-
-    function onArrowUp(): void {
-      if (state.currentResultCount >= 0) {
-        state.currentResultCount = state.currentResultCount - 1;
-      }
-    }
-
-    function onMouseOver(): void {
-      state.currentResultCount = -1;
-    }
-
-    function onClickOutside(event: any): void {
-      if (
-        event.target.id !== 'search-field' &&
-        event.target.id !== 'search-results' &&
-        !event.target.id.includes('search-field__option--') &&
-        !event.target.id.includes('search-field-icon__option--')
-      ) {
-        state.searchOpen = false;
-        state.currentResultCount = -1;
-      }
-    }
-
-    const toggleSearch: Function = inject<any>(NHS_HEADER_INJECTS.toggleSearch);
-
-    function submitSearch(index: number | undefined = undefined): void {
-      if (index || index === 0) {
-        context.emit('submit-search', props.searchResults[index]);
-      } else if (state.currentResultCount > -1) {
-        context.emit('submit-search', props.searchResults[state.currentResultCount]);
-      } else {
-        context.emit('submit-search', state.searchTextInternal);
-      }
-      state.searchOpen = false;
-      state.currentResultCount = -1;
-    }
-
-    onMounted(() => {
-      document.addEventListener('click', onClickOutside);
-    });
-
-    onUnmounted(() => {
-      document.removeEventListener('click', onClickOutside);
-    });
-
-    return {
-      submitSearch,
-      toggleSearchButtonClasses,
-      searchWrapClasses,
-      ...toRefs(state),
-      toggleSearch,
-      searchMenuClasses,
-      onArrowDown,
-      onArrowUp,
-      onMouseOver,
-      searchResultClasses,
-      searchResultId,
-      activeDescendant
-    };
+  searchInputName: {
+    type: String,
+    required: true
+  },
+  searchMenuOpen: {
+    type: Boolean,
+    required: true
+  },
+  searchResults: {
+    type: Array as PropType<Array<NhsHeaderSearchResult>>,
+    required: true
+  },
+  searchText: {
+    type: String,
+    required: true
   }
+});
+
+const searchOpen = ref(false);
+const currentResultCount = ref(-1);
+const ariaLabelledBy = ref('');
+const searchTextInternal = ref(props.searchText);
+
+watch(
+  () => searchTextInternal.value,
+  (val: string): void => {
+    searchOpen.value = true;
+    currentResultCount.value = -1;
+    emit('update:search-text', val);
+  }
+);
+
+const toggleSearchButtonClasses = computed((): string => {
+  const classes = ['nhsuk-header__search-toggle'];
+
+  if (props.searchMenuOpen) {
+    classes.push('is-active');
+  }
+
+  return classes.join(' ');
+});
+
+const searchWrapClasses = computed((): string => {
+  const classes = ['nhsuk-header__search-wrap'];
+
+  if (props.searchMenuOpen) {
+    classes.push('js-show');
+  }
+
+  return classes.join(' ');
+});
+
+const searchMenuClasses = computed((): string => {
+  const classes = ['autocomplete__menu'];
+
+  if (props.searchResults.length > 0 && searchOpen.value) {
+    classes.push('autocomplete__menu--visible');
+  } else {
+    classes.push('autocomplete__menu--hidden');
+  }
+
+  return classes.join(' ');
+});
+
+const activeDescendant = computed((): string => {
+  if (currentResultCount.value > -1) {
+    return searchResultId(currentResultCount.value);
+  }
+
+  return '';
+});
+
+function searchResultClasses(index: number): string {
+  const classes = ['autocomplete__option'];
+
+  if (currentResultCount.value === index) {
+    classes.push('autocomplete__option--focused');
+  }
+
+  return classes.join(' ');
+}
+
+function searchResultId(index: number): string {
+  return `search-field__option--${index}`;
+}
+
+function onArrowDown(): void {
+  if (currentResultCount.value < props.searchResults.length - 1) {
+    currentResultCount.value = currentResultCount.value + 1;
+  }
+}
+
+function onArrowUp(): void {
+  if (currentResultCount.value >= 0) {
+    currentResultCount.value = currentResultCount.value - 1;
+  }
+}
+
+function onMouseOver(): void {
+  currentResultCount.value = -1;
+}
+
+function onClickOutside(event: any): void {
+  if (
+    event.target.id !== 'search-field' &&
+    event.target.id !== 'search-results' &&
+    !event.target.id.includes('search-field__option--') &&
+    !event.target.id.includes('search-field-icon__option--')
+  ) {
+    searchOpen.value = false;
+    currentResultCount.value = -1;
+  }
+}
+
+const toggleSearch = injectStrict<ToggleFunctionType>(NHS_HEADER_INJECTS.TOGGLE_SEARCH);
+
+function submitSearch(index: number | undefined = undefined): void {
+  if (index || index === 0) {
+    emit('submit-search', props.searchResults[index]);
+  } else if (currentResultCount.value > -1) {
+    emit('submit-search', props.searchResults[currentResultCount.value]);
+  } else {
+    emit('submit-search', searchTextInternal.value);
+  }
+  searchOpen.value = false;
+  currentResultCount.value = -1;
+}
+
+onMounted(() => {
+  document.addEventListener('click', onClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', onClickOutside);
 });
 </script>
 
@@ -275,6 +248,7 @@ export default defineComponent({
   width: 100%;
   z-index: 1;
 }
+
 @media (max-width: 40.0525em) {
   .autocomplete__menu {
     -moz-box-shadow: none;
@@ -287,9 +261,11 @@ export default defineComponent({
     width: calc(100% + 32px);
   }
 }
+
 .autocomplete__menu--visible {
   display: block;
 }
+
 .autocomplete__menu--hidden {
   display: none;
 }
@@ -317,22 +293,28 @@ export default defineComponent({
 .autocomplete__option:hover {
   text-decoration: none;
 }
+
 .autocomplete__option:focus {
   outline: 1px solid transparent;
   text-decoration: none;
 }
+
 .autocomplete__option:focus a {
   background-color: #ffeb3b;
-  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  box-shadow:
+    0 -2px #ffeb3b,
+    0 4px #212b32;
   color: #212b32;
   outline: 4px solid transparent;
   text-decoration: none;
 }
+
 @media (min-width: 40.0625em) {
   .autocomplete__option:last-child {
     border-bottom: 0;
   }
 }
+
 .autocomplete__option--no-results {
   border-bottom: 0;
   color: #212b32;
@@ -343,6 +325,7 @@ export default defineComponent({
   text-align: left;
   text-decoration: none;
 }
+
 @media (max-width: 40.0525em) {
   .autocomplete__option--no-results {
     padding: 16px 0;

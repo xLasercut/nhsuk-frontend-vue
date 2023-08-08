@@ -4,40 +4,36 @@
   </component>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import Key from './item-types/Key.vue';
 import Value from './item-types/Value.vue';
 import Action from './item-types/Action.vue';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsSummaryListItemType } from './types';
+import { SUMMARY_LIST_ITEM_TYPES } from './constants';
 
-const SUMMARY_LIST_ITEM_TYPES: Array<NhsSummaryListItemType> = ['key', 'value', 'actions'];
-
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'NhsSummaryListItem',
-  emits: [],
-  props: {
-    type: {
-      type: String as PropType<NhsSummaryListItemType>,
-      required: true,
-      validator: (val: NhsSummaryListItemType): boolean => {
-        return SUMMARY_LIST_ITEM_TYPES.includes(val);
-      }
+  name: 'nhs-summary-list-item'
+});
+defineEmits([]);
+const props = defineProps({
+  type: {
+    type: String as PropType<NhsSummaryListItemType>,
+    required: true,
+    validator: (val: NhsSummaryListItemType): boolean => {
+      return SUMMARY_LIST_ITEM_TYPES.includes(val);
     }
-  },
-  setup(props) {
-    const componentType = computed(() => {
-      if (props.type === 'key') {
-        return Key;
-      } else if (props.type === 'actions') {
-        return Action;
-      }
-
-      return Value;
-    });
-
-    return { componentType };
   }
+});
+const componentType = computed(() => {
+  if (props.type === 'key') {
+    return Key;
+  }
+  if (props.type === 'actions') {
+    return Action;
+  }
+
+  return Value;
 });
 </script>

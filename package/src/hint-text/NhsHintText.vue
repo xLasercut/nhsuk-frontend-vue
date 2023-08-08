@@ -4,23 +4,23 @@
   </component>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { PropType } from 'vue';
 import { NhsHintTextElement } from './types';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  emits: [],
-  name: 'nhs-hint-text',
-  props: {
-    id: {
-      type: String
-    },
-    element: {
-      type: String as PropType<NhsHintTextElement>,
-      default: (): NhsHintTextElement => {
-        return 'span';
-      }
+  name: 'nhs-hint-text'
+});
+defineEmits([]);
+defineProps({
+  id: {
+    type: String
+  },
+  element: {
+    type: String as PropType<NhsHintTextElement>,
+    default: (): NhsHintTextElement => {
+      return 'span';
     }
   }
 });

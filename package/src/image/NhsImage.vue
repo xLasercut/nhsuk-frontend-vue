@@ -7,41 +7,38 @@
   </figure>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed, useSlots } from 'vue';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-image',
-  emits: [],
-  props: {
-    src: {
-      type: String,
-      required: true
-    },
-    alt: {
-      type: String,
-      required: true
-    },
-    sizes: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
-    },
-    srcset: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
+  name: 'nhs-image'
+});
+defineEmits([]);
+const props = defineProps({
+  src: {
+    type: String,
+    required: true
+  },
+  alt: {
+    type: String,
+    required: true
+  },
+  sizes: {
+    type: String,
+    default: (): string => {
+      return '';
     }
   },
-  setup(props, context) {
-    const isCaption = computed((): boolean => {
-      return Boolean(context.slots.default);
-    });
-
-    return { isCaption };
+  srcset: {
+    type: String,
+    default: (): string => {
+      return '';
+    }
   }
+});
+const slots = useSlots();
+const isCaption = computed((): boolean => {
+  return Boolean(slots.default);
 });
 </script>

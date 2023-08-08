@@ -4,44 +4,39 @@
   </component>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsLabelHeading from './types/NhsLabelHeading.vue';
 import NhsLabelNormal from './types/NhsLabelNormal.vue';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsLabelSize } from './types';
+import { NHS_LABEL_SIZES } from './constants';
 
-const NHS_LABEL_SIZES: Array<NhsLabelSize> = ['xl', 's'];
-
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-label',
-  emits: [],
-  props: {
-    pageHeading: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    size: {
-      type: String as PropType<NhsLabelSize>,
-      validator: (val: NhsLabelSize): boolean => {
-        if (val) {
-          return NHS_LABEL_SIZES.includes(val);
-        }
-        return true;
-      }
+  name: 'nhs-label'
+});
+defineEmits([]);
+const props = defineProps({
+  pageHeading: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
   },
-  setup(props) {
-    const labelType = computed(() => {
-      if (props.pageHeading) {
-        return NhsLabelHeading;
+  size: {
+    type: String as PropType<NhsLabelSize>,
+    validator: (val: NhsLabelSize): boolean => {
+      if (val) {
+        return NHS_LABEL_SIZES.includes(val);
       }
-      return NhsLabelNormal;
-    });
-
-    return { labelType };
+      return true;
+    }
   }
+});
+const labelType = computed(() => {
+  if (props.pageHeading) {
+    return NhsLabelHeading;
+  }
+  return NhsLabelNormal;
 });
 </script>

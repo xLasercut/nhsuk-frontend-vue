@@ -29,35 +29,33 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsIcon from '../icon/NhsIcon.vue';
 import { NhsLinkSwitcher } from '../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-pagination',
-  emits: ['click-next', 'click-previous'],
-  props: {
-    ariaLabel: {
-      type: String,
-      default: (): string => {
-        return 'Pagination';
-      }
-    },
-    previousHref: {
-      type: String
-    },
-    previousPage: {
-      type: String
-    },
-    nextHref: {
-      type: String
-    },
-    nextPage: {
-      type: String
+  name: 'nhs-pagination'
+});
+defineEmits(['click-next', 'click-previous']);
+defineProps({
+  ariaLabel: {
+    type: String,
+    default: (): string => {
+      return 'Pagination';
     }
   },
-  components: { NhsIcon, NhsLinkSwitcher }
+  previousHref: {
+    type: String
+  },
+  previousPage: {
+    type: String
+  },
+  nextHref: {
+    type: String
+  },
+  nextPage: {
+    type: String
+  }
 });
 </script>

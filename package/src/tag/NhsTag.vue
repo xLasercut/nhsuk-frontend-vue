@@ -4,51 +4,34 @@
   </strong>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsTagColor } from './types';
+import { TAG_COLORS } from './constants';
 
-const TAG_COLORS: Array<NhsTagColor> = [
-  '',
-  'white',
-  'grey',
-  'green',
-  'aqua-green',
-  'blue',
-  'purple',
-  'pink',
-  'red',
-  'orange',
-  'yellow'
-];
-
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-tag',
-  emits: [],
-  props: {
-    color: {
-      type: String as PropType<NhsTagColor>,
-      default: (): NhsTagColor => {
-        return '';
-      },
-      validator: (val: NhsTagColor): boolean => {
-        return TAG_COLORS.includes(val);
-      }
+  name: 'nhs-tag'
+});
+defineEmits([]);
+const props = defineProps({
+  color: {
+    type: String as PropType<NhsTagColor>,
+    default: (): NhsTagColor => {
+      return '';
+    },
+    validator: (val: NhsTagColor): boolean => {
+      return TAG_COLORS.includes(val);
     }
-  },
-  setup(props) {
-    const classes = computed((): string => {
-      let classes = ['nhsuk-tag'];
-
-      if (props.color) {
-        classes.push(`nhsuk-tag--${props.color}`);
-      }
-
-      return classes.join(' ');
-    });
-
-    return { classes };
   }
+});
+const classes = computed((): string => {
+  let classes = ['nhsuk-tag'];
+
+  if (props.color) {
+    classes.push(`nhsuk-tag--${props.color}`);
+  }
+
+  return classes.join(' ');
 });
 </script>

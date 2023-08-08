@@ -6,19 +6,18 @@
   </h1>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsLabelNormal from './NhsLabelNormal.vue';
-import { defineComponent, PropType } from 'vue';
+import { PropType } from 'vue';
 import { NhsLabelSize } from '../types';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: [],
-  components: { NhsLabelNormal },
-  props: {
-    size: {
-      type: String as PropType<NhsLabelSize>
-    }
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  size: {
+    type: String as PropType<NhsLabelSize>
   }
 });
 </script>

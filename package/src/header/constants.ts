@@ -1,6 +1,6 @@
 const NHS_HEADER_INJECTS = {
-  toggleNav: 'toggle-nav',
-  toggleSearch: 'toggle-search'
+  TOGGLE_NAV: 'toggle-nav',
+  TOGGLE_SEARCH: 'toggle-search'
 };
 
 export { NHS_HEADER_INJECTS };

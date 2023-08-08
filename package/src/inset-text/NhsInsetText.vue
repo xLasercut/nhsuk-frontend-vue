@@ -5,19 +5,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  inheritAttrs: false,
-  emits: [],
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-inset-text',
-  props: {
-    hiddenText: {
-      type: String,
-      default: (): string => {
-        return 'Information: ';
-      }
+  inheritAttrs: false
+});
+
+defineEmits([]);
+defineProps({
+  hiddenText: {
+    type: String,
+    default: (): string => {
+      return 'Information: ';
     }
   }
 });

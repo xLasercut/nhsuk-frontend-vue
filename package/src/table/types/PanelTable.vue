@@ -9,41 +9,36 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsHeadingSwitcher } from '../../shared/heading-switcher';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsHeadingType } from '../../shared/heading-switcher/types';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emit: [],
-  props: {
-    heading: {
-      type: String
-    },
-    headingLevel: {
-      type: Number as PropType<NhsHeadingType>,
-      default: (): NhsHeadingType => {
-        return 3;
-      }
-    },
-    responsive: {
-      type: Boolean,
-      default: (): boolean => {
-        return true;
-      }
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  heading: {
+    type: String
+  },
+  headingLevel: {
+    type: Number as PropType<NhsHeadingType>,
+    default: (): NhsHeadingType => {
+      return 3;
     }
   },
-  components: { NhsHeadingSwitcher },
-  setup(props) {
-    const classes = computed((): string => {
-      if (props.responsive) {
-        return 'nhsuk-table-responsive';
-      }
-      return 'nhsuk-table';
-    });
-
-    return { classes };
+  responsive: {
+    type: Boolean,
+    default: (): boolean => {
+      return true;
+    }
   }
+});
+const classes = computed((): string => {
+  if (props.responsive) {
+    return 'nhsuk-table-responsive';
+  }
+  return 'nhsuk-table';
 });
 </script>
