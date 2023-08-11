@@ -1,5 +1,6 @@
 import { computed, Ref } from 'vue';
 import { NhsVueProp } from '../interface';
+import {NhsFormProps} from "./interfaces";
 
 function hintId(id: string): string {
   return `${id}-hint`;
@@ -9,7 +10,7 @@ function errorId(id: string): string {
   return `${id}-error`;
 }
 
-function getAriaDescribedBy(props: NhsVueProp, error: Ref) {
+function getAriaDescribedBy(props: NhsFormProps, error: Ref) {
   return computed((): string => {
     const describedby = [];
 

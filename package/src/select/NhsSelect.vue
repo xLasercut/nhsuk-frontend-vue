@@ -18,103 +18,89 @@
       v-model="internalModel"
       @blur="onBlur()"
       @change="onChange()"
+      @focus="$emit('focus')"
     >
       <slot></slot>
     </select>
   </nhs-form-item>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType, useAttrs } from 'vue';
 import NhsFormItem from '../shared/form/NhsFormItem.vue';
 import NhsHintText from '../hint-text/NhsHintText.vue';
 import NhsLabel from '../label/NhsLabel.vue';
 import NhsErrorText from '../error-text/NhsErrorText.vue';
 import { addAttributes } from '../shared/helpers/attribute-helper';
 import { randomString } from '../shared/helpers/random-string';
-import { NhsFormItemValidateOn } from '../shared/form/types';
+import { NhsFormItemValidateOn, NhsFormRule } from '../shared/form/types';
 import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
 import { handleItemRegistry } from '../shared/form/form-item-registry';
 import { getInternalModel } from '../shared/form/v-model';
 import { getFormEvents } from '../shared/form/event-helper';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-select',
-  emits: ['update:model-value', 'blur', 'change'],
-  components: { NhsFormItem, NhsHintText, NhsErrorText, NhsLabel },
-  props: {
-    modelValue: {
-      required: true
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    id: {
-      type: String,
-      default: (): string => {
-        return `nhs-select-${randomString()}`;
-      }
-    },
-    name: {
-      type: String
-    },
-    rules: {
-      type: Array as PropType<Array<Function>>,
-      default: (): Array<Function> => {
-        return [];
-      }
-    },
-    label: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
-    },
-    hint: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
-    },
-    validateOn: {
-      type: String as PropType<NhsFormItemValidateOn>,
-      default: (): NhsFormItemValidateOn => {
-        return 'blur';
-      }
+  name: 'nhs-select'
+});
+const emit = defineEmits(['update:model-value', 'blur', 'change', 'focus']);
+const props = defineProps({
+  modelValue: {
+    required: true
+  },
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
   },
-  setup(props, context) {
-    const internalModel = getInternalModel(props, context);
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-    const attributes = addAttributes(['disabled'], props, context);
-    const ariaDescribedby = getAriaDescribedBy(props, error);
-    const { onBlur, onChange } = getFormEvents(props, validator, context);
-
-    const classes = computed((): string => {
-      const classes = ['nhsuk-select'];
-
-      if (error.value) {
-        classes.push('nhsuk-select--error');
-      }
-      return classes.join(' ');
-    });
-
-    return {
-      classes,
-      attributes,
-      ariaDescribedby,
-      hintId,
-      errorId,
-      onBlur,
-      onChange,
-      error,
-      errorMsg,
-      internalModel
-    };
+  id: {
+    type: String,
+    default: (): string => {
+      return `nhs-select-${randomString()}`;
+    }
+  },
+  name: {
+    type: String
+  },
+  rules: {
+    type: Array as PropType<Array<NhsFormRule>>,
+    default: (): Array<NhsFormRule> => {
+      return [];
+    }
+  },
+  label: {
+    type: String,
+    default: (): string => {
+      return '';
+    }
+  },
+  hint: {
+    type: String,
+    default: (): string => {
+      return '';
+    }
+  },
+  validateOn: {
+    type: String as PropType<NhsFormItemValidateOn>,
+    default: (): NhsFormItemValidateOn => {
+      return 'blur';
+    }
   }
+});
+const attrs = useAttrs();
+const internalModel = getInternalModel(props, emit);
+const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+const attributes = addAttributes(['disabled'], props, attrs);
+const ariaDescribedby = getAriaDescribedBy(props, error);
+const { onBlur, onChange } = getFormEvents(props, validator, emit);
+
+const classes = computed((): string => {
+  const classes = ['nhsuk-select'];
+
+  if (error.value) {
+    classes.push('nhsuk-select--error');
+  }
+  return classes.join(' ');
 });
 </script>

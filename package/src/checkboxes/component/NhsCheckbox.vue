@@ -25,98 +25,87 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, onMounted, reactive, ref } from 'vue';
+<script setup lang="ts">
+import { computed, onMounted, reactive, ref } from 'vue';
 import NhsHintText from '../../hint-text/NhsHintText.vue';
 import NhsLabel from '../../label/NhsLabel.vue';
 import { getInternalModel } from '../../shared/form/v-model';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: ['update:model-value', 'blur', 'change', 'focus'],
-  props: {
-    checkboxValue: {
-      type: String
-    },
-    hint: {
-      type: String
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    name: {
-      type: String
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    id: {
-      type: String,
-      required: true
-    },
-    modelValue: {
-      required: true
-    },
-    conditional: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
+defineOptions({
+  inheritAttrs: false
+});
+const emit = defineEmits(['update:model-value', 'blur', 'change', 'focus']);
+const props = defineProps({
+  checkboxValue: {
+    type: String
+  },
+  hint: {
+    type: String
+  },
+  label: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String
+  },
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
   },
-  components: { NhsLabel, NhsHintText },
-  setup(props, context) {
-    const checkbox = ref(null);
-    const state = reactive({
-      isChecked: false
-    });
-    const internalModel = getInternalModel(props, context);
-    function showConditional(): boolean {
-      return props.conditional && state.isChecked;
+  id: {
+    type: String,
+    required: true
+  },
+  modelValue: {
+    required: true
+  },
+  conditional: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
-
-    const attributes = computed(() => {
-      const attributes: { [key: string]: any } = {};
-      if (props.disabled) {
-        attributes['disabled'] = true;
-      }
-
-      if (props.hint) {
-        attributes['aria-describedby'] = hintId();
-      }
-
-      return attributes;
-    });
-
-    function hintId(): string {
-      return `${props.id}-hint`;
-    }
-
-    onMounted(() => {
-      if (checkbox.value) {
-        state.isChecked = checkbox.value['checked'];
-      }
-    });
-
-    function updateChecked(event: any) {
-      if (event.target) {
-        state.isChecked = event.target.checked;
-      }
-      context.emit('change', props.id);
-    }
-
-    return {
-      hintId,
-      internalModel,
-      attributes,
-      showConditional,
-      checkbox,
-      updateChecked
-    };
   }
 });
+const checkbox = ref(null);
+const state = reactive({
+  isChecked: false
+});
+const internalModel = getInternalModel(props, emit);
+
+function showConditional(): boolean {
+  return props.conditional && state.isChecked;
+}
+
+const attributes = computed(() => {
+  const attributes: { [key: string]: any } = {};
+  if (props.disabled) {
+    attributes['disabled'] = true;
+  }
+
+  if (props.hint) {
+    attributes['aria-describedby'] = hintId();
+  }
+
+  return attributes;
+});
+
+function hintId(): string {
+  return `${props.id}-hint`;
+}
+
+onMounted(() => {
+  if (checkbox.value) {
+    state.isChecked = checkbox.value['checked'];
+  }
+});
+
+function updateChecked(event: any) {
+  if (event.target) {
+    state.isChecked = event.target.checked;
+  }
+  emit('change', props.id);
+}
 </script>

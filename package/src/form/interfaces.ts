@@ -1,3 +1,5 @@
+import { NhsFormErrorStatus, NhsFormReset, NhsFormValidator } from '../shared/form/types';
+
 interface NhsFormSate {
   validators: NhsFormItemValidators;
   errorStatuses: NhsFormItemErrorStatuses;
@@ -5,15 +7,15 @@ interface NhsFormSate {
 }
 
 interface NhsFormItemValidators {
-  [key: string]: Function;
+  [key: string]: NhsFormValidator;
 }
 
 interface NhsFormItemErrorStatuses {
-  [key: string]: Function;
+  [key: string]: NhsFormErrorStatus;
 }
 
 interface NhsFormItemResets {
-  [key: string]: Function;
+  [key: string]: NhsFormReset;
 }
 
 export { NhsFormSate };

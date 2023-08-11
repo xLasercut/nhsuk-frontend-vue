@@ -8,6 +8,5 @@ type NhsInputInputmode =
   | 'decimal'
   | 'tel'
   | 'email'
-  | undefined;
 
 export { NhsInputWidth, NhsInputInputmode };
