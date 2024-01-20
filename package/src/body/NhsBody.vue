@@ -4,33 +4,29 @@
   </p>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsBodySize } from './types';
+import { NHS_BODY_SIZES } from './constants';
 
-const NHS_BODY_SIZES: Array<NhsBodySize> = ['s'];
-
-export default defineComponent({
-  inheritAttrs: false,
-  name: 'nhs-body',
-  emits: [],
-  props: {
-    size: {
-      type: String as PropType<NhsBodySize>,
-      validator: (val: NhsBodySize): boolean => {
-        return NHS_BODY_SIZES.includes(val);
-      }
+const props = defineProps({
+  size: {
+    type: String as PropType<NhsBodySize>,
+    validator: (val: NhsBodySize): boolean => {
+      return NHS_BODY_SIZES.includes(val);
     }
-  },
-  setup(props) {
-    const classes = computed((): string => {
-      if (props.size) {
-        return `nhsuk-body-${props.size}`;
-      }
-      return 'nhsuk-body';
-    });
-
-    return { classes };
   }
+});
+defineEmits([]);
+defineOptions({
+  name: 'nhs-body',
+  inheritAttrs: false
+});
+
+const classes = computed((): string => {
+  if (props.size) {
+    return `nhsuk-body-${props.size}`;
+  }
+  return 'nhsuk-body';
 });
 </script>

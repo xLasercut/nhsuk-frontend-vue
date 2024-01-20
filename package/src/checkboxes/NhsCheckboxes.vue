@@ -45,8 +45,8 @@
   </nhs-form-item>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { PropType } from 'vue';
 import NhsCheckbox from './component/NhsCheckbox.vue';
 import NhsFormItem from '../shared/form/NhsFormItem.vue';
 import { getInternalModel } from '../shared/form/v-model';
@@ -56,95 +56,81 @@ import { handleItemRegistry } from '../shared/form/form-item-registry';
 import { getFormEvents } from '../shared/form/event-helper';
 import { errorId, getAriaDescribedBy, hintId } from '../shared/form/aria-helper';
 import { NhsCheckboxesItemConfig } from './interfaces';
-import { NhsFormItemValidateOn } from '../shared/form/types';
+import {NhsFormItemValidateOn, NhsFormRule} from '../shared/form/types';
 import NhsFieldset from '../fieldset/NhsFieldset.vue';
 import NhsErrorText from '../error-text/NhsErrorText.vue';
 import NhsHintText from '../hint-text/NhsHintText.vue';
 import NhsCheckboxDivider from './component/NhsCheckboxDivider.vue';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-checkboxes',
-  inheritAttrs: false,
-  emits: ['update:model-value', 'blur', 'change', 'focus'],
-  components: { NhsFormItem, NhsFieldset, NhsErrorText, NhsHintText },
-  props: {
-    id: {
-      type: String,
-      default: (): string => {
-        return `nhs-checkbox-${randomString()}`;
-      }
-    },
-    hint: {
-      type: String
-    },
-    label: {
-      type: String
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    pageHeading: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    headingSize: {
-      type: String as PropType<NhsFieldsetSize>
-    },
-    modelValue: {
-      type: Object,
-      default: () => {
-        return {};
-      }
-    },
-    items: {
-      type: Array as PropType<Array<NhsCheckboxesItemConfig>>,
-      default: () => {
-        return [];
-      }
-    },
-    rules: {
-      type: Array as PropType<Array<Function>>,
-      default: (): Array<Function> => {
-        return [];
-      }
-    },
-    validateOn: {
-      type: String as PropType<NhsFormItemValidateOn>,
-      default: (): NhsFormItemValidateOn => {
-        return 'blur';
-      }
+  inheritAttrs: false
+});
+const emit = defineEmits(['update:model-value', 'blur', 'change', 'focus']);
+const props = defineProps({
+  id: {
+    type: String,
+    default: (): string => {
+      return `nhs-checkbox-${randomString()}`;
     }
   },
-  setup(props, context) {
-    function component(item: NhsCheckboxesItemConfig) {
-      if (item.divider) {
-        return NhsCheckboxDivider;
-      }
-      return NhsCheckbox;
+  hint: {
+    type: String
+  },
+  label: {
+    type: String
+  },
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
-
-    const internalModel = getInternalModel(props, context);
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-
-    const ariaDescribedby = getAriaDescribedBy(props, error);
-    const { onBlur, onChange } = getFormEvents(props, validator, context);
-
-    return {
-      internalModel,
-      error,
-      errorMsg,
-      ariaDescribedby,
-      errorId,
-      hintId,
-      onBlur,
-      onChange,
-      component
-    };
+  },
+  pageHeading: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  headingSize: {
+    type: String as PropType<NhsFieldsetSize>
+  },
+  modelValue: {
+    type: Object,
+    default: () => {
+      return {};
+    }
+  },
+  items: {
+    type: Array as PropType<Array<NhsCheckboxesItemConfig>>,
+    default: () => {
+      return [];
+    }
+  },
+  rules: {
+    type: Array as PropType<Array<NhsFormRule>>,
+    default: (): Array<NhsFormRule> => {
+      return [];
+    }
+  },
+  validateOn: {
+    type: String as PropType<NhsFormItemValidateOn>,
+    default: (): NhsFormItemValidateOn => {
+      return 'blur';
+    }
   }
 });
+
+function component(item: NhsCheckboxesItemConfig) {
+  if (item.divider) {
+    return NhsCheckboxDivider;
+  }
+  return NhsCheckbox;
+}
+
+const internalModel = getInternalModel(props, emit);
+const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+
+const ariaDescribedby = getAriaDescribedBy(props, error);
+const { onBlur, onChange } = getFormEvents(props, validator, emit);
 </script>

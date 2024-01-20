@@ -1,5 +1,7 @@
+import { AriaCurrentType } from '../shared/types';
+
 interface NhsContentsItemAttribute {
-  'aria-current'?: any;
+  'aria-current'?: AriaCurrentType;
 }
 
 export { NhsContentsItemAttribute };

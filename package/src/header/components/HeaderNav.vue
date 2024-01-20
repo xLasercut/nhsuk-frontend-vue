@@ -28,44 +28,41 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsIcon from '../../icon/NhsIcon.vue';
 import { NhsLinkSwitcher } from '../../shared/link-switcher';
-import { computed, defineComponent, inject } from 'vue';
+import { computed } from 'vue';
 import { NHS_HEADER_INJECTS } from '../constants';
+import { ToggleFunctionType } from '../types';
+import { injectStrict } from '../../shared/helpers/inject-helper';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: [],
-  components: { NhsIcon, NhsLinkSwitcher },
-  props: {
-    homeHref: {
-      type: String,
-      required: true
-    },
-    homeText: {
-      type: String,
-      required: true
-    },
-    navOpen: {
-      type: Boolean,
-      required: true
-    }
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  homeHref: {
+    type: String,
+    required: true
   },
-  setup(props) {
-    const classes = computed((): string => {
-      const classes = ['nhsuk-header__navigation'];
-
-      if (props.navOpen) {
-        classes.push('js-show');
-      }
-
-      return classes.join(' ');
-    });
-
-    const toggleNav: Function = inject<any>(NHS_HEADER_INJECTS.toggleNav);
-
-    return { classes, toggleNav };
+  homeText: {
+    type: String,
+    required: true
+  },
+  navOpen: {
+    type: Boolean,
+    required: true
   }
 });
+const classes = computed((): string => {
+  const classes = ['nhsuk-header__navigation'];
+
+  if (props.navOpen) {
+    classes.push('js-show');
+  }
+
+  return classes.join(' ');
+});
+
+const toggleNav = injectStrict<ToggleFunctionType>(NHS_HEADER_INJECTS.TOGGLE_NAV);
 </script>

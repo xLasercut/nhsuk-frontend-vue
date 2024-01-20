@@ -5,7 +5,7 @@
         :home-href="homeHref"
         :service="service"
         :organisation="organisation"
-        :aria-label="ariaLabel"
+        :ariaLabel="ariaLabel"
         :show-transactional="showTransactional()"
         :showNav="showNav"
         :showSearch="showSearch"
@@ -37,154 +37,148 @@
   </header>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import HeaderLogo from './components/HeaderLogo.vue';
 import HeaderNav from './components/HeaderNav.vue';
 import HeaderSearch from './components/HeaderSearch.vue';
 import HeaderTransactional from './components/HeaderTransactional.vue';
 import HeaderMenu from './components/HeaderMenu.vue';
-import { computed, defineComponent, PropType, provide, reactive, toRefs } from 'vue';
-import { NhsHeaderOrganisation, NhsHeaderService, NhsHeaderSearchResult } from './interfaces';
+import { computed, PropType, provide, reactive, ref } from 'vue';
+import { NhsHeaderOrganisation, NhsHeaderSearchResult, NhsHeaderService } from './interfaces';
 import { NHS_HEADER_INJECTS } from './constants';
+import { ToggleFunctionType } from './types';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-header',
-  emits: ['submit-search', 'update:search-text'],
-  props: {
-    showSearch: {
-      type: Boolean,
-      default: false
-    },
-    showNav: {
-      type: Boolean,
-      default: false
-    },
-    transactional: {
-      type: Boolean,
-      default: false
-    },
-    service: {
-      type: Object as PropType<NhsHeaderService>,
-      default: (): NhsHeaderService => {
-        return {};
-      }
-    },
-    organisation: {
-      type: Object as PropType<NhsHeaderOrganisation>,
-      default: (): NhsHeaderOrganisation => {
-        return {};
-      }
-    },
-    ariaLabel: {
-      type: String,
-      default: (): string => {
-        return 'NHS homepage';
-      }
-    },
-    homeHref: {
-      type: String,
-      default: (): string => {
-        return '/';
-      }
-    },
-    whiteHeader: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    whiteNav: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    searchAction: {
-      type: String,
-      default: (): string => {
-        return 'https://www.nhs.uk/search/';
-      }
-    },
-    searchInputName: {
-      type: String,
-      default: (): string => {
-        return 'q';
-      }
-    },
-    homeText: {
-      type: String,
-      default: (): string => {
-        return 'Home';
-      }
-    },
-    searchResults: {
-      type: Array as PropType<Array<NhsHeaderSearchResult>>,
-      default: (): Array<NhsHeaderSearchResult> => {
-        return [];
-      }
-    },
-    searchText: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
+  name: 'nhs-header'
+});
+defineEmits(['submit-search', 'update:search-text']);
+const props = defineProps({
+  showSearch: {
+    type: Boolean,
+    default: false
+  },
+  showNav: {
+    type: Boolean,
+    default: false
+  },
+  transactional: {
+    type: Boolean,
+    default: false
+  },
+  service: {
+    type: Object as PropType<NhsHeaderService>,
+    default: (): NhsHeaderService => {
+      return {};
     }
   },
-  components: { HeaderNav, HeaderSearch, HeaderLogo, HeaderTransactional, HeaderMenu },
-  setup(props) {
-    const state = reactive({
-      navOpen: false,
-      searchOpen: false
-    });
-
-    function toggleNav() {
-      state.navOpen = !state.navOpen;
+  organisation: {
+    type: Object as PropType<NhsHeaderOrganisation>,
+    default: (): NhsHeaderOrganisation => {
+      return {};
     }
-
-    function toggleSearch() {
-      state.searchOpen = !state.searchOpen;
+  },
+  ariaLabel: {
+    type: String,
+    default: (): string => {
+      return 'NHS homepage';
     }
-
-    provide(NHS_HEADER_INJECTS.toggleNav, toggleNav);
-    provide(NHS_HEADER_INJECTS.toggleSearch, toggleSearch);
-
-    function showTransactional(): boolean {
-      return props.transactional && !props.showSearch && !props.showNav;
+  },
+  homeHref: {
+    type: String,
+    default: (): string => {
+      return '/';
     }
-
-    const classes = computed((): string => {
-      const classes = ['nhsuk-header'];
-      if (showTransactional()) {
-        classes.push('nhsuk-header--transactional');
-      }
-
-      if (props.organisation.name) {
-        classes.push('nhsuk-header--organisation');
-      }
-
-      if (props.whiteHeader) {
-        classes.push('nhsuk-header--white');
-      }
-
-      if (props.whiteNav) {
-        classes.push('nhsuk-header--white-nav');
-      }
-
-      return classes.join(' ');
-    });
-
-    const headerContentClasses = computed((): string => {
-      const classes = ['nhsuk-header__content'];
-
-      if (state.searchOpen) {
-        classes.push('js-show');
-      }
-
-      return classes.join(' ');
-    });
-
-    return { classes, showTransactional, ...toRefs(state), headerContentClasses };
+  },
+  whiteHeader: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  whiteNav: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  searchAction: {
+    type: String,
+    default: (): string => {
+      return 'https://www.nhs.uk/search/';
+    }
+  },
+  searchInputName: {
+    type: String,
+    default: (): string => {
+      return 'q';
+    }
+  },
+  homeText: {
+    type: String,
+    default: (): string => {
+      return 'Home';
+    }
+  },
+  searchResults: {
+    type: Array as PropType<Array<NhsHeaderSearchResult>>,
+    default: (): Array<NhsHeaderSearchResult> => {
+      return [];
+    }
+  },
+  searchText: {
+    type: String,
+    default: (): string => {
+      return '';
+    }
   }
+});
+const navOpen = ref(false);
+const searchOpen = ref(false);
+
+function toggleNav() {
+  navOpen.value = !navOpen.value;
+}
+
+function toggleSearch() {
+  searchOpen.value = !searchOpen.value;
+}
+
+provide<ToggleFunctionType>(NHS_HEADER_INJECTS.TOGGLE_NAV, toggleNav);
+provide<ToggleFunctionType>(NHS_HEADER_INJECTS.TOGGLE_SEARCH, toggleSearch);
+
+function showTransactional(): boolean {
+  return props.transactional && !props.showSearch && !props.showNav;
+}
+
+const classes = computed((): string => {
+  const classes = ['nhsuk-header'];
+  if (showTransactional()) {
+    classes.push('nhsuk-header--transactional');
+  }
+
+  if (props.organisation.name) {
+    classes.push('nhsuk-header--organisation');
+  }
+
+  if (props.whiteHeader) {
+    classes.push('nhsuk-header--white');
+  }
+
+  if (props.whiteNav) {
+    classes.push('nhsuk-header--white-nav');
+  }
+
+  return classes.join(' ');
+});
+
+const headerContentClasses = computed((): string => {
+  const classes = ['nhsuk-header__content'];
+
+  if (searchOpen.value) {
+    classes.push('js-show');
+  }
+
+  return classes.join(' ');
 });
 </script>

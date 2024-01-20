@@ -11,20 +11,18 @@
   </li>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-list-panel-item',
-  emits: ['click'],
-  inheritAttrs: false,
-  components: { NhsLinkSwitcher },
-  props: {
-    href: {
-      type: String,
-      required: true
-    }
+  inheritAttrs: false
+});
+defineEmits(['click']);
+defineProps({
+  href: {
+    type: String,
+    required: true
   }
 });
 </script>

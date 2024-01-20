@@ -3,8 +3,16 @@ import { NhsFormInject } from '../../form/types';
 import { NHS_FORM_INJECTS } from './constants';
 import { NhsVueProp } from '../interface';
 import { NhsInputGroupState } from '../../input-group/interfaces';
+import { NhsFormProps } from './interfaces';
+import {
+  NhsFormRegisterErrorStatus,
+  NhsFormRegisterReset,
+  NhsFormRegisterValidator,
+  NhsFormRule,
+  NhsFormUnregisterItem
+} from './types';
 
-function validate(value: any, rules: Array<Function>) {
+function validate(value: any, rules: Array<NhsFormRule>) {
   for (const rule of rules) {
     const result = rule(value);
     if (typeof result === 'string') {
@@ -21,7 +29,7 @@ function validate(value: any, rules: Array<Function>) {
   };
 }
 
-function handleItemRegistry(props: NhsVueProp, internalModel: Ref) {
+function handleItemRegistry(props: NhsFormProps, internalModel: Ref<any>) {
   const error = ref(false);
   const errorMsg = ref('');
 
@@ -40,10 +48,12 @@ function handleItemRegistry(props: NhsVueProp, internalModel: Ref) {
     errorMsg.value = '';
   }
 
-  const registerValidator = inject<NhsFormInject>(NHS_FORM_INJECTS.registerValidator, null);
-  const registerErrorStatus = inject<NhsFormInject>(NHS_FORM_INJECTS.registerErrorStatus, null);
-  const registerReset = inject<NhsFormInject>(NHS_FORM_INJECTS.registerReset, null);
-  const unregisterItem = inject<NhsFormInject>(NHS_FORM_INJECTS.unregisterItem, null);
+  const registerValidator = inject<NhsFormRegisterValidator>(NHS_FORM_INJECTS.REGISTER_VALIDATOR);
+  const registerErrorStatus = inject<NhsFormRegisterErrorStatus>(
+    NHS_FORM_INJECTS.REGISTER_ERROR_STATUS
+  );
+  const registerReset = inject<NhsFormRegisterReset>(NHS_FORM_INJECTS.REGISTER_RESET);
+  const unregisterItem = inject<NhsFormUnregisterItem>(NHS_FORM_INJECTS.UNREGISTER_ITEM);
 
   onMounted(() => {
     if (registerValidator) {
@@ -199,10 +209,10 @@ function handleItemGroupRegistry(props: NhsVueProp) {
     return '';
   }
 
-  const registerValidator = inject<NhsFormInject>(NHS_FORM_INJECTS.registerValidator, null);
-  const registerErrorStatus = inject<NhsFormInject>(NHS_FORM_INJECTS.registerErrorStatus, null);
-  const registerReset = inject<NhsFormInject>(NHS_FORM_INJECTS.registerReset, null);
-  const unregisterItem = inject<NhsFormInject>(NHS_FORM_INJECTS.unregisterItem, null);
+  const registerValidator = inject<NhsFormInject>(NHS_FORM_INJECTS.REGISTER_VALIDATOR, null);
+  const registerErrorStatus = inject<NhsFormInject>(NHS_FORM_INJECTS.REGISTER_ERROR_STATUS, null);
+  const registerReset = inject<NhsFormInject>(NHS_FORM_INJECTS.REGISTER_RESET, null);
+  const unregisterItem = inject<NhsFormInject>(NHS_FORM_INJECTS.UNREGISTER_ITEM, null);
 
   onMounted(() => {
     if (registerValidator) {

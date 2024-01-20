@@ -21,7 +21,7 @@
   "scripts": {
     "build": "npm run build:lib && npm run build:web-types",
     "build:lib": "npm run lint && vite build && vue-tsc --emitDeclarationOnly",
-    "build:web-types": "node build/build-web-types.js",
+    "build:web-types": "ts-node build/build-web-types.ts",
     "lint": "vue-tsc --noEmit",
     "backstop:test": "backstop --config=./tests/backstop/config.js test --docker",
     "backstop:clean": "rm -rf tests/backstop/bitmaps_test/*",

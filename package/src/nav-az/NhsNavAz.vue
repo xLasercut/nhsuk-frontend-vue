@@ -12,19 +12,17 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-nav-az',
-  emits: [],
-  props: {
-    ariaLabel: {
-      type: String,
-      default: (): string => {
-        return 'A to Z Navigation';
-      }
+  name: 'nhs-nav-az'
+});
+defineEmits([]);
+defineProps({
+  ariaLabel: {
+    type: String,
+    default: (): string => {
+      return 'A to Z Navigation';
     }
   }
 });

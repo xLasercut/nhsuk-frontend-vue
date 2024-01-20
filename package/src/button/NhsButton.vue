@@ -11,69 +11,54 @@
   </component>
 </template>
 
-<script lang="ts">
-import NhsNormalButton from './types/NhsNormalButton.vue';
+<script setup lang="ts">
 import NhsLinkButton from './types/NhsLinkButton.vue';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsButtonColor, NhsButtonType } from './types';
+import { BUTTON_COLORS, BUTTON_TYPES } from './costants';
 
-const BUTTON_COLORS = {
-  primary: 'nhsuk-button',
-  secondary: 'nhsuk-button nhsuk-button--secondary',
-  reverse: 'nhsuk-button nhsuk-button--reverse'
-};
-
-const BUTTON_TYPES = {
-  button: NhsNormalButton,
-  a: NhsLinkButton
-};
-
-export default defineComponent({
-  name: 'nhs-button',
-  inheritAttrs: false,
-  emits: ['click'],
-  props: {
-    color: {
-      type: String as PropType<NhsButtonColor>,
-      default: (): NhsButtonColor => {
-        return 'primary';
-      },
-      validator: (val: NhsButtonColor): boolean => {
-        return val in BUTTON_COLORS;
-      }
+const props = defineProps({
+  color: {
+    type: String as PropType<NhsButtonColor>,
+    default: (): NhsButtonColor => {
+      return 'primary';
     },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    href: {
-      type: String
-    },
-    element: {
-      type: String as PropType<NhsButtonType>,
-      default: (): NhsButtonType => {
-        return 'button';
-      },
-      validator: (val: NhsButtonType): boolean => {
-        return val in BUTTON_TYPES;
-      }
+    validator: (val: NhsButtonColor): boolean => {
+      return val in BUTTON_COLORS;
     }
   },
-  setup(props) {
-    const classes = computed((): string => {
-      return BUTTON_COLORS[props.color];
-    });
-
-    const buttonElement = computed(() => {
-      if (props.href) {
-        return NhsLinkButton;
-      }
-      return BUTTON_TYPES[props.element];
-    });
-
-    return { classes, buttonElement };
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  href: {
+    type: String
+  },
+  element: {
+    type: String as PropType<NhsButtonType>,
+    default: (): NhsButtonType => {
+      return 'button';
+    },
+    validator: (val: NhsButtonType): boolean => {
+      return val in BUTTON_TYPES;
+    }
   }
+});
+defineEmits(['click']);
+defineOptions({
+  name: 'nhs-button',
+  inheritAttrs: false
+});
+const classes = computed((): string => {
+  return BUTTON_COLORS[props.color];
+});
+
+const buttonElement = computed(() => {
+  if (props.href) {
+    return NhsLinkButton;
+  }
+  return BUTTON_TYPES[props.element];
 });
 </script>

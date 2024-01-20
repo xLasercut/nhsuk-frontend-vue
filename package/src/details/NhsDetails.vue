@@ -11,18 +11,16 @@
   </details>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-details',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    text: {
-      type: String,
-      required: true
-    }
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  text: {
+    type: String,
+    required: true
   }
 });
 </script>

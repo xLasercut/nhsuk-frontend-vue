@@ -2,7 +2,7 @@ import { App, Plugin } from 'vue';
 import { NhsukFrontendVueOptions } from './interfaces';
 import { Router } from 'vue-router';
 import '../../node_modules/nhsuk-frontend/dist/nhsuk.css';
-import '../../node_modules/nhsuk-frontend/packages/polyfills';
+import '../../node_modules/nhsuk-frontend/packages/polyfills.js';
 
 import { NhsActionLink } from './action-link';
 import { NhsBackLink } from './back-link';

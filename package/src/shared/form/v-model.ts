@@ -1,13 +1,15 @@
-import { reactive, Ref, ref, SetupContext, watch } from 'vue';
+import { reactive, ref, Ref, watch } from 'vue';
 import { NhsVueProp } from '../interface';
+import { NhsFormInternalModelProps } from './interfaces';
+import { NhsFormEmitFunction } from './types';
 
-function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
+function getInternalModel(props: NhsFormInternalModelProps, emit: NhsFormEmitFunction): Ref {
   const internalModel = ref(props.modelValue);
 
   watch(
     () => internalModel.value,
     (val) => {
-      context.emit('update:model-value', val);
+      emit('update:model-value', val);
     }
   );
 
@@ -21,7 +23,7 @@ function getInternalModel(props: NhsVueProp, context: SetupContext<any>): Ref {
   return internalModel;
 }
 
-function getInternalModelItemGroup(props: NhsVueProp, context: SetupContext<any>) {
+function getInternalModelItemGroup(props: NhsVueProp, context: any) {
   const state = reactive({
     internalModel: props.modelValue
   });

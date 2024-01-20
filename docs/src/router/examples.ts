@@ -40,11 +40,11 @@ import WarningCalloutNonImportant from '../views/examples/warning-callout/Warnin
 import Table from '../views/examples/table/Table.vue';
 import TablePanel from '../views/examples/table/TablePanel.vue';
 import TableResponsive from '../views/examples/table/TableResponsive.vue';
-import Input from 'nhsuk-frontend-vue-docs/src/views/examples/input/Input.vue';
-import InputAutocomplete from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputAutocomplete.vue';
-import InputHint from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputHint.vue';
-import InputError from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputError.vue';
-import InputWidth from 'nhsuk-frontend-vue-docs/src/views/examples/input/InputWidth.vue';
+import Input from '../views/examples/input/Input.vue';
+import InputAutocomplete from '../views/examples/input/InputAutocomplete.vue';
+import InputHint from '../views/examples/input/InputHint.vue';
+import InputError from '../views/examples/input/InputError.vue';
+import InputWidth from '../views/examples/input/InputWidth.vue';
 import Select from '../views/examples/select/Select.vue';
 import SelectError from '../views/examples/select/SelectError.vue';
 import Textarea from '../views/examples/textarea/Textarea.vue';

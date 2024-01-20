@@ -13,41 +13,37 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsHeadingSwitcher } from '../shared/heading-switcher';
-import { defineComponent, PropType } from 'vue';
+import { PropType } from 'vue';
 import { NhsHeadingType } from '../shared/heading-switcher/types';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-warning-callout',
-  emits: [],
-  components: { NhsHeadingSwitcher },
-  props: {
-    heading: {
-      type: String,
-      required: true
-    },
-    headingLevel: {
-      type: Number as PropType<NhsHeadingType>,
-      default: (): NhsHeadingType => {
-        return 3;
-      }
-    }
+  name: 'nhs-warning-callout'
+});
+defineEmits([]);
+const props = defineProps({
+  heading: {
+    type: String,
+    required: true
   },
-  setup(props) {
-    function isHeadingContainsImportant(): boolean {
-      return props.heading.toLowerCase().includes('important');
+  headingLevel: {
+    type: Number as PropType<NhsHeadingType>,
+    default: (): NhsHeadingType => {
+      return 3;
     }
-
-    function showNormalHeading(): string {
-      if (isHeadingContainsImportant()) {
-        return props.heading;
-      }
-      return '';
-    }
-
-    return { isHeadingContainsImportant, showNormalHeading };
   }
 });
+
+function isHeadingContainsImportant(): boolean {
+  return props.heading.toLowerCase().includes('important');
+}
+
+function showNormalHeading(): string {
+  if (isHeadingContainsImportant()) {
+    return props.heading;
+  }
+  return '';
+}
 </script>

@@ -11,28 +11,26 @@
   </ul>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsVNode from '../shared/NhsVNode.vue';
-import { defineComponent, PropType } from 'vue';
+import { PropType } from 'vue';
 import { NhsCardGroupType } from './types';
+import { CARD_GROUP_TYPES } from './constants';
 
-const CARD_GROUP_TYPES: Set<NhsCardGroupType> = new Set(['half', 'third', 'quarter']);
-
-export default defineComponent({
+defineOptions({
   name: 'nhs-card-group',
-  inheritAttrs: false,
-  emit: [],
-  props: {
-    type: {
-      type: String as PropType<NhsCardGroupType>,
-      default: (): NhsCardGroupType => {
-        return 'half';
-      },
-      validator: (val: NhsCardGroupType): boolean => {
-        return CARD_GROUP_TYPES.has(val);
-      }
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  type: {
+    type: String as PropType<NhsCardGroupType>,
+    default: (): NhsCardGroupType => {
+      return 'half';
+    },
+    validator: (val: NhsCardGroupType): boolean => {
+      return CARD_GROUP_TYPES.has(val);
     }
-  },
-  components: { NhsVNode }
+  }
 });
 </script>

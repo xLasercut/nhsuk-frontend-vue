@@ -4,30 +4,26 @@
   </label>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsLabelSize } from '../types';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    size: {
-      type: String as PropType<NhsLabelSize>
-    }
-  },
-  setup(props) {
-    const classes = computed(() => {
-      let classes = ['nhsuk-label'];
-
-      if (props.size) {
-        classes.push(`nhsuk-label--${props.size}`);
-      }
-
-      return classes.join(' ');
-    });
-
-    return { classes };
+defineOptions({
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  size: {
+    type: String as PropType<NhsLabelSize>
   }
+});
+const classes = computed(() => {
+  let classes = ['nhsuk-label'];
+
+  if (props.size) {
+    classes.push(`nhsuk-label--${props.size}`);
+  }
+
+  return classes.join(' ');
 });
 </script>

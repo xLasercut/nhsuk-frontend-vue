@@ -7,21 +7,19 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
 import NhsIcon from '../icon/NhsIcon.vue';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'nhs-back-link',
-  inheritAttrs: false,
-  emits: ['click'],
-  components: { NhsLinkSwitcher, NhsIcon },
-  props: {
-    href: {
-      type: String,
-      required: true
-    }
+defineProps({
+  href: {
+    type: String,
+    required: true
   }
+});
+defineEmits(['click']);
+defineOptions({
+  name: 'nhs-back-link',
+  inheritAttrs: false
 });
 </script>

@@ -11,27 +11,25 @@
   </nhs-link-switcher>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  inheritAttrs: false,
-  emits: ['click'],
-  components: { NhsLinkSwitcher },
-  props: {
-    href: {
-      type: String,
-      default: (): string => {
-        return '';
-      }
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
+defineProps({
+  href: {
+    type: String,
+    default: (): string => {
+      return '';
+    }
+  },
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
   }
+});
+defineEmits(['click']);
+defineOptions({
+  inheritAttrs: false
 });
 </script>

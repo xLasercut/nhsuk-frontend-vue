@@ -43,61 +43,57 @@
   </component>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import PanelTable from './types/PanelTable.vue';
 import SimpleTable from './types/SimpleTable.vue';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { NhsHeadingType } from '../shared/heading-switcher/types';
 import { NhsTableHeader, NhsTableItem } from './interfaces';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-table',
-  emits: [],
-  props: {
-    heading: {
-      type: String
-    },
-    headingLevel: {
-      type: Number as PropType<NhsHeadingType>,
-      default: (): NhsHeadingType => {
-        return 3;
-      }
-    },
-    caption: {
-      type: String
-    },
-    headers: {
-      type: Array as PropType<Array<NhsTableHeader>>,
-      required: true
-    },
-    data: {
-      type: Array as PropType<Array<NhsTableItem>>,
-      required: true
-    },
-    responsive: {
-      type: Boolean,
-      default: (): boolean => {
-        return true;
-      }
+  name: 'nhs-table'
+});
+defineEmits([]);
+const props = defineProps({
+  heading: {
+    type: String
+  },
+  headingLevel: {
+    type: Number as PropType<NhsHeadingType>,
+    default: (): NhsHeadingType => {
+      return 3;
     }
   },
-  setup(props) {
-    const tableType = computed(() => {
-      if (props.heading) {
-        return PanelTable;
-      }
-      return SimpleTable;
-    });
-
-    const tableCellRole = computed((): string => {
-      if (props.responsive) {
-        return 'cell';
-      }
-      return '';
-    });
-
-    return { tableType, tableCellRole };
+  caption: {
+    type: String
+  },
+  headers: {
+    type: Array as PropType<Array<NhsTableHeader>>,
+    required: true
+  },
+  data: {
+    type: Array as PropType<Array<NhsTableItem>>,
+    required: true
+  },
+  responsive: {
+    type: Boolean,
+    default: (): boolean => {
+      return true;
+    }
   }
+});
+const tableType = computed(() => {
+  if (props.heading) {
+    return PanelTable;
+  }
+  return SimpleTable;
+});
+
+const tableCellRole = computed((): string => {
+  if (props.responsive) {
+    return 'cell';
+  }
+  return '';
 });
 </script>

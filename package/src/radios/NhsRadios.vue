@@ -47,10 +47,10 @@
   </nhs-form-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NhsRadio from './components/NhsRadio.vue';
 import NhsRadioDivider from './components/NhsRadioDivider.vue';
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { getInternalModel } from '../shared/form/v-model';
 import NhsFormItem from '../shared/form/NhsFormItem.vue';
 import NhsFieldset from '../fieldset/NhsFieldset.vue';
@@ -62,106 +62,89 @@ import { getFormEvents } from '../shared/form/event-helper';
 import { randomString } from '../shared/helpers/random-string';
 import { NhsFieldsetSize } from '../fieldset/types';
 import { NhsRadiosItemConfig } from './interfaces';
-import { NhsFormItemValidateOn } from '../shared/form/types';
+import { NhsFormItemValidateOn, NhsFormRule } from '../shared/form/types';
 
-export default defineComponent({
+defineOptions({
   name: 'nhs-radios',
-  inheritAttrs: false,
-  emits: ['update:model-value', 'blur', 'change', 'focus'],
-  props: {
-    id: {
-      type: String,
-      default: (): string => {
-        return `nhs-radios-${randomString()}`;
-      }
-    },
-    hint: {
-      type: String
-    },
-    label: {
-      type: String
-    },
-    inline: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    pageHeading: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    headingSize: {
-      type: String as PropType<NhsFieldsetSize>
-    },
-    items: {
-      type: Array as PropType<Array<NhsRadiosItemConfig>>,
-      required: true
-    },
-    rules: {
-      type: Array as PropType<Array<Function>>,
-      default: (): Array<Function> => {
-        return [];
-      }
-    },
-    modelValue: {
-      required: true
-    },
-    validateOn: {
-      type: String as PropType<NhsFormItemValidateOn>,
-      default: (): NhsFormItemValidateOn => {
-        return 'blur';
-      }
+  inheritAttrs: false
+});
+const emit = defineEmits(['update:model-value', 'blur', 'change', 'focus']);
+const props = defineProps({
+  id: {
+    type: String,
+    default: (): string => {
+      return `nhs-radios-${randomString()}`;
     }
   },
-  components: { NhsHintText, NhsFormItem, NhsFieldset, NhsErrorText },
-  setup(props, context) {
-    const internalModel = getInternalModel(props, context);
-    const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
-
-    const ariaDescribedby = getAriaDescribedBy(props, error);
-    const { onBlur, onChange } = getFormEvents(props, validator, context);
-
-    const classes = computed((): string => {
-      const classes = ['nhsuk-radios'];
-
-      if (props.inline) {
-        classes.push('nhsuk-radios--inline');
-      }
-
-      return classes.join(' ');
-    });
-
-    function component(item: NhsRadiosItemConfig) {
-      if (item.divider) {
-        return NhsRadioDivider;
-      }
-      return NhsRadio;
+  hint: {
+    type: String
+  },
+  label: {
+    type: String
+  },
+  inline: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
-
-    function showConditional(radioValue: any, hasConditional: boolean | undefined): boolean {
-      return internalModel.value === radioValue && Boolean(hasConditional);
+  },
+  pageHeading: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
-
-    return {
-      classes,
-      internalModel,
-      error,
-      errorMsg,
-      ariaDescribedby,
-      onBlur,
-      onChange,
-      errorId,
-      hintId,
-      component,
-      showConditional
-    };
+  },
+  headingSize: {
+    type: String as PropType<NhsFieldsetSize>
+  },
+  items: {
+    type: Array as PropType<Array<NhsRadiosItemConfig>>,
+    required: true
+  },
+  rules: {
+    type: Array as PropType<Array<NhsFormRule>>,
+    default: (): Array<NhsFormRule> => {
+      return [];
+    }
+  },
+  modelValue: {
+    required: true
+  },
+  validateOn: {
+    type: String as PropType<NhsFormItemValidateOn>,
+    default: (): NhsFormItemValidateOn => {
+      return 'blur';
+    }
   }
 });
+const internalModel = getInternalModel(props, emit);
+const { error, errorMsg, validator } = handleItemRegistry(props, internalModel);
+
+const ariaDescribedby = getAriaDescribedBy(props, error);
+const { onBlur, onChange } = getFormEvents(props, validator, emit);
+
+const classes = computed((): string => {
+  const classes = ['nhsuk-radios'];
+
+  if (props.inline) {
+    classes.push('nhsuk-radios--inline');
+  }
+
+  return classes.join(' ');
+});
+
+function component(item: NhsRadiosItemConfig) {
+  if (item.divider) {
+    return NhsRadioDivider;
+  }
+  return NhsRadio;
+}
+
+function showConditional(radioValue: any, hasConditional: boolean | undefined): boolean {
+  return internalModel.value === radioValue && Boolean(hasConditional);
+}
 </script>

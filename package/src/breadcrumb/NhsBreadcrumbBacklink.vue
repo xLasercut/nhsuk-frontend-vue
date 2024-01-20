@@ -11,20 +11,19 @@
   </p>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'nhs-breadcrumb-backlink',
-  inheritAttrs: false,
-  emits: ['click'],
-  components: { NhsLinkSwitcher },
-  props: {
-    href: {
-      type: String,
-      required: true
-    }
+defineProps({
+  href: {
+    type: String,
+    required: true
   }
+});
+
+defineEmits(['click']);
+defineOptions({
+  name: 'nhs-breadcrumb-backlink',
+  inheritAttrs: false
 });
 </script>

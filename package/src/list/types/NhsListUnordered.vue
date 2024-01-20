@@ -4,11 +4,9 @@
   </ul>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  emits: [],
+<script setup lang="ts">
+defineOptions({
   inheritAttrs: false
 });
+defineEmits([]);
 </script>

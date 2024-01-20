@@ -1,8 +1,8 @@
 const NHS_FORM_INJECTS = {
-  registerValidator: 'register-validator',
-  registerErrorStatus: 'register-error-status',
-  registerReset: 'register-reset',
-  unregisterItem: 'unregister-item',
+  REGISTER_VALIDATOR: 'register-validator',
+  REGISTER_ERROR_STATUS: 'register-error-status',
+  REGISTER_RESET: 'register-reset',
+  UNREGISTER_ITEM: 'unregister-item',
   registerItemValidator: 'register-item-validator',
   registerItemErrorStatus: 'register-item-error-status',
   registerItemErrorMsg: 'register-item-error-msg',

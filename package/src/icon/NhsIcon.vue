@@ -1,22 +1,24 @@
 <template>
-  <component :is="icon" v-bind="$attrs" />
+  <component :is="getIcon()" v-bind="$attrs" />
 </template>
 
-<script lang="ts">
-import icons from './icons/icons';
-import { defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { ICON_MAP } from './icons/icons';
+import { PropType } from 'vue';
 import { NhsIconType } from './types';
 
-export default defineComponent({
-  name: 'nhs-icon',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    icon: {
-      type: String as PropType<NhsIconType>,
-      required: true
-    }
-  },
-  components: icons
+defineEmits([]);
+const props = defineProps({
+  icon: {
+    type: String as PropType<NhsIconType>,
+    required: true
+  }
 });
+defineOptions({
+  inheritAttrs: false
+});
+
+function getIcon() {
+  return ICON_MAP[props.icon];
+}
 </script>

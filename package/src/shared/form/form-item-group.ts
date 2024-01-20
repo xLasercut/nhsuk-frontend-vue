@@ -4,7 +4,7 @@ function itemGroupItemId(id: string, index: number): string {
   return `${id}-${index}`;
 }
 
-function getItemGroupFormEvents(context: SetupContext<any>) {
+function getItemGroupFormEvents(context: any) {
   function onBlur(id: string, index: number): void {
     context.emit('blur', itemGroupItemId(id, index));
   }

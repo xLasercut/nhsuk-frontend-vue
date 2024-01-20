@@ -7,22 +7,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  inheritAttrs: false,
-  emits: [],
+<script setup lang="ts">
+defineOptions({
   name: 'nhs-review-date',
-  props: {
-    lastReview: {
-      type: String,
-      required: true
-    },
-    nextReview: {
-      type: String,
-      required: true
-    }
+  inheritAttrs: false
+});
+defineEmits([]);
+defineProps({
+  lastReview: {
+    type: String,
+    required: true
+  },
+  nextReview: {
+    type: String,
+    required: true
   }
 });
 </script>

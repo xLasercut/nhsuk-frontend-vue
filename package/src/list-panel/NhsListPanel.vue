@@ -11,48 +11,40 @@
   </nhs-card>
 </template>
 
-<script lang="ts">
-import { NhsHeadingSwitcher } from '../shared/heading-switcher';
-import { NhsLinkSwitcher } from '../shared/link-switcher';
-import NhsIcon from '../icon/NhsIcon.vue';
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsHeadingType } from '../shared/heading-switcher/types';
 
-export default defineComponent({
+defineOptions({
   inheritAttrs: false,
-  name: 'nhs-list-panel',
-  emits: [],
-  components: { NhsHeadingSwitcher, NhsLinkSwitcher, NhsIcon },
-  props: {
-    label: {
-      type: String
-    },
-    id: {
-      type: String
-    },
-    headingLevel: {
-      type: Number as PropType<NhsHeadingType>,
-      default: (): NhsHeadingType => {
-        return 2;
-      }
-    },
-    disabled: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    message: {
-      type: String
+  name: 'nhs-list-panel'
+});
+defineEmits([]);
+defineProps({
+  label: {
+    type: String
+  },
+  id: {
+    type: String
+  },
+  headingLevel: {
+    type: Number as PropType<NhsHeadingType>,
+    default: (): NhsHeadingType => {
+      return 2;
     }
   },
-  setup() {
-    const classes = computed((): string => {
-      const classes = ['nhsuk-list nhsuk-list--border'];
-      return classes.join(' ');
-    });
-
-    return { classes };
+  disabled: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
+    }
+  },
+  message: {
+    type: String
   }
+});
+const classes = computed((): string => {
+  const classes = ['nhsuk-list nhsuk-list--border'];
+  return classes.join(' ');
 });
 </script>

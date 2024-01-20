@@ -6,35 +6,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsMainType } from './types';
+import { NHS_MAIN_TYPES } from './constants';
 
-const NHS_MAIN_TYPES = {
-  fluid: 'nhsuk-width-container-fluid',
-  normal: 'nhsuk-width-container'
-};
-
-export default defineComponent({
+defineOptions({
   name: 'nhs-main',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    type: {
-      type: String as PropType<NhsMainType>,
-      default: (): NhsMainType => {
-        return 'normal';
-      },
-      validator: (val: NhsMainType): boolean => {
-        return val in NHS_MAIN_TYPES;
-      }
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  type: {
+    type: String as PropType<NhsMainType>,
+    default: (): NhsMainType => {
+      return 'normal';
+    },
+    validator: (val: NhsMainType): boolean => {
+      return val in NHS_MAIN_TYPES;
     }
-  },
-  setup(props) {
-    const classes = computed((): string => {
-      return NHS_MAIN_TYPES[props.type];
-    });
-    return { classes };
   }
+});
+
+const classes = computed((): string => {
+  return NHS_MAIN_TYPES[props.type];
 });
 </script>

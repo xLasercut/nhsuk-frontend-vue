@@ -15,19 +15,18 @@
   </li>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { NhsLinkSwitcher } from '../shared/link-switcher';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'nhs-breadcrumb-item',
-  inheritAttrs: false,
-  emits: ['click'],
-  components: { NhsLinkSwitcher },
-  props: {
-    href: {
-      type: String
-    }
+defineProps({
+  href: {
+    type: String
   }
+});
+
+defineEmits(['click']);
+defineOptions({
+  name: 'nhs-breadcrumb-item',
+  inheritAttrs: false
 });
 </script>

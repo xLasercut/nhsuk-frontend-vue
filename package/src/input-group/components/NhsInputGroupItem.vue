@@ -26,7 +26,7 @@ import { computed, defineComponent, PropType } from 'vue';
 import NhsFormItem from '../../shared/form/NhsFormItem.vue';
 import NhsLabel from '../../label/NhsLabel.vue';
 import { getInternalModel } from '../../shared/form/v-model';
-import { getAttributes } from '../../shared/helpers/attribute-helper';
+import { addAttributes } from '../../shared/helpers/attribute-helper';
 import { NhsInputInputmode, NhsInputWidth } from '../../input/types';
 import { NHS_INPUT_WIDTHS } from '../../input/constants';
 import { handleItemGroupItemRegistry } from '../../shared/form/form-item-registry';
@@ -107,7 +107,7 @@ export default defineComponent({
       return classes.join(' ');
     });
 
-    const attributes = getAttributes(['disabled'], props, context);
+    const attributes = addAttributes(['disabled'], props, context);
 
     return {
       classes,

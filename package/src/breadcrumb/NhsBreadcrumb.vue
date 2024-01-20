@@ -9,20 +9,19 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'nhs-breadcrumb',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    ariaLabel: {
-      type: String,
-      default: (): string => {
-        return 'Breadcrumb';
-      }
+<script setup lang="ts">
+defineProps({
+  ariaLabel: {
+    type: String,
+    default: (): string => {
+      return 'Breadcrumb';
     }
   }
+});
+
+defineEmits([]);
+defineOptions({
+  name: 'nhs-breadcrumb',
+  inheritAttrs: false
 });
 </script>

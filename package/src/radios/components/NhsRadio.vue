@@ -22,65 +22,65 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 import { NhsHintText } from '../../hint-text';
 import { NhsLabel } from '../../label';
 import { getInternalModel } from '../../shared/form/v-model';
 
-export default defineComponent({
-  inheritAttrs: false,
-  props: {
-    name: {
-      type: String
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    id: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String
-    },
-    hint: {
-      type: String
-    },
-    radioValue: {
-      type: String,
-      required: true
-    },
-    divider: {
-      type: String
-    },
-    modelValue: {
-      required: true
-    }
+defineOptions({
+  inheritAttrs: false
+});
+const emit = defineEmits(['update:model-value', 'blur', 'focus', 'change'])
+
+const props = defineProps({
+  name: {
+    type: String
   },
-  components: { NhsHintText, NhsLabel },
-  setup(props, context) {
-    const internalModel = getInternalModel(props, context);
-
-    const attributes = computed(() => {
-      let attributes: { [key: string]: any } = ({} = {});
-      if (props.disabled) {
-        attributes['disabled'] = true;
-      }
-
-      if (props.hint) {
-        attributes['aria-describedby'] = hintId();
-      }
-
-      return attributes;
-    });
-
-    function hintId() {
-      return `${props.id}-hint`;
-    }
-
-    return { internalModel, attributes, hintId };
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  id: {
+    type: String,
+    required: true
+  },
+  label: {
+    type: String
+  },
+  hint: {
+    type: String
+  },
+  radioValue: {
+    type: String,
+    required: true
+  },
+  divider: {
+    type: String
+  },
+  modelValue: {
+    required: true
   }
 });
+
+const internalModel = getInternalModel(props, emit);
+
+const attributes = computed(() => {
+  let attributes: {
+    [key: string]: any;
+  } = ({} = {});
+  if (props.disabled) {
+    attributes['disabled'] = true;
+  }
+
+  if (props.hint) {
+    attributes['aria-describedby'] = hintId();
+  }
+
+  return attributes;
+});
+
+function hintId() {
+  return `${props.id}-hint`;
+}
 </script>

@@ -12,48 +12,44 @@
   </fieldset>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+<script setup lang="ts">
+import { computed, PropType } from 'vue';
 import { NhsFieldsetSize } from './types';
+import { FIELDSET_SIZES } from './constants';
 
-const FIELDSET_SIZES: Array<NhsFieldsetSize> = ['xl', 'l', 'm'];
-
-export default defineComponent({
+defineOptions({
   name: 'nhs-fieldset',
-  inheritAttrs: false,
-  emits: [],
-  props: {
-    legend: {
-      type: String
-    },
-    pageHeading: {
-      type: Boolean,
-      default: (): boolean => {
-        return false;
-      }
-    },
-    size: {
-      type: String as PropType<NhsFieldsetSize>,
-      validator: (val: NhsFieldsetSize): boolean => {
-        if (val) {
-          return FIELDSET_SIZES.includes(val);
-        }
-        return true;
-      }
+  inheritAttrs: false
+});
+defineEmits([]);
+const props = defineProps({
+  legend: {
+    type: String
+  },
+  pageHeading: {
+    type: Boolean,
+    default: (): boolean => {
+      return false;
     }
   },
-  setup(props) {
-    const classes = computed((): string => {
-      let classes = ['nhsuk-fieldset__legend'];
-
-      if (props.size) {
-        classes.push(`nhsuk-fieldset__legend--${props.size}`);
+  size: {
+    type: String as PropType<NhsFieldsetSize>,
+    validator: (val: NhsFieldsetSize): boolean => {
+      if (val) {
+        return FIELDSET_SIZES.includes(val);
       }
-
-      return classes.join(' ');
-    });
-
-    return { classes };
+      return true;
+    }
   }
+});
+
+const classes = computed((): string => {
+  let classes = ['nhsuk-fieldset__legend'];
+
+  if (props.size) {
+    classes.push(`nhsuk-fieldset__legend--${props.size}`);
+  }
+
+  return classes.join(' ');
 });
 </script>

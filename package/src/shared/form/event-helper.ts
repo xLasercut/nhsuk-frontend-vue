@@ -1,27 +1,26 @@
-import { NhsFormItemValidateOn } from './types';
-import { SetupContext } from 'vue';
-import { NhsVueProp } from '../interface';
+import { NhsFormEmitEvent, NhsFormEmitFunction, NhsFormItemValidateOn } from './types';
+import { NhsFormProps } from './interfaces';
 
 function onFormEvent(
-  name: string,
+  name: NhsFormEmitEvent,
   validateOn: NhsFormItemValidateOn,
   validator: Function,
-  context: SetupContext<any>,
+  emit: NhsFormEmitFunction,
   event: any
 ): void {
   if (validateOn === name) {
     validator();
   }
-  context.emit(name, event);
+  emit(name, event);
 }
 
-function getFormEvents(props: NhsVueProp, validator: Function, context: SetupContext<any>) {
+function getFormEvents(props: NhsFormProps, validator: Function, emit: NhsFormEmitFunction) {
   function onBlur(event: any = null): void {
-    onFormEvent('blur', props.validateOn, validator, context, event);
+    onFormEvent('blur', props.validateOn, validator, emit, event);
   }
 
   function onChange(event: any = null): void {
-    onFormEvent('change', props.validateOn, validator, context, event);
+    onFormEvent('change', props.validateOn, validator, emit, event);
   }
 
   return { onBlur, onChange };
