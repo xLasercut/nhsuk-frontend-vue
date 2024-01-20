@@ -19,13 +19,16 @@ jobs:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Setup pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Run backstop tests
         run: |
-          npm run serve &
-          npm run backstop:test
+          pnpm serve &
+          pnpm backstop:test
